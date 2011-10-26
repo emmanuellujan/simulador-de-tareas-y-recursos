@@ -1,0 +1,6 @@
+class FCFS
+!!!517762.java!!!	schedule(inout processes : Vector<Process>) : Process
+		if(processes.size()>0)
+			return processes.get(0);
+		else
+			return null;

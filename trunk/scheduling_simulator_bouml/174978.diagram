@@ -1,0 +1,120 @@
+format 75
+
+activitycanvas 128002 activity_ref 128386 // Execute active interruption or process
+  show_infonote default drawing_language default show_stereotype_properties default
+  xyzwh 12 4 2000 607 765
+end
+activitynodecanvas 128130 activitynode_ref 136322 // initial_node
+  xyz 229 61 2005
+end
+activitynodecanvas 128258 activitynode_ref 136450 // decision
+  xyz 225 101 2005
+end
+activityactioncanvas 128514 activityaction_ref 136066 // activity action Pass interruption or process in sleeping list
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 28 181 2005 107 89
+end
+activitynodecanvas 128770 activitynode_ref 136578 // decision
+  xyz 363 185 2005
+end
+activityactioncanvas 128898 activityaction_ref 136194 // activity action Pass interruption or process to other device (interruption or ready list)
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 172 285 2005 119 105
+end
+activityactioncanvas 129026 activityaction_ref 136322 // activity action Increment deadline
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 471 291 2005 107 89
+end
+activityactioncanvas 129538 activityaction_ref 136450 // activity action Select interruption or process from interruption or ready list
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 263 483 2005 112 100
+end
+activityactioncanvas 129666 activityaction_ref 136578 // activity action Execute interruption or process in current device
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 465 489 2005 107 89
+end
+activitynodecanvas 129794 activitynode_ref 136706 // decision
+  xyz 413 401 2005
+end
+activitynodecanvas 130306 activitynode_ref 136834 // activity_final
+  xyz 69 726 2005
+end
+activityactioncanvas 132738 activityaction_ref 136706 // activity action Context switch
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 268 618 2013 100 60
+end
+flowcanvas 128386 flow_ref 140162 // <flow>
+  
+  from ref 128130 z 2006 to ref 128258
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 128642 flow_ref 140290 // [Interruption or process needs to sleep]
+  
+  from ref 128258 z 2006 label "[Interruption or process needs to sleep]" xyz 44 148 3000 to ref 128514
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129154 flow_ref 140418 // [Interruption or process needs to pass to other device]
+  
+  from ref 128770 z 2006 label "[Interruption or process needs to pass to other device]" xyz 138.5 262 3000 to ref 128898
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129282 flow_ref 140546 // [Interruption or process doesn't need to pass to other device]
+  
+  from ref 128770 z 2006 label "[Interruption or process doesn't need to pass to other device]" xyz 280 224.5 3000 to ref 129026
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129410 flow_ref 140674 // [Interruption or process doesn't need to sleep]
+  
+  from ref 128258 z 2006 label "[Interruption or process doesn't need to sleep]" xyz 269 119.5 3000 to ref 128770
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129922 flow_ref 140802 // <flow>
+  
+  from ref 129026 z 2006 to ref 129794
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130050 flow_ref 140930 // [Deadline = Max. Deadline]
+  
+  from ref 129794 z 2006 label "[Deadline = Max. Deadline]" xyz 269 450 3000 to ref 129538
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130178 flow_ref 141058 // [Deadline <> Max. Deadline]
+  
+  from ref 129794 z 2006 label "[Deadline <> Max. Deadline]" xyz 454 443 3000 to ref 129666
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130434 flow_ref 141186 // <flow>
+  
+  from ref 128514 z 2006 to ref 130306
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130818 flow_ref 141442 // <flow>
+  
+  from ref 128898 z 2006 to point 228 736
+  line 132226 z 2006 to ref 130306
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131074 flow_ref 141698 // <flow>
+  
+  from ref 129666 z 2006 to point 516 736
+  line 132482 z 2006 to ref 130306
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 132866 flow_ref 141826 // <flow>
+  
+  from ref 129538 z 2014 to ref 132738
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133122 flow_ref 141954 // <flow>
+  
+  from ref 132738 z 2014 to point 315 736
+  line 133250 z 2014 to ref 130306
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+end

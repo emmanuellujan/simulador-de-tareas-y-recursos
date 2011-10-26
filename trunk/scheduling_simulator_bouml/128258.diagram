@@ -1,0 +1,112 @@
+format 75
+
+componentcanvas 128258 component_ref 134530 // SchedulingSystem
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 346 181 2000 155 57
+end
+componentcanvas 128386 component_ref 134658 // InputSystem
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 15 484 2000 155 57
+end
+componentcanvas 128514 component_ref 134786 // LogginSystem
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 473 590 2000 155 57
+end
+componentcanvas 128770 component_ref 135042 // StadysticsSystem
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 322 61 2005 155 57
+end
+componentcanvas 131330 component_ref 142082 // Process
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 161 199 2000 155 57
+end
+componentcanvas 131458 component_ref 141954 // Device
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 605 134 2005 155 57
+end
+componentcanvas 131586 component_ref 135298 // Configurator
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 176 591 2000 155 57
+end
+componentcanvas 131714 component_ref 135426 // SimulationTime
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 614 500 2000 155 57
+end
+componentcanvas 131842 component_ref 142210 // Simulation Device
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 312 495 2000 155 57
+end
+componentcanvas 135298 component_ref 134914 // SchedulingAlgorithmSystem
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  xyzwh 17 118 2005 175 57
+end
+packagecanvas 137474 
+  package_ref 147970 // Controller
+    xyzwh 9 18 1995 767 275
+end
+packagecanvas 137602 
+  package_ref 148354 // Model
+    xyzwh 10 393 1995 769 263
+end
+simplerelationcanvas 134146 simplerelation_ref 153090
+  decenter_end 209
+  from ref 131842 z 2006 to ref 131458
+end
+simplerelationcanvas 134274 simplerelation_ref 153218
+  from ref 131842 z 2001 to ref 131330
+end
+simplerelationcanvas 134402 simplerelation_ref 153346
+  from ref 131714 z 2006 to ref 131458
+end
+simplerelationcanvas 134530 simplerelation_ref 153474
+  from ref 128386 z 2001 to ref 131586
+end
+simplerelationcanvas 134658 simplerelation_ref 153602
+  from ref 128386 z 2001 to ref 128258
+end
+simplerelationcanvas 134786 simplerelation_ref 153730
+  from ref 128386 z 2006 to ref 131458
+end
+simplerelationcanvas 134914 simplerelation_ref 153858
+  from ref 128386 z 2001 to ref 131330
+end
+simplerelationcanvas 135426 simplerelation_ref 153986
+  from ref 128386 z 2006 to ref 135298
+end
+simplerelationcanvas 135554 simplerelation_ref 154114
+  from ref 128514 z 2001 to ref 131586
+end
+simplerelationcanvas 135682 simplerelation_ref 154242
+  from ref 128514 z 2001 to ref 131714
+end
+simplerelationcanvas 135810 simplerelation_ref 154370
+  from ref 128514 z 2001 to ref 131842
+end
+simplerelationcanvas 135938 simplerelation_ref 154498
+  from ref 128514 z 2006 to ref 131458
+end
+simplerelationcanvas 136066 simplerelation_ref 154626
+  from ref 135298 z 2006 to ref 131330
+end
+simplerelationcanvas 136194 simplerelation_ref 154754
+  from ref 131458 z 2006 to ref 135298
+end
+simplerelationcanvas 136322 simplerelation_ref 154882
+  from ref 128258 z 2001 to ref 131586
+end
+simplerelationcanvas 136450 simplerelation_ref 155010
+  from ref 128258 z 2001 to ref 131714
+end
+simplerelationcanvas 136962 simplerelation_ref 155266
+  from ref 128258 z 2001 to ref 128386
+end
+simplerelationcanvas 137090 simplerelation_ref 155394
+  from ref 128258 z 2006 to ref 135298
+end
+simplerelationcanvas 137218 simplerelation_ref 155522
+  from ref 128258 z 2001 to ref 128514
+end
+simplerelationcanvas 137346 simplerelation_ref 155650
+  from ref 128258 z 2006 to ref 128770
+end
+end

@@ -1,0 +1,17 @@
+class LogginSystem
+!!!514306.java!!!	LogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
+		this.setConfigurator(configurator);
+		this.setSimulationTimes(simulationTimes);
+!!!514434.java!!!	log(in time : int, inout devicesList : Vector<Device>) : void
+		SimulationTime simulationTime = new SimulationTime(time, devicesList);
+		this.addSimulationTime(simulationTime);
+!!!514690.java!!!	getConfigurator() : Configurator
+		return configurator;
+!!!514818.java!!!	setConfigurator(inout configurator : Configurator) : void
+		this.configurator = configurator;
+!!!514946.java!!!	getSimulationTimes() : SimulationTime
+		return simulationTimes;
+!!!515074.java!!!	setSimulationTimes(inout simulationTimes : Vector<SimulationTime>) : void
+		this.simulationTimes = simulationTimes;
+!!!515202.java!!!	addSimulationTime(inout simulationTime : SimulationTime) : void
+		this.simulationTimes.add(simulationTime);

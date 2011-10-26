@@ -1,0 +1,54 @@
+class Configurator
+!!!533634.java!!!	Configurator()
+		String confFile = "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/control_robotico/scheduling_simulator/src/conf.xml";
+		this.setConfFile(confFile);
+		this.setConfParameters();
+!!!533762.java!!!	setConfParameters() : void
+		String fileName = this.getConfFile();
+		String sIODirectory = "";
+		String sInputFile = "";
+		String sOutputFile = "";
+		try{
+			File file = new File(fileName);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(file);
+			doc.getDocumentElement().normalize();
+
+			NodeList ioDirectoryElementList = doc.getElementsByTagName("ioDirectory");
+			Element ioDirectoryElement = (Element) ioDirectoryElementList.item(0);
+			NodeList ioDirectory = ioDirectoryElement.getChildNodes();
+			sIODirectory = ((Node) ioDirectory.item(0)).getNodeValue();
+			
+			NodeList inputFileElementList = doc.getElementsByTagName("inputFile");
+			Element inputFileElement = (Element) inputFileElementList.item(0);
+			NodeList inputFile = inputFileElement.getChildNodes();
+			sInputFile = ((Node) inputFile.item(0)).getNodeValue();
+			
+			NodeList outputFileElementList = doc.getElementsByTagName("outputFile");
+			Element outputFileElement = (Element) outputFileElementList.item(0);
+			NodeList outputFile = outputFileElement.getChildNodes();
+			sOutputFile = ((Node) outputFile.item(0)).getNodeValue();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		this.setIoDirectory(sIODirectory);
+		this.setInputFile(sInputFile);
+		this.setOutputFile(sOutputFile);
+!!!533890.java!!!	getConfFile() : String
+		return confFile;
+!!!534018.java!!!	setConfFile(in confFile : String) : void
+		this.confFile = confFile;
+!!!534146.java!!!	getIoDirectory() : String
+		return ioDirectory;
+!!!534274.java!!!	setIoDirectory(in ioDirectory : String) : void
+		this.ioDirectory = ioDirectory;
+!!!534402.java!!!	getInputFile() : String
+		return inputFile;
+!!!534530.java!!!	setInputFile(in inputFile : String) : void
+		this.inputFile = inputFile;
+!!!534658.java!!!	getOutputFile() : String
+		return outputFile;
+!!!534786.java!!!	setOutputFile(in outputFile : String) : void
+		this.outputFile = outputFile;

@@ -1,0 +1,25 @@
+window_sizes 1278 720 410 862 577 64
+diagrams
+  activitydiagram_ref 174850 // Device Algorithm Activity Diagram
+    881 582 100 4 637 0
+  activitydiagram_ref 174978 // Execute active interruption or process activity diagram
+    862 577 100 4 374 0
+  active  classdiagram_ref 168322 // General Class Diagram
+    689 461 100 4 0 0
+end
+show_stereotypes
+marked
+  class_ref 181762 // SAFactory
+  class_ref 181634 // PrioritiesSA
+  class_ref 181506 // SchedulingAlgorithm
+  class_ref 181378 // FCFS
+end
+selected classdiagram_ref 168322 // General Class Diagram
+open
+  
+  package_ref 147970 // Controller
+  usecaseview_ref 128642 // General Use Case View
+  classview_ref 152578 // General Class View
+  componentview_ref 128130 // General Component View
+end
+end

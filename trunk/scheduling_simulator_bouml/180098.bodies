@@ -1,0 +1,22 @@
+class SimulationTime
+!!!512386.java!!!	SimulationTime(in time : int, inout devicesList : Vector<Device>)
+		Vector<SimulationDevice> devices = new Vector<SimulationDevice>(); 
+		Device device;
+		SimulationDevice sDevice;
+		int n = devicesList.size();
+		for(int i=0;i<n;i++){
+			device = devicesList.get(i); 
+			sDevice = new SimulationDevice(device);
+			devices.add(sDevice);
+		}
+		
+		this.setCurrentTime(time);
+		this.setDevices(devices);
+!!!512514.java!!!	getCurrentTime() : int
+		return currentTime;
+!!!512642.java!!!	setCurrentTime(in currentTime : int) : void
+		this.currentTime = currentTime;
+!!!512770.java!!!	getDevices() : SimulationDevice
+		return devices;
+!!!512898.java!!!	setDevices(inout devices : Vector<SimulationDevice>) : void
+		this.devices = devices;

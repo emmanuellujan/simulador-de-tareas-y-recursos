@@ -1,0 +1,91 @@
+package Model.DataModel.Configurator;
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+
+public class Configurator {
+	String confFile;
+	String ioDirectory;
+	String inputFile;
+	String outputFile;
+	
+	public Configurator(){
+		String confFile = "conf.xml";
+		this.setConfFile(confFile);
+		this.setConfParameters();
+	}
+
+	private void setConfParameters() {
+		String fileName = this.getConfFile();
+		String sIODirectory = "";
+		String sInputFile = "";
+		String sOutputFile = "";
+		try{
+			File file = new File(fileName);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(file);
+			doc.getDocumentElement().normalize();
+
+			NodeList ioDirectoryElementList = doc.getElementsByTagName("ioDirectory");
+			Element ioDirectoryElement = (Element) ioDirectoryElementList.item(0);
+			NodeList ioDirectory = ioDirectoryElement.getChildNodes();
+			sIODirectory = ((Node) ioDirectory.item(0)).getNodeValue();
+			
+			NodeList inputFileElementList = doc.getElementsByTagName("inputFile");
+			Element inputFileElement = (Element) inputFileElementList.item(0);
+			NodeList inputFile = inputFileElement.getChildNodes();
+			sInputFile = ((Node) inputFile.item(0)).getNodeValue();
+			
+			NodeList outputFileElementList = doc.getElementsByTagName("outputFile");
+			Element outputFileElement = (Element) outputFileElementList.item(0);
+			NodeList outputFile = outputFileElement.getChildNodes();
+			sOutputFile = ((Node) outputFile.item(0)).getNodeValue();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		this.setIoDirectory(sIODirectory);
+		this.setInputFile(sInputFile);
+		this.setOutputFile(sOutputFile);
+	}
+	
+	public String getConfFile() {
+		return confFile;
+	}
+
+	public void setConfFile(String confFile) {
+		this.confFile = confFile;
+	}
+	
+	public String getIoDirectory() {
+		return ioDirectory;
+	}
+
+	public void setIoDirectory(String ioDirectory) {
+		this.ioDirectory = ioDirectory;
+	}
+
+	public String getInputFile() {
+		return inputFile;
+	}
+
+	public void setInputFile(String inputFile) {
+		this.inputFile = inputFile;
+	}
+
+	public String getOutputFile() {
+		return outputFile;
+	}
+
+	public void setOutputFile(String outputFile) {
+		this.outputFile = outputFile;
+	}
+}

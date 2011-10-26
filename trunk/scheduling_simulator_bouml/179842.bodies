@@ -1,0 +1,59 @@
+class SimulationDevice
+!!!510466.java!!!	SimulationDevice(inout device : Device)
+		String devId = device.getDevId();
+		String currentAction = device.getCurrAction();
+		String processId;
+		if(device.getCurrProcess()!=null)
+			processId = device.getCurrProcess().getProcessId();
+		else
+			processId = "None";
+		int time = device.getTime();
+		int limitTime = device.getLimitTime();		
+		
+		Vector<Process> intList = device.getIntList();
+		int m = intList.size();
+		Vector<String> sInterruptionList = new Vector<String>();
+		for(int i=0;i<m;i++)
+			sInterruptionList.add(intList.get(i).getProcessId());
+
+		Vector<Process> readyList = device.getReadyList();
+		m = readyList.size();
+		Vector<String> sReadyList = new Vector<String>();
+		for(int i=0;i<m-1;i++)
+			sReadyList.add(readyList.get(i).getProcessId());
+		
+		this.setDevId(devId);
+		this.setCurrentAction(currentAction);
+		this.setProcessId(processId);
+		this.setTime(time);
+		this.setLimitTime(limitTime);
+		this.setInterruptionList(sInterruptionList);
+		this.setReadyList(sReadyList);
+!!!510594.java!!!	getDevId() : String
+		return devId;
+!!!510722.java!!!	setDevId(in devId : String) : void
+		this.devId = devId;
+!!!510850.java!!!	getCurrentAction() : String
+		return currentAction;
+!!!510978.java!!!	setCurrentAction(in currentAction : String) : void
+		this.currentAction = currentAction;
+!!!511106.java!!!	getProcessId() : String
+		return processId;
+!!!511234.java!!!	setProcessId(in processId : String) : void
+		this.processId = processId;
+!!!511362.java!!!	getTime() : int
+		return time;
+!!!511490.java!!!	setTime(in time : int) : void
+		this.time = time;
+!!!511618.java!!!	getLimitTime() : int
+		return limitTime;
+!!!511746.java!!!	setLimitTime(in limitTime : int) : void
+		this.limitTime = limitTime;
+!!!511874.java!!!	getInterruptionList() : Vector<String>
+		return interruptionList;
+!!!512002.java!!!	setInterruptionList(inout interruptionList : Vector<String>) : void
+		this.interruptionList = interruptionList;
+!!!512130.java!!!	getReadyList() : Vector<String>
+		return readyList;
+!!!512258.java!!!	setReadyList(inout readyList : Vector<String>) : void
+		this.readyList = readyList;

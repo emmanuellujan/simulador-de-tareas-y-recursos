@@ -1,0 +1,1794 @@
+format 75
+"SchedulingSystem" // src::Controller::SchedulingSystem
+  revision 10
+  modified_by 2 "elujan"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/control_robotico/scheduling_simulator/src/SchedulingSystem/"
+  java_package "SchedulingSystem"
+  usecaseview 128258 "SchedulingSystem Use Case View"
+    //use case diagram settings
+    package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    usecase 128258 "Start Simulation"
+      //use case diagram settings
+      package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+      //sequence diagram settings
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      //collaboration diagram settings
+      show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+      //class diagram settings
+      draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      //object diagram settings
+       write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+      //state diagram settings
+      package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+      show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+      //activity diagram settings
+      package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+      show_infonote default drawing_language default show_stereotype_properties default
+    end
+
+    activity 128002 "Device Algorithm Activity"
+      activitydiagram 174850 "Device Algorithm Activity Diagram"
+	package_name_in_tab yes show_context uml show_opaque_action_definition yes auto_label_position yes write_flow_label_horizontally yes draw_all_relations no shadow yes
+	show_infonote yes drawing_language uml show_stereotype_properties yes
+	size A4
+      end
+
+      activityaction 128002 "Begining function"
+	opaque_action
+	flow 128130 "<flow>"
+	  on activityaction_ref 128130 // activity action Increment time
+	end
+      end
+
+      activitynode 128002 initial_node ""
+	flow 128002 "<flow>"
+	  on activityaction_ref 128002 // activity action Begining function
+	end
+      end
+
+      activityaction 128130 "Increment time"
+	opaque_action
+	flow 128258 ""
+	  on activitynode_ref 128130 // decision
+	end
+      end
+
+      activitynode 128130 decision "Is time out?"
+	comment "Is time out?"
+	flow 128386 "[Time's out]"
+	  on activitynode_ref 128258 // decision
+	end
+
+	flow 128514 "[Time isn't out]"
+	  on activityaction_ref 128258 // activity action Wake up interruptions and processes
+	end
+      end
+
+      activitynode 128258 decision ""
+	flow 128642 "[There's an active interruption]"
+	  on activityaction_ref 128386 // activity action Reset timer
+	end
+
+	flow 128770 "[There isn't an active interruption]"
+	  on activitynode_ref 128386 // decision
+	end
+      end
+
+      activityaction 128258 "Wake up interruptions and processes"
+	opaque_action
+	flow 129410 "<flow>"
+	  on activitynode_ref 128770 // decision
+	end
+      end
+
+      activityaction 128386 "Reset timer"
+	opaque_action
+	flow 129154 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132354 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activityaction 128514 "Unalloc process (pass to ready list)"
+	opaque_action
+	flow 129282 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132482 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activitynode 128386 decision ""
+	flow 128898 "[There isn't an active process]"
+	  on activityaction_ref 128386 // activity action Reset timer
+	end
+
+	flow 129026 "[There is an active process]"
+	  on activityaction_ref 128514 // activity action Unalloc process (pass to ready list)
+	end
+      end
+
+      activitynode 128514 activity_final ""
+      end
+
+      activitynode 128642 activity_final ""
+      end
+
+      activitynode 128770 decision ""
+	flow 129538 "[At least one interruption waked up]"
+	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	end
+
+	flow 129666 "[There isn't an interruption waked up]"
+	  on activitynode_ref 128898 // decision
+	end
+      end
+
+      activityaction 128642 "Select interruption from interruption list"
+	opaque_action
+	flow 129794 "<flow>"
+	  on activityaction_ref 128770 // activity action Context switch
+	end
+      end
+
+      activitynode 128898 decision "lll"
+	flow 130050 "[There's an active interruption]"
+	  on activityaction_ref 128898 // activity action Execute active interruption
+	end
+
+	flow 130178 "[There isn't an active interruption]"
+	  on activitynode_ref 129026 // decision
+	end
+
+	flow 139650 "[There's an active interruption]"
+	  on activityaction_ref 135810 // activity action Execute active interruption or process
+	end
+      end
+
+      activityaction 128770 "Context switch"
+	opaque_action
+	flow 129922 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132610 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activityaction 128898 "Execute active interruption"
+	opaque_action
+	flow 130306 "<flow>"
+	  on activitynode_ref 129154 // activity_final
+	end
+
+	flow 131842 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132994 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activitynode 129026 decision ""
+	flow 130434 "<flow>"
+	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	end
+
+	flow 130562 "[Interruption list isn't empty]"
+	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	end
+
+	flow 130690 "[Interruption list is empty]"
+	  on activitynode_ref 129282 // decision
+	end
+      end
+
+      activitynode 129154 activity_final ""
+      end
+
+      activitynode 129282 decision ""
+	flow 130818 "[At least one process waked up]"
+	  on activityaction_ref 129026 // activity action Select process from ready list
+	end
+
+	flow 130946 "[There isn't a process waked up]"
+	  on activitynode_ref 129410 // decision
+	end
+      end
+
+      activityaction 129026 "Select process from ready list"
+	opaque_action
+	flow 131074 "<flow>"
+	  on activityaction_ref 128770 // activity action Context switch
+	end
+      end
+
+      activitynode 129410 decision ""
+	flow 131202 "[There is an active process]"
+	  on activityaction_ref 129154 // activity action Execute active process
+	end
+
+	flow 131330 "[There isn't an active process]"
+	  on activitynode_ref 129538 // decision
+	end
+
+	flow 139906 "[There is an active process]"
+	  on activityaction_ref 135938 // activity action Execute active interruption or process
+	end
+      end
+
+      activitynode 129538 decision ""
+	flow 131586 "[Ready list isn't empty]"
+	  on activityaction_ref 129026 // activity action Select process from ready list
+	end
+
+	flow 131714 "<flow>"
+	  on activitynode_ref 129666 // activity_final
+	end
+
+	flow 131970 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132226 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132738 "[Ready list is empty]"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activityaction 129154 "Execute active process"
+	opaque_action
+	flow 131458 "<flow>"
+	  on activitynode_ref 129666 // activity_final
+	end
+
+	flow 132098 "<flow>"
+	  on activitynode_ref 128514 // activity_final
+	end
+
+	flow 132866 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activitynode 129666 activity_final ""
+      end
+
+      activityaction 129282 "Finishing function"
+	opaque_action
+	flow 133122 "<flow>"
+	  on activitynode_ref 129794 // activity_final
+	end
+      end
+
+      activitynode 129794 activity_final ""
+      end
+
+      activityaction 135810 "Execute active interruption or process"
+	call_behavior_action
+	activity_ref 128386 // Execute active interruption or process
+	flow 139778 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+
+      activityaction 135938 "Execute active interruption or process"
+	call_behavior_action
+	activity_ref 128386 // Execute active interruption or process
+	flow 140034 "<flow>"
+	  on activityaction_ref 129282 // activity action Finishing function
+	end
+      end
+    end
+
+    activity 128386 "Execute active interruption or process"
+      activitydiagram 174978 "Execute active interruption or process activity diagram"
+	package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations no shadow default
+	show_infonote default drawing_language default show_stereotype_properties default
+	size A4
+      end
+
+      activitynode 136322 initial_node ""
+	flow 140162 "<flow>"
+	  on activitynode_ref 136450 // decision
+	end
+      end
+
+      activitynode 136450 decision ""
+	flow 140290 "[Interruption or process needs to sleep]"
+	  on activityaction_ref 136066 // activity action Pass interruption or process in sleeping list
+	end
+
+	flow 140674 "[Interruption or process doesn't need to sleep]"
+	  on activitynode_ref 136578 // decision
+	end
+      end
+
+      activityaction 136066 "Pass interruption or process in sleeping list"
+	opaque_action
+	flow 141186 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+      end
+
+      activitynode 136578 decision ""
+	flow 140418 "[Interruption or process needs to pass to other device]"
+	  on activityaction_ref 136194 // activity action Pass interruption or process to other device (interruption or ready list)
+	end
+
+	flow 140546 "[Interruption or process doesn't need to pass to other device]"
+	  on activityaction_ref 136322 // activity action Increment deadline
+	end
+      end
+
+      activityaction 136194 "Pass interruption or process to other device (interruption or ready list)"
+	opaque_action
+	flow 141314 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+
+	flow 141442 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+      end
+
+      activityaction 136322 "Increment deadline"
+	opaque_action
+	flow 140802 "<flow>"
+	  on activitynode_ref 136706 // decision
+	end
+      end
+
+      activityaction 136450 "Select interruption or process from interruption or ready list"
+	opaque_action
+	flow 141570 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+
+	flow 141826 "<flow>"
+	  on activityaction_ref 136706 // activity action Context switch
+	end
+      end
+
+      activityaction 136578 "Execute interruption or process in current device"
+	opaque_action
+	flow 141698 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+      end
+
+      activitynode 136706 decision ""
+	flow 140930 "[Deadline = Max. Deadline]"
+	  on activityaction_ref 136450 // activity action Select interruption or process from interruption or ready list
+	end
+
+	flow 141058 "[Deadline <> Max. Deadline]"
+	  on activityaction_ref 136578 // activity action Execute interruption or process in current device
+	end
+      end
+
+      activitynode 136834 activity_final ""
+      end
+
+      activityaction 136706 "Context switch"
+	opaque_action
+	flow 141954 "<flow>"
+	  on activitynode_ref 136834 // activity_final
+	end
+      end
+    end
+  end
+
+  classview 132354 "Scheduling System Class View"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 179970 "Device"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 308482 "devId"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 308610 "currAction"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 217986 // currProcess (<unidirectional association>)
+	relation 217986 --->
+	  a role_name "currProcess" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 217986 // currProcess (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 218114 // intList (<unidirectional association>)
+	relation 218114 --->
+	  stereotype "Vector"
+	  a role_name "intList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 218114 // intList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 218242 // syncIntList (<unidirectional association>)
+	relation 218242 --->
+	  stereotype "Vector"
+	  a role_name "syncIntList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 218242 // syncIntList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 218370 // saIntList (<unidirectional association>)
+	relation 218370 --->
+	  a role_name "saIntList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 218370 // saIntList (<unidirectional association>)
+	  b parent class_ref 181506 // SchedulingAlgorithm
+      end
+
+      classrelation 218498 // readyList (<unidirectional association>)
+	relation 218498 --->
+	  stereotype "Vector"
+	  a role_name "readyList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 218498 // readyList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 218626 // syncReadyList (<unidirectional association>)
+	relation 218626 --->
+	  stereotype "Vector"
+	  a role_name "syncReadyList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 218626 // syncReadyList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 218754 // saReadyList (<unidirectional association>)
+	relation 218754 --->
+	  a role_name "saReadyList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 218754 // saReadyList (<unidirectional association>)
+	  b parent class_ref 181506 // SchedulingAlgorithm
+      end
+
+      attribute 308738 "time"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 308866 "limitTime"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 218882 // schedulingSystem (<unidirectional association>)
+	relation 218882 --->
+	  a role_name "schedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 218882 // schedulingSystem (<unidirectional association>)
+	  b parent class_ref 180354 // SchedulingSystem
+      end
+
+      operation 518402 "Device"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "devId" explicit_type "String"
+	  param inout name "saReadyList" type class_ref 181506 // SchedulingAlgorithm
+	  param in name "limitTime" explicit_type "int"
+	  param inout name "schedulingSystem" type class_ref 180354 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 518530 "exec"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 518658 "exec2"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 518786 "incTime"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 518914 "resetTime"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519042 "syncLists"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519170 "addIntList"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "currProcess" type class_ref 180482 // Process
+	  param in name "compUnit" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519298 "addReadyList"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "currProcess" type class_ref 180482 // Process
+	  param in name "compUnit" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519426 "getDevId"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519554 "setDevId"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "devId" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519682 "getCurrAction"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519810 "setCurrAction"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "currAction" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 519938 "getCurrProcess"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520066 "setCurrProcess"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currProcess" type class_ref 180482 // Process
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520194 "getIntList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520322 "setIntList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "intList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520450 "getSaIntList"
+	public return_type class_ref 181506 // SchedulingAlgorithm
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520578 "setSaIntList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "saIntList" type class_ref 181506 // SchedulingAlgorithm
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520706 "getReadyList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520834 "setReadyList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "readyList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 520962 "getSaReadyList"
+	public return_type class_ref 181506 // SchedulingAlgorithm
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521090 "setSaReadyList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "saReadyList" type class_ref 181506 // SchedulingAlgorithm
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521218 "getTime"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521346 "setTime"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "time" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521474 "getLimitTime"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521602 "setLimitTime"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "limitTime" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521730 "getSchedulingSystem"
+	public return_type class_ref 180354 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521858 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 180354 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 521986 "getSyncIntList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522114 "setSyncIntList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "syncIntList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522242 "getSyncReadyList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522370 "setSyncReadyList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "syncReadyList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 246914 // <dependency>
+	relation 246914 -_->
+	  a default
+	    classrelation_ref 246914 // <dependency>
+	  b parent class_ref 181378 // FCFS
+      end
+    end
+
+    class 180354 "SchedulingSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 219010 // InputSystem (<unidirectional association>)
+	relation 219010 --->
+	  a role_name "InputSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 219010 // InputSystem (<unidirectional association>)
+	  b parent class_ref 180226 // InputSystem
+      end
+
+      classrelation 219138 // stadysticsSystem (<unidirectional association>)
+	relation 219138 --->
+	  a role_name "stadysticsSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 219138 // stadysticsSystem (<unidirectional association>)
+	  b parent class_ref 181890 // StadysticsSystem
+      end
+
+      classrelation 219266 // logginSystem (<unidirectional association>)
+	relation 219266 --->
+	  a role_name "logginSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 219266 // logginSystem (<unidirectional association>)
+	  b parent class_ref 180866 // LogginSystem
+      end
+
+      classrelation 219394 // newsList (<unidirectional association>)
+	relation 219394 --->
+	  stereotype "Vector"
+	  a role_name "newsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 219394 // newsList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      classrelation 219522 // devicesList (<unidirectional association>)
+	relation 219522 --->
+	  stereotype "Vector"
+	  a role_name "devicesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 219522 // devicesList (<unidirectional association>)
+	  b parent class_ref 179970 // Device
+      end
+
+      classrelation 219650 // finishedList (<unidirectional association>)
+	relation 219650 --->
+	  stereotype "Vector"
+	  a role_name "finishedList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 219650 // finishedList (<unidirectional association>)
+	  b parent class_ref 180482 // Process
+      end
+
+      attribute 309506 "numberOfProcesses"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 219778 // deliverDev (<unidirectional association>)
+	relation 219778 --->
+	  a role_name "deliverDev" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 219778 // deliverDev (<unidirectional association>)
+	  b parent class_ref 179970 // Device
+      end
+
+      operation 524162 "SchedulingSystem"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524290 "simulate"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524418 "incTime"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524546 "scheduleFinished"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524674 "finishProcess"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currProcess" type class_ref 180482 // Process
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524802 "getDevice"
+	public return_type class_ref 179970 // Device
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524930 "getNewsList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525058 "setNewsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "newsList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525186 "getDevicesList"
+	public return_type class_ref 179970 // Device
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525314 "setDevicesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "devicesList" explicit_type "Vector<Device>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525442 "getFinishedList"
+	public return_type class_ref 180482 // Process
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525570 "setFinishedList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "finishedList" explicit_type "Vector<Process>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525698 "getInputSystem"
+	public return_type class_ref 180226 // InputSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525826 "setInputSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "InputSystem" type class_ref 180226 // InputSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 525954 "getStadysticsSystem"
+	public return_type class_ref 181890 // StadysticsSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526082 "setStadysticsSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "stadysticsSystem" type class_ref 181890 // StadysticsSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526210 "getLogginSystem"
+	public return_type class_ref 180866 // LogginSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526338 "setLogginSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "logginSystem" type class_ref 180866 // LogginSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526466 "getNumberOfProcesses"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526594 "setNumberOfProcesses"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "numberOfProcesses" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526722 "getDeliverDev"
+	public return_type class_ref 179970 // Device
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526850 "setDeliverDev"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deliverDev" type class_ref 179970 // Device
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 526978 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 247042 // <unidirectional association>
+	relation 247042 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 247042 // <unidirectional association>
+	  b parent class_ref 180226 // InputSystem
+      end
+
+      classrelation 247170 // <dependency>
+	relation 247170 -_->
+	  a default
+	    classrelation_ref 247170 // <dependency>
+	  b parent class_ref 180610 // XMLInputSystem
+      end
+
+      classrelation 247298 // <dependency>
+	relation 247298 -_->
+	  a default
+	    classrelation_ref 247298 // <dependency>
+	  b parent class_ref 188674 // SimulationTime
+      end
+
+      classrelation 247426 // <unidirectional association>
+	relation 247426 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 247426 // <unidirectional association>
+	  b parent class_ref 180738 // CompLogginSystem
+      end
+
+      classrelation 247554 // <dependency>
+	relation 247554 -_->
+	  a default
+	    classrelation_ref 247554 // <dependency>
+	  b parent class_ref 188418 // Configurator
+      end
+
+      classrelation 247682 // <dependency>
+	relation 247682 -_->
+	  a default
+	    classrelation_ref 247682 // <dependency>
+	  b parent class_ref 181378 // FCFS
+      end
+    end
+
+    class 180482 "Process"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 308994 "processId"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 309122 "programCounter"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 309250 "compUnits"
+	private explicit_type "String"
+	stereotype "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Example: {dev1, dev1, dev1, dev0, int_dev0, int_dev0, dev2, dev2, end}"
+      end
+
+      attribute 309378 "priority"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 522498 "Process"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "processId" explicit_type "String"
+	  param in name "priority" explicit_type "int"
+	  param inout name "compUnits" explicit_type "Vector<String>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522626 "getCurrent"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522754 "getNext"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 522882 "decProgramCounter"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523010 "exec"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523138 "getProcessId"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523266 "setProcessId"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "processId" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523394 "getProgramCounter"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523522 "setProgramCounter"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "programCounter" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523650 "getCompUnits"
+	public explicit_return_type "Vector<String>"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523778 "setCompUnits"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "compUnits" explicit_type "Vector<String>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 523906 "getPriority"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 524034 "setPriority"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "priority" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    classdiagram 148610 "SchedulingSystem Class Diagram"
+      draw_all_relations no hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      size A4
+    end
+  end
+
+  componentview 134786 "Scheduling System Component View"
+    //component diagram settings
+    package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    component 134530 "SchedulingSystem"
+      simplerelation 135554
+	-_->
+	  on component_ref 134914 // SchedulingAlgorithmSystem
+      end
+
+      simplerelation 135682
+	-_->
+	  on component_ref 134658 // InputSystem
+      end
+
+      simplerelation 135810
+	-_->
+	  on component_ref 134786 // LogginSystem
+      end
+
+      simplerelation 135938
+	-_->
+	  on component_ref 134786 // LogginSystem
+      end
+
+      simplerelation 136066
+	-_->
+	  on component_ref 128002 // DataModel
+      end
+
+      simplerelation 136194
+	-_->
+	  on component_ref 135042 // StadysticsSystem
+      end
+
+      simplerelation 152834
+	-_->
+	  on component_ref 134914 // SchedulingAlgorithmSystem
+      end
+
+      simplerelation 154882
+	-_->
+	  on component_ref 135298 // Configurator
+      end
+
+      simplerelation 155010
+	-_->
+	  on component_ref 135426 // SimulationTime
+      end
+
+      simplerelation 155138
+	-_->
+	  on component_ref 134530 // SchedulingSystem
+      end
+
+      simplerelation 155266
+	-_->
+	  on component_ref 134658 // InputSystem
+      end
+
+      simplerelation 155394
+	-_->
+	  on component_ref 134914 // SchedulingAlgorithmSystem
+      end
+
+      simplerelation 155522
+	-_->
+	  on component_ref 134786 // LogginSystem
+      end
+
+      simplerelation 155650
+	-_->
+	  on component_ref 135042 // StadysticsSystem
+      end
+    end
+
+    component 141954 "Device"
+      simplerelation 154754
+	-_->
+	  on component_ref 134914 // SchedulingAlgorithmSystem
+      end
+    end
+
+    component 142082 "Process"
+    end
+  end
+
+  deploymentview 132482 "Scheduling System Deployment View"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 171394 "Device"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import SchedulingAlgorithmSystem.*;
+import SchedulingSystem.Process;
+${definition}"
+      associated_classes
+	class_ref 179970 // Device
+      end
+    end
+
+    artifact 171522 "Process"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+${definition}"
+      associated_classes
+	class_ref 180482 // Process
+      end
+    end
+
+    artifact 171650 "SchedulingSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import DataModel.*;
+import Configuration.*;
+import InputSystem.*;
+import SchedulingAlgorithmSystem.*;
+import StadysticsSystem.*;
+import LogginSystem.*;
+${definition}"
+      associated_classes
+	class_ref 180354 // SchedulingSystem
+      end
+    end
+  end
+
+  simplerelation 143490
+    -_->
+      on 
+      package_ref 134658 // SchedulingAlgorithmSystem
+  end
+
+  simplerelation 143618
+    -_->
+      on 
+      package_ref 134786 // StadysticsSystem
+  end
+
+  simplerelation 143874
+    -_->
+      on 
+      package_ref 134146 // DataModel
+  end
+
+  simplerelation 144258
+    -_->
+      on 
+      package_ref 134530 // LogginSystem
+  end
+
+  simplerelation 144514
+    -_->
+      on 
+      package_ref 134402 // InputSystem
+  end
+end

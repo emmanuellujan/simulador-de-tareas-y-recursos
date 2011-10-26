@@ -1,0 +1,50 @@
+class Process
+!!!522498.java!!!	Process(in processId : String, in priority : int, inout compUnits : Vector<String>)
+		this.setProcessId(processId);
+		this.setProgramCounter(-1);
+		this.setCompUnits(compUnits);
+		this.setPriority(priority);
+!!!522626.java!!!	getCurrent() : String
+		Vector<String> compUnits = this.getCompUnits();
+		int programCounter = this.getProgramCounter();
+		String current = null;
+		if(programCounter>-1)
+			current = compUnits.get(programCounter);
+		return current;
+!!!522754.java!!!	getNext() : String
+		Vector<String> compUnits = this.getCompUnits();
+		int n = compUnits.size();
+		String next = null;
+		if(n>0){
+			int programCounter = this.getProgramCounter();
+			if(programCounter<n-1){
+				programCounter++;
+				this.setProgramCounter(programCounter);
+				next = compUnits.get(programCounter);
+			}else if(programCounter==n-1){
+				next = "end";
+			}
+		}
+		return next;
+!!!522882.java!!!	decProgramCounter() : void
+		int programCounter = this.getProgramCounter();
+		programCounter--;
+		this.setProgramCounter(programCounter);
+!!!523010.java!!!	exec() : void
+		// Simulated Execution 
+!!!523138.java!!!	getProcessId() : String
+		return processId;
+!!!523266.java!!!	setProcessId(in processId : String) : void
+		this.processId = processId;
+!!!523394.java!!!	getProgramCounter() : int
+		return programCounter;
+!!!523522.java!!!	setProgramCounter(in programCounter : int) : void
+		this.programCounter = programCounter;
+!!!523650.java!!!	getCompUnits() : Vector<String>
+		return compUnits;
+!!!523778.java!!!	setCompUnits(inout compUnits : Vector<String>) : void
+		this.compUnits = compUnits;
+!!!523906.java!!!	getPriority() : int
+		return priority;
+!!!524034.java!!!	setPriority(in priority : int) : void
+		this.priority = priority;

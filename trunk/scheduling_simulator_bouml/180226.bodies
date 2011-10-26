@@ -1,0 +1,12 @@
+class InputSystem
+!!!513026.java!!!	InputSystem(inout configurator : Configurator, inout schedulingSystem : SchedulingSystem)
+		this.setConfigurator(configurator);
+		this.setSchedulingSystem(schedulingSystem);
+!!!513410.java!!!	getConfigurator() : Configurator
+		return configurator;
+!!!513538.java!!!	setConfigurator(inout configurator : Configurator) : void
+		this.configurator = configurator;
+!!!513666.java!!!	getSchedulingSystem() : SchedulingSystem
+		return schedulingSystem;
+!!!513794.java!!!	setSchedulingSystem(inout schedulingSystem : SchedulingSystem) : void
+		this.schedulingSystem = schedulingSystem;
