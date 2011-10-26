@@ -1,0 +1,61 @@
+class TXTLogginSystem
+!!!516482.java!!!	TXTLogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
+		super(configurator,simulationTimes);
+		String outputFileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getOutputFile() + ".txt";
+		this.setOutputFileName(outputFileName);
+!!!516610.java!!!	writeLog() : void
+		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
+		String xmlLog = "";
+		
+		int currTime; 
+		int n = simulationTimes.size();
+		for(int i=0;i<n;i++){
+			currTime = simulationTimes.get(i).getCurrentTime();
+			Vector<SimulationDevice> devices = simulationTimes.get(i).getDevices();
+			xmlLog += "Time: "+currTime+"\n";
+			xmlLog += this.logDevices(devices);
+			xmlLog += "\n";
+		}
+		
+		this.writeFile(xmlLog);
+!!!516738.java!!!	logDevices(inout devices : Vector<SimulationDevice>) : String
+		String xmlLog = "";
+		int n = devices.size();
+		for(int i=0;i<n;i++)
+			xmlLog += this.logDevice(devices.get(i)) + "\n";
+		return xmlLog;
+!!!516866.java!!!	logDevice(inout device : SimulationDevice) : String
+		String devId = device.getDevId();
+		String processId = device.getProcessId();
+		String currentAction = device.getCurrentAction();
+		int time = device.getTime();
+		int limitTime = device.getLimitTime();
+
+		String xmlLog = "";
+		
+		xmlLog += "\tDeviceId: " + devId + "\n";
+		xmlLog += "\t\tCurrent Action: " + currentAction + "\n";
+		xmlLog += "\t\tActive Process: " + processId + "\n";
+		xmlLog += "\t\tCurrent Time: " + (time-1) + "\n";
+		xmlLog += "\t\tLimit Time: " + limitTime + "\n";
+
+		Vector<String> intList = device.getInterruptionList();
+		int m = intList.size();
+		xmlLog += "\t\tInterruption List: ";
+		for(int i=0;i<m-1;i++)
+			xmlLog += intList.get(i)+", ";
+		if(m-1>=0)
+			xmlLog += intList.get(m-1);
+		xmlLog += "\n";
+
+		Vector<String> readyList = device.getReadyList();
+		m = readyList.size();
+		xmlLog += "\t\tReady List:";
+		for(int i=0;i<m-1;i++)
+			xmlLog += readyList.get(i)+", ";
+		if(m-1>=0)
+			xmlLog += readyList.get(m-1);
+		xmlLog += "\n";
+
+
+		return xmlLog;

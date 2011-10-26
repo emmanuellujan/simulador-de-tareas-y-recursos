@@ -1,0 +1,16 @@
+class FileLogginSystem
+!!!515970.java!!!	FileLogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
+		super(configurator,simulationTimes);
+!!!516098.java!!!	writeFile(in s : String) : void
+		DataOutputStream f = null;
+		try{
+			String fileName = this.getOutputFileName();
+			f = new DataOutputStream( new FileOutputStream(fileName,false) );
+			f.writeBytes(s);
+		}
+		catch(FileNotFoundException fnfe) {  }
+		catch (IOException ioe) {  }
+!!!516226.java!!!	getOutputFileName() : String
+		return outputFileName;
+!!!516354.java!!!	setOutputFileName(in outputFileName : String) : void
+		this.outputFileName = outputFileName;

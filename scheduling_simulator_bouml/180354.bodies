@@ -1,0 +1,117 @@
+class SchedulingSystem
+!!!524162.java!!!	SchedulingSystem()
+		Vector<Process> newsList = new Vector<Process>();
+		Vector<Device> devicesList = new Vector<Device>();
+		Vector<Process> finishedList = new Vector<Process>();
+
+		Configurator configurator = new Configurator();
+		InputSystem inputSystem = new XMLInputSystem(configurator,this);
+		StadysticsSystem stadysticsSystem = new StadysticsSystem();
+		
+		Vector<SimulationTime> simulationTimes = new Vector<SimulationTime>();
+		LogginSystem txtLogginSystem = new TXTLogginSystem(configurator,simulationTimes);
+		LogginSystem xmlLogginSystem = new XMLLogginSystem(configurator,simulationTimes);
+		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator,simulationTimes);
+		compLogginSystem.addLogginSystem(xmlLogginSystem);
+		compLogginSystem.addLogginSystem(txtLogginSystem);
+
+		newsList = inputSystem.loadNewsList();
+		devicesList = inputSystem.loadDevicesList();
+
+		String deliverDevId="deliverDev";
+		FCFS saReadyList = new FCFS();
+		int limitTime = -1;
+		Device deliverDev = new Device(deliverDevId, saReadyList, limitTime, this);
+		deliverDev.setReadyList(newsList);
+
+		this.setNewsList(newsList);
+		this.setDevicesList(devicesList);
+		this.setFinishedList(finishedList);
+		this.setNumberOfProcesses(newsList.size());
+		this.setInputSystem(inputSystem);
+		this.setStadysticsSystem(stadysticsSystem);
+		this.setLogginSystem(compLogginSystem);
+		this.setDeliverDev(deliverDev);
+!!!524290.java!!!	simulate() : void
+		Vector<Device> devicesList = getDevicesList();
+		LogginSystem logginSystem = this.getLogginSystem();
+		Device deliverDev = this.getDeliverDev();
+		devicesList.add(0, deliverDev);
+		int i = 0;
+		int n = devicesList.size();
+		while(!scheduleFinished()){
+			for(int j=0;j<n;j++)
+				devicesList.get(j).exec();
+			this.incTime();
+			logginSystem.log(i,devicesList);
+			i++;
+		}
+		logginSystem.writeLog();
+!!!524418.java!!!	incTime() : void
+		//Device deliverDev = this.getDeliverDev();
+		Vector<Device> devicesList = this.getDevicesList();
+		//deliverDev.incTime();
+		int n = devicesList.size();
+		for(int i=0;i<n;i++){
+			Device device = devicesList.get(i);
+			device.incTime();
+		}
+!!!524546.java!!!	scheduleFinished() : boolean
+		Vector<Process> finishedList = this.getFinishedList();
+		int n = finishedList.size();
+		int numberOfProcesses = this.getNumberOfProcesses();
+		if(numberOfProcesses==n)
+			return true;
+		else
+			return false;
+!!!524674.java!!!	finishProcess(inout currProcess : Process) : void
+		this.getFinishedList().add(currProcess);
+!!!524802.java!!!	getDevice(in name : String) : Device
+		Vector<Device> devicesList = this.getDevicesList();
+		boolean finded = false;
+		int i = 0;
+		int n = devicesList.size();
+		Device device = null;
+		while(i<n && !finded){
+			if(devicesList.get(i).getDevId().equals(name)){
+				finded = true;
+				device = devicesList.get(i);
+			}else
+				i++;
+		}
+		return device;
+!!!524930.java!!!	getNewsList() : Process
+		return newsList;
+!!!525058.java!!!	setNewsList(inout newsList : Vector<Process>) : void
+		this.newsList = newsList;
+!!!525186.java!!!	getDevicesList() : Device
+		return devicesList;
+!!!525314.java!!!	setDevicesList(inout devicesList : Vector<Device>) : void
+		this.devicesList = devicesList;
+!!!525442.java!!!	getFinishedList() : Process
+		return finishedList;
+!!!525570.java!!!	setFinishedList(inout finishedList : Vector<Process>) : void
+		this.finishedList = finishedList;
+!!!525698.java!!!	getInputSystem() : InputSystem
+		return InputSystem;
+!!!525826.java!!!	setInputSystem(inout InputSystem : InputSystem) : void
+		this.InputSystem = InputSystem;
+!!!525954.java!!!	getStadysticsSystem() : StadysticsSystem
+		return stadysticsSystem;
+!!!526082.java!!!	setStadysticsSystem(inout stadysticsSystem : StadysticsSystem) : void
+		this.stadysticsSystem = stadysticsSystem;
+!!!526210.java!!!	getLogginSystem() : LogginSystem
+		return logginSystem;
+!!!526338.java!!!	setLogginSystem(inout logginSystem : LogginSystem) : void
+		this.logginSystem = logginSystem;
+!!!526466.java!!!	getNumberOfProcesses() : int
+		return numberOfProcesses;
+!!!526594.java!!!	setNumberOfProcesses(in numberOfProcesses : int) : void
+		this.numberOfProcesses = numberOfProcesses;
+!!!526722.java!!!	getDeliverDev() : Device
+		return deliverDev;
+!!!526850.java!!!	setDeliverDev(inout deliverDev : Device) : void
+		this.deliverDev = deliverDev;
+!!!526978.java!!!	main(inout args : String) : void
+		SchedulingSystem schedulingSystem = new SchedulingSystem();
+		schedulingSystem.simulate();

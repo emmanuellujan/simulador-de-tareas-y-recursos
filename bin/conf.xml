@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<configuration>
+	<ioDirectory>../test_cases/</ioDirectory>
+	<inputFile>test_case_7</inputFile> <!-- without extension -->
+	<outputFile>test_case_7_results</outputFile> <!-- without extension -->
+</configuration>
+

@@ -1,0 +1,11 @@
+format 75
+
+classinstance 128002 class_ref 179970 // Device
+  name ""   xyz 537 8 2000 life_line_z 2000
+classinstance 128130 class_ref 180482 // Process
+  name ""   xyz 616 8 2000 life_line_z 2000
+classinstance 128258 class_ref 180354 // SchedulingSystem
+  name ""   xyz 139 47 2000 life_line_z 2000
+classinstance 128514 class_ref 180610 // XMLInputSystem
+  name ""   xyz 416 34 2000 life_line_z 2000
+end

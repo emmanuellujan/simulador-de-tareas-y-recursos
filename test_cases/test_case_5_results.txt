@@ -1,0 +1,338 @@
+Time: 0
+	DeviceId: deliverDev
+		Current Action: Select a process from the ready list and put that process as active. The process selected is proc0
+		Active Process: proc0
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:proc1
+
+	DeviceId: dev0
+		Current Action: None
+		Active Process: None
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 1
+	DeviceId: deliverDev
+		Current Action: The process proc0 pass to the ready list of the device dev1
+		Active Process: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:proc1
+
+	DeviceId: dev0
+		Current Action: None
+		Active Process: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:proc0
+
+
+Time: 2
+	DeviceId: deliverDev
+		Current Action: Select a process from the ready list and put that process as active. The process selected is proc1
+		Active Process: proc1
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: None
+		Active Process: None
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: Select a process from the ready list and put that process as active. The process selected is proc0
+		Active Process: proc0
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 3
+	DeviceId: deliverDev
+		Current Action: The process proc1 pass to the ready list of the device dev1
+		Active Process: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: None
+		Active Process: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: Processing active process proc0
+		Active Process: proc0
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:proc1
+
+
+Time: 4
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: None
+		Active Process: None
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: proc0
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: The process proc0 pass to the interruption list of the device dev0
+		Active Process: None
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:proc1
+
+
+Time: 5
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The interruption selected is proc0
+		Active Process: proc0
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: Select a process from the ready list and put that process as active. The process selected is proc1
+		Active Process: proc1
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 6
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 6
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Processing active process proc0
+		Active Process: proc0
+		Current Time: 6
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: Processing active process proc1
+		Active Process: proc1
+		Current Time: 6
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 7
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 7
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Processing active process proc0
+		Active Process: proc0
+		Current Time: 7
+		Limit Time: -1
+		Interruption List: proc1
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: The process proc1 pass to the interruption list of the device dev0
+		Active Process: None
+		Current Time: 7
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 8
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 8
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The interruption selected is proc1. Old active process is put in the interruption list.
+		Active Process: proc1
+		Current Time: 8
+		Limit Time: -1
+		Interruption List: proc0
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 8
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 9
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Processing active process proc1
+		Active Process: proc1
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: proc0
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 10
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: The active process proc1 ends
+		Active Process: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: proc0
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 11
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 11
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The interruption selected is proc0
+		Active Process: proc0
+		Current Time: 11
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 11
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 12
+	DeviceId: deliverDev
+		Current Action: None
+		Active Process: None
+		Current Time: 12
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev0
+		Current Action: The active process proc0 ends
+		Active Process: None
+		Current Time: 12
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	DeviceId: dev1
+		Current Action: None
+		Active Process: None
+		Current Time: 12
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+

@@ -1,0 +1,3 @@
+class StadysticsSystem
+!!!527106.java!!!	createStadystics() : int
+		return 0;

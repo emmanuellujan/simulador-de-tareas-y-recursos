@@ -1,0 +1,14 @@
+class PrioritiesSA
+!!!518018.java!!!	schedule(inout processes : Vector<Process>) : Process
+		Process process = null;
+		int n = processes.size();
+		int maxPriority = -1;
+		int currPriority = -1;
+		for(int i=0;i<n;i++){
+			currPriority = processes.get(i).getPriority();
+			if(maxPriority < currPriority){
+				maxPriority = currPriority;
+				process = processes.get(i);
+			}
+		}
+		return process;

@@ -1,0 +1,66 @@
+format 75
+
+classcanvas 128002 class_ref 188418 // Configurator
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 64 141 2000
+end
+packagecanvas 128130 
+  package_ref 141314 // Configurator
+    xyzwh 23 72 2000 199 395
+end
+classcanvas 128258 class_ref 188546 // SimulationDevice
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 270 137 2000
+end
+classcanvas 128386 class_ref 188674 // SimulationTime
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 457 205 2006
+end
+packagecanvas 128642 
+  package_ref 141442 // SimulationTime
+    xyzwh 240 72 1990 353 523
+end
+packagecanvas 128770 
+  package_ref 134146 // DataModel
+    xyzwh 9 11 1995 599 595
+end
+classcanvas 128898 class_ref 179970 // Device
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 644 200 2000
+end
+classcanvas 129026 class_ref 180482 // Process
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 661 141 3005
+end
+note 130434 "From SchedulingSystem Package"
+  xyzwh 669.5 270.5 2000 135 69
+relationcanvas 128514 relation_ref 226306 // <unidirectional association>
+  decenter_begin 210
+  decenter_end 228
+  from ref 128386 z 2007 stereotype "<<Vector>>" xyz 389 237.5 2007 to ref 128258
+  role_a_pos 398 212 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 247810 // <dependency>
+  decenter_begin 123
+  from ref 128386 z 2007 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 247938 // <dependency>
+  decenter_begin 61
+  from ref 128258 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 248066 // <dependency>
+  decenter_begin 39
+  from ref 128258 z 3006 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130562 -_-_
+  from ref 130434 z 3006 to ref 129026
+line 130690 -_-_
+  from ref 130434 z 2001 to ref 128898
+end

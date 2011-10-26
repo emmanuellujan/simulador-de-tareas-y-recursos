@@ -1,0 +1,213 @@
+class Device
+!!!518402.java!!!	Device(in devId : String, inout saReadyList : SchedulingAlgorithm, in limitTime : int, inout schedulingSystem : SchedulingSystem)
+
+		this.setDevId(devId);
+		this.setCurrAction("Nothing");
+		this.setCurrProcess(null);
+
+		Vector<Process> intList = new Vector<Process>();
+		this.setIntList(intList);
+		Vector<Process> syncIntList = new Vector<Process>();
+		this.setSyncIntList(syncIntList);
+		FCFS saIntList = new FCFS();
+		this.setSaIntList(saIntList);
+
+		Vector<Process> readylist = new Vector<Process>();
+		this.setReadyList(readylist);
+		Vector<Process> syncReadyList = new Vector<Process>();
+		this.setSyncReadyList(syncReadyList);
+		this.setSaReadyList(saReadyList);
+
+		this.setTime(0);
+		this.setLimitTime(limitTime);
+
+		this.setSchedulingSystem(schedulingSystem);
+!!!518530.java!!!	exec() : void
+		String currAction = this.getCurrAction();
+		Process auxProcess = null;
+		Process currProcess = this.getCurrProcess();
+
+		Vector<Process> intList = this.getIntList();
+		SchedulingAlgorithm saIntList = this.getSaIntList();
+
+		Vector<Process> readyList = this.getReadyList();
+		SchedulingAlgorithm saReadyList = this.getSaReadyList();
+
+		int time = this.getTime();
+		int limitTime = this.getLimitTime();
+
+		String currDevId = this.getDevId();
+		
+		if(currProcess==null){ // Si hay un proceso activo
+			if(time==limitTime) // Si el temporizador ha terminado:
+				currAction = "Time is up";
+			else if(intList.size()>0){// Sino, si la lista de interrupciones no está vacía:
+				auxProcess = saIntList.schedule(intList); // Se ejecuta el algoritmo de planeamiento de interrupciones para elegir un proceso.				
+				intList.remove(auxProcess); // Se elimina dicho proceso de la lista de interrupciones.
+				currProcess = auxProcess; // Se ejecuta dicho proceso (pasa a estado activo).
+				String processId = currProcess.getProcessId();
+				currAction = "Select an interruption from the interruption list and put that interruption as active. The interruption selected is "+processId;
+			}else if(readyList.size()>0){ // Sino, si la lista de listos no está vacía:
+					auxProcess = saReadyList.schedule(readyList); // Se ejecuta el algoritmo de planeamiento para elegir un proceso de la lista de listos.
+					readyList.remove(auxProcess); // Se elimina dicho proceso de la lista de listos.
+					currProcess = auxProcess; // Se ejecuta dicho proceso (pasa a estado activo).
+					String processId = currProcess.getProcessId();
+					currAction = "Select a process from the ready list and put that process as active. The process selected is "+processId;
+			}else // Sino:
+					currAction = "None"; // No hacer nada
+		}else{ // Sino hay un proceso activo
+			if(time==limitTime){ // Si el temporizador ha terminado:
+				currAction = "Time is up";
+				String compUnit = currProcess.getNext(); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
+				if(!compUnit.contains("int")){ // Si el proceso en ejecución no es una interrupción:
+					this.addReadyList(currProcess,currDevId);// Se lo anexa a la lista de listos (pasa a estado listo).
+					String processId = currProcess.getProcessId();
+					currAction += ", the active process "+processId+" pass to the ready list";
+					currProcess = null; // Se desaloja el proceso en ejecución.
+				}
+				this.resetTime(); // Se reinicia el temporizador.
+			}else if(intList.size()>0){// Sino, si la lista de interrupciones no está vacía:
+				auxProcess = saIntList.schedule(intList); // Se ejecuta el algoritmo de planeamiento de interrupciones para elegir un proceso.
+				if(!currProcess.getCurrent().contains("int") || auxProcess.getPriority()>currProcess.getPriority()){
+					intList.remove(auxProcess); // Se elimina dicho proceso de la lista de interrupciones.
+					//Se agrega el proceso actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea
+					if(currProcess.getCurrent().contains("int")){
+						this.addIntList(currProcess,currDevId);
+						currAction = "Old active process is put in the interruption list.";
+					}else{
+						this.addReadyList(currProcess,currDevId);
+						currAction = "Old active process is put in the ready list.";
+					}
+					currProcess = auxProcess; // Se ejecuta dicho proceso (pasa a estado activo).
+					String processId = currProcess.getProcessId();
+					currAction = "Select an interruption from the interruption list and put that interruption as active." +
+							" The interruption selected is "+processId+". "+currAction;
+				}else{
+					exec2();
+					currAction = this.getCurrAction();
+					currProcess = this.getCurrProcess();
+				}
+			}else{
+				exec2();
+				currAction = this.getCurrAction();
+				currProcess = this.getCurrProcess();
+			}
+		}
+		this.setCurrAction(currAction);
+		this.setCurrProcess(currProcess);
+		this.setIntList(intList);
+		this.setReadyList(readyList);	
+!!!518658.java!!!	exec2() : void
+		String currAction="";
+		String devId = this.getDevId();
+		Process currProcess = this.getCurrProcess();
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		String compUnit = currProcess.getNext(); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
+		
+		if(compUnit.equals("end")){ // Sino, si el proceso en ejecución ha llegado a su fin:
+			schedulingSystem.finishProcess(currProcess); // Terminar proceso (pasa a estado finalizado).
+			String processId = currProcess.getProcessId();
+			currAction = "The active process "+processId+" ends";
+			currProcess=null;
+		}else if(compUnit.contains(devId)){ // Sino, si el proceso en ejecución debe continuar ejecutándose en este dispositivo:
+			currProcess.exec(); // Ejecutar proceso.
+			currAction = "Processing active process "+ currProcess.getProcessId();
+		}else if(compUnit.contains("int")){ // Si es una interrupción:
+			currProcess.decProgramCounter();
+			compUnit = compUnit.replace("int_", "");
+			this.addIntList(currProcess,compUnit);// Se lo anexa a la lista de interrupciones del dispositivo indicado (el proceso pasa a ser una interrupción y pasa a estado de espera).
+			String processId = currProcess.getProcessId();
+			currAction = "The process "+processId+" pass to the interruption list of the device "+compUnit;
+			currProcess=null; // Se desaloja el proceso en ejecución.
+		}else{ // Sino, si el proceso en ejecución debe continuar ejecutándose en otro dispositivo:
+			currProcess.decProgramCounter();
+			this.addReadyList(currProcess,compUnit); // Se lo anexa a la lista de listos del recurso indicado (pasa a estado de espera).
+			String processId = currProcess.getProcessId();
+			currAction = "The process "+processId+" pass to the ready list of the device "+compUnit;
+			currProcess=null;  // Se desaloja el proceso en ejecución.
+		}
+
+		this.setCurrAction(currAction);
+		this.setCurrProcess(currProcess);
+!!!518786.java!!!	incTime() : void
+		int time = this.getTime();
+		time++;
+		this.setTime(time);
+		this.syncLists();
+!!!518914.java!!!	resetTime() : void
+		int time = this.getTime();
+		time=0;
+		this.setTime(time);
+!!!519042.java!!!	syncLists() : void
+		Vector<Process> syncIntList = this.getSyncIntList();
+		Vector<Process> intList = this.getIntList();
+		Vector<Process> syncReadyList = this.getSyncReadyList();
+		Vector<Process> readyList = this.getReadyList();
+
+		intList.addAll(syncIntList);
+		syncIntList.removeAllElements();
+		readyList.addAll(syncReadyList);
+		syncReadyList.removeAllElements();
+
+		this.setSyncIntList(syncIntList);
+		this.setIntList(intList);
+		this.setSyncReadyList(syncReadyList);
+		this.setReadyList(readyList);
+!!!519170.java!!!	addIntList(inout currProcess : Process, in compUnit : String) : void
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		Device device = schedulingSystem.getDevice(compUnit);
+		Vector<Process> syncIntList = device.getSyncIntList();
+		syncIntList.add(currProcess);
+!!!519298.java!!!	addReadyList(inout currProcess : Process, in compUnit : String) : void
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		Device device = schedulingSystem.getDevice(compUnit);
+		Vector<Process> syncReadyList = device.getSyncReadyList();
+		syncReadyList.add(currProcess);
+!!!519426.java!!!	getDevId() : String
+		return devId;
+!!!519554.java!!!	setDevId(in devId : String) : void
+		this.devId = devId;
+!!!519682.java!!!	getCurrAction() : String
+		return currAction;
+!!!519810.java!!!	setCurrAction(in currAction : String) : void
+		this.currAction = currAction;
+!!!519938.java!!!	getCurrProcess() : Process
+		return currProcess;
+!!!520066.java!!!	setCurrProcess(inout currProcess : Process) : void
+		this.currProcess = currProcess;
+!!!520194.java!!!	getIntList() : Process
+		return intList;
+!!!520322.java!!!	setIntList(inout intList : Vector<Process>) : void
+		this.intList = intList;
+!!!520450.java!!!	getSaIntList() : SchedulingAlgorithm
+		return saIntList;
+!!!520578.java!!!	setSaIntList(inout saIntList : SchedulingAlgorithm) : void
+		this.saIntList = saIntList;
+!!!520706.java!!!	getReadyList() : Process
+		return readyList;
+!!!520834.java!!!	setReadyList(inout readyList : Vector<Process>) : void
+		this.readyList = readyList;
+!!!520962.java!!!	getSaReadyList() : SchedulingAlgorithm
+		return saReadyList;
+!!!521090.java!!!	setSaReadyList(inout saReadyList : SchedulingAlgorithm) : void
+		this.saReadyList = saReadyList;
+!!!521218.java!!!	getTime() : int
+		return time;
+!!!521346.java!!!	setTime(in time : int) : void
+		this.time = time;
+!!!521474.java!!!	getLimitTime() : int
+		return limitTime;
+!!!521602.java!!!	setLimitTime(in limitTime : int) : void
+		this.limitTime = limitTime;
+!!!521730.java!!!	getSchedulingSystem() : SchedulingSystem
+		return schedulingSystem;
+!!!521858.java!!!	setSchedulingSystem(inout schedulingSystem : SchedulingSystem) : void
+		this.schedulingSystem = schedulingSystem;
+!!!521986.java!!!	getSyncIntList() : Process
+		return syncIntList;
+!!!522114.java!!!	setSyncIntList(inout syncIntList : Vector<Process>) : void
+		this.syncIntList = syncIntList;
+!!!522242.java!!!	getSyncReadyList() : Process
+		return syncReadyList;
+!!!522370.java!!!	setSyncReadyList(inout syncReadyList : Vector<Process>) : void
+		this.syncReadyList = syncReadyList;

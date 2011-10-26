@@ -1,0 +1,694 @@
+format 75
+"LogginSystem" // src::Model::LogginSystem
+  revision 6
+  modified_by 2 "elujan"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/control_robotico/scheduling_simulator/src/LogginSystem/"
+  java_package "LogginSystem"
+  usecaseview 128386 "LogginSystem Use Case View"
+    //use case diagram settings
+    package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    usecase 128386 "Log Results"
+      //use case diagram settings
+      package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+      //sequence diagram settings
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      //collaboration diagram settings
+      show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+      //class diagram settings
+      draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      //object diagram settings
+       write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+      //state diagram settings
+      package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+      show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+      //activity diagram settings
+      package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+      show_infonote default drawing_language default show_stereotype_properties default
+    end
+  end
+
+  classview 132610 "LogginSystem Class View"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 180738 "CompLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 217090 // <generalisation>
+	relation 217090 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 217090 // <generalisation>
+	  b parent class_ref 180866 // LogginSystem
+      end
+
+      classrelation 217218 // logginSystems (<unidirectional association>)
+	relation 217218 --->
+	  stereotype "Vector"
+	  a role_name "logginSystems" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 217218 // logginSystems (<unidirectional association>)
+	  b parent class_ref 180866 // LogginSystem
+      end
+
+      operation 515330 "CompLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" explicit_type "Configurator"
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515458 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515586 "getLogginSystems"
+	public return_type class_ref 180866 // LogginSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515714 "setLogginSystems"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "logginSystems" explicit_type "Vector<LogginSystem>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515842 "addLogginSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "logginSystem" type class_ref 180866 // LogginSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 180866 "LogginSystem"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 514306 "LogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" explicit_type "Configurator"
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 514434 "log"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "time" explicit_type "int"
+	  param inout name "devicesList" explicit_type "Vector<Device>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 514562 "writeLog"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 514690 "getConfigurator"
+	public explicit_return_type "Configurator"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 514818 "setConfigurator"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "configurator" explicit_type "Configurator"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 514946 "getSimulationTimes"
+	public explicit_return_type "SimulationTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515074 "setSimulationTimes"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 515202 "addSimulationTime"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "simulationTime" explicit_type "SimulationTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 239490 // <dependency>
+	relation 239490 -_->
+	  a default
+	    classrelation_ref 239490 // <dependency>
+	  b parent class_ref 188418 // Configurator
+      end
+
+      classrelation 239618 // <dependency>
+	relation 239618 -_->
+	  a default
+	    classrelation_ref 239618 // <dependency>
+	  b parent class_ref 179970 // Device
+      end
+
+      classrelation 239746 // <dependency>
+	relation 239746 -_->
+	  a default
+	    classrelation_ref 239746 // <dependency>
+	  b parent class_ref 188674 // SimulationTime
+      end
+    end
+
+    class 180994 "FileLogginSystem"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 217346 // <generalisation>
+	relation 217346 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 217346 // <generalisation>
+	  b parent class_ref 180866 // LogginSystem
+      end
+
+      attribute 308354 "outputFileName"
+	package explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 515970 "FileLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" explicit_type "Configurator"
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516098 "writeFile"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "s" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516226 "getOutputFileName"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516354 "setOutputFileName"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "outputFileName" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 181122 "TXTLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 217474 // <generalisation>
+	relation 217474 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 217474 // <generalisation>
+	  b parent class_ref 180994 // FileLogginSystem
+      end
+
+      operation 516482 "TXTLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" explicit_type "Configurator"
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516610 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516738 "logDevices"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "devices" explicit_type "Vector<SimulationDevice>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 516866 "logDevice"
+	public explicit_return_type "String"
+	nparams 1
+	  param inout name "device" explicit_type "SimulationDevice"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 181250 "XMLLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 217602 // <generalisation>
+	relation 217602 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 217602 // <generalisation>
+	  b parent class_ref 180994 // FileLogginSystem
+      end
+
+      operation 516994 "XMLLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" explicit_type "Configurator"
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 517122 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 517250 "logDevices"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "devices" explicit_type "Vector<SimulationDevice>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 517378 "logDevice"
+	public explicit_return_type "String"
+	nparams 1
+	  param inout name "device" explicit_type "SimulationDevice"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    classdiagram 148354 "LogginSystem Class Diagram"
+      draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      size A4
+    end
+  end
+
+  componentview 134914 "LogginSystem Component View"
+    //component diagram settings
+    package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    component 134786 "LogginSystem"
+      simplerelation 135042
+	-_->
+	  on component_ref 128002 // DataModel
+      end
+
+      simplerelation 135170
+	-_->
+	  on component_ref 134530 // SchedulingSystem
+      end
+
+      simplerelation 152322
+	-_->
+	  on component_ref 135298 // Configurator
+      end
+
+      simplerelation 152450
+	-_->
+	  on component_ref 135426 // SimulationTime
+      end
+
+      simplerelation 152578
+	-_->
+	  on component_ref 141954 // Device
+      end
+
+      simplerelation 152706
+	-_->
+	  on component_ref 142210 // Simulation Device
+      end
+
+      simplerelation 154114
+	-_->
+	  on component_ref 135298 // Configurator
+      end
+
+      simplerelation 154242
+	-_->
+	  on component_ref 135426 // SimulationTime
+      end
+
+      simplerelation 154370
+	-_->
+	  on component_ref 142210 // Simulation Device
+      end
+
+      simplerelation 154498
+	-_->
+	  on component_ref 141954 // Device
+      end
+    end
+  end
+
+  deploymentview 132226 "LogginSystem Deployment View"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 170242 "LogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import DataModel.*;
+import Configuration.*;
+import SchedulingSystem.Device;
+${definition}"
+      associated_classes
+	class_ref 180866 // LogginSystem
+      end
+    end
+
+    artifact 170370 "CompLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import Configuration.*;
+import DataModel.SimulationTime;
+${definition}"
+      associated_classes
+	class_ref 180738 // CompLogginSystem
+      end
+    end
+
+    artifact 170498 "FileLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Vector;
+import Configuration.Configurator;
+import DataModel.SimulationTime;
+${definition}"
+      associated_classes
+	class_ref 180994 // FileLogginSystem
+      end
+    end
+
+    artifact 170626 "TXTLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import DataModel.*;
+import Configuration.*;
+${definition}"
+      associated_classes
+	class_ref 181122 // TXTLogginSystem
+      end
+    end
+
+    artifact 170754 "XMLLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import DataModel.*;
+import Configuration.*;
+${definition}"
+      associated_classes
+	class_ref 181250 // XMLLogginSystem
+      end
+    end
+  end
+
+  simplerelation 144386
+    -_->
+      on 
+      package_ref 134274 // SchedulingSystem
+  end
+
+  simplerelation 144898
+    -_->
+      on 
+      package_ref 134146 // DataModel
+  end
+end

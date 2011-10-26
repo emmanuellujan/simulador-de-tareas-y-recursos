@@ -1,0 +1,67 @@
+format 75
+
+packagecanvas 128130 
+  package_ref 134146 // DataModel
+    xyzwh 424 188 2000 69 81
+end
+packagecanvas 128258 
+  package_ref 134402 // InputSystem
+    xyzwh 421 308 2000 75 81
+end
+packagecanvas 128386 
+  package_ref 134530 // LogginSystem
+    xyzwh 413 78 2000 87 81
+end
+packagecanvas 128514 
+  package_ref 134658 // SchedulingAlgorithmSystem
+    xyzwh 44 271 2005 163 81
+end
+packagecanvas 128642 
+  package_ref 134274 // SchedulingSystem
+    xyzwh 72 142 2000 111 81
+end
+packagecanvas 131330 
+  package_ref 147970 // Controller
+    xyzwh 13 10 1995 257 411
+end
+packagecanvas 131458 
+  package_ref 148354 // Model
+    xyzwh 321 9 1995 251 411
+end
+simplerelationcanvas 128898 simplerelation_ref 143106
+  from ref 128258 z 2006 to ref 128514
+end
+simplerelationcanvas 129154 simplerelation_ref 143362
+  from ref 128514 z 2006 to ref 128642
+end
+simplerelationcanvas 129282 simplerelation_ref 143490
+  from ref 128642 z 2006 to ref 128514
+end
+simplerelationcanvas 129666 simplerelation_ref 143874
+  from ref 128642 z 2001 to ref 128130
+end
+simplerelationcanvas 130050 simplerelation_ref 144130
+  decenter_begin 444
+  decenter_end 566
+  from ref 128130 z 2001 to ref 128642
+end
+simplerelationcanvas 130178 simplerelation_ref 144258
+  from ref 128642 z 2001 to ref 128386
+end
+simplerelationcanvas 130306 simplerelation_ref 144386
+  from ref 128386 z 2001 to ref 128642
+end
+simplerelationcanvas 130434 simplerelation_ref 144514
+  from ref 128642 z 2001 to ref 128258
+end
+simplerelationcanvas 130562 simplerelation_ref 144642
+  decenter_end 827
+  from ref 128258 z 2001 to ref 128642
+end
+simplerelationcanvas 130690 simplerelation_ref 144770
+  from ref 128258 z 2001 to ref 128130
+end
+simplerelationcanvas 130818 simplerelation_ref 144898
+  from ref 128386 z 2001 to ref 128130
+end
+end

@@ -1,0 +1,16 @@
+class CompLogginSystem
+!!!515330.java!!!	CompLogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
+		super(configurator,simulationTimes);
+		Vector<LogginSystem> logginSystems = new Vector<LogginSystem>();
+		this.setLogginSystems(logginSystems);
+!!!515458.java!!!	writeLog() : void
+		Vector<LogginSystem> logginSystems = this.getLogginSystems();
+		int n = logginSystems.size();
+		for(int i=0; i<n; i++)
+			logginSystems.get(i).writeLog();
+!!!515586.java!!!	getLogginSystems() : LogginSystem
+		return logginSystems;
+!!!515714.java!!!	setLogginSystems(inout logginSystems : Vector<LogginSystem>) : void
+		this.logginSystems = logginSystems;
+!!!515842.java!!!	addLogginSystem(inout logginSystem : LogginSystem) : void
+		this.logginSystems.add(logginSystem);
