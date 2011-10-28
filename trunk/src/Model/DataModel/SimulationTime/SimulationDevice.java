@@ -2,45 +2,45 @@ package Model.DataModel.SimulationTime;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Device;
-import Controller.SchedulingSystem.Process;
+import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Task;
 
 
 public class SimulationDevice {
 	private String devId;
 	private String currentAction;
-	private String processId;
+	private String taskId;
 	private int time;
 	private int limitTime;
 	private Vector<String> interruptionList;
 	private Vector<String> readyList;
 	
-	public SimulationDevice(Device device){
-		String devId = device.getDevId();
-		String currentAction = device.getCurrAction();
-		String processId;
-		if(device.getCurrProcess()!=null)
-			processId = device.getCurrProcess().getProcessId();
+	public SimulationDevice(Resource resource){
+		String devId = resource.getDevId();
+		String currentAction = resource.getCurrAction();
+		String taskId;
+		if(resource.getCurrTask()!=null)
+			taskId = resource.getCurrTask().getTaskId();
 		else
-			processId = "None";
-		int time = device.getTime();
-		int limitTime = device.getLimitTime();		
+			taskId = "None";
+		int time = resource.getTime();
+		int limitTime = resource.getLimitTime();		
 		
-		Vector<Process> intList = device.getIntList();
+		Vector<Task> intList = resource.getIntList();
 		int m = intList.size();
 		Vector<String> sInterruptionList = new Vector<String>();
 		for(int i=0;i<m;i++)
-			sInterruptionList.add(intList.get(i).getProcessId());
+			sInterruptionList.add(intList.get(i).getTaskId());
 
-		Vector<Process> readyList = device.getReadyList();
+		Vector<Task> readyList = resource.getReadyList();
 		m = readyList.size();
 		Vector<String> sReadyList = new Vector<String>();
 		for(int i=0;i<m;i++)
-			sReadyList.add(readyList.get(i).getProcessId());
+			sReadyList.add(readyList.get(i).getTaskId());
 		
 		this.setDevId(devId);
 		this.setCurrentAction(currentAction);
-		this.setProcessId(processId);
+		this.setTaskId(taskId);
 		this.setTime(time);
 		this.setLimitTime(limitTime);
 		this.setInterruptionList(sInterruptionList);
@@ -59,11 +59,11 @@ public class SimulationDevice {
 	public void setCurrentAction(String currentAction) {
 		this.currentAction = currentAction;
 	}
-	public String getProcessId() {
-		return processId;
+	public String getTaskId() {
+		return taskId;
 	}
-	public void setProcessId(String processId) {
-		this.processId = processId;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 	public int getTime() {
 		return time;
