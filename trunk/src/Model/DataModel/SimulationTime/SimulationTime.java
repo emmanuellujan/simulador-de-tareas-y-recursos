@@ -6,20 +6,20 @@ import Controller.SchedulingSystem.Resource;
 
 public class SimulationTime {
 	private int currentTime;
-	private Vector<SimulationDevice> devices;
+	private Vector<SimulationResource> resources;
 	
-	public SimulationTime(int time, Vector<Resource> devicesList){
-		Vector<SimulationDevice> devices = new Vector<SimulationDevice>(); 
+	public SimulationTime(int time, Vector<Resource> resourcesList){
+		Vector<SimulationResource> resources = new Vector<SimulationResource>(); 
 		Resource resource;
-		SimulationDevice sDevice;
-		int n = devicesList.size();
+		SimulationResource sResource;
+		int n = resourcesList.size();
 		for(int i=0;i<n;i++){
-			resource = devicesList.get(i); 
-			sDevice = new SimulationDevice(resource);
-			devices.add(sDevice);
+			resource = resourcesList.get(i); 
+			sResource = new SimulationResource(resource);
+			resources.add(sResource);
 		}
 		this.setCurrentTime(time);
-		this.setDevices(devices);
+		this.setResources(resources);
 	}
 
 	public int getCurrentTime() {
@@ -30,11 +30,11 @@ public class SimulationTime {
 		this.currentTime = currentTime;
 	}
 
-	public Vector<SimulationDevice> getDevices() {
-		return devices;
+	public Vector<SimulationResource> getResources() {
+		return resources;
 	}
 
-	public void setDevices(Vector<SimulationDevice> devices) {
-		this.devices = devices;
+	public void setResources(Vector<SimulationResource> resources) {
+		this.resources = resources;
 	}
 }

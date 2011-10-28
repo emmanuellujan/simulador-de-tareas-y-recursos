@@ -3,7 +3,7 @@ import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
-import Model.DataModel.SimulationTime.SimulationDevice;
+import Model.DataModel.SimulationTime.SimulationResource;
 
 
 public class XMLLogginSystem extends FileLogginSystem{
@@ -23,10 +23,10 @@ public class XMLLogginSystem extends FileLogginSystem{
 		int n = simulationTimes.size();
 		for(int i=0;i<n;i++){
 			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationDevice> devices = simulationTimes.get(i).getDevices();
+			Vector<SimulationResource> resources = simulationTimes.get(i).getResources();
 			xmlLog += "\t<time>\n";
 			xmlLog += "\t\t<currentTime>"+currTime+"</currentTime>\n";
-			xmlLog += this.logDevices(devices);
+			xmlLog += this.logResources(resources);
 			xmlLog += "\t</time>\n";
 		}
 		xmlLog += "";
@@ -35,32 +35,32 @@ public class XMLLogginSystem extends FileLogginSystem{
 		this.writeFile(xmlLog);
 	}
 
-	private String logDevices(Vector<SimulationDevice> devices) {
-		String xmlLog = "\t\t<devices>\n";
-		int n = devices.size();
+	private String logResources(Vector<SimulationResource> resources) {
+		String xmlLog = "\t\t<resources>\n";
+		int n = resources.size();
 		for(int i=0;i<n;i++)
-			xmlLog += this.logDevice(devices.get(i));
-		xmlLog += "\t\t</devices>\n";
+			xmlLog += this.logResource(resources.get(i));
+		xmlLog += "\t\t</resources>\n";
 		
 		return xmlLog;
 	}
 
-	public String logDevice(SimulationDevice device){
-		String devId = device.getDevId();
-		String taskId = device.getTaskId();
-		String currentAction = device.getCurrentAction();
-		int time = device.getTime();
-		int limitTime = device.getLimitTime();
+	public String logResource(SimulationResource resource){
+		String resId = resource.getResId();
+		String taskId = resource.getTaskId();
+		String currentAction = resource.getCurrentAction();
+		int time = resource.getTime();
+		int limitTime = resource.getLimitTime();
 
 		String xmlLog = "";
-		xmlLog += "\t\t\t<device>\n";
-		xmlLog += "\t\t\t\t<deviceId>" + devId + "</deviceId>\n";
+		xmlLog += "\t\t\t<resource>\n";
+		xmlLog += "\t\t\t\t<resourceId>" + resId + "</resourceId>\n";
 		xmlLog += "\t\t\t\t<currentAction>" + currentAction + "</currentAction>\n";
 		xmlLog += "\t\t\t\t<activeTask>" + taskId + "</activeTask>\n";
 		xmlLog += "\t\t\t\t<currentTime>" + (time-1) + "</currentTime>\n";
 		xmlLog += "\t\t\t\t<limitTime>" + limitTime + "</limitTime>\n";
 
-		Vector<String> intList = device.getInterruptionList();
+		Vector<String> intList = resource.getInterruptionList();
 		int m = intList.size();
 		xmlLog += "\t\t\t\t<interruptionList>";
 		for(int i=0;i<m-1;i++)
@@ -69,7 +69,7 @@ public class XMLLogginSystem extends FileLogginSystem{
 			xmlLog += intList.get(m-1);
 		xmlLog += "</interruptionList>\n";
 
-		Vector<String> readyList = device.getReadyList();
+		Vector<String> readyList = resource.getReadyList();
 		m = readyList.size();
 		xmlLog += "\t\t\t\t<readyList>";
 		for(int i=0;i<m-1;i++)
@@ -77,7 +77,7 @@ public class XMLLogginSystem extends FileLogginSystem{
 		if(m-1>=0)
 			xmlLog += readyList.get(m-1);
 		xmlLog += "</readyList>\n";
-		xmlLog += "\t\t\t</device>\n";
+		xmlLog += "\t\t\t</resource>\n";
 
 		return xmlLog;
 	}
