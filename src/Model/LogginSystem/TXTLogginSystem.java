@@ -41,7 +41,7 @@ public class TXTLogginSystem  extends FileLogginSystem{
 
 	public String logDevice(SimulationDevice device){
 		String devId = device.getDevId();
-		String processId = device.getProcessId();
+		String taskId = device.getTaskId();
 		String currentAction = device.getCurrentAction();
 		int time = device.getTime();
 		int limitTime = device.getLimitTime();
@@ -50,7 +50,7 @@ public class TXTLogginSystem  extends FileLogginSystem{
 		
 		xmlLog += "\tDeviceId: " + devId + "\n";
 		xmlLog += "\t\tCurrent Action: " + currentAction + "\n";
-		xmlLog += "\t\tActive Process: " + processId + "\n";
+		xmlLog += "\t\tActive Task: " + taskId + "\n";
 		xmlLog += "\t\tCurrent Time: " + (time-1) + "\n";
 		xmlLog += "\t\tLimit Time: " + limitTime + "\n";
 

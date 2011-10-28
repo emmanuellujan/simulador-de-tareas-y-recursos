@@ -13,8 +13,8 @@ import Model.DataModel.Configurator.Configurator;
 import Controller.SchedulingAlgorithmSystem.SAFactory;
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Device;
-import Controller.SchedulingSystem.Process;
+import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Task;
 
 
 public class XMLInputSystem extends InputSystem{
@@ -23,9 +23,9 @@ public class XMLInputSystem extends InputSystem{
 		super(configurator,schedulingSystem);
 	}
 
-	public Vector<Process> loadNewsList() {
+	public Vector<Task> loadNewsList() {
 		String fileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getInputFile() + ".xml";
-		Vector<Process> processes = new Vector<Process>(); 
+		Vector<Task> tasks = new Vector<Task>(); 
 		try{
 			File file = new File(fileName);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -33,18 +33,18 @@ public class XMLInputSystem extends InputSystem{
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
 
-			NodeList nodeList = doc.getElementsByTagName("process");
+			NodeList nodeList = doc.getElementsByTagName("task");
 			int n = nodeList.getLength();
 			for (int i = 0; i < n; i++) {
 				Node node = nodeList.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {	
 					Element element = (Element) node;
 
-					//processId
-					NodeList processIdElementList = element.getElementsByTagName("processId");
-					Element processIdElement = (Element) processIdElementList.item(0);
-					NodeList processId = processIdElement.getChildNodes();
-					String sProcessId = ((Node) processId.item(0)).getNodeValue();
+					//taskId
+					NodeList taskIdElementList = element.getElementsByTagName("taskId");
+					Element taskIdElement = (Element) taskIdElementList.item(0);
+					NodeList taskId = taskIdElement.getChildNodes();
+					String sTaskId = ((Node) taskId.item(0)).getNodeValue();
 
 					//priority
 					NodeList priorityElementList = element.getElementsByTagName("priority");
@@ -62,20 +62,20 @@ public class XMLInputSystem extends InputSystem{
 						compUnits.add(unitComp);
 					}
 
-					Process process = new Process(sProcessId,iPriority,compUnits);
-					processes.add(process);
+					Task task = new Task(sTaskId,iPriority,compUnits);
+					tasks.add(task);
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return processes;
+		return tasks;
 	}
 
-	public Vector<Device> loadDevicesList(){
+	public Vector<Resource> loadDevicesList(){
 
 		String fileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getInputFile() + ".xml";
-		Vector<Device> devices = new Vector<Device>(); 
+		Vector<Resource> resources = new Vector<Resource>(); 
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		SAFactory saFactory = new SAFactory();
 		try{
@@ -111,14 +111,14 @@ public class XMLInputSystem extends InputSystem{
 					NodeList quantum = quantumElement.getChildNodes();
 					int iQuantum =  Integer.valueOf(((Node) quantum.item(0)).getNodeValue());
 
-					Device device = new Device(sDeviceId, sAlgorithm, iQuantum, schedulingSystem);
-					devices.add(device);
+					Resource resource = new Resource(sDeviceId, sAlgorithm, iQuantum, schedulingSystem);
+					resources.add(resource);
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return devices;
+		return resources;
 	}
 
 }

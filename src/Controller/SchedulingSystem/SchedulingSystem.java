@@ -12,16 +12,16 @@ public class SchedulingSystem {
 
 	private InputSystem inputSystem;
 	private CompLogginSystem logginSystem;
-	private Vector<Process> newsList;
-	private Vector<Device> devicesList;
-	private Vector<Process> finishedList;
-	private int numberOfProcesses;
-	private Device deliverDev;
+	private Vector<Task> newsList;
+	private Vector<Resource> devicesList;
+	private Vector<Task> finishedList;
+	private int numberOfTasks;
+	private Resource deliverDev;
 
 	public SchedulingSystem(){
-		Vector<Process> newsList = new Vector<Process>();
-		Vector<Device> devicesList = new Vector<Device>();
-		Vector<Process> finishedList = new Vector<Process>();
+		Vector<Task> newsList = new Vector<Task>();
+		Vector<Resource> devicesList = new Vector<Resource>();
+		Vector<Task> finishedList = new Vector<Task>();
 
 		Configurator configurator = new Configurator();
 		InputSystem inputSystem = new XMLInputSystem(configurator,this);
@@ -35,22 +35,22 @@ public class SchedulingSystem {
 		String deliverDevId="deliverDev";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Device deliverDev = new Device(deliverDevId, saReadyList, limitTime, this);
+		Resource deliverDev = new Resource(deliverDevId, saReadyList, limitTime, this);
 		deliverDev.setReadyList(newsList);
 				
 		this.setNewsList(newsList);
 		this.setDevicesList(devicesList);
 		this.setFinishedList(finishedList);
-		this.setNumberOfProcesses(newsList.size());
+		this.setNumberOfTasks(newsList.size());
 		this.setInputSystem(inputSystem);
 		this.setLogginSystem(compLogginSystem);
 		this.setDeliverDev(deliverDev);
 	}
 
 	public void simulate() {
-		Vector<Device> devicesList = getDevicesList();
+		Vector<Resource> devicesList = getDevicesList();
 		CompLogginSystem logginSystem = this.getLogginSystem();
-		Device deliverDev = this.getDeliverDev();
+		Resource deliverDev = this.getDeliverDev();
 		devicesList.add(0, deliverDev);
 		int i = 0;
 		int n = devicesList.size();
@@ -65,65 +65,65 @@ public class SchedulingSystem {
 	}
 
 	private void incTime() {
-		Vector<Device> devicesList = this.getDevicesList();
+		Vector<Resource> devicesList = this.getDevicesList();
 		int n = devicesList.size();
 		for(int i=0;i<n;i++){
-			Device device = devicesList.get(i);
-			device.incTime();
+			Resource resource = devicesList.get(i);
+			resource.incTime();
 		}
 	}
 
 	private boolean scheduleFinished() {
-		Vector<Process> finishedList = this.getFinishedList();
+		Vector<Task> finishedList = this.getFinishedList();
 		int n = finishedList.size();
-		int numberOfProcesses = this.getNumberOfProcesses();
-		if(numberOfProcesses==n)
+		int numberOfTasks = this.getNumberOfTasks();
+		if(numberOfTasks==n)
 			return true;
 		else
 			return false;
 	}
 
-	public void finishProcess(Process currProcess) {
-		this.getFinishedList().add(currProcess);
+	public void finishTask(Task currTask) {
+		this.getFinishedList().add(currTask);
 	}
 
-	public Device getDevice(String name) {
-		Vector<Device> devicesList = this.getDevicesList();
+	public Resource getDevice(String name) {
+		Vector<Resource> devicesList = this.getDevicesList();
 		boolean finded = false;
 		int i = 0;
 		int n = devicesList.size();
-		Device device = null;
+		Resource resource = null;
 		while(i<n && !finded){
 			if(devicesList.get(i).getDevId().equals(name)){
 				finded = true;
-				device = devicesList.get(i);
+				resource = devicesList.get(i);
 			}else
 				i++;
 		}
-		return device;
+		return resource;
 	}
 
-	public Vector<Process> getNewsList() {
+	public Vector<Task> getNewsList() {
 		return newsList;
 	}
 
-	public void setNewsList(Vector<Process> newsList) {
+	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
 	}
 
-	public Vector<Device> getDevicesList() {
+	public Vector<Resource> getDevicesList() {
 		return devicesList;
 	}
 
-	public void setDevicesList(Vector<Device> devicesList) {
+	public void setDevicesList(Vector<Resource> devicesList) {
 		this.devicesList = devicesList;
 	}
 
-	public Vector<Process> getFinishedList() {
+	public Vector<Task> getFinishedList() {
 		return finishedList;
 	}
 
-	public void setFinishedList(Vector<Process> finishedList) {
+	public void setFinishedList(Vector<Task> finishedList) {
 		this.finishedList = finishedList;
 	}
 
@@ -143,19 +143,19 @@ public class SchedulingSystem {
 		this.logginSystem = logginSystem;
 	}
 
-	public int getNumberOfProcesses() {
-		return numberOfProcesses;
+	public int getNumberOfTasks() {
+		return numberOfTasks;
 	}
 
-	public void setNumberOfProcesses(int numberOfProcesses) {
-		this.numberOfProcesses = numberOfProcesses;
+	public void setNumberOfTasks(int numberOfTasks) {
+		this.numberOfTasks = numberOfTasks;
 	}
 
-	public Device getDeliverDev() {
+	public Resource getDeliverDev() {
 		return deliverDev;
 	}
 
-	public void setDeliverDev(Device deliverDev) {
+	public void setDeliverDev(Resource deliverDev) {
 		this.deliverDev = deliverDev;
 	}
 

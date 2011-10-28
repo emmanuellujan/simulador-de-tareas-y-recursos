@@ -1,15 +1,15 @@
 package Controller.SchedulingAlgorithmSystem;
 
 import java.util.Vector;
-import  Controller.SchedulingSystem.Process;
+import  Controller.SchedulingSystem.Task;
 
 public class FCFS extends SchedulingAlgorithm {
 	
 	public FCFS(){}
 	
-	public Process schedule(Vector<Process> processes){
-		if(processes.size()>0)
-			return processes.get(0);
+	public Task schedule(Vector<Task> tasks){
+		if(tasks.size()>0)
+			return tasks.get(0);
 		else
 			return null;
 	}

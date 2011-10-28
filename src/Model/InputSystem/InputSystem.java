@@ -3,8 +3,8 @@ import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Device;
-import Controller.SchedulingSystem.Process;
+import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Task;
 
 
 public abstract class InputSystem {
@@ -17,9 +17,9 @@ public abstract class InputSystem {
 		this.setSchedulingSystem(schedulingSystem);
 	}
 
-	public abstract Vector<Process> loadNewsList();
+	public abstract Vector<Task> loadNewsList();
 
-	public abstract Vector<Device> loadDevicesList();
+	public abstract Vector<Resource> loadDevicesList();
 	
 	public Configurator getConfigurator() {
 		return configurator;

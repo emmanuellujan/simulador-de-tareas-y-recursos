@@ -1,9 +1,9 @@
 package Controller.SchedulingAlgorithmSystem;
 import java.util.Vector;
-import  Controller.SchedulingSystem.Process;
+import  Controller.SchedulingSystem.Task;
 
 public abstract class SchedulingAlgorithm {
 
-	public abstract Process schedule(Vector<Process> processes);
+	public abstract Task schedule(Vector<Task> tasks);
 
 }

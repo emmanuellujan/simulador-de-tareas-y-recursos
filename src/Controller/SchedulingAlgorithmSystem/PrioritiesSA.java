@@ -1,24 +1,24 @@
 package Controller.SchedulingAlgorithmSystem;
 import java.util.Vector;
-import  Controller.SchedulingSystem.Process;
+import  Controller.SchedulingSystem.Task;
 
 public class PrioritiesSA extends SchedulingAlgorithm {
 	
 	public PrioritiesSA(){}
 
-	public Process schedule(Vector<Process> processes) {
-		Process process = null;
-		int n = processes.size();
+	public Task schedule(Vector<Task> tasks) {
+		Task task = null;
+		int n = tasks.size();
 		int maxPriority = -1;
 		int currPriority = -1;
 		for(int i=0;i<n;i++){
-			currPriority = processes.get(i).getPriority();
+			currPriority = tasks.get(i).getPriority();
 			if(maxPriority < currPriority){
 				maxPriority = currPriority;
-				process = processes.get(i);
+				task = tasks.get(i);
 			}
 		}
-		return process;
+		return task;
 	}
 	
 }
