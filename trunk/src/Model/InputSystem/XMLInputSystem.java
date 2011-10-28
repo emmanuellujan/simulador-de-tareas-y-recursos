@@ -13,7 +13,7 @@ import Model.DataModel.Configurator.Configurator;
 import Controller.SchedulingAlgorithmSystem.SAFactory;
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Task;
 
 
@@ -72,10 +72,10 @@ public class XMLInputSystem extends InputSystem{
 		return tasks;
 	}
 
-	public Vector<Resource> loadResourcesList(){
+	public Vector<Actor> loadActorsList(){
 
 		String fileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getInputFile() + ".xml";
-		Vector<Resource> resources = new Vector<Resource>(); 
+		Vector<Actor> actors = new Vector<Actor>(); 
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		SAFactory saFactory = new SAFactory();
 		try{
@@ -111,14 +111,14 @@ public class XMLInputSystem extends InputSystem{
 					NodeList quantum = quantumElement.getChildNodes();
 					int iQuantum =  Integer.valueOf(((Node) quantum.item(0)).getNodeValue());
 
-					Resource resource = new Resource(sResourceId, sAlgorithm, iQuantum, schedulingSystem);
-					resources.add(resource);
+					Actor actor = new Actor(sResourceId, sAlgorithm, iQuantum, schedulingSystem);
+					actors.add(actor);
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return resources;
+		return actors;
 	}
 
 }

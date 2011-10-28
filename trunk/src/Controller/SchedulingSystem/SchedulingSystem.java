@@ -13,14 +13,14 @@ public class SchedulingSystem {
 	private InputSystem inputSystem;
 	private CompLogginSystem logginSystem;
 	private Vector<Task> newsList;
-	private Vector<Resource> resourcesList;
+	private Vector<Actor> actorsList;
 	private Vector<Task> finishedList;
 	private int numberOfTasks;
-	private Resource deliverRes;
+	private Actor deliverRes;
 
 	public SchedulingSystem(){
 		Vector<Task> newsList = new Vector<Task>();
-		Vector<Resource> resourcesList = new Vector<Resource>();
+		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Task> finishedList = new Vector<Task>();
 
 		Configurator configurator = new Configurator();
@@ -30,16 +30,16 @@ public class SchedulingSystem {
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator,simulationTimes);
 		
 		newsList = inputSystem.loadNewsList();
-		resourcesList = inputSystem.loadResourcesList();
+		actorsList = inputSystem.loadActorsList();
 
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Resource deliverRes = new Resource(deliverResId, saReadyList, limitTime, this);
+		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this);
 		deliverRes.setReadyList(newsList);
 				
 		this.setNewsList(newsList);
-		this.setResourcesList(resourcesList);
+		this.setActorsList(actorsList);
 		this.setFinishedList(finishedList);
 		this.setNumberOfTasks(newsList.size());
 		this.setInputSystem(inputSystem);
@@ -48,28 +48,28 @@ public class SchedulingSystem {
 	}
 
 	public void simulate() {
-		Vector<Resource> resourcesList = getResourcesList();
+		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logginSystem = this.getLogginSystem();
-		Resource deliverRes = this.getDeliverRes();
-		resourcesList.add(0, deliverRes);
+		Actor deliverRes = this.getDeliverRes();
+		actorsList.add(0, deliverRes);
 		int i = 0;
-		int n = resourcesList.size();
+		int n = actorsList.size();
 		while(!scheduleFinished()){
 			for(int j=0;j<n;j++)
-				resourcesList.get(j).exec();
+				actorsList.get(j).exec();
 			this.incTime();
-			logginSystem.log(i,resourcesList);
+			logginSystem.log(i,actorsList);
 			i++;
 		}
 		logginSystem.writeLog();
 	}
 
 	private void incTime() {
-		Vector<Resource> resourcesList = this.getResourcesList();
-		int n = resourcesList.size();
+		Vector<Actor> actorsList = this.getActorsList();
+		int n = actorsList.size();
 		for(int i=0;i<n;i++){
-			Resource resource = resourcesList.get(i);
-			resource.incTime();
+			Actor actor = actorsList.get(i);
+			actor.incTime();
 		}
 	}
 
@@ -87,20 +87,20 @@ public class SchedulingSystem {
 		this.getFinishedList().add(currTask);
 	}
 
-	public Resource getResource(String name) {
-		Vector<Resource> resourcesList = this.getResourcesList();
+	public Actor getResource(String name) {
+		Vector<Actor> actorsList = this.getActorsList();
 		boolean finded = false;
 		int i = 0;
-		int n = resourcesList.size();
-		Resource resource = null;
+		int n = actorsList.size();
+		Actor actor = null;
 		while(i<n && !finded){
-			if(resourcesList.get(i).getResId().equals(name)){
+			if(actorsList.get(i).getResId().equals(name)){
 				finded = true;
-				resource = resourcesList.get(i);
+				actor = actorsList.get(i);
 			}else
 				i++;
 		}
-		return resource;
+		return actor;
 	}
 
 	public Vector<Task> getNewsList() {
@@ -111,12 +111,12 @@ public class SchedulingSystem {
 		this.newsList = newsList;
 	}
 
-	public Vector<Resource> getResourcesList() {
-		return resourcesList;
+	public Vector<Actor> getActorsList() {
+		return actorsList;
 	}
 
-	public void setResourcesList(Vector<Resource> resourcesList) {
-		this.resourcesList = resourcesList;
+	public void setActorsList(Vector<Actor> actorsList) {
+		this.actorsList = actorsList;
 	}
 
 	public Vector<Task> getFinishedList() {
@@ -151,11 +151,11 @@ public class SchedulingSystem {
 		this.numberOfTasks = numberOfTasks;
 	}
 
-	public Resource getDeliverRes() {
+	public Actor getDeliverRes() {
 		return deliverRes;
 	}
 
-	public void setDeliverRes(Resource deliverRes) {
+	public void setDeliverRes(Actor deliverRes) {
 		this.deliverRes = deliverRes;
 	}
 

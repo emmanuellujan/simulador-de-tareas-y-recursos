@@ -3,7 +3,7 @@ import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
-import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Actor;
 
 public abstract class LogginSystem {
 	private Configurator configurator;
@@ -14,7 +14,7 @@ public abstract class LogginSystem {
 		this.setSimulationTimes(simulationTimes);
 	}
 	
-	public void log(int time, Vector<Resource> devicesList){
+	public void log(int time, Vector<Actor> devicesList){
 		SimulationTime simulationTime = new SimulationTime(time, devicesList);
 		this.addSimulationTime(simulationTime);
 	}

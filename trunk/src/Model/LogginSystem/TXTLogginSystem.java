@@ -22,20 +22,20 @@ public class TXTLogginSystem  extends FileLogginSystem{
 		int n = simulationTimes.size();
 		for(int i=0;i<n;i++){
 			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationResource> resources = simulationTimes.get(i).getResources();
+			Vector<SimulationResource> actors = simulationTimes.get(i).getActors();
 			xmlLog += "Time: "+currTime+"\n";
-			xmlLog += this.logResources(resources);
+			xmlLog += this.logActors(actors);
 			xmlLog += "\n";
 		}
 		
 		this.writeFile(xmlLog);
 	}
 
-	private String logResources(Vector<SimulationResource> resources) {
+	private String logActors(Vector<SimulationResource> actors) {
 		String xmlLog = "";
-		int n = resources.size();
+		int n = actors.size();
 		for(int i=0;i<n;i++)
-			xmlLog += this.logResource(resources.get(i)) + "\n";
+			xmlLog += this.logResource(actors.get(i)) + "\n";
 		return xmlLog;
 	}
 

@@ -23,10 +23,10 @@ public class XMLLogginSystem extends FileLogginSystem{
 		int n = simulationTimes.size();
 		for(int i=0;i<n;i++){
 			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationResource> resources = simulationTimes.get(i).getResources();
+			Vector<SimulationResource> actors = simulationTimes.get(i).getActors();
 			xmlLog += "\t<time>\n";
 			xmlLog += "\t\t<currentTime>"+currTime+"</currentTime>\n";
-			xmlLog += this.logResources(resources);
+			xmlLog += this.logActors(actors);
 			xmlLog += "\t</time>\n";
 		}
 		xmlLog += "";
@@ -35,12 +35,12 @@ public class XMLLogginSystem extends FileLogginSystem{
 		this.writeFile(xmlLog);
 	}
 
-	private String logResources(Vector<SimulationResource> resources) {
-		String xmlLog = "\t\t<resources>\n";
-		int n = resources.size();
+	private String logActors(Vector<SimulationResource> actors) {
+		String xmlLog = "\t\t<actors>\n";
+		int n = actors.size();
 		for(int i=0;i<n;i++)
-			xmlLog += this.logResource(resources.get(i));
-		xmlLog += "\t\t</resources>\n";
+			xmlLog += this.logResource(actors.get(i));
+		xmlLog += "\t\t</actors>\n";
 		
 		return xmlLog;
 	}

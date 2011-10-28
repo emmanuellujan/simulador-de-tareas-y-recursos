@@ -1,25 +1,25 @@
 package Model.DataModel.SimulationTime;
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.Actor;
 
 
 public class SimulationTime {
 	private int currentTime;
-	private Vector<SimulationResource> resources;
+	private Vector<SimulationResource> actors;
 	
-	public SimulationTime(int time, Vector<Resource> resourcesList){
-		Vector<SimulationResource> resources = new Vector<SimulationResource>(); 
-		Resource resource;
+	public SimulationTime(int time, Vector<Actor> actorsList){
+		Vector<SimulationResource> actors = new Vector<SimulationResource>(); 
+		Actor actor;
 		SimulationResource sResource;
-		int n = resourcesList.size();
+		int n = actorsList.size();
 		for(int i=0;i<n;i++){
-			resource = resourcesList.get(i); 
-			sResource = new SimulationResource(resource);
-			resources.add(sResource);
+			actor = actorsList.get(i); 
+			sResource = new SimulationResource(actor);
+			actors.add(sResource);
 		}
 		this.setCurrentTime(time);
-		this.setResources(resources);
+		this.setActors(actors);
 	}
 
 	public int getCurrentTime() {
@@ -30,11 +30,11 @@ public class SimulationTime {
 		this.currentTime = currentTime;
 	}
 
-	public Vector<SimulationResource> getResources() {
-		return resources;
+	public Vector<SimulationResource> getActors() {
+		return actors;
 	}
 
-	public void setResources(Vector<SimulationResource> resources) {
-		this.resources = resources;
+	public void setActors(Vector<SimulationResource> actors) {
+		this.actors = actors;
 	}
 }
