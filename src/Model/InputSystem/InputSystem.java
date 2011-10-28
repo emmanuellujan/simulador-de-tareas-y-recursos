@@ -19,7 +19,7 @@ public abstract class InputSystem {
 
 	public abstract Vector<Task> loadNewsList();
 
-	public abstract Vector<Resource> loadDevicesList();
+	public abstract Vector<Resource> loadResourcesList();
 	
 	public Configurator getConfigurator() {
 		return configurator;

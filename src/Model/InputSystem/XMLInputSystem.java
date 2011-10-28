@@ -72,7 +72,7 @@ public class XMLInputSystem extends InputSystem{
 		return tasks;
 	}
 
-	public Vector<Resource> loadDevicesList(){
+	public Vector<Resource> loadResourcesList(){
 
 		String fileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getInputFile() + ".xml";
 		Vector<Resource> resources = new Vector<Resource>(); 
@@ -85,18 +85,18 @@ public class XMLInputSystem extends InputSystem{
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
 
-			NodeList nodeList = doc.getElementsByTagName("device");
+			NodeList nodeList = doc.getElementsByTagName("resource");
 			int n = nodeList.getLength();
 			for (int i = 0; i < n; i++) {
 				Node node = nodeList.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {	
 					Element element = (Element) node;
 
-					//deviceId
-					NodeList deviceIdElementList = element.getElementsByTagName("deviceId");
-					Element deviceIdElement = (Element) deviceIdElementList.item(0);
-					NodeList deviceId = deviceIdElement.getChildNodes();
-					String sDeviceId = ((Node) deviceId.item(0)).getNodeValue();
+					//resourceId
+					NodeList resourceIdElementList = element.getElementsByTagName("resourceId");
+					Element resourceIdElement = (Element) resourceIdElementList.item(0);
+					NodeList resourceId = resourceIdElement.getChildNodes();
+					String sResourceId = ((Node) resourceId.item(0)).getNodeValue();
 
 					//schedulingAlgorithm
 					NodeList saElementList = element.getElementsByTagName("schedulingAlgorithm");
@@ -111,7 +111,7 @@ public class XMLInputSystem extends InputSystem{
 					NodeList quantum = quantumElement.getChildNodes();
 					int iQuantum =  Integer.valueOf(((Node) quantum.item(0)).getNodeValue());
 
-					Resource resource = new Resource(sDeviceId, sAlgorithm, iQuantum, schedulingSystem);
+					Resource resource = new Resource(sResourceId, sAlgorithm, iQuantum, schedulingSystem);
 					resources.add(resource);
 				}
 			}

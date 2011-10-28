@@ -3,7 +3,7 @@ import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
-import Model.DataModel.SimulationTime.SimulationDevice;
+import Model.DataModel.SimulationTime.SimulationResource;
 
 
 public class TXTLogginSystem  extends FileLogginSystem{
@@ -22,39 +22,39 @@ public class TXTLogginSystem  extends FileLogginSystem{
 		int n = simulationTimes.size();
 		for(int i=0;i<n;i++){
 			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationDevice> devices = simulationTimes.get(i).getDevices();
+			Vector<SimulationResource> resources = simulationTimes.get(i).getResources();
 			xmlLog += "Time: "+currTime+"\n";
-			xmlLog += this.logDevices(devices);
+			xmlLog += this.logResources(resources);
 			xmlLog += "\n";
 		}
 		
 		this.writeFile(xmlLog);
 	}
 
-	private String logDevices(Vector<SimulationDevice> devices) {
+	private String logResources(Vector<SimulationResource> resources) {
 		String xmlLog = "";
-		int n = devices.size();
+		int n = resources.size();
 		for(int i=0;i<n;i++)
-			xmlLog += this.logDevice(devices.get(i)) + "\n";
+			xmlLog += this.logResource(resources.get(i)) + "\n";
 		return xmlLog;
 	}
 
-	public String logDevice(SimulationDevice device){
-		String devId = device.getDevId();
-		String taskId = device.getTaskId();
-		String currentAction = device.getCurrentAction();
-		int time = device.getTime();
-		int limitTime = device.getLimitTime();
+	public String logResource(SimulationResource resource){
+		String resId = resource.getResId();
+		String taskId = resource.getTaskId();
+		String currentAction = resource.getCurrentAction();
+		int time = resource.getTime();
+		int limitTime = resource.getLimitTime();
 
 		String xmlLog = "";
 		
-		xmlLog += "\tDeviceId: " + devId + "\n";
+		xmlLog += "\tResourceId: " + resId + "\n";
 		xmlLog += "\t\tCurrent Action: " + currentAction + "\n";
 		xmlLog += "\t\tActive Task: " + taskId + "\n";
 		xmlLog += "\t\tCurrent Time: " + (time-1) + "\n";
 		xmlLog += "\t\tLimit Time: " + limitTime + "\n";
 
-		Vector<String> intList = device.getInterruptionList();
+		Vector<String> intList = resource.getInterruptionList();
 		int m = intList.size();
 		xmlLog += "\t\tInterruption List: ";
 		for(int i=0;i<m-1;i++)
@@ -63,7 +63,7 @@ public class TXTLogginSystem  extends FileLogginSystem{
 			xmlLog += intList.get(m-1);
 		xmlLog += "\n";
 
-		Vector<String> readyList = device.getReadyList();
+		Vector<String> readyList = resource.getReadyList();
 		m = readyList.size();
 		xmlLog += "\t\tReady List:";
 		for(int i=0;i<m-1;i++)
