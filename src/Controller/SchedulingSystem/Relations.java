@@ -7,6 +7,7 @@ public class Relations {
 	
 	private Hashtable<Object, Object> properties;
 	private Vector<Resource> resources;
+        private int resourceMaxLimit;
 
 	public Relations() {
 	}
@@ -23,7 +24,21 @@ public class Relations {
 		return resources;
 	}
 
-	public void setResources(Vector<Resource> resources) {
+	public void setResources(Vector<Resource> resources) {            
 		this.resources = resources;
 	}
+        
+        public int getResourceMaxLimit() {
+		return this.resourceMaxLimit;
+	}
+
+	public void setResourceMaxLimit(int resourceLimit) {
+		this.resourceMaxLimit = resourceLimit;
+        }
+
+	public void setResource(Resource newResource) {
+            if(this.resourceMaxLimit >= (this.resources.size() + 1))
+		this.resources.addElement(newResource);
+        }
+	
 }

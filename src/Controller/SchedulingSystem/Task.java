@@ -7,6 +7,7 @@ public class Task {
 	private Vector<String> compUnits; // Example: {res1, res1, res1, res0, int_res0, int_res0, res2, res2, end}
 	private int priority;
 	private int difficult;
+        private String status;//Si bien es un String, el contenido del mismo debe ser 'En proceso','Finalizada', 'Nueva'. Puede idearse otra forma de representacion
 	private int currContTask;
 	private Vector<Task> contingencyTasks;
 	
@@ -28,13 +29,14 @@ public class Task {
 	private int contextSwitchOverhead;
 	*/
 	
-	public Task(String taskId, int priority, Vector<String> compUnits, Vector<Task> contingencyTasks){
+	public Task(String taskId, int priority, Vector<String> compUnits, Vector<Task> contingencyTasks, String currentStatus){
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
 		this.setPriority(priority);
 		this.setCurrContTask(0);
 		this.setContingencyTasks(contingencyTasks);
+                this.setStatus(currentStatus);
 	}
 
 	public String getCurrent() {
@@ -134,6 +136,18 @@ public class Task {
 
 	public void setCurrContTask(int currContTask) {
 		this.currContTask = currContTask;
+	}
+        
+        public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String currentStatus) {
+            if((currentStatus!="En proceso")&&(currentStatus!="Finalizada")&&(currentStatus!="Nueva")){
+                System.out.println("Se ha intentado insertar un estado de tarea erroneo.");
+                return;
+            }else
+		this.status = currentStatus;
 	}
 
 	/*

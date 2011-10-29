@@ -6,11 +6,12 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class Actor extends Resource{
 	
-	private int capacity;
+	private int capacity;//Eficiencia
 	
 	private String currAction;
 	private Task currTask;
 
+        //Los siguientes vectores corresponden a los vectores de tareas?
 	private Vector<Task> intList;
 	private Vector<Task> syncIntList;
 	private SchedulingAlgorithm saIntList;
@@ -21,10 +22,12 @@ public class Actor extends Resource{
 
 	private int time;
 	private int limitTime;
+        private int taskMaxSize;
 
 	private SchedulingSystem schedulingSystem;
 
-	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime, SchedulingSystem schedulingSystem) {
+        //Resta setear el maximo de tareas cuando se crea el vector, en el vector.
+	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime, SchedulingSystem schedulingSystem, int taskMaxNumber) {
 
 		super(resId);
 		this.setCurrAction("Nothing");
@@ -45,6 +48,7 @@ public class Actor extends Resource{
 
 		this.setTime(0);
 		this.setLimitTime(limitTime);
+                this.setTaskMaxSize(taskMaxNumber);
 
 		this.setSchedulingSystem(schedulingSystem);
 	}
@@ -299,6 +303,14 @@ public class Actor extends Resource{
 
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
+	}
+        
+        public int getTaskMaxSize() {
+		return taskMaxSize;
+	}
+
+	public void setTaskMaxSize(int taskMaxNumber) {
+		this.taskMaxSize = taskMaxNumber;
 	}
 
 }
