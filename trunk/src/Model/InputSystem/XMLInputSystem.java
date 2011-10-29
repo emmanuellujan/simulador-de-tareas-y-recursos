@@ -62,7 +62,7 @@ public class XMLInputSystem extends InputSystem{
 						compUnits.add(unitComp);
 					}
 
-					Task task = new Task(sTaskId,iPriority,compUnits,null);
+					Task task = new Task(sTaskId,iPriority,compUnits,null,"New");
 					tasks.add(task);
 				}
 			}
@@ -85,18 +85,18 @@ public class XMLInputSystem extends InputSystem{
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
 
-			NodeList nodeList = doc.getElementsByTagName("resource");
+			NodeList nodeList = doc.getElementsByTagName("actor");
 			int n = nodeList.getLength();
 			for (int i = 0; i < n; i++) {
 				Node node = nodeList.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {	
 					Element element = (Element) node;
 
-					//resourceId
-					NodeList resourceIdElementList = element.getElementsByTagName("resourceId");
-					Element resourceIdElement = (Element) resourceIdElementList.item(0);
-					NodeList resourceId = resourceIdElement.getChildNodes();
-					String sResourceId = ((Node) resourceId.item(0)).getNodeValue();
+					//actorId
+					NodeList actorIdElementList = element.getElementsByTagName("actorId");
+					Element actorIdElement = (Element) actorIdElementList.item(0);
+					NodeList actorId = actorIdElement.getChildNodes();
+					String sActorId = ((Node) actorId.item(0)).getNodeValue();
 
 					//schedulingAlgorithm
 					NodeList saElementList = element.getElementsByTagName("schedulingAlgorithm");
@@ -111,7 +111,8 @@ public class XMLInputSystem extends InputSystem{
 					NodeList quantum = quantumElement.getChildNodes();
 					int iQuantum =  Integer.valueOf(((Node) quantum.item(0)).getNodeValue());
 
-					Actor actor = new Actor(sResourceId, sAlgorithm, iQuantum, schedulingSystem);
+					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
+							schedulingSystem, 50);
 					actors.add(actor);
 				}
 			}

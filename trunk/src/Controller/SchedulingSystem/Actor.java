@@ -1,17 +1,18 @@
 package Controller.SchedulingSystem;
+
 import java.util.Vector;
 
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingAlgorithmSystem.FCFS;
 
-public class Actor extends Resource{
-	
-	private int capacity;//Eficiencia
+public class Actor extends Resource {
+
+	// Capacity or efficiency
+	private int capacity;
 	
 	private String currAction;
 	private Task currTask;
 
-        //Los siguientes vectores corresponden a los vectores de tareas?
 	private Vector<Task> intList;
 	private Vector<Task> syncIntList;
 	private SchedulingAlgorithm saIntList;
@@ -22,33 +23,36 @@ public class Actor extends Resource{
 
 	private int time;
 	private int limitTime;
-        private int taskMaxSize;
+	private int taskMaxSize;
 
 	private SchedulingSystem schedulingSystem;
 
-        //Resta setear el maximo de tareas cuando se crea el vector, en el vector.
-	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime, SchedulingSystem schedulingSystem, int taskMaxNumber) {
+	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
+	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
+			SchedulingSystem schedulingSystem, int taskMaxNumber) {
 
 		super(resId);
 		this.setCurrAction("Nothing");
 		this.setCurrTask(null);
 
-		Vector<Task> intList = new Vector<Task>();
-		this.setIntList(intList);
+		this.setTaskMaxSize(taskMaxNumber);
+
 		Vector<Task> syncIntList = new Vector<Task>();
 		this.setSyncIntList(syncIntList);
+		Vector<Task> intList = new Vector<Task>();
+		this.setIntList(intList);
+
 		FCFS saIntList = new FCFS();
 		this.setSaIntList(saIntList);
 
-		Vector<Task> readylist = new Vector<Task>();
-		this.setReadyList(readylist);
 		Vector<Task> syncReadyList = new Vector<Task>();
 		this.setSyncReadyList(syncReadyList);
+		Vector<Task> readylist = new Vector<Task>();
+		this.setReadyList(readylist);
 		this.setSaReadyList(saReadyList);
 
 		this.setTime(0);
 		this.setLimitTime(limitTime);
-                this.setTaskMaxSize(taskMaxNumber);
 
 		this.setSchedulingSystem(schedulingSystem);
 	}
@@ -68,58 +72,100 @@ public class Actor extends Resource{
 		int limitTime = this.getLimitTime();
 
 		String currResId = this.getResId();
-		
-		if(currTask==null){ // Si no hay un proceso activo
-			if(time==limitTime){ // Si el temporizador ha terminado:
+
+		if (currTask == null) { // Si no hay un proceso activo
+			if (time == limitTime) { // Si el temporizador ha terminado:
 				this.resetTime(); // Se reinicia el temporizador.
 				currAction = "Time is up";
-			}else if(intList.size()>0){// Sino, si la lista de interrupciones no está vacía:
-				auxTask = saIntList.schedule(intList); // Se ejecuta el algoritmo de planeamiento de interrupciones para elegir un proceso.				
-				intList.remove(auxTask); // Se elimina dicho proceso de la lista de interrupciones.
-				currTask = auxTask; // Se ejecuta dicho proceso (pasa a estado activo).
+			} else if (intList.size() > 0) {// Sino, si la lista de
+											// interrupciones no está vacía:
+				auxTask = saIntList.schedule(intList); // Se ejecuta el
+														// algoritmo de
+														// planeamiento de
+														// interrupciones para
+														// elegir un proceso.
+				intList.remove(auxTask); // Se elimina dicho proceso de la lista
+											// de interrupciones.
+				currTask = auxTask; // Se ejecuta dicho proceso (pasa a estado
+									// activo).
 				String taskId = currTask.getTaskId();
-				currAction = "Select an interruption from the interruption list and put that interruption as active. The selected interruption is "+taskId;
-			}else if(readyList.size()>0){ // Sino, si la lista de listos no está vacía:
-					auxTask = saReadyList.schedule(readyList); // Se ejecuta el algoritmo de planeamiento para elegir un proceso de la lista de listos.
-					readyList.remove(auxTask); // Se elimina dicho proceso de la lista de listos.
-					currTask = auxTask; // Se ejecuta dicho proceso (pasa a estado activo).
-					String taskId = currTask.getTaskId();
-					currAction = "Select a task from the ready list and put that task as active. The selected task is "+taskId;
-			}else // Sino:
-					currAction = "None"; // No hacer nada
-		}else{ // Sino hay un proceso activo
-			if(time==limitTime){ // Si el temporizador ha terminado:
+				currAction = "Select an interruption from the interruption list and put that interruption as active. The selected interruption is "
+						+ taskId;
+			} else if (readyList.size() > 0) { // Sino, si la lista de listos no
+												// está vacía:
+				auxTask = saReadyList.schedule(readyList); // Se ejecuta el
+															// algoritmo de
+															// planeamiento para
+															// elegir un proceso
+															// de la lista de
+															// listos.
+				readyList.remove(auxTask); // Se elimina dicho proceso de la
+											// lista de listos.
+				currTask = auxTask; // Se ejecuta dicho proceso (pasa a estado
+									// activo).
+				String taskId = currTask.getTaskId();
+				currAction = "Select a task from the ready list and put that task as active. The selected task is "
+						+ taskId;
+			} else
+				// Sino:
+				currAction = "None"; // No hacer nada
+		} else { // Sino hay un proceso activo
+			if (time == limitTime) { // Si el temporizador ha terminado:
 				currAction = "Time is up";
-				String compUnit = currTask.getNext(this); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
-				if(!compUnit.contains("int")){ // Si el proceso en ejecución no es una interrupción:
-					this.addReadyList(currTask,currResId);// Se lo anexa a la lista de listos (pasa a estado listo).
+				String compUnit = currTask.getNext(this); // Se obtiene la
+															// unidad
+															// computacional
+															// (que informa cuál
+															// es el próximo
+															// dispositivo en el
+															// que se ejecutará
+															// el proceso)
+				if (!compUnit.contains("int")) { // Si el proceso en ejecución
+													// no es una interrupción:
+					this.addReadyList(currTask, currResId);// Se lo anexa a la
+															// lista de listos
+															// (pasa a estado
+															// listo).
 					String taskId = currTask.getTaskId();
-					currAction += ", the active task "+taskId+" pass to the ready list";
+					currAction += ", the active task " + taskId
+							+ " pass to the ready list";
 					currTask = null; // Se desaloja el proceso en ejecución.
 				}
 				this.resetTime(); // Se reinicia el temporizador.
-			}else if(intList.size()>0){// Sino, si la lista de interrupciones no está vacía:
-				auxTask = saIntList.schedule(intList); // Se ejecuta el algoritmo de planeamiento de interrupciones para elegir un proceso.
-				if(!currTask.getNext(this).contains("int") || auxTask.getPriority()>currTask.getPriority()){
-					intList.remove(auxTask); // Se elimina dicho proceso de la lista de interrupciones.
-					//Se agrega el proceso actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea
-					if(currTask.getCurrent().contains("int")){
-						this.addIntList(currTask,currResId);
+			} else if (intList.size() > 0) {// Sino, si la lista de
+											// interrupciones no está vacía:
+				auxTask = saIntList.schedule(intList); // Se ejecuta el
+														// algoritmo de
+														// planeamiento de
+														// interrupciones para
+														// elegir un proceso.
+				if (!currTask.getNext(this).contains("int")
+						|| auxTask.getPriority() > currTask.getPriority()) {
+					intList.remove(auxTask); // Se elimina dicho proceso de la
+												// lista de interrupciones.
+					// Se agrega el proceso actual a la lista de listos o a la
+					// lista de interrupciones dependiendo de lo que sea
+					if (currTask.getCurrent().contains("int")) {
+						this.addIntList(currTask, currResId);
 						currAction = "Old active task is put in the interruption list.";
-					}else{
-						this.addReadyList(currTask,currResId);
+					} else {
+						this.addReadyList(currTask, currResId);
 						currAction = "Old active task is put in the ready list.";
 					}
-					currTask = auxTask; // Se ejecuta dicho proceso (pasa a estado activo).
+					currTask = auxTask; // Se ejecuta dicho proceso (pasa a
+										// estado activo).
 					String taskId = currTask.getTaskId();
-					currAction = "Select an interruption from the interruption list and put that interruption as active." +
-							" The selected interruption is "+taskId+". "+currAction;
-				}else{
+					currAction = "Select an interruption from the interruption list and put that interruption as active."
+							+ " The selected interruption is "
+							+ taskId
+							+ ". "
+							+ currAction;
+				} else {
 					exec2();
 					currAction = this.getCurrAction();
 					currTask = this.getCurrTask();
 				}
-			}else{
+			} else {
 				exec2();
 				currAction = this.getCurrAction();
 				currTask = this.getCurrTask();
@@ -128,43 +174,65 @@ public class Actor extends Resource{
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
 		this.setIntList(intList);
-		this.setReadyList(readyList);	
+		this.setReadyList(readyList);
 	}
-	
+
 	private void exec2() {
-		String currAction="";
+		String currAction = "";
 		String resId = this.getResId();
 		Task currTask = this.getCurrTask();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		String compUnit = currTask.getNext(this); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
-		
-		if(compUnit.equals("end")){ // Sino, si el proceso en ejecución ha llegado a su fin:
-			schedulingSystem.finishTask(currTask); // Terminar proceso (pasa a estado finalizado).
+		String compUnit = currTask.getNext(this); // Se obtiene la unidad
+													// computacional (que
+													// informa cuál es el
+													// próximo dispositivo en el
+													// que se ejecutará el
+													// proceso)
+
+		if (compUnit.equals("end")) { // Sino, si el proceso en ejecución ha
+										// llegado a su fin:
+			schedulingSystem.finishTask(currTask); // Terminar proceso (pasa a
+													// estado finalizado).
 			String taskId = currTask.getTaskId();
-			currAction = "The active task "+taskId+" ends";
-			currTask=null;
-		}else if(compUnit.contains(resId)){ // Sino, si el proceso en ejecución debe continuar ejecutándose en este dispositivo:
+			currAction = "The active task " + taskId + " ends";
+			currTask = null;
+		} else if (compUnit.contains(resId)) { // Sino, si el proceso en
+												// ejecución debe continuar
+												// ejecutándose en este
+												// dispositivo:
 			currTask.exec(); // Ejecutar proceso.
-			currAction = "Procesing active task "+ currTask.getTaskId();
-		}else if(compUnit.contains("int")){ // Si es una interrupción:
+			currAction = "Procesing active task " + currTask.getTaskId();
+		} else if (compUnit.contains("int")) { // Si es una interrupción:
 			currTask.decProgramCounter();
 			compUnit = compUnit.replace("int_", "");
-			this.addIntList(currTask,compUnit);// Se lo anexa a la lista de interrupciones del dispositivo indicado (el proceso pasa a ser una interrupción y pasa a estado de espera).
+			this.addIntList(currTask, compUnit);// Se lo anexa a la lista de
+												// interrupciones del
+												// dispositivo indicado (el
+												// proceso pasa a ser una
+												// interrupción y pasa a estado
+												// de espera).
 			String taskId = currTask.getTaskId();
-			currAction = "The task "+taskId+" pass to the interruption list of the resource "+compUnit;
-			currTask=null; // Se desaloja el proceso en ejecución.
-		}else{ // Sino, si el proceso en ejecución debe continuar ejecutándose en otro dispositivo:
+			currAction = "The task " + taskId
+					+ " pass to the interruption list of the resource "
+					+ compUnit;
+			currTask = null; // Se desaloja el proceso en ejecución.
+		} else { // Sino, si el proceso en ejecución debe continuar ejecutándose
+					// en otro dispositivo:
 			currTask.decProgramCounter();
-			this.addReadyList(currTask,compUnit); // Se lo anexa a la lista de listos del recurso indicado (pasa a estado de espera).
+			this.addReadyList(currTask, compUnit); // Se lo anexa a la lista de
+													// listos del recurso
+													// indicado (pasa a estado
+													// de espera).
 			String taskId = currTask.getTaskId();
-			currAction = "The task "+taskId+" pass to the ready list of the resource "+compUnit;
-			currTask=null;  // Se desaloja el proceso en ejecución.
+			currAction = "The task " + taskId
+					+ " pass to the ready list of the resource " + compUnit;
+			currTask = null; // Se desaloja el proceso en ejecución.
 		}
 
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
 	}
-	
+
 	public void incTime() {
 		int time = this.getTime();
 		time++;
@@ -174,7 +242,7 @@ public class Actor extends Resource{
 
 	private void resetTime() {
 		int time = this.getTime();
-		time=0;
+		time = 0;
 		this.setTime(time);
 	}
 
@@ -199,20 +267,24 @@ public class Actor extends Resource{
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncIntList = actor.getSyncIntList();
-                if(this.checkListMaxSize(this.taskMaxSize, actor.getIntList(), syncIntList))
-                    syncIntList.add(currTask);
-                else
-                    System.out.println("No se puede incorporar tarea en Actor por sobrepasar el maximo de tareas permitidas en un Actor");
+		if (this.checkListMaxSize(this.taskMaxSize, actor.getIntList(),
+				syncIntList))
+			syncIntList.add(currTask);
+		else
+			System.out
+					.println("List size greater than allowed. Task can't be added.");
 	}
 
 	public void addReadyList(Task currTask, String compUnit) {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncReadyList = actor.getSyncReadyList();
-                if(this.checkListMaxSize(this.taskMaxSize, actor.getReadyList(), syncReadyList))
-                    syncReadyList.add(currTask);
-                else
-                    System.out.println("No se puede incorporar tarea en Actor por sobrepasar el maximo de tareas permitidas en un Actor");		
+		if (this.checkListMaxSize(this.taskMaxSize, actor.getReadyList(),
+				syncReadyList))
+			syncReadyList.add(currTask);
+		else
+			System.out
+					.println("List size greater than allowed. Task can't be added.");
 	}
 
 	public String getCurrAction() {
@@ -236,10 +308,12 @@ public class Actor extends Resource{
 	}
 
 	public void setIntList(Vector<Task> intList) {
-            if(checkListMaxSize(this.taskMaxSize,intList,this.syncIntList))
-		this.intList = intList;
-            else
-                System.out.println("No se puede setear lista de tareas por sobrepasar el maximo de tareas permitidas en un Actor");
+		if (checkListMaxSize(this.getTaskMaxSize(), intList,
+				this.getSyncIntList()))
+			this.intList = intList;
+		else
+			System.out
+					.println("List size greater than allowed. List can't be inicialized.");
 	}
 
 	public SchedulingAlgorithm getSaIntList() {
@@ -255,10 +329,12 @@ public class Actor extends Resource{
 	}
 
 	public void setReadyList(Vector<Task> readyList) {
-            if(checkListMaxSize(this.taskMaxSize,readyList,this.syncReadyList))
-		this.readyList = readyList;
-            else
-                System.out.println("No se puede setear lista de tareas por sobrepasar el maximo de tareas permitidas en un Actor");
+		if (checkListMaxSize(this.getTaskMaxSize(), readyList,
+				this.getSyncIntList()))
+			this.readyList = readyList;
+		else
+			System.out
+					.println("List size greater than allowed. List can't be inicialized.");
 	}
 
 	public SchedulingAlgorithm getSaReadyList() {
@@ -312,23 +388,25 @@ public class Actor extends Resource{
 	public int getCapacity() {
 		return capacity;
 	}
-
+	
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-        
-        public int getTaskMaxSize() {
+
+	public int getTaskMaxSize() {
 		return taskMaxSize;
 	}
 
 	public void setTaskMaxSize(int taskMaxNumber) {
 		this.taskMaxSize = taskMaxNumber;
 	}
-        public boolean checkListMaxSize(int currentSize, Vector<Task> listX, Vector<Task> listY){
-            if(currentSize > (listX.size() + listY.size()))
-                return false;
-            else
-                return true;
-        }
+
+	public boolean checkListMaxSize(int currentSize, Vector<Task> listX,
+			Vector<Task> listY) {
+		if (currentSize > (listX.size() + listY.size()))
+			return true;
+		else
+			return false;
+	}
 
 }
