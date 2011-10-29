@@ -199,14 +199,20 @@ public class Actor extends Resource{
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncIntList = actor.getSyncIntList();
-		syncIntList.add(currTask);
+                if(this.checkListMaxSize(this.taskMaxSize, actor.getIntList(), syncIntList))
+                    syncIntList.add(currTask);
+                else
+                    System.out.println("No se puede incorporar tarea en Actor por sobrepasar el maximo de tareas permitidas en un Actor");
 	}
 
 	public void addReadyList(Task currTask, String compUnit) {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncReadyList = actor.getSyncReadyList();
-		syncReadyList.add(currTask);
+                if(this.checkListMaxSize(this.taskMaxSize, actor.getReadyList(), syncReadyList))
+                    syncReadyList.add(currTask);
+                else
+                    System.out.println("No se puede incorporar tarea en Actor por sobrepasar el maximo de tareas permitidas en un Actor");		
 	}
 
 	public String getCurrAction() {
@@ -230,7 +236,10 @@ public class Actor extends Resource{
 	}
 
 	public void setIntList(Vector<Task> intList) {
+            if(checkListMaxSize(this.taskMaxSize,intList,this.syncIntList))
 		this.intList = intList;
+            else
+                System.out.println("No se puede setear lista de tareas por sobrepasar el maximo de tareas permitidas en un Actor");
 	}
 
 	public SchedulingAlgorithm getSaIntList() {
@@ -246,7 +255,10 @@ public class Actor extends Resource{
 	}
 
 	public void setReadyList(Vector<Task> readyList) {
+            if(checkListMaxSize(this.taskMaxSize,readyList,this.syncReadyList))
 		this.readyList = readyList;
+            else
+                System.out.println("No se puede setear lista de tareas por sobrepasar el maximo de tareas permitidas en un Actor");
 	}
 
 	public SchedulingAlgorithm getSaReadyList() {
@@ -312,5 +324,11 @@ public class Actor extends Resource{
 	public void setTaskMaxSize(int taskMaxNumber) {
 		this.taskMaxSize = taskMaxNumber;
 	}
+        public boolean checkListMaxSize(int currentSize, Vector<Task> listX, Vector<Task> listY){
+            if(currentSize > (listX.size() + listY.size()))
+                return false;
+            else
+                return true;
+        }
 
 }
