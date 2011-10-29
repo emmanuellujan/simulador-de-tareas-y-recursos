@@ -1,0 +1,1 @@
+* El sistema de log y de entrada sí están implementados, pero no están modificados respecto de los nuevos cambios. Ejemplo si se agrega una propiedad nueva a un actor hay que agregarla en el xml, en el sistema de entrada, para que la pueda levantar, y en la salida de datos para que se imprima.
