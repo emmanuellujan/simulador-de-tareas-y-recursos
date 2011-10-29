@@ -29,7 +29,7 @@ NodeList actorIdElementList = element.getElementsByTagName("actorId");<br>
 Element actorIdElement = (Element) actorIdElementList.item(0);<br>
 NodeList actorId = actorIdElement.getChildNodes();<br>
 String sActorId = ((Node) actorId.item(0)).getNodeValue();<br>
-...
+...<br>
 Actor actor = new Actor(sActorId, sAlgorithm, iQuantum, schedulingSystem, Integer.parseInt(sActorCapacity));
 
 Y se puede agregar:
@@ -39,7 +39,7 @@ NodeList maxTasksElementList = element.getElementsByTagName("maxTasks");<br>
 Element maxTasksElement = (Element) maxTasksElementList.item(0);<br>
 NodeList maxTasks = maxTasksElement.getChildNodes();<br>
 String sMaxTasks = ((Node) maxTasks.item(0)).getNodeValue();<br>
-...
+...<br>
 Actor actor = new Actor(sActorId, sAlgorithm, iQuantum, schedulingSystem, Integer.parseInt(sActorCapacity), Integer.parseInt(sMaxTasks));
 
 
