@@ -62,7 +62,7 @@ public class XMLInputSystem extends InputSystem{
 						compUnits.add(unitComp);
 					}
 
-					Task task = new Task(sTaskId,iPriority,compUnits);
+					Task task = new Task(sTaskId,iPriority,compUnits,null);
 					tasks.add(task);
 				}
 			}

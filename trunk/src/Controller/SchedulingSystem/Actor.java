@@ -5,6 +5,9 @@ import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class Actor extends Resource{
+	
+	private int capacity;
+	
 	private String currAction;
 	private Task currTask;
 
@@ -288,6 +291,14 @@ public class Actor extends Resource{
 
 	public void setSyncReadyList(Vector<Task> syncReadyList) {
 		this.syncReadyList = syncReadyList;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
 	}
 
 }
