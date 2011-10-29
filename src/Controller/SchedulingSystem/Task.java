@@ -6,6 +6,8 @@ public class Task {
 	private int programCounter;
 	private Vector<String> compUnits; // Example: {res1, res1, res1, res0, int_res0, int_res0, res2, res2, end}
 	private int priority;
+	private int difficult;
+	private Vector<Task> contingencyTasks;
 	
 	/*
 	//This properties can be added in future. See http://beru.univ-brest.fr/~singhoff/cheddar/ug/cheddar-r2.html
@@ -25,11 +27,12 @@ public class Task {
 	private int contextSwitchOverhead;
 	*/
 	
-	public Task(String taskId, int priority, Vector<String> compUnits){
+	public Task(String taskId, int priority, Vector<String> compUnits, Vector<Task> contingencyTasks){
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
 		this.setPriority(priority);
+		this.setContingencyTasks(contingencyTasks);
 	}
 
 	public String getCurrent() {
@@ -98,6 +101,22 @@ public class Task {
 
 	public void setPriority(int priority) {
 		this.priority = priority;
+	}
+
+	public int getDifficult() {
+		return difficult;
+	}
+
+	public void setDifficult(int difficult) {
+		this.difficult = difficult;
+	}
+
+	public Vector<Task> getContingencyTasks() {
+		return contingencyTasks;
+	}
+
+	public void setContingencyTasks(Vector<Task> contingencyTasks) {
+		this.contingencyTasks = contingencyTasks;
 	}
 
 	/*
