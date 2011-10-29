@@ -44,20 +44,23 @@ public class Task {
 		return current;
 	}
 	
-	public String getNext() {
-		Vector<String> compUnits = this.getCompUnits();
-		int n = compUnits.size();
+	public String getNext(int capacity) {
 		String next = null;
-		if(n>0){
-			int programCounter = this.getProgramCounter();
-			if(programCounter<n-1){
-				programCounter++;
-				this.setProgramCounter(programCounter);
-				next = compUnits.get(programCounter);
-			}else if(programCounter==n-1){
-				next = "end";
+		if(this.getDifficult()<capacity){
+			Vector<String> compUnits = this.getCompUnits();
+			int n = compUnits.size();
+			if(n>0){
+				int programCounter = this.getProgramCounter();
+				if(programCounter<n-1){
+					programCounter++;
+					this.setProgramCounter(programCounter);
+					next = compUnits.get(programCounter);
+				}else if(programCounter==n-1){
+					next = "end";
+				}
 			}
-		}
+		}else
+			next = "end";
 		return next;
 	}
 
