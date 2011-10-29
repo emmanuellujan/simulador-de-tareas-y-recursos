@@ -7,6 +7,7 @@ public class Task {
 	private Vector<String> compUnits; // Example: {res1, res1, res1, res0, int_res0, int_res0, res2, res2, end}
 	private int priority;
 	private int difficult;
+	private int currContTask;
 	private Vector<Task> contingencyTasks;
 	
 	/*
@@ -32,6 +33,7 @@ public class Task {
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
 		this.setPriority(priority);
+		this.setCurrContTask(0);
 		this.setContingencyTasks(contingencyTasks);
 	}
 
@@ -44,9 +46,9 @@ public class Task {
 		return current;
 	}
 	
-	public String getNext(int capacity) {
+	public String getNext(Actor actor) {
 		String next = null;
-		if(this.getDifficult()<capacity){
+		if(this.getDifficult()<actor.getCapacity()){
 			Vector<String> compUnits = this.getCompUnits();
 			int n = compUnits.size();
 			if(n>0){
@@ -59,8 +61,12 @@ public class Task {
 					next = "end";
 				}
 			}
-		}else
+		}else{
 			next = "end";
+			Task t = this.getContingencyTasks().get(this.getCurrContTask());
+			if(t!=null)
+				actor.addReadyList(t,actor.getResId());			
+		}
 		return next;
 	}
 
@@ -71,7 +77,7 @@ public class Task {
 	}
 
 	public void exec() {
-		// Simulated Execution 
+		// Simulated Execution. No need for code.
 	}
 	
 	public String getTaskId() {
@@ -120,6 +126,14 @@ public class Task {
 
 	public void setContingencyTasks(Vector<Task> contingencyTasks) {
 		this.contingencyTasks = contingencyTasks;
+	}
+
+	public int getCurrContTask() {
+		return currContTask;
+	}
+
+	public void setCurrContTask(int currContTask) {
+		this.currContTask = currContTask;
 	}
 
 	/*

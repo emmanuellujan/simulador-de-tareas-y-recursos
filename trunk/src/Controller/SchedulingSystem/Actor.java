@@ -86,7 +86,7 @@ public class Actor extends Resource{
 		}else{ // Sino hay un proceso activo
 			if(time==limitTime){ // Si el temporizador ha terminado:
 				currAction = "Time is up";
-				String compUnit = currTask.getNext(this.getCapacity()); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
+				String compUnit = currTask.getNext(this); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
 				if(!compUnit.contains("int")){ // Si el proceso en ejecución no es una interrupción:
 					this.addReadyList(currTask,currResId);// Se lo anexa a la lista de listos (pasa a estado listo).
 					String taskId = currTask.getTaskId();
@@ -96,7 +96,7 @@ public class Actor extends Resource{
 				this.resetTime(); // Se reinicia el temporizador.
 			}else if(intList.size()>0){// Sino, si la lista de interrupciones no está vacía:
 				auxTask = saIntList.schedule(intList); // Se ejecuta el algoritmo de planeamiento de interrupciones para elegir un proceso.
-				if(!currTask.getNext(this.getCapacity()).contains("int") || auxTask.getPriority()>currTask.getPriority()){
+				if(!currTask.getNext(this).contains("int") || auxTask.getPriority()>currTask.getPriority()){
 					intList.remove(auxTask); // Se elimina dicho proceso de la lista de interrupciones.
 					//Se agrega el proceso actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea
 					if(currTask.getCurrent().contains("int")){
@@ -132,7 +132,7 @@ public class Actor extends Resource{
 		String resId = this.getResId();
 		Task currTask = this.getCurrTask();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		String compUnit = currTask.getNext(this.getCapacity()); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
+		String compUnit = currTask.getNext(this); // Se obtiene la unidad computacional (que informa cuál es el próximo dispositivo en el que se ejecutará el proceso)
 		
 		if(compUnit.equals("end")){ // Sino, si el proceso en ejecución ha llegado a su fin:
 			schedulingSystem.finishTask(currTask); // Terminar proceso (pasa a estado finalizado).
