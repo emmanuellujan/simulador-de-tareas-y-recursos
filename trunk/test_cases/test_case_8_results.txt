@@ -1,0 +1,156 @@
+Time: 0
+	ResourceId: deliverRes
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task1, task2
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 0
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 1
+	ResourceId: deliverRes
+		Current Action: The active task task0 ends
+		Active Task: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task1, task2
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 1
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 2
+	ResourceId: deliverRes
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task2
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 2
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 3
+	ResourceId: deliverRes
+		Current Action: The active task task1 ends
+		Active Task: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task2
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 3
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 4
+	ResourceId: deliverRes
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 4
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 5
+	ResourceId: deliverRes
+		Current Action: The active task task2 ends
+		Active Task: None
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: Time is up
+		Active Task: None
+		Current Time: 0
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
