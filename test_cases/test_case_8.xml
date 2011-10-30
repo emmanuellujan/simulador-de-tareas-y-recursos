@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- actor0 is the cpu -->
+<!-- priority must be >= 0 -->
+<!-- if quantum is not needed set it to -1 -->
+<inputData>
+	<description>
+		Simple test for four tasks executed in
+		two divices with FCFS and priority scheduling
+		algorithms.
+	</description>
+	<tasks>
+		<task>
+			<taskId>task0</taskId>
+			<priority>0</priority>
+			<difficult>5</difficult>
+			<compUnits>
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+			</compUnits>
+		</task>
+		<task>
+			<taskId>task1</taskId>
+			<priority>2</priority>
+			<difficult>5</difficult>
+			<compUnits>
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+			</compUnits>
+		</task>
+		<task>
+			<taskId>task2</taskId>
+			<priority>1</priority>
+			<difficult>5</difficult>
+			<compUnits>
+				<compUnit>int_actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>int_actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>int_actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>int_actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+			</compUnits>
+		</task>
+	</tasks>
+	<actors>
+		<actor>
+			<actorId>actor0</actorId>
+			<capacity>10</capacity>
+			<maxTasks>10</maxTasks>
+			<schedulingAlgorithm>PrioritiesSA</schedulingAlgorithm>
+			<quantum>5</quantum>
+		</actor>
+		<actor>
+			<actorId>actor1</actorId>
+			<capacity>10</capacity>
+			<maxTasks>10</maxTasks>
+			<schedulingAlgorithm>FCFS</schedulingAlgorithm>
+			<quantum>-1</quantum>
+		</actor>
+	</actors>
+</inputData>
+
+
