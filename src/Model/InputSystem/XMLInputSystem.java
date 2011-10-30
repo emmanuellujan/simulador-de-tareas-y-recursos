@@ -45,6 +45,12 @@ public class XMLInputSystem extends InputSystem{
 					Element taskIdElement = (Element) taskIdElementList.item(0);
 					NodeList taskId = taskIdElement.getChildNodes();
 					String sTaskId = ((Node) taskId.item(0)).getNodeValue();
+					
+					//difficult
+					NodeList difficultElementList = element.getElementsByTagName("difficult");
+					Element difficultElement = (Element) difficultElementList.item(0);
+					NodeList difficult = difficultElement.getChildNodes();
+					String sDifficult = ((Node) difficult.item(0)).getNodeValue();
 
 					//priority
 					NodeList priorityElementList = element.getElementsByTagName("priority");
@@ -62,7 +68,7 @@ public class XMLInputSystem extends InputSystem{
 						compUnits.add(unitComp);
 					}
 
-					Task task = new Task(sTaskId,iPriority,compUnits,null,"New");
+					Task task = new Task(sTaskId,iPriority,compUnits,null,"New",Integer.parseInt(sDifficult));
 					tasks.add(task);
 				}
 			}
@@ -97,7 +103,19 @@ public class XMLInputSystem extends InputSystem{
 					Element actorIdElement = (Element) actorIdElementList.item(0);
 					NodeList actorId = actorIdElement.getChildNodes();
 					String sActorId = ((Node) actorId.item(0)).getNodeValue();
-
+					
+					//actorCapacity
+					NodeList actorCapacityElementList = element.getElementsByTagName("capacity");
+					Element actorCapacityElement = (Element) actorCapacityElementList.item(0);
+					NodeList actorCapacity = actorCapacityElement.getChildNodes();
+					String sActorCapacity = ((Node) actorCapacity.item(0)).getNodeValue();
+					
+					//maxTasks
+					NodeList maxTasksElementList = element.getElementsByTagName("maxTasks");
+					Element maxTasksElement = (Element) maxTasksElementList.item(0);
+					NodeList maxTasks = maxTasksElement.getChildNodes();
+					String sMaxTasks = ((Node) maxTasks.item(0)).getNodeValue();
+					
 					//schedulingAlgorithm
 					NodeList saElementList = element.getElementsByTagName("schedulingAlgorithm");
 					Element saElement = (Element) saElementList.item(0);
@@ -112,7 +130,7 @@ public class XMLInputSystem extends InputSystem{
 					int iQuantum =  Integer.valueOf(((Node) quantum.item(0)).getNodeValue());
 
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
-							schedulingSystem, 50);
+							schedulingSystem, Integer.parseInt(sActorCapacity), Integer.parseInt(sMaxTasks) );
 					actors.add(actor);
 				}
 			}

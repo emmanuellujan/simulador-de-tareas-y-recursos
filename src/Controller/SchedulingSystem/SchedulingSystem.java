@@ -35,7 +35,7 @@ public class SchedulingSystem {
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 50);
+		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 100, 100);
 		deliverRes.setReadyList(newsList);
 				
 		this.setNewsList(newsList);
