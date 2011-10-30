@@ -29,7 +29,7 @@ public class Actor extends Resource {
 
 	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
 	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
-			SchedulingSystem schedulingSystem, int taskMaxNumber) {
+			SchedulingSystem schedulingSystem, int capacity, int taskMaxNumber) {
 
 		super(resId);
 		this.setCurrAction("Nothing");

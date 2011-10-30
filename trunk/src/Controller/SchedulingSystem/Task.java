@@ -26,7 +26,7 @@ public class Task {
 	 */
 
 	public Task(String taskId, int priority, Vector<String> compUnits,
-			Vector<Task> contingencyTasks, String currentStatus) {
+			Vector<Task> contingencyTasks, String currentStatus, int difficult) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
@@ -34,6 +34,7 @@ public class Task {
 		this.setCurrContTask(0);
 		this.setContingencyTasks(contingencyTasks);
 		this.setStatus(currentStatus);
+		this.setDifficult(difficult);
 	}
 
 	public String getCurrent() {
