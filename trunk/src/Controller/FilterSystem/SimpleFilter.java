@@ -10,7 +10,7 @@ package Controller.FilterSystem;
  */
 public abstract class SimpleFilter extends Filter{
     
-    protected Object element;
+    protected Object element; //Será un recurso o el valor a comparar? Ya sea nro de tareas, nombre, posicion laboral, etc
     
     public SimpleFilter(Object obj){
         this.setElement(obj);
