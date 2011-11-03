@@ -4,7 +4,10 @@
  */
 package Controller.SchedulingSystem;
 
+import Controller.FilterSystem.ActorRelationshipFilter;
+import Controller.FilterSystem.JobPositionFilter;
 import Controller.FilterSystem.NameFilter;
+import Controller.FilterSystem.TaskFilter;
 import java.util.Vector;
 import java.util.logging.Filter;
 
@@ -34,22 +37,31 @@ public class SystemServices {
             if(((NameFilter)fName).eval(this.getResourcesList().get(i)))
                result.add(this.getResourcesList().get(i));         
         return result;
+    }    
+
+    public Vector<Resource> getResourceByMaxTasksCapacity(Filter fMaxTask, String name){
+        Vector<Resource> result = new Vector<Resource>();
+        for(int i = 0;i<this.getResourcesList().size();i++)
+            if(((TaskFilter)fMaxTask).eval(this.getResourcesList().get(i)))
+               result.add(this.getResourcesList().get(i));         
+        return result;
     }
     
-    public Vector<Resource> getResourceByMaxTasksCapacity(){
-        return null;
+    public Vector<Resource> getResourceByJobPosition(Filter fJobPosition, String name){
+        Vector<Resource> result = new Vector<Resource>();
+        for(int i = 0;i<this.getResourcesList().size();i++)
+            if(((JobPositionFilter)fJobPosition).eval(this.getResourcesList().get(i)))
+               result.add(this.getResourcesList().get(i));         
+        return result;
     }
     
-    public Vector<Resource> getResourceByJobPosition(){
-        return null;
-    }
     
-    public Vector<Resource> getResourceByRelationWorker(){
-        return null;
-    }
-    
-    public Vector<Resource> getResourceByRelationArtifact(){
-        return null;
+    public Vector<Resource> getResourceByRelationResource(Filter fWorkerRelationship, String name){
+        Vector<Resource> result = new Vector<Resource>();
+        for(int i = 0;i<this.getResourcesList().size();i++)
+            if(((ActorRelationshipFilter)fWorkerRelationship).eval(this.getResourcesList().get(i)))
+               result.add(this.getResourcesList().get(i));         
+        return result;
     }
     
 }
