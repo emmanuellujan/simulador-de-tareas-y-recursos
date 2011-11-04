@@ -2,6 +2,7 @@
 <!-- actor0 is the cpu -->
 <!-- priority must be >= 0 -->
 <!-- if quantum is not needed set it to -1 -->
+<!-- if t2 is a contingency task of t1, t1 must be declared first -->
 <inputData>
 	<description>
 		Simple test for four tasks executed in
@@ -13,6 +14,34 @@
 			<taskId>task0</taskId>
 			<priority>0</priority>
 			<difficult>5</difficult>
+			<contingencyTask>task01</contingencyTask>
+			<compUnits>
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+
+				<compUnit>actor0</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+				<compUnit>actor1</compUnit>
+			</compUnits>
+		</task>
+		<task>
+			<taskId>task01</taskId>
+			<priority>0</priority>
+			<difficult>5</difficult>
+			<contingencyTask></contingencyTask>
 			<compUnits>
 				<compUnit>actor0</compUnit>
 				<compUnit>actor1</compUnit>
@@ -39,6 +68,7 @@
 			<taskId>task1</taskId>
 			<priority>2</priority>
 			<difficult>5</difficult>
+			<contingencyTask></contingencyTask>
 			<compUnits>
 				<compUnit>actor0</compUnit>
 				<compUnit>actor1</compUnit>
@@ -65,6 +95,7 @@
 			<taskId>task2</taskId>
 			<priority>1</priority>
 			<difficult>5</difficult>
+			<contingencyTask></contingencyTask>
 			<compUnits>
 				<compUnit>int_actor0</compUnit>
 				<compUnit>actor1</compUnit>
