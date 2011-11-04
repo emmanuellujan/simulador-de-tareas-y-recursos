@@ -13,7 +13,7 @@ public class Task {
 							// ser 'En proceso','Finalizada', 'Nueva'. Puede
 							// idearse otra forma de representacion
 	private int currContTask;
-	private Vector<Task> contingencyTasks;
+	private Task contingencyTask;
 
 	/*
 	 * //This properties can be added in future. See
@@ -26,13 +26,13 @@ public class Task {
 	 */
 
 	public Task(String taskId, int priority, Vector<String> compUnits,
-			Vector<Task> contingencyTasks, String currentStatus, int difficult) {
+			Task contingencyTask, String currentStatus, int difficult) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
 		this.setPriority(priority);
 		this.setCurrContTask(0);
-		this.setContingencyTasks(contingencyTasks);
+		this.setContingencyTask(contingencyTask);
 		this.setStatus(currentStatus);
 		this.setDifficult(difficult);
 	}
@@ -63,12 +63,9 @@ public class Task {
 			}
 		} else {
 			next = "end";
-			Vector<Task> cTasks = this.getContingencyTasks();
-			if (cTasks != null) {
-				Task t = cTasks.get(this.getCurrContTask());
-				if (t != null)
-					actor.addReadyList(t, actor.getResId());
-			}
+			Task t = this.getContingencyTask();
+			if (t != null)
+				actor.addReadyList(t, actor.getResId());
 		}
 		return next;
 	}
@@ -123,12 +120,12 @@ public class Task {
 		this.difficult = difficult;
 	}
 
-	public Vector<Task> getContingencyTasks() {
-		return contingencyTasks;
+	public Task getContingencyTask() {
+		return contingencyTask;
 	}
 
-	public void setContingencyTasks(Vector<Task> contingencyTasks) {
-		this.contingencyTasks = contingencyTasks;
+	public void setContingencyTask(Task contingencyTask) {
+		this.contingencyTask = contingencyTask;
 	}
 
 	public int getCurrContTask() {
