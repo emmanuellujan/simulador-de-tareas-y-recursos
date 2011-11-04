@@ -31,7 +31,7 @@ Time: 1
 		Current Time: 1
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1, task2
+		Ready List:task1, task2, task01
 
 	ResourceId: actor0
 		Current Action: None
@@ -57,7 +57,7 @@ Time: 2
 		Current Time: 2
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task2, task01
 
 	ResourceId: actor0
 		Current Action: None
@@ -83,7 +83,7 @@ Time: 3
 		Current Time: 3
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task2, task01
 
 	ResourceId: actor0
 		Current Action: None
@@ -109,7 +109,7 @@ Time: 4
 		Current Time: 4
 		Limit Time: -1
 		Interruption List: 
-		Ready List:
+		Ready List:task01
 
 	ResourceId: actor0
 		Current Action: None
@@ -135,7 +135,7 @@ Time: 5
 		Current Time: 5
 		Limit Time: -1
 		Interruption List: 
-		Ready List:
+		Ready List:task01
 
 	ResourceId: actor0
 		Current Action: Time is up

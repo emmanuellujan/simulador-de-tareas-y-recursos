@@ -41,7 +41,7 @@
 				<currentTime>1</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
-				<readyList>task1, task2</readyList>
+				<readyList>task1, task2, task01</readyList>
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
@@ -73,7 +73,7 @@
 				<currentTime>2</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
-				<readyList>task2</readyList>
+				<readyList>task2, task01</readyList>
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
@@ -105,7 +105,7 @@
 				<currentTime>3</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
-				<readyList>task2</readyList>
+				<readyList>task2, task01</readyList>
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
@@ -137,7 +137,7 @@
 				<currentTime>4</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
-				<readyList></readyList>
+				<readyList>task01</readyList>
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
@@ -169,7 +169,7 @@
 				<currentTime>5</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
-				<readyList></readyList>
+				<readyList>task01</readyList>
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
