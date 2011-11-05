@@ -152,6 +152,16 @@
 			<maxTasks>10</maxTasks>
 			<schedulingAlgorithm>PrioritiesSA</schedulingAlgorithm>
 			<quantum>5</quantum>
+			<properties>
+				<property>
+					<propName>ActorName</propName>
+					<propVal>John</propVal>
+				</property>
+				<property>
+					<propName>Category</propName>
+					<propVal>A</propVal>
+				</property>
+			</properties>
 		</actor>
 		<actor>
 			<actorId>actor1</actorId>
@@ -159,6 +169,16 @@
 			<maxTasks>10</maxTasks>
 			<schedulingAlgorithm>FCFS</schedulingAlgorithm>
 			<quantum>-1</quantum>
+			<properties>
+				<property>
+					<propName>ActorName</propName>
+					<propVal>Mary</propVal>
+				</property>
+				<property>
+					<propName>Category</propName>
+					<propVal>A</propVal>
+				</property>
+			</properties>
 		</actor>
 	</resources>
 </inputData>

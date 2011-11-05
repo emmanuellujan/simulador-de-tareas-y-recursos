@@ -188,9 +188,23 @@ public class XMLInputSystem extends InputSystem {
 					int iQuantum = Integer.valueOf(((Node) quantum.item(0))
 							.getNodeValue());
 
+					// Properties
+					Hashtable<String, String> properties = new Hashtable<String, String>();
+					NodeList pElementList = element
+							.getElementsByTagName("property");
+					int m = pElementList.getLength();
+					for (int j = 0; j < m; j++) {
+						Element pElement = (Element) pElementList.item(j);
+						String key = pElement.getChildNodes().item(1)
+								.getChildNodes().item(0).getNodeValue();
+						String value = pElement.getChildNodes().item(3)
+								.getChildNodes().item(0).getNodeValue();
+						properties.put(key, value);
+					}
+				
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
-							Integer.parseInt(sMaxTasks));
+							Integer.parseInt(sMaxTasks), properties);
 					actors.add(actor);
 				}
 			}
