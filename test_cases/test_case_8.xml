@@ -119,7 +119,33 @@
 			</compUnits>
 		</task>
 	</tasks>
-	<actors>
+	<resources>
+		<artifact>
+			<artifactId>artifact1</artifactId>
+			<properties>
+				<property>
+					<propName>documentName</propName>
+					<propVal>finalreport</propVal>
+				</property>
+				<property>
+					<propName>size</propName>
+					<propVal>150pages</propVal>
+				</property>
+			</properties>
+		</artifact>
+		<artifact>
+			<artifactId>artifact2</artifactId>
+			<properties>
+				<property>
+					<propName>documentName</propName>
+					<propVal>finalreport</propVal>
+				</property>
+				<property>
+					<propName>size</propName>
+					<propVal>150pages</propVal>
+				</property>
+			</properties>
+		</artifact>
 		<actor>
 			<actorId>actor0</actorId>
 			<capacity>10</capacity>
@@ -134,7 +160,7 @@
 			<schedulingAlgorithm>FCFS</schedulingAlgorithm>
 			<quantum>-1</quantum>
 		</actor>
-	</actors>
+	</resources>
 </inputData>
 
 

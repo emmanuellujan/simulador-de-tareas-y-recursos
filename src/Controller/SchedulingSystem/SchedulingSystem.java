@@ -14,6 +14,7 @@ public class SchedulingSystem {
 	private CompLogginSystem logginSystem;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
+	private Vector<Artifact> artifactsList;
 	private Vector<Task> finishedList;
 	private int numberOfTasks;
 	private Actor deliverRes;
@@ -21,6 +22,7 @@ public class SchedulingSystem {
 	public SchedulingSystem(){
 		Vector<Task> newsList = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Artifact> artifactsList = new Vector<Artifact>();
 		Vector<Task> finishedList = new Vector<Task>();
 
 		Configurator configurator = new Configurator();
@@ -31,6 +33,7 @@ public class SchedulingSystem {
 		
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
+		artifactsList = inputSystem.loadArtifactsList();
 
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
@@ -40,6 +43,7 @@ public class SchedulingSystem {
 				
 		this.setNewsList(newsList);
 		this.setActorsList(actorsList);
+		this.setArtifactsList(artifactsList);
 		this.setFinishedList(finishedList);
 		this.setNumberOfTasks(newsList.size());
 		this.setInputSystem(inputSystem);
@@ -157,6 +161,14 @@ public class SchedulingSystem {
 
 	public void setDeliverRes(Actor deliverRes) {
 		this.deliverRes = deliverRes;
+	}
+	
+	public Vector<Artifact> getArtifactsList() {
+		return artifactsList;
+	}
+
+	public void setArtifactsList(Vector<Artifact> artifactsList) {
+		this.artifactsList = artifactsList;
 	}
 
 	public static void main(String[] args){

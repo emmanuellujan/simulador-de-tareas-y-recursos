@@ -5,7 +5,7 @@ import java.util.Hashtable;
 public class Resource {
 	
 	private String resId;
-	private Hashtable<Object, Object> properties;
+	private Hashtable<String, String> properties;
 	private Relations relations;
 	
 	public Resource(String resId) {
@@ -20,11 +20,11 @@ public class Resource {
 		this.resId = resId;
 	}
 	
-	public Object getProperty(Object key) {
+	public Object getProperty(String key) {
 		return properties.get(key);
 	}
 
-	public void setProperty(Object key, Object value) {
+	public void setProperty(String key, String value) {
 		this.properties.put(key, value);
 	}
 
@@ -34,6 +34,14 @@ public class Resource {
 
 	public void setRelations(Relations relations) {
 		this.relations = relations;
+	}
+
+	public Hashtable<String, String> getProperties(Hashtable<String, String> properties2) {
+		return this.properties;
+	}
+	
+	public void setProperties(Hashtable<String, String> properties) {
+		this.properties=properties;	
 	}
 
 }
