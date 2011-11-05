@@ -1,5 +1,6 @@
 package Controller.SchedulingSystem;
 
+import java.util.Hashtable;
 import java.util.Vector;
 
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
@@ -29,9 +30,11 @@ public class Actor extends Resource {
 
 	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
 	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
-			SchedulingSystem schedulingSystem, int capacity, int taskMaxNumber) {
+			SchedulingSystem schedulingSystem, int capacity, int taskMaxNumber,
+			Hashtable<String, String> properties) {
 
 		super(resId);
+		super.setProperties(properties);
 		this.setCurrAction("Nothing");
 		this.setCurrTask(null);
 
