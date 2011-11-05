@@ -3,7 +3,6 @@ package Model.InputSystem;
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
-import Controller.SchedulingSystem.Artifact;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Task;
@@ -22,8 +21,6 @@ public abstract class InputSystem {
 	public abstract Vector<Task> loadNewsList();
 
 	public abstract Vector<Actor> loadActorsList();
-	
-	public abstract Vector<Artifact> loadArtifactsList();
 
 	public Configurator getConfigurator() {
 		return configurator;

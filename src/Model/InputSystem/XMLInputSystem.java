@@ -14,7 +14,7 @@ import org.w3c.dom.NodeList;
 import Model.DataModel.Configurator.Configurator;
 import Controller.SchedulingAlgorithmSystem.SAFactory;
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
-import Controller.SchedulingSystem.Artifact;
+import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Task;
@@ -201,10 +201,22 @@ public class XMLInputSystem extends InputSystem {
 								.getChildNodes().item(0).getNodeValue();
 						properties.put(key, value);
 					}
-				
+					
+					// Relations
+					Vector<String> relationsIds = new Vector<String>();
+					NodeList rElementList = element
+							.getElementsByTagName("relation");
+					int m1 = rElementList.getLength();
+					for (int j = 0; j < m1; j++) {
+						Element rElement = (Element) rElementList.item(j);
+						String resourceId = rElement.getFirstChild()
+								.getNodeValue();
+						relationsIds.add(resourceId);
+					}
+
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
-							Integer.parseInt(sMaxTasks), properties);
+							Integer.parseInt(sMaxTasks), properties, relationsIds);
 					actors.add(actor);
 				}
 			}
@@ -214,11 +226,11 @@ public class XMLInputSystem extends InputSystem {
 		return actors;
 	}
 
-	public Vector<Artifact> loadArtifactsList() {
+	public Vector<Resource> loadResourcesList() {
 
 		String fileName = this.getConfigurator().getIoDirectory()
 				+ this.getConfigurator().getInputFile() + ".xml";
-		Vector<Artifact> artifacts = new Vector<Artifact>();
+		Vector<Resource> resources = new Vector<Resource>();
 		try {
 			File file = new File(fileName);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -226,20 +238,20 @@ public class XMLInputSystem extends InputSystem {
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
 
-			NodeList nodeList = doc.getElementsByTagName("artifact");
+			NodeList nodeList = doc.getElementsByTagName("resource");
 			int n = nodeList.getLength();
 			for (int i = 0; i < n; i++) {
 				Node node = nodeList.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
 					Element element = (Element) node;
 
-					// actorId
-					NodeList actorIdElementList = element
-							.getElementsByTagName("artifactId");
-					Element actorIdElement = (Element) actorIdElementList
+					// resourceId
+					NodeList resourceIdElementList = element
+							.getElementsByTagName("resourceId");
+					Element resourceIdElement = (Element) resourceIdElementList
 							.item(0);
-					NodeList actorId = actorIdElement.getChildNodes();
-					String sActorId = ((Node) actorId.item(0)).getNodeValue();
+					NodeList resourceId = resourceIdElement.getChildNodes();
+					String sResourceId = ((Node) resourceId.item(0)).getNodeValue();
 
 					// Properties
 					Hashtable<String, String> properties = new Hashtable<String, String>();
@@ -254,15 +266,27 @@ public class XMLInputSystem extends InputSystem {
 								.getChildNodes().item(0).getNodeValue();
 						properties.put(key, value);
 					}
+					
+					// Relations
+					Vector<String> relationsIds = new Vector<String>();
+					NodeList rElementList = element
+							.getElementsByTagName("relation");
+					int m1 = rElementList.getLength();
+					for (int j = 0; j < m1; j++) {
+						Element rElement = (Element) rElementList.item(j);
+						String resourceId1 = rElement.getFirstChild()
+								.getNodeValue();
+						relationsIds.add(resourceId1);
+					}
 
-					Artifact artifact = new Artifact(sActorId, properties);
-					artifacts.add(artifact);
+					Resource resource = new Resource(sResourceId, properties, relationsIds);
+					resources.add(resource);
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return artifacts;
+		return resources;
 	}
 
 	public Hashtable<String, Task> getContTasksHash() {

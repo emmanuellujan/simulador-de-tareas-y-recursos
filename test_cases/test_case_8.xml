@@ -5,9 +5,6 @@
 <!-- if t2 is a contingency task of t1, t1 must be declared first -->
 <inputData>
 	<description>
-		Simple test for four tasks executed in
-		two divices with FCFS and priority scheduling
-		algorithms.
 	</description>
 	<tasks>
 		<task>
@@ -120,11 +117,15 @@
 		</task>
 	</tasks>
 	<resources>
-		<artifact>
-			<artifactId>artifact1</artifactId>
+		<resource>
+			<resourceId>artifact1</resourceId>
 			<properties>
 				<property>
-					<propName>documentName</propName>
+					<propName>type</propName>
+					<propVal>artifact</propVal>
+				</property>
+				<property>
+					<propName>description</propName>
 					<propVal>finalreport</propVal>
 				</property>
 				<property>
@@ -132,20 +133,31 @@
 					<propVal>150pages</propVal>
 				</property>
 			</properties>
-		</artifact>
-		<artifact>
-			<artifactId>artifact2</artifactId>
+			<relations>
+				<relation>artifact2</relation>
+			</relations>
+		</resource>
+		<resource>
+			<resourceId>artifact2</resourceId>
 			<properties>
 				<property>
-					<propName>documentName</propName>
-					<propVal>finalreport</propVal>
+					<propName>type</propName>
+					<propVal>artifact</propVal>
 				</property>
 				<property>
-					<propName>size</propName>
-					<propVal>150pages</propVal>
+					<propName>description</propName>
+					<propVal>printer</propVal>
+				</property>
+				<property>
+					<propName>charge</propName>
+					<propVal>700pages</propVal>
 				</property>
 			</properties>
-		</artifact>
+			<relations>
+				<relation>actor0</relation>
+				<relation>actor1</relation>
+			</relations>
+		</resource>
 		<actor>
 			<actorId>actor0</actorId>
 			<capacity>10</capacity>
@@ -162,6 +174,10 @@
 					<propVal>A</propVal>
 				</property>
 			</properties>
+			<relations>
+				<relation>artifact0</relation>
+				<relation>actor1</relation>
+			</relations>
 		</actor>
 		<actor>
 			<actorId>actor1</actorId>
@@ -179,8 +195,12 @@
 					<propVal>A</propVal>
 				</property>
 			</properties>
+			<relations>
+			</relations>
 		</actor>
 	</resources>
+	<relation>
+	</relation>
 </inputData>
 
 
