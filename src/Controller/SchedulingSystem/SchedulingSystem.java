@@ -20,9 +20,9 @@ public class SchedulingSystem {
 	private Actor deliverRes;
 
 	public SchedulingSystem(){
-		Vector<Task> newsList = new Vector<Task>();
-		Vector<Actor> actorsList = new Vector<Actor>();
-		Vector<Resource> resourcesList = new Vector<Resource>();
+		Vector<Task> newsList;
+		Vector<Actor> actorsList;
+		Vector<Resource> resourcesList;
 		Vector<Task> finishedList = new Vector<Task>();
 
 		Configurator configurator = new Configurator();
@@ -34,11 +34,21 @@ public class SchedulingSystem {
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
 		resourcesList = inputSystem.loadResourcesList();
+		
+		inputSystem.updateRelations();
+
+		for(int i=0;i<resourcesList.size();i++)
+			resourcesList.elementAt(i).print();
+		
+		for(int i=0;i<actorsList.size();i++)
+			actorsList.elementAt(i).print();
+		
+
 
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 100, 100, null, null);
+		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 100, 100, null, 100, null);
 		deliverRes.setReadyList(newsList);
 				
 		this.setNewsList(newsList);
