@@ -16,7 +16,7 @@ public class ActorRelationshipFilter extends SimpleFilter{
     public ActorRelationshipFilter(Object obj){
         super(obj);
     }
-
+ 
     @Override
     public boolean eval(Resource currentResource) {
         Vector<Resource> relationResources = currentResource.getResources();         
