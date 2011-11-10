@@ -97,18 +97,19 @@ public class XMLInputSystem extends InputSystem {
 					Task task = new Task(sTaskId, iPriority, compUnits,
 							sContingencyTask, null, "New",
 							Integer.parseInt(sDifficult));
-					
+
 					tasks.add(task);
 				}
 			}
 
-			Vector<Task> contTasks = new Vector<Task>();;
+			Vector<Task> contTasks = new Vector<Task>();
+			
 			for (int i = 0; i < tasks.size(); i++) {
 				Task task = tasks.elementAt(i);
 				String contTaskId = task.getContTaskId();
 				for (int j = 0; j < tasks.size(); j++) {
 					Task task2 = tasks.elementAt(i);
-					if(task2.getTaskId().equals(contTaskId)){
+					if (task2.getTaskId().equals(contTaskId)) {
 						task.setContingencyTask(task2);
 						contTasks.add(task2);
 						tasks.remove(task2);
@@ -116,9 +117,9 @@ public class XMLInputSystem extends InputSystem {
 				}
 				for (int j = 0; j < contTasks.size(); j++) {
 					Task task2 = tasks.elementAt(i);
-					if(task2.getTaskId().equals(contTaskId))
+					if (task2.getTaskId().equals(contTaskId))
 						task.setContingencyTask(task2);
-						contTasks.add(task2);
+					contTasks.add(task2);
 				}
 			}
 
@@ -156,6 +157,15 @@ public class XMLInputSystem extends InputSystem {
 							.item(0);
 					NodeList actorId = actorIdElement.getChildNodes();
 					String sActorId = ((Node) actorId.item(0)).getNodeValue();
+					
+					// maxRelations
+					NodeList maxRelationsElementList = element
+							.getElementsByTagName("maxRelations");
+					Element maxRelationsElement = (Element) maxRelationsElementList
+							.item(0);
+					NodeList maxRelations = maxRelationsElement.getChildNodes();
+					String smaxRelations = ((Node) maxRelations.item(0))
+							.getNodeValue();
 
 					// actorCapacity
 					NodeList actorCapacityElementList = element
@@ -223,28 +233,16 @@ public class XMLInputSystem extends InputSystem {
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
 							Integer.parseInt(sMaxTasks), properties,
-							relationsIds);
+							Integer.parseInt(smaxRelations), relationsIds);
 
 					actors.add(actor);
 
 				}
 			}
-
-			// Update relations
-			for (int i = 0; i < actors.size(); i++) {
-				Resource resource = actors.elementAt(i);
-				for (int j = 0; j < resource.getRelationsIds().size(); j++) {
-					String resourceId = resource.getRelationsIds().elementAt(j);
-					for (int k = 0; k < actors.size(); k++) {
-						Resource resource2 = actors.elementAt(k);
-						if (resource2.getResId().equals(resourceId))
-							resource.addRelation(resource2);
-					}
-				}
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		this.setActorsList(actors);
 		return actors;
 	}
 
@@ -276,6 +274,15 @@ public class XMLInputSystem extends InputSystem {
 					String sResourceId = ((Node) resourceId.item(0))
 							.getNodeValue();
 
+					// maxRelations
+					NodeList maxRelationsElementList = element
+							.getElementsByTagName("maxRelations");
+					Element maxRelationsElement = (Element) maxRelationsElementList
+							.item(0);
+					NodeList maxRelations = maxRelationsElement.getChildNodes();
+					String smaxRelations = ((Node) maxRelations.item(0))
+							.getNodeValue();
+
 					// Properties
 					Hashtable<String, String> properties = new Hashtable<String, String>();
 					NodeList pElementList = element
@@ -303,28 +310,42 @@ public class XMLInputSystem extends InputSystem {
 					}
 
 					Resource resource = new Resource(sResourceId, properties,
-							relationsIds);
+							Integer.parseInt(smaxRelations), relationsIds);
 
 					resources.add(resource);
-				}
-			}
-
-			// Update relations
-			for (int i = 0; i < resources.size(); i++) {
-				Resource resource = resources.elementAt(i);
-				for (int j = 0; j < resource.getRelationsIds().size(); j++) {
-					String resourceId = resource.getRelationsIds().elementAt(j);
-					for (int k = 0; k < resources.size(); k++) {
-						Resource resource2 = resources.elementAt(k);
-						if (resource2.getResId().equals(resourceId))
-							resource.addRelation(resource2);
-					}
 				}
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		this.setResourcesList(resources);
 		return resources;
 	}
+
+	public void updateRelations() {
+
+		Vector<Resource> allResList = new Vector<Resource>();
+		allResList.addAll(this.getActorsList());
+		allResList.addAll(this.getResourcesList());
+
+		// Update relations
+		for (int i = 0; i < allResList.size(); i++) {
+			Resource resource = allResList.elementAt(i);
+			for (int j = 0; j < resource.getRelationsIds().size(); j++) {
+				String resourceId = resource.getRelationsIds().elementAt(j);
+				boolean resourceFound = false;
+				int k = 0;
+				while (!resourceFound) {
+					Resource resource2 = allResList.elementAt(k);
+					if (resource2.getResId().equals(resourceId)) {
+						resource.addRelation(resource2);
+						resourceFound = true;
+					} else
+						k++;
+				}
+			}
+		}
+	}
+
 }
