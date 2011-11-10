@@ -22,7 +22,7 @@ import Controller.SchedulingSystem.Task;
 public class XMLInputSystem extends InputSystem {
 
 	private Hashtable<String, Task> contTasksHash;
-
+	
 	public XMLInputSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
 		super(configurator, schedulingSystem);
@@ -217,8 +217,23 @@ public class XMLInputSystem extends InputSystem {
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
 							Integer.parseInt(sMaxTasks), properties, relationsIds);
+					
 					actors.add(actor);
+					
 				}
+			}
+			
+			// Update relations
+			for (int i = 0; i < actors.size(); i++){
+					Resource resource = actors.elementAt(i);
+					for (int j = 0; j < resource.getRelationsIds().size(); j++){
+						String resourceId = resource.getRelationsIds().elementAt(j);
+						for (int k = 0; k < actors.size(); k++){
+							Resource resource2 = actors.elementAt(k);
+							if(resource2.getResId().equals(resourceId))
+								resource.addRelation(resource2);
+						}
+					}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -280,9 +295,24 @@ public class XMLInputSystem extends InputSystem {
 					}
 
 					Resource resource = new Resource(sResourceId, properties, relationsIds);
+					
 					resources.add(resource);
 				}
 			}
+			
+			// Update relations
+			for (int i = 0; i < resources.size(); i++){
+					Resource resource = resources.elementAt(i);
+					for (int j = 0; j < resource.getRelationsIds().size(); j++){
+						String resourceId = resource.getRelationsIds().elementAt(j);
+						for (int k = 0; k < resources.size(); k++){
+							Resource resource2 = resources.elementAt(k);
+							if(resource2.getResId().equals(resourceId))
+								resource.addRelation(resource2);
+						}
+					}
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

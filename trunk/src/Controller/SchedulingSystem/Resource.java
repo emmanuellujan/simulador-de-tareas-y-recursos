@@ -15,6 +15,8 @@ public class Resource {
 		this.setResId(resId);
 		this.setProperties(properties);
 		this.setRelationsIds(relationsIds);
+		Vector<Resource> resources = new Vector<Resource>();
+		this.setResources(resources);
 	}
 
 	public String getResId() {
@@ -72,6 +74,11 @@ public class Resource {
 
 	public void setRelationsIds(Vector<String> relationsIds) {
 		this.relationsIds = relationsIds;
+	}
+
+	public void addRelation(Resource resource) {
+		if(this.getResources().size()<this.getResourceMaxLimit())
+			this.getResources().add(resource);
 	}
 	
 }
