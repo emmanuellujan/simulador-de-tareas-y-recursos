@@ -4,11 +4,8 @@
  */
 package Controller.FilterSystem;
 
-import Controller.SchedulingSystem.Relations;
 import Controller.SchedulingSystem.Resource;
 import java.util.Vector;
-import javax.annotation.Resources;
-import javax.management.relation.Relation;
 
 /**
  *
@@ -22,8 +19,7 @@ public class ActorRelationshipFilter extends SimpleFilter{
 
     @Override
     public boolean eval(Resource currentResource) {
-        Relations elementRelations = currentResource.getRelations();
-        Vector<Resource> relationResources = elementRelations.getResources();
+        Vector<Resource> relationResources = currentResource.getResources();         
         for(int i = 0;i<relationResources.size();i++){
             if(relationResources.elementAt(i).equals(element))
                 return true;
