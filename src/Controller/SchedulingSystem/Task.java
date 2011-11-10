@@ -12,7 +12,8 @@ public class Task {
 	private String status;// Si bien es un String, el contenido del mismo debe
 							// ser 'En proceso','Finalizada', 'Nueva'. Puede
 							// idearse otra forma de representacion
-	private int currContTask;
+	
+	private String contTaskId;
 	private Task contingencyTask;
 
 	/*
@@ -26,12 +27,12 @@ public class Task {
 	 */
 
 	public Task(String taskId, int priority, Vector<String> compUnits,
-			Task contingencyTask, String currentStatus, int difficult) {
+			String contTaskId, Task contingencyTask, String currentStatus, int difficult) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setCompUnits(compUnits);
 		this.setPriority(priority);
-		this.setCurrContTask(0);
+		this.setContTaskId(contTaskId);
 		this.setContingencyTask(contingencyTask);
 		this.setStatus(currentStatus);
 		this.setDifficult(difficult);
@@ -128,14 +129,6 @@ public class Task {
 		this.contingencyTask = contingencyTask;
 	}
 
-	public int getCurrContTask() {
-		return currContTask;
-	}
-
-	public void setCurrContTask(int currContTask) {
-		this.currContTask = currContTask;
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -147,6 +140,14 @@ public class Task {
 			return;
 		} else
 			this.status = currentStatus;
+	}
+
+	public void setContTaskId(String contTaskId) {
+		this.contTaskId = contTaskId;
+	}
+
+	public String getContTaskId() {
+		return this.contTaskId;
 	}
 
 	/*

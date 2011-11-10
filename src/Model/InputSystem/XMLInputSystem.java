@@ -21,19 +21,15 @@ import Controller.SchedulingSystem.Task;
 
 public class XMLInputSystem extends InputSystem {
 
-	private Hashtable<String, Task> contTasksHash;
-	
 	public XMLInputSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
 		super(configurator, schedulingSystem);
-		this.setContTasksHash(new Hashtable<String, Task>());
 	}
 
 	public Vector<Task> loadNewsList() {
 		String fileName = this.getConfigurator().getIoDirectory()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		Vector<Task> tasks = new Vector<Task>();
-		Hashtable<String, Task> contTasksHash = this.getContTasksHash();
 		try {
 			File file = new File(fileName);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -98,24 +94,34 @@ public class XMLInputSystem extends InputSystem {
 						compUnits.add(unitComp);
 					}
 
-					Task task = new Task(sTaskId, iPriority, compUnits, null,
-							"New", Integer.parseInt(sDifficult));
-
-					// If the current task have a contingency task
-					// associate the contingency task id to the current task
-					if (sContingencyTask != null)
-						contTasksHash.put(sContingencyTask, task);
-
-					// If the current task is a contingecy of another task
-					// add the current task to other task
-					// else add the current task to the task list
-					Task task2 = contTasksHash.get(sTaskId);
-					if (task2 != null)// => "task" is a contingency task
-						task2.setContingencyTask(task);
-					else
-						tasks.add(task);
+					Task task = new Task(sTaskId, iPriority, compUnits,
+							sContingencyTask, null, "New",
+							Integer.parseInt(sDifficult));
+					
+					tasks.add(task);
 				}
 			}
+
+			Vector<Task> contTasks = new Vector<Task>();;
+			for (int i = 0; i < tasks.size(); i++) {
+				Task task = tasks.elementAt(i);
+				String contTaskId = task.getContTaskId();
+				for (int j = 0; j < tasks.size(); j++) {
+					Task task2 = tasks.elementAt(i);
+					if(task2.getTaskId().equals(contTaskId)){
+						task.setContingencyTask(task2);
+						contTasks.add(task2);
+						tasks.remove(task2);
+					}
+				}
+				for (int j = 0; j < contTasks.size(); j++) {
+					Task task2 = tasks.elementAt(i);
+					if(task2.getTaskId().equals(contTaskId))
+						task.setContingencyTask(task2);
+						contTasks.add(task2);
+				}
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -201,7 +207,7 @@ public class XMLInputSystem extends InputSystem {
 								.getChildNodes().item(0).getNodeValue();
 						properties.put(key, value);
 					}
-					
+
 					// Relations
 					Vector<String> relationsIds = new Vector<String>();
 					NodeList rElementList = element
@@ -216,24 +222,25 @@ public class XMLInputSystem extends InputSystem {
 
 					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
-							Integer.parseInt(sMaxTasks), properties, relationsIds);
-					
+							Integer.parseInt(sMaxTasks), properties,
+							relationsIds);
+
 					actors.add(actor);
-					
+
 				}
 			}
-			
+
 			// Update relations
-			for (int i = 0; i < actors.size(); i++){
-					Resource resource = actors.elementAt(i);
-					for (int j = 0; j < resource.getRelationsIds().size(); j++){
-						String resourceId = resource.getRelationsIds().elementAt(j);
-						for (int k = 0; k < actors.size(); k++){
-							Resource resource2 = actors.elementAt(k);
-							if(resource2.getResId().equals(resourceId))
-								resource.addRelation(resource2);
-						}
+			for (int i = 0; i < actors.size(); i++) {
+				Resource resource = actors.elementAt(i);
+				for (int j = 0; j < resource.getRelationsIds().size(); j++) {
+					String resourceId = resource.getRelationsIds().elementAt(j);
+					for (int k = 0; k < actors.size(); k++) {
+						Resource resource2 = actors.elementAt(k);
+						if (resource2.getResId().equals(resourceId))
+							resource.addRelation(resource2);
 					}
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -266,7 +273,8 @@ public class XMLInputSystem extends InputSystem {
 					Element resourceIdElement = (Element) resourceIdElementList
 							.item(0);
 					NodeList resourceId = resourceIdElement.getChildNodes();
-					String sResourceId = ((Node) resourceId.item(0)).getNodeValue();
+					String sResourceId = ((Node) resourceId.item(0))
+							.getNodeValue();
 
 					// Properties
 					Hashtable<String, String> properties = new Hashtable<String, String>();
@@ -281,7 +289,7 @@ public class XMLInputSystem extends InputSystem {
 								.getChildNodes().item(0).getNodeValue();
 						properties.put(key, value);
 					}
-					
+
 					// Relations
 					Vector<String> relationsIds = new Vector<String>();
 					NodeList rElementList = element
@@ -294,23 +302,24 @@ public class XMLInputSystem extends InputSystem {
 						relationsIds.add(resourceId1);
 					}
 
-					Resource resource = new Resource(sResourceId, properties, relationsIds);
-					
+					Resource resource = new Resource(sResourceId, properties,
+							relationsIds);
+
 					resources.add(resource);
 				}
 			}
-			
+
 			// Update relations
-			for (int i = 0; i < resources.size(); i++){
-					Resource resource = resources.elementAt(i);
-					for (int j = 0; j < resource.getRelationsIds().size(); j++){
-						String resourceId = resource.getRelationsIds().elementAt(j);
-						for (int k = 0; k < resources.size(); k++){
-							Resource resource2 = resources.elementAt(k);
-							if(resource2.getResId().equals(resourceId))
-								resource.addRelation(resource2);
-						}
+			for (int i = 0; i < resources.size(); i++) {
+				Resource resource = resources.elementAt(i);
+				for (int j = 0; j < resource.getRelationsIds().size(); j++) {
+					String resourceId = resource.getRelationsIds().elementAt(j);
+					for (int k = 0; k < resources.size(); k++) {
+						Resource resource2 = resources.elementAt(k);
+						if (resource2.getResId().equals(resourceId))
+							resource.addRelation(resource2);
 					}
+				}
 			}
 
 		} catch (Exception e) {
@@ -318,13 +327,4 @@ public class XMLInputSystem extends InputSystem {
 		}
 		return resources;
 	}
-
-	public Hashtable<String, Task> getContTasksHash() {
-		return contTasksHash;
-	}
-
-	public void setContTasksHash(Hashtable<String, Task> contTasksHash) {
-		this.contTasksHash = contTasksHash;
-	}
-
 }
