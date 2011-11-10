@@ -55,12 +55,19 @@ public class SystemServices {
         return result;
     }
     
-    
+    /*
+     * Se considerá que un Actor, con el cual tendremos una relacion. Siempre será
+     * identificado con un nombre. De lo contrario si no fuese de esa forma, podría 
+     * identificarse con el id.
+     */
     public Vector<Resource> getResourceByRelationResource(Filter fWorkerRelationship, String name){
         Vector<Resource> result = new Vector<Resource>();
         for(int i = 0;i<this.getResourcesList().size();i++)
-            if(((ActorRelationshipFilter)fWorkerRelationship).eval(this.getResourcesList().get(i)))
-               result.add(this.getResourcesList().get(i));         
+            if(((ActorRelationshipFilter)fWorkerRelationship).eval(this.getResourcesList().get(i))){
+                if(!result.contains(this.getResourcesList().get(i))){
+                    result.add(this.getResourcesList().get(i));   
+                }                     
+            }   
         return result;
     }
     
