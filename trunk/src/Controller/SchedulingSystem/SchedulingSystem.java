@@ -33,6 +33,7 @@ public class SchedulingSystem {
 		
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
+		resourcesList = inputSystem.loadResourcesList();
 
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
