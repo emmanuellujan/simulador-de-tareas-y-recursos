@@ -13,6 +13,9 @@ import java.util.logging.Filter;
 
 /**
  *
+ * Clase encargada de evaluar cuestiones relacionadas con el grafo o poder
+ * realizar modificaciones en el mismo.
+ * 
  * @author F.Rossi
  */
 public class SystemServices {
@@ -69,6 +72,31 @@ public class SystemServices {
                 }                     
             }   
         return result;
+    }
+    
+    public void setResourceProperty(String resourceId, String property, String value){      
+        for(int i = 0;i<this.getResourcesList().size();i++)
+            if(this.getResourcesList().elementAt(i).getResId().equals(resourceId))
+                this.getResourcesList().elementAt(i).setProperty(property, value);
+    }
+    
+    public void deleteResourceRelation(String firstResourceId, String secondResourceId){
+        Vector<Resource> currentList = new Vector<Resource>();
+        for(int i = 0;i<this.getResourcesList().size();i++){
+            if(this.getResourcesList().elementAt(i).getResId().equals(firstResourceId)){
+                currentList = this.getResourcesList().elementAt(i).getResources();//Recursos con los cuales se comunica este recurso actual    
+                this.getResourcesList().elementAt(i).setResources(this.deleteResource(currentList, secondResourceId));
+            }
+        }
+    }
+    
+    public Vector<Resource> deleteResource(Vector<Resource> list, String resourceId){
+        for(int i = 0;i<list.size();i++)
+            if(list.elementAt(i).getResId().equals(resourceId)){
+                list.remove(i);
+                return list;
+            }              
+        return list;
     }
     
 }
