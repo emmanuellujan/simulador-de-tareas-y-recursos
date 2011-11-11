@@ -8,7 +8,7 @@
  *
  * Created on 10/11/2011, 01:49:37 PM
  */
-package LookAndFeel.Example;
+package Gui.Example;
 
 import com.birosoft.liquid.LiquidLookAndFeel;
 import javax.swing.JOptionPane;
