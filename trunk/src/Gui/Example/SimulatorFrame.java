@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /*
  * SimulatorFrame.java
@@ -10,7 +7,7 @@
  */
 package Gui.Example;
 
-import com.birosoft.liquid.LiquidLookAndFeel;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -597,7 +594,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         
         try { 
             javax.swing.UIManager.setLookAndFeel("com.birosoft.liquid.LiquidLookAndFeel");
-            LiquidLookAndFeel.setLiquidDecorations(true, "panther" ) ; 
+            //LiquidLookAndFeel.setLiquidDecorations(true, "panther" ) ; 
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error in Look and Feel" + e.getMessage());
