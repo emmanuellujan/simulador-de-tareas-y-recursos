@@ -37,7 +37,7 @@ public class SchedulingSystem {
 		
 		inputSystem.updateRelations();
 
-		for(int i=0;i<resourcesList.size();i++){
+		/*for(int i=0;i<resourcesList.size();i++){
 			resourcesList.elementAt(i).print();
 			System.out.println("-------------------------------------");
 		}
@@ -45,7 +45,7 @@ public class SchedulingSystem {
 		for(int i=0;i<actorsList.size();i++){
 			actorsList.elementAt(i).print();
 			System.out.println("-------------------------------------");
-		}
+		}*/
 		
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
@@ -184,8 +184,11 @@ public class SchedulingSystem {
 	}
 
 	public static void main(String[] args){
+		System.out.println("Loading data...");
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
+		System.out.println("Simulation started...");
 		schedulingSystem.simulate();
+		System.out.println("Done.");
 	}
 
 }

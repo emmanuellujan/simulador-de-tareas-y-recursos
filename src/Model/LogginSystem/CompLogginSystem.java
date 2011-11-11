@@ -1,9 +1,7 @@
 package Model.LogginSystem;
 import java.util.Vector;
-
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
-
 
 public class CompLogginSystem extends LogginSystem{
 	private Vector<LogginSystem> logginSystems;
