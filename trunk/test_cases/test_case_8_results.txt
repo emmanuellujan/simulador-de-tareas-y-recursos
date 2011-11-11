@@ -5,7 +5,7 @@ Time: 0
 		Current Time: 0
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01, task1, task2
+		Ready List:task1, task2
 
 	ResourceId: actor0
 		Current Action: None
@@ -31,7 +31,7 @@ Time: 1
 		Current Time: 1
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01, task1, task2
+		Ready List:task1, task2
 
 	ResourceId: actor0
 		Current Action: None
@@ -52,12 +52,12 @@ Time: 1
 
 Time: 2
 	ResourceId: deliverRes
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 2
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1, task2
+		Ready List:task2
 
 	ResourceId: actor0
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
@@ -78,12 +78,12 @@ Time: 2
 
 Time: 3
 	ResourceId: deliverRes
-		Current Action: The task task01 pass to the ready list of the resource actor0
+		Current Action: The task task1 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 3
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1, task2
+		Ready List:task2
 
 	ResourceId: actor0
 		Current Action: Procesing active task task0
@@ -91,7 +91,7 @@ Time: 3
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: None
@@ -104,12 +104,12 @@ Time: 3
 
 Time: 4
 	ResourceId: deliverRes
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
 		Current Time: 4
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:
 
 	ResourceId: actor0
 		Current Action: The task task0 pass to the ready list of the resource actor1
@@ -117,7 +117,7 @@ Time: 4
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: None
@@ -130,20 +130,20 @@ Time: 4
 
 Time: 5
 	ResourceId: deliverRes
-		Current Action: The task task1 pass to the ready list of the resource actor0
+		Current Action: The task task2 pass to the interruption list of the resource actor0
 		Active Task: None
 		Current Time: 5
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:
 
 	ResourceId: actor0
 		Current Action: Time is up
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task01, task1
+		Interruption List: task2
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
@@ -156,20 +156,20 @@ Time: 5
 
 Time: 6
 	ResourceId: deliverRes
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: None
+		Active Task: None
 		Current Time: 6
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
+		Active Task: task2
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: Procesing active task task0
@@ -182,7 +182,7 @@ Time: 6
 
 Time: 7
 	ResourceId: deliverRes
-		Current Action: The task task2 pass to the interruption list of the resource actor0
+		Current Action: None
 		Active Task: None
 		Current Time: 7
 		Limit Time: -1
@@ -190,12 +190,12 @@ Time: 7
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 2
 		Limit Time: 5
-		Interruption List: task2
-		Ready List:task01
+		Interruption List: 
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: Procesing active task task0
@@ -216,12 +216,12 @@ Time: 8
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2. Old active task is put in the ready list.
-		Active Task: task2
+		Current Action: The task task2 pass to the ready list of the resource actor1
+		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task1
+		Ready List:task1
 
 	ResourceId: actor1
 		Current Action: Procesing active task task0
@@ -229,7 +229,7 @@ Time: 8
 		Current Time: 8
 		Limit Time: -1
 		Interruption List: 
-		Ready List:
+		Ready List:task2
 
 
 Time: 9
@@ -242,12 +242,12 @@ Time: 9
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task1, task0
+		Ready List:task0
 
 	ResourceId: actor1
 		Current Action: The task task0 pass to the ready list of the resource actor0
@@ -255,7 +255,7 @@ Time: 9
 		Current Time: 9
 		Limit Time: -1
 		Interruption List: 
-		Ready List:
+		Ready List:task2
 
 
 Time: 10
@@ -268,16 +268,16 @@ Time: 10
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task2 pass to the ready list
+		Current Action: Time is up, the active task task1 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task1, task0, task2
+		Ready List:task0, task1
 
 	ResourceId: actor1
-		Current Action: None
-		Active Task: None
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
 		Current Time: 10
 		Limit Time: -1
 		Interruption List: 
@@ -299,11 +299,11 @@ Time: 11
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0, task2
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: None
-		Active Task: None
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 11
 		Limit Time: -1
 		Interruption List: 
@@ -325,11 +325,11 @@ Time: 12
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0, task2
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: None
-		Active Task: None
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 12
 		Limit Time: -1
 		Interruption List: 
@@ -346,20 +346,20 @@ Time: 13
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 13
 		Limit Time: -1
 		Interruption List: 
-		Ready List:
+		Ready List:task1
 
 
 Time: 14
@@ -372,20 +372,20 @@ Time: 14
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task2 pass to the ready list of the resource actor1
-		Active Task: None
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task01, task0
+		Interruption List: task2
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: The task task2 pass to the interruption list of the resource actor0
+		Active Task: None
 		Current Time: 14
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 15
@@ -398,20 +398,20 @@ Time: 15
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up
+		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task01, task0
+		Interruption List: task2
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 15
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:
 
 
 Time: 16
@@ -424,20 +424,20 @@ Time: 16
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
+		Active Task: task2
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: The task task1 pass to the ready list of the resource actor0
-		Active Task: None
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 16
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:
 
 
 Time: 17
@@ -450,16 +450,16 @@ Time: 17
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task01
-		Active Task: task01
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 17
 		Limit Time: -1
 		Interruption List: 
@@ -476,20 +476,20 @@ Time: 18
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task01 pass to the ready list of the resource actor1
+		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 18
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01
+		Ready List:task2
 
 
 Time: 19
@@ -502,20 +502,20 @@ Time: 19
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0
+		Ready List:task1
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: The task task1 pass to the ready list of the resource actor0
+		Active Task: None
 		Current Time: 19
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01
+		Ready List:task2
 
 
 Time: 20
@@ -528,20 +528,20 @@ Time: 20
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task1 pass to the ready list
+		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: task2
-		Ready List:task0, task1
+		Interruption List: 
+		Ready List:task1, task0
 
 	ResourceId: actor1
-		Current Action: The task task2 pass to the interruption list of the resource actor0
-		Active Task: None
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
 		Current Time: 20
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01
+		Ready List:
 
 
 Time: 21
@@ -554,16 +554,16 @@ Time: 21
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 21
 		Limit Time: -1
 		Interruption List: 
@@ -580,16 +580,16 @@ Time: 22
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 22
 		Limit Time: -1
 		Interruption List: 
@@ -606,20 +606,20 @@ Time: 23
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task2 pass to the ready list of the resource actor1
+		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 23
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 24
@@ -632,20 +632,20 @@ Time: 24
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task0
+		Interruption List: task2
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
+		Current Action: The task task2 pass to the interruption list of the resource actor0
+		Active Task: None
 		Current Time: 24
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 25
@@ -658,20 +658,20 @@ Time: 25
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task1 pass to the ready list
+		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task0, task1, task01
+		Interruption List: task2
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: The task task01 pass to the ready list of the resource actor0
-		Active Task: None
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 25
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:
 
 
 Time: 26
@@ -684,16 +684,16 @@ Time: 26
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
+		Active Task: task2
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 26
 		Limit Time: -1
 		Interruption List: 
@@ -710,20 +710,20 @@ Time: 27
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task1 pass to the ready list of the resource actor1
-		Active Task: None
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 27
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:
 
 
 Time: 28
@@ -736,20 +736,20 @@ Time: 28
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
+		Current Action: The task task2 pass to the ready list of the resource actor1
+		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 28
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task2
 
 
 Time: 29
@@ -762,20 +762,20 @@ Time: 29
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task0
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:task1
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: The task task1 pass to the ready list of the resource actor0
+		Active Task: None
 		Current Time: 29
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task2
 
 
 Time: 30
@@ -792,16 +792,16 @@ Time: 30
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: task2
-		Ready List:task01, task0
+		Interruption List: 
+		Ready List:task1, task0
 
 	ResourceId: actor1
-		Current Action: The task task2 pass to the interruption list of the resource actor0
-		Active Task: None
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
 		Current Time: 30
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:
 
 
 Time: 31
@@ -814,16 +814,16 @@ Time: 31
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 31
 		Limit Time: -1
 		Interruption List: 
@@ -840,16 +840,16 @@ Time: 32
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 32
 		Limit Time: -1
 		Interruption List: 
@@ -866,20 +866,20 @@ Time: 33
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task2 pass to the ready list of the resource actor1
+		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 33
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 34
@@ -892,20 +892,20 @@ Time: 34
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task0, task1
+		Interruption List: task2
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: The task task1 pass to the ready list of the resource actor0
+		Current Action: The task task2 pass to the interruption list of the resource actor0
 		Active Task: None
 		Current Time: 34
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 35
@@ -918,16 +918,16 @@ Time: 35
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task01 pass to the ready list
+		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: 
-		Ready List:task0, task1, task01
+		Interruption List: task2
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 35
 		Limit Time: -1
 		Interruption List: 
@@ -944,16 +944,16 @@ Time: 36
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
+		Active Task: task2
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 36
 		Limit Time: -1
 		Interruption List: 
@@ -970,16 +970,16 @@ Time: 37
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 37
 		Limit Time: -1
 		Interruption List: 
@@ -996,20 +996,20 @@ Time: 38
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task1 pass to the ready list of the resource actor1
+		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 38
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task2
 
 
 Time: 39
@@ -1026,16 +1026,16 @@ Time: 39
 		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
-		Interruption List: task2
-		Ready List:task01
+		Interruption List: 
+		Ready List:task1
 
 	ResourceId: actor1
-		Current Action: The task task2 pass to the interruption list of the resource actor0
+		Current Action: The task task1 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 39
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task2
 
 
 Time: 40
@@ -1052,12 +1052,12 @@ Time: 40
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
-		Interruption List: task2
-		Ready List:task01, task0
+		Interruption List: 
+		Ready List:task1, task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
 		Current Time: 40
 		Limit Time: -1
 		Interruption List: 
@@ -1074,16 +1074,16 @@ Time: 41
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 41
 		Limit Time: -1
 		Interruption List: 
@@ -1100,16 +1100,16 @@ Time: 42
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 42
 		Limit Time: -1
 		Interruption List: 
@@ -1126,20 +1126,20 @@ Time: 43
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task2 pass to the ready list of the resource actor1
+		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task2
+		Active Task: task2
 		Current Time: 43
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 44
@@ -1152,20 +1152,20 @@ Time: 44
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: The task task1 pass to the ready list of the resource actor0
+		Current Action: The active task task2 ends
 		Active Task: None
 		Current Time: 44
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task2
+		Ready List:task1
 
 
 Time: 45
@@ -1178,16 +1178,16 @@ Time: 45
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task01 pass to the ready list
+		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task1, task01
+		Ready List:task0
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
 		Current Time: 45
 		Limit Time: -1
 		Interruption List: 
@@ -1204,16 +1204,16 @@ Time: 46
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 46
 		Limit Time: -1
 		Interruption List: 
@@ -1230,16 +1230,16 @@ Time: 47
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 47
 		Limit Time: -1
 		Interruption List: 
@@ -1256,20 +1256,20 @@ Time: 48
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task1 pass to the ready list of the resource actor1
+		Current Action: The task task0 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0, task01
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task2
-		Active Task: task2
+		Current Action: Procesing active task task1
+		Active Task: task1
 		Current Time: 48
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task0
 
 
 Time: 49
@@ -1282,20 +1282,20 @@ Time: 49
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
+		Current Action: None
+		Active Task: None
 		Current Time: 4
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: The active task task2 ends
+		Current Action: The active task task1 ends
 		Active Task: None
 		Current Time: 49
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task1
+		Ready List:task0
 
 
 Time: 50
@@ -1308,16 +1308,16 @@ Time: 50
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Time is up, the active task task0 pass to the ready list
+		Current Action: Time is up
 		Active Task: None
 		Current Time: 0
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task01, task0
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
 		Current Time: 50
 		Limit Time: -1
 		Interruption List: 
@@ -1334,16 +1334,16 @@ Time: 51
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
+		Current Action: None
+		Active Task: None
 		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 51
 		Limit Time: -1
 		Interruption List: 
@@ -1360,20 +1360,20 @@ Time: 52
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: The task task01 pass to the ready list of the resource actor1
+		Current Action: None
 		Active Task: None
 		Current Time: 2
 		Limit Time: 5
 		Interruption List: 
-		Ready List:task0
+		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 52
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01
+		Ready List:
 
 
 Time: 53
@@ -1386,20 +1386,20 @@ Time: 53
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
+		Current Action: None
+		Active Task: None
 		Current Time: 3
 		Limit Time: 5
 		Interruption List: 
 		Ready List:
 
 	ResourceId: actor1
-		Current Action: Procesing active task task1
-		Active Task: task1
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 53
 		Limit Time: -1
 		Interruption List: 
-		Ready List:task01
+		Ready List:
 
 
 Time: 54
@@ -1412,451 +1412,9 @@ Time: 54
 		Ready List:
 
 	ResourceId: actor0
-		Current Action: Procesing active task task0
-		Active Task: task0
+		Current Action: None
+		Active Task: None
 		Current Time: 4
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: The active task task1 ends
-		Active Task: None
-		Current Time: 54
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task01
-
-
-Time: 55
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 55
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Time is up, the active task task0 pass to the ready list
-		Active Task: None
-		Current Time: 0
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task0
-
-	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 55
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 56
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 56
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 1
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 56
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 57
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 57
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: The task task0 pass to the ready list of the resource actor1
-		Active Task: None
-		Current Time: 2
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 57
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task0
-
-
-Time: 58
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 58
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: None
-		Active Task: None
-		Current Time: 3
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task01
-
-	ResourceId: actor1
-		Current Action: The task task01 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 58
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task0
-
-
-Time: 59
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 59
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 4
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 59
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 60
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 60
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Time is up, the active task task01 pass to the ready list
-		Active Task: None
-		Current Time: 0
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task01
-
-	ResourceId: actor1
-		Current Action: Procesing active task task0
-		Active Task: task0
-		Current Time: 60
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 61
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 61
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 1
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task0
-		Active Task: task0
-		Current Time: 61
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 62
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 62
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: The task task01 pass to the ready list of the resource actor1
-		Active Task: None
-		Current Time: 2
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task0
-
-	ResourceId: actor1
-		Current Action: The task task0 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 62
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task01
-
-
-Time: 63
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 63
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 3
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 63
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 64
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 64
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Procesing active task task0
-		Active Task: task0
-		Current Time: 4
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 64
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 65
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 65
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Time is up, the active task task0 pass to the ready list
-		Active Task: None
-		Current Time: 0
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task0
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 65
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 66
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 66
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 1
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 66
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 67
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 67
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: The task task0 pass to the ready list of the resource actor1
-		Active Task: None
-		Current Time: 2
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task01
-
-	ResourceId: actor1
-		Current Action: The task task01 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 67
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task0
-
-
-Time: 68
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 68
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 3
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 68
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 69
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 69
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 4
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task0
-		Active Task: task0
-		Current Time: 69
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 70
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 70
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Time is up, the active task task01 pass to the ready list
-		Active Task: None
-		Current Time: 0
-		Limit Time: 5
-		Interruption List: 
-		Ready List:task01
-
-	ResourceId: actor1
-		Current Action: Procesing active task task0
-		Active Task: task0
-		Current Time: 70
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 71
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 71
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 1
 		Limit Time: 5
 		Interruption List: 
 		Ready List:
@@ -1864,137 +1422,7 @@ Time: 71
 	ResourceId: actor1
 		Current Action: The active task task0 ends
 		Active Task: None
-		Current Time: 71
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 72
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 72
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: The task task01 pass to the ready list of the resource actor1
-		Active Task: None
-		Current Time: 2
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: None
-		Active Task: None
-		Current Time: 72
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task01
-
-
-Time: 73
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 73
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: None
-		Active Task: None
-		Current Time: 3
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task01
-		Active Task: task01
-		Current Time: 73
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 74
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 74
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: None
-		Active Task: None
-		Current Time: 4
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 74
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 75
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 75
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: Time is up
-		Active Task: None
-		Current Time: 0
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: Procesing active task task01
-		Active Task: task01
-		Current Time: 75
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-
-Time: 76
-	ResourceId: deliverRes
-		Current Action: None
-		Active Task: None
-		Current Time: 76
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Current Action: None
-		Active Task: None
-		Current Time: 1
-		Limit Time: 5
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor1
-		Current Action: The active task task01 ends
-		Active Task: None
-		Current Time: 76
+		Current Time: 54
 		Limit Time: -1
 		Interruption List: 
 		Ready List:

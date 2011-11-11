@@ -103,12 +103,12 @@ public class XMLInputSystem extends InputSystem {
 			}
 
 			Vector<Task> contTasks = new Vector<Task>();
-			
+
 			for (int i = 0; i < tasks.size(); i++) {
 				Task task = tasks.elementAt(i);
 				String contTaskId = task.getContTaskId();
 				for (int j = 0; j < tasks.size(); j++) {
-					Task task2 = tasks.elementAt(i);
+					Task task2 = tasks.elementAt(j);
 					if (task2.getTaskId().equals(contTaskId)) {
 						task.setContingencyTask(task2);
 						contTasks.add(task2);
@@ -116,10 +116,9 @@ public class XMLInputSystem extends InputSystem {
 					}
 				}
 				for (int j = 0; j < contTasks.size(); j++) {
-					Task task2 = tasks.elementAt(i);
+					Task task2 = contTasks.elementAt(j);
 					if (task2.getTaskId().equals(contTaskId))
 						task.setContingencyTask(task2);
-					contTasks.add(task2);
 				}
 			}
 
@@ -157,7 +156,7 @@ public class XMLInputSystem extends InputSystem {
 							.item(0);
 					NodeList actorId = actorIdElement.getChildNodes();
 					String sActorId = ((Node) actorId.item(0)).getNodeValue();
-					
+
 					// maxRelations
 					NodeList maxRelationsElementList = element
 							.getElementsByTagName("maxRelations");
