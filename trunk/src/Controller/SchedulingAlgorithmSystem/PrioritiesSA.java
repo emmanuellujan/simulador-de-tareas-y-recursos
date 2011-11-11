@@ -4,7 +4,9 @@ import  Controller.SchedulingSystem.Task;
 
 public class PrioritiesSA extends SchedulingAlgorithm {
 	
-	public PrioritiesSA(){}
+	public PrioritiesSA(){
+		super("Priorities");
+	}
 
 	public Task schedule(Vector<Task> tasks) {
 		Task task = null;

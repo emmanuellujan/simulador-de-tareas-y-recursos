@@ -24,13 +24,13 @@ public class Actor extends Resource {
 
 	private int time;
 	private int limitTime;
-	private int taskMaxSize;
+	private int maxTasksNumber;
 
 	private SchedulingSystem schedulingSystem;
 
 	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
 	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
-			SchedulingSystem schedulingSystem, int capacity, int taskMaxNumber,
+			SchedulingSystem schedulingSystem, int capacity, int maxTaskNumber,
 			Hashtable<String, String> properties, int maxRelations, Vector<String> relationsIds) {
 
 		super(resId,properties,maxRelations,relationsIds);
@@ -38,7 +38,8 @@ public class Actor extends Resource {
 		this.setCurrAction("Nothing");
 		this.setCurrTask(null);
 
-		this.setTaskMaxSize(taskMaxNumber);
+		this.setMaxTasksNumber(maxTaskNumber);
+		this.setCapacity(capacity);
 
 		Vector<Task> syncIntList = new Vector<Task>();
 		this.setSyncIntList(syncIntList);
@@ -270,7 +271,7 @@ public class Actor extends Resource {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncIntList = actor.getSyncIntList();
-		if (this.checkListMaxSize(this.taskMaxSize, actor.getIntList(),
+		if (this.checkListMaxSize(this.getMaxTasksNumber(), actor.getIntList(),
 				syncIntList))
 			syncIntList.add(currTask);
 		else
@@ -282,7 +283,7 @@ public class Actor extends Resource {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		Actor actor = schedulingSystem.getResource(compUnit);
 		Vector<Task> syncReadyList = actor.getSyncReadyList();
-		if (this.checkListMaxSize(this.taskMaxSize, actor.getReadyList(),
+		if (this.checkListMaxSize(this.getMaxTasksNumber(), actor.getReadyList(),
 				syncReadyList))
 			syncReadyList.add(currTask);
 		else
@@ -311,7 +312,7 @@ public class Actor extends Resource {
 	}
 
 	public void setIntList(Vector<Task> intList) {
-		if (checkListMaxSize(this.getTaskMaxSize(), intList,
+		if (checkListMaxSize(this.getMaxTasksNumber(), intList,
 				this.getSyncIntList()))
 			this.intList = intList;
 		else
@@ -332,7 +333,7 @@ public class Actor extends Resource {
 	}
 
 	public void setReadyList(Vector<Task> readyList) {
-		if (checkListMaxSize(this.getTaskMaxSize(), readyList,
+		if (checkListMaxSize(this.getMaxTasksNumber(), readyList,
 				this.getSyncIntList()))
 			this.readyList = readyList;
 		else
@@ -396,20 +397,43 @@ public class Actor extends Resource {
 		this.capacity = capacity;
 	}
 
-	public int getTaskMaxSize() {
-		return taskMaxSize;
-	}
-
-	public void setTaskMaxSize(int taskMaxNumber) {
-		this.taskMaxSize = taskMaxNumber;
-	}
-
 	public boolean checkListMaxSize(int currentSize, Vector<Task> listX,
 			Vector<Task> listY) {
 		if (currentSize > (listX.size() + listY.size()))
 			return true;
 		else
 			return false;
+	}
+	
+	public void print(){
+		super.print();
+		
+		System.out.println("Capacity:"+this.getCapacity());
+		System.out.println("Limit Time:"+this.getLimitTime());
+		System.out.println("Max Tasks Number:"+this.getMaxTasksNumber());
+		
+		System.out.println("Ready List Scheduling Algorithm:"+this.getSaReadyList().getId());
+		System.out.println("Ready List:");
+		Vector<Task> readyList = this.getReadyList();
+		int n = readyList.size();
+		for(int i=0;i<n;i++)
+			System.out.println("\t"+readyList.elementAt(i).getTaskId());
+		
+		System.out.println("Interruption List Scheduling Algorithm:"+this.getSaIntList().getId());
+		System.out.println("Interruption List:");
+		Vector<Task> intList = this.getReadyList();
+		n = intList.size();
+		for(int i=0;i<n;i++)
+			System.out.println("\t"+intList.elementAt(i).getTaskId());
+
+	}
+
+	public int getMaxTasksNumber() {
+		return maxTasksNumber;
+	}
+
+	public void setMaxTasksNumber(int maxTaskNumber) {
+		this.maxTasksNumber = maxTaskNumber;
 	}
 
 }

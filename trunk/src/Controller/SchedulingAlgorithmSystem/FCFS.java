@@ -5,7 +5,9 @@ import  Controller.SchedulingSystem.Task;
 
 public class FCFS extends SchedulingAlgorithm {
 	
-	public FCFS(){}
+	public FCFS(){
+		super("FCFS");
+	}
 	
 	public Task schedule(Vector<Task> tasks){
 		if(tasks.size()>0)

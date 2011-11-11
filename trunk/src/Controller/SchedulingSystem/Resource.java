@@ -101,9 +101,7 @@ public class Resource {
 		for(int i=0;i<n;i++)
 			System.out.println("\t"+resources.elementAt(i).getResId());
 		
-		System.out.println("Relations Max limit:"+this.getResourceMaxLimit());
-		
-		System.out.println();
+		System.out.println("Relations Max Limit:"+this.getResourceMaxLimit());
 		
 	}
 	
