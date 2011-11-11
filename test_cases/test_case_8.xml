@@ -118,7 +118,7 @@
 	</tasks>
 	<resources>
 		<resource>
-			<resourceId>artifact1</resourceId>
+			<resourceId>artifact0</resourceId>
 			<properties>
 				<property>
 					<propName>type</propName>
@@ -133,12 +133,13 @@
 					<propVal>150pages</propVal>
 				</property>
 			</properties>
+			<maxRelations>10</maxRelations>
 			<relations>
-				<relation>artifact2</relation>
+				<relation>artifact1</relation>
 			</relations>
 		</resource>
 		<resource>
-			<resourceId>artifact2</resourceId>
+			<resourceId>artifact1</resourceId>
 			<properties>
 				<property>
 					<propName>type</propName>
@@ -153,7 +154,9 @@
 					<propVal>700pages</propVal>
 				</property>
 			</properties>
+			<maxRelations>10</maxRelations>
 			<relations>
+		
 				<relation>actor0</relation>
 				<relation>actor1</relation>
 			</relations>
@@ -174,6 +177,7 @@
 					<propVal>A</propVal>
 				</property>
 			</properties>
+			<maxRelations>10</maxRelations>
 			<relations>
 				<relation>artifact0</relation>
 				<relation>actor1</relation>
@@ -195,6 +199,7 @@
 					<propVal>A</propVal>
 				</property>
 			</properties>
+			<maxRelations>10</maxRelations>
 			<relations>
 			</relations>
 		</actor>

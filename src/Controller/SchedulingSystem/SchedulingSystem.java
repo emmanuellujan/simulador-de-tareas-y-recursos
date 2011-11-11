@@ -37,14 +37,16 @@ public class SchedulingSystem {
 		
 		inputSystem.updateRelations();
 
-		for(int i=0;i<resourcesList.size();i++)
+		for(int i=0;i<resourcesList.size();i++){
 			resourcesList.elementAt(i).print();
+			System.out.println("-------------------------------------");
+		}
 		
-		for(int i=0;i<actorsList.size();i++)
+		for(int i=0;i<actorsList.size();i++){
 			actorsList.elementAt(i).print();
+			System.out.println("-------------------------------------");
+		}
 		
-
-
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
