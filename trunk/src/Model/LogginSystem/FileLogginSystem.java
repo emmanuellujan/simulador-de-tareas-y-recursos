@@ -12,6 +12,10 @@ import Model.DataModel.SimulationTime.SimulationTime;
 public abstract class FileLogginSystem extends LogginSystem{
 	String outputFileName;
 
+	public FileLogginSystem(Configurator configurator) {
+		super(configurator);
+	}
+	
 	public FileLogginSystem(Configurator configurator,Vector<SimulationTime> simulationTimes) {
 		super(configurator,simulationTimes);
 	}

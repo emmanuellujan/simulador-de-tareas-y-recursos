@@ -10,11 +10,17 @@ public abstract class LogginSystem {
 	private Vector<String> errorMsgs;
 	private Vector<SimulationTime> simulationTimes;
 	
-	public LogginSystem(Configurator configurator,Vector<SimulationTime> simulationTimes) {
+	public LogginSystem(Configurator configurator) {
 		this.setConfigurator(configurator);
+		Vector<SimulationTime> simulationTimes = new Vector<SimulationTime>();
 		this.setSimulationTimes(simulationTimes);
 	}
 	
+	public LogginSystem(Configurator configurator, Vector<SimulationTime> simulationTimes) {
+		this.setConfigurator(configurator);
+		this.setSimulationTimes(simulationTimes);
+	}
+
 	public void log(int time, Vector<Actor> devicesList){
 		SimulationTime simulationTime = new SimulationTime(time, devicesList);
 		this.addSimulationTime(simulationTime);

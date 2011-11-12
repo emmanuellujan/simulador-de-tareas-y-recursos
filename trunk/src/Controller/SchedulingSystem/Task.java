@@ -2,6 +2,8 @@ package Controller.SchedulingSystem;
 
 import java.util.Vector;
 
+import Model.LogginSystem.CompLogginSystem;
+
 public class Task {
 	private String taskId;
 	private int programCounter;
@@ -135,8 +137,8 @@ public class Task {
 	public void setStatus(String currentStatus) {
 		if ((currentStatus != "Processing") && (currentStatus != "Finished")
 				&& (currentStatus != "New")) {
-			System.out.println("You attempted to insert a wrong task state.");
-			return;
+			String errorMsg = "You attempted to insert a wrong task state "+ currentStatus +" in the task "+this.getTaskId();
+			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
 		} else
 			this.status = currentStatus;
 	}

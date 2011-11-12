@@ -2,7 +2,6 @@ package Controller.SchedulingSystem;
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
-import Model.DataModel.SimulationTime.SimulationTime;
 import Model.InputSystem.InputSystem;
 import Model.InputSystem.XMLInputSystem;
 import Model.LogginSystem.CompLogginSystem;
@@ -11,7 +10,6 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 public class SchedulingSystem {
 
 	private InputSystem inputSystem;
-	private CompLogginSystem logginSystem;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
@@ -28,9 +26,8 @@ public class SchedulingSystem {
 		Configurator configurator = new Configurator();
 		InputSystem inputSystem = new XMLInputSystem(configurator,this);
 		
-		Vector<SimulationTime> simulationTimes = new Vector<SimulationTime>();
-		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator,simulationTimes);
-		
+		CompLogginSystem.getInstance(configurator);
+				
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
 		resourcesList = inputSystem.loadResourcesList();
@@ -59,13 +56,12 @@ public class SchedulingSystem {
 		this.setFinishedList(finishedList);
 		this.setNumberOfTasks(newsList.size());
 		this.setInputSystem(inputSystem);
-		this.setLogginSystem(compLogginSystem);
 		this.setDeliverRes(deliverRes);
 	}
 
 	public void simulate() {
 		Vector<Actor> actorsList = getActorsList();
-		CompLogginSystem logginSystem = this.getLogginSystem();
+		CompLogginSystem logginSystem = CompLogginSystem.getInstance();
 		Actor deliverRes = this.getDeliverRes();
 		actorsList.add(0, deliverRes);
 		int i = 0;
@@ -149,14 +145,6 @@ public class SchedulingSystem {
 
 	public void setInputSystem(InputSystem InputSystem) {
 		this.inputSystem = InputSystem;
-	}
-
-	public CompLogginSystem getLogginSystem() {
-		return logginSystem;
-	}
-
-	public void setLogginSystem(CompLogginSystem logginSystem) {
-		this.logginSystem = logginSystem;
 	}
 
 	public int getNumberOfTasks() {
