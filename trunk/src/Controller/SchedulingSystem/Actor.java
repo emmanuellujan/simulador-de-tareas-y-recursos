@@ -26,14 +26,13 @@ public class Actor extends Resource {
 	private int limitTime;
 	private int maxTasksNumber;
 
-	private SchedulingSystem schedulingSystem;
-
 	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
 	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
 			SchedulingSystem schedulingSystem, int capacity, int maxTaskNumber,
-			Hashtable<String, String> properties, int maxRelations, Vector<String> relationsIds) {
+			Hashtable<String, String> properties, int maxRelations,
+			Vector<String> relationsIds) {
 
-		super(resId,properties,maxRelations,relationsIds);
+		super(resId,properties,maxRelations,relationsIds, schedulingSystem);
 
 		this.setCurrAction("Nothing");
 		this.setCurrTask(null);
@@ -57,8 +56,6 @@ public class Actor extends Resource {
 
 		this.setTime(0);
 		this.setLimitTime(limitTime);
-
-		this.setSchedulingSystem(schedulingSystem);
 	}
 
 	public void exec() {
@@ -367,14 +364,6 @@ public class Actor extends Resource {
 
 	public void setLimitTime(int limitTime) {
 		this.limitTime = limitTime;
-	}
-
-	public SchedulingSystem getSchedulingSystem() {
-		return schedulingSystem;
-	}
-
-	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
-		this.schedulingSystem = schedulingSystem;
 	}
 
 	public Vector<Task> getSyncIntList() {

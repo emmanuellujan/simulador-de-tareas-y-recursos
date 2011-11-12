@@ -250,6 +250,7 @@ public class XMLInputSystem extends InputSystem {
 		String fileName = this.getConfigurator().getIoDirectory()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		Vector<Resource> resources = new Vector<Resource>();
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		try {
 			File file = new File(fileName);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -309,7 +310,7 @@ public class XMLInputSystem extends InputSystem {
 					}
 
 					Resource resource = new Resource(sResourceId, properties,
-							Integer.parseInt(smaxRelations), relationsIds);
+							Integer.parseInt(smaxRelations), relationsIds, schedulingSystem);
 
 					resources.add(resource);
 				}

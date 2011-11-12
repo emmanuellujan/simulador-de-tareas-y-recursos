@@ -5,20 +5,24 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 public class Resource {
-	
+
 	private String resId;
 	private Hashtable<String, String> properties;
 	private Vector<String> relationsIds;
 	private Vector<Resource> resources;
 	private int resourceMaxLimit;
-	
-	public Resource(String resId, Hashtable<String, String> properties, int maxRelations, Vector<String> relationsIds) {
+	private SchedulingSystem schedulingSystem;
+
+	public Resource(String resId, Hashtable<String, String> properties,
+			int maxRelations, Vector<String> relationsIds,
+			SchedulingSystem schedulingSystem) {
 		this.setResId(resId);
 		this.setProperties(properties);
 		this.setResourceMaxLimit(maxRelations);
 		this.setRelationsIds(relationsIds);
 		Vector<Resource> resources = new Vector<Resource>();
 		this.setResources(resources);
+		this.setSchedulingSystem(schedulingSystem);
 	}
 
 	public String getResId() {
@@ -28,7 +32,7 @@ public class Resource {
 	public void setResId(String resId) {
 		this.resId = resId;
 	}
-	
+
 	public Object getProperty(String key) {
 		return properties.get(key);
 	}
@@ -49,12 +53,13 @@ public class Resource {
 		return properties;
 	}
 
-	public Hashtable<String, String> getProperties(Hashtable<String, String> properties2) {
+	public Hashtable<String, String> getProperties(
+			Hashtable<String, String> properties2) {
 		return this.properties;
 	}
-	
+
 	public void setProperties(Hashtable<String, String> properties) {
-		this.properties=properties;	
+		this.properties = properties;
 	}
 
 	public int getResourceMaxLimit() {
@@ -64,7 +69,7 @@ public class Resource {
 	public void setResourceMaxLimit(int resourceMaxLimit) {
 		this.resourceMaxLimit = resourceMaxLimit;
 	}
-	
+
 	public void setResource(Resource newResource) {
 		if (this.getResourceMaxLimit() >= (this.getResources().size() + 1))
 			this.getResources().addElement(newResource);
@@ -79,30 +84,45 @@ public class Resource {
 	}
 
 	public void addRelation(Resource resource) {
-		if(this.getResources().size()<this.getResourceMaxLimit())
+		if (this.getResources().size() < this.getResourceMaxLimit())
 			this.getResources().add(resource);
+		else {
+			String errorMsg = "Limit exceeded. Can't assign the resource "
+					+ resource.getResId() + " to the resource "
+					+ this.getResId();
+			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+		}
 	}
-	
-	public void print(){
-		System.out.println("ResourceId:"+this.getResId());
-		
+
+	public void print() {
+		System.out.println("ResourceId:" + this.getResId());
+
 		System.out.println("Properties:");
 		Hashtable<String, String> properties = this.getProperties();
 		Enumeration<String> e = properties.keys();
 		String key;
 		while (e.hasMoreElements()) {
 			key = e.nextElement();
-			System.out.println("\tKey:"+ key +", Value: " + properties.get(key));
+			System.out.println("\tKey:" + key + ", Value: "
+					+ properties.get(key));
 		}
-		
+
 		System.out.println("Relations:");
 		Vector<Resource> resources = this.getResources();
 		int n = resources.size();
-		for(int i=0;i<n;i++)
-			System.out.println("\t"+resources.elementAt(i).getResId());
-		
-		System.out.println("Relations Max Limit:"+this.getResourceMaxLimit());
-		
+		for (int i = 0; i < n; i++)
+			System.out.println("\t" + resources.elementAt(i).getResId());
+
+		System.out.println("Relations Max Limit:" + this.getResourceMaxLimit());
+
 	}
-	
+
+	public SchedulingSystem getSchedulingSystem() {
+		return schedulingSystem;
+	}
+
+	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+		this.schedulingSystem = schedulingSystem;
+	}
+
 }
