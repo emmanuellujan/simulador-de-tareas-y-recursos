@@ -5,7 +5,7 @@ import java.util.Vector;
 public class Task {
 	private String taskId;
 	private int programCounter;
-	private Vector<String> compUnits; // Example: {res1, res1, res1, res0,
+	private Vector<String> workUnits; // Example: {res1, res1, res1, res0,
 										// int_res0, int_res0, res2, res2, end}
 	private int priority;
 	private int difficult;
@@ -26,11 +26,11 @@ public class Task {
 	 * private String seed; private int contextSwitchOverhead;
 	 */
 
-	public Task(String taskId, int priority, Vector<String> compUnits,
+	public Task(String taskId, int priority, Vector<String> workUnits,
 			String contTaskId, Task contingencyTask, String currentStatus, int difficult) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
-		this.setCompUnits(compUnits);
+		this.setWorkUnits(workUnits);
 		this.setPriority(priority);
 		this.setContTaskId(contTaskId);
 		this.setContingencyTask(contingencyTask);
@@ -39,25 +39,25 @@ public class Task {
 	}
 
 	public String getCurrent() {
-		Vector<String> compUnits = this.getCompUnits();
+		Vector<String> workUnits = this.getWorkUnits();
 		int programCounter = this.getProgramCounter();
 		String current = null;
 		if (programCounter > -1)
-			current = compUnits.get(programCounter);
+			current = workUnits.get(programCounter);
 		return current;
 	}
 
 	public String getNext(Actor actor) {
 		String next = null;
 		if (this.getDifficult() < actor.getCapacity()) {
-			Vector<String> compUnits = this.getCompUnits();
-			int n = compUnits.size();
+			Vector<String> workUnits = this.getWorkUnits();
+			int n = workUnits.size();
 			if (n > 0) {
 				int programCounter = this.getProgramCounter();
 				if (programCounter < n - 1) {
 					programCounter++;
 					this.setProgramCounter(programCounter);
-					next = compUnits.get(programCounter);
+					next = workUnits.get(programCounter);
 				} else if (programCounter == n - 1) {
 					next = "end";
 				}
@@ -97,12 +97,12 @@ public class Task {
 		this.programCounter = programCounter;
 	}
 
-	public Vector<String> getCompUnits() {
-		return compUnits;
+	public Vector<String> getWorkUnits() {
+		return workUnits;
 	}
 
-	public void setCompUnits(Vector<String> compUnits) {
-		this.compUnits = compUnits;
+	public void setWorkUnits(Vector<String> workUnits) {
+		this.workUnits = workUnits;
 	}
 
 	public int getPriority() {
