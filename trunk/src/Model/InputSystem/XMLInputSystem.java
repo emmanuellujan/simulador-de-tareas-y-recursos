@@ -83,7 +83,7 @@ public class XMLInputSystem extends InputSystem {
 								.getNodeValue();
 
 					// compsUnits
-					Vector<String> compUnits = new Vector<String>();
+					Vector<String> workUnits = new Vector<String>();
 					NodeList cuElementList = element
 							.getElementsByTagName("compUnit");
 					int m = cuElementList.getLength();
@@ -91,10 +91,10 @@ public class XMLInputSystem extends InputSystem {
 						Element cuElement = (Element) cuElementList.item(j);
 						String unitComp = cuElement.getFirstChild()
 								.getNodeValue();
-						compUnits.add(unitComp);
+						workUnits.add(unitComp);
 					}
 
-					Task task = new Task(sTaskId, iPriority, compUnits,
+					Task task = new Task(sTaskId, iPriority, workUnits,
 							sContingencyTask, null, "New",
 							Integer.parseInt(sDifficult));
 
