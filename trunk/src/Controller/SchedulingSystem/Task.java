@@ -58,15 +58,14 @@ public class Task {
 					programCounter++;
 					this.setProgramCounter(programCounter);
 					next = workUnits.get(programCounter);
-				} else if (programCounter == n - 1) {
+				} else if (programCounter == n - 1)
 					next = "end";
-				}
 			}
 		} else {
 			next = "end";
 			Task t = this.getContingencyTask();
 			if (t != null)
-				actor.addReadyList(t, actor.getResId());
+				actor.addReadyList(t, actor.getResId());	
 		}
 		return next;
 	}
@@ -98,7 +97,7 @@ public class Task {
 	}
 
 	public Vector<String> getWorkUnits() {
-		return workUnits;
+		return this.workUnits;
 	}
 
 	public void setWorkUnits(Vector<String> workUnits) {

@@ -12,108 +12,108 @@
 			<priority>0</priority>
 			<difficult>5</difficult>
 			<contingencyTask>task01</contingencyTask>
-			<compUnits>
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+			<workUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-			</compUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+			</workUnits>
 		</task>
 		<task>
 			<taskId>task01</taskId>
 			<priority>0</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
-			<compUnits>
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+			<workUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-			</compUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+			</workUnits>
 		</task>
 		<task>
 			<taskId>task1</taskId>
 			<priority>2</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
-			<compUnits>
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+			<workUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-			</compUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+			</workUnits>
 		</task>
 		<task>
 			<taskId>task2</taskId>
 			<priority>1</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
-			<compUnits>
-				<compUnit>int_actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+			<workUnits>
+				<workUnit>int_actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>int_actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>int_actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>int_actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
+				<workUnit>int_actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
 
-				<compUnit>int_actor0</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-				<compUnit>actor1</compUnit>
-			</compUnits>
+				<workUnit>int_actor0</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+				<workUnit>actor1</workUnit>
+			</workUnits>
 		</task>
 	</tasks>
 	<resources>

@@ -82,16 +82,16 @@ public class XMLInputSystem extends InputSystem {
 						sContingencyTask = ((Node) contingencyTask.item(0))
 								.getNodeValue();
 
-					// compsUnits
+					// workUnits
 					Vector<String> workUnits = new Vector<String>();
-					NodeList cuElementList = element
-							.getElementsByTagName("compUnit");
-					int m = cuElementList.getLength();
+					NodeList wuElementList = element
+							.getElementsByTagName("workUnit");
+					int m = wuElementList.getLength();
 					for (int j = 0; j < m; j++) {
-						Element cuElement = (Element) cuElementList.item(j);
-						String unitComp = cuElement.getFirstChild()
+						Element wuElement = (Element) wuElementList.item(j);
+						String workUnit = wuElement.getFirstChild()
 								.getNodeValue();
-						workUnits.add(unitComp);
+						workUnits.add(workUnit);
 					}
 
 					Task task = new Task(sTaskId, iPriority, workUnits,
