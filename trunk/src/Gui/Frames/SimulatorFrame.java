@@ -10,7 +10,7 @@
  */
 package Gui.Frames;
 
-import com.birosoft.liquid.LiquidLookAndFeel;
+import com.birosoft.liquid.LiquidLookAndFeel;//me da error
 import javax.swing.JOptionPane;
 
 /**
