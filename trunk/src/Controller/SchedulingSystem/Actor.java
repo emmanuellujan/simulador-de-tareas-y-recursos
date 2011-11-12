@@ -274,9 +274,10 @@ public class Actor extends Resource {
 		if (this.checkListMaxSize(this.getMaxTasksNumber(), actor.getIntList(),
 				syncIntList))
 			syncIntList.add(currTask);
-		else
-			System.out
-					.println("List size greater than allowed. Task can't be added.");
+		else{
+			String errorMsg = "List size greater than allowed. Task "+currTask.getTaskId()+" can't be added to "+this.getResId();
+			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+		} 	
 	}
 
 	public void addReadyList(Task currTask, String compUnit) {
@@ -286,9 +287,10 @@ public class Actor extends Resource {
 		if (this.checkListMaxSize(this.getMaxTasksNumber(), actor.getReadyList(),
 				syncReadyList))
 			syncReadyList.add(currTask);
-		else
-			System.out
-					.println("List size greater than allowed. Task can't be added.");
+		else{
+			String errorMsg = "List size greater than allowed. Task "+currTask.getTaskId()+" can't be added to "+this.getResId();
+			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+		}
 	}
 
 	public String getCurrAction() {
@@ -315,9 +317,10 @@ public class Actor extends Resource {
 		if (checkListMaxSize(this.getMaxTasksNumber(), intList,
 				this.getSyncIntList()))
 			this.intList = intList;
-		else
-			System.out
-					.println("List size greater than allowed. List can't be inicialized.");
+		else{
+			String errorMsg = "List size greater than allowed. Interruption list of "+this.getResId()+" can't be inicialized.";
+			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+		}
 	}
 
 	public SchedulingAlgorithm getSaIntList() {
@@ -336,9 +339,10 @@ public class Actor extends Resource {
 		if (checkListMaxSize(this.getMaxTasksNumber(), readyList,
 				this.getSyncIntList()))
 			this.readyList = readyList;
-		else
-			System.out
-					.println("List size greater than allowed. List can't be inicialized.");
+		else{
+			String errorMsg = "List size greater than allowed. Ready list of "+this.getResId()+" can't be inicialized.";
+			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+		}
 	}
 
 	public SchedulingAlgorithm getSaReadyList() {

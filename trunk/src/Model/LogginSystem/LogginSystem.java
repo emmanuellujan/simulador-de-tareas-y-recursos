@@ -7,8 +7,9 @@ import Controller.SchedulingSystem.Actor;
 
 public abstract class LogginSystem {
 	private Configurator configurator;
+	private Vector<String> errorMsgs;
 	private Vector<SimulationTime> simulationTimes;
-
+	
 	public LogginSystem(Configurator configurator,Vector<SimulationTime> simulationTimes) {
 		this.setConfigurator(configurator);
 		this.setSimulationTimes(simulationTimes);
@@ -40,4 +41,17 @@ public abstract class LogginSystem {
 	public void addSimulationTime(SimulationTime simulationTime){
 		this.simulationTimes.add(simulationTime);
 	}
+
+	public Vector<String> getErrorMsgs() {
+		return errorMsgs;
+	}
+
+	public void setErrorMsgs(Vector<String> errorMsgs) {
+		this.errorMsgs = errorMsgs;
+	}
+	
+	public void addErrorMsg(String errorMsg) {
+		this.errorMsgs.add(errorMsg);
+	}
+
 }
