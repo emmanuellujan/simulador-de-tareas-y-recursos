@@ -4,6 +4,8 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
+import Model.LogginSystem.CompLogginSystem;
+
 public class Resource {
 
 	private String resId;
@@ -90,7 +92,7 @@ public class Resource {
 			String errorMsg = "Limit exceeded. Can't assign the resource "
 					+ resource.getResId() + " to the resource "
 					+ this.getResId();
-			this.getSchedulingSystem().getLogginSystem().addErrorMsg(errorMsg);
+			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
 		}
 	}
 
