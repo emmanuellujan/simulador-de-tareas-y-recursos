@@ -5,11 +5,13 @@ import Model.DataModel.Configurator.Configurator;
 import Model.InputSystem.InputSystem;
 import Model.InputSystem.XMLInputSystem;
 import Model.LogginSystem.CompLogginSystem;
+import Model.ResultsAnalyzer.ResultsAnalyzer;
 import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class SchedulingSystem {
 
 	private InputSystem inputSystem;
+	private ResultsAnalyzer resultsAnalyzer;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
@@ -17,7 +19,11 @@ public class SchedulingSystem {
 	private int numberOfTasks;
 	private Actor deliverRes;
 
-	public SchedulingSystem(){
+	public SchedulingSystem(){		
+		
+	}
+
+	public void loadData(){
 		Vector<Task> newsList;
 		Vector<Actor> actorsList;
 		Vector<Resource> resourcesList;
@@ -27,6 +33,8 @@ public class SchedulingSystem {
 		InputSystem inputSystem = new XMLInputSystem(configurator,this);
 		
 		CompLogginSystem.getInstance(configurator);
+		
+		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer();
 				
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
@@ -57,9 +65,22 @@ public class SchedulingSystem {
 		this.setNumberOfTasks(newsList.size());
 		this.setInputSystem(inputSystem);
 		this.setDeliverRes(deliverRes);
+		this.setResultsAnalyzer(resultsAnalyzer);
 	}
-
-	public void simulate() {
+	
+	public void start() {
+		System.out.print("Loading data...");
+		this.loadData();
+		System.out.println(" done.");
+		System.out.print("Simulation started...");
+		this.simulateAndLog();
+		System.out.println(" done.");
+		System.out.print("Analyzing results...");
+		this.getResultsAnalyzer().analyze();
+		System.out.println(" done.");
+	}
+	
+	public void simulateAndLog() {
 		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logginSystem = CompLogginSystem.getInstance();
 		Actor deliverRes = this.getDeliverRes();
@@ -171,12 +192,17 @@ public class SchedulingSystem {
 		this.resourcesList = resourcesList;
 	}
 
+	public ResultsAnalyzer getResultsAnalyzer() {
+		return resultsAnalyzer;
+	}
+
+	public void setResultsAnalyzer(ResultsAnalyzer resultsAnalyzer) {
+		this.resultsAnalyzer = resultsAnalyzer;
+	}
+
 	public static void main(String[] args){
-		System.out.println("Loading data...");
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
-		System.out.println("Simulation started...");
-		schedulingSystem.simulate();
-		System.out.println("Done.");
+		schedulingSystem.start();
 	}
 
 }
