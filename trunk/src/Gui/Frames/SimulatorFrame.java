@@ -10,7 +10,17 @@
  */
 package Gui.Frames;
 
-import com.birosoft.liquid.LiquidLookAndFeel;//This line produce error if the jar liquidlnf.jar is not added
+import Controller.SchedulingAlgorithmSystem.FCFS;
+import Controller.SchedulingSystem.Actor;
+import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.SchedulingSystem;
+import Controller.SchedulingSystem.SystemServices;
+import Controller.SchedulingSystem.Task;
+import Model.DataModel.SimulationTime.SimulationTime;
+import Model.InputSystem.InputSystem;
+import Model.LogginSystem.CompLogginSystem;
+import com.birosoft.liquid.LiquidLookAndFeel;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,13 +29,149 @@ import javax.swing.JOptionPane;
  */
 public class SimulatorFrame extends javax.swing.JFrame {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/** Creates new form SimulatorFrame */
-    public SimulatorFrame() {
+    /** Creates new form SimulatorFrame */
+    private SimulatorFrame() {
+        //Carga de newsList, actorsList, resourcesList en frames ajenos
+
+        /*for(int i=0;i<resourcesList.size();i++){
+        resourcesList.elementAt(i).print();
+        System.out.println("-------------------------------------");
+        }
+        
+        for(int i=0;i<actorsList.size();i++){
+        actorsList.elementAt(i).print();
+        System.out.println("-------------------------------------");
+        }*/
+        //!!!!!!!!Ver cuando setear desde 0, cuando setear tambien en el schedulingSystem.OJO! VER!!!!!
+        
+        this.actorCreatePanel = CreateActorFrame.getInstance();
+        this.taskCreatePanel = CreateTaskFrame.getInstance();
+        this.artifactCreatePanel = CreateArtifactFrame.getInstance();        
+        this.taskDeletePanel = DeleteTaskFrame.getInstance();
+        this.actorDeletePanel = DeleteActorFrame.getInstance();
+        this.artifactDeletePanel = DeleteArtifactFrame.getInstance(); 
+        this.relationPanel = RelationFrame.getInstance();        
+        
         initComponents();
+        this.setNewsList(new Vector<Task>());
+        this.setActorsList(new Vector<Actor>());
+        this.setResourcesList(new Vector<Resource>());
+        this.setFinishedList(new Vector<Task>());
+        this.setNumberOfTasks(newsList.size());
+        this.setSchedulingSystem(new SchedulingSystem());
+        this.setMainResourcesList();
+        
+        this.services = new SystemServices();
+        
+    }
+
+    public SchedulingSystem getSchedulingSystem() {
+        return this.mainSchedulingSystem;
+    }
+
+    public void setSchedulingSystem(SchedulingSystem scheduleSystem) {
+        this.mainSchedulingSystem = scheduleSystem;
+    }
+
+    public Vector<Task> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(Vector<Task> newsList) {
+        this.newsList = newsList;
+        this.jTextPane1.setText(String.valueOf(this.newsList.size()));
+    }
+
+    public Vector<Actor> getActorsList() {
+        return actorsList;
+    }
+
+    public void setActorsList(Vector<Actor> actorsList) {
+        this.actorsList = actorsList;
+        this.setMainResourcesList();
+        this.jTextPane2.setText(String.valueOf(this.actorsList.size()));
+    }
+
+    public Vector<Task> getFinishedList() {
+        return finishedList;
+    }
+
+    public void setFinishedList(Vector<Task> finishedList) {
+        this.finishedList = finishedList;
+    }
+
+    public InputSystem getInputSystem() {
+        return inputSystem;
+    }
+
+    public void setInputSystem(InputSystem InputSystem) {
+        this.inputSystem = InputSystem;
+    }
+
+    public CompLogginSystem getLogginSystem() {
+        return logginSystem;
+    }
+
+    public void setLogginSystem(CompLogginSystem logginSystem) {
+        this.logginSystem = logginSystem;
+    }
+    
+    public SystemServices getSystemServices() {
+        return services;
+    }
+
+    public void setSystemServices(SystemServices newServices) {
+        this.services = newServices;
+    }
+
+    public int getNumberOfTasks() {
+        return numberOfTasks;
+    }
+
+    public void setNumberOfTasks(int numberOfTasks) {
+        this.numberOfTasks = numberOfTasks;
+    }
+
+    public Actor getDeliverRes() {
+        return deliverRes;
+    }
+
+    public void setDeliverRes(Actor deliverRes) {
+        this.deliverRes = deliverRes;
+    }
+
+    public Vector<Resource> getResourcesList() {
+        return resourcesList;
+    }
+
+    public void setResourcesList(Vector<Resource> resourcesList) {
+        this.resourcesList = resourcesList;
+        this.setMainResourcesList();
+        this.jTextPane3.setText(String.valueOf(this.resourcesList.size()));
+    }
+    
+    public Vector<Resource> getMainResourcesList() {
+        return resourcesMainList;
+    }
+    
+    public void setMainResourcesList(){
+        Vector resourcesCurrentList = (Vector)this.actorsList.clone();
+        if(this.resourcesList != null)
+            resourcesCurrentList.addAll((Vector)this.resourcesList.clone());
+        this.setMainResourcesList(resourcesCurrentList);  
+        this.fillResourcesComboboxes();
+    }
+
+    public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
+        this.resourcesMainList = resourcesPrincipalList;
+        RelationFrame.getInstance().setMainResourcesList(resourcesPrincipalList);
+    }
+    
+    public void fillResourcesComboboxes(){
+       this.jComboBox6.removeAllItems();
+       for(int i = 0; i < this.getMainResourcesList().size();i++){
+            this.jComboBox6.addItem(this.getMainResourcesList().elementAt(i).getResId());
+        } 
     }
 
     /** This method is called from within the constructor to
@@ -33,7 +179,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
      * WARNING: Do NOT modify this code. The content of this method is
      * always regenerated by the Form Editor.
      */
-    
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -52,6 +198,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -144,14 +292,48 @@ public class SimulatorFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Create");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Create");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Delete");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Delete");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Delete");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Set Relations");
+
+        jButton11.setText("Set");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -162,18 +344,24 @@ public class SimulatorFrame extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7))
-                .addContainerGap())
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton3)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton5)
+                            .addComponent(jButton6)
+                            .addComponent(jButton7))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton11)
+                        .addGap(52, 52, 52))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +381,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jButton7)
                     .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jButton11))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Current configuration", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
@@ -265,6 +457,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         );
 
         jButton4.setText("Simulate");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -277,30 +474,28 @@ public class SimulatorFrame extends javax.swing.JFrame {
                         .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel6.getAccessibleContext().setAccessibleName("Current configuration");
 
         jTabbedPane1.addTab("Set", jPanel2);
 
@@ -315,6 +510,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jLabel19.setText("Set value to add");
 
         jButton8.setText("Make modification");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setMinimumSize(new java.awt.Dimension(6, 30));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -521,8 +721,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -540,6 +740,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Evaluation results", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
         jTextArea2.setColumns(20);
+        jTextArea2.setEditable(false);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -594,6 +795,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Outcome data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
         jTextArea1.setColumns(20);
+        jTextArea1.setEditable(false);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -660,9 +862,47 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.taskManager = new CreateTaskFrame();
-        this.taskManager.setVisible(true);
+        this.taskCreatePanel.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.actorCreatePanel.setActorsList(this.getActorsList()); 
+        this.actorCreatePanel.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.artifactCreatePanel.setResourcesList(this.getResourcesList()); 
+        this.artifactCreatePanel.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.taskDeletePanel.getInstance().setTaskList(this.getNewsList());
+        this.taskDeletePanel.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        this.actorDeletePanel.getInstance().setActorsList(this.getActorsList());
+        this.actorDeletePanel.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        this.artifactDeletePanel.getInstance().setResourcesList(this.getResourcesList());
+        this.artifactDeletePanel.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        this.relationPanel.getInstance().setResourcesList(this.getResourcesList());
+        this.relationPanel.getInstance().setActorsList(this.getActorsList());
+        this.relationPanel.setVisible(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //Codigo de simulación, con todos los datos cargados de entrada
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        this.services.setResourceProperty((String)this.jComboBox6.getSelectedItem(), this.jTextField2.getText(), this.jTextField3.getText());
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -673,47 +913,72 @@ public class SimulatorFrame extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
-        try { 
+
+        try {
             javax.swing.UIManager.setLookAndFeel("com.birosoft.liquid.LiquidLookAndFeel");
-            LiquidLookAndFeel.setLiquidDecorations(true, "panther" ) ; //This line produce error if the jar liquidlnf.jar is not added
-        } 
-        catch (Exception e) {
+            LiquidLookAndFeel.setLiquidDecorations(true, "panther");
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error in Look and Feel" + e.getMessage());
-        } 
+        }
         /*
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+        if ("Nimbus".equals(info.getName())) {
+        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+        break;
+        }
+        }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        java.util.logging.Logger.getLogger(SimulatorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        */
+         */
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new SimulatorFrame().setVisible(true);
+                SimulatorFrame.getInstance().setVisible(true);
             }
         });
     }
     
-    private CreateTaskFrame taskManager;
+    public static SimulatorFrame getInstance() {
+        if (SIMULATORFRAME_INSTANCE == null)
+            SIMULATORFRAME_INSTANCE = new SimulatorFrame();        
+        return SIMULATORFRAME_INSTANCE;
+    }
+    
+    private CreateTaskFrame taskCreatePanel;
+    private CreateActorFrame actorCreatePanel;
+    private CreateArtifactFrame artifactCreatePanel;
+    private DeleteTaskFrame taskDeletePanel;
+    private DeleteActorFrame actorDeletePanel;
+    private DeleteArtifactFrame artifactDeletePanel;
+    private RelationFrame relationPanel;
+    private InputSystem inputSystem;
+    private CompLogginSystem logginSystem;
+    private Vector<Task> newsList;
+    private Vector<Actor> actorsList;
+    private Vector<Resource> resourcesList;
+    private Vector resourcesMainList;
+    private Vector<Task> finishedList;
+    private int numberOfTasks;
+    private Actor deliverRes;
+    private SchedulingSystem mainSchedulingSystem;
+    private SystemServices services;
+    
+    private static SimulatorFrame SIMULATORFRAME_INSTANCE;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -741,6 +1006,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
