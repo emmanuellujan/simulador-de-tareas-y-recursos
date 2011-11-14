@@ -10,6 +10,8 @@
  */
 package Gui.Frames;
 
+import Controller.SchedulingSystem.Task;
+
 /**
  *
  * @author F.Rossi
@@ -124,6 +126,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //SimulatorFrame.getInstance()
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -158,10 +161,21 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new CreateTaskFrame().setVisible(true);
+                //new CreateTaskFrame().setVisible(true);
             }
         });
     }
+    
+    public static CreateTaskFrame getInstance() {
+        if (CREATETASKFRAME_INSTANCE == null)
+            CREATETASKFRAME_INSTANCE = new CreateTaskFrame();        
+        return CREATETASKFRAME_INSTANCE;
+    }
+    
+    private Task newTask;
+    
+    private static CreateTaskFrame CREATETASKFRAME_INSTANCE; 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
