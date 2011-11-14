@@ -4,8 +4,6 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
-import Model.LogginSystem.CompLogginSystem;
-
 public class Resource {
 
 	private String resId;
