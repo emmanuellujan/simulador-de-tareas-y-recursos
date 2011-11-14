@@ -34,7 +34,7 @@ public class SchedulingSystem {
 		
 		CompLogginSystem.getInstance(configurator);
 		
-		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer();
+		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 				
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
@@ -78,11 +78,13 @@ public class SchedulingSystem {
 		System.out.print("Analyzing results...");
 		this.getResultsAnalyzer().analyze();
 		System.out.println(" done.");
+		this.getResultsAnalyzer().print();
+		System.out.println("Done!");
 	}
 	
 	public void simulateAndLog() {
 		Vector<Actor> actorsList = getActorsList();
-		CompLogginSystem logginSystem = CompLogginSystem.getInstance();
+		CompLogginSystem logger = CompLogginSystem.getInstance();
 		Actor deliverRes = this.getDeliverRes();
 		actorsList.add(0, deliverRes);
 		int i = 0;
@@ -91,10 +93,10 @@ public class SchedulingSystem {
 			for(int j=0;j<n;j++)
 				actorsList.get(j).exec();
 			this.incTime();
-			logginSystem.log(i,actorsList);
+			logger.log(i,actorsList);
 			i++;
 		}
-		logginSystem.writeLog();
+		logger.writeLog();
 	}
 
 	private void incTime() {
@@ -203,6 +205,11 @@ public class SchedulingSystem {
 	public static void main(String[] args){
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
 		schedulingSystem.start();
+	}
+
+	public int getDeadline() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
