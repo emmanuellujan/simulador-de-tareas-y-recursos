@@ -26,8 +26,7 @@ public class ResultsAnalyzer {
 	
 	public void analyze() {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		//CompLogginSystem logger = schedulingSystem.getLogginSystem();
-		CompLogginSystem logger = CompLogginSystem.getInstance();
+		CompLogginSystem logger = schedulingSystem.getCompLogginSystem();
 		
 		int numberOfErrors=0;
 		if(logger.getErrorMsgs()!=null)

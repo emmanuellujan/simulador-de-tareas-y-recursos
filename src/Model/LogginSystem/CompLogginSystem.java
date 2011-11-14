@@ -4,7 +4,6 @@ import Model.DataModel.Configurator.Configurator;
 
 public class CompLogginSystem extends LogginSystem{
 	
-	private static CompLogginSystem compLogginSystem;
 	private Vector<LogginSystem> logginSystems;
 
 	public CompLogginSystem(Configurator configurator) {
@@ -17,19 +16,6 @@ public class CompLogginSystem extends LogginSystem{
 		LogginSystem xmlLogginSystem = new XMLLogginSystem(configurator,this.getSimulationTimes());
 		this.addLogginSystem(xmlLogginSystem);
 		this.addLogginSystem(txtLogginSystem);
-	}
-
-	public static CompLogginSystem getInstance(Configurator configurator){
-		if(compLogginSystem != null)
-			return compLogginSystem;
-		else{
-			compLogginSystem = new CompLogginSystem(configurator);
-			return compLogginSystem;
-		}
-	}
-	
-	public static CompLogginSystem getInstance(){
-		return compLogginSystem;
 	}
 	
 	public void writeLog(){

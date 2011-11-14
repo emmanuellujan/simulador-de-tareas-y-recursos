@@ -11,6 +11,7 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 public class SchedulingSystem {
 
 	private InputSystem inputSystem;
+	CompLogginSystem compLogginSystem;
 	private ResultsAnalyzer resultsAnalyzer;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
@@ -18,12 +19,13 @@ public class SchedulingSystem {
 	private Vector<Task> finishedList;
 	private int numberOfTasks;
 	private Actor deliverRes;
+	private int deadline;
 
-	public SchedulingSystem(){		
-		
+	public SchedulingSystem(){
 	}
 
 	public void loadData(){
+		int deadline;
 		Vector<Task> newsList;
 		Vector<Actor> actorsList;
 		Vector<Resource> resourcesList;
@@ -32,10 +34,13 @@ public class SchedulingSystem {
 		Configurator configurator = new Configurator();
 		InputSystem inputSystem = new XMLInputSystem(configurator,this);
 		
-		CompLogginSystem.getInstance(configurator);
+		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 				
+		//int deadline = 60;
+		deadline = inputSystem.getDeadline();
+		
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
 		resourcesList = inputSystem.loadResourcesList();
@@ -58,6 +63,7 @@ public class SchedulingSystem {
 		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 100, 100, null, 100, null);
 		deliverRes.setReadyList(newsList);
 				
+		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
@@ -66,6 +72,7 @@ public class SchedulingSystem {
 		this.setInputSystem(inputSystem);
 		this.setDeliverRes(deliverRes);
 		this.setResultsAnalyzer(resultsAnalyzer);
+		this.setCompLogginSystem(compLogginSystem);
 	}
 	
 	public void start() {
@@ -84,7 +91,7 @@ public class SchedulingSystem {
 	
 	public void simulateAndLog() {
 		Vector<Actor> actorsList = getActorsList();
-		CompLogginSystem logger = CompLogginSystem.getInstance();
+		CompLogginSystem logger = this.getCompLogginSystem();
 		Actor deliverRes = this.getDeliverRes();
 		actorsList.add(0, deliverRes);
 		int i = 0;
@@ -202,14 +209,25 @@ public class SchedulingSystem {
 		this.resultsAnalyzer = resultsAnalyzer;
 	}
 
+	public CompLogginSystem getCompLogginSystem() {
+		return compLogginSystem;
+	}
+
+	public void setCompLogginSystem(CompLogginSystem compLogginSystem) {
+		this.compLogginSystem = compLogginSystem;
+	}
+
+	public int getDeadline() {
+		return deadline;
+	}
+
+	public void setDeadline(int deadline) {
+		this.deadline = deadline;
+	}
+
 	public static void main(String[] args){
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
 		schedulingSystem.start();
 	}
-
-	public int getDeadline() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	
 }

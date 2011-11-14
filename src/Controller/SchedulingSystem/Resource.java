@@ -92,7 +92,7 @@ public class Resource {
 			String errorMsg = "Limit exceeded. Can't assign the resource "
 					+ resource.getResId() + " to the resource "
 					+ this.getResId();
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		}
 	}
 

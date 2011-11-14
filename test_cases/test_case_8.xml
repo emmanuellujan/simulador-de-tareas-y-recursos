@@ -6,6 +6,7 @@
 <inputData>
 	<description>
 	</description>
+	<deadline>60</deadline>
 	<tasks>
 		<task>
 			<taskId>task0</taskId>

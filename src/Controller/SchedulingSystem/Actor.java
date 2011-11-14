@@ -5,7 +5,6 @@ import java.util.Vector;
 
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingAlgorithmSystem.FCFS;
-import Model.LogginSystem.CompLogginSystem;
 
 public class Actor extends Resource {
 
@@ -276,7 +275,7 @@ public class Actor extends Resource {
 			String errorMsg = "List size greater than allowed. Task "
 					+ currTask.getTaskId() + " can't be added to "
 					+ this.getResId();
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -291,7 +290,7 @@ public class Actor extends Resource {
 			String errorMsg = "List size greater than allowed. Task "
 					+ currTask.getTaskId() + " can't be added to "
 					+ this.getResId();
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -322,7 +321,7 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Interruption list of "
 					+ this.getResId() + " can't be inicialized.";
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -345,7 +344,7 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Ready list of "
 					+ this.getResId() + " can't be inicialized.";
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		}
 	}
 
