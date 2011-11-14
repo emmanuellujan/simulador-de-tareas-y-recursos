@@ -10,10 +10,17 @@
  */
 package Gui.Frames;
 
+import Controller.SchedulingSystem.Resource;
+import Controller.SchedulingSystem.SchedulingSystem;
+import java.util.Hashtable;
+import java.util.Vector;
+
 /**
  *
  * @author F.Rossi
  */
+//CHECKEAR SCHEDULING SYSTEM EN ENTRADA, FUNCION EN DESARROLLO Y EN CERRAR VENTANA CON CREACION
+//COMO HAGO PARA MODIFICAR SIEMPRE EL MISMO MAIN FRAME??
 public class CreateArtifactFrame extends javax.swing.JFrame {
 
     /** Creates new form CreateArtifactFrame */
@@ -36,15 +43,19 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create Artifact", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
         jButton1.setText("Create");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +68,22 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -84,26 +111,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Relations"));
-
-        jScrollPane2.setViewportView(jList1);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel1.setText("Maximum number of relations");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,27 +119,30 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(2, 2, 2)
                         .addComponent(jButton2))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,9 +166,55 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /*
+     * Action of 'Create' button, which creates a new Artifact taking the values
+     * of the screen components. Updating Resources list too, and closing the
+     * current panel.
+     */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(this.areValidFields()){
+        /*Get Properties*/
+        Hashtable propertiesTable = new Hashtable();
+
+        for (int i = 0; i < this.jTable1.getRowCount(); i++) {
+            if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)) {
+                propertiesTable.put(this.jTable1.getValueAt(i, 0).toString(), this.jTable1.getValueAt(i, 1).toString());
+            } else {
+                i = this.jTable1.getRowCount();
+            }
+        }
+        this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()),
+                propertiesTable, Integer.parseInt(this.jTextField1.getText()), null, null/*Scheduling System*/);
+        this.getResourcesList().add(this.newResource);        
+        SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
+        this.setVisible(false);
+        }else{
+            ErrorFrame.getInstance().setLabel("Wrong inserted values in fields");
+            ErrorFrame.getInstance().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private boolean areValidFields(){
+        if(!isNum(this.jTextField1.getText()))//Capacity
+            return false;      
+        
+        return true;    
+    }
+    
+    public static boolean isNum(String s) {
+        try {
+            Integer.parseInt(s);
+        }
+        catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -189,19 +246,47 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new CreateArtifactFrame().setVisible(true);
+                //new CreateArtifactFrame().setVisible(true);
             }
         });
     }
+
+    public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+        this.currentSchedulingSystem = schedulingSystem;
+    }
+
+    public SchedulingSystem getSchedulingSystem() {
+        return this.currentSchedulingSystem;
+    }
+
+    public Vector<Resource> getResourcesList() {
+        return resourcesList;
+    }
+
+    public void setResourcesList(Vector<Resource> resourcesList) {
+        this.resourcesList = resourcesList;
+    }
+    
+    public static CreateArtifactFrame getInstance() {
+        if (CREATEARTIFACTFRAME_INSTANCE == null)
+            CREATEARTIFACTFRAME_INSTANCE = new CreateArtifactFrame();        
+        return CREATEARTIFACTFRAME_INSTANCE;
+    }
+    
+    private Resource newResource;
+    private Vector<Resource> resourcesList;
+    private SchedulingSystem currentSchedulingSystem;
+    
+    private static CreateArtifactFrame CREATEARTIFACTFRAME_INSTANCE;    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JList jList1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
