@@ -10,6 +10,9 @@
  */
 package Gui.Frames;
 
+import Controller.SchedulingSystem.Task;
+import java.util.Vector;
+
 /**
  *
  * @author F.Rossi
@@ -19,6 +22,14 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
     /** Creates new form DeleteTaskFrame */
     public DeleteTaskFrame() {
         initComponents();
+    }
+    
+    public void setTaskList(Vector<Task> currentTasks){
+        this.tasksCurrentList = currentTasks;
+    }
+    
+    public Vector<Task> getTaskList(){
+        return this.tasksCurrentList;
     }
 
     /** This method is called from within the constructor to
@@ -102,6 +113,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -136,10 +148,21 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new DeleteTaskFrame().setVisible(true);
+                //new DeleteTaskFrame().setVisible(true);
             }
         });
     }
+    
+    public static DeleteTaskFrame getInstance() {
+        if (DELETETASKFRAME_INSTANCE == null)
+            DELETETASKFRAME_INSTANCE = new DeleteTaskFrame();        
+        return DELETETASKFRAME_INSTANCE;
+    }
+    
+    private Vector<Task> tasksCurrentList;
+    
+    private static DeleteTaskFrame DELETETASKFRAME_INSTANCE;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
