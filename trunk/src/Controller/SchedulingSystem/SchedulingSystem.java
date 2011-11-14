@@ -125,6 +125,7 @@ public class SchedulingSystem {
 	}
 
 	public void finishTask(Task currTask) {
+		currTask.execPostProcessing();
 		this.getFinishedList().add(currTask);
 	}
 

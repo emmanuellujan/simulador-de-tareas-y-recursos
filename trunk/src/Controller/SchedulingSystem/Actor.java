@@ -8,8 +8,7 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class Actor extends Resource {
 
-	// Capacity or efficiency
-	private int capacity;
+	private int capacity; // Capacity or efficiency
 
 	private String currAction;
 	private Task currTask;
@@ -26,7 +25,6 @@ public class Actor extends Resource {
 	private int limitTime;
 	private int maxTasksNumber;
 
-	// Resta setear el maximo de tareas cuando se crea el vector, en el vector.
 	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
 			SchedulingSystem schedulingSystem, int capacity, int maxTaskNumber,
 			Hashtable<String, String> properties, int maxRelations,
@@ -190,8 +188,8 @@ public class Actor extends Resource {
 													// que se ejecutará el
 													// proceso)
 
-		if (workUnit.equals("end")) { // Sino, si el proceso en ejecución ha
-										// llegado a su fin:
+		if( workUnit.equals("end") || !currTask.evalConditions()) { // Sino, si el proceso en ejecución ha
+																	// llegado a su fin:
 			schedulingSystem.finishTask(currTask); // Terminar proceso (pasa a
 													// estado finalizado).
 			String taskId = currTask.getTaskId();
@@ -275,7 +273,8 @@ public class Actor extends Resource {
 			String errorMsg = "List size greater than allowed. Task "
 					+ currTask.getTaskId() + " can't be added to "
 					+ this.getResId();
-			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
 		}
 	}
 
@@ -290,7 +289,8 @@ public class Actor extends Resource {
 			String errorMsg = "List size greater than allowed. Task "
 					+ currTask.getTaskId() + " can't be added to "
 					+ this.getResId();
-			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
 		}
 	}
 
@@ -321,7 +321,8 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Interruption list of "
 					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
 		}
 	}
 
@@ -344,7 +345,8 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Ready list of "
 					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
 		}
 	}
 
