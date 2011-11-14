@@ -23,6 +23,8 @@ public abstract class InputSystem {
 		this.setSchedulingSystem(schedulingSystem);
 	}
 
+	public abstract int getDeadline();
+	
 	public abstract Vector<Task> loadNewsList();
 
 	public abstract Vector<Actor> loadActorsList();
@@ -62,5 +64,4 @@ public abstract class InputSystem {
 	public void setResourcesList(Vector<Resource> resourcesList) {
 		this.resourcesList = resourcesList;
 	}
-
 }

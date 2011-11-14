@@ -2,8 +2,6 @@ package Controller.SchedulingSystem;
 
 import java.util.Vector;
 
-import Model.LogginSystem.CompLogginSystem;
-
 public class Task {
 	private String taskId;
 	private int programCounter;
@@ -17,6 +15,8 @@ public class Task {
 	
 	private String contTaskId;
 	private Task contingencyTask;
+	
+	private SchedulingSystem schedulingSystem;
 
 	/*
 	 * //This properties can be added in future. See
@@ -29,7 +29,8 @@ public class Task {
 	 */
 
 	public Task(String taskId, int priority, Vector<String> workUnits,
-			String contTaskId, Task contingencyTask, String currentStatus, int difficult) {
+			String contTaskId, Task contingencyTask, String currentStatus, int difficult,
+			SchedulingSystem schedulingSystem) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setWorkUnits(workUnits);
@@ -38,6 +39,7 @@ public class Task {
 		this.setContingencyTask(contingencyTask);
 		this.setStatus(currentStatus);
 		this.setDifficult(difficult);
+		this.setSchedulingSystem(schedulingSystem);
 	}
 
 	public String getCurrent() {
@@ -138,7 +140,7 @@ public class Task {
 		if ((currentStatus != "Processing") && (currentStatus != "Finished")
 				&& (currentStatus != "New")) {
 			String errorMsg = "You attempted to insert a wrong task state "+ currentStatus +" in the task "+this.getTaskId();
-			CompLogginSystem.getInstance().addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
 		} else
 			this.status = currentStatus;
 	}
@@ -151,6 +153,14 @@ public class Task {
 		return this.contTaskId;
 	}
 
+	public SchedulingSystem getSchedulingSystem() {
+		return schedulingSystem;
+	}
+
+	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+		this.schedulingSystem = schedulingSystem;
+	}
+	
 	/*
 	 * public String getType() { return type; }
 	 * 

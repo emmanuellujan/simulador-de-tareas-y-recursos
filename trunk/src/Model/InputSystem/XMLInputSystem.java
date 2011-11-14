@@ -25,6 +25,32 @@ public class XMLInputSystem extends InputSystem {
 			SchedulingSystem schedulingSystem) {
 		super(configurator, schedulingSystem);
 	}
+	
+	
+	public int getDeadline(){
+		String fileName = this.getConfigurator().getIoDirectory()
+				+ this.getConfigurator().getInputFile() + ".xml";
+		int nDeadline = 0;
+		try {
+			File file = new File(fileName);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(file);
+			doc.getDocumentElement().normalize();
+			
+			NodeList deadlineElementList = doc
+					.getElementsByTagName("deadline");
+			Element deadlineElement = (Element) deadlineElementList.item(0);
+			NodeList deadline = deadlineElement.getChildNodes();
+			String sDeadline = ((Node) deadline.item(0)).getNodeValue();
+			nDeadline = Integer.parseInt(sDeadline);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return nDeadline;
+	}
+	
 
 	public Vector<Task> loadNewsList() {
 		String fileName = this.getConfigurator().getIoDirectory()
@@ -96,7 +122,7 @@ public class XMLInputSystem extends InputSystem {
 
 					Task task = new Task(sTaskId, iPriority, workUnits,
 							sContingencyTask, null, "New",
-							Integer.parseInt(sDifficult));
+							Integer.parseInt(sDifficult),this.getSchedulingSystem());
 
 					tasks.add(task);
 				}
