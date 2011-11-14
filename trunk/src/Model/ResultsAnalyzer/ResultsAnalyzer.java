@@ -12,14 +12,15 @@ public class ResultsAnalyzer {
 	public int deadline; // desired number of cycles
 	public int numberOfCycles; // actual number of cycles
 	public int numberOfTasks;
-	public int nbrFinishedTasks;
+	public int nbrSuccessfulTasks;
+	public int nbrFailedTasks;
+	private int numberOfActors;
+	private int numberOfResources;
+	private float meanNbrTasksPerActor;
 	public float propFinishedTasks;
 	public float propFailedTasks;
+	public float propVelocity;
 	
-	public int propVelocity;
-	
-	
-
 	public ResultsAnalyzer(SchedulingSystem schedulingSystem){
 		this.setSchedulingSystem(schedulingSystem);
 	}
@@ -41,14 +42,29 @@ public class ResultsAnalyzer {
 		int numberOfTasks = schedulingSystem.getNumberOfTasks();
 		this.setNumberOfTasks(numberOfTasks);
 		
-		int nbrFinishedTasks = schedulingSystem.getFinishedList().size();
-		this.setNbrFinishedTasks(nbrFinishedTasks);
+		int nbrSuccessfulTasks = schedulingSystem.getFinishedList().size();
+		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
 		
-		float propFinishedTasks = nbrFinishedTasks / numberOfTasks;
+		int nbrFailedTasks = numberOfTasks-nbrSuccessfulTasks;
+		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
+		
+		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
+		this.setNumberOfActors(numberOfActors);
+		
+		int numberOfResources = this.getSchedulingSystem().getResourcesList().size();
+		this.setNumberOfResources(numberOfResources);
+		
+		float meanNbrTasksPerActor = (float) numberOfTasks / (float) numberOfActors;
+		this.setMeanNbrTasksPerActor(meanNbrTasksPerActor);
+		
+		float propFinishedTasks = (float) nbrSuccessfulTasks / (float) numberOfTasks;
 		this.setPropFinishedTasks(propFinishedTasks);
 		
-		float propFailedTasks = 1 - propFinishedTasks;
+		float propFailedTasks = (float) nbrFailedTasks / (float) numberOfTasks;
 		this.setPropFailedTasks(propFailedTasks);
+		
+		float propVelocity = (float) this.getDeadline() / (float) this.getNumberOfCycles();
+		this.setPropVelocity(propVelocity);
 	
 	}
 	
@@ -57,17 +73,29 @@ public class ResultsAnalyzer {
 		
 		System.out.println("\tNumber of errors: "+this.getNumberOfErrors());
 		
-		System.out.println("\tDeadline: "+this.getDeadline());
+		System.out.println("\tDeadline (in cycles): "+this.getDeadline());
 		
 		System.out.println("\tNumber of cycles: "+this.getNumberOfCycles());
 		
-		System.out.println("\tNumber of tasks: "+this.getNumberOfTasks());
+		System.out.println("\tTotal number of tasks: "+this.getNumberOfTasks());
 		
-		System.out.println("\tNumber of successful tasks: "+this.getNbrFinishedTasks());
+		System.out.println("\tNumber of successful tasks: "+this.getNbrSuccessfulTasks());
 		
-		System.out.println("\tSuccessful tasks proportion: "+this.getPropFinishedTasks());
+		System.out.println("\tNumber of failed tasks: "+this.getNbrFailedTasks());
 		
-		System.out.println("\tFailed tasks proportion: "+this.getPropFailedTasks());
+		System.out.println("\tNumber of actors: "+this.getNumberOfActors());
+		
+		System.out.println("\tNumber of other resources (artifacts): "+this.getNumberOfResources());
+		
+		System.out.println("\tMean number of tasks per actor: "+this.getMeanNbrTasksPerActor());
+		
+		System.out.println("\tProportions: ");
+		
+		System.out.println("\t\tSuccessful tasks proportion: "+this.getPropFinishedTasks());
+		
+		System.out.println("\t\tFailed tasks proportion: "+this.getPropFailedTasks());
+		
+		System.out.println("\t\tVelocity proportion (deadline/nbrOfCycles): "+this.getPropVelocity());
 	}
 	
 
@@ -86,15 +114,7 @@ public class ResultsAnalyzer {
 	public void setDeadline(int deadline) {
 		this.deadline = deadline;
 	}
-
-	public int getPropVelocity() {
-		return propVelocity;
-	}
-
-	public void setPropVelocity(int propVelocity) {
-		this.propVelocity = propVelocity;
-	}
-
+	
 	public int getNumberOfErrors() {
 		return numberOfErrors;
 	}
@@ -109,14 +129,6 @@ public class ResultsAnalyzer {
 
 	public void setNumberOfCycles(int numberOfCycles) {
 		this.numberOfCycles = numberOfCycles;
-	}
-
-	public int getNbrFinishedTasks() {
-		return nbrFinishedTasks;
-	}
-
-	public void setNbrFinishedTasks(int nbrFinishedTasks) {
-		this.nbrFinishedTasks = nbrFinishedTasks;
 	}
 
 	public int getNumberOfTasks() {
@@ -141,6 +153,54 @@ public class ResultsAnalyzer {
 
 	public void setPropFailedTasks(float propFailedTasks) {
 		this.propFailedTasks = propFailedTasks;
+	}
+
+	public int getNbrSuccessfulTasks() {
+		return nbrSuccessfulTasks;
+	}
+
+	public void setNbrSuccessfulTasks(int nbrSuccessfulTasks) {
+		this.nbrSuccessfulTasks = nbrSuccessfulTasks;
+	}
+
+	public int getNbrFailedTasks() {
+		return nbrFailedTasks;
+	}
+
+	public void setNbrFailedTasks(int nbrFailedTasks) {
+		this.nbrFailedTasks = nbrFailedTasks;
+	}
+
+	public void setPropVelocity(float propVelocity) {
+		this.propVelocity = propVelocity;
+	}
+	
+	public float getPropVelocity() {
+		return this.propVelocity;
+	}
+
+	public int getNumberOfActors() {
+		return numberOfActors;
+	}
+
+	public void setNumberOfActors(int numberOfActors) {
+		this.numberOfActors = numberOfActors;
+	}
+
+	public int getNumberOfResources() {
+		return numberOfResources;
+	}
+
+	public void setNumberOfResources(int numberOfResources) {
+		this.numberOfResources = numberOfResources;
+	}
+
+	public float getMeanNbrTasksPerActor() {
+		return meanNbrTasksPerActor;
+	}
+
+	public void setMeanNbrTasksPerActor(float meanNbrTasksPerActor) {
+		this.meanNbrTasksPerActor = meanNbrTasksPerActor;
 	}
 	
 }

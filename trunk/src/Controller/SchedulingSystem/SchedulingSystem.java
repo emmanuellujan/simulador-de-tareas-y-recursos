@@ -38,7 +38,6 @@ public class SchedulingSystem {
 		
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 				
-		//int deadline = 60;
 		deadline = inputSystem.getDeadline();
 		
 		newsList = inputSystem.loadNewsList();
