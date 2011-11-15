@@ -121,7 +121,7 @@ public class XMLInputSystem extends InputSystem {
 
 					Task task = new Task(sTaskId, iPriority, workUnits,
 							sContingencyTask, null, "New",
-							Integer.parseInt(sDifficult),this.getSchedulingSystem());
+							Integer.parseInt(sDifficult),this.getSchedulingSystem(),null,null);
 
 					tasks.add(task);
 				}

@@ -2,8 +2,6 @@ package Controller.SchedulingSystem;
 
 import java.util.Vector;
 
-import javax.annotation.Resources;
-
 import Controller.FilterSystem.Filter;
 
 public class Task {
@@ -23,10 +21,11 @@ public class Task {
 	private SchedulingSystem schedulingSystem;
 
 	private  Filter filter; 
+	private Updater updater;
 	
 	public Task(String taskId, int priority, Vector<String> workUnits,
 			String contTaskId, Task contingencyTask, String currentStatus, int difficult,
-			SchedulingSystem schedulingSystem, Filter filter) {
+			SchedulingSystem schedulingSystem, Filter filter, Updater updater) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setWorkUnits(workUnits);
@@ -37,6 +36,7 @@ public class Task {
 		this.setDifficult(difficult);
 		this.setSchedulingSystem(schedulingSystem);
 		this.setFilter(filter);
+		this.setUpdater(updater);
 	}
 
 	public String getCurrent() {
@@ -165,23 +165,37 @@ public class Task {
 	public void setFilter(Filter filter) {
 		this.filter = filter;
 	}
+	
+	public Updater getUpdater() {
+		return updater;
+	}
+
+	public void setUpdater(Updater updater) {
+		this.updater = updater;
+	}
 
 	public boolean evalConditions() {
 		Filter filter = this.getFilter();
-		Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
-		for(int i = 0; i < resources.size(); i++){
-			if(filter.eval(resources.elementAt(i))){
-				return true;
+		if(filter!=null){
+			Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+			int n = resources.size();
+			int i=0;
+			boolean found = false;
+			while(!found && i<n){
+				found = filter.eval(resources.elementAt(i));
+				i++;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public void execPostProcessing() {
-			
+		Updater updater = this.getUpdater();
+		if(updater!=null){
+			Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+			int n = resources.size();
+			for(int i = 0; i < n; i++)
+				updater.update(resources.elementAt(i));
+		}
 	}
-
-	
-	
-	
 }

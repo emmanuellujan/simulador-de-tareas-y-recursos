@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <configuration>
-	<ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/control_robotico/scheduling_simulator/test_cases/</ioDirectory>
-	<inputFile>test_case_7</inputFile> <!-- without extension -->
-	<outputFile>test_case_7_results</outputFile> <!-- without extension -->
+	<ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
+	<inputFile>test_case_8</inputFile> <!-- without extension -->
+	<outputFile>test_case_8_results</outputFile> <!-- without extension -->
 </configuration>
 
 
