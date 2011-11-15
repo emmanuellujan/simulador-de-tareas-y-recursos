@@ -1,34 +1,23 @@
 package Model.LogginSystem;
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Vector;
 
+import Model.FileManager;
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
 
 
 public abstract class FileLogginSystem extends LogginSystem{
-	String outputFileName;
-
-	public FileLogginSystem(Configurator configurator) {
-		super(configurator);
-	}
+	protected String outputFileName;
+	protected FileManager fileManager;
 	
 	public FileLogginSystem(Configurator configurator,Vector<SimulationTime> simulationTimes) {
 		super(configurator,simulationTimes);
+		FileManager fileManager = new FileManager();
+		this.setFileManager(fileManager);
 	}
 	
 	protected void writeFile(String s) {
-		DataOutputStream f = null;
-		try{
-			String fileName = this.getOutputFileName();
-			f = new DataOutputStream( new FileOutputStream(fileName,false) );
-			f.writeBytes(s);
-		}
-		catch(FileNotFoundException fnfe) {  }
-		catch (IOException ioe) {  }
+		this.getFileManager().writeFile(this.getOutputFileName(), s);
 	}
 
 	public String getOutputFileName() {
@@ -38,4 +27,13 @@ public abstract class FileLogginSystem extends LogginSystem{
 	public void setOutputFileName(String outputFileName) {
 		this.outputFileName = outputFileName;
 	}
+
+	public FileManager getFileManager() {
+		return fileManager;
+	}
+
+	public void setFileManager(FileManager fileManager) {
+		this.fileManager = fileManager;
+	}
+
 }

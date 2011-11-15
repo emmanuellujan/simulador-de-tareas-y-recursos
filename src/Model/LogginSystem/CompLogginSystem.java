@@ -12,10 +12,10 @@ public class CompLogginSystem extends LogginSystem{
 		Vector<LogginSystem> logginSystems = new Vector<LogginSystem>();
 		this.setLogginSystems(logginSystems);
 		
-		LogginSystem txtLogginSystem = new TXTLogginSystem(configurator,this.getSimulationTimes());
+		LogginSystem fileLogginSystem = new TXTLogginSystem(configurator,this.getSimulationTimes());
 		LogginSystem xmlLogginSystem = new XMLLogginSystem(configurator,this.getSimulationTimes());
 		this.addLogginSystem(xmlLogginSystem);
-		this.addLogginSystem(txtLogginSystem);
+		this.addLogginSystem(fileLogginSystem);
 	}
 	
 	public void writeLog(){

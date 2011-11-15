@@ -8,6 +8,11 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class Actor extends Resource {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private int capacity; // Capacity or efficiency
 
 	private String currAction;
@@ -25,12 +30,12 @@ public class Actor extends Resource {
 	private int limitTime;
 	private int maxTasksNumber;
 
-	public Actor(String resId, SchedulingAlgorithm saReadyList, int limitTime,
+	public Actor(String resId, String type, SchedulingAlgorithm saReadyList, int limitTime,
 			SchedulingSystem schedulingSystem, int capacity, int maxTaskNumber,
 			Hashtable<String, String> properties, int maxRelations,
 			Vector<String> relationsIds) {
 
-		super(resId, properties, maxRelations, relationsIds, schedulingSystem);
+		super(resId, type, properties, maxRelations, relationsIds, schedulingSystem);
 
 		this.setCurrAction("Nothing");
 		this.setCurrTask(null);

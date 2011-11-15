@@ -16,6 +16,8 @@ public abstract class InputSystem {
 	
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
+	private Vector<Resource> allResourcesList;
+	private Vector<Task> tasksList;
 
 	public InputSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
@@ -64,4 +66,21 @@ public abstract class InputSystem {
 	public void setResourcesList(Vector<Resource> resourcesList) {
 		this.resourcesList = resourcesList;
 	}
+
+	public Vector<Resource> getAllResourcesList() {
+		return this.allResourcesList;
+	}
+
+	public void setAllResourcesList(Vector<Resource> allResourcesList) {
+		this.allResourcesList = allResourcesList;
+	}
+
+	public Vector<Task> getTasksList() {
+		return tasksList;
+	}
+
+	public void setTasksList(Vector<Task> tasksList) {
+		this.tasksList = tasksList;
+	}
+		
 }

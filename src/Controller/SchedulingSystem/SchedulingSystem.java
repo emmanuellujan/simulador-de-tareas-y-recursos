@@ -3,6 +3,7 @@ import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 import Model.InputSystem.InputSystem;
+import Model.InputSystem.SerialInputSystem;
 import Model.InputSystem.XMLInputSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
@@ -25,53 +26,45 @@ public class SchedulingSystem {
 	}
 
 	public void loadData(){
+
+		Configurator configurator = new Configurator();
+		InputSystem inputSystem = new XMLInputSystem(configurator,this);
+		SerialInputSystem serialInputSystem = new SerialInputSystem(configurator,this);
+		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
+		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
+		
 		int deadline;
 		Vector<Task> newsList;
 		Vector<Actor> actorsList;
 		Vector<Resource> resourcesList;
 		Vector<Task> finishedList = new Vector<Task>();
-
-		Configurator configurator = new Configurator();
-		InputSystem inputSystem = new XMLInputSystem(configurator,this);
 		
-		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
-		
-		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
-				
+		//serialInputSystem.loadAll();
+		//deadline = serialInputSystem.getDeadline();
 		deadline = inputSystem.getDeadline();
-		
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
 		resourcesList = inputSystem.loadResourcesList();
-		
 		inputSystem.updateRelations();
-
-		/*for(int i=0;i<resourcesList.size();i++){
-			resourcesList.elementAt(i).print();
-			System.out.println("-------------------------------------");
-		}
-		
-		for(int i=0;i<actorsList.size();i++){
-			actorsList.elementAt(i).print();
-			System.out.println("-------------------------------------");
-		}*/
 		
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Actor deliverRes = new Actor(deliverResId, saReadyList, limitTime, this, 100, 100, null, 100, null);
+		Actor deliverRes = new Actor(deliverResId, "actor", saReadyList, limitTime, this, 100, 100, null, 100, null);
 		deliverRes.setReadyList(newsList);
 				
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
-		this.setFinishedList(finishedList);
 		this.setNumberOfTasks(newsList.size());
+		this.setFinishedList(finishedList);
 		this.setInputSystem(inputSystem);
 		this.setDeliverRes(deliverRes);
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setCompLogginSystem(compLogginSystem);
+		
+		serialInputSystem.saveAll();
 	}
 	
 	public void start() {
