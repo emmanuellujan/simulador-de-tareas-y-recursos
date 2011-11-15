@@ -25,6 +25,25 @@ public class ErrorFrame extends javax.swing.JFrame {
         this.jLabel1.setText(message);
     }
     
+    public void setBackFrame(String currentBackFrame){
+        this.backFrame = currentBackFrame;
+    }
+    
+    private void setVisibleBackFrame(){
+        if(this.backFrame.equals("CreateActorFrame"))
+            CreateActorFrame.getInstance().setVisible(true);
+        else{
+            if(this.backFrame.equals("CreateArtifactFrame"))
+                CreateArtifactFrame.getInstance().setVisible(true);
+            else{
+                if(this.backFrame.equals("RelationFrame"))
+                    RelationFrame.getInstance().setVisible(true);
+                else    
+                    CreateTaskFrame.getInstance().setVisible(true);
+            }
+        }        
+    }
+    
     private static ErrorFrame ERROR_INSTANCE;    
     
     public static ErrorFrame getInstance() {
@@ -94,6 +113,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
+        this.setVisibleBackFrame();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -131,6 +151,9 @@ public class ErrorFrame extends javax.swing.JFrame {
             }
         });
     }
+    
+    private String backFrame;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

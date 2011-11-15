@@ -168,6 +168,8 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
         this.setVisible(false);
+        SimulatorFrame.getInstance().setLocationRelativeTo(null);
+        SimulatorFrame.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /*
@@ -177,24 +179,30 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(this.areValidFields()){
-        /*Get Properties*/
-        Hashtable propertiesTable = new Hashtable();
+            /*Get Properties*/
+            Hashtable propertiesTable = new Hashtable();
 
-        for (int i = 0; i < this.jTable1.getRowCount(); i++) {
-            if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)) {
-                propertiesTable.put(this.jTable1.getValueAt(i, 0).toString(), this.jTable1.getValueAt(i, 1).toString());
-            } else {
-                i = this.jTable1.getRowCount();
+            for (int i = 0; i < this.jTable1.getRowCount(); i++) {
+                if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)) {
+                    propertiesTable.put(this.jTable1.getValueAt(i, 0).toString(), this.jTable1.getValueAt(i, 1).toString());
+                } else {
+                    i = this.jTable1.getRowCount();
+                }
             }
-        }
-        this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()),
-                propertiesTable, Integer.parseInt(this.jTextField1.getText()), null, null/*Scheduling System*/);
-        this.getResourcesList().add(this.newResource);        
-        SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
-        this.setVisible(false);
+            this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()),
+                    propertiesTable, Integer.parseInt(this.jTextField1.getText()), null, null/*Scheduling System*/);
+            this.getResourcesList().add(this.newResource);        
+            SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
+            this.jTextField1.setText(null);
+            this.setVisible(false);
+            SimulatorFrame.getInstance().setVisible(true);
+            SimulatorFrame.getInstance().setLocationRelativeTo(null);
         }else{
             ErrorFrame.getInstance().setLabel("Wrong inserted values in fields");
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
             ErrorFrame.getInstance().setVisible(true);
+            ErrorFrame.getInstance().setBackFrame("CreateArtifactFrame");
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

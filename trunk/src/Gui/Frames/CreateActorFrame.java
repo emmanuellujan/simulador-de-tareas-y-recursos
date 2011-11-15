@@ -221,8 +221,8 @@ public class CreateActorFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -235,6 +235,8 @@ public class CreateActorFrame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         SimulatorFrame.getInstance().setActorsList(this.getActorsList());
         this.setVisible(false);
+        SimulatorFrame.getInstance().setLocationRelativeTo(null);
+        SimulatorFrame.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /*
@@ -269,10 +271,15 @@ public class CreateActorFrame extends javax.swing.JFrame {
             this.getActorsList().add(this.newActor);
             SimulatorFrame.getInstance().setActorsList(this.getActorsList());        
             this.setVisible(false);
+            SimulatorFrame.getInstance().setLocationRelativeTo(null);
+            SimulatorFrame.getInstance().setVisible(true);
             this.setFieldsValuesEmpty();
         }else{
-            ErrorFrame.getInstance().setLabel("Wrong inserted values in fields");
+            ErrorFrame.getInstance().setLabel("Wrong inserted values in fields");            
+            ErrorFrame.getInstance().setBackFrame("CreateActorFrame");
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
             ErrorFrame.getInstance().setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

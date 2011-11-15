@@ -44,6 +44,7 @@ public class RelationFrame extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,20 +103,30 @@ public class RelationFrame extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
+        jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -135,8 +146,8 @@ public class RelationFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,17 +174,29 @@ public class RelationFrame extends javax.swing.JFrame {
                     this.writeTextArea();
                 }else{
                     ErrorFrame.getInstance().setLabel("No relationship can be incorporated to overcome the limit allowed.");
+                    ErrorFrame.getInstance().setBackFrame("RelationFrame");
+                    ErrorFrame.getInstance().setLocationRelativeTo(null);
                     ErrorFrame.getInstance().setVisible(true);
                 }
             }else{
-                ErrorFrame.getInstance().setLabel("Both values are the same, must be different.");
-                ErrorFrame.getInstance().setVisible(true);
+                NewsFrame.getInstance().setLabel("Both values are the same, must be different.");
+                NewsFrame.getInstance().setBackFrame("RelationFrame");
+                NewsFrame.getInstance().setLocationRelativeTo(null);
+                NewsFrame.getInstance().setVisible(true);
             }
         }else{
-            ErrorFrame.getInstance().setLabel("Empty fields.");
-            ErrorFrame.getInstance().setVisible(true);
+            NewsFrame.getInstance().setLabel("Empty fields.");
+            NewsFrame.getInstance().setBackFrame("RelationFrame");
+            NewsFrame.getInstance().setLocationRelativeTo(null);
+            NewsFrame.getInstance().setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        SimulatorFrame.getInstance().setLocationRelativeTo(null);
+        SimulatorFrame.getInstance().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void writeTextArea(){
         for(int i = 0; i < this.getRelationsList().size();i++){
@@ -300,6 +323,7 @@ public class RelationFrame extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
