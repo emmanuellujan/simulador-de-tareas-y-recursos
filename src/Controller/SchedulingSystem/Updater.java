@@ -17,7 +17,7 @@ public class Updater {
 		while (e.hasMoreElements()) {
 			filter = e.nextElement();
 			if(filter.eval(resource))
-				updates.get(filter).update();
+				updates.get(filter).update(resource);
 		}
 	}
 
