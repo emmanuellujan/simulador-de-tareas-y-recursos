@@ -42,7 +42,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         actorsList.elementAt(i).print();
         System.out.println("-------------------------------------");
         }*/
-        //!!!!!!!!Ver cuando setear desde 0, cuando setear tambien en el schedulingSystem.OJO! VER!!!!!
+        //!!!!!!!!Ver cuando setear desde 0, cuando setear tambien en el schedulingSystem.OJO! VER!!!!!       
         
         this.actorCreatePanel = CreateActorFrame.getInstance();
         this.taskCreatePanel = CreateTaskFrame.getInstance();
@@ -61,7 +61,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.setSchedulingSystem(new SchedulingSystem());
         this.setMainResourcesList();
         
-        this.services = new SystemServices(resourcesList);
+        this.services = new SystemServices();
+        this.setLocationRelativeTo(null);
         
     }
 
@@ -171,6 +172,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
        this.jComboBox6.removeAllItems();
        for(int i = 0; i < this.getMainResourcesList().size();i++){
             this.jComboBox6.addItem(this.getMainResourcesList().elementAt(i).getResId());
+            this.jComboBox5.addItem(this.getMainResourcesList().elementAt(i).getResId());
+            this.jComboBox4.addItem(this.getMainResourcesList().elementAt(i).getResId());
         } 
     }
 
@@ -242,10 +245,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox3 = new javax.swing.JComboBox();
-        jPanel14 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jButton10 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -571,6 +570,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jLabel20.setText("And this one");
 
         jButton9.setText("Delete relation");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -647,7 +651,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modification", jPanel10);
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Evaluation settings", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Updater Filter Configuration", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
         jLabel11.setText("Filter selection");
 
@@ -734,48 +738,16 @@ public class SimulatorFrame extends javax.swing.JFrame {
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
-
-        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Evaluation results", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setEditable(false);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(6, Short.MAX_VALUE))
-        );
-
-        jButton10.setText("Evaluate");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jButton10)))
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -783,11 +755,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
-                .addGap(40, 40, 40))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Evaluation", jPanel3);
@@ -862,47 +830,65 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.taskCreatePanel.setLocationRelativeTo(null);
         this.taskCreatePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.actorCreatePanel.setActorsList(this.getActorsList()); 
+        this.actorCreatePanel.setLocationRelativeTo(null);
         this.actorCreatePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.artifactCreatePanel.setResourcesList(this.getResourcesList()); 
+        this.artifactCreatePanel.setLocationRelativeTo(null);
         this.artifactCreatePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.taskDeletePanel.getInstance().setTaskList(this.getNewsList());
+        this.taskDeletePanel.setLocationRelativeTo(null);
         this.taskDeletePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.actorDeletePanel.getInstance().setActorsList(this.getActorsList());
+        this.actorDeletePanel.setLocationRelativeTo(null);
         this.actorDeletePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         this.artifactDeletePanel.getInstance().setResourcesList(this.getResourcesList());
+        this.artifactDeletePanel.setLocationRelativeTo(null);
         this.artifactDeletePanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         this.relationPanel.getInstance().setResourcesList(this.getResourcesList());
         this.relationPanel.getInstance().setActorsList(this.getActorsList());
+        this.relationPanel.setLocationRelativeTo(null);
         this.relationPanel.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        //Codigo de simulaci�n, con todos los datos cargados de entrada
+        //Codigo de simulaci?n, con todos los datos cargados de entrada
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         this.services.setResourceProperty((String)this.jComboBox6.getSelectedItem(), this.jTextField2.getText(), this.jTextField3.getText());
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        this.services.deleteResourceRelation(this.jComboBox4.getSelectedItem().toString(), this.jComboBox5.getSelectedItem().toString());
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -977,7 +963,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1019,7 +1004,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1030,13 +1014,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
