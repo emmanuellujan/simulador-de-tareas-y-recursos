@@ -113,6 +113,7 @@ public class DeleteActorFrame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         SimulatorFrame.getInstance().setActorsList(this.getActorsList());
         this.setActorsList(this.getActorsList());
+        SimulatorFrame.getInstance().setVisible(true);
         this.setVisible(false);     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -125,6 +126,7 @@ public class DeleteActorFrame extends javax.swing.JFrame {
         this.setActorsList(this.getActorsList());
         SimulatorFrame.getInstance().setActorsList(this.getActorsList());
         this.setVisible(false);
+        SimulatorFrame.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
