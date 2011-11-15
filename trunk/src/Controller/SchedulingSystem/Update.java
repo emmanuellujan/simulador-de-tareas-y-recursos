@@ -1,10 +1,30 @@
 package Controller.SchedulingSystem;
 
-public class Update {
+import java.util.Enumeration;
+import java.util.Hashtable;
 
-	public void update() {
-		// TODO Auto-generated method stub
+public class Update {
+	Hashtable<String,String> properties; 
+	
+	public void update(Resource resource) {
+		Hashtable<String,String> properties= this.getProperties();
+		Enumeration<String> e = properties.keys();
+		String key, value;
+		while (e.hasMoreElements()) {
+			key = e.nextElement();
+			value = properties.get(key);
+			Hashtable<String,String> properties2 = resource.getProperties();
+			properties2.put(key, value);
+		}
 		
+	}
+
+	public Hashtable<String, String> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Hashtable<String, String> properties) {
+		this.properties = properties;
 	}
 
 }
