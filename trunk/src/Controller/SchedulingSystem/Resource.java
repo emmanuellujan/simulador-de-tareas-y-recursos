@@ -1,22 +1,29 @@
 package Controller.SchedulingSystem;
 
+import java.io.Serializable;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
-public class Resource {
+public class Resource implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String resId;
+	private String type;
 	private Hashtable<String, String> properties;
 	private Vector<String> relationsIds;
 	private Vector<Resource> resources;
 	private int resourceMaxLimit;
 	private SchedulingSystem schedulingSystem;
 
-	public Resource(String resId, Hashtable<String, String> properties,
+	public Resource(String resId, String type, Hashtable<String, String> properties,
 			int maxRelations, Vector<String> relationsIds,
 			SchedulingSystem schedulingSystem) {
 		this.setResId(resId);
+		this.setType(type);
 		this.setProperties(properties);
 		this.setResourceMaxLimit(maxRelations);
 		this.setRelationsIds(relationsIds);
@@ -125,4 +132,12 @@ public class Resource {
 		this.schedulingSystem = schedulingSystem;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }

@@ -254,7 +254,7 @@ public class XMLInputSystem extends InputSystem {
 						relationsIds.add(resourceId);
 					}
 
-					Actor actor = new Actor(sActorId, sAlgorithm, iQuantum,
+					Actor actor = new Actor(sActorId, "actor", sAlgorithm, iQuantum,
 							schedulingSystem, Integer.parseInt(sActorCapacity),
 							Integer.parseInt(sMaxTasks), properties,
 							Integer.parseInt(smaxRelations), relationsIds);
@@ -334,7 +334,7 @@ public class XMLInputSystem extends InputSystem {
 						relationsIds.add(resourceId1);
 					}
 
-					Resource resource = new Resource(sResourceId, properties,
+					Resource resource = new Resource(sResourceId, "artifact", properties,
 							Integer.parseInt(smaxRelations), relationsIds, schedulingSystem);
 
 					resources.add(resource);
@@ -353,6 +353,7 @@ public class XMLInputSystem extends InputSystem {
 		Vector<Resource> allResList = new Vector<Resource>();
 		allResList.addAll(this.getActorsList());
 		allResList.addAll(this.getResourcesList());
+		this.setAllResourcesList(allResList);
 
 		// Update relations
 		for (int i = 0; i < allResList.size(); i++) {
@@ -371,6 +372,7 @@ public class XMLInputSystem extends InputSystem {
 				}
 			}
 		}
+		
 	}
 
 }

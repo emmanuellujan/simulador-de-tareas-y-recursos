@@ -13,6 +13,8 @@
 			<priority>0</priority>
 			<difficult>5</difficult>
 			<contingencyTask>task01</contingencyTask>
+			<filterId>filter0</filterId>
+			<updaterId>updater0</updaterId>
 			<workUnits>
 				<workUnit>actor0</workUnit>
 				<workUnit>actor1</workUnit>
@@ -40,6 +42,8 @@
 			<priority>0</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
+			<filterId>filter0</filterId>
+			<updaterId>updater0</updaterId>
 			<workUnits>
 				<workUnit>actor0</workUnit>
 				<workUnit>actor1</workUnit>
@@ -67,6 +71,8 @@
 			<priority>2</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
+			<filterId>filter0</filterId>
+			<updaterId>updater0</updaterId>
 			<workUnits>
 				<workUnit>actor0</workUnit>
 				<workUnit>actor1</workUnit>
@@ -94,6 +100,8 @@
 			<priority>1</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
+			<filterId>filter0</filterId>
+			<updaterId>updater0</updaterId>
 			<workUnits>
 				<workUnit>int_actor0</workUnit>
 				<workUnit>actor1</workUnit>
@@ -117,6 +125,13 @@
 			</workUnits>
 		</task>
 	</tasks>
+	<filter>
+		<filterId>filter0</filterId>
+		
+	</filter>
+	<updater>
+		<updaterId>updater0</updaterId>
+	</updater>
 	<resources>
 		<resource>
 			<resourceId>artifact0</resourceId>

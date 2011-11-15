@@ -10,13 +10,11 @@
  */
 package Gui.Frames;
 
-import Controller.SchedulingAlgorithmSystem.FCFS;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.SystemServices;
 import Controller.SchedulingSystem.Task;
-import Model.DataModel.SimulationTime.SimulationTime;
 import Model.InputSystem.InputSystem;
 import Model.LogginSystem.CompLogginSystem;
 import com.birosoft.liquid.LiquidLookAndFeel;
