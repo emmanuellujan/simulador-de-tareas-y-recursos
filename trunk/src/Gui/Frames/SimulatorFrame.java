@@ -61,7 +61,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.setSchedulingSystem(new SchedulingSystem());
         this.setMainResourcesList();
         
-        this.services = new SystemServices();
+        this.services = new SystemServices(resourcesList);
         
     }
 
@@ -897,7 +897,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        //Codigo de simulación, con todos los datos cargados de entrada
+        //Codigo de simulaciï¿½n, con todos los datos cargados de entrada
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
