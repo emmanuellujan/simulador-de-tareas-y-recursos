@@ -2,6 +2,10 @@ package Controller.SchedulingSystem;
 
 import java.util.Vector;
 
+import javax.annotation.Resources;
+
+import Controller.FilterSystem.Filter;
+
 public class Task {
 	private String taskId;
 	private int programCounter;
@@ -18,9 +22,11 @@ public class Task {
 	
 	private SchedulingSystem schedulingSystem;
 
+	private  Filter filter; 
+	
 	public Task(String taskId, int priority, Vector<String> workUnits,
 			String contTaskId, Task contingencyTask, String currentStatus, int difficult,
-			SchedulingSystem schedulingSystem) {
+			SchedulingSystem schedulingSystem, Filter filter) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setWorkUnits(workUnits);
@@ -30,6 +36,7 @@ public class Task {
 		this.setStatus(currentStatus);
 		this.setDifficult(difficult);
 		this.setSchedulingSystem(schedulingSystem);
+		this.setFilter(filter);
 	}
 
 	public String getCurrent() {
@@ -151,13 +158,30 @@ public class Task {
 		this.schedulingSystem = schedulingSystem;
 	}
 
+	public Filter getFilter() {
+		return filter;
+	}
+
+	public void setFilter(Filter filter) {
+		this.filter = filter;
+	}
+
 	public boolean evalConditions() {
-		
-		return true;
+		Filter filter = this.getFilter();
+		Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+		for(int i = 0; i < resources.size(); i++){
+			if(filter.eval(resources.elementAt(i))){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public void execPostProcessing() {
 			
 	}
 
+	
+	
+	
 }
