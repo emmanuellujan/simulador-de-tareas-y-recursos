@@ -112,8 +112,12 @@ public class NewsFrame extends javax.swing.JFrame {
             else{
                 if(this.backFrame.equals("RelationFrame"))
                     RelationFrame.getInstance().setVisible(true);
-                else    
-                    CreateTaskFrame.getInstance().setVisible(true);
+                else{
+                    if(this.backFrame.equals("SimulatorFrame"))
+                        SimulatorFrame.getInstance().setVisible(true);
+                    else    
+                        CreateTaskFrame.getInstance().setVisible(true);
+                }
             }
         }        
     }

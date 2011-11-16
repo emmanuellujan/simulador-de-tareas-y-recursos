@@ -189,7 +189,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
                     i = this.jTable1.getRowCount();
                 }
             }
-            this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()),
+            this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()), "artifact",
                     propertiesTable, Integer.parseInt(this.jTextField1.getText()), null, null/*Scheduling System*/);
             this.getResourcesList().add(this.newResource);        
             SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
