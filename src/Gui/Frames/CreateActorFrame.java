@@ -265,7 +265,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
                 }
             }
 
-            this.newActor = new Actor("actor" + String.valueOf(this.getActorsList().size()), saReadyList, Integer.parseInt(this.jTextField3.getText()),
+            this.newActor = new Actor("actor" + String.valueOf(this.getActorsList().size()), "actor" ,saReadyList, Integer.parseInt(this.jTextField3.getText()),
                     this.getSchedulingSystem(), Integer.parseInt(this.jTextField1.getText()), Integer.parseInt(this.jTextField2.getText()),
                     propertiesTable, Integer.parseInt(this.jTextField4.getText()), null);
             this.getActorsList().add(this.newActor);

@@ -176,6 +176,13 @@ public class SimulatorFrame extends javax.swing.JFrame {
             this.jComboBox4.addItem(this.getMainResourcesList().elementAt(i).getResId());
         } 
     }
+    
+    private void setContingencyTaskComboboxes(){
+        for(int k = 0;k<this.getNewsList().size(); k++){
+            this.jComboBox3.addItem(this.getNewsList().elementAt(k).getTaskId());
+            this.jComboBox1.addItem(this.getNewsList().elementAt(k).getTaskId());
+        }        
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -548,9 +555,20 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         jLabel11.setText("Main task");
 
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
         jLabel13.setText("Contingency task");
 
         jButton14.setText("Save");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -892,6 +910,56 @@ public class SimulatorFrame extends javax.swing.JFrame {
         SaveFrame.main(null);
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        this.setContingencyTaskComboboxes();
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+       if(this.isComboboxesValuesValid()){        
+           if(this.jComboBox3.getSelectedItem().equals(this.jComboBox1.getSelectedItem())){
+                ErrorFrame.getInstance().setLabel("Selected values cannot be equals");            
+                ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+                ErrorFrame.getInstance().setLocationRelativeTo(null);
+                ErrorFrame.getInstance().setVisible(true);
+                this.setVisible(false);
+            }else{             
+                    for(int r = 0;r<this.getNewsList().size(); r++){
+                        if(this.getNewsList().elementAt(r).getTaskId().equals((String)this.jComboBox3.getSelectedItem())){
+                            Task contingencyTask = this.searchTaskOnList((String)this.jComboBox1.getSelectedItem());                    
+                            this.getNewsList().elementAt(r).setContingencyTask(contingencyTask);                
+                            NewsFrame.getInstance().setLabel("Contingency task successfully added");            
+                            NewsFrame.getInstance().setBackFrame("SimulatorFrame");
+                            NewsFrame.getInstance().setLocationRelativeTo(null);
+                            NewsFrame.getInstance().setVisible(true);
+                            this.setVisible(false);
+                        }
+                    }
+                }
+        }else{
+           ErrorFrame.getInstance().setLabel("Selected values are empty");            
+           ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+           ErrorFrame.getInstance().setLocationRelativeTo(null);
+           ErrorFrame.getInstance().setVisible(true);
+           this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private boolean isComboboxesValuesValid(){
+       if((this.jComboBox3.getSelectedItem() !=  null)&&(this.jComboBox1.getSelectedItem() !=  null))
+           return true;
+        return false;
+    }
+    
+
+    private Task searchTaskOnList(String id){
+        for(int r = 0;r<this.getNewsList().size(); r++){
+            if(this.getNewsList().elementAt(r).getTaskId().equals(id)){
+                return this.getNewsList().elementAt(r);
+            }
+        }
+        return null;
+    }
+    
     /**
      * @param args the command line arguments
      */
