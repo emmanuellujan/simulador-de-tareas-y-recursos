@@ -17,8 +17,8 @@ public class NameFilter extends SimpleFilter{
     }
 
     @Override
-    public boolean eval(Resource currentResource) {
-        Object resourceName = currentResource.getProperty("Name");
+    public boolean eval(Object currentResource) {
+        Object resourceName = ((Resource)currentResource).getProperty("Name");
         return this.getElement().equals(resourceName);
     }
     

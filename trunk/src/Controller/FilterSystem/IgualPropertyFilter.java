@@ -17,8 +17,8 @@ public class IgualPropertyFilter extends PropertyFilter{
     }
 
     @Override
-    public boolean eval(Resource a) {
-        return  (a.getProperty(this.getKey().toString()).equals(this.getValue()));
+    public boolean eval(Object a) {
+        return  (((Resource)a).getProperty(this.getKey().toString()).equals(this.getValue()));
     }
     
 }

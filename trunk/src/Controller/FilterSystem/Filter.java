@@ -12,6 +12,6 @@ import Controller.SchedulingSystem.Resource;
  */
 public abstract class Filter {
     
-    public abstract boolean eval(Resource a);
+    public abstract boolean eval(Object a);
     
 }

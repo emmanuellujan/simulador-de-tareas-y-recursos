@@ -10,14 +10,13 @@ import Controller.SchedulingSystem.Resource;
  *
  * @author F.Rossi
  */
-public class IgualFilter extends SimpleFilter{
-    
-    public IgualFilter(Object obj){   
-        super(obj);  
+public class IgualFilter extends SimpleFilter {
+
+    public IgualFilter(Object obj) {
+        super(obj);
     }
-    
-    public boolean eval(Resource r) {
-        return this.getElement().equals(r); 
+
+    public boolean eval(Object r) {
+        return this.getElement().equals((Resource) r);
     }
-    
 }

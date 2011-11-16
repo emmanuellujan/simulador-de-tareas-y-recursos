@@ -17,8 +17,8 @@ public class JobPositionFilter extends SimpleFilter{
     }
 
     @Override
-    public boolean eval(Resource currentResource) {
-        Object resourceName = currentResource.getProperty("Job Position");
+    public boolean eval(Object currentResource) {
+        Object resourceName = ((Resource)currentResource).getProperty("Job Position");
         return this.getElement().equals(resourceName);
     }
     
