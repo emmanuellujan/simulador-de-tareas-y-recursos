@@ -18,8 +18,8 @@ public class ActorRelationshipFilter extends SimpleFilter{
     }
  
     @Override
-    public boolean eval(Resource currentResource) {
-        Vector<Resource> relationResources = currentResource.getResources();         
+    public boolean eval(Object currentResource) {
+        Vector<Resource> relationResources = ((Resource)currentResource).getResources();         
         for(int i = 0;i<relationResources.size();i++){
             if(relationResources.elementAt(i).equals(element))
                 return true;

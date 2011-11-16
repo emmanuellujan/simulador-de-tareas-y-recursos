@@ -18,8 +18,8 @@ public abstract class NotFilter extends Filter{
         this.setFilter(nFilter);
     }
     
-    public boolean eval(Resource r){
-        return this.getFilter().eval(r);
+    public boolean eval(Object r){
+        return this.getFilter().eval((Resource)r);
     }
     
     protected Filter getFilter() {

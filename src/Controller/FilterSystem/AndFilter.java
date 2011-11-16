@@ -16,7 +16,7 @@ public class AndFilter extends ComplexFilter{
         super(fA,fB);  
     }
     
-    public boolean eval(Resource r) {
+    public boolean eval(Object r) {
         return filterA.eval(r) && filterB.eval(r); 
     }
     
