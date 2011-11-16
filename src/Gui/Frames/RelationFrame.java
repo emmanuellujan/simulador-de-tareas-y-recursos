@@ -116,15 +116,15 @@ public class RelationFrame extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2))
         );
@@ -176,18 +176,22 @@ public class RelationFrame extends javax.swing.JFrame {
                     ErrorFrame.getInstance().setLabel("No relationship can be incorporated to overcome the limit allowed.");
                     ErrorFrame.getInstance().setBackFrame("RelationFrame");
                     ErrorFrame.getInstance().setLocationRelativeTo(null);
+                    this.setVisible(false);
                     ErrorFrame.getInstance().setVisible(true);
+                    
                 }
             }else{
                 NewsFrame.getInstance().setLabel("Both values are the same, must be different.");
                 NewsFrame.getInstance().setBackFrame("RelationFrame");
                 NewsFrame.getInstance().setLocationRelativeTo(null);
+                this.setVisible(false);
                 NewsFrame.getInstance().setVisible(true);
             }
         }else{
             NewsFrame.getInstance().setLabel("Empty fields.");
             NewsFrame.getInstance().setBackFrame("RelationFrame");
             NewsFrame.getInstance().setLocationRelativeTo(null);
+            this.setVisible(false);
             NewsFrame.getInstance().setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
