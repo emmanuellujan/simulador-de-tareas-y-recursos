@@ -10,14 +10,14 @@
  */
 package Gui.Frames;
 
+import Controller.FilterSystem.Filter;
 import Controller.SchedulingSystem.Actor;
+import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Task;
 import Controller.SchedulingSystem.Updater;
 import java.util.Vector;
-import java.util.logging.Filter;
 import javax.swing.JScrollPane;
-import javax.swing.text.DefaultCaret;
 
 /**
  *
@@ -55,6 +55,14 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         for (int i = 0; i < this.getActorsList().size(); i++) {
             this.jComboBox1.addItem(this.getActorsList().elementAt(i).getResId());                
         }       
+    }
+    
+    public void setFilter(Filter selectedFilter) {
+        this.mainFilter = selectedFilter;
+    }
+
+    public Filter getFilter() {
+        return this.mainFilter;
     }
 
     /** This method is called from within the constructor to
@@ -124,6 +132,11 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         jLabel6.setText("Filter type");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ListPropertyFilter", "AndFilter" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -328,20 +341,31 @@ public class CreateTaskFrame extends javax.swing.JFrame {
      * Filter creation and adding to the task
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        this.setFilterFrame(new CreateFilterFrame()); 
-        this.getFilterFrame().setFilterType((String)this.jComboBox2.getSelectedItem());
-        this.getFilterFrame().setBackFrame("TaskFrame", this);
+        //this.setFilterFrame(new CreateFilterFrame()); 
+        CreateFilterFrame filterFrame = new CreateFilterFrame();
+        filterFrame.setFilterType((String)this.jComboBox2.getSelectedItem());
+        filterFrame.setBackFrame("TaskFrame", this);
+        filterFrame.setResourcesList(this.getResourcesList());
+        filterFrame.setMainResourcesList(this.getMainResourcesList());
+        filterFrame.setFilterFrameStateI(false);
+        filterFrame.setFilterFrameStateII(false);
         this.setVisible(false);
-        this.getFilterFrame().setLocationRelativeTo(null);
-        this.getFilterFrame().main(null);
-        this.getFilterFrame().setVisible(true);
+        filterFrame.setLocationRelativeTo(null);
+        filterFrame.main(null);
+        filterFrame.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
-        UpdaterFrame.getInstance().setLocationRelativeTo(null);
-        UpdaterFrame.main(null);
+        UpdaterFrame currentUpdater = new UpdaterFrame();
+        currentUpdater.setLocationRelativeTo(null);
+        currentUpdater.setVisible(true);
+        currentUpdater.main(null);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void writeTextArea(){
         this.jTextArea1.setText(null);
@@ -351,12 +375,30 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         
     }
     
+    /*
     private CreateFilterFrame getFilterFrame(){
         return this.filterFrame;
     }
     
     private void setFilterFrame(CreateFilterFrame frame){
         this.filterFrame = frame;
+    }
+    */
+    
+    public Vector<Resource> getResourcesList() {
+        return resourcesList;
+    }
+
+    public void setResourcesList(Vector<Resource> resourcesList) {
+        this.resourcesList = resourcesList;
+    }
+    
+    public Vector<Resource> getMainResourcesList() {
+        return resourcesMainList;
+    }
+    
+    public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
+        this.resourcesMainList = resourcesPrincipalList;
     }
     
     private Vector getWorkUnitList(){
@@ -365,6 +407,14 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     
     private void setWorkUnitList(Vector currentList){
         this.workUnitList = currentList;
+    }
+    
+    public Updater getUpdater(){
+        return this.updater;
+    }
+    
+    public void setUpdater(Updater updater){
+        this.updater = updater;
     }
     
     /**
@@ -417,6 +467,8 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     private Updater updater;
     private Filter mainFilter;
     private CreateFilterFrame filterFrame;
+    private Vector<Resource> resourcesMainList;
+    private Vector<Resource> resourcesList;
     
     private static CreateTaskFrame CREATETASKFRAME_INSTANCE; 
     
