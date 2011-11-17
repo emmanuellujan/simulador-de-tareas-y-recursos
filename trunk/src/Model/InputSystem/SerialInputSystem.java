@@ -167,27 +167,7 @@ public class SerialInputSystem extends InputSystem {
 				}
 			}
 		}
-	/*	
-		Vector<Task> tasks = this.getTasksList();
-		for (int i = 0; i < tasks.size(); i++) {
-			Task task = tasks.elementAt(i);
-			String contTaskId = task.getContTaskId();
-			if(contTaskId!=null){
-				task.setContingencyTask(null);
-				boolean taskFound = false;
-				int j = 0;
-				while (!taskFound) {
-					Task task2 = tasks.elementAt(j);
-					String taskId = task2.getTaskId();
-					if (contTaskId.equals(taskId)) {
-						task.setContingencyTask(task2);
-						taskFound = true;
-					}else
-						j++;
-				}
-			}
-		}
-*/
+
 	}
 
 }
