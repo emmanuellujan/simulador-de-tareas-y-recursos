@@ -68,7 +68,7 @@ public class SchedulingSystem {
 		this.setDeliverRes(deliverRes);
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setCompLogginSystem(compLogginSystem);
-				
+		/*		
 		for(int i=0;i<resourcesList.size();i++){
 			resourcesList.elementAt(i).print();
 			System.out.println("-------------------------------------");
@@ -84,7 +84,7 @@ public class SchedulingSystem {
 		for(int i=0;i<newsList.size();i++){
 			newsList.elementAt(i).print();
 			System.out.println("-------------------------------------");
-		}
+		}*/
 		
 		//serialInputSystem.saveAll();
 	}
@@ -110,20 +110,13 @@ public class SchedulingSystem {
 		actorsList.add(0, deliverRes);
 		int i = 0;
 		int n = actorsList.size();
-		while(!scheduleFinished() && i<100){
-			for(int j=0;j<n;j++){
+		while(!scheduleFinished()){
+			for(int j=0;j<n;j++)
 				actorsList.get(j).exec();
-				//actorsList.get(j).print();
-				//System.out.println("---------------------------------");
-				//System.out.println("---------------------------------");
-			}
 			this.incTime();
 			logger.log(i,actorsList);
 			i++;
 		}
-		/*System.out.println("tghyju");
-		for(i=0;i<logger.getErrorMsgs().size();i++)
-			System.out.println(logger.getErrorMsgs().elementAt(i));*/
 		logger.writeLog();
 	}
 
