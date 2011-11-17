@@ -28,24 +28,28 @@ public class SchedulingSystem {
 	public void loadData(){
 
 		Configurator configurator = new Configurator();
-		InputSystem inputSystem = new XMLInputSystem(configurator,this);
+		//InputSystem inputSystem = new XMLInputSystem(configurator,this);
 		SerialInputSystem serialInputSystem = new SerialInputSystem(configurator,this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		
-		int deadline;
-		Vector<Task> newsList;
-		Vector<Actor> actorsList;
-		Vector<Resource> resourcesList;
+		int deadline=0;
+		Vector<Task> newsList = new Vector<Task>();
+		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Resource> resourcesList = new Vector<Resource>();
 		Vector<Task> finishedList = new Vector<Task>();
 		
-		//serialInputSystem.loadAll();
-		//deadline = serialInputSystem.getDeadline();
-		deadline = inputSystem.getDeadline();
+		serialInputSystem.loadAll();
+		deadline = serialInputSystem.getDeadline();
+		newsList = serialInputSystem.getTasksList();
+		actorsList = serialInputSystem.getActorsList();
+		resourcesList = serialInputSystem.getResourcesList();
+
+		/*deadline = inputSystem.getDeadline();
 		newsList = inputSystem.loadNewsList();
 		actorsList = inputSystem.loadActorsList();
 		resourcesList = inputSystem.loadResourcesList();
-		inputSystem.updateRelations();
+		inputSystem.updateRelations();*/
 		
 		String deliverResId="deliverRes";
 		FCFS saReadyList = new FCFS();
@@ -59,12 +63,30 @@ public class SchedulingSystem {
 		this.setResourcesList(resourcesList);
 		this.setNumberOfTasks(newsList.size());
 		this.setFinishedList(finishedList);
-		this.setInputSystem(inputSystem);
+		//this.setInputSystem(inputSystem);
+		this.setInputSystem(serialInputSystem);
 		this.setDeliverRes(deliverRes);
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setCompLogginSystem(compLogginSystem);
+				
+		for(int i=0;i<resourcesList.size();i++){
+			resourcesList.elementAt(i).print();
+			System.out.println("-------------------------------------");
+		}
 		
-		serialInputSystem.saveAll();
+		deliverRes.print();
+		
+		for(int i=0;i<actorsList.size();i++){
+			actorsList.elementAt(i).print();
+			System.out.println("-------------------------------------");
+		}
+		
+		for(int i=0;i<newsList.size();i++){
+			newsList.elementAt(i).print();
+			System.out.println("-------------------------------------");
+		}
+		
+		//serialInputSystem.saveAll();
 	}
 	
 	public void start() {
@@ -88,13 +110,20 @@ public class SchedulingSystem {
 		actorsList.add(0, deliverRes);
 		int i = 0;
 		int n = actorsList.size();
-		while(!scheduleFinished()){
-			for(int j=0;j<n;j++)
+		while(!scheduleFinished() && i<100){
+			for(int j=0;j<n;j++){
 				actorsList.get(j).exec();
+				//actorsList.get(j).print();
+				//System.out.println("---------------------------------");
+				//System.out.println("---------------------------------");
+			}
 			this.incTime();
 			logger.log(i,actorsList);
 			i++;
 		}
+		/*System.out.println("tghyju");
+		for(i=0;i<logger.getErrorMsgs().size();i++)
+			System.out.println(logger.getErrorMsgs().elementAt(i));*/
 		logger.writeLog();
 	}
 
@@ -108,10 +137,9 @@ public class SchedulingSystem {
 	}
 
 	private boolean scheduleFinished() {
-		Vector<Task> finishedList = this.getFinishedList();
-		int n = finishedList.size();
-		int numberOfTasks = this.getNumberOfTasks();
-		if(numberOfTasks==n)
+		int nTasks = this.getNumberOfTasks();
+		int nFinishedTasks = this.getFinishedList().size();
+		if(nTasks==nFinishedTasks)
 			return true;
 		else
 			return false;
@@ -124,13 +152,13 @@ public class SchedulingSystem {
 
 	public Actor getResource(String name) {
 		Vector<Actor> actorsList = this.getActorsList();
-		boolean finded = false;
+		boolean found = false;
 		int i = 0;
 		int n = actorsList.size();
 		Actor actor = null;
-		while(i<n && !finded){
+		while(i<n && !found){
 			if(actorsList.get(i).getResId().equals(name)){
-				finded = true;
+				found = true;
 				actor = actorsList.get(i);
 			}else
 				i++;

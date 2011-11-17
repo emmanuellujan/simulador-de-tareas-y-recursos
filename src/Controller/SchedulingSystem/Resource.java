@@ -7,9 +7,7 @@ import java.util.Vector;
 
 public class Resource implements Serializable{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private String resId;
 	private String type;
@@ -106,12 +104,14 @@ public class Resource implements Serializable{
 
 		System.out.println("Properties:");
 		Hashtable<String, String> properties = this.getProperties();
-		Enumeration<String> e = properties.keys();
-		String key;
-		while (e.hasMoreElements()) {
-			key = e.nextElement();
-			System.out.println("\tKey:" + key + ", Value: "
-					+ properties.get(key));
+		if(properties!=null){
+			Enumeration<String> e = properties.keys();
+			String key;
+			while (e.hasMoreElements()) {
+				key = e.nextElement();
+				System.out.println("\tKey:" + key + ", Value: "
+						+ properties.get(key));
+			}
 		}
 
 		System.out.println("Relations:");

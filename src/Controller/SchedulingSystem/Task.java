@@ -14,18 +14,19 @@ public class Task {
 	private String status;// Si bien es un String, el contenido del mismo debe
 							// ser 'En proceso','Finalizada', 'Nueva'. Puede
 							// idearse otra forma de representacion
-	
+
 	private String contTaskId;
 	private Task contingencyTask;
-	
+
 	private SchedulingSystem schedulingSystem;
 
-	private  Filter filter; 
+	private Filter filter;
 	private Updater updater;
-	
+
 	public Task(String taskId, int priority, Vector<String> workUnits,
-			String contTaskId, Task contingencyTask, String currentStatus, int difficult,
-			SchedulingSystem schedulingSystem, Filter filter, Updater updater) {
+			String contTaskId, Task contingencyTask, String currentStatus,
+			int difficult, SchedulingSystem schedulingSystem, Filter filter,
+			Updater updater) {
 		this.setTaskId(taskId);
 		this.setProgramCounter(-1);
 		this.setWorkUnits(workUnits);
@@ -66,7 +67,7 @@ public class Task {
 			next = "end";
 			Task t = this.getContingencyTask();
 			if (t != null)
-				actor.addReadyList(t, actor.getResId());	
+				actor.addReadyList(t, actor.getResId());
 		}
 		return next;
 	}
@@ -136,8 +137,10 @@ public class Task {
 	public void setStatus(String currentStatus) {
 		if ((currentStatus != "Processing") && (currentStatus != "Finished")
 				&& (currentStatus != "New")) {
-			String errorMsg = "You attempted to insert a wrong task state "+ currentStatus +" in the task "+this.getTaskId();
-			this.getSchedulingSystem().getCompLogginSystem().addErrorMsg(errorMsg);
+			String errorMsg = "You attempted to insert a wrong task state "
+					+ currentStatus + " in the task " + this.getTaskId();
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
 		} else
 			this.status = currentStatus;
 	}
@@ -165,7 +168,7 @@ public class Task {
 	public void setFilter(Filter filter) {
 		this.filter = filter;
 	}
-	
+
 	public Updater getUpdater() {
 		return updater;
 	}
@@ -176,8 +179,9 @@ public class Task {
 
 	public boolean evalConditions() {
 		Filter filter = this.getFilter();
-		if(filter!=null){
-			Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+		if (filter != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getResourcesList();
 			return filter.eval(resources);
 		}
 		return true;
@@ -185,11 +189,16 @@ public class Task {
 
 	public void execPostProcessing() {
 		Updater updater = this.getUpdater();
-		if(updater!=null){
-			Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+		if (updater != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getResourcesList();
 			int n = resources.size();
-			for(int i = 0; i < n; i++)
+			for (int i = 0; i < n; i++)
 				updater.update(resources.elementAt(i));
 		}
+	}
+
+	public void print() {
+		System.out.println("Task Id: " + this.getTaskId());
 	}
 }
