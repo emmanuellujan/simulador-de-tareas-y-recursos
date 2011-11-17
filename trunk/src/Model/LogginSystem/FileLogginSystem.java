@@ -1,9 +1,9 @@
 package Model.LogginSystem;
 import java.util.Vector;
 
-import Model.FileManager;
 import Model.DataModel.Configurator.Configurator;
 import Model.DataModel.SimulationTime.SimulationTime;
+import Model.IOSystem.FileManager;
 
 
 public abstract class FileLogginSystem extends LogginSystem{

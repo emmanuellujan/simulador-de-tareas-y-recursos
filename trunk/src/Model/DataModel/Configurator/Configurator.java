@@ -13,6 +13,11 @@ import org.w3c.dom.NodeList;
 public class Configurator {
 	String confFile;
 	String ioDirectory;
+	
+	String inputDir;
+	String outputDir;
+	
+	//Obsolete
 	String inputFile;
 	String outputFile;
 	
@@ -26,6 +31,8 @@ public class Configurator {
 	private void setConfParameters() {
 		String fileName = this.getConfFile();
 		String sIODirectory = "";
+		String sInputDir = "";
+		String sOutputDir = "";
 		String sInputFile = "";
 		String sOutputFile = "";
 		try{
@@ -40,6 +47,17 @@ public class Configurator {
 			NodeList ioDirectory = ioDirectoryElement.getChildNodes();
 			sIODirectory = ((Node) ioDirectory.item(0)).getNodeValue();
 			
+			NodeList inputDirElementList = doc.getElementsByTagName("inputDir");
+			Element inputDirElement = (Element) inputDirElementList.item(0);
+			NodeList inputDir = inputDirElement.getChildNodes();
+			sInputDir = ((Node) inputDir.item(0)).getNodeValue();
+			
+			NodeList outputDirElementList = doc.getElementsByTagName("outputDir");
+			Element outputDirElement = (Element) outputDirElementList.item(0);
+			NodeList outputDir = outputDirElement.getChildNodes();
+			sOutputDir = ((Node) outputDir.item(0)).getNodeValue();
+			
+			//Obsolete 
 			NodeList inputFileElementList = doc.getElementsByTagName("inputFile");
 			Element inputFileElement = (Element) inputFileElementList.item(0);
 			NodeList inputFile = inputFileElement.getChildNodes();
@@ -49,11 +67,14 @@ public class Configurator {
 			Element outputFileElement = (Element) outputFileElementList.item(0);
 			NodeList outputFile = outputFileElement.getChildNodes();
 			sOutputFile = ((Node) outputFile.item(0)).getNodeValue();
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.setIoDirectory(sIODirectory);
+		this.setInputDir(sIODirectory+sInputDir);
+		this.setOutputDir(sIODirectory+sOutputDir);
 		this.setInputFile(sInputFile);
 		this.setOutputFile(sOutputFile);
 	}
@@ -89,4 +110,21 @@ public class Configurator {
 	public void setOutputFile(String outputFile) {
 		this.outputFile = outputFile;
 	}
+
+	public String getInputDir() {
+		return inputDir;
+	}
+
+	public void setInputDir(String inputDir) {
+		this.inputDir = inputDir;
+	}
+
+	public String getOutputDir() {
+		return outputDir;
+	}
+
+	public void setOutputDir(String outputDir) {
+		this.outputDir = outputDir;
+	}
+	
 }

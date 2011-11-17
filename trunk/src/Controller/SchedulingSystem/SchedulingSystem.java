@@ -2,16 +2,17 @@ package Controller.SchedulingSystem;
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
-import Model.InputSystem.InputSystem;
-import Model.InputSystem.SerialInputSystem;
-import Model.InputSystem.XMLInputSystem;
+
+import Model.IOSystem.IOSystem;
+import Model.IOSystem.SerialIOSystem;
+import Model.IOSystem.XMLInputSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
 import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class SchedulingSystem {
 
-	private InputSystem inputSystem;
+	private IOSystem inputSystem;
 	CompLogginSystem compLogginSystem;
 	private ResultsAnalyzer resultsAnalyzer;
 	private Vector<Task> newsList;
@@ -28,8 +29,8 @@ public class SchedulingSystem {
 	public void loadData(){
 
 		Configurator configurator = new Configurator();
-		//InputSystem inputSystem = new XMLInputSystem(configurator,this);
-		SerialInputSystem serialInputSystem = new SerialInputSystem(configurator,this);
+		//IOSystem inputSystem = new XMLInputSystem(configurator,this);
+		SerialIOSystem serialInputSystem = new SerialIOSystem(configurator,this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		
@@ -183,11 +184,11 @@ public class SchedulingSystem {
 		this.finishedList = finishedList;
 	}
 
-	public InputSystem getInputSystem() {
+	public IOSystem getInputSystem() {
 		return inputSystem;
 	}
 
-	public void setInputSystem(InputSystem InputSystem) {
+	public void setInputSystem(IOSystem InputSystem) {
 		this.inputSystem = InputSystem;
 	}
 

@@ -17,7 +17,7 @@ import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.SystemServices;
 import Controller.SchedulingSystem.Task;
 import Model.DataModel.SimulationTime.SimulationTime;
-import Model.InputSystem.InputSystem;
+import Model.IOSystem.IOSystem;
 import Model.LogginSystem.CompLogginSystem;
 import com.birosoft.liquid.LiquidLookAndFeel;
 import java.util.Vector;
@@ -101,11 +101,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.finishedList = finishedList;
     }
 
-    public InputSystem getInputSystem() {
+    public IOSystem getInputSystem() {
         return inputSystem;
     }
 
-    public void setInputSystem(InputSystem InputSystem) {
+    public void setIOSystem(IOSystem InputSystem) {
         this.inputSystem = InputSystem;
     }
 
@@ -1017,7 +1017,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private DeleteActorFrame actorDeletePanel;
     private DeleteArtifactFrame artifactDeletePanel;
     private RelationFrame relationPanel;
-    private InputSystem inputSystem;
+    private IOSystem inputSystem;
     private CompLogginSystem logginSystem;
     private Vector<Task> newsList;
     private Vector<Actor> actorsList;
