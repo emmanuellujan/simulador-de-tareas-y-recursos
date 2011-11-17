@@ -14,6 +14,8 @@ public abstract class LogginSystem {
 		this.setConfigurator(configurator);
 		Vector<SimulationTime> simulationTimes = new Vector<SimulationTime>();
 		this.setSimulationTimes(simulationTimes);
+		Vector<String> errorMsgs = new Vector<String>();
+		this.setErrorMsgs(errorMsgs);
 	}
 	
 	public LogginSystem(Configurator configurator, Vector<SimulationTime> simulationTimes) {

@@ -1,11 +1,9 @@
 package Model.InputSystem;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.Vector;
 
 import com.thoughtworks.xstream.XStream;
@@ -26,18 +24,16 @@ public class SerialInputSystem extends InputSystem {
 
 	public void saveAll() {
 
-		// Serialize the object
 		XStream xs = new XStream();
-
-		// Write to a file in the file system
 		try {
-	
+
 			String dir = this.getConfigurator().getIoDirectory();
 			dir = dir + this.getConfigurator().getInputFile() + "/";
-			
+
 			FileOutputStream fs;
 			// Vector<Resource> allResources = this.getAllResourcesList();
-			Vector<Resource> allResources = this.getSchedulingSystem().getInputSystem().getAllResourcesList();
+			Vector<Resource> allResources = this.getSchedulingSystem()
+					.getInputSystem().getAllResourcesList();
 			int n = allResources.size();
 			int i = 0;
 			for (i = 0; i < n; i++) {
@@ -58,19 +54,6 @@ public class SerialInputSystem extends InputSystem {
 			e1.printStackTrace();
 		}
 
-		/*
-		 * String dir = this.getConfigurator().getIoDirectory(); dir = dir +
-		 * this.getConfigurator().getInputFile() + "/"; // Vector<Resource>
-		 * allResources = this.getAllResourcesList(); Vector<Resource>
-		 * allResources = this.getSchedulingSystem()
-		 * .getInputSystem().getAllResourcesList(); int n = allResources.size();
-		 * int i=0; for (i = 0; i < n; i++) { Resource resource =
-		 * allResources.elementAt(i); this.save(resource, dir + i + ".obj"); }
-		 * 
-		 * Vector<Task> tasks = this.getSchedulingSystem().getNewsList(); n =
-		 * tasks.size(); for (int j = 0; j < n; j++) { Task task =
-		 * tasks.elementAt(j); this.save(task, dir + (i+j) + ".obj"); }
-		 */
 	}
 
 	public void loadAll() {
@@ -78,136 +61,133 @@ public class SerialInputSystem extends InputSystem {
 		String dir = this.getConfigurator().getIoDirectory();
 		dir = dir + this.getConfigurator().getInputFile() + "/";
 
-		Vector<Resource> allResources = this.getAllResourcesList();
-		Vector<Actor> actors = this.getActorsList();
-		Vector<Resource> resources = this.getResourcesList();
-		Vector<Task> tasks = this.getTasksList();
+		Vector<Resource> allResources = new Vector<Resource>();
+		Vector<Actor> actors = new Vector<Actor>();
+		Vector<Resource> resources = new Vector<Resource>();
+		Vector<Task> tasks = new Vector<Task>();
 
 		XStream xs = new XStream(new DomDriver());
 
 		try {
 
 			int i = 0;
-			FileInputStream fis = new FileInputStream(dir + i + ".xml");
-			Resource resource = null;
-			xs.fromXML(fis, resource);
-			while (resource != null) {
-				allResources.add(resource);
-				if (resource.getType().equals("actor"))
-					actors.add((Actor) resource);
-				else if (resource.getType().equals("artifact"))
-					resources.add(resource);
+			FileInputStream fis = null;
+			SchedulingSystem schedulingSystem = this.getSchedulingSystem();  
+
+			String fileName = dir + i + ".xml";
+			fis = new FileInputStream(fileName);
+			Object o = xs.fromXML(fis);
+			while ((o != null) && (o.getClass().getName().contains("Actor"))) {
+				Actor actor = (Actor) o;
+				actor.setSchedulingSystem(schedulingSystem);
+				allResources.add(actor);
+				actors.add((Actor) actor);
 				i++;
-				fis = new FileInputStream(dir + i + ".xml");
-				xs.fromXML(fis, resource);
+				fileName = dir + i + ".xml";
+				o = null;
+				if (new File(fileName).exists()) {
+					fis = new FileInputStream(fileName);
+					o = xs.fromXML(fis);
+				}
 			}
 
-			i = 0;
-			fis = new FileInputStream(dir + i + ".xml");
-			Task task = null;
-			xs.fromXML(fis, task);
-			while (task != null) {
+			while ((o != null) && (o.getClass().getName().contains("Resource"))) {
+				Resource resource = (Resource) o;
+				resource.setSchedulingSystem(schedulingSystem);
+				allResources.add(resource);
+				resources.add((Resource) resource);
+				i++;
+				fileName = dir + i + ".xml";
+				o = null;
+				if (new File(fileName).exists()) {
+					fis = new FileInputStream(fileName);
+					o = xs.fromXML(fis);
+				}
+			}
+
+			while ((o != null) && (o.getClass().getName().contains("Task"))) {
+				Task task = (Task) o;
+				task.setSchedulingSystem(schedulingSystem);
 				tasks.add(task);
 				i++;
-				fis = new FileInputStream(dir + i + ".xml");
-				xs.fromXML(fis, task);
+				fileName = dir + i + ".xml";
+				o = null;
+				if (new File(fileName).exists()) {
+					fis = new FileInputStream(fileName);
+					o = xs.fromXML(fis);
+				}
 			}
 
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		}
-
+		
 		this.setResourcesList(resources);
 		this.setActorsList(actors);
 		this.setAllResourcesList(allResources);
 		this.setTasksList(tasks);
-
-		/*
-		 * String dir = this.getConfigurator().getIoDirectory(); dir = dir +
-		 * this.getConfigurator().getInputFile() + "/";
-		 */
-
-		/*
-		 * Vector<Resource> allResources = this.getSchedulingSystem()
-		 * .getInputSystem().getAllResourcesList(); Vector<Actor> actors =
-		 * this.getSchedulingSystem() .getInputSystem().getActorsList();
-		 * Vector<Resource> resources = this.getSchedulingSystem()
-		 * .getInputSystem().getResourcesList();
-		 */
-		/*
-		 * Vector<Resource> allResources = this.getAllResourcesList();
-		 * Vector<Actor> actors = this.getActorsList(); Vector<Resource>
-		 * resources = this.getResourcesList(); Vector<Task> tasks =
-		 * this.getTasksList();
-		 * 
-		 * int i =0; Resource resource = (Resource) this.load(dir +i+ ".obj");
-		 * while(resource!=null){ allResources.add(resource);
-		 * if(resource.getType().equals("actor")) actors.add((Actor) resource);
-		 * else if(resource.getType().equals("artifact"))
-		 * resources.add(resource); i++; resource = (Resource) this.load(dir + i
-		 * + ".obj"); }
-		 * 
-		 * i =0; Task task = (Task) this.load(dir +i+ ".obj");
-		 * while(task!=null){ tasks.add(task); i++; task = (Task) this.load(dir
-		 * + i + ".obj"); }
-		 * 
-		 * //this.getSchedulingSystem().getInputSystem().setResourcesList(resources
-		 * );
-		 * //this.getSchedulingSystem().getInputSystem().setActorsList(actors);
-		 * //this.getSchedulingSystem().getInputSystem().setAllResourcesList(
-		 * allResources);
-		 * //this.getSchedulingSystem().getInputSystem().setTasksList(tasks);
-		 * 
-		 * this.setResourcesList(resources); this.setActorsList(actors);
-		 * this.setAllResourcesList(allResources); this.setTasksList(tasks);
-		 */
+		this.updateRelations();
 
 	}
 
-	/*
-	 * public boolean save(Object obj, String fileName) { try { FileOutputStream
-	 * file = new FileOutputStream(fileName); ObjectOutputStream os; os = new
-	 * ObjectOutputStream(file); os.writeObject(obj); os.close(); file.close();
-	 * } catch (IOException e) { // e.printStackTrace(); return false; } return
-	 * true; }
-	 * 
-	 * public Object load(String fileName) { System.out.println(fileName);
-	 * Object obj = null; try { FileInputStream fis = new
-	 * FileInputStream(fileName); ObjectInputStream ois = new
-	 * ObjectInputStream(fis); obj = (Object) ois.readObject(); ois.close();
-	 * fis.close(); } catch (ClassNotFoundException e) { e.printStackTrace(); }
-	 * catch (FileNotFoundException e) { e.printStackTrace(); } catch
-	 * (IOException e) { e.printStackTrace(); } return obj; }
-	 */
-
-	@Override
 	public int getDeadline() {
 		// TODO Auto-generated method stub
 		return 80;
 	}
 
-	@Override
 	public Vector<Task> loadNewsList() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getTasksList();
 	}
 
-	@Override
 	public Vector<Actor> loadActorsList() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getActorsList();
 	}
 
-	@Override
 	public Vector<Resource> loadResourcesList() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getResourcesList();
 	}
 
-	@Override
 	public void updateRelations() {
-		// TODO Auto-generated method stub
 
+		Vector<Resource> allResList = this.getAllResourcesList();
+		for (int i = 0; i < allResList.size(); i++) {
+			Resource resource = allResList.elementAt(i);
+			resource.getResources().clear();
+			for (int j = 0; j < resource.getRelationsIds().size(); j++) {
+				String resourceId = resource.getRelationsIds().elementAt(j);
+				boolean resourceFound = false;
+				int k = 0;
+				while (!resourceFound) {
+					Resource resource2 = allResList.elementAt(k);
+					if (resource2.getResId().equals(resourceId)) {
+						resource.addRelation(resource2);
+						resourceFound = true;
+					} else
+						k++;
+				}
+			}
+		}
+	/*	
+		Vector<Task> tasks = this.getTasksList();
+		for (int i = 0; i < tasks.size(); i++) {
+			Task task = tasks.elementAt(i);
+			String contTaskId = task.getContTaskId();
+			if(contTaskId!=null){
+				task.setContingencyTask(null);
+				boolean taskFound = false;
+				int j = 0;
+				while (!taskFound) {
+					Task task2 = tasks.elementAt(j);
+					String taskId = task2.getTaskId();
+					if (contTaskId.equals(taskId)) {
+						task.setContingencyTask(task2);
+						taskFound = true;
+					}else
+						j++;
+				}
+			}
+		}
+*/
 	}
 
 }
