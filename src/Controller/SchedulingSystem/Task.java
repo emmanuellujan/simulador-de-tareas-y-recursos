@@ -178,13 +178,7 @@ public class Task {
 		Filter filter = this.getFilter();
 		if(filter!=null){
 			Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
-			int n = resources.size();
-			int i=0;
-			boolean found = false;
-			while(!found && i<n){
-				found = filter.eval(resources.elementAt(i));
-				i++;
-			}
+			return filter.eval(resources);
 		}
 		return true;
 	}
