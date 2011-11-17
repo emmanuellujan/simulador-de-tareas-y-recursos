@@ -8,9 +8,6 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class Actor extends Resource {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private int capacity; // Capacity or efficiency

@@ -23,10 +23,12 @@
   <difficult>5</difficult>
   <status>New</status>
   <schedulingSystem>
-    <inputSystem class="Model.InputSystem.XMLInputSystem">
+    <inputSystem class="Model.IOSystem.XMLInputSystem">
       <configurator>
         <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
         <ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
+        <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/</inputDir>
+        <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/</outputDir>
         <inputFile>test_case_8</inputFile>
         <outputFile>test_case_8_results</outputFile>
       </configurator>
@@ -170,6 +172,7 @@
     </inputSystem>
     <compLogginSystem>
       <configurator reference="../../inputSystem/configurator"/>
+      <errorMsgs/>
       <simulationTimes/>
       <logginSystems>
         <Model.LogginSystem.XMLLogginSystem>
