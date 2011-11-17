@@ -27,7 +27,7 @@ public class XMLInputSystem extends IOSystem {
 	}
 	
 	public int getDeadline(){
-		String fileName = this.getConfigurator().getIoDirectory()
+		String fileName = this.getConfigurator().getInputDir()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		int nDeadline = 0;
 		try {
