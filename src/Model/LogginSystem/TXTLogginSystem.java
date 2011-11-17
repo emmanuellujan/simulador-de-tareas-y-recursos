@@ -10,7 +10,7 @@ public class TXTLogginSystem  extends FileLogginSystem{
 
 	public TXTLogginSystem(Configurator configurator,Vector<SimulationTime> simulationTimes) {
 		super(configurator,simulationTimes);
-		String outputFileName = this.getConfigurator().getIoDirectory() + this.getConfigurator().getOutputFile() + ".txt";
+		String outputFileName = this.getConfigurator().getOutputDir()+ this.getConfigurator().getOutputFile() + ".txt";
 		this.setOutputFileName(outputFileName);
 	}
 
