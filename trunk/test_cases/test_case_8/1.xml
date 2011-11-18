@@ -15,7 +15,7 @@
   <resources/>
   <resourceMaxLimit>10</resourceMaxLimit>
   <schedulingSystem>
-    <inputSystem class="Model.IOSystem.XMLInputSystem">
+    <ioSystem class="Model.IOSystem.SerialIOSystem">
       <configurator>
         <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
         <ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
@@ -25,6 +25,7 @@
         <outputFile>test_case_8_results</outputFile>
       </configurator>
       <schedulingSystem reference="../.."/>
+      <deadline>0</deadline>
       <actorsList>
         <Controller.SchedulingSystem.Actor>
           <resId>actor0</resId>
@@ -129,69 +130,9 @@
         <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource"/>
         <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
       </allResourcesList>
-    </inputSystem>
-    <compLogginSystem>
-      <configurator reference="../../inputSystem/configurator"/>
-      <errorMsgs/>
-      <simulationTimes/>
-      <logginSystems>
-        <Model.LogginSystem.XMLLogginSystem>
-          <configurator reference="../../../../inputSystem/configurator"/>
-          <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8_results.xml</outputFileName>
-          <fileManager/>
-        </Model.LogginSystem.XMLLogginSystem>
-        <Model.LogginSystem.TXTLogginSystem>
-          <configurator reference="../../../../inputSystem/configurator"/>
-          <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8_results.txt</outputFileName>
-          <fileManager/>
-        </Model.LogginSystem.TXTLogginSystem>
-      </logginSystems>
-    </compLogginSystem>
-    <resultsAnalyzer>
-      <schedulingSystem reference="../.."/>
-      <numberOfErrors>0</numberOfErrors>
-      <deadline>0</deadline>
-      <numberOfCycles>0</numberOfCycles>
-      <numberOfTasks>0</numberOfTasks>
-      <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
-      <nbrFailedTasks>0</nbrFailedTasks>
-      <numberOfActors>0</numberOfActors>
-      <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
-      <propFinishedTasks>0.0</propFinishedTasks>
-      <propFailedTasks>0.0</propFailedTasks>
-      <propVelocity>0.0</propVelocity>
-    </resultsAnalyzer>
-    <newsList>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task0</taskId>
-        <programCounter>-1</programCounter>
-        <workUnits>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-        </workUnits>
-        <priority>0</priority>
-        <difficult>5</difficult>
-        <status>New</status>
-        <contTaskId>task01</contTaskId>
-        <contingencyTask>
-          <taskId>task01</taskId>
+      <tasksList>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task0</taskId>
           <programCounter>-1</programCounter>
           <workUnits>
             <string>actor0</string>
@@ -214,65 +155,392 @@
           <priority>0</priority>
           <difficult>5</difficult>
           <status>New</status>
+          <contTaskId>task01</contTaskId>
+          <contingencyTask>
+            <taskId>task01</taskId>
+            <programCounter>-1</programCounter>
+            <workUnits>
+              <string>actor0</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor0</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor0</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor0</string>
+              <string>actor1</string>
+              <string>actor1</string>
+              <string>actor1</string>
+            </workUnits>
+            <priority>0</priority>
+            <difficult>5</difficult>
+            <status>New</status>
+            <schedulingSystem>
+              <ioSystem class="Model.IOSystem.XMLIOSystem">
+                <configurator>
+                  <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
+                  <ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
+                  <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/</inputDir>
+                  <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/</outputDir>
+                  <inputFile>test_case_8</inputFile>
+                  <outputFile>test_case_8_results</outputFile>
+                </configurator>
+                <schedulingSystem reference="../.."/>
+                <deadline>80</deadline>
+                <actorsList>
+                  <Controller.SchedulingSystem.Actor>
+                    <resId>actor0</resId>
+                    <type>actor</type>
+                    <properties>
+                      <entry>
+                        <string>Category</string>
+                        <string>A</string>
+                      </entry>
+                      <entry>
+                        <string>ActorName</string>
+                        <string>John</string>
+                      </entry>
+                    </properties>
+                    <relationsIds>
+                      <string>artifact0</string>
+                      <string>actor1</string>
+                    </relationsIds>
+                    <resources>
+                      <Controller.SchedulingSystem.Resource>
+                        <resId>artifact0</resId>
+                        <type>artifact</type>
+                        <properties>
+                          <entry>
+                            <string>size</string>
+                            <string>150pages</string>
+                          </entry>
+                          <entry>
+                            <string>type</string>
+                            <string>artifact</string>
+                          </entry>
+                          <entry>
+                            <string>description</string>
+                            <string>finalreport</string>
+                          </entry>
+                        </properties>
+                        <relationsIds>
+                          <string>artifact1</string>
+                        </relationsIds>
+                        <resources>
+                          <Controller.SchedulingSystem.Resource>
+                            <resId>artifact1</resId>
+                            <type>artifact</type>
+                            <properties>
+                              <entry>
+                                <string>charge</string>
+                                <string>700pages</string>
+                              </entry>
+                              <entry>
+                                <string>type</string>
+                                <string>artifact</string>
+                              </entry>
+                              <entry>
+                                <string>description</string>
+                                <string>printer</string>
+                              </entry>
+                            </properties>
+                            <relationsIds>
+                              <string>actor0</string>
+                              <string>actor1</string>
+                            </relationsIds>
+                            <resources>
+                              <Controller.SchedulingSystem.Actor reference="../../../../../.."/>
+                              <Controller.SchedulingSystem.Actor>
+                                <resId>actor1</resId>
+                                <type>actor</type>
+                                <properties>
+                                  <entry>
+                                    <string>Category</string>
+                                    <string>A</string>
+                                  </entry>
+                                  <entry>
+                                    <string>ActorName</string>
+                                    <string>Mary</string>
+                                  </entry>
+                                </properties>
+                                <relationsIds/>
+                                <resources/>
+                                <resourceMaxLimit>10</resourceMaxLimit>
+                                <schedulingSystem reference="../../../../../../../../../.."/>
+                                <capacity>10</capacity>
+                                <currAction>Nothing</currAction>
+                                <intList/>
+                                <syncIntList/>
+                                <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                                  <id>FCFS</id>
+                                </saIntList>
+                                <readyList/>
+                                <syncReadyList/>
+                                <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                                  <id>FCFS</id>
+                                </saReadyList>
+                                <time>0</time>
+                                <limitTime>-1</limitTime>
+                                <maxTasksNumber>10</maxTasksNumber>
+                              </Controller.SchedulingSystem.Actor>
+                            </resources>
+                            <resourceMaxLimit>10</resourceMaxLimit>
+                            <schedulingSystem reference="../../../../../../../.."/>
+                          </Controller.SchedulingSystem.Resource>
+                        </resources>
+                        <resourceMaxLimit>10</resourceMaxLimit>
+                        <schedulingSystem reference="../../../../../.."/>
+                      </Controller.SchedulingSystem.Resource>
+                      <Controller.SchedulingSystem.Actor reference="../Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
+                    </resources>
+                    <resourceMaxLimit>10</resourceMaxLimit>
+                    <schedulingSystem reference="../../../.."/>
+                    <capacity>10</capacity>
+                    <currAction>Nothing</currAction>
+                    <intList/>
+                    <syncIntList/>
+                    <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                      <id>FCFS</id>
+                    </saIntList>
+                    <readyList/>
+                    <syncReadyList/>
+                    <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
+                      <id>Priorities</id>
+                    </saReadyList>
+                    <time>0</time>
+                    <limitTime>5</limitTime>
+                    <maxTasksNumber>10</maxTasksNumber>
+                  </Controller.SchedulingSystem.Actor>
+                  <Controller.SchedulingSystem.Actor reference="../Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
+                </actorsList>
+                <resourcesList>
+                  <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource"/>
+                  <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
+                </resourcesList>
+                <allResourcesList>
+                  <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
+                  <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
+                  <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource"/>
+                  <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
+                </allResourcesList>
+                <tasksList>
+                  <Controller.SchedulingSystem.Task reference="../../../../.."/>
+                  <Controller.SchedulingSystem.Task>
+                    <taskId>task1</taskId>
+                    <programCounter>-1</programCounter>
+                    <workUnits>
+                      <string>actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                    </workUnits>
+                    <priority>2</priority>
+                    <difficult>5</difficult>
+                    <status>New</status>
+                    <schedulingSystem reference="../../../.."/>
+                  </Controller.SchedulingSystem.Task>
+                  <Controller.SchedulingSystem.Task>
+                    <taskId>task2</taskId>
+                    <programCounter>-1</programCounter>
+                    <workUnits>
+                      <string>int_actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>int_actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>int_actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>int_actor0</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                      <string>actor1</string>
+                    </workUnits>
+                    <priority>1</priority>
+                    <difficult>5</difficult>
+                    <status>New</status>
+                    <schedulingSystem reference="../../../.."/>
+                  </Controller.SchedulingSystem.Task>
+                </tasksList>
+              </ioSystem>
+              <compLogginSystem>
+                <configurator reference="../../ioSystem/configurator"/>
+                <errorMsgs/>
+                <simulationTimes/>
+                <logginSystems>
+                  <Model.LogginSystem.XMLLogginSystem>
+                    <configurator reference="../../../../ioSystem/configurator"/>
+                    <simulationTimes reference="../../../simulationTimes"/>
+                    <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/test_case_8_results.xml</outputFileName>
+                    <fileManager/>
+                  </Model.LogginSystem.XMLLogginSystem>
+                  <Model.LogginSystem.TXTLogginSystem>
+                    <configurator reference="../../../../ioSystem/configurator"/>
+                    <simulationTimes reference="../../../simulationTimes"/>
+                    <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/test_case_8_results.txt</outputFileName>
+                    <fileManager/>
+                  </Model.LogginSystem.TXTLogginSystem>
+                </logginSystems>
+              </compLogginSystem>
+              <resultsAnalyzer>
+                <schedulingSystem reference="../.."/>
+                <numberOfErrors>0</numberOfErrors>
+                <deadline>0</deadline>
+                <numberOfCycles>0</numberOfCycles>
+                <numberOfTasks>0</numberOfTasks>
+                <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+                <nbrFailedTasks>0</nbrFailedTasks>
+                <numberOfActors>0</numberOfActors>
+                <numberOfResources>0</numberOfResources>
+                <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
+                <propFinishedTasks>0.0</propFinishedTasks>
+                <propFailedTasks>0.0</propFailedTasks>
+                <propVelocity>0.0</propVelocity>
+              </resultsAnalyzer>
+              <newsList reference="../ioSystem/tasksList"/>
+              <actorsList reference="../ioSystem/actorsList"/>
+              <resourcesList reference="../ioSystem/resourcesList"/>
+              <finishedList/>
+              <numberOfTasks>3</numberOfTasks>
+              <deliverRes>
+                <resId>deliverRes</resId>
+                <type>actor</type>
+                <resources/>
+                <resourceMaxLimit>100</resourceMaxLimit>
+                <schedulingSystem reference="../.."/>
+                <capacity>100</capacity>
+                <currAction>Nothing</currAction>
+                <intList/>
+                <syncIntList/>
+                <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                  <id>FCFS</id>
+                </saIntList>
+                <readyList reference="../../ioSystem/tasksList"/>
+                <syncReadyList/>
+                <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                  <id>FCFS</id>
+                </saReadyList>
+                <time>0</time>
+                <limitTime>-1</limitTime>
+                <maxTasksNumber>100</maxTasksNumber>
+              </deliverRes>
+              <deadline>80</deadline>
+            </schedulingSystem>
+          </contingencyTask>
           <schedulingSystem reference="../../../.."/>
-        </contingencyTask>
-        <schedulingSystem reference="../../.."/>
-      </Controller.SchedulingSystem.Task>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task1</taskId>
-        <programCounter>-1</programCounter>
-        <workUnits>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-        </workUnits>
-        <priority>2</priority>
-        <difficult>5</difficult>
-        <status>New</status>
-        <schedulingSystem reference="../../.."/>
-      </Controller.SchedulingSystem.Task>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task2</taskId>
-        <programCounter>-1</programCounter>
-        <workUnits>
-          <string>int_actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>int_actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>int_actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>int_actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-        </workUnits>
-        <priority>1</priority>
-        <difficult>5</difficult>
-        <status>New</status>
-        <schedulingSystem reference="../../.."/>
-      </Controller.SchedulingSystem.Task>
-    </newsList>
-    <actorsList reference="../inputSystem/actorsList"/>
-    <resourcesList reference="../inputSystem/resourcesList"/>
+        </Controller.SchedulingSystem.Task>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task1</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+          </workUnits>
+          <priority>2</priority>
+          <difficult>5</difficult>
+          <status>New</status>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task2</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>int_actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>int_actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>int_actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>int_actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+          </workUnits>
+          <priority>1</priority>
+          <difficult>5</difficult>
+          <status>New</status>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+      </tasksList>
+    </ioSystem>
+    <compLogginSystem>
+      <configurator reference="../../ioSystem/configurator"/>
+      <errorMsgs/>
+      <simulationTimes/>
+      <logginSystems>
+        <Model.LogginSystem.XMLLogginSystem>
+          <configurator reference="../../../../ioSystem/configurator"/>
+          <simulationTimes reference="../../../simulationTimes"/>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/test_case_8_results.xml</outputFileName>
+          <fileManager/>
+        </Model.LogginSystem.XMLLogginSystem>
+        <Model.LogginSystem.TXTLogginSystem>
+          <configurator reference="../../../../ioSystem/configurator"/>
+          <simulationTimes reference="../../../simulationTimes"/>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_8/test_case_8_results.txt</outputFileName>
+          <fileManager/>
+        </Model.LogginSystem.TXTLogginSystem>
+      </logginSystems>
+    </compLogginSystem>
+    <resultsAnalyzer>
+      <schedulingSystem reference="../.."/>
+      <numberOfErrors>0</numberOfErrors>
+      <deadline>0</deadline>
+      <numberOfCycles>0</numberOfCycles>
+      <numberOfTasks>0</numberOfTasks>
+      <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+      <nbrFailedTasks>0</nbrFailedTasks>
+      <numberOfActors>0</numberOfActors>
+      <numberOfResources>0</numberOfResources>
+      <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
+      <propFinishedTasks>0.0</propFinishedTasks>
+      <propFailedTasks>0.0</propFailedTasks>
+      <propVelocity>0.0</propVelocity>
+    </resultsAnalyzer>
+    <newsList reference="../ioSystem/tasksList"/>
+    <actorsList reference="../ioSystem/actorsList"/>
+    <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList/>
     <numberOfTasks>3</numberOfTasks>
     <deliverRes>
@@ -288,7 +556,7 @@
       <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
         <id>FCFS</id>
       </saIntList>
-      <readyList reference="../../newsList"/>
+      <readyList reference="../../ioSystem/tasksList"/>
       <syncReadyList/>
       <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
         <id>FCFS</id>

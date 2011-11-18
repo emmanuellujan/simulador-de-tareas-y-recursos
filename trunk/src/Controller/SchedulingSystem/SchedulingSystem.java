@@ -1,18 +1,19 @@
 package Controller.SchedulingSystem;
+
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
 
 import Model.IOSystem.IOSystem;
 import Model.IOSystem.SerialIOSystem;
-//import Model.IOSystem.XMLInputSystem;
+//import Model.IOSystem.XMLIOSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
 import Controller.SchedulingAlgorithmSystem.FCFS;
 
 public class SchedulingSystem {
 
-	private IOSystem inputSystem;
+	private IOSystem ioSystem;
 	CompLogginSystem compLogginSystem;
 	private ResultsAnalyzer resultsAnalyzer;
 	private Vector<Task> newsList;
@@ -23,73 +24,65 @@ public class SchedulingSystem {
 	private Actor deliverRes;
 	private int deadline;
 
-	public SchedulingSystem(){
+	public SchedulingSystem() {
 	}
 
-	public void loadData(){
+	public void loadData() {
 
 		Configurator configurator = new Configurator();
-		//IOSystem inputSystem = new XMLInputSystem(configurator,this);
-		SerialIOSystem serialInputSystem = new SerialIOSystem(configurator,this);
+		// IOSystem ioSystem = new XMLIOSystem(configurator,this);
+		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
-		
-		int deadline=0;
+		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Resource> resourcesList = new Vector<Resource>();
 		Vector<Task> finishedList = new Vector<Task>();
-		
-		serialInputSystem.loadAll();
-		deadline = serialInputSystem.getDeadline();
-		newsList = serialInputSystem.getTasksList();
-		actorsList = serialInputSystem.getActorsList();
-		resourcesList = serialInputSystem.getResourcesList();
 
-		/*deadline = inputSystem.getDeadline();
-		newsList = inputSystem.loadNewsList();
-		actorsList = inputSystem.loadActorsList();
-		resourcesList = inputSystem.loadResourcesList();
-		inputSystem.updateRelations();*/
-		
-		String deliverResId="deliverRes";
+		ioSystem.loadAll();
+		deadline = ioSystem.getDeadline();
+		newsList = ioSystem.getTasksList();
+		actorsList = ioSystem.getActorsList();
+		resourcesList = ioSystem.getResourcesList();
+		finishedList = new Vector<Task>();
+
+		String deliverResId = "deliverRes";
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
-		Actor deliverRes = new Actor(deliverResId, "actor", saReadyList, limitTime, this, 100, 100, null, 100, null);
+		Actor deliverRes = new Actor(deliverResId, "actor", saReadyList,
+				limitTime, this, 100, 100, null, 100, null);
 		deliverRes.setReadyList(newsList);
-				
+
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
 		this.setNumberOfTasks(newsList.size());
 		this.setFinishedList(finishedList);
-		//this.setInputSystem(inputSystem);
-		this.setInputSystem(serialInputSystem);
+		this.setIoSystem(ioSystem);
 		this.setDeliverRes(deliverRes);
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setCompLogginSystem(compLogginSystem);
-		/*		
-		for(int i=0;i<resourcesList.size();i++){
-			resourcesList.elementAt(i).print();
-			System.out.println("-------------------------------------");
-		}
-		
-		deliverRes.print();
-		
-		for(int i=0;i<actorsList.size();i++){
-			actorsList.elementAt(i).print();
-			System.out.println("-------------------------------------");
-		}
-		
-		for(int i=0;i<newsList.size();i++){
-			newsList.elementAt(i).print();
-			System.out.println("-------------------------------------");
-		}*/
-		
-		//serialInputSystem.saveAll();
+
+		/*
+		 * for(int i=0;i<resourcesList.size();i++){
+		 * resourcesList.elementAt(i).print();
+		 * System.out.println("-------------------------------------"); }
+		 * 
+		 * deliverRes.print();
+		 * 
+		 * for(int i=0;i<actorsList.size();i++){
+		 * actorsList.elementAt(i).print();
+		 * System.out.println("-------------------------------------"); }
+		 * 
+		 * for(int i=0;i<newsList.size();i++){ newsList.elementAt(i).print();
+		 * System.out.println("-------------------------------------"); }
+		 */
+
+		 //ioSystem.saveAll();
 	}
-	
+
 	public void start() {
 		System.out.print("Loading data...");
 		this.loadData();
@@ -103,7 +96,7 @@ public class SchedulingSystem {
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!");
 	}
-	
+
 	public void simulateAndLog() {
 		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logger = this.getCompLogginSystem();
@@ -111,11 +104,11 @@ public class SchedulingSystem {
 		actorsList.add(0, deliverRes);
 		int i = 0;
 		int n = actorsList.size();
-		while(!scheduleFinished()){
-			for(int j=0;j<n;j++)
+		while (!scheduleFinished()) {
+			for (int j = 0; j < n; j++)
 				actorsList.get(j).exec();
 			this.incTime();
-			logger.log(i,actorsList);
+			logger.log(i, actorsList);
 			i++;
 		}
 		logger.writeLog();
@@ -124,7 +117,7 @@ public class SchedulingSystem {
 	private void incTime() {
 		Vector<Actor> actorsList = this.getActorsList();
 		int n = actorsList.size();
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			Actor actor = actorsList.get(i);
 			actor.incTime();
 		}
@@ -133,7 +126,7 @@ public class SchedulingSystem {
 	private boolean scheduleFinished() {
 		int nTasks = this.getNumberOfTasks();
 		int nFinishedTasks = this.getFinishedList().size();
-		if(nTasks==nFinishedTasks)
+		if (nTasks == nFinishedTasks)
 			return true;
 		else
 			return false;
@@ -150,11 +143,11 @@ public class SchedulingSystem {
 		int i = 0;
 		int n = actorsList.size();
 		Actor actor = null;
-		while(i<n && !found){
-			if(actorsList.get(i).getResId().equals(name)){
+		while (i < n && !found) {
+			if (actorsList.get(i).getResId().equals(name)) {
 				found = true;
 				actor = actorsList.get(i);
-			}else
+			} else
 				i++;
 		}
 		return actor;
@@ -185,11 +178,11 @@ public class SchedulingSystem {
 	}
 
 	public IOSystem getInputSystem() {
-		return inputSystem;
+		return ioSystem;
 	}
 
 	public void setInputSystem(IOSystem InputSystem) {
-		this.inputSystem = InputSystem;
+		this.ioSystem = InputSystem;
 	}
 
 	public int getNumberOfTasks() {
@@ -207,7 +200,7 @@ public class SchedulingSystem {
 	public void setDeliverRes(Actor deliverRes) {
 		this.deliverRes = deliverRes;
 	}
-	
+
 	public Vector<Resource> getResourcesList() {
 		return resourcesList;
 	}
@@ -240,9 +233,17 @@ public class SchedulingSystem {
 		this.deadline = deadline;
 	}
 
-	public static void main(String[] args){
+	public IOSystem getIoSystem() {
+		return ioSystem;
+	}
+
+	public void setIoSystem(IOSystem ioSystem) {
+		this.ioSystem = ioSystem;
+	}
+
+	public static void main(String[] args) {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
 		schedulingSystem.start();
 	}
-	
+
 }

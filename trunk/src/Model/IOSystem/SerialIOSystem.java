@@ -44,11 +44,15 @@ public class SerialIOSystem extends IOSystem {
 
 			Vector<Task> tasks = this.getSchedulingSystem().getNewsList();
 			n = tasks.size();
-			for (int j = 0; j < n; j++) {
+			int j=0;
+			for (j = 0; j < n; j++) {
 				Task task = tasks.elementAt(j);
 				fs = new FileOutputStream(dir + (i + j) + ".xml");
 				xs.toXML(task, fs);
 			}
+		
+			fs = new FileOutputStream(dir + (i + j) + ".xml");
+			xs.toXML(this.getDeadline(), fs);
 
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
@@ -116,7 +120,15 @@ public class SerialIOSystem extends IOSystem {
 					o = xs.fromXML(fis);
 				}
 			}
-
+		
+			if(allResources.size()>0){
+				fileName = dir + i + ".xml";
+				fis = new FileInputStream(fileName);
+				o = xs.fromXML(fis);
+				Integer deadline = (Integer) o;
+				this.setDeadline(deadline.intValue());
+			}
+			
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		}
@@ -127,23 +139,6 @@ public class SerialIOSystem extends IOSystem {
 		this.setTasksList(tasks);
 		this.updateRelations();
 
-	}
-
-	public int getDeadline() {
-		// TODO Auto-generated method stub
-		return 80;
-	}
-
-	public Vector<Task> loadNewsList() {
-		return this.getTasksList();
-	}
-
-	public Vector<Actor> loadActorsList() {
-		return this.getActorsList();
-	}
-
-	public Vector<Resource> loadResourcesList() {
-		return this.getResourcesList();
 	}
 
 	public void updateRelations() {
@@ -168,5 +163,5 @@ public class SerialIOSystem extends IOSystem {
 		}
 
 	}
-
+		
 }
