@@ -115,11 +115,23 @@ public class NewsFrame extends javax.swing.JFrame {
                 else{
                     if(this.backFrame.equals("SimulatorFrame"))
                         SimulatorFrame.getInstance().setVisible(true);
-                    else    
-                        CreateTaskFrame.getInstance().setVisible(true);
+                    else{ 
+                        if(this.backFrame.equals("UpdaterFrame"))
+                            this.getUpdaterBackFrame().setVisible(true);
+                        else
+                            CreateTaskFrame.getInstance().setVisible(true);
+                    }
                 }
             }
         }        
+    }
+    
+    public void setUpdaterBackFrame(UpdaterFrame currentBackFrame){
+        this.updaterBackFrame = currentBackFrame;
+    }
+    
+    public UpdaterFrame getUpdaterBackFrame(){
+        return this.updaterBackFrame;
     }
     
     /**
@@ -159,6 +171,7 @@ public class NewsFrame extends javax.swing.JFrame {
     }
     
     private String backFrame;
+    private UpdaterFrame updaterBackFrame;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -41,11 +41,35 @@ public class ErrorFrame extends javax.swing.JFrame {
                 else{
                     if(this.backFrame.equals("SimulatorFrame"))
                         SimulatorFrame.getInstance().setVisible(true);
-                    else    
-                        CreateTaskFrame.getInstance().setVisible(true);
+                    else{ 
+                        if(this.backFrame.equals("UpdaterFrame"))
+                            this.getUpdaterBackFrame().setVisible(true);
+                        else{
+                            if(this.backFrame.equals("FilterFrame"))
+                                this.getFilterBackFrame().setVisible(true);
+                            else
+                                CreateTaskFrame.getInstance().setVisible(true);
+                        }
+                    }
                 }    
             }
         }        
+    }
+    
+    public void setUpdaterBackFrame(UpdaterFrame currentBackFrame){
+        this.updaterBackFrame = currentBackFrame;
+    }
+    
+    public UpdaterFrame getUpdaterBackFrame(){
+        return this.updaterBackFrame;
+    }
+    
+    public void setFilterBackFrame(CreateFilterFrame currentBackFrame){
+        this.filterBackFrame = currentBackFrame;
+    }
+    
+    public CreateFilterFrame getFilterBackFrame(){
+        return this.filterBackFrame;
     }
     
     private static ErrorFrame ERROR_INSTANCE;    
@@ -157,6 +181,8 @@ public class ErrorFrame extends javax.swing.JFrame {
     }
     
     private String backFrame;
+    private UpdaterFrame updaterBackFrame;
+    private CreateFilterFrame filterBackFrame;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

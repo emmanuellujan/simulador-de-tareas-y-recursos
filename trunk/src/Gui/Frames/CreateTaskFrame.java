@@ -315,10 +315,29 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        SimulatorFrame.getInstance().setLocationRelativeTo(null);
-        SimulatorFrame.getInstance().setVisible(true);
+         
+        if((!this.jTextField1.getText().equals(""))&&(!this.jTextField2.getText().equals(""))&&(this.getWorkUnitList()!= null)
+                &&(this.getSchedulingSystem()!=null)&&(this.getUpdater()!=null)&&(this.getFilter()!=null)){
+            Task currentTask = new Task("task" + String.valueOf(this.getNewsList().size()), Integer.parseInt(this.jTextField1.getText()), 
+                    this.getWorkUnitList(), null, null, "New", Integer.parseInt(this.jTextField2.getText()),this.getSchedulingSystem() , 
+                    this.getFilter(), this.getUpdater());
+            this.setNewTask(currentTask);
+            Vector<Task> currentTaskList = SimulatorFrame.getInstance().getNewsList();
+            currentTaskList.add(this.getNewTask());
+            SimulatorFrame.getInstance().setNewsList(currentTaskList);
+            NewsFrame.getInstance().setLabel("Task created successfully.");
+            NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
+            this.setVisible(false);
+            SimulatorFrame.getInstance().setLocationRelativeTo(null);
+            SimulatorFrame.getInstance().setVisible(true);
+        }else{
+            NewsFrame.getInstance().setLabel("Some values are empty.");
+            NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
+            this.setVisible(false);
+            NewsFrame.getInstance().setLocationRelativeTo(null);
+            NewsFrame.getInstance().setVisible(true);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -358,6 +377,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
         UpdaterFrame currentUpdater = new UpdaterFrame();
+        currentUpdater.setBackFrame(this);
         currentUpdater.setLocationRelativeTo(null);
         currentUpdater.setVisible(true);
         currentUpdater.main(null);
@@ -417,6 +437,23 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         this.updater = updater;
     }
     
+    public Vector<Task> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(Vector<Task> newsList) {
+        this.newsList = newsList;        
+    }
+    
+    public Task getNewTask() {
+        return this.newTask;
+    }
+
+    public void setNewTask(Task task) {
+        this.newTask = task;        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -459,9 +496,10 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         return CREATETASKFRAME_INSTANCE;
     }
     
-    private Task newTask;
-    private Vector<Actor> actorsCurrentList;
+    private Task newTask;    
     private SchedulingSystem currentSchedulingSystem;
+    private Vector<Task> newsList;
+    private Vector<Actor> actorsCurrentList;
     private Vector<String> workUnitList;
     private JScrollPane scrollPane;
     private Updater updater;
