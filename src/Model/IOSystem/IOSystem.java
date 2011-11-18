@@ -1,7 +1,5 @@
 package Model.IOSystem;
 
-
-
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
@@ -16,6 +14,7 @@ public abstract class IOSystem {
 	private Configurator configurator;
 	private SchedulingSystem schedulingSystem;
 	
+	private int deadline;
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
 	private Vector<Resource> allResourcesList;
@@ -26,15 +25,9 @@ public abstract class IOSystem {
 		this.setConfigurator(configurator);
 		this.setSchedulingSystem(schedulingSystem);
 	}
-
-	public abstract int getDeadline();
 	
-	public abstract Vector<Task> loadNewsList();
-
-	public abstract Vector<Actor> loadActorsList();
-	
-	public abstract Vector<Resource> loadResourcesList();
-	
+	public abstract void saveAll();
+	public abstract void loadAll();
 	public abstract void updateRelations();
 	
 	public Configurator getConfigurator() {
@@ -84,5 +77,12 @@ public abstract class IOSystem {
 	public void setTasksList(Vector<Task> tasksList) {
 		this.tasksList = tasksList;
 	}
-		
+
+	public void setDeadline(int deadline) {
+		this.deadline = deadline;
+	}
+	
+	public int getDeadline() {
+		return this.deadline;
+	}	
 }

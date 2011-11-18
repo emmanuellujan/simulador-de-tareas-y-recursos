@@ -19,11 +19,28 @@ import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Task;
 
-public class XMLInputSystem extends IOSystem {
+public class XMLIOSystem extends IOSystem {
 
-	public XMLInputSystem(Configurator configurator,
+	public XMLIOSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
 		super(configurator, schedulingSystem);
+	}
+	
+	public void saveAll() {
+		// TODO Auto-generated method stub
+	}
+	
+	public void loadAll() {
+		this.loadDeadline();
+		this.loadNewsList();
+		this.loadActorsList();
+		this.loadResourcesList();
+		this.updateRelations();
+	}
+	
+	public int loadDeadline(){
+		this.setDeadline(this.getDeadline());
+		return this.getDeadline();
 	}
 	
 	public int getDeadline(){
@@ -50,9 +67,8 @@ public class XMLInputSystem extends IOSystem {
 		return nDeadline;
 	}
 	
-
 	public Vector<Task> loadNewsList() {
-		String fileName = this.getConfigurator().getIoDirectory()
+		String fileName = this.getConfigurator().getInputDir()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		Vector<Task> tasks = new Vector<Task>();
 		try {
@@ -150,12 +166,13 @@ public class XMLInputSystem extends IOSystem {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		this.setTasksList(tasks);
 		return tasks;
 	}
 
 	public Vector<Actor> loadActorsList() {
 
-		String fileName = this.getConfigurator().getIoDirectory()
+		String fileName = this.getConfigurator().getInputDir()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		Vector<Actor> actors = new Vector<Actor>();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
@@ -272,7 +289,7 @@ public class XMLInputSystem extends IOSystem {
 
 	public Vector<Resource> loadResourcesList() {
 
-		String fileName = this.getConfigurator().getIoDirectory()
+		String fileName = this.getConfigurator().getInputDir()
 				+ this.getConfigurator().getInputFile() + ".xml";
 		Vector<Resource> resources = new Vector<Resource>();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
