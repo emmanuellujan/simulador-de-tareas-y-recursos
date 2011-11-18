@@ -5,7 +5,7 @@ import Model.DataModel.Configurator.Configurator;
 
 import Model.IOSystem.IOSystem;
 import Model.IOSystem.SerialIOSystem;
-import Model.IOSystem.XMLInputSystem;
+//import Model.IOSystem.XMLInputSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
 import Controller.SchedulingAlgorithmSystem.FCFS;

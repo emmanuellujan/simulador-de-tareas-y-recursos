@@ -15,7 +15,7 @@ import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.SystemServices;
 import Controller.SchedulingSystem.Task;
-import Model.InputSystem.InputSystem;
+import Model.IOSystem.IOSystem;
 import Model.LogginSystem.CompLogginSystem;
 import com.birosoft.liquid.LiquidLookAndFeel;
 import java.io.File;
@@ -30,7 +30,11 @@ import javax.swing.JOptionPane;
 public class SimulatorFrame extends javax.swing.JFrame {
     
 
-    /** Creates new form SimulatorFrame */
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/** Creates new form SimulatorFrame */
     private SimulatorFrame() {        
         this.actorCreatePanel = CreateActorFrame.getInstance();
         this.taskCreatePanel = CreateTaskFrame.getInstance();
@@ -88,12 +92,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.finishedList = finishedList;
     }
 
-    public InputSystem getInputSystem() {
-        return inputSystem;
+    public IOSystem getInputSystem() {
+        return ioSystem;
     }
 
-    public void setInputSystem(InputSystem InputSystem) {
-        this.inputSystem = InputSystem;
+    public void setInputSystem(IOSystem InputSystem) {
+        this.ioSystem = InputSystem;
     }
 
     public CompLogginSystem getLogginSystem() {
@@ -139,7 +143,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }
     
     public Vector<Resource> getMainResourcesList() {
-        return resourcesMainList;
+        return getResourcesMainList();
     }
     
     public void setMainResourcesList(){
@@ -151,7 +155,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }
 
     public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
-        this.resourcesMainList = resourcesPrincipalList;
+        this.setResourcesMainList(resourcesPrincipalList);
         RelationFrame.getInstance().setMainResourcesList(resourcesPrincipalList);
     }
     
@@ -1024,7 +1028,15 @@ public class SimulatorFrame extends javax.swing.JFrame {
         return SIMULATORFRAME_INSTANCE;
     }
     
-    private CreateTaskFrame taskCreatePanel;
+    public Vector getResourcesMainList() {
+		return resourcesMainList;
+	}
+
+	public void setResourcesMainList(Vector resourcesMainList) {
+		this.resourcesMainList = resourcesMainList;
+	}
+
+	private CreateTaskFrame taskCreatePanel;
     private CreateActorFrame actorCreatePanel;
     private CreateArtifactFrame artifactCreatePanel;
     private DeleteTaskFrame taskDeletePanel;
@@ -1043,7 +1055,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private SystemServices services;   
     CompLogginSystem compLogginSystem;
     private int deadline;
-    private InputSystem inputSystem;
+    private IOSystem ioSystem;
     
     private static SimulatorFrame SIMULATORFRAME_INSTANCE;
     

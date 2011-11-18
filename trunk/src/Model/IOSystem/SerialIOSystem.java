@@ -28,6 +28,8 @@ public class SerialIOSystem extends IOSystem {
 		try {
 
 			String dir = this.getConfigurator().getOutputDir();
+			
+			//crear dir si no existe
 
 			FileOutputStream fs;
 			//Vector<Resource> allResources = this.getAllResourcesList();
