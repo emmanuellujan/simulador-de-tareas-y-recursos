@@ -290,15 +290,15 @@ public class CreateFilterFrame extends javax.swing.JFrame {
      */    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Filter filter = null;
-        if(this.getFilterType().equals("ListPropertyFilter")){
-            if((this.jTextField2.getText() != null)&&(this.jTextField3.getText() != null)&&
+        if((this.getFilterType().equals("ListPropertyFilter"))||(this.getFilterType().equals("List Property Filter"))){
+            if((!this.jTextField2.getText().equals(""))&&(!this.jTextField3.getText().equals(""))&&
                     (this.jComboBox3.getSelectedItem() != null)){                
                 filter = new ListPropertyFilter(this.jTextField2.getText(), 
                         this.jTextField3.getText(),this.getResource((String)this.jComboBox3.getSelectedItem()));                
             }
         }else{
-            if(this.getFilterType().equals("ValueFilter")){
-                if((this.jTextField1.getText() != null)){
+            if((this.getFilterType().equals("ValueFilter"))||(this.getFilterType().equals("Job Position Filter"))){
+                if(!this.jTextField1.getText().equals("")) {
                     filter = new JobPositionFilter(this.jTextField1.getText());
                 }
             }else{
@@ -311,21 +311,50 @@ public class CreateFilterFrame extends javax.swing.JFrame {
                 }
             }        
         }
-           
-        if(this.getBackFrameId().equals("TaskFrame")){
-                ((CreateTaskFrame)this.getBackFrame()).setFilter(filter);
+        if(filter == null){
+            ErrorFrame.getInstance().setLabel("Empty values. Cannot create filter.");
+            ErrorFrame.getInstance().setBackFrame("FilterFrame");
+            ErrorFrame.getInstance().setFilterBackFrame(this);
+            this.setVisible(false);
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
+            ErrorFrame.getInstance().setVisible(true);
+            
         }else{
-            if(this.getBackFrameId().equals("FilterFrame")){
-                if(this.getFilterFrameStateI())
-                    ((CreateFilterFrame)this.getBackFrame()).setFilterFrameI(filter);
-                else
-                    ((CreateFilterFrame)this.getBackFrame()).setFilterFrameII(filter);
+            if(this.getBackFrameId().equals("TaskFrame")){
+                ((CreateTaskFrame)this.getBackFrame()).setFilter(filter);
+                this.successExit();
             }else{
-                ((UpdaterFrame)this.getBackFrame()).setFilter(filter);
+                if(this.getBackFrameId().equals("FilterFrame")){
+                    if(this.getFilterFrameStateI()){
+                        ((CreateFilterFrame)this.getBackFrame()).setFilterFrameI(filter);
+                        this.successExit();
+                    }else{
+                        ((CreateFilterFrame)this.getBackFrame()).setFilterFrameII(filter);
+                        this.successExit();
+                    }
+                }else{
+                    ((UpdaterFrame)this.getBackFrame()).setFilter(filter);
+                    this.successExit();
+                }
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void successExit(){
+         NewsFrame.getInstance().setLabel("Filter created successfully.");
+         if(this.getBackFrameId().equals("TaskFrame")){
+                NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
+        }else{
+            if(this.getBackFrameId().equals("FilterFrame"))
+                NewsFrame.getInstance().setBackFrame("CreateFilterFrame");
+            else               
+                NewsFrame.getInstance().setBackFrame("UpdaterFrame");
+         }         
+         this.setVisible(false);
+         NewsFrame.getInstance().setLocationRelativeTo(null);
+         NewsFrame.getInstance().setVisible(true);
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         CreateFilterFrame filterFrame = new CreateFilterFrame();
         filterFrame.setFilterType((String)this.jComboBox4.getSelectedItem());
@@ -396,13 +425,13 @@ public class CreateFilterFrame extends javax.swing.JFrame {
     }
     
     private void makeFilterGUI(){        
-        if(this.getFilterType().equals("ListPropertyFilter"))
+        if((this.getFilterType().equals("ListPropertyFilter"))||(this.getFilterType().equals("List Property Filter")))  
             this.setListPropertyElements();
         else{
             if(this.getFilterType().equals("AndFilter"))
                 this.setAndElements();
             else{
-                if(this.getFilterType().equals("ValueFilter"))
+                if((this.getFilterType().equals("ValueFilter"))||(this.getFilterType().equals("Job Position Filter")))
                     this.setValueElements();
                 else
                     this.setObjectElements();

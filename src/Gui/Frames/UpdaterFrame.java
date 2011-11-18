@@ -163,7 +163,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         CreateFilterFrame filterFrame = new CreateFilterFrame();
-        filterFrame.setFilterType((String)this.jComboBox1.getSelectedItem());
+        filterFrame.setFilterType((String)this.jComboBox1.getSelectedItem());        
         filterFrame.setBackFrame("UpdaterFrame", this);
         filterFrame.setResourcesList(this.getResourcesList());
         filterFrame.setMainResourcesList(this.getMainResourcesList());
@@ -177,13 +177,20 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Updater currentUpdater = this.getUpdater();
-        if((this.getFilter() != null)&&(this.getUpdate() != null))
+        if((this.getFilter() != null)&&(this.getUpdate() != null)){
             currentUpdater.getUpdates().put(this.getFilter(), this.getUpdate());       
-        this.setUpdater(currentUpdater);                
-        ((CreateTaskFrame)this.getBackFrame()).setUpdater(currentUpdater);
-        this.setVisible(false);
-        ((CreateTaskFrame)this.getBackFrame()).setLocationRelativeTo(null);
-        ((CreateTaskFrame)this.getBackFrame()).setVisible(true);
+            this.setUpdater(currentUpdater);                
+            ((CreateTaskFrame)this.getBackFrame()).setUpdater(currentUpdater);
+            this.setVisible(false);
+            ((CreateTaskFrame)this.getBackFrame()).setLocationRelativeTo(null);
+            ((CreateTaskFrame)this.getBackFrame()).setVisible(true);
+        }else{
+            ErrorFrame.getInstance().setLabel("Some values are empty. Cannot create Updater.");
+            ErrorFrame.getInstance().setBackFrame("UpdaterFrame");
+            this.setVisible(false);
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
+            ErrorFrame.getInstance().setVisible(true);
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -241,10 +248,10 @@ public class UpdaterFrame extends javax.swing.JFrame {
     }
     
     public void setBackFrame(Object backFrame) {
-        this.filterBackFrame = (CreateFilterFrame)backFrame;            
+        this.filterBackFrame = (CreateTaskFrame)backFrame;            
     }
 
-    public Object getBackFrame() {
+    public CreateTaskFrame getBackFrame() {
        return this.filterBackFrame;            
     }
     
@@ -280,7 +287,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	this.updater = current;
     }
 
-    private CreateFilterFrame filterBackFrame;
+    private CreateTaskFrame filterBackFrame;
     private Hashtable<Filter,Update> updates;
     private Vector resourcesMainList;// Lista total de recursos, artefactos y actores
     private Vector<Resource> resourcesList; //Lista de artefactos

@@ -10,16 +10,16 @@
  */
 package Gui.Frames;
 
-import Controller.SchedulingAlgorithmSystem.FCFS;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.SystemServices;
 import Controller.SchedulingSystem.Task;
-import Model.DataModel.SimulationTime.SimulationTime;
-import Model.IOSystem.IOSystem;
+import Model.InputSystem.InputSystem;
 import Model.LogginSystem.CompLogginSystem;
 import com.birosoft.liquid.LiquidLookAndFeel;
+import java.io.File;
+import java.io.IOException;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 
@@ -28,22 +28,10 @@ import javax.swing.JOptionPane;
  * @author F.Rossi
  */
 public class SimulatorFrame extends javax.swing.JFrame {
+    
 
     /** Creates new form SimulatorFrame */
-    private SimulatorFrame() {
-        //Carga de newsList, actorsList, resourcesList en frames ajenos
-
-        /*for(int i=0;i<resourcesList.size();i++){
-        resourcesList.elementAt(i).print();
-        System.out.println("-------------------------------------");
-        }
-        
-        for(int i=0;i<actorsList.size();i++){
-        actorsList.elementAt(i).print();
-        System.out.println("-------------------------------------");
-        }*/
-        //!!!!!!!!Ver cuando setear desde 0, cuando setear tambien en el schedulingSystem.OJO! VER!!!!!       
-        
+    private SimulatorFrame() {        
         this.actorCreatePanel = CreateActorFrame.getInstance();
         this.taskCreatePanel = CreateTaskFrame.getInstance();
         this.artifactCreatePanel = CreateArtifactFrame.getInstance();        
@@ -62,8 +50,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.setMainResourcesList();
         
         this.services = new SystemServices();
-        this.setLocationRelativeTo(null);
-        
+        this.setLocationRelativeTo(null);        
     }
 
     public SchedulingSystem getSchedulingSystem() {
@@ -101,11 +88,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.finishedList = finishedList;
     }
 
-    public IOSystem getInputSystem() {
+    public InputSystem getInputSystem() {
         return inputSystem;
     }
 
-    public void setIOSystem(IOSystem InputSystem) {
+    public void setInputSystem(InputSystem InputSystem) {
         this.inputSystem = InputSystem;
     }
 
@@ -270,6 +257,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jLabel22.setText("Notaciones de ayuda");
 
         jButton10.setText("Descargar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel23.setText("Entrada de datos");
@@ -278,6 +270,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jLabel24.setText("Salida de datos");
 
         jButton12.setText("Guardar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("Cargar");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -845,7 +842,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.taskCreatePanel.setActorsList(actorsList);
-
+        this.taskCreatePanel.setNewsList(newsList);
         this.taskCreatePanel.setLocationRelativeTo(null);
         this.taskCreatePanel.setVisible(true);
         this.setVisible(false);
@@ -907,7 +904,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        SaveFrame.main(null);
+        LoadFrame.main(null);        
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -943,6 +940,23 @@ public class SimulatorFrame extends javax.swing.JFrame {
            this.setVisible(false);
         }
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        File archivo = new File("src//Gui//Media//Manual de usuario - lrSimulator.pdf"); 
+        System.out.println("Ruta: " + archivo.getAbsolutePath());
+        if(archivo.exists()){ 
+            java.awt.Desktop d = java.awt.Desktop.getDesktop(); 
+            try { 
+                d.open(archivo); 
+            } catch (IOException ex) { 
+                ex.printStackTrace(); 
+            }
+        } 
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        SaveFrame.main(null);
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     private boolean isComboboxesValuesValid(){
        if((this.jComboBox3.getSelectedItem() !=  null)&&(this.jComboBox1.getSelectedItem() !=  null))
@@ -1016,8 +1030,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private DeleteTaskFrame taskDeletePanel;
     private DeleteActorFrame actorDeletePanel;
     private DeleteArtifactFrame artifactDeletePanel;
-    private RelationFrame relationPanel;
-    private IOSystem inputSystem;
+    private RelationFrame relationPanel;    
     private CompLogginSystem logginSystem;
     private Vector<Task> newsList;
     private Vector<Actor> actorsList;
@@ -1027,7 +1040,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private int numberOfTasks;
     private Actor deliverRes;
     private SchedulingSystem mainSchedulingSystem;
-    private SystemServices services;
+    private SystemServices services;   
+    CompLogginSystem compLogginSystem;
+    private int deadline;
+    private InputSystem inputSystem;
     
     private static SimulatorFrame SIMULATORFRAME_INSTANCE;
     

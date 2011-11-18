@@ -4,25 +4,27 @@
  */
 
 /*
- * SaveFrame.java
+ * LoadFrame.java
  *
- * Created on 15/11/2011, 05:55:45 PM
+ * Created on 17/11/2011, 12:24:48 PM
  */
 package Gui.Frames;
 
+import java.io.File;
 import javax.swing.JFileChooser;
 
 /**
  *
  * @author F.Rossi
  */
-public class SaveFrame extends javax.swing.JFrame {
+public class LoadFrame extends javax.swing.JFrame {
 
-    /** Creates new form SaveFrame */
-    public SaveFrame() {
+    /** Creates new form LoadFrame */
+    public LoadFrame() {
         initComponents();
-        this.jFileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        this.jFileChooser1.setDialogType(JFileChooser.SAVE_DIALOG);
+        //this.jFileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        this.jFileChooser1.setDialogType(JFileChooser.OPEN_DIALOG);
+        this.jFileChooser1.setMultiSelectionEnabled(true);
     }
 
     /** This method is called from within the constructor to
@@ -63,9 +65,7 @@ public class SaveFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
-        this.setVisible(false);
-        SimulatorFrame.getInstance().setLocationRelativeTo(null);
-        SimulatorFrame.getInstance().setVisible(true);
+        File[] files = this.jFileChooser1.getSelectedFiles();
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     /**
@@ -85,13 +85,13 @@ public class SaveFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SaveFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoadFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SaveFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoadFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SaveFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoadFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SaveFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoadFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -99,10 +99,11 @@ public class SaveFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new SaveFrame().setVisible(true);
+                new LoadFrame().setVisible(true);
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables
