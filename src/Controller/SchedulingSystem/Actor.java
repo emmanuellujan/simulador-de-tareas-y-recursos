@@ -122,8 +122,8 @@ public class Actor extends Resource {
 															// es el próximo
 															// dispositivo en el
 															// que se ejecutará
-															// el proceso)
-				if (!workUnit.contains("int")) { // Si el proceso en ejecución
+															// la tarea)
+				if (!workUnit.contains("int")) { // Si la tarea en ejecución
 													// no es una interrupción:
 					this.addReadyList(currTask, currResId);// Se lo anexa a la
 															// lista de listos
@@ -132,7 +132,7 @@ public class Actor extends Resource {
 					String taskId = currTask.getTaskId();
 					currAction += ", the active task " + taskId
 							+ " pass to the ready list";
-					currTask = null; // Se desaloja el proceso en ejecución.
+					currTask = null; // Se desaloja la tarea en ejecución.
 				}
 				this.resetTime(); // Se reinicia el temporizador.
 			} else if (intList.size() > 0) {// Sino, si la lista de
@@ -146,7 +146,7 @@ public class Actor extends Resource {
 						|| auxTask.getPriority() > currTask.getPriority()) {
 					intList.remove(auxTask); // Se elimina dicho proceso de la
 												// lista de interrupciones.
-					// Se agrega el proceso actual a la lista de listos o a la
+					// Se agrega la tarea actual a la lista de listos o a la
 					// lista de interrupciones dependiendo de lo que sea
 					if (currTask.getCurrent().contains("int")) {
 						this.addIntList(currTask, currResId);
@@ -192,20 +192,19 @@ public class Actor extends Resource {
 													// que se ejecutará el
 													// proceso)
 
-		if (workUnit.equals("end") || !currTask.evalConditions()) { // Sino, si
-																	// el
-																	// proceso
-																	// en
-																	// ejecución
-																	// ha
-																	// llegado a
-																	// su fin:
-			schedulingSystem.finishTask(currTask); // Terminar proceso (pasa a
-													// estado finalizado).
+		if (workUnit.equals("fail") || !currTask.evalConditions()) {
+			schedulingSystem.finishFailedTask(currTask);
+			String taskId = currTask.getTaskId();
+			currAction = "The active task " + taskId + " fails";
+			currTask = null;
+		}else if (workUnit.equals("end") || !currTask.evalConditions()) {
+			/*Sino, si la tarea en ejecución ha llegado a su fin:*/
+			// Terminar tarea (pasa a estado finalizado).
+			schedulingSystem.finishTask(currTask); 
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " ends";
 			currTask = null;
-		} else if (workUnit.contains(resId)) { // Sino, si el proceso en
+		} else if (workUnit.contains(resId)) { // Sino, si la tarea en
 												// ejecución debe continuar
 												// ejecutándose en este
 												// dispositivo:
@@ -224,8 +223,8 @@ public class Actor extends Resource {
 			currAction = "The task " + taskId
 					+ " pass to the interruption list of the resource "
 					+ workUnit;
-			currTask = null; // Se desaloja el proceso en ejecución.
-		} else { // Sino, si el proceso en ejecución debe continuar ejecutándose
+			currTask = null; // Se desaloja la tarea en ejecución.
+		} else { // Sino, si la tarea en ejecución debe continuar ejecutándose
 					// en otro dispositivo:
 			currTask.decProgramCounter();
 			this.addReadyList(currTask, workUnit); // Se lo anexa a la lista de
@@ -235,7 +234,7 @@ public class Actor extends Resource {
 			String taskId = currTask.getTaskId();
 			currAction = "The task " + taskId
 					+ " pass to the ready list of the resource " + workUnit;
-			currTask = null; // Se desaloja el proceso en ejecución.
+			currTask = null; // Se desaloja la tarea en ejecución.
 		}
 
 		this.setCurrAction(currAction);
@@ -455,6 +454,13 @@ public class Actor extends Resource {
 
 	public void setMaxTasksNumber(int maxTaskNumber) {
 		this.maxTasksNumber = maxTaskNumber;
+	}
+
+	public boolean isInactive() {
+		if(this.currAction.equals("None"))
+			return true;
+		else
+			return false;
 	}
 
 }

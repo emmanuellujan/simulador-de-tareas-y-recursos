@@ -22,8 +22,21 @@ public abstract class IOSystem {
 
 	public IOSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
+		
+		int deadline = 0;
+		Vector<Actor> actorsList = new Vector<Actor>(); 
+		Vector<Resource> resourcesList = new Vector<Resource>();
+		Vector<Resource> allResourcesList = new Vector<Resource>();
+		Vector<Task> tasksList = new Vector<Task>();
+	
 		this.setConfigurator(configurator);
 		this.setSchedulingSystem(schedulingSystem);
+		this.setDeadline(deadline);
+		this.setActorsList(actorsList);
+		this.setResourcesList(resourcesList);
+		this.setAllResourcesList(allResourcesList);
+		this.setTasksList(tasksList);
+		
 	}
 	
 	public abstract void saveAll();
@@ -47,7 +60,7 @@ public abstract class IOSystem {
 	}
 
 	public Vector<Actor> getActorsList() {
-		return actorsList;
+		return this.actorsList;
 	}
 
 	public void setActorsList(Vector<Actor> actors) {
@@ -55,7 +68,7 @@ public abstract class IOSystem {
 	}
 
 	public Vector<Resource> getResourcesList() {
-		return resourcesList;
+		return this.resourcesList;
 	}
 
 	public void setResourcesList(Vector<Resource> resourcesList) {
