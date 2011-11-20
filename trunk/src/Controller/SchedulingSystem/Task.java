@@ -64,7 +64,7 @@ public class Task {
 					next = "end";
 			}
 		} else {
-			next = "end";
+			next = "fail";
 			Task t = this.getContingencyTask();
 			if (t != null)
 				actor.addReadyList(t, actor.getResId());

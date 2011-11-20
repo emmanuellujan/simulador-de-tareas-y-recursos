@@ -39,14 +39,14 @@ public class ResultsAnalyzer {
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 		
-		int numberOfTasks = schedulingSystem.getNumberOfTasks();
-		this.setNumberOfTasks(numberOfTasks);
-		
 		int nbrSuccessfulTasks = schedulingSystem.getFinishedList().size();
 		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
 		
-		int nbrFailedTasks = numberOfTasks-nbrSuccessfulTasks;
-		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
+		int nbrFailedTasks = schedulingSystem.getFailedFinishedList().size();
+		this.setNbrFailedTasks(nbrFailedTasks);
+		
+		int numberOfTasks = nbrSuccessfulTasks+nbrFailedTasks;
+		this.setNumberOfTasks(numberOfTasks);
 		
 		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
 		this.setNumberOfActors(numberOfActors);
@@ -77,9 +77,9 @@ public class ResultsAnalyzer {
 		
 		System.out.println("\tNumber of cycles: "+this.getNumberOfCycles());
 		
-		System.out.println("\tTotal number of tasks: "+this.getNumberOfTasks());
+		System.out.println("\tTotal number of executed tasks, including contingency tasks: "+this.getNumberOfTasks());
 		
-		System.out.println("\tNumber of successful tasks: "+this.getNbrSuccessfulTasks());
+		System.out.println("\tNumber of successful tasks, including contingency tasks: "+this.getNbrSuccessfulTasks());
 		
 		System.out.println("\tNumber of failed tasks: "+this.getNbrFailedTasks());
 		
@@ -91,9 +91,9 @@ public class ResultsAnalyzer {
 		
 		System.out.println("\tProportions: ");
 		
-		System.out.println("\t\tSuccessful tasks proportion: "+this.getPropFinishedTasks());
+		System.out.println("\t\tSuccessful tasks proportion, including contingency tasks: "+this.getPropFinishedTasks());
 		
-		System.out.println("\t\tFailed tasks proportion: "+this.getPropFailedTasks());
+		System.out.println("\t\tFailed tasks proportion, including contingency tasks: "+this.getPropFailedTasks());
 		
 		System.out.println("\t\tVelocity proportion (deadline/nbrOfCycles): "+this.getPropVelocity());
 	}

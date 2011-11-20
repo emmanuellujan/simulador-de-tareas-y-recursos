@@ -29,11 +29,10 @@ public class SerialIOSystem extends IOSystem {
 
 			String dir = this.getConfigurator().getOutputDir();
 			
-			//crear dir si no existe
-
 			FileOutputStream fs;
+			Vector<Resource> allResources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
 			//Vector<Resource> allResources = this.getAllResourcesList();
-			Vector<Resource> allResources = this.getSchedulingSystem().getInputSystem().getAllResourcesList();
+			
 			int n = allResources.size();
 			int i = 0;
 			for (i = 0; i < n; i++) {
@@ -52,7 +51,9 @@ public class SerialIOSystem extends IOSystem {
 			}
 		
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			xs.toXML(this.getDeadline(), fs);
+			//int deadline = this.getDeadline();
+			int deadline = this.getSchedulingSystem().getIoSystem().getDeadline();
+			xs.toXML(deadline, fs);
 
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
