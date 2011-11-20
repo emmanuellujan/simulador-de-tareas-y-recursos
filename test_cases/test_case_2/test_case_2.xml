@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- actor0 is the cpu -->
+<!-- priority must be >= 0 -->
+<!-- if quantum is not needed set it to -1 -->
+<!-- if t2 is a contingency task of t1, t1 must be declared first -->
+<inputData>
+	<description>
+	</description>
+	<deadline>80</deadline>
+	<tasks>
+		<task>
+			<taskId>task0</taskId>
+			<priority>0</priority>
+			<difficult>15</difficult>
+			<contingencyTask>task01</contingencyTask>
+			<workUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+			</workUnits>
+		</task>
+		<task>
+			<taskId>task01</taskId>
+			<priority>0</priority>
+			<difficult>5</difficult>
+			<contingencyTask></contingencyTask>
+			<workUnits>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+				<workUnit>actor0</workUnit>
+			</workUnits>
+		</task>
+	</tasks>
+	<resources>
+		<actor>
+			<actorId>actor0</actorId>
+			<capacity>10</capacity>
+			<maxTasks>10</maxTasks>
+			<schedulingAlgorithm>PrioritiesSA</schedulingAlgorithm>
+			<quantum>-1</quantum>
+			<properties>
+				<property>
+					<propName>ActorName</propName>
+					<propVal>John</propVal>
+				</property>
+				<property>
+					<propName>Category</propName>
+					<propVal>A</propVal>
+				</property>
+			</properties>
+			<maxRelations>10</maxRelations>
+			<relations>
+			</relations>
+		</actor>
+	</resources>
+</inputData>
+
+
