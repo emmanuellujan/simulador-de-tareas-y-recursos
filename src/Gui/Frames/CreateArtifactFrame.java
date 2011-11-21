@@ -183,7 +183,8 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
             Hashtable propertiesTable = new Hashtable();
 
             for (int i = 0; i < this.jTable1.getRowCount(); i++) {
-                if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)) {
+                if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)
+                        && (!this.jTable1.getValueAt(i, 0).equals("")) && (!this.jTable1.getValueAt(i, 1).equals(""))) {
                     propertiesTable.put(this.jTable1.getValueAt(i, 0).toString(), this.jTable1.getValueAt(i, 1).toString());
                 } else {
                     i = this.jTable1.getRowCount();
@@ -192,8 +193,8 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
             this.newResource = new Resource("artifact" + String.valueOf(this.getResourcesList().size()), "artifact",
                     propertiesTable, Integer.parseInt(this.jTextField1.getText()), null, null/*Scheduling System*/);
             this.getResourcesList().add(this.newResource);        
+            setFieldsValuesEmpty();
             SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
-            this.jTextField1.setText(null);
             this.setVisible(false);
             SimulatorFrame.getInstance().setVisible(true);
             SimulatorFrame.getInstance().setLocationRelativeTo(null);
@@ -206,6 +207,18 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void setFieldsValuesEmpty(){
+        this.jTextField1.setText(null);
+        this.clearTable();
+    }
+    
+    private void clearTable(){
+        for (int i = 0; i < this.jTable1.getRowCount(); i++)
+          for(int j = 0; j < this.jTable1.getColumnCount(); j++) {
+              this.jTable1.setValueAt("", i, j);
+          }        
+    }
+    
     private boolean areValidFields(){
         if(!isNum(this.jTextField1.getText()))//Capacity
             return false;      
@@ -253,9 +266,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                //new CreateArtifactFrame().setVisible(true);
-            }
+            public void run() {}
         });
     }
 

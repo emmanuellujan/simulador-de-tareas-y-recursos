@@ -24,6 +24,8 @@ public class RelationFrame extends javax.swing.JFrame {
     public RelationFrame() {
         initComponents();
         this.relations = new Vector<String>();
+        this.jTextArea2.setLineWrap(true); 
+        this.jTextArea2.setWrapStyleWord(true);
     }
 
     /** This method is called from within the constructor to
@@ -103,7 +105,7 @@ public class RelationFrame extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        jButton2.setText("Cancel");
+        jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -116,8 +118,8 @@ public class RelationFrame extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -163,15 +165,22 @@ public class RelationFrame extends javax.swing.JFrame {
                 if(mainElement.getRelationsIds() != null)
                     newRelationList.addAll(mainElement.getRelationsIds());                    
                 if(mainElement.getResourceMaxLimit() >= (newRelationList.size() + 1)){
-                    newRelationList.add(this.jComboBox1.getSelectedItem().toString());
+                    newRelationList.add(this.jComboBox2.getSelectedItem().toString());
+                    mainElement.addRelation(secondaryElement);
                     mainElement.setRelationsIds(newRelationList);
                     /*Actualiza las listas del main con este recurso actualizado*/
                     this.insertUpdateResource(mainElement);                
-                    /*Actualizo panel y vector de relaciones*/
-                    String newRelationText = "Recurso: " + this.jComboBox1.getSelectedItem().toString() + " se relaciona con recurso: " + 
-                            this.jComboBox2.getSelectedItem().toString() + ".";
+                    /*Actualizo panel y vector de relaciones*/  
+                    String newRelationText;
+                    if(this.getRelationsList().isEmpty()){
+                        newRelationText = "Recurso: " + this.jComboBox1.getSelectedItem().toString() + " se relaciona con recurso: " + 
+                            this.jComboBox2.getSelectedItem().toString(); 
+                    }else{
+                        newRelationText = " - Recurso: " + this.jComboBox1.getSelectedItem().toString() + " se relaciona con recurso: " + 
+                            this.jComboBox2.getSelectedItem().toString(); 
+                    }
                     this.relations.add(newRelationText); 
-                    this.writeTextArea();
+                    this.writeTextArea();                    
                 }else{
                     ErrorFrame.getInstance().setLabel("No relationship can be incorporated to overcome the limit allowed.");
                     ErrorFrame.getInstance().setBackFrame("RelationFrame");
@@ -203,6 +212,7 @@ public class RelationFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void writeTextArea(){
+        this.jTextArea2.setText("");
         for(int i = 0; i < this.getRelationsList().size();i++){
             this.jTextArea2.append(this.getRelationsList().elementAt(i));
         }
@@ -315,9 +325,7 @@ public class RelationFrame extends javax.swing.JFrame {
             RELATIONFRAME_INSTANCE = new RelationFrame();        
         return RELATIONFRAME_INSTANCE;
     }
-    
-    
-    private String newRelation;
+        
     private Vector<Actor> actorsList;
     private Vector<Resource> resourcesList;
     private Vector<Resource> resourcesMainList; 

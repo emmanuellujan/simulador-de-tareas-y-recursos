@@ -23,18 +23,6 @@ public class NewsFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void setLabel(String message){
-        this.jLabel1.setText(message);
-    }
-    
-    private static NewsFrame ERROR_INSTANCE;    
-    
-    public static NewsFrame getInstance() {
-        if (ERROR_INSTANCE == null)
-            ERROR_INSTANCE = new NewsFrame();        
-        return ERROR_INSTANCE;
-    }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -134,6 +122,16 @@ public class NewsFrame extends javax.swing.JFrame {
         return this.updaterBackFrame;
     }
     
+    public void setLabel(String message){
+        this.jLabel1.setText(message);
+    }     
+    
+    public static NewsFrame getInstance() {
+        if (ERROR_INSTANCE == null)
+            ERROR_INSTANCE = new NewsFrame();        
+        return ERROR_INSTANCE;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -172,6 +170,8 @@ public class NewsFrame extends javax.swing.JFrame {
     
     private String backFrame;
     private UpdaterFrame updaterBackFrame;
+    
+    private static NewsFrame ERROR_INSTANCE;  
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

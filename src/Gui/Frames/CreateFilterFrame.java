@@ -317,8 +317,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
             ErrorFrame.getInstance().setFilterBackFrame(this);
             this.setVisible(false);
             ErrorFrame.getInstance().setLocationRelativeTo(null);
-            ErrorFrame.getInstance().setVisible(true);
-            
+            ErrorFrame.getInstance().setVisible(true);            
         }else{
             if(this.getBackFrameId().equals("TaskFrame")){
                 ((CreateTaskFrame)this.getBackFrame()).setFilter(filter);
@@ -347,8 +346,10 @@ public class CreateFilterFrame extends javax.swing.JFrame {
         }else{
             if(this.getBackFrameId().equals("FilterFrame"))
                 NewsFrame.getInstance().setBackFrame("CreateFilterFrame");
-            else               
+            else{               
                 NewsFrame.getInstance().setBackFrame("UpdaterFrame");
+                NewsFrame.getInstance().setUpdaterBackFrame((UpdaterFrame)this.getBackFrame());
+            }
          }         
          this.setVisible(false);
          NewsFrame.getInstance().setLocationRelativeTo(null);
@@ -551,11 +552,15 @@ public class CreateFilterFrame extends javax.swing.JFrame {
     }
 
     public void setResourcesList(Vector<Resource> resourcesList) {
-        this.resourcesList = resourcesList;      
+        this.resourcesList = resourcesList;  
+        if(this.resourcesList != null)
+            this.fillResourceCombobox();
     }
     
     public void setMainResourcesList(Vector resourcesPrincipalList) {
-        this.resourcesMainList = resourcesPrincipalList;        
+        this.resourcesMainList = resourcesPrincipalList; 
+        if(this.resourcesMainList != null)
+            this.fillObjectCombobox();        
     }
     
     public Vector getMainResourcesList() {

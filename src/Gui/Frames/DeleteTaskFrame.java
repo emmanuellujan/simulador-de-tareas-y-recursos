@@ -23,14 +23,6 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
     public DeleteTaskFrame() {
         initComponents();
     }
-    
-    public void setTaskList(Vector<Task> currentTasks){
-        this.tasksCurrentList = currentTasks;
-    }
-    
-    public Vector<Task> getTaskList(){
-        return this.tasksCurrentList;
-    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -118,13 +110,11 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     
         this.setVisible(false);
         SimulatorFrame.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
         SimulatorFrame.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -159,10 +149,16 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                //new DeleteTaskFrame().setVisible(true);
-            }
+            public void run() {}
         });
+    }
+    
+    public void setTaskList(Vector<Task> currentTasks){
+        this.tasksCurrentList = currentTasks;
+    }
+    
+    public Vector<Task> getTaskList(){
+        return this.tasksCurrentList;
     }
     
     public static DeleteTaskFrame getInstance() {
