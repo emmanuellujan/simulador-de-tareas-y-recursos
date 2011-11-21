@@ -1,0 +1,171 @@
+<Controller.SchedulingSystem.Actor>
+  <resId>actor1</resId>
+  <type>actor</type>
+  <properties>
+    <entry>
+      <string>Category</string>
+      <string>A</string>
+    </entry>
+    <entry>
+      <string>ActorName</string>
+      <string>Mary</string>
+    </entry>
+  </properties>
+  <relationsIds/>
+  <resources/>
+  <resourceMaxLimit>10</resourceMaxLimit>
+  <schedulingSystem>
+    <ioSystem class="Model.IOSystem.XMLIOSystem">
+      <configurator>
+        <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
+        <ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
+        <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_5/</inputDir>
+        <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_5/</outputDir>
+        <inputFile>test_case_5</inputFile>
+        <outputFile>test_case_5_results</outputFile>
+      </configurator>
+      <schedulingSystem reference="../.."/>
+      <deadline>80</deadline>
+      <actorsList>
+        <Controller.SchedulingSystem.Actor>
+          <resId>actor0</resId>
+          <type>actor</type>
+          <properties>
+            <entry>
+              <string>Category</string>
+              <string>A</string>
+            </entry>
+            <entry>
+              <string>ActorName</string>
+              <string>John</string>
+            </entry>
+          </properties>
+          <relationsIds/>
+          <resources/>
+          <resourceMaxLimit>10</resourceMaxLimit>
+          <schedulingSystem reference="../../../.."/>
+          <capacity>10</capacity>
+          <currAction>Nothing</currAction>
+          <intList/>
+          <syncIntList/>
+          <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+            <id>FCFS</id>
+          </saIntList>
+          <readyList/>
+          <syncReadyList/>
+          <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
+            <id>Priorities</id>
+          </saReadyList>
+          <time>0</time>
+          <limitTime>-1</limitTime>
+          <maxTasksNumber>10</maxTasksNumber>
+        </Controller.SchedulingSystem.Actor>
+        <Controller.SchedulingSystem.Actor reference="../../../.."/>
+      </actorsList>
+      <resourcesList/>
+      <allResourcesList>
+        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
+        <Controller.SchedulingSystem.Actor reference="../../../.."/>
+      </allResourcesList>
+      <tasksList>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task0</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>15</difficult>
+          <status>New</status>
+          <contTaskId>task01</contTaskId>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+      </tasksList>
+    </ioSystem>
+    <compLogginSystem>
+      <configurator reference="../../ioSystem/configurator"/>
+      <errorMsgs/>
+      <simulationTimes/>
+      <logginSystems>
+        <Model.LogginSystem.XMLLogginSystem>
+          <configurator reference="../../../../ioSystem/configurator"/>
+          <simulationTimes reference="../../../simulationTimes"/>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_5/test_case_5_results.xml</outputFileName>
+          <fileManager/>
+        </Model.LogginSystem.XMLLogginSystem>
+        <Model.LogginSystem.TXTLogginSystem>
+          <configurator reference="../../../../ioSystem/configurator"/>
+          <simulationTimes reference="../../../simulationTimes"/>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_5/test_case_5_results.txt</outputFileName>
+          <fileManager/>
+        </Model.LogginSystem.TXTLogginSystem>
+      </logginSystems>
+    </compLogginSystem>
+    <resultsAnalyzer>
+      <schedulingSystem reference="../.."/>
+      <numberOfErrors>0</numberOfErrors>
+      <deadline>0</deadline>
+      <numberOfCycles>0</numberOfCycles>
+      <numberOfTasks>0</numberOfTasks>
+      <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+      <nbrFailedTasks>0</nbrFailedTasks>
+      <numberOfActors>0</numberOfActors>
+      <numberOfResources>0</numberOfResources>
+      <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
+      <propFinishedTasks>0.0</propFinishedTasks>
+      <propFailedTasks>0.0</propFailedTasks>
+      <propVelocity>0.0</propVelocity>
+    </resultsAnalyzer>
+    <newsList reference="../ioSystem/tasksList"/>
+    <actorsList reference="../ioSystem/actorsList"/>
+    <resourcesList reference="../ioSystem/resourcesList"/>
+    <finishedList/>
+    <failedFinishedList/>
+    <numberOfTasks>1</numberOfTasks>
+    <deliverRes>
+      <resId>dealerActor</resId>
+      <type>actor</type>
+      <resources/>
+      <resourceMaxLimit>100</resourceMaxLimit>
+      <schedulingSystem reference="../.."/>
+      <capacity>100</capacity>
+      <currAction>Nothing</currAction>
+      <intList/>
+      <syncIntList/>
+      <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+        <id>FCFS</id>
+      </saIntList>
+      <readyList reference="../../ioSystem/tasksList"/>
+      <syncReadyList/>
+      <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+        <id>FCFS</id>
+      </saReadyList>
+      <time>0</time>
+      <limitTime>-1</limitTime>
+      <maxTasksNumber>100</maxTasksNumber>
+    </deliverRes>
+    <deadline>80</deadline>
+  </schedulingSystem>
+  <capacity>10</capacity>
+  <currAction>Nothing</currAction>
+  <intList/>
+  <syncIntList/>
+  <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+    <id>FCFS</id>
+  </saIntList>
+  <readyList/>
+  <syncReadyList/>
+  <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
+    <id>Priorities</id>
+  </saReadyList>
+  <time>0</time>
+  <limitTime>-1</limitTime>
+  <maxTasksNumber>10</maxTasksNumber>
+</Controller.SchedulingSystem.Actor>
