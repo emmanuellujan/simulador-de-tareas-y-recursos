@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <configuration>
 	<ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
-	<inputDir>test_case_2/</inputDir> <!-- with the bar -->
-	<outputDir>test_case_2/</outputDir> <!-- with the bar -->
-	<inputFile>test_case_2</inputFile> <!-- without extension -->
-	<outputFile>test_case_2_results</outputFile> <!-- without extension -->
+	<inputDir>test_case_5/</inputDir> <!-- with the bar -->
+	<outputDir>test_case_5/</outputDir> <!-- with the bar -->
+	<inputFile>test_case_5</inputFile> <!-- without extension -->
+	<outputFile>test_case_5_results</outputFile> <!-- without extension -->
 </configuration>
 
 
