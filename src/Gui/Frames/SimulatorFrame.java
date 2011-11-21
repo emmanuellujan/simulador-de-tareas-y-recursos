@@ -30,11 +30,7 @@ import javax.swing.JOptionPane;
 public class SimulatorFrame extends javax.swing.JFrame {
     
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/** Creates new form SimulatorFrame */
+    /** Creates new form SimulatorFrame */
     private SimulatorFrame() {        
         this.actorCreatePanel = CreateActorFrame.getInstance();
         this.taskCreatePanel = CreateTaskFrame.getInstance();
@@ -54,6 +50,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.setMainResourcesList();
         
         this.services = new SystemServices();
+        this.jTextArea1.setLineWrap(true); 
+        this.jTextArea1.setWrapStyleWord(true);
         this.setLocationRelativeTo(null);        
     }
 
@@ -71,6 +69,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
     public void setNewsList(Vector<Task> newsList) {
         this.newsList = newsList;
+        if(this.newsList != null)
+            this.setContingencyTaskComboboxes();
         this.jTextPane1.setText(String.valueOf(this.newsList.size()));
     }
 
@@ -92,14 +92,15 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.finishedList = finishedList;
     }
 
-    public IOSystem getInputSystem() {
-        return ioSystem;
+    /*
+    public InputSystem getInputSystem() {
+        return inputSystem;
     }
 
-    public void setInputSystem(IOSystem InputSystem) {
-        this.ioSystem = InputSystem;
+    public void setInputSystem(InputSystem InputSystem) {
+        this.inputSystem = InputSystem;
     }
-
+    */
     public CompLogginSystem getLogginSystem() {
         return logginSystem;
     }
@@ -143,7 +144,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }
     
     public Vector<Resource> getMainResourcesList() {
-        return getResourcesMainList();
+        return resourcesMainList;
     }
     
     public void setMainResourcesList(){
@@ -155,12 +156,14 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }
 
     public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
-        this.setResourcesMainList(resourcesPrincipalList);
+        this.resourcesMainList = resourcesPrincipalList;
         RelationFrame.getInstance().setMainResourcesList(resourcesPrincipalList);
     }
     
     public void fillResourcesComboboxes(){
        this.jComboBox6.removeAllItems();
+       this.jComboBox5.removeAllItems();
+       this.jComboBox4.removeAllItems();
        for(int i = 0; i < this.getMainResourcesList().size();i++){
             this.jComboBox6.addItem(this.getMainResourcesList().elementAt(i).getResId());
             this.jComboBox5.addItem(this.getMainResourcesList().elementAt(i).getResId());
@@ -628,7 +631,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modification settings", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Set resource property"));
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Set resource property", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jLabel17.setText("Set resource to modify");
 
@@ -845,7 +848,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.taskCreatePanel.setActorsList(actorsList);
+        this.taskCreatePanel.setActorsList(this.getActorsList());
+        this.taskCreatePanel.setResourcesList(this.getResourcesList());
+        this.taskCreatePanel.setMainResourcesList(this.getMainResourcesList());
+        this.taskCreatePanel.setSchedulingSystem(this.getSchedulingSystem());
         this.taskCreatePanel.setNewsList(newsList);
         this.taskCreatePanel.setLocationRelativeTo(null);
         this.taskCreatePanel.setVisible(true);
@@ -896,15 +902,42 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        //Codigo de simulaci?n, con todos los datos cargados de entrada
+        /*
+         * Codigo de simulacion, con todos los datos cargados de entrada.
+         * 
+         * En este metodo, se integraran todos los vectores realizados mediante
+         * la interfaz en la clase que corresponda y luego se iniciara la simulacion.
+         * 
+         * Posteriormente los resultados generados se deberan cargar en el 
+         * panel de resultados.
+         * 
+         */
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.services.setResourceProperty((String)this.jComboBox6.getSelectedItem(), this.jTextField2.getText(), this.jTextField3.getText());
+        if((this.jComboBox6.getSelectedItem() != null)&&(!this.jTextField2.getText().equals(""))&&(!this.jTextField3.getText().equals(""))){
+            this.services.setResourceProperty((String)this.jComboBox6.getSelectedItem(), this.jTextField2.getText(), this.jTextField3.getText());
+            this.jTextField2.setText("");  
+            this.jTextField3.setText("");        
+        }else{
+            SimulatorFrame.getInstance().setVisible(false);
+            ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+            ErrorFrame.getInstance().setLabel("There is any empty value, please complete it");
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
+            ErrorFrame.getInstance().setVisible(true);  
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        this.services.deleteResourceRelation(this.jComboBox4.getSelectedItem().toString(), this.jComboBox5.getSelectedItem().toString());
+        if((this.jComboBox4.getSelectedItem() != null)&&(this.jComboBox5.getSelectedItem() != null))
+            this.services.deleteResourceRelation(this.jComboBox4.getSelectedItem().toString(), this.jComboBox5.getSelectedItem().toString());
+        else{
+            SimulatorFrame.getInstance().setVisible(false);
+            ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+            ErrorFrame.getInstance().setLabel("There is any empty value, please complete it");
+            ErrorFrame.getInstance().setLocationRelativeTo(null);
+            ErrorFrame.getInstance().setVisible(true);  
+        }            
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -926,8 +959,9 @@ public class SimulatorFrame extends javax.swing.JFrame {
             }else{             
                     for(int r = 0;r<this.getNewsList().size(); r++){
                         if(this.getNewsList().elementAt(r).getTaskId().equals((String)this.jComboBox3.getSelectedItem())){
-                            Task contingencyTask = this.searchTaskOnList((String)this.jComboBox1.getSelectedItem());                    
-                            this.getNewsList().elementAt(r).setContingencyTask(contingencyTask);                
+                            Task contingencyTask = this.searchTaskOnList((String)this.jComboBox1.getSelectedItem()); 
+                            this.getNewsList().elementAt(r).setContingencyTask(contingencyTask);  
+                            this.getNewsList().elementAt(r).setContTaskId(contingencyTask.getTaskId());
                             NewsFrame.getInstance().setLabel("Contingency task successfully added");            
                             NewsFrame.getInstance().setBackFrame("SimulatorFrame");
                             NewsFrame.getInstance().setLocationRelativeTo(null);
@@ -1028,21 +1062,14 @@ public class SimulatorFrame extends javax.swing.JFrame {
         return SIMULATORFRAME_INSTANCE;
     }
     
-    public Vector getResourcesMainList() {
-		return resourcesMainList;
-	}
-
-	public void setResourcesMainList(Vector resourcesMainList) {
-		this.resourcesMainList = resourcesMainList;
-	}
-
-	private CreateTaskFrame taskCreatePanel;
+    private CreateTaskFrame taskCreatePanel;
     private CreateActorFrame actorCreatePanel;
     private CreateArtifactFrame artifactCreatePanel;
+    private RelationFrame relationPanel; 
     private DeleteTaskFrame taskDeletePanel;
     private DeleteActorFrame actorDeletePanel;
     private DeleteArtifactFrame artifactDeletePanel;
-    private RelationFrame relationPanel;    
+       
     private CompLogginSystem logginSystem;
     private Vector<Task> newsList;
     private Vector<Actor> actorsList;
@@ -1051,11 +1078,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private Vector<Task> finishedList;
     private int numberOfTasks;
     private Actor deliverRes;
+    
     private SchedulingSystem mainSchedulingSystem;
     private SystemServices services;   
-    CompLogginSystem compLogginSystem;
-    private int deadline;
-    private IOSystem ioSystem;
+    private IOSystem inputSystem;
+   
     
     private static SimulatorFrame SIMULATORFRAME_INSTANCE;
     
