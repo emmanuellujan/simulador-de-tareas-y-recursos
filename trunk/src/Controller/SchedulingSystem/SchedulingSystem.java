@@ -30,7 +30,7 @@ public class SchedulingSystem {
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
 		IOSystem ioSystem = new XMLIOSystem(configurator, this);
-		// IOSystem ioSystem = new SerialIOSystem(configurator, this);
+		//IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		int deadline = 0;
@@ -102,16 +102,18 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		//IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
-		//ioSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
 	}
 
 	public void start() {
-		System.out.print("Loading data...");
+		System.out.print("Loading data (from XML)...");
 		this.loadData();
+		System.out.println(" done.");
+		System.out.print("Saving input data (with serialization)...");
+		IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
+		ioSystem.saveAll();
 		System.out.println(" done.");
 		System.out.print("Simulation started...");
 		this.simulateAndLog();
@@ -121,7 +123,7 @@ public class SchedulingSystem {
 		System.out.println(" done.");
 		System.out.print("Saving data...");
 		this.saveData();
-		System.out.println(" done.");
+		System.out.println(" done.\n");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!");
 	}
