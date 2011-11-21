@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import Controller.SchedulingSystem.SchedulingSystem;
 import Model.DataModel.SimulationTime.SimulationTime;
+import Model.IOSystem.FileManager;
 import Model.LogginSystem.CompLogginSystem;
 
 public class ResultsAnalyzer {
@@ -21,8 +22,11 @@ public class ResultsAnalyzer {
 	public float propFailedTasks;
 	public float propVelocity;
 	
+	private String analysis;
+	
 	public ResultsAnalyzer(SchedulingSystem schedulingSystem){
 		this.setSchedulingSystem(schedulingSystem);
+		this.setAnalysis("");
 	}
 	
 	public void analyze() {
@@ -65,39 +69,57 @@ public class ResultsAnalyzer {
 		
 		float propVelocity = (float) this.getDeadline() / (float) this.getNumberOfCycles();
 		this.setPropVelocity(propVelocity);
+		
+		this.renderAnalysis();
 	
 	}
 	
-	public void print(){
-		System.out.println("Results Analisys:");
+	public void renderAnalysis(){
+		String analysis = this.getAnalysis();
 		
-		System.out.println("\tNumber of errors: "+this.getNumberOfErrors());
+		analysis+="Results Analisys:\n";
 		
-		System.out.println("\tDeadline (in cycles): "+this.getDeadline());
+		analysis+="\tNumber of errors: "+this.getNumberOfErrors()+"\n";
 		
-		System.out.println("\tNumber of cycles: "+this.getNumberOfCycles());
+		analysis+="\tDeadline (in cycles): "+this.getDeadline()+"\n";
 		
-		System.out.println("\tTotal number of executed tasks, including contingency tasks: "+this.getNumberOfTasks());
+		analysis+="\tNumber of cycles: "+this.getNumberOfCycles()+"\n";
 		
-		System.out.println("\tNumber of successful tasks, including contingency tasks: "+this.getNbrSuccessfulTasks());
+		analysis+="\tTotal number of executed tasks, including contingency tasks: "+this.getNumberOfTasks()+"\n";
 		
-		System.out.println("\tNumber of failed tasks: "+this.getNbrFailedTasks());
+		analysis+="\tNumber of successful tasks, including contingency tasks: "+this.getNbrSuccessfulTasks()+"\n";
 		
-		System.out.println("\tNumber of actors: "+this.getNumberOfActors());
+		analysis+="\tNumber of failed tasks: "+this.getNbrFailedTasks()+"\n";
 		
-		System.out.println("\tNumber of other resources (artifacts): "+this.getNumberOfResources());
+		analysis+="\tNumber of actors: "+this.getNumberOfActors()+"\n";
 		
-		System.out.println("\tMean number of tasks per actor: "+this.getMeanNbrTasksPerActor());
+		analysis+="\tNumber of other resources (artifacts): "+this.getNumberOfResources()+"\n";
 		
-		System.out.println("\tProportions: ");
+		analysis+="\tMean number of tasks per actor: "+this.getMeanNbrTasksPerActor()+"\n";
 		
-		System.out.println("\t\tSuccessful tasks proportion, including contingency tasks: "+this.getPropFinishedTasks());
+		analysis+="\tProportions: \n";
 		
-		System.out.println("\t\tFailed tasks proportion, including contingency tasks: "+this.getPropFailedTasks());
+		analysis+="\t\tSuccessful tasks proportion, including contingency tasks: "+this.getPropFinishedTasks()+"\n";
 		
-		System.out.println("\t\tVelocity proportion (deadline/nbrOfCycles): "+this.getPropVelocity());
+		analysis+="\t\tFailed tasks proportion, including contingency tasks: "+this.getPropFailedTasks()+"\n";
+		
+		analysis+="\t\tVelocity proportion (deadline/nbrOfCycles): "+this.getPropVelocity()+"\n";
+		
+		this.setAnalysis(analysis);
 	}
 	
+	public void print() {
+		System.out.println(this.getAnalysis());
+	}
+	
+	public void writeAnalysis() {
+		String analysis = this.getAnalysis();
+		String dir = this.getSchedulingSystem().getConfigurator().getOutputDir();
+		String outputFile = this.getSchedulingSystem().getConfigurator().getOutputFile()+"_analysis.txt";
+		String fileName = dir + outputFile;
+		FileManager fileManager = new FileManager();
+		fileManager.writeFile(fileName, analysis);
+	}
 
 	public SchedulingSystem getSchedulingSystem() {
 		return schedulingSystem;
@@ -201,6 +223,14 @@ public class ResultsAnalyzer {
 
 	public void setMeanNbrTasksPerActor(float meanNbrTasksPerActor) {
 		this.meanNbrTasksPerActor = meanNbrTasksPerActor;
+	}
+
+	public String getAnalysis() {
+		return analysis;
+	}
+
+	public void setAnalysis(String analysis) {
+		this.analysis = analysis;
 	}
 	
 }
