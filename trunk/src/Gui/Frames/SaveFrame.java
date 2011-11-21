@@ -10,6 +10,7 @@
  */
 package Gui.Frames;
 
+import java.io.File;
 import javax.swing.JFileChooser;
 
 /**
@@ -63,6 +64,16 @@ public class SaveFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
+        int option = this.jFileChooser1.showSaveDialog(null);
+        if (option == JFileChooser.APPROVE_OPTION) {
+           // user clicked OK
+           File file = this.jFileChooser1.getSelectedFile();
+           // open the file "file" ...
+        }
+        else {
+           // user clicked Cancel or an error occurred
+        }
+        
         this.setVisible(false);
         SimulatorFrame.getInstance().setLocationRelativeTo(null);
         SimulatorFrame.getInstance().setVisible(true);

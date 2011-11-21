@@ -20,65 +20,6 @@ public class ErrorFrame extends javax.swing.JFrame {
     public ErrorFrame() {
         initComponents();
     }
-    
-    public void setLabel(String message){
-        this.jLabel1.setText(message);
-    }
-    
-    public void setBackFrame(String currentBackFrame){
-        this.backFrame = currentBackFrame;
-    }
-    
-    private void setVisibleBackFrame(){
-        if(this.backFrame.equals("CreateActorFrame"))
-            CreateActorFrame.getInstance().setVisible(true);
-        else{
-            if(this.backFrame.equals("CreateArtifactFrame"))
-                CreateArtifactFrame.getInstance().setVisible(true);
-            else{
-                if(this.backFrame.equals("RelationFrame"))
-                    RelationFrame.getInstance().setVisible(true);
-                else{
-                    if(this.backFrame.equals("SimulatorFrame"))
-                        SimulatorFrame.getInstance().setVisible(true);
-                    else{ 
-                        if(this.backFrame.equals("UpdaterFrame"))
-                            this.getUpdaterBackFrame().setVisible(true);
-                        else{
-                            if(this.backFrame.equals("FilterFrame"))
-                                this.getFilterBackFrame().setVisible(true);
-                            else
-                                CreateTaskFrame.getInstance().setVisible(true);
-                        }
-                    }
-                }    
-            }
-        }        
-    }
-    
-    public void setUpdaterBackFrame(UpdaterFrame currentBackFrame){
-        this.updaterBackFrame = currentBackFrame;
-    }
-    
-    public UpdaterFrame getUpdaterBackFrame(){
-        return this.updaterBackFrame;
-    }
-    
-    public void setFilterBackFrame(CreateFilterFrame currentBackFrame){
-        this.filterBackFrame = currentBackFrame;
-    }
-    
-    public CreateFilterFrame getFilterBackFrame(){
-        return this.filterBackFrame;
-    }
-    
-    private static ErrorFrame ERROR_INSTANCE;    
-    
-    public static ErrorFrame getInstance() {
-        if (ERROR_INSTANCE == null)
-            ERROR_INSTANCE = new ErrorFrame();        
-        return ERROR_INSTANCE;
-    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -180,9 +121,68 @@ public class ErrorFrame extends javax.swing.JFrame {
         });
     }
     
+    public void setLabel(String message){
+        this.jLabel1.setText(message);
+    }
+    
+    public void setBackFrame(String currentBackFrame){
+        this.backFrame = currentBackFrame;
+    }
+    
+    private void setVisibleBackFrame(){
+        if(this.backFrame.equals("CreateActorFrame"))
+            CreateActorFrame.getInstance().setVisible(true);
+        else{
+            if(this.backFrame.equals("CreateArtifactFrame"))
+                CreateArtifactFrame.getInstance().setVisible(true);
+            else{
+                if(this.backFrame.equals("RelationFrame"))
+                    RelationFrame.getInstance().setVisible(true);
+                else{
+                    if(this.backFrame.equals("SimulatorFrame"))
+                        SimulatorFrame.getInstance().setVisible(true);
+                    else{ 
+                        if(this.backFrame.equals("UpdaterFrame"))
+                            this.getUpdaterBackFrame().setVisible(true);
+                        else{
+                            if(this.backFrame.equals("FilterFrame"))
+                                this.getFilterBackFrame().setVisible(true);
+                            else
+                                CreateTaskFrame.getInstance().setVisible(true);
+                        }
+                    }
+                }    
+            }
+        }        
+    }
+    
+    public void setUpdaterBackFrame(UpdaterFrame currentBackFrame){
+        this.updaterBackFrame = currentBackFrame;
+    }
+    
+    public UpdaterFrame getUpdaterBackFrame(){
+        return this.updaterBackFrame;
+    }
+    
+    public void setFilterBackFrame(CreateFilterFrame currentBackFrame){
+        this.filterBackFrame = currentBackFrame;
+    }
+    
+    public CreateFilterFrame getFilterBackFrame(){
+        return this.filterBackFrame;
+    }  
+    
+    public static ErrorFrame getInstance() {
+        if (ERROR_INSTANCE == null)
+            ERROR_INSTANCE = new ErrorFrame();        
+        return ERROR_INSTANCE;
+    }
+    
     private String backFrame;
     private UpdaterFrame updaterBackFrame;
     private CreateFilterFrame filterBackFrame;
+    
+    private static ErrorFrame ERROR_INSTANCE;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

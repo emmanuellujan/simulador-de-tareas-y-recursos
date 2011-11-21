@@ -32,38 +32,6 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         this.jTextArea1.setLineWrap(true); 
         this.jTextArea1.setWrapStyleWord(true); 
     }
-    
-    public void setActorsList(Vector<Actor> currentActors) {
-        this.actorsCurrentList = currentActors;
-        this.setActorCombobox();
-    }
-
-    public Vector<Actor> getActorsList() {
-        return this.actorsCurrentList;
-    }
-    
-    public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
-        this.currentSchedulingSystem = schedulingSystem;
-    }
-
-    public SchedulingSystem getSchedulingSystem() {
-        return this.currentSchedulingSystem;
-    }
-
-    private void setActorCombobox() {
-        this.jComboBox1.removeAllItems();
-        for (int i = 0; i < this.getActorsList().size(); i++) {
-            this.jComboBox1.addItem(this.getActorsList().elementAt(i).getResId());                
-        }       
-    }
-    
-    public void setFilter(Filter selectedFilter) {
-        this.mainFilter = selectedFilter;
-    }
-
-    public Filter getFilter() {
-        return this.mainFilter;
-    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -196,7 +164,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jComboBox1, 0, 151, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -327,6 +295,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
             SimulatorFrame.getInstance().setNewsList(currentTaskList);
             NewsFrame.getInstance().setLabel("Task created successfully.");
             NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
+            this.setFieldsValuesEmpty();
             this.setVisible(false);
             SimulatorFrame.getInstance().setLocationRelativeTo(null);
             SimulatorFrame.getInstance().setVisible(true);
@@ -339,13 +308,10 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(this.jComboBox1.getSelectedItem() != null){        
-            if(this.workUnitList.isEmpty())
-                this.workUnitList.add((String)this.jComboBox1.getSelectedItem());
-            else    
-                this.workUnitList.add(" - " + (String)this.jComboBox1.getSelectedItem());
+        if(this.jComboBox1.getSelectedItem() != null){
+            this.workUnitList.add((String)this.jComboBox1.getSelectedItem());  
             this.writeTextArea();
         }else{
             NewsFrame.getInstance().setLabel("No value selected.");
@@ -364,7 +330,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         CreateFilterFrame filterFrame = new CreateFilterFrame();
         filterFrame.setFilterType((String)this.jComboBox2.getSelectedItem());
         filterFrame.setBackFrame("TaskFrame", this);
-        filterFrame.setResourcesList(this.getResourcesList());
+        filterFrame.setResourcesList(this.getResourcesList());        
         filterFrame.setMainResourcesList(this.getMainResourcesList());
         filterFrame.setFilterFrameStateI(false);
         filterFrame.setFilterFrameStateII(false);
@@ -377,9 +343,13 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.setVisible(false);
         UpdaterFrame currentUpdater = new UpdaterFrame();
+        currentUpdater.setResourcesList(this.getResourcesList());        
+        currentUpdater.setMainResourcesList(this.getMainResourcesList());
         currentUpdater.setBackFrame(this);
         currentUpdater.setLocationRelativeTo(null);
         currentUpdater.setVisible(true);
+        this.setUpdater(new Updater());
+        currentUpdater.setUpdater(this.getUpdater());
         currentUpdater.main(null);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -387,12 +357,56 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void setFieldsValuesEmpty(){
+        this.jTextField1.setText(null);
+        this.jTextField2.setText(null);
+        this.setFilter(null);
+        this.setUpdater(null);
+        this.setWorkUnitList(new Vector());
+        this.jTextArea1.setText("");
+    }
+    
     private void writeTextArea(){
         this.jTextArea1.setText(null);
         for(int i = 0; i < this.getWorkUnitList().size();i++){
-            this.jTextArea1.append((String)this.getWorkUnitList().elementAt(i));
+            if(i == 0)
+                this.jTextArea1.append((String)this.getWorkUnitList().elementAt(i));
+            else 
+                this.jTextArea1.append(" - " + (String)this.getWorkUnitList().elementAt(i));
         }
         
+    }
+    
+    public void setActorsList(Vector<Actor> currentActors) {
+        this.actorsCurrentList = currentActors;
+        this.setActorCombobox();
+    }
+
+    public Vector<Actor> getActorsList() {
+        return this.actorsCurrentList;
+    }
+    
+    public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+        this.currentSchedulingSystem = schedulingSystem;
+    }
+
+    public SchedulingSystem getSchedulingSystem() {
+        return this.currentSchedulingSystem;
+    }
+
+    private void setActorCombobox() {
+        this.jComboBox1.removeAllItems();
+        for (int i = 0; i < this.getActorsList().size(); i++) {
+            this.jComboBox1.addItem(this.getActorsList().elementAt(i).getResId());                
+        }       
+    }
+    
+    public void setFilter(Filter selectedFilter) {
+        this.mainFilter = selectedFilter;
+    }
+
+    public Filter getFilter() {
+        return this.mainFilter;
     }
     
     /*
@@ -484,9 +498,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                //new CreateTaskFrame().setVisible(true);
-            }
+            public void run() {}
         });
     }
     

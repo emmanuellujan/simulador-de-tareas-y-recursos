@@ -258,7 +258,9 @@ public class CreateActorFrame extends javax.swing.JFrame {
             Hashtable propertiesTable = new Hashtable();
 
             for (int i = 0; i < this.jTable1.getRowCount(); i++) {
-                if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)) {
+                Object pepe = this.jTable1.getValueAt(i, 0);
+                if ((this.jTable1.getValueAt(i, 0) != null) && (this.jTable1.getValueAt(i, 1) != null)
+                        &&(!this.jTable1.getValueAt(i, 0).equals(""))&&(!this.jTable1.getValueAt(i, 1).equals(""))) {
                     propertiesTable.put(this.jTable1.getValueAt(i, 0).toString(), this.jTable1.getValueAt(i, 1).toString());
                 } else {
                     i = this.jTable1.getRowCount();
@@ -367,9 +369,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                //new CreateActorFrame().setVisible(true);
-            }
+            public void run() {}
         });
     }
 
@@ -382,7 +382,9 @@ public class CreateActorFrame extends javax.swing.JFrame {
     private Actor newActor;
     private SchedulingSystem currentSchedulingSystem;
     private Vector<Actor> actorsList;
+    
     private static CreateActorFrame CREATEACTORFRAME_INSTANCE;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
