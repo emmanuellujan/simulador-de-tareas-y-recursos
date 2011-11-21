@@ -178,7 +178,12 @@ public class UpdaterFrame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Updater currentUpdater = this.getUpdater();
         if((this.getFilter() != null)&&(this.getUpdate() != null)){
-            currentUpdater.getUpdates().put(this.getFilter(), this.getUpdate());       
+            if(currentUpdater.getUpdates() == null){
+                Hashtable<Filter, Update> newHash = new Hashtable<Filter, Update>();
+                newHash.put(this.getFilter(), this.getUpdate()); 
+                currentUpdater.setUpdates(newHash);
+            }else
+                currentUpdater.getUpdates().put(this.getFilter(), this.getUpdate());       
             this.setUpdater(currentUpdater);                
             ((CreateTaskFrame)this.getBackFrame()).setUpdater(currentUpdater);
             this.setVisible(false);
@@ -289,8 +294,8 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
     private CreateTaskFrame filterBackFrame;
     private Hashtable<Filter,Update> updates;
-    private Vector resourcesMainList;// Lista total de recursos, artefactos y actores
-    private Vector<Resource> resourcesList; //Lista de artefactos
+    private Vector resourcesMainList;
+    private Vector<Resource> resourcesList; 
     private Filter filter;
     private Update update;
     private Updater updater;
