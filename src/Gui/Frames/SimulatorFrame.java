@@ -21,6 +21,7 @@ import com.birosoft.liquid.LiquidLookAndFeel;
 import java.io.File;
 import java.io.IOException;
 import java.util.Vector;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -941,7 +942,16 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        LoadFrame.main(null);        
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Guardar");
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int seleccion = fileChooser.showOpenDialog(null);
+        if (seleccion == JFileChooser.APPROVE_OPTION){
+            System.out.println("Aprobo!");
+        }
+        if (seleccion == JFileChooser.CANCEL_OPTION){
+            System.out.println("Cancelo");
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -993,7 +1003,16 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        SaveFrame.main(null);
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Guardar");
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int seleccion = fileChooser.showOpenDialog(null);
+        if (seleccion == JFileChooser.APPROVE_OPTION){
+            System.out.println("Aprobo!");
+        }
+        if (seleccion == JFileChooser.CANCEL_OPTION){
+            System.out.println("Cancelo");
+        }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private boolean isComboboxesValuesValid(){

@@ -161,10 +161,11 @@ public class RelationFrame extends javax.swing.JFrame {
                 Resource mainElement = searchListResource(this.jComboBox1.getSelectedItem().toString());
                 Resource secondaryElement = searchListResource(this.jComboBox2.getSelectedItem().toString());
                 /*Setea el nuevo recurso con la relacion incorporada*/
-                Vector<String> newRelationList = new Vector<String>();
-                if(mainElement.getRelationsIds() != null)
-                    newRelationList.addAll(mainElement.getRelationsIds());                    
+                Vector<String> newRelationList = new Vector<String>();                                 
                 if(mainElement.getResourceMaxLimit() >= (newRelationList.size() + 1)){
+                    if(mainElement.getRelationsIds() != null)
+                    newRelationList.addAll(mainElement.getRelationsIds());   
+                    
                     newRelationList.add(this.jComboBox2.getSelectedItem().toString());
                     mainElement.addRelation(secondaryElement);
                     mainElement.setRelationsIds(newRelationList);
