@@ -905,25 +905,31 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         /*
-         * Codigo de simulacion, con todos los datos cargados de entrada.
+         * Si bien seteo en el schedulingSystem, las siguientes listas:
          * 
-         * En este metodo, se integraran todos los vectores realizados mediante
-         * la interfaz en la clase que corresponda y luego se iniciara la simulacion.
+         * this.getSchedulingSystem().setActorsList(this.getActorsList());
+         * this.getSchedulingSystem().setNewsList(this.getNewsList());
+         * this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+         *
+         * Al construir la instancia de SchedulingSystem, se crean objetos que
+         * creo no necesito crear yo en la interfaz, como debemos manejar ese tema?
          * 
-         * Posteriormente los resultados generados se deberan cargar en el 
-         * panel de resultados.
+         * El loaddata, debe modificarse para la version de la interfaz? Porque
+         * hay ciertos elementos que no cargo en la misma.
          * 
-         */
-        this.getSchedulingSystem().setActorsList(this.getActorsList());
-        this.getSchedulingSystem().setNewsList(this.getNewsList());
-        this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+         * Luego corriendo el SimulateAndLog y el Analyze, funcionaria?
+         * 
+         */  
+        
         //this.setDealerActor(dealerActor);
 	//this.setDeadline(deadline);
         //this.setNumberOfTasks(newsList.size());
+        
+        // Los resultados deberian mostrarse de la siguiente forma? Porque es simplemente un string.
         this.getSchedulingSystem().simulateAndLog();
         this.getSchedulingSystem().getResultsAnalyzer().analyze();
-	//this.saveData();
-        //this.getResultsAnalyzer().print();
+	this.getSchedulingSystem().saveData();
+        this.jTextArea1.setText(this.getSchedulingSystem().getResultsAnalyzer().getAnalysis());
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -959,7 +965,13 @@ public class SimulatorFrame extends javax.swing.JFrame {
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int seleccion = fileChooser.showOpenDialog(null);
         if (seleccion == JFileChooser.APPROVE_OPTION){
-            System.out.println("Cargo!"); //Analizar que cargar en la interfaz
+            /*
+             * Analizar que cargar en la interfaz a partir de lo que cargue el
+             * SchedulingSystem.
+             * 
+             * this.getSchedulingSystem().loadData();
+             */
+            System.out.println("Cargo!"); 
         }     
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -1017,14 +1029,17 @@ public class SimulatorFrame extends javax.swing.JFrame {
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int seleccion = fileChooser.showOpenDialog(null);
         if (seleccion == JFileChooser.APPROVE_OPTION){
-            this.getSchedulingSystem().setActorsList(this.getActorsList());
-            this.getSchedulingSystem().setNewsList(this.getNewsList());
-            this.getSchedulingSystem().setResourcesList(this.getResourcesList());
-            this.getSchedulingSystem().saveData();
+            /*
+             * Ver como guardar, listas correspondientes y si hay que salvar
+             * algun otro elemento.
+             * 
+             * this.getSchedulingSystem().setActorsList(this.getActorsList());
+             * this.getSchedulingSystem().setNewsList(this.getNewsList());
+             * this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+             * this.getSchedulingSystem().saveData();
+             * 
+             */            
         }
-        //if (seleccion == JFileChooser.CANCEL_OPTION){
-        //    System.out.println("Cancelo");
-        //}
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private boolean isComboboxesValuesValid(){
