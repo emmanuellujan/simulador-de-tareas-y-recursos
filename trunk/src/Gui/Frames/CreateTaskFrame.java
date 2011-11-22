@@ -276,7 +276,6 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //SimulatorFrame.getInstance()
         this.setVisible(false);
         SimulatorFrame.getInstance().setLocationRelativeTo(null);
         SimulatorFrame.getInstance().setVisible(true);
@@ -285,10 +284,10 @@ public class CreateTaskFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          
         if((!this.jTextField1.getText().equals(""))&&(!this.jTextField2.getText().equals(""))&&(this.getWorkUnitList()!= null)
-                &&(this.getSchedulingSystem()!=null)&&(this.getUpdater()!=null)&&(this.getFilter()!=null)){
+                &&(this.getSchedulingSystem()!=null)){
             Task currentTask = new Task("task" + String.valueOf(this.getNewsList().size()), Integer.parseInt(this.jTextField1.getText()), 
                     this.getWorkUnitList(), null, null, "New", Integer.parseInt(this.jTextField2.getText()),this.getSchedulingSystem() , 
-                    this.getFilter(), this.getUpdater());
+                    this.getFilter(), this.getUpdater());            
             this.setNewTask(currentTask);
             Vector<Task> currentTaskList = SimulatorFrame.getInstance().getNewsList();
             currentTaskList.add(this.getNewTask());
@@ -297,8 +296,8 @@ public class CreateTaskFrame extends javax.swing.JFrame {
             NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
             this.setFieldsValuesEmpty();
             this.setVisible(false);
-            SimulatorFrame.getInstance().setLocationRelativeTo(null);
-            SimulatorFrame.getInstance().setVisible(true);
+            NewsFrame.getInstance().setLocationRelativeTo(null);
+            NewsFrame.getInstance().setVisible(true);
         }else{
             NewsFrame.getInstance().setLabel("Some values are empty.");
             NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
