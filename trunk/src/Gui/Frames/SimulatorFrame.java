@@ -39,7 +39,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
         this.taskDeletePanel = DeleteTaskFrame.getInstance();
         this.actorDeletePanel = DeleteActorFrame.getInstance();
         this.artifactDeletePanel = DeleteArtifactFrame.getInstance(); 
-        this.relationPanel = RelationFrame.getInstance();        
+        this.relationPanel = RelationFrame.getInstance();   
+        this.mainSchedulingSystem = new SchedulingSystem();
         
         initComponents();
         this.setNewsList(new Vector<Task>());
@@ -913,6 +914,17 @@ public class SimulatorFrame extends javax.swing.JFrame {
          * panel de resultados.
          * 
          */
+        this.getSchedulingSystem().setActorsList(this.getActorsList());
+        this.getSchedulingSystem().setNewsList(this.getNewsList());
+        this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+        //this.setDealerActor(dealerActor);
+	//this.setDeadline(deadline);
+        //this.setNumberOfTasks(newsList.size());
+        this.getSchedulingSystem().simulateAndLog();
+        this.getSchedulingSystem().getResultsAnalyzer().analyze();
+	//this.saveData();
+        //this.getResultsAnalyzer().print();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -943,15 +955,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Guardar");
+        fileChooser.setDialogTitle("Cargar");
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int seleccion = fileChooser.showOpenDialog(null);
         if (seleccion == JFileChooser.APPROVE_OPTION){
-            System.out.println("Aprobo!");
-        }
-        if (seleccion == JFileChooser.CANCEL_OPTION){
-            System.out.println("Cancelo");
-        }
+            System.out.println("Cargo!"); //Analizar que cargar en la interfaz
+        }     
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -1008,11 +1017,14 @@ public class SimulatorFrame extends javax.swing.JFrame {
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int seleccion = fileChooser.showOpenDialog(null);
         if (seleccion == JFileChooser.APPROVE_OPTION){
-            System.out.println("Aprobo!");
+            this.getSchedulingSystem().setActorsList(this.getActorsList());
+            this.getSchedulingSystem().setNewsList(this.getNewsList());
+            this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+            this.getSchedulingSystem().saveData();
         }
-        if (seleccion == JFileChooser.CANCEL_OPTION){
-            System.out.println("Cancelo");
-        }
+        //if (seleccion == JFileChooser.CANCEL_OPTION){
+        //    System.out.println("Cancelo");
+        //}
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private boolean isComboboxesValuesValid(){
