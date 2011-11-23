@@ -12,14 +12,13 @@ import org.w3c.dom.NodeList;
 
 public class Configurator {
 	String confFile;
-	String ioDirectory;
-	
+
 	String inputDir;
 	String outputDir;
+
+	String projectName;
 	
-	//Obsolete
-	String inputFile;
-	String outputFile;
+	String bar;
 	
 	public Configurator(){
 		//String confFile = "conf.xml"; // Usar esta línea cuando se pretende crear el jar, sino poner el path completo
@@ -30,22 +29,15 @@ public class Configurator {
 
 	private void setConfParameters() {
 		String fileName = this.getConfFile();
-		String sIODirectory = "";
 		String sInputDir = "";
 		String sOutputDir = "";
-		String sInputFile = "";
-		String sOutputFile = "";
+		String sProjectName = "";
 		try{
 			File file = new File(fileName);
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
-
-			NodeList ioDirectoryElementList = doc.getElementsByTagName("ioDirectory");
-			Element ioDirectoryElement = (Element) ioDirectoryElementList.item(0);
-			NodeList ioDirectory = ioDirectoryElement.getChildNodes();
-			sIODirectory = ((Node) ioDirectory.item(0)).getNodeValue();
 			
 			NodeList inputDirElementList = doc.getElementsByTagName("inputDir");
 			Element inputDirElement = (Element) inputDirElementList.item(0);
@@ -57,26 +49,26 @@ public class Configurator {
 			NodeList outputDir = outputDirElement.getChildNodes();
 			sOutputDir = ((Node) outputDir.item(0)).getNodeValue();
 			
-			//Obsolete 
-			NodeList inputFileElementList = doc.getElementsByTagName("inputFile");
-			Element inputFileElement = (Element) inputFileElementList.item(0);
-			NodeList inputFile = inputFileElement.getChildNodes();
-			sInputFile = ((Node) inputFile.item(0)).getNodeValue();
-			
-			NodeList outputFileElementList = doc.getElementsByTagName("outputFile");
-			Element outputFileElement = (Element) outputFileElementList.item(0);
-			NodeList outputFile = outputFileElement.getChildNodes();
-			sOutputFile = ((Node) outputFile.item(0)).getNodeValue();
-			
-
+			NodeList projectNameElementList = doc.getElementsByTagName("projectName");
+			Element projectNameElement = (Element) projectNameElementList.item(0);
+			NodeList projectName = projectNameElement.getChildNodes();
+			sProjectName = ((Node) projectName.item(0)).getNodeValue();
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		this.setIoDirectory(sIODirectory);
-		this.setInputDir(sIODirectory+sInputDir);
-		this.setOutputDir(sIODirectory+sOutputDir);
-		this.setInputFile(sInputFile);
-		this.setOutputFile(sOutputFile);
+		
+		String bar = "";
+		if(sInputDir.contains("/"))
+			bar="/";
+		else
+			bar="\\";
+		
+		this.setBar(bar);
+		this.setInputDir(sInputDir+sProjectName+bar);
+		this.setOutputDir(sOutputDir+sProjectName+bar);
+		this.setProjectName(sProjectName);
+
 	}
 	
 	public String getConfFile() {
@@ -85,30 +77,6 @@ public class Configurator {
 
 	public void setConfFile(String confFile) {
 		this.confFile = confFile;
-	}
-	
-	public String getIoDirectory() {
-		return ioDirectory;
-	}
-
-	public void setIoDirectory(String ioDirectory) {
-		this.ioDirectory = ioDirectory;
-	}
-
-	public String getInputFile() {
-		return inputFile;
-	}
-
-	public void setInputFile(String inputFile) {
-		this.inputFile = inputFile;
-	}
-
-	public String getOutputFile() {
-		return outputFile;
-	}
-
-	public void setOutputFile(String outputFile) {
-		this.outputFile = outputFile;
 	}
 
 	public String getInputDir() {
@@ -125,6 +93,22 @@ public class Configurator {
 
 	public void setOutputDir(String outputDir) {
 		this.outputDir = outputDir;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getBar() {
+		return bar;
+	}
+
+	public void setBar(String bar) {
+		this.bar = bar;
 	}
 	
 }

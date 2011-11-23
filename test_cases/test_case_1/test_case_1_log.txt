@@ -160,3 +160,21 @@ Time: 8
 		Ready List:
 
 
+Time: 9
+	ResourceId: dealerActor
+		Current Action: None
+		Active Task: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
