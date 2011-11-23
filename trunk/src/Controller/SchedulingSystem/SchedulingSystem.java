@@ -29,8 +29,8 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		IOSystem ioSystem = new XMLIOSystem(configurator, this);
-		//IOSystem ioSystem = new SerialIOSystem(configurator, this);
+		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		int deadline = 0;
@@ -64,7 +64,7 @@ public class SchedulingSystem {
 	public void start() {
 		System.out.print("Loading data (from XML)...");
 		//this.loadData("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/");
-		this.loadData("");
+		this.loadData();
 		System.out.println(" done.");
 		System.out.print("Saving input data (with serialization)...");
 		IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
