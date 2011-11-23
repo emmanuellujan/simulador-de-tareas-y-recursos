@@ -12,15 +12,15 @@
   <difficult>5</difficult>
   <status>New</status>
   <schedulingSystem>
+    <configurator>
+      <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
+      <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/</inputDir>
+      <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/</outputDir>
+      <projectName>test_case_1</projectName>
+      <bar>/</bar>
+    </configurator>
     <ioSystem class="Model.IOSystem.XMLIOSystem">
-      <configurator>
-        <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
-        <ioDirectory>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/</ioDirectory>
-        <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/</inputDir>
-        <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/</outputDir>
-        <inputFile>test_case_1</inputFile>
-        <outputFile>test_case_1_results</outputFile>
-      </configurator>
+      <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
       <actorsList>
@@ -67,20 +67,20 @@
       </tasksList>
     </ioSystem>
     <compLogginSystem>
-      <configurator reference="../../ioSystem/configurator"/>
+      <configurator reference="../../configurator"/>
       <errorMsgs/>
       <simulationTimes/>
       <logginSystems>
         <Model.LogginSystem.XMLLogginSystem>
-          <configurator reference="../../../../ioSystem/configurator"/>
+          <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_results.xml</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
           <fileManager/>
         </Model.LogginSystem.XMLLogginSystem>
         <Model.LogginSystem.TXTLogginSystem>
-          <configurator reference="../../../../ioSystem/configurator"/>
+          <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_results.txt</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
           <fileManager/>
         </Model.LogginSystem.TXTLogginSystem>
       </logginSystems>
@@ -99,13 +99,10 @@
       <propFinishedTasks>0.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
       <propVelocity>0.0</propVelocity>
+      <analysis></analysis>
     </resultsAnalyzer>
-    <newsList reference="../ioSystem/tasksList"/>
-    <actorsList reference="../ioSystem/actorsList"/>
-    <resourcesList reference="../ioSystem/resourcesList"/>
-    <finishedList/>
     <numberOfTasks>1</numberOfTasks>
-    <deliverRes>
+    <dealerActor>
       <resId>dealerActor</resId>
       <type>actor</type>
       <resources/>
@@ -126,7 +123,12 @@
       <time>0</time>
       <limitTime>-1</limitTime>
       <maxTasksNumber>100</maxTasksNumber>
-    </deliverRes>
+    </dealerActor>
     <deadline>80</deadline>
+    <newsList reference="../ioSystem/tasksList"/>
+    <actorsList reference="../ioSystem/actorsList"/>
+    <resourcesList reference="../ioSystem/resourcesList"/>
+    <finishedList/>
+    <failedFinishedList/>
   </schedulingSystem>
 </Controller.SchedulingSystem.Task>

@@ -904,6 +904,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    	this.getSchedulingSystem().simulateAndLog();
         /*
          * Si bien seteo en el schedulingSystem, las siguientes listas:
          * 

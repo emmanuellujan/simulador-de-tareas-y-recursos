@@ -28,11 +28,12 @@ public class SerialIOSystem extends IOSystem {
 		try {
 
 			String dir = this.getConfigurator().getOutputDir();
-			
+
 			FileOutputStream fs;
-			Vector<Resource> allResources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
-			//Vector<Resource> allResources = this.getAllResourcesList();
-			
+			Vector<Resource> allResources = this.getSchedulingSystem()
+					.getIoSystem().getAllResourcesList();
+			// Vector<Resource> allResources = this.getAllResourcesList();
+
 			int n = allResources.size();
 			int i = 0;
 			for (i = 0; i < n; i++) {
@@ -43,16 +44,17 @@ public class SerialIOSystem extends IOSystem {
 
 			Vector<Task> tasks = this.getSchedulingSystem().getNewsList();
 			n = tasks.size();
-			int j=0;
+			int j = 0;
 			for (j = 0; j < n; j++) {
 				Task task = tasks.elementAt(j);
 				fs = new FileOutputStream(dir + (i + j) + ".xml");
 				xs.toXML(task, fs);
 			}
-		
+
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			//int deadline = this.getDeadline();
-			int deadline = this.getSchedulingSystem().getIoSystem().getDeadline();
+			// int deadline = this.getDeadline();
+			int deadline = this.getSchedulingSystem().getIoSystem()
+					.getDeadline();
 			xs.toXML(deadline, fs);
 
 		} catch (FileNotFoundException e1) {
@@ -76,7 +78,7 @@ public class SerialIOSystem extends IOSystem {
 
 			int i = 0;
 			FileInputStream fis = null;
-			SchedulingSystem schedulingSystem = this.getSchedulingSystem();  
+			SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 
 			String fileName = dir + i + ".xml";
 			fis = new FileInputStream(fileName);
@@ -121,19 +123,19 @@ public class SerialIOSystem extends IOSystem {
 					o = xs.fromXML(fis);
 				}
 			}
-		
-			if(allResources.size()>0){
+
+			if (allResources.size() > 0) {
 				fileName = dir + i + ".xml";
 				fis = new FileInputStream(fileName);
 				o = xs.fromXML(fis);
 				Integer deadline = (Integer) o;
 				this.setDeadline(deadline.intValue());
 			}
-			
+
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		}
-		
+
 		this.setResourcesList(resources);
 		this.setActorsList(actors);
 		this.setAllResourcesList(allResources);
@@ -164,5 +166,5 @@ public class SerialIOSystem extends IOSystem {
 		}
 
 	}
-		
+
 }

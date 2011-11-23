@@ -61,6 +61,43 @@ public class SchedulingSystem {
 		this.setFailedFinishedList(failedFinishedList);
 	}
 
+	public void start() {
+		System.out.print("Loading data (from XML)...");
+		//this.loadData("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/");
+		this.loadData("");
+		System.out.println(" done.");
+		System.out.print("Saving input data (with serialization)...");
+		IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
+		ioSystem.saveAll();
+		System.out.println(" done.");
+		System.out.print("Simulation started...");
+		this.simulateAndLog();
+		System.out.println(" done.");
+		System.out.print("Analyzing results...");
+		this.getResultsAnalyzer().analyze();
+		System.out.println(" done.");
+		System.out.print("Saving data...");
+		//this.saveData("test_case_1","/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/");
+		this.saveData();
+		System.out.println(" done.\n");
+		this.getResultsAnalyzer().print();
+		System.out.println("Done!");
+	}
+	
+	public void loadData(String inputDir) {
+		String bar = "";
+		if(inputDir.contains("/"))
+			bar="/";
+		else
+			bar="\\";
+		String[] s = inputDir.split(bar);
+		String projectName = s[s.length-1];
+		this.getConfigurator().setBar(bar);
+		this.getConfigurator().setInputDir(inputDir);
+		this.getConfigurator().setProjectName(projectName);
+		this.loadData();
+	}
+	
 	public void loadData() {
 
 		IOSystem ioSystem = this.getIoSystem();
@@ -84,48 +121,24 @@ public class SchedulingSystem {
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
 		this.setNumberOfTasks(newsList.size());
-
-		/*
-		 * for(int i=0;i<resourcesList.size();i++){
-		 * resourcesList.elementAt(i).print();
-		 * System.out.println("-------------------------------------"); }
-		 * 
-		 * dealerActor.print();
-		 * 
-		 * for(int i=0;i<actorsList.size();i++){
-		 * actorsList.elementAt(i).print();
-		 * System.out.println("-------------------------------------"); }
-		 * 
-		 * for(int i=0;i<newsList.size();i++){ newsList.elementAt(i).print();
-		 * System.out.println("-------------------------------------"); }
-		 */
 	}
 
+	public void saveData(String outputDir) {
+		String projectName = this.getConfigurator().getProjectName(); 
+		this.saveData(projectName,outputDir);
+	}
+	
+	public void saveData(String projectName, String outputDir) {
+		String bar = this.getConfigurator().getBar();
+		outputDir = outputDir + projectName + bar;
+		this.getConfigurator().setOutputDir(outputDir);
+		this.saveData();
+	}
+	
 	public void saveData() {
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
-	}
-
-	public void start() {
-		System.out.print("Loading data (from XML)...");
-		this.loadData();
-		System.out.println(" done.");
-		System.out.print("Saving input data (with serialization)...");
-		IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
-		ioSystem.saveAll();
-		System.out.println(" done.");
-		System.out.print("Simulation started...");
-		this.simulateAndLog();
-		System.out.println(" done.");
-		System.out.print("Analyzing results...");
-		this.getResultsAnalyzer().analyze();
-		System.out.println(" done.");
-		System.out.print("Saving data...");
-		this.saveData();
-		System.out.println(" done.\n");
-		this.getResultsAnalyzer().print();
-		System.out.println("Done!");
 	}
 
 	public void simulateAndLog() {

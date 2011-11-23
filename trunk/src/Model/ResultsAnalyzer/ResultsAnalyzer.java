@@ -82,7 +82,7 @@ public class ResultsAnalyzer {
 		String analysis = this.getAnalysis();
 
 		analysis += "Results Analisys:\n";
-		
+
 		analysis += "\tNumber of errors: " + this.getNumberOfErrors() + "\n";
 
 		analysis += "\tDeadline (in cycles): " + this.getDeadline() + "\n";
@@ -131,12 +131,10 @@ public class ResultsAnalyzer {
 
 	public void writeAnalysis() {
 		String analysis = this.getAnalysis();
-		String dir = this.getSchedulingSystem().getConfigurator()
-				.getOutputDir();
-		String outputFile = this.getSchedulingSystem().getConfigurator()
-				.getOutputFile()
+		String fileName = this.getSchedulingSystem().getConfigurator()
+				.getOutputDir()
+				+ this.getSchedulingSystem().getConfigurator().getProjectName()
 				+ "_analysis.txt";
-		String fileName = dir + outputFile;
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
 	}

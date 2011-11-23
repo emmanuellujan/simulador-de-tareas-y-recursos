@@ -45,7 +45,7 @@ public class XMLIOSystem extends IOSystem {
 	
 	public int getDeadline(){
 		String fileName = this.getConfigurator().getInputDir()
-				+ this.getConfigurator().getInputFile() + ".xml";
+				+ this.getConfigurator().getProjectName() + ".xml";
 		int nDeadline = 0;
 		try {
 			File file = new File(fileName);
@@ -69,7 +69,7 @@ public class XMLIOSystem extends IOSystem {
 	
 	public Vector<Task> loadNewsList() {
 		String fileName = this.getConfigurator().getInputDir()
-				+ this.getConfigurator().getInputFile() + ".xml";
+				+ this.getConfigurator().getProjectName() + ".xml";
 		Vector<Task> tasks = new Vector<Task>();
 		try {
 			File file = new File(fileName);
@@ -173,7 +173,8 @@ public class XMLIOSystem extends IOSystem {
 	public Vector<Actor> loadActorsList() {
 
 		String fileName = this.getConfigurator().getInputDir()
-				+ this.getConfigurator().getInputFile() + ".xml";
+				+ this.getConfigurator().getProjectName() + ".xml";
+		
 		Vector<Actor> actors = new Vector<Actor>();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		SAFactory saFactory = new SAFactory();
@@ -290,7 +291,8 @@ public class XMLIOSystem extends IOSystem {
 	public Vector<Resource> loadResourcesList() {
 
 		String fileName = this.getConfigurator().getInputDir()
-				+ this.getConfigurator().getInputFile() + ".xml";
+				+ this.getConfigurator().getProjectName() + ".xml";
+		
 		Vector<Resource> resources = new Vector<Resource>();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		try {
