@@ -1,10 +1,12 @@
 package Controller.SchedulingAlgorithmSystem;
+
 import java.util.Vector;
-import  Controller.SchedulingSystem.Task;
+
+import Controller.SchedulingSystem.Task;
 
 public class PrioritiesSA extends SchedulingAlgorithm {
-	
-	public PrioritiesSA(){
+
+	public PrioritiesSA() {
 		super("Priorities");
 	}
 
@@ -13,14 +15,14 @@ public class PrioritiesSA extends SchedulingAlgorithm {
 		int n = tasks.size();
 		int maxPriority = -1;
 		int currPriority = -1;
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			currPriority = tasks.get(i).getPriority();
-			if(maxPriority < currPriority){
+			if (maxPriority < currPriority) {
 				maxPriority = currPriority;
 				task = tasks.get(i);
 			}
 		}
 		return task;
 	}
-	
+
 }

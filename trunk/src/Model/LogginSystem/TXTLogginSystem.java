@@ -3,8 +3,8 @@ package Model.LogginSystem;
 import java.util.Vector;
 
 import Model.DataModel.Configurator.Configurator;
-import Model.DataModel.SimulationTime.SimulationTime;
 import Model.DataModel.SimulationTime.SimulationResource;
+import Model.DataModel.SimulationTime.SimulationTime;
 
 public class TXTLogginSystem extends FileLogginSystem {
 
@@ -14,24 +14,6 @@ public class TXTLogginSystem extends FileLogginSystem {
 		String outputFileName = this.getConfigurator().getOutputDir()
 				+ this.getConfigurator().getProjectName() + "_log.txt";
 		this.setOutputFileName(outputFileName);
-	}
-
-	public void writeLog() {
-		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
-		String xmlLog = "";
-
-		int currTime;
-		int n = simulationTimes.size();
-		for (int i = 0; i < n; i++) {
-			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationResource> actors = simulationTimes.get(i)
-					.getActors();
-			xmlLog += "Time: " + currTime + "\n";
-			xmlLog += this.logActors(actors);
-			xmlLog += "\n";
-		}
-
-		this.writeFile(xmlLog);
 	}
 
 	private String logActors(Vector<SimulationResource> actors) {
@@ -76,5 +58,23 @@ public class TXTLogginSystem extends FileLogginSystem {
 		xmlLog += "\n";
 
 		return xmlLog;
+	}
+
+	public void writeLog() {
+		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
+		String xmlLog = "";
+
+		int currTime;
+		int n = simulationTimes.size();
+		for (int i = 0; i < n; i++) {
+			currTime = simulationTimes.get(i).getCurrentTime();
+			Vector<SimulationResource> actors = simulationTimes.get(i)
+					.getActors();
+			xmlLog += "Time: " + currTime + "\n";
+			xmlLog += this.logActors(actors);
+			xmlLog += "\n";
+		}
+
+		this.writeFile(xmlLog);
 	}
 }
