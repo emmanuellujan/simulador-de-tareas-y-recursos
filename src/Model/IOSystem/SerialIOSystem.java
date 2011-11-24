@@ -42,7 +42,7 @@ public class SerialIOSystem extends IOSystem {
 				xs.toXML(resource, fs);
 			}
 
-			Vector<Task> tasks = this.getSchedulingSystem().getNewsList();
+			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
 			n = tasks.size();
 			int j = 0;
 			for (j = 0; j < n; j++) {

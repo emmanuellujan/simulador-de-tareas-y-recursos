@@ -55,7 +55,50 @@
       <allResourcesList>
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
       </allResourcesList>
-      <tasksList reference="../actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+      <tasksList>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task0</taskId>
+          <programCounter>3</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>5</difficult>
+          <status>New</status>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task1</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>5</difficult>
+          <status>New</status>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task2</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>5</difficult>
+          <status>New</status>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+      </tasksList>
     </ioSystem>
     <compLogginSystem>
       <configurator reference="../../configurator"/>
@@ -336,24 +379,12 @@ Errors:
     <numberOfTasks>3</numberOfTasks>
     <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
     <deadline>80</deadline>
+    <tasks reference="../ioSystem/tasksList"/>
     <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task0</taskId>
-        <programCounter>3</programCounter>
-        <workUnits>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-        </workUnits>
-        <priority>0</priority>
-        <difficult>5</difficult>
-        <status>New</status>
-        <schedulingSystem reference="../../.."/>
-      </Controller.SchedulingSystem.Task>
+      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
     </finishedList>
     <failedFinishedList/>
   </schedulingSystem>

@@ -24,6 +24,28 @@
       <deadline>80</deadline>
       <actorsList>
         <Controller.SchedulingSystem.Actor>
+          <resId>dealerActor</resId>
+          <type>actor</type>
+          <resources/>
+          <resourceMaxLimit>100</resourceMaxLimit>
+          <schedulingSystem reference="../../../.."/>
+          <capacity>100</capacity>
+          <currAction>None</currAction>
+          <intList/>
+          <syncIntList/>
+          <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+            <id>FCFS</id>
+          </saIntList>
+          <readyList/>
+          <syncReadyList/>
+          <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+            <id>FCFS</id>
+          </saReadyList>
+          <time>9</time>
+          <limitTime>-1</limitTime>
+          <maxTasksNumber>100</maxTasksNumber>
+        </Controller.SchedulingSystem.Actor>
+        <Controller.SchedulingSystem.Actor>
           <resId>actor0</resId>
           <type>actor</type>
           <properties>
@@ -41,7 +63,7 @@
           <resourceMaxLimit>10</resourceMaxLimit>
           <schedulingSystem reference="../../../.."/>
           <capacity>10</capacity>
-          <currAction>Nothing</currAction>
+          <currAction>None</currAction>
           <intList/>
           <syncIntList/>
           <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
@@ -52,19 +74,19 @@
           <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
             <id>Priorities</id>
           </saReadyList>
-          <time>0</time>
+          <time>9</time>
           <limitTime>-1</limitTime>
           <maxTasksNumber>1</maxTasksNumber>
         </Controller.SchedulingSystem.Actor>
       </actorsList>
       <resourcesList/>
       <allResourcesList>
-        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
+        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[2]"/>
       </allResourcesList>
       <tasksList>
         <Controller.SchedulingSystem.Task>
           <taskId>task0</taskId>
-          <programCounter>-1</programCounter>
+          <programCounter>3</programCounter>
           <workUnits>
             <string>actor0</string>
             <string>actor0</string>
@@ -95,8 +117,231 @@
     </ioSystem>
     <compLogginSystem>
       <configurator reference="../../configurator"/>
-      <errorMsgs/>
-      <simulationTimes/>
+      <errorMsgs>
+        <string>List size greater than allowed. Task task1 can&apos;t be added to the ready list of actor0</string>
+        <string>List size greater than allowed. Task task2 can&apos;t be added to the ready list of actor0</string>
+      </errorMsgs>
+      <simulationTimes>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>0</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+              <taskId>task0</taskId>
+              <time>1</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList>
+                <string>task1</string>
+                <string>task2</string>
+              </readyList>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>1</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>1</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>The task task0 pass to the ready list of the resource actor0</currentAction>
+              <taskId>None</taskId>
+              <time>2</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList>
+                <string>task1</string>
+                <string>task2</string>
+              </readyList>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>2</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList>
+                <string>task0</string>
+              </readyList>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>2</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
+              <taskId>task1</taskId>
+              <time>3</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList>
+                <string>task2</string>
+              </readyList>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+              <taskId>task0</taskId>
+              <time>3</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>3</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>The task task1 pass to the ready list of the resource actor0</currentAction>
+              <taskId>None</taskId>
+              <time>4</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList>
+                <string>task2</string>
+              </readyList>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>Procesing active task task0</currentAction>
+              <taskId>task0</taskId>
+              <time>4</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>4</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>Select a task from the ready list and put that task as active. The selected task is task2</currentAction>
+              <taskId>task2</taskId>
+              <time>5</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>Procesing active task task0</currentAction>
+              <taskId>task0</taskId>
+              <time>5</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>5</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>The task task2 pass to the ready list of the resource actor0</currentAction>
+              <taskId>None</taskId>
+              <time>6</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>Procesing active task task0</currentAction>
+              <taskId>task0</taskId>
+              <time>6</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>6</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>7</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>Procesing active task task0</currentAction>
+              <taskId>task0</taskId>
+              <time>7</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>7</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>8</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>The active task task0 ends</currentAction>
+              <taskId>None</taskId>
+              <time>8</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+        <Model.DataModel.SimulationTime.SimulationTime>
+          <currentTime>8</currentTime>
+          <actors>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>dealerActor</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>9</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+            <Model.DataModel.SimulationTime.SimulationResource>
+              <resId>actor0</resId>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>9</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </Model.DataModel.SimulationTime.SimulationResource>
+          </actors>
+        </Model.DataModel.SimulationTime.SimulationTime>
+      </simulationTimes>
       <logginSystems>
         <Model.LogginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
@@ -114,48 +359,48 @@
     </compLogginSystem>
     <resultsAnalyzer>
       <schedulingSystem reference="../.."/>
-      <numberOfErrors>0</numberOfErrors>
-      <deadline>0</deadline>
-      <numberOfCycles>0</numberOfCycles>
-      <numberOfTasks>0</numberOfTasks>
-      <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+      <numberOfErrors>2</numberOfErrors>
+      <deadline>80</deadline>
+      <numberOfCycles>9</numberOfCycles>
+      <numberOfTasks>1</numberOfTasks>
+      <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>0</nbrFailedTasks>
-      <numberOfActors>0</numberOfActors>
+      <numberOfActors>2</numberOfActors>
       <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
-      <propFinishedTasks>0.0</propFinishedTasks>
+      <meanNbrTasksPerActor>0.5</meanNbrTasksPerActor>
+      <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
-      <propVelocity>0.0</propVelocity>
-      <analysis></analysis>
+      <propVelocity>8.888889</propVelocity>
+      <analysis>Results Analisys:
+	Number of errors: 2
+	Deadline (in cycles): 80
+	Number of cycles: 9
+	Total number of executed tasks, including contingency tasks: 1
+	Number of successful tasks, including contingency tasks: 1
+	Number of failed tasks: 0
+	Number of actors: 2
+	Number of other resources (artifacts): 0
+	Mean number of tasks per actor: 0.5
+	Proportions: 
+		Successful tasks proportion, including contingency tasks: 1.0
+		Failed tasks proportion, including contingency tasks: 0.0
+		Velocity proportion (deadline/nbrOfCycles): 8.888889
+
+Errors:
+	0. List size greater than allowed. Task task1 can&apos;t be added to the ready list of actor0
+	1. List size greater than allowed. Task task2 can&apos;t be added to the ready list of actor0
+</analysis>
     </resultsAnalyzer>
     <numberOfTasks>3</numberOfTasks>
-    <dealerActor>
-      <resId>dealerActor</resId>
-      <type>actor</type>
-      <resources/>
-      <resourceMaxLimit>100</resourceMaxLimit>
-      <schedulingSystem reference="../.."/>
-      <capacity>100</capacity>
-      <currAction>Nothing</currAction>
-      <intList/>
-      <syncIntList/>
-      <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-        <id>FCFS</id>
-      </saIntList>
-      <readyList reference="../../ioSystem/tasksList"/>
-      <syncReadyList/>
-      <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
-        <id>FCFS</id>
-      </saReadyList>
-      <time>0</time>
-      <limitTime>-1</limitTime>
-      <maxTasksNumber>100</maxTasksNumber>
-    </dealerActor>
+    <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
     <deadline>80</deadline>
-    <newsList reference="../ioSystem/tasksList"/>
+    <tasks reference="../ioSystem/tasksList"/>
+    <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
-    <finishedList/>
+    <finishedList>
+      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
+    </finishedList>
     <failedFinishedList/>
   </schedulingSystem>
 </Controller.SchedulingSystem.Task>

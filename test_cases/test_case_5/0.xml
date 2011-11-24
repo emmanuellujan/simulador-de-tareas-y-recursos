@@ -89,7 +89,27 @@
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
         <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[3]"/>
       </allResourcesList>
-      <tasksList reference="../actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+      <tasksList>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task0</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+            <string>actor1</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>15</difficult>
+          <status>New</status>
+          <contTaskId>task01</contTaskId>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+      </tasksList>
     </ioSystem>
     <compLogginSystem>
       <configurator reference="../../configurator"/>
@@ -307,30 +327,13 @@
     <numberOfTasks>1</numberOfTasks>
     <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
     <deadline>80</deadline>
+    <tasks reference="../ioSystem/tasksList"/>
     <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList/>
     <failedFinishedList>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task0</taskId>
-        <programCounter>-1</programCounter>
-        <workUnits>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-          <string>actor1</string>
-        </workUnits>
-        <priority>0</priority>
-        <difficult>15</difficult>
-        <status>New</status>
-        <contTaskId>task01</contTaskId>
-        <schedulingSystem reference="../../.."/>
-      </Controller.SchedulingSystem.Task>
+      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
     </failedFinishedList>
   </schedulingSystem>
   <capacity>10</capacity>
