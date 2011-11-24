@@ -21,6 +21,7 @@ public class SchedulingSystem {
 	private int numberOfTasks;
 	private Actor dealerActor;
 	private int deadline;
+	private Vector<Task> tasks;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
@@ -35,6 +36,7 @@ public class SchedulingSystem {
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
+		Vector<Task> tasks = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Resource> resourcesList = new Vector<Resource>();
 		Vector<Task> finishedList = new Vector<Task>();
@@ -45,7 +47,6 @@ public class SchedulingSystem {
 		int limitTime = -1;
 		Actor dealerActor = new Actor(dealerActorId, "actor", saReadyList,
 				limitTime, this, 100, 100, null, 100, null);
-		dealerActor.setReadyList(newsList);
 
 		this.setConfigurator(configurator);
 		this.setIoSystem(ioSystem);
@@ -54,6 +55,7 @@ public class SchedulingSystem {
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
+		this.setTasks(tasks);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
 		this.setNumberOfTasks(newsList.size());
@@ -62,14 +64,10 @@ public class SchedulingSystem {
 	}
 
 	public void start() {
-		System.out.print("Loading data (from XML)...");
+		System.out.print("Loading data...");
 		//this.loadData("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/");
 		this.loadData();
-		System.out.println(" done.");
-		System.out.print("Saving input data (with serialization)...");
-		IOSystem ioSystem = new SerialIOSystem(this.getConfigurator(), this);
-		ioSystem.saveAll();
-		System.out.println(" done.");
+		System.out.println(" done.");		
 		System.out.print("Simulation started...");
 		this.simulateAndLog();
 		System.out.println(" done.");
@@ -79,7 +77,7 @@ public class SchedulingSystem {
 		System.out.print("Saving data...");
 		//this.saveData("test_case_1","/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/");
 		this.saveData();
-		System.out.println(" done.\n");
+		System.out.println(" done.");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!");
 	}
@@ -103,12 +101,14 @@ public class SchedulingSystem {
 		IOSystem ioSystem = this.getIoSystem();
 		int deadline = this.getDeadline();
 		Vector<Task> newsList = this.getNewsList();
+		Vector<Task> tasks = this.getTasks();
 		Vector<Actor> actorsList = this.getActorsList();
 		Vector<Resource> resourcesList = this.getResourcesList();
 
 		ioSystem.loadAll();
 		deadline = ioSystem.getDeadline();
-		newsList = ioSystem.getTasksList();
+		tasks = ioSystem.getTasksList();
+		newsList.addAll(tasks);
 		actorsList = ioSystem.getActorsList();
 		resourcesList = ioSystem.getResourcesList();
 
@@ -118,6 +118,7 @@ public class SchedulingSystem {
 		this.setDealerActor(dealerActor);
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
+		this.setTasks(tasks);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
 		this.setNumberOfTasks(newsList.size());
@@ -136,12 +137,29 @@ public class SchedulingSystem {
 	}
 	
 	public void saveData() {
+		SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(),this);
+		serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
 	}
 
+	public void reset(){
+		Vector<Task> tasks = this.getTasks();
+		int n = tasks.size();
+		for(int i=0;i<n;i++)
+			tasks.elementAt(i).reset();	
+		
+		Vector<Resource> allResources = this.getIoSystem().getAllResourcesList();
+		n = allResources.size();
+		for(int i=0;i<n;i++)
+			allResources.elementAt(i).reset();
+		
+	}
+	
+	
 	public void simulateAndLog() {
+		this.reset();
 		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logger = this.getCompLogginSystem();
 		Actor dealerActor = this.getDealerActor();
@@ -306,6 +324,14 @@ public class SchedulingSystem {
 
 	public void setConfigurator(Configurator configurator) {
 		this.configurator = configurator;
+	}
+
+	public Vector<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(Vector<Task> tasks) {
+		this.tasks = tasks;
 	}
 
 	public static void main(String[] args) {

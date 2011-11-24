@@ -55,7 +55,435 @@
       <allResourcesList>
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
       </allResourcesList>
-      <tasksList reference="../actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+      <tasksList>
+        <Controller.SchedulingSystem.Task>
+          <taskId>task0</taskId>
+          <programCounter>-1</programCounter>
+          <workUnits>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+            <string>actor0</string>
+          </workUnits>
+          <priority>0</priority>
+          <difficult>15</difficult>
+          <status>New</status>
+          <contTaskId>task01</contTaskId>
+          <contingencyTask>
+            <taskId>task01</taskId>
+            <programCounter>3</programCounter>
+            <workUnits>
+              <string>actor0</string>
+              <string>actor0</string>
+              <string>actor0</string>
+              <string>actor0</string>
+            </workUnits>
+            <priority>0</priority>
+            <difficult>5</difficult>
+            <status>New</status>
+            <schedulingSystem>
+              <configurator>
+                <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
+                <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/</inputDir>
+                <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/</outputDir>
+                <projectName>test_case_2</projectName>
+                <bar>/</bar>
+              </configurator>
+              <ioSystem class="Model.IOSystem.XMLIOSystem">
+                <configurator reference="../../configurator"/>
+                <schedulingSystem reference="../.."/>
+                <deadline>80</deadline>
+                <actorsList>
+                  <Controller.SchedulingSystem.Actor>
+                    <resId>dealerActor</resId>
+                    <type>actor</type>
+                    <resources/>
+                    <resourceMaxLimit>100</resourceMaxLimit>
+                    <schedulingSystem reference="../../../.."/>
+                    <capacity>100</capacity>
+                    <currAction>None</currAction>
+                    <intList/>
+                    <syncIntList/>
+                    <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                      <id>FCFS</id>
+                    </saIntList>
+                    <readyList/>
+                    <syncReadyList/>
+                    <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                      <id>FCFS</id>
+                    </saReadyList>
+                    <time>11</time>
+                    <limitTime>-1</limitTime>
+                    <maxTasksNumber>100</maxTasksNumber>
+                  </Controller.SchedulingSystem.Actor>
+                  <Controller.SchedulingSystem.Actor>
+                    <resId>actor0</resId>
+                    <type>actor</type>
+                    <properties>
+                      <entry>
+                        <string>Category</string>
+                        <string>A</string>
+                      </entry>
+                      <entry>
+                        <string>ActorName</string>
+                        <string>John</string>
+                      </entry>
+                    </properties>
+                    <relationsIds/>
+                    <resources/>
+                    <resourceMaxLimit>10</resourceMaxLimit>
+                    <schedulingSystem reference="../../../.."/>
+                    <capacity>10</capacity>
+                    <currAction>None</currAction>
+                    <intList/>
+                    <syncIntList/>
+                    <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                      <id>FCFS</id>
+                    </saIntList>
+                    <readyList/>
+                    <syncReadyList/>
+                    <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
+                      <id>Priorities</id>
+                    </saReadyList>
+                    <time>11</time>
+                    <limitTime>-1</limitTime>
+                    <maxTasksNumber>10</maxTasksNumber>
+                  </Controller.SchedulingSystem.Actor>
+                </actorsList>
+                <resourcesList/>
+                <allResourcesList>
+                  <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[2]"/>
+                </allResourcesList>
+                <tasksList>
+                  <Controller.SchedulingSystem.Task reference="../../../../.."/>
+                </tasksList>
+              </ioSystem>
+              <compLogginSystem>
+                <configurator reference="../../configurator"/>
+                <errorMsgs/>
+                <simulationTimes>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>0</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+                        <taskId>task0</taskId>
+                        <time>1</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>1</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>1</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>The task task0 pass to the ready list of the resource actor0</currentAction>
+                        <taskId>None</taskId>
+                        <time>2</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>2</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList>
+                          <string>task0</string>
+                        </readyList>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>2</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>3</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+                        <taskId>task0</taskId>
+                        <time>3</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>3</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>4</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>The active task task0 fails</currentAction>
+                        <taskId>None</taskId>
+                        <time>4</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList>
+                          <string>task01</string>
+                        </readyList>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>4</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>5</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Select a task from the ready list and put that task as active. The selected task is task01</currentAction>
+                        <taskId>task01</taskId>
+                        <time>5</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>5</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>6</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Procesing active task task01</currentAction>
+                        <taskId>task01</taskId>
+                        <time>6</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>6</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>7</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Procesing active task task01</currentAction>
+                        <taskId>task01</taskId>
+                        <time>7</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>7</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>8</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Procesing active task task01</currentAction>
+                        <taskId>task01</taskId>
+                        <time>8</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>8</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>9</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>Procesing active task task01</currentAction>
+                        <taskId>task01</taskId>
+                        <time>9</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>9</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>10</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>The active task task01 ends</currentAction>
+                        <taskId>None</taskId>
+                        <time>10</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                  <Model.DataModel.SimulationTime.SimulationTime>
+                    <currentTime>10</currentTime>
+                    <actors>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>dealerActor</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>11</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                      <Model.DataModel.SimulationTime.SimulationResource>
+                        <resId>actor0</resId>
+                        <currentAction>None</currentAction>
+                        <taskId>None</taskId>
+                        <time>11</time>
+                        <limitTime>-1</limitTime>
+                        <interruptionList/>
+                        <readyList/>
+                      </Model.DataModel.SimulationTime.SimulationResource>
+                    </actors>
+                  </Model.DataModel.SimulationTime.SimulationTime>
+                </simulationTimes>
+                <logginSystems>
+                  <Model.LogginSystem.XMLLogginSystem>
+                    <configurator reference="../../../../configurator"/>
+                    <simulationTimes reference="../../../simulationTimes"/>
+                    <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.xml</outputFileName>
+                    <fileManager/>
+                  </Model.LogginSystem.XMLLogginSystem>
+                  <Model.LogginSystem.TXTLogginSystem>
+                    <configurator reference="../../../../configurator"/>
+                    <simulationTimes reference="../../../simulationTimes"/>
+                    <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.txt</outputFileName>
+                    <fileManager/>
+                  </Model.LogginSystem.TXTLogginSystem>
+                </logginSystems>
+              </compLogginSystem>
+              <resultsAnalyzer>
+                <schedulingSystem reference="../.."/>
+                <numberOfErrors>0</numberOfErrors>
+                <deadline>80</deadline>
+                <numberOfCycles>11</numberOfCycles>
+                <numberOfTasks>2</numberOfTasks>
+                <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
+                <nbrFailedTasks>1</nbrFailedTasks>
+                <numberOfActors>2</numberOfActors>
+                <numberOfResources>0</numberOfResources>
+                <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
+                <propFinishedTasks>0.5</propFinishedTasks>
+                <propFailedTasks>0.5</propFailedTasks>
+                <propVelocity>7.2727275</propVelocity>
+                <analysis>Results Analisys:
+	Number of errors: 0
+	Deadline (in cycles): 80
+	Number of cycles: 11
+	Total number of executed tasks, including contingency tasks: 2
+	Number of successful tasks, including contingency tasks: 1
+	Number of failed tasks: 1
+	Number of actors: 2
+	Number of other resources (artifacts): 0
+	Mean number of tasks per actor: 1.0
+	Proportions: 
+		Successful tasks proportion, including contingency tasks: 0.5
+		Failed tasks proportion, including contingency tasks: 0.5
+		Velocity proportion (deadline/nbrOfCycles): 7.2727275
+
+</analysis>
+              </resultsAnalyzer>
+              <numberOfTasks>1</numberOfTasks>
+              <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
+              <deadline>80</deadline>
+              <tasks reference="../ioSystem/tasksList"/>
+              <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+              <actorsList reference="../ioSystem/actorsList"/>
+              <resourcesList reference="../ioSystem/resourcesList"/>
+              <finishedList>
+                <Controller.SchedulingSystem.Task reference="../../.."/>
+              </finishedList>
+              <failedFinishedList>
+                <Controller.SchedulingSystem.Task reference="../../../.."/>
+              </failedFinishedList>
+            </schedulingSystem>
+          </contingencyTask>
+          <schedulingSystem reference="../../../.."/>
+        </Controller.SchedulingSystem.Task>
+      </tasksList>
     </ioSystem>
     <compLogginSystem>
       <configurator reference="../../configurator"/>
@@ -368,161 +796,15 @@
     <numberOfTasks>1</numberOfTasks>
     <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
     <deadline>80</deadline>
+    <tasks reference="../ioSystem/tasksList"/>
     <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList>
-      <Controller.SchedulingSystem.Task>
-        <taskId>task01</taskId>
-        <programCounter>3</programCounter>
-        <workUnits>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-          <string>actor0</string>
-        </workUnits>
-        <priority>0</priority>
-        <difficult>5</difficult>
-        <status>New</status>
-        <schedulingSystem>
-          <configurator>
-            <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
-            <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/</inputDir>
-            <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/</outputDir>
-            <projectName>test_case_2</projectName>
-            <bar>/</bar>
-          </configurator>
-          <ioSystem class="Model.IOSystem.XMLIOSystem">
-            <configurator reference="../../configurator"/>
-            <schedulingSystem reference="../.."/>
-            <deadline>80</deadline>
-            <actorsList>
-              <Controller.SchedulingSystem.Actor>
-                <resId>actor0</resId>
-                <type>actor</type>
-                <properties>
-                  <entry>
-                    <string>Category</string>
-                    <string>A</string>
-                  </entry>
-                  <entry>
-                    <string>ActorName</string>
-                    <string>John</string>
-                  </entry>
-                </properties>
-                <relationsIds/>
-                <resources/>
-                <resourceMaxLimit>10</resourceMaxLimit>
-                <schedulingSystem reference="../../../.."/>
-                <capacity>10</capacity>
-                <currAction>Nothing</currAction>
-                <intList/>
-                <syncIntList/>
-                <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-                  <id>FCFS</id>
-                </saIntList>
-                <readyList/>
-                <syncReadyList/>
-                <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
-                  <id>Priorities</id>
-                </saReadyList>
-                <time>0</time>
-                <limitTime>-1</limitTime>
-                <maxTasksNumber>10</maxTasksNumber>
-              </Controller.SchedulingSystem.Actor>
-            </actorsList>
-            <resourcesList/>
-            <allResourcesList>
-              <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
-            </allResourcesList>
-            <tasksList>
-              <Controller.SchedulingSystem.Task>
-                <taskId>task0</taskId>
-                <programCounter>-1</programCounter>
-                <workUnits>
-                  <string>actor0</string>
-                  <string>actor0</string>
-                  <string>actor0</string>
-                  <string>actor0</string>
-                </workUnits>
-                <priority>0</priority>
-                <difficult>15</difficult>
-                <status>New</status>
-                <contTaskId>task01</contTaskId>
-                <contingencyTask reference="../../../../.."/>
-                <schedulingSystem reference="../../../../../../.."/>
-              </Controller.SchedulingSystem.Task>
-            </tasksList>
-          </ioSystem>
-          <compLogginSystem>
-            <configurator reference="../../configurator"/>
-            <errorMsgs/>
-            <simulationTimes/>
-            <logginSystems>
-              <Model.LogginSystem.XMLLogginSystem>
-                <configurator reference="../../../../configurator"/>
-                <simulationTimes reference="../../../simulationTimes"/>
-                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.xml</outputFileName>
-                <fileManager/>
-              </Model.LogginSystem.XMLLogginSystem>
-              <Model.LogginSystem.TXTLogginSystem>
-                <configurator reference="../../../../configurator"/>
-                <simulationTimes reference="../../../simulationTimes"/>
-                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.txt</outputFileName>
-                <fileManager/>
-              </Model.LogginSystem.TXTLogginSystem>
-            </logginSystems>
-          </compLogginSystem>
-          <resultsAnalyzer>
-            <schedulingSystem reference="../.."/>
-            <numberOfErrors>0</numberOfErrors>
-            <deadline>0</deadline>
-            <numberOfCycles>0</numberOfCycles>
-            <numberOfTasks>0</numberOfTasks>
-            <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
-            <nbrFailedTasks>0</nbrFailedTasks>
-            <numberOfActors>0</numberOfActors>
-            <numberOfResources>0</numberOfResources>
-            <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
-            <propFinishedTasks>0.0</propFinishedTasks>
-            <propFailedTasks>0.0</propFailedTasks>
-            <propVelocity>0.0</propVelocity>
-            <analysis></analysis>
-          </resultsAnalyzer>
-          <numberOfTasks>1</numberOfTasks>
-          <dealerActor>
-            <resId>dealerActor</resId>
-            <type>actor</type>
-            <resources/>
-            <resourceMaxLimit>100</resourceMaxLimit>
-            <schedulingSystem reference="../.."/>
-            <capacity>100</capacity>
-            <currAction>Nothing</currAction>
-            <intList/>
-            <syncIntList/>
-            <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-              <id>FCFS</id>
-            </saIntList>
-            <readyList reference="../../ioSystem/tasksList"/>
-            <syncReadyList/>
-            <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
-              <id>FCFS</id>
-            </saReadyList>
-            <time>0</time>
-            <limitTime>-1</limitTime>
-            <maxTasksNumber>100</maxTasksNumber>
-          </dealerActor>
-          <deadline>80</deadline>
-          <newsList reference="../ioSystem/tasksList"/>
-          <actorsList reference="../ioSystem/actorsList"/>
-          <resourcesList reference="../ioSystem/resourcesList"/>
-          <finishedList/>
-          <failedFinishedList/>
-        </schedulingSystem>
-      </Controller.SchedulingSystem.Task>
+      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task/contingencyTask"/>
     </finishedList>
     <failedFinishedList>
-      <Controller.SchedulingSystem.Task reference="../../finishedList/Controller.SchedulingSystem.Task/schedulingSystem/ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
+      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
     </failedFinishedList>
   </schedulingSystem>
   <capacity>10</capacity>

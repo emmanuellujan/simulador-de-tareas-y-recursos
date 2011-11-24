@@ -139,5 +139,9 @@ public class Resource implements Serializable{
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	public void reset(){
+		
+	}
 	
 }

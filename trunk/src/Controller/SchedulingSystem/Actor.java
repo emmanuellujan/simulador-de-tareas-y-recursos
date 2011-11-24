@@ -196,7 +196,7 @@ public class Actor extends Resource {
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " fails";
 			currTask = null;
-		} else if (workUnit.equals("end") || !currTask.evalConditions()) {
+		} else if (workUnit.equals("end")) {
 			/* Sino, si la tarea en ejecución ha llegado a su fin: */
 			// Terminar tarea (pasa a estado finalizado).
 			schedulingSystem.finishTask(currTask);
@@ -322,6 +322,10 @@ public class Actor extends Resource {
 			this.getSchedulingSystem().getCompLogginSystem()
 					.addErrorMsg(errorMsg);
 		}
+	}
+	
+	public void reset(){
+		this.setTime(0);
 	}
 
 	public String getCurrAction() {

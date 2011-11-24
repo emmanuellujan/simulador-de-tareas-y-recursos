@@ -201,4 +201,11 @@ public class Task {
 	public void print() {
 		System.out.println("Task Id: " + this.getTaskId());
 	}
+
+	public void reset() {
+		this.setProgramCounter(-1);
+		Task t = this.getContingencyTask();
+		if(t!=null)
+			t.reset();
+	}
 }
