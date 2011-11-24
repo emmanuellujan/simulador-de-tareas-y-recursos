@@ -7,13 +7,14 @@ import Controller.FilterSystem.Filter;
 public class Task {
 	private String taskId;
 	private int programCounter;
-	private Vector<String> workUnits; // Example: {res1, res1, res1, res0,
-										// int_res0, int_res0, res2, res2, end}
+	
+	private Vector<String> workUnits;
+	// Example: {res1, res1, res1, res0,
+	// int_res0, int_res0, res2, res2, end}
 	private int priority;
 	private int difficult;
-	private String status;// Si bien es un String, el contenido del mismo debe
-							// ser 'En proceso','Finalizada', 'Nueva'. Puede
-							// idearse otra forma de representacion
+	private String status;
+	// Example: {Processing, Finished, New}
 
 	private String contTaskId;
 	private Task contingencyTask;
@@ -40,6 +41,45 @@ public class Task {
 		this.setUpdater(updater);
 	}
 
+	public void decProgramCounter() {
+		int programCounter = this.getProgramCounter();
+		programCounter--;
+		this.setProgramCounter(programCounter);
+	}
+
+	public boolean evalConditions() {
+		Filter filter = this.getFilter();
+		if (filter != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getResourcesList();
+			return filter.eval(resources);
+		}else
+			return true;
+	}
+
+	public void exec() {
+		// Simulated Execution. No need for code.
+	}
+
+	public void execPostProcessing() {
+		Updater updater = this.getUpdater();
+		if (updater != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getResourcesList();
+			int n = resources.size();
+			for (int i = 0; i < n; i++)
+				updater.update(resources.elementAt(i));
+		}
+	}
+
+	public Task getContingencyTask() {
+		return contingencyTask;
+	}
+
+	public String getContTaskId() {
+		return this.contTaskId;
+	}
+
 	public String getCurrent() {
 		Vector<String> workUnits = this.getWorkUnits();
 		int programCounter = this.getProgramCounter();
@@ -47,6 +87,14 @@ public class Task {
 		if (programCounter > -1)
 			current = workUnits.get(programCounter);
 		return current;
+	}
+
+	public int getDifficult() {
+		return difficult;
+	}
+
+	public Filter getFilter() {
+		return filter;
 	}
 
 	public String getNext(Actor actor) {
@@ -72,66 +120,71 @@ public class Task {
 		return next;
 	}
 
-	public void decProgramCounter() {
-		int programCounter = this.getProgramCounter();
-		programCounter--;
-		this.setProgramCounter(programCounter);
-	}
-
-	public void exec() {
-		// Simulated Execution. No need for code.
-	}
-
-	public String getTaskId() {
-		return taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public int getPriority() {
+		return priority;
 	}
 
 	public int getProgramCounter() {
 		return programCounter;
 	}
 
-	public void setProgramCounter(int programCounter) {
-		this.programCounter = programCounter;
+	public SchedulingSystem getSchedulingSystem() {
+		return schedulingSystem;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public String getTaskId() {
+		return taskId;
+	}
+
+	public Updater getUpdater() {
+		return updater;
 	}
 
 	public Vector<String> getWorkUnits() {
 		return this.workUnits;
 	}
 
-	public void setWorkUnits(Vector<String> workUnits) {
-		this.workUnits = workUnits;
+	public void print() {
+		System.out.println("Task Id: " + this.getTaskId());
 	}
 
-	public int getPriority() {
-		return priority;
-	}
-
-	public void setPriority(int priority) {
-		this.priority = priority;
-	}
-
-	public int getDifficult() {
-		return difficult;
-	}
-
-	public void setDifficult(int difficult) {
-		this.difficult = difficult;
-	}
-
-	public Task getContingencyTask() {
-		return contingencyTask;
+	public void reset() {
+		this.setProgramCounter(-1);
+		Task t = this.getContingencyTask();
+		if (t != null)
+			t.reset();
 	}
 
 	public void setContingencyTask(Task contingencyTask) {
 		this.contingencyTask = contingencyTask;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public void setContTaskId(String contTaskId) {
+		this.contTaskId = contTaskId;
+	}
+
+	public void setDifficult(int difficult) {
+		this.difficult = difficult;
+	}
+
+	public void setFilter(Filter filter) {
+		this.filter = filter;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
+	public void setProgramCounter(int programCounter) {
+		this.programCounter = programCounter;
+	}
+
+	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+		this.schedulingSystem = schedulingSystem;
 	}
 
 	public void setStatus(String currentStatus) {
@@ -145,67 +198,15 @@ public class Task {
 			this.status = currentStatus;
 	}
 
-	public void setContTaskId(String contTaskId) {
-		this.contTaskId = contTaskId;
-	}
-
-	public String getContTaskId() {
-		return this.contTaskId;
-	}
-
-	public SchedulingSystem getSchedulingSystem() {
-		return schedulingSystem;
-	}
-
-	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
-		this.schedulingSystem = schedulingSystem;
-	}
-
-	public Filter getFilter() {
-		return filter;
-	}
-
-	public void setFilter(Filter filter) {
-		this.filter = filter;
-	}
-
-	public Updater getUpdater() {
-		return updater;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public void setUpdater(Updater updater) {
 		this.updater = updater;
 	}
 
-	public boolean evalConditions() {
-		Filter filter = this.getFilter();
-		if (filter != null) {
-			Vector<Resource> resources = this.getSchedulingSystem()
-					.getResourcesList();
-			return filter.eval(resources);
-		}
-		return true;
-	}
-
-	public void execPostProcessing() {
-		Updater updater = this.getUpdater();
-		if (updater != null) {
-			Vector<Resource> resources = this.getSchedulingSystem()
-					.getResourcesList();
-			int n = resources.size();
-			for (int i = 0; i < n; i++)
-				updater.update(resources.elementAt(i));
-		}
-	}
-
-	public void print() {
-		System.out.println("Task Id: " + this.getTaskId());
-	}
-
-	public void reset() {
-		this.setProgramCounter(-1);
-		Task t = this.getContingencyTask();
-		if(t!=null)
-			t.reset();
+	public void setWorkUnits(Vector<String> workUnits) {
+		this.workUnits = workUnits;
 	}
 }

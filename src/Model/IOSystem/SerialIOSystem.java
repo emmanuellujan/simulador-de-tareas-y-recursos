@@ -6,61 +6,24 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Vector;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
+import Controller.FilterSystem.EqualPropertyFilter;
+import Controller.FilterSystem.Filter;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Task;
+import Controller.SchedulingSystem.Update;
+import Controller.SchedulingSystem.Updater;
 import Model.DataModel.Configurator.Configurator;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class SerialIOSystem extends IOSystem {
 
 	public SerialIOSystem(Configurator configurator,
 			SchedulingSystem schedulingSystem) {
 		super(configurator, schedulingSystem);
-	}
-
-	public void saveAll() {
-
-		XStream xs = new XStream();
-		try {
-
-			String dir = this.getConfigurator().getOutputDir();
-
-			FileOutputStream fs;
-			Vector<Resource> allResources = this.getSchedulingSystem()
-					.getIoSystem().getAllResourcesList();
-			// Vector<Resource> allResources = this.getAllResourcesList();
-
-			int n = allResources.size();
-			int i = 0;
-			for (i = 0; i < n; i++) {
-				Resource resource = allResources.elementAt(i);
-				fs = new FileOutputStream(dir + i + ".xml");
-				xs.toXML(resource, fs);
-			}
-
-			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-			n = tasks.size();
-			int j = 0;
-			for (j = 0; j < n; j++) {
-				Task task = tasks.elementAt(j);
-				fs = new FileOutputStream(dir + (i + j) + ".xml");
-				xs.toXML(task, fs);
-			}
-
-			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			// int deadline = this.getDeadline();
-			int deadline = this.getSchedulingSystem().getIoSystem()
-					.getDeadline();
-			xs.toXML(deadline, fs);
-
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-
 	}
 
 	public void loadAll() {
@@ -141,6 +104,47 @@ public class SerialIOSystem extends IOSystem {
 		this.setAllResourcesList(allResources);
 		this.setTasksList(tasks);
 		this.updateRelations();
+
+	}
+
+	public void saveAll() {
+
+		XStream xs = new XStream();
+		try {
+
+			String dir = this.getConfigurator().getOutputDir();
+
+			FileOutputStream fs;
+			Vector<Resource> allResources = this.getSchedulingSystem()
+					.getIoSystem().getAllResourcesList();
+			// Vector<Resource> allResources = this.getAllResourcesList();
+
+			int n = allResources.size();
+			int i = 0;
+			for (i = 0; i < n; i++) {
+				Resource resource = allResources.elementAt(i);
+				fs = new FileOutputStream(dir + i + ".xml");
+				xs.toXML(resource, fs);
+			}
+
+			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
+			n = tasks.size();
+			int j = 0;
+			for (j = 0; j < n; j++) {
+				Task task = tasks.elementAt(j);
+				fs = new FileOutputStream(dir + (i + j) + ".xml");
+				xs.toXML(task, fs);
+			}
+
+			fs = new FileOutputStream(dir + (i + j) + ".xml");
+			// int deadline = this.getDeadline();
+			int deadline = this.getSchedulingSystem().getIoSystem()
+					.getDeadline();
+			xs.toXML(deadline, fs);
+
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
 
 	}
 

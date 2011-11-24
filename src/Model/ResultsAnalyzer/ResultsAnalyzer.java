@@ -78,6 +78,66 @@ public class ResultsAnalyzer {
 
 	}
 
+	public String getAnalysis() {
+		return analysis;
+	}
+
+	public int getDeadline() {
+		return deadline;
+	}
+
+	public float getMeanNbrTasksPerActor() {
+		return meanNbrTasksPerActor;
+	}
+
+	public int getNbrFailedTasks() {
+		return nbrFailedTasks;
+	}
+
+	public int getNbrSuccessfulTasks() {
+		return nbrSuccessfulTasks;
+	}
+
+	public int getNumberOfActors() {
+		return numberOfActors;
+	}
+
+	public int getNumberOfCycles() {
+		return numberOfCycles;
+	}
+
+	public int getNumberOfErrors() {
+		return numberOfErrors;
+	}
+
+	public int getNumberOfResources() {
+		return numberOfResources;
+	}
+
+	public int getNumberOfTasks() {
+		return numberOfTasks;
+	}
+
+	public float getPropFailedTasks() {
+		return propFailedTasks;
+	}
+
+	public float getPropFinishedTasks() {
+		return propFinishedTasks;
+	}
+
+	public float getPropVelocity() {
+		return this.propVelocity;
+	}
+
+	public SchedulingSystem getSchedulingSystem() {
+		return schedulingSystem;
+	}
+
+	public void print() {
+		System.out.println(this.getAnalysis());
+	}
+
 	public void renderAnalysis() {
 		String analysis = this.getAnalysis();
 
@@ -125,8 +185,60 @@ public class ResultsAnalyzer {
 		this.setAnalysis(analysis);
 	}
 
-	public void print() {
-		System.out.println(this.getAnalysis());
+	public void setAnalysis(String analysis) {
+		this.analysis = analysis;
+	}
+
+	public void setDeadline(int deadline) {
+		this.deadline = deadline;
+	}
+
+	public void setMeanNbrTasksPerActor(float meanNbrTasksPerActor) {
+		this.meanNbrTasksPerActor = meanNbrTasksPerActor;
+	}
+
+	public void setNbrFailedTasks(int nbrFailedTasks) {
+		this.nbrFailedTasks = nbrFailedTasks;
+	}
+
+	public void setNbrSuccessfulTasks(int nbrSuccessfulTasks) {
+		this.nbrSuccessfulTasks = nbrSuccessfulTasks;
+	}
+
+	public void setNumberOfActors(int numberOfActors) {
+		this.numberOfActors = numberOfActors;
+	}
+
+	public void setNumberOfCycles(int numberOfCycles) {
+		this.numberOfCycles = numberOfCycles;
+	}
+
+	public void setNumberOfErrors(int numberOfErrors) {
+		this.numberOfErrors = numberOfErrors;
+	}
+
+	public void setNumberOfResources(int numberOfResources) {
+		this.numberOfResources = numberOfResources;
+	}
+
+	public void setNumberOfTasks(int numberOfTasks) {
+		this.numberOfTasks = numberOfTasks;
+	}
+
+	public void setPropFailedTasks(float propFailedTasks) {
+		this.propFailedTasks = propFailedTasks;
+	}
+
+	public void setPropFinishedTasks(float propFinishedTasks) {
+		this.propFinishedTasks = propFinishedTasks;
+	}
+
+	public void setPropVelocity(float propVelocity) {
+		this.propVelocity = propVelocity;
+	}
+
+	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+		this.schedulingSystem = schedulingSystem;
 	}
 
 	public void writeAnalysis() {
@@ -137,118 +249,6 @@ public class ResultsAnalyzer {
 				+ "_analysis.txt";
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
-	}
-
-	public SchedulingSystem getSchedulingSystem() {
-		return schedulingSystem;
-	}
-
-	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
-		this.schedulingSystem = schedulingSystem;
-	}
-
-	public int getDeadline() {
-		return deadline;
-	}
-
-	public void setDeadline(int deadline) {
-		this.deadline = deadline;
-	}
-
-	public int getNumberOfErrors() {
-		return numberOfErrors;
-	}
-
-	public void setNumberOfErrors(int numberOfErrors) {
-		this.numberOfErrors = numberOfErrors;
-	}
-
-	public int getNumberOfCycles() {
-		return numberOfCycles;
-	}
-
-	public void setNumberOfCycles(int numberOfCycles) {
-		this.numberOfCycles = numberOfCycles;
-	}
-
-	public int getNumberOfTasks() {
-		return numberOfTasks;
-	}
-
-	public void setNumberOfTasks(int numberOfTasks) {
-		this.numberOfTasks = numberOfTasks;
-	}
-
-	public float getPropFinishedTasks() {
-		return propFinishedTasks;
-	}
-
-	public void setPropFinishedTasks(float propFinishedTasks) {
-		this.propFinishedTasks = propFinishedTasks;
-	}
-
-	public float getPropFailedTasks() {
-		return propFailedTasks;
-	}
-
-	public void setPropFailedTasks(float propFailedTasks) {
-		this.propFailedTasks = propFailedTasks;
-	}
-
-	public int getNbrSuccessfulTasks() {
-		return nbrSuccessfulTasks;
-	}
-
-	public void setNbrSuccessfulTasks(int nbrSuccessfulTasks) {
-		this.nbrSuccessfulTasks = nbrSuccessfulTasks;
-	}
-
-	public int getNbrFailedTasks() {
-		return nbrFailedTasks;
-	}
-
-	public void setNbrFailedTasks(int nbrFailedTasks) {
-		this.nbrFailedTasks = nbrFailedTasks;
-	}
-
-	public void setPropVelocity(float propVelocity) {
-		this.propVelocity = propVelocity;
-	}
-
-	public float getPropVelocity() {
-		return this.propVelocity;
-	}
-
-	public int getNumberOfActors() {
-		return numberOfActors;
-	}
-
-	public void setNumberOfActors(int numberOfActors) {
-		this.numberOfActors = numberOfActors;
-	}
-
-	public int getNumberOfResources() {
-		return numberOfResources;
-	}
-
-	public void setNumberOfResources(int numberOfResources) {
-		this.numberOfResources = numberOfResources;
-	}
-
-	public float getMeanNbrTasksPerActor() {
-		return meanNbrTasksPerActor;
-	}
-
-	public void setMeanNbrTasksPerActor(float meanNbrTasksPerActor) {
-		this.meanNbrTasksPerActor = meanNbrTasksPerActor;
-	}
-
-	public String getAnalysis() {
-		return analysis;
-	}
-
-	public void setAnalysis(String analysis) {
-		this.analysis = analysis;
 	}
 
 }

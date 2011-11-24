@@ -3,8 +3,8 @@ package Controller.SchedulingSystem;
 import java.util.Hashtable;
 import java.util.Vector;
 
-import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingAlgorithmSystem.FCFS;
+import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 
 public class Actor extends Resource {
 
@@ -57,6 +57,62 @@ public class Actor extends Resource {
 
 		this.setTime(0);
 		this.setLimitTime(limitTime);
+	}
+
+	public void addIntList(Task currTask, String workUnit) {
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		Actor actor = schedulingSystem.getResource(workUnit);
+		Vector<Task> syncIntList = actor.getSyncIntList();
+
+		int n = 0;
+		if (actor.getReadyList() != null)
+			n += actor.getReadyList().size();
+		if (actor.getSyncReadyList() != null)
+			n = actor.getSyncReadyList().size();
+		if (actor.getIntList() != null)
+			n += actor.getIntList().size();
+		if (actor.getSyncIntList() != null)
+			n += actor.getSyncIntList().size();
+		if (actor.getCurrTask() != null)
+			n += 1;
+		if (actor.getMaxTasksNumber() > n)
+			syncIntList.add(currTask);
+		else {
+			String errorMsg = "List size greater than allowed. Task "
+					+ currTask.getTaskId()
+					+ " can't be added to the interruption list of "
+					+ actor.getResId();
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
+		}
+	}
+
+	public void addReadyList(Task currTask, String workUnit) {
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		Actor actor = schedulingSystem.getResource(workUnit);
+		Vector<Task> syncReadyList = actor.getSyncReadyList();
+
+		int n = 0;
+		if (actor.getReadyList() != null)
+			n += actor.getReadyList().size();
+		if (actor.getSyncReadyList() != null)
+			n = actor.getSyncReadyList().size();
+		if (actor.getIntList() != null)
+			n += actor.getIntList().size();
+		if (actor.getSyncIntList() != null)
+			n += actor.getSyncIntList().size();
+		if (actor.getCurrTask() != null)
+			n += 1;
+		if (actor.getMaxTasksNumber() > n)
+			syncReadyList.add(currTask);
+		else {
+			String errorMsg = "List size greater than allowed. Task "
+					+ currTask.getTaskId()
+					+ " can't be added to the ready list of "
+					+ actor.getResId();
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
+		}
 	}
 
 	public void exec() {
@@ -112,7 +168,7 @@ public class Actor extends Resource {
 				// Sino:
 				currAction = "None"; // No hacer nada
 			}
-		} else { // Sino hay una tarea activo
+		} else { // Sino hay una tarea activa
 			if (time == limitTime) { // Si el temporizador ha terminado:
 				currAction = "Time is up";
 				String workUnit = currTask.getNext(this); // Se obtiene la
@@ -240,6 +296,54 @@ public class Actor extends Resource {
 		this.setCurrTask(currTask);
 	}
 
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public String getCurrAction() {
+		return currAction;
+	}
+
+	public Task getCurrTask() {
+		return currTask;
+	}
+
+	public Vector<Task> getIntList() {
+		return intList;
+	}
+
+	public int getLimitTime() {
+		return limitTime;
+	}
+
+	public int getMaxTasksNumber() {
+		return maxTasksNumber;
+	}
+
+	public Vector<Task> getReadyList() {
+		return readyList;
+	}
+
+	public SchedulingAlgorithm getSaIntList() {
+		return saIntList;
+	}
+
+	public SchedulingAlgorithm getSaReadyList() {
+		return saReadyList;
+	}
+
+	public Vector<Task> getSyncIntList() {
+		return syncIntList;
+	}
+
+	public Vector<Task> getSyncReadyList() {
+		return syncReadyList;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
 	public void incTime() {
 		int time = this.getTime();
 		time++;
@@ -247,209 +351,11 @@ public class Actor extends Resource {
 		this.syncLists();
 	}
 
-	private void resetTime() {
-		int time = this.getTime();
-		time = 0;
-		this.setTime(time);
-	}
-
-	private void syncLists() {
-		Vector<Task> syncIntList = this.getSyncIntList();
-		Vector<Task> intList = this.getIntList();
-		Vector<Task> syncReadyList = this.getSyncReadyList();
-		Vector<Task> readyList = this.getReadyList();
-
-		intList.addAll(syncIntList);
-		syncIntList.removeAllElements();
-		readyList.addAll(syncReadyList);
-		syncReadyList.removeAllElements();
-
-		this.setSyncIntList(syncIntList);
-		this.setIntList(intList);
-		this.setSyncReadyList(syncReadyList);
-		this.setReadyList(readyList);
-	}
-
-	public void addIntList(Task currTask, String workUnit) {
-		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		Actor actor = schedulingSystem.getResource(workUnit);
-		Vector<Task> syncIntList = actor.getSyncIntList();
-		
-		int n=0;
-		if(actor.getReadyList()!=null)
-			n+=actor.getReadyList().size();
-		if(actor.getSyncReadyList()!=null)
-			n=actor.getSyncReadyList().size();
-		if(actor.getIntList()!=null)
-			n+=actor.getIntList().size();
-		if(actor.getSyncIntList()!=null)
-			n+=actor.getSyncIntList().size();
-		if(actor.getCurrTask()!=null)
-			n+=1;
-		if (actor.getMaxTasksNumber()>n)
-			syncIntList.add(currTask);
-		else {
-			String errorMsg = "List size greater than allowed. Task "
-					+ currTask.getTaskId() + " can't be added to the interruption list of "
-					+ actor.getResId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
-		}
-	}
-
-	public void addReadyList(Task currTask, String workUnit) {
-		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		Actor actor = schedulingSystem.getResource(workUnit);
-		Vector<Task> syncReadyList = actor.getSyncReadyList();
-		
-		int n=0;
-		if(actor.getReadyList()!=null)
-			n+=actor.getReadyList().size();
-		if(actor.getSyncReadyList()!=null)
-			n=actor.getSyncReadyList().size();
-		if(actor.getIntList()!=null)
-			n+=actor.getIntList().size();
-		if(actor.getSyncIntList()!=null)
-			n+=actor.getSyncIntList().size();
-		if(actor.getCurrTask()!=null)
-			n+=1;
-		if (actor.getMaxTasksNumber()>n)
-			syncReadyList.add(currTask);
-		else {
-			String errorMsg = "List size greater than allowed. Task "
-					+ currTask.getTaskId() + " can't be added to the ready list of "
-					+ actor.getResId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
-		}
-	}
-	
-	public void reset(){
-		this.setTime(0);
-	}
-
-	public String getCurrAction() {
-		return currAction;
-	}
-
-	public void setCurrAction(String currAction) {
-		this.currAction = currAction;
-	}
-
-	public Task getCurrTask() {
-		return currTask;
-	}
-
-	public void setCurrTask(Task currTask) {
-		this.currTask = currTask;
-	}
-
-	public Vector<Task> getIntList() {
-		return intList;
-	}
-
-	public void setIntList(Vector<Task> intList) {
-		int n=0;
-		if(this.getReadyList()!=null)
-			n+=this.getReadyList().size();
-		if(this.getSyncReadyList()!=null)
-			n=this.getSyncReadyList().size();
-		if(intList!=null)
-			n+=intList.size();
-		if(this.getSyncIntList()!=null)
-			n+=this.getSyncIntList().size();
-		if(this.getCurrTask()!=null)
-			n+=1;
-		if (this.getMaxTasksNumber()>=n)
-			this.intList = intList;
-		else {
-			String errorMsg = "List size greater than allowed. Interruption list of "
-					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
-		}
-	}
-
-	public SchedulingAlgorithm getSaIntList() {
-		return saIntList;
-	}
-
-	public void setSaIntList(SchedulingAlgorithm saIntList) {
-		this.saIntList = saIntList;
-	}
-
-	public Vector<Task> getReadyList() {
-		return readyList;
-	}
-
-	public void setReadyList(Vector<Task> readyList) {
-		int n=0;
-		if(readyList!=null)
-			n+=readyList.size();
-		if(this.getSyncReadyList()!=null)
-			n=this.getSyncReadyList().size();
-		if(this.getIntList()!=null)
-			n+=this.getIntList().size();
-		if(this.getSyncIntList()!=null)
-			n+=this.getSyncIntList().size();
-		if(this.getCurrTask()!=null)
-			n+=1;
-		if (this.getMaxTasksNumber()>=n)
-			this.readyList = readyList;
-		else {
-			String errorMsg = "List size greater than allowed. Ready list of "
-					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
-		}
-	}
-
-	public SchedulingAlgorithm getSaReadyList() {
-		return saReadyList;
-	}
-
-	public void setSaReadyList(SchedulingAlgorithm saReadyList) {
-		this.saReadyList = saReadyList;
-	}
-
-	public int getTime() {
-		return time;
-	}
-
-	public void setTime(int time) {
-		this.time = time;
-	}
-
-	public int getLimitTime() {
-		return limitTime;
-	}
-
-	public void setLimitTime(int limitTime) {
-		this.limitTime = limitTime;
-	}
-
-	public Vector<Task> getSyncIntList() {
-		return syncIntList;
-	}
-
-	public void setSyncIntList(Vector<Task> syncIntList) {
-		this.syncIntList = syncIntList;
-	}
-
-	public Vector<Task> getSyncReadyList() {
-		return syncReadyList;
-	}
-
-	public void setSyncReadyList(Vector<Task> syncReadyList) {
-		this.syncReadyList = syncReadyList;
-	}
-
-	public int getCapacity() {
-		return capacity;
-	}
-
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public boolean isInactive() {
+		if (this.currAction.equals("None"))
+			return true;
+		else
+			return false;
 	}
 
 	public void print() {
@@ -486,19 +392,115 @@ public class Actor extends Resource {
 
 	}
 
-	public int getMaxTasksNumber() {
-		return maxTasksNumber;
+	public void reset() {
+		this.setTime(0);
+	}
+
+	private void resetTime() {
+		int time = this.getTime();
+		time = 0;
+		this.setTime(time);
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public void setCurrAction(String currAction) {
+		this.currAction = currAction;
+	}
+
+	public void setCurrTask(Task currTask) {
+		this.currTask = currTask;
+	}
+
+	public void setIntList(Vector<Task> intList) {
+		int n = 0;
+		if (this.getReadyList() != null)
+			n += this.getReadyList().size();
+		if (this.getSyncReadyList() != null)
+			n = this.getSyncReadyList().size();
+		if (intList != null)
+			n += intList.size();
+		if (this.getSyncIntList() != null)
+			n += this.getSyncIntList().size();
+		if (this.getCurrTask() != null)
+			n += 1;
+		if (this.getMaxTasksNumber() >= n)
+			this.intList = intList;
+		else {
+			String errorMsg = "List size greater than allowed. Interruption list of "
+					+ this.getResId() + " can't be inicialized.";
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
+		}
+	}
+
+	public void setLimitTime(int limitTime) {
+		this.limitTime = limitTime;
 	}
 
 	public void setMaxTasksNumber(int maxTaskNumber) {
 		this.maxTasksNumber = maxTaskNumber;
 	}
 
-	public boolean isInactive() {
-		if (this.currAction.equals("None"))
-			return true;
-		else
-			return false;
+	public void setReadyList(Vector<Task> readyList) {
+		int n = 0;
+		if (readyList != null)
+			n += readyList.size();
+		if (this.getSyncReadyList() != null)
+			n = this.getSyncReadyList().size();
+		if (this.getIntList() != null)
+			n += this.getIntList().size();
+		if (this.getSyncIntList() != null)
+			n += this.getSyncIntList().size();
+		if (this.getCurrTask() != null)
+			n += 1;
+		if (this.getMaxTasksNumber() >= n)
+			this.readyList = readyList;
+		else {
+			String errorMsg = "List size greater than allowed. Ready list of "
+					+ this.getResId() + " can't be inicialized.";
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
+		}
+	}
+
+	public void setSaIntList(SchedulingAlgorithm saIntList) {
+		this.saIntList = saIntList;
+	}
+
+	public void setSaReadyList(SchedulingAlgorithm saReadyList) {
+		this.saReadyList = saReadyList;
+	}
+
+	public void setSyncIntList(Vector<Task> syncIntList) {
+		this.syncIntList = syncIntList;
+	}
+
+	public void setSyncReadyList(Vector<Task> syncReadyList) {
+		this.syncReadyList = syncReadyList;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	private void syncLists() {
+		Vector<Task> syncIntList = this.getSyncIntList();
+		Vector<Task> intList = this.getIntList();
+		Vector<Task> syncReadyList = this.getSyncReadyList();
+		Vector<Task> readyList = this.getReadyList();
+
+		intList.addAll(syncIntList);
+		syncIntList.removeAllElements();
+		readyList.addAll(syncReadyList);
+		syncReadyList.removeAllElements();
+
+		this.setSyncIntList(syncIntList);
+		this.setIntList(intList);
+		this.setSyncReadyList(syncReadyList);
+		this.setReadyList(readyList);
 	}
 
 }
