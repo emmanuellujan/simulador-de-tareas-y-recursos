@@ -1662,6 +1662,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 		// Los resultados deberian mostrarse de la siguiente forma? Porque es
 		// simplemente un string.
+                this.jTextArea1.setText("");
 		this.getSchedulingSystem().setActorsList(this.getActorsList());
 		this.getSchedulingSystem().setNewsList(this.getNewsList());
 		this.getSchedulingSystem().setResourcesList(this.getResourcesList());
