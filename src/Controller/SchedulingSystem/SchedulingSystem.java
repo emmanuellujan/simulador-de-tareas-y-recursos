@@ -188,16 +188,14 @@ public class SchedulingSystem {
 	}
 
 	public void loadData(String inputDir) {
-		String bar = "";
-		if (inputDir.contains("/"))
-			bar = "/";
-		else
-			bar = "\\\\";
+		
+		String bar = this.getConfigurator().getBarFromPath(inputDir);
+		this.getConfigurator().setInputDir(inputDir+bar);
+		
 		String[] s = inputDir.split(bar);
 		String projectName = s[s.length - 1];
-		this.getConfigurator().setBar(bar);
-		this.getConfigurator().setInputDir(inputDir);
 		this.getConfigurator().setProjectName(projectName);
+		
 		this.loadData();
 	}
 

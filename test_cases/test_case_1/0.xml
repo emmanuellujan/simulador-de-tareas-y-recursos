@@ -22,7 +22,7 @@
       <projectName>test_case_1</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="Model.IOSystem.SerialIOSystem">
+    <ioSystem class="Model.IOSystem.XMLIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
