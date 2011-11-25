@@ -192,7 +192,7 @@ public class SchedulingSystem {
 		if (inputDir.contains("/"))
 			bar = "/";
 		else
-			bar = "\\";
+			bar = "\\\\";
 		String[] s = inputDir.split(bar);
 		String projectName = s[s.length - 1];
 		this.getConfigurator().setBar(bar);
