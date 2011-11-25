@@ -90,7 +90,6 @@ public class Configurator {
 			e.printStackTrace();
 		}
 
-		
 		String bar = this.getBarFromPath(sInputDir);
 		this.setBar(bar);
 		this.setInputDir(sInputDir + bar + sProjectName + bar);
