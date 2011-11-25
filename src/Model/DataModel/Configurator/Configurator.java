@@ -94,7 +94,7 @@ public class Configurator {
 		if (sInputDir.contains("/"))
 			bar = "/";
 		else
-			bar = "\\";
+			bar = "\\\\";
 
 		this.setBar(bar);
 		this.setInputDir(sInputDir + sProjectName + bar);
