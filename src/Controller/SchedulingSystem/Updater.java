@@ -9,12 +9,14 @@ public class Updater {
 	Hashtable<Filter, Update> updates;
 
 	public Updater() {
+		Hashtable<Filter, Update> updates = new Hashtable<Filter, Update>();
+		this.setUpdates(updates);
 	}
 
-	public void addUpdate(Filter f, Update u){
-		this.updates.put(f,u);
+	public void addUpdate(Filter f, Update u) {
+		this.updates.put(f, u);
 	}
-	
+
 	public Hashtable<Filter, Update> getUpdates() {
 		return updates;
 	}

@@ -6,17 +6,19 @@ import java.util.Hashtable;
 public class Update {
 	Hashtable<String, String> properties;
 
-	public Update(){
+	public Update() {
+		Hashtable<String, String> properties = new Hashtable<String, String>();
+		this.setProperties(properties);
 	}
-	
+
+	public void addProperty(String key, String value) {
+		properties.put(key, value);
+	}
+
 	public Hashtable<String, String> getProperties() {
 		return properties;
 	}
 
-	public void addProperty(String key, String value){
-		properties.put(key,value);
-	}
-	
 	public void setProperties(Hashtable<String, String> properties) {
 		this.properties = properties;
 	}
@@ -30,6 +32,9 @@ public class Update {
 			value = properties.get(key);
 			Hashtable<String, String> properties2 = resource.getProperties();
 			properties2.put(key, value);
+			resource.setProperties(properties2);
+			System.out.println("AAAAAAAAAAAAAAAA:"
+					+ resource.getProperties().get(key));
 		}
 	}
 

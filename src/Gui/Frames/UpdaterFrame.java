@@ -1,5 +1,4 @@
 
-
 /*
  * UpdaterFrame.java
  *

@@ -1,5 +1,4 @@
 
-
 /*
  * ErrorFrame.java
  *

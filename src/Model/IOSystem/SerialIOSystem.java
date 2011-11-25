@@ -6,14 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Vector;
 
-import Controller.FilterSystem.EqualPropertyFilter;
-import Controller.FilterSystem.Filter;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Task;
-import Controller.SchedulingSystem.Update;
-import Controller.SchedulingSystem.Updater;
 import Model.DataModel.Configurator.Configurator;
 
 import com.thoughtworks.xstream.XStream;
