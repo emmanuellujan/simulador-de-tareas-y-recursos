@@ -90,19 +90,24 @@ public class Configurator {
 			e.printStackTrace();
 		}
 
+		
+		String bar = this.getBarFromPath(sInputDir);
+		this.setBar(bar);
+		this.setInputDir(sInputDir + bar + sProjectName + bar);
+		this.setOutputDir(sOutputDir +  bar + sProjectName + bar);
+		this.setProjectName(sProjectName);
+	
+	}
+
+	public String getBarFromPath(String s){
 		String bar = "";
-		if (sInputDir.contains("/"))
+		if (s.contains("/"))
 			bar = "/";
 		else
 			bar = "\\\\";
-
-		this.setBar(bar);
-		this.setInputDir(sInputDir + sProjectName + bar);
-		this.setOutputDir(sOutputDir + sProjectName + bar);
-		this.setProjectName(sProjectName);
-
+		return bar;
 	}
-
+	
 	public void setInputDir(String inputDir) {
 		this.inputDir = inputDir;
 	}

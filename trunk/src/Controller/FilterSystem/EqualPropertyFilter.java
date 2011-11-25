@@ -14,8 +14,9 @@ public class EqualPropertyFilter extends PropertyFilter {
 
 	@Override
 	public boolean eval(Object a) {
-		return (((Resource) a).getProperty(this.getKey().toString())
-				.equals(this.getValue()));
+		//System.out.println(":"+(String)this.getKey()+" "+(String)this.getValue());
+		return (((Resource) a).getProperty((String)this.getKey())
+				.equals((String)this.getValue()));
 	}
 
 }

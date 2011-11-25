@@ -52,7 +52,16 @@ public class Task {
 		if (filter != null) {
 			Vector<Resource> resources = this.getSchedulingSystem()
 					.getResourcesList();
-			return filter.eval(resources);
+			
+			boolean r = false;
+			int n = resources.size();
+			int i =0;
+			while(!r && i<n){
+				r = filter.eval(resources.elementAt(i));
+				i++;
+			}
+			return r;
+			//return filter.eval(resources);
 		} else
 			return true;
 	}
