@@ -109,6 +109,8 @@ public class SerialIOSystem extends IOSystem {
 		try {
 
 			String dir = this.getConfigurator().getOutputDir();
+			File directory = new File(dir);
+			directory.mkdir(); 
 
 			FileOutputStream fs;
 			Vector<Resource> allResources = this.getSchedulingSystem()

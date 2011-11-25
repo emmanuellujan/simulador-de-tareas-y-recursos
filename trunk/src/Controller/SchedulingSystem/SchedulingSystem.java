@@ -35,8 +35,8 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		IOSystem ioSystem = new XMLIOSystem(configurator, this);
-		// IOSystem ioSystem = new SerialIOSystem(configurator, this);
+		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		int deadline = 0;
@@ -210,7 +210,6 @@ public class SchedulingSystem {
 		n = allResources.size();
 		for (int i = 0; i < n; i++)
 			allResources.elementAt(i).reset();
-
 	}
 
 	public void saveData() {
@@ -229,7 +228,7 @@ public class SchedulingSystem {
 
 	public void saveData(String projectName, String outputDir) {
 		String bar = this.getConfigurator().getBar();
-		outputDir = outputDir + projectName + bar;
+		outputDir = outputDir + bar + projectName + bar;
 		this.getConfigurator().setOutputDir(outputDir);
 		this.saveData();
 	}
