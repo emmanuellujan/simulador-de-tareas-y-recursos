@@ -30,6 +30,7 @@ public class ResultsAnalyzer {
 	}
 
 	public void analyze() {
+                this.setAnalysis("");
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		CompLogginSystem logger = schedulingSystem.getCompLogginSystem();
 
