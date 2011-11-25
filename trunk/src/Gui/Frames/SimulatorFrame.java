@@ -1551,8 +1551,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 				if (!this.getLoadState())
 					this.getSchedulingSystem().saveData(
 							this.getProjectName(),
-							fileChooser.getSelectedFile().getAbsolutePath()
-									+ "\\");
+							fileChooser.getSelectedFile().getAbsolutePath());
 				else
 					this.getSchedulingSystem().saveData(
 							fileChooser.getSelectedFile().getAbsolutePath());
@@ -1567,7 +1566,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		if (seleccion == JFileChooser.APPROVE_OPTION) {
 			System.out.println(fileChooser.getSelectedFile().getAbsolutePath());
 			this.getSchedulingSystem().loadData(
-					fileChooser.getSelectedFile().getAbsolutePath() + "\\");
+					fileChooser.getSelectedFile().getAbsolutePath());
 			this.setLoadState();
 			this.setActorsList(this.getSchedulingSystem().getActorsList());
 			this.setResourcesList(this.getSchedulingSystem().getResourcesList());
