@@ -12,12 +12,16 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import Controller.FilterSystem.AndFilter;
+import Controller.FilterSystem.EqualPropertyFilter;
 import Controller.SchedulingAlgorithmSystem.SAFactory;
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingSystem.Actor;
 import Controller.SchedulingSystem.Resource;
 import Controller.SchedulingSystem.SchedulingSystem;
 import Controller.SchedulingSystem.Task;
+import Controller.SchedulingSystem.Update;
+import Controller.SchedulingSystem.Updater;
 import Model.DataModel.Configurator.Configurator;
 
 public class XMLIOSystem extends IOSystem {
@@ -254,6 +258,41 @@ public class XMLIOSystem extends IOSystem {
 							sContingencyTask, null, "New",
 							Integer.parseInt(sDifficult),
 							this.getSchedulingSystem(), null, null);
+
+					// BEGIN TEST3
+					if (task.getTaskId().equals("task0_")) {
+
+						// Esta tarea necesita ser ejecutada siempre por un
+						// empleado
+						// Categoría A
+						String key = "Category";
+						String value = "A";
+						EqualPropertyFilter epf1 = new EqualPropertyFilter(key,
+								value);
+						task.setFilter(epf1);
+
+						// Cuando la tarea termina se busca un reporte vacío
+						key = "type";
+						value = "report";
+						epf1 = new EqualPropertyFilter(key, value);
+
+						key = "state";
+						value = "empty";
+						EqualPropertyFilter epf2 = new EqualPropertyFilter(key,
+								value);
+
+						AndFilter af = new AndFilter(epf1, epf2);
+
+						// y luego se actualización el reporte como completo
+						Update u1 = new Update();
+						key = "state";
+						value = "complete";
+						u1.addProperty(key, value);
+						Updater u = new Updater();
+						u.addUpdate(af, u1);
+						task.setUpdater(u);
+					}
+					// END TEST
 
 					tasks.add(task);
 				}

@@ -1,5 +1,4 @@
 
-
 /*
  * CreateFilterFrame.java
  *
@@ -10,8 +9,8 @@ package Gui.Frames;
 import java.util.Vector;
 
 import Controller.FilterSystem.AndFilter;
-import Controller.FilterSystem.Filter;
 import Controller.FilterSystem.EqualFilter;
+import Controller.FilterSystem.Filter;
 import Controller.FilterSystem.JobPositionFilter;
 import Controller.FilterSystem.PropertyListFilter;
 import Controller.SchedulingSystem.Resource;

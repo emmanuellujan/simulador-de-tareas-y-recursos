@@ -1,5 +1,4 @@
 
-
 /*
  * CreateArtifactFrame.java
  *

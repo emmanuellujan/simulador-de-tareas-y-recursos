@@ -7,7 +7,7 @@ import Controller.FilterSystem.Filter;
 public class Task {
 	private String taskId;
 	private int programCounter;
-	
+
 	private Vector<String> workUnits;
 	// Example: {res1, res1, res1, res0,
 	// int_res0, int_res0, res2, res2, end}
@@ -53,7 +53,7 @@ public class Task {
 			Vector<Resource> resources = this.getSchedulingSystem()
 					.getResourcesList();
 			return filter.eval(resources);
-		}else
+		} else
 			return true;
 	}
 

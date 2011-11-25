@@ -1,5 +1,4 @@
 
-
 /*
  * DeleteActorFrame.java
  *

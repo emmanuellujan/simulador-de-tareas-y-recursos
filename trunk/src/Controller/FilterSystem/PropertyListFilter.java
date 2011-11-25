@@ -1,4 +1,3 @@
-
 package Controller.FilterSystem;
 
 import java.util.Vector;
@@ -22,7 +21,6 @@ public class PropertyListFilter extends Filter {
 		this.setResource(currentResource);
 	}
 
-	@Override
 	public boolean eval(Object a) {
 		Resource r1 = (Resource) a;
 		Vector<Resource> elements = ((Vector<Resource>) a);
