@@ -113,9 +113,11 @@ public class SerialIOSystem extends IOSystem {
 			directory.mkdir(); 
 
 			FileOutputStream fs;
-			//Vector<Resource> allResources = this.getSchedulingSystem()
-			//		.getIoSystem().getAllResourcesList();
-			Vector<Resource> allResources = this.getSchedulingSystem().getResourcesList();
+                        Vector<Resource> allResources = new Vector<Resource>();
+                        if(this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
+                            allResources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
+                        if(this.getSchedulingSystem().getResourcesList() != null)
+                            allResources.addAll(this.getSchedulingSystem().getResourcesList());
 
 			int n = allResources.size();
 			int i = 0;
