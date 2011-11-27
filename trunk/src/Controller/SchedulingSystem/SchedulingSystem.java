@@ -159,10 +159,10 @@ public class SchedulingSystem {
 
 		IOSystem ioSystem = this.getIoSystem();
 		int deadline = this.getDeadline();
-		Vector<Task> newsList = this.getNewsList();
-		Vector<Task> tasks = this.getTasks();
-		Vector<Actor> actorsList = this.getActorsList();
-		Vector<Resource> resourcesList = this.getResourcesList();
+		Vector<Task> newsList = new Vector<Task>(); 
+		Vector<Task> tasks = new Vector<Task>();
+		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Resource> resourcesList = new Vector<Resource>();
 
 		ioSystem.loadAll();
 		deadline = ioSystem.getDeadline();
