@@ -141,43 +141,43 @@ public class ResultsAnalyzer {
 	public void renderAnalysis() {
 		String analysis = this.getAnalysis();
 
-		analysis += "Results Analisys:\n";
+		analysis += "Results Analisys:\n\n";
 
-		analysis += "\tNumber of errors: " + this.getNumberOfErrors() + "\n";
+		analysis += "Number of errors: " + this.getNumberOfErrors() + "\n";
 
-		analysis += "\tDeadline (in cycles): " + this.getDeadline() + "\n";
+		analysis += "Deadline (in cycles): " + this.getDeadline() + "\n";
 
-		analysis += "\tNumber of cycles: " + this.getNumberOfCycles() + "\n";
+		analysis += "Number of cycles: " + this.getNumberOfCycles() + "\n";
 
-		analysis += "\tTotal number of executed tasks, including contingency tasks: "
+		analysis += "Total number of executed tasks, including contingency tasks: "
 				+ this.getNumberOfTasks() + "\n";
 
-		analysis += "\tNumber of successful tasks, including contingency tasks: "
+		analysis += "Number of successful tasks, including contingency tasks: "
 				+ this.getNbrSuccessfulTasks() + "\n";
 
-		analysis += "\tNumber of failed tasks: " + this.getNbrFailedTasks()
+		analysis += "Number of failed tasks: " + this.getNbrFailedTasks()
 				+ "\n";
 
-		analysis += "\tNumber of actors: " + this.getNumberOfActors() + "\n";
+		analysis += "Number of actors: " + this.getNumberOfActors() + "\n";
 
-		analysis += "\tNumber of other resources (artifacts): "
+		analysis += "Number of other resources (artifacts): "
 				+ this.getNumberOfResources() + "\n";
 
-		analysis += "\tMean number of tasks per actor: "
-				+ this.getMeanNbrTasksPerActor() + "\n";
+		analysis += "Mean number of tasks per actor: "
+				+ this.getMeanNbrTasksPerActor() + "\n\n";
 
-		analysis += "\tProportions: \n";
+		analysis += "Proportions: \n\n";
 
-		analysis += "\t\tSuccessful tasks proportion, including contingency tasks: "
+		analysis += "Successful tasks proportion, including contingency tasks: "
 				+ this.getPropFinishedTasks() + "\n";
 
-		analysis += "\t\tFailed tasks proportion, including contingency tasks: "
+		analysis += "Failed tasks proportion, including contingency tasks: "
 				+ this.getPropFailedTasks() + "\n";
 
-		analysis += "\t\tVelocity proportion (deadline/nbrOfCycles): "
+		analysis += "Velocity proportion (deadline/nbrOfCycles): "
 				+ this.getPropVelocity() + "\n";
 
-		analysis += "\n";
+		analysis += "\n\n";
 
 		analysis += this.getSchedulingSystem().getCompLogginSystem()
 				.renderErrors();
