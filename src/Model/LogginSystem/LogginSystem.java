@@ -55,9 +55,9 @@ public abstract class LogginSystem {
 		Vector<String> errorsMsgs = this.getErrorMsgs();
 		int n = errorsMsgs.size();
 		if (n > 0) {
-			errors += "Errors:\n";
+			errors += "Errors:\n\n";
 			for (int i = 0; i < n; i++) {
-				errors += "\t" + i + ". " + errorsMsgs.elementAt(i) + "\n";
+				errors += i + ". " + errorsMsgs.elementAt(i) + "\n";
 			}
 		}
 		return errors;
