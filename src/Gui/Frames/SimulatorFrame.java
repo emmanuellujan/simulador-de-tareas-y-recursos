@@ -969,6 +969,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Guardar");
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileChooser.setApproveButtonText("Guardar");
 		int seleccion = fileChooser.showOpenDialog(null);
 		if (seleccion == JFileChooser.APPROVE_OPTION) {
 			if (this.jTextField1.getText().equals("")) {
