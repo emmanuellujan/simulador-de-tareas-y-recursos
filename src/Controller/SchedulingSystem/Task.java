@@ -51,17 +51,17 @@ public class Task {
 		Filter filter = this.getFilter();
 		if (filter != null) {
 			Vector<Resource> resources = this.getSchedulingSystem()
-					.getResourcesList();
-			
+					.getIoSystem().getAllResourcesList();
+
 			boolean r = false;
 			int n = resources.size();
-			int i =0;
-			while(!r && i<n){
+			int i = 0;
+			while (!r && i < n) {
 				r = filter.eval(resources.elementAt(i));
 				i++;
 			}
 			return r;
-			//return filter.eval(resources);
+			// return filter.eval(resources);
 		} else
 			return true;
 	}

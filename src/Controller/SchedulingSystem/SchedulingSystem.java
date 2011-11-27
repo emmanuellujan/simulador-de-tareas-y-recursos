@@ -35,7 +35,7 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
@@ -104,10 +104,6 @@ public class SchedulingSystem {
 
 	public Vector<Task> getFinishedList() {
 		return finishedList;
-	}
-
-	public IOSystem getInputSystem() {
-		return ioSystem;
 	}
 
 	public IOSystem getIoSystem() {
@@ -271,10 +267,6 @@ public class SchedulingSystem {
 
 	public void setFinishedList(Vector<Task> finishedList) {
 		this.finishedList = finishedList;
-	}
-
-	public void setInputSystem(IOSystem InputSystem) {
-		this.ioSystem = InputSystem;
 	}
 
 	public void setIoSystem(IOSystem ioSystem) {

@@ -1,0 +1,54 @@
+Time: 0
+	ResourceId: dealerActor
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 0
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+
+Time: 1
+	ResourceId: dealerActor
+		Current Action: The active task task0 fails
+		Active Task: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 1
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+
+Time: 2
+	ResourceId: dealerActor
+		Current Action: None
+		Active Task: None
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 2
+		Limit Time: 5
+		Interruption List: 
+		Ready List:
+
+

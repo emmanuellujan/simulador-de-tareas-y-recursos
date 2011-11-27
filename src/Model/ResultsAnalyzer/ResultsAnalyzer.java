@@ -30,7 +30,6 @@ public class ResultsAnalyzer {
 	}
 
 	public void analyze() {
-                this.setAnalysis("");
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		CompLogginSystem logger = schedulingSystem.getCompLogginSystem();
 
@@ -53,7 +52,7 @@ public class ResultsAnalyzer {
 		int numberOfTasks = nbrSuccessfulTasks + nbrFailedTasks;
 		this.setNumberOfTasks(numberOfTasks);
 
-		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
+		int numberOfActors = this.getSchedulingSystem().getActorsList().size()-1;
 		this.setNumberOfActors(numberOfActors);
 
 		int numberOfResources = this.getSchedulingSystem().getResourcesList()
