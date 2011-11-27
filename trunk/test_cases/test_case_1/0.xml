@@ -22,7 +22,7 @@
       <projectName>test_case_1</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="Model.IOSystem.XMLIOSystem">
+    <ioSystem class="Model.IOSystem.SerialIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
@@ -333,9 +333,9 @@
       <numberOfTasks>1</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>0</nbrFailedTasks>
-      <numberOfActors>2</numberOfActors>
+      <numberOfActors>1</numberOfActors>
       <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>0.5</meanNbrTasksPerActor>
+      <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
       <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
       <propVelocity>8.0</propVelocity>
@@ -346,9 +346,9 @@
 	Total number of executed tasks, including contingency tasks: 1
 	Number of successful tasks, including contingency tasks: 1
 	Number of failed tasks: 0
-	Number of actors: 2
+	Number of actors: 1
 	Number of other resources (artifacts): 0
-	Mean number of tasks per actor: 0.5
+	Mean number of tasks per actor: 1.0
 	Proportions: 
 		Successful tasks proportion, including contingency tasks: 1.0
 		Failed tasks proportion, including contingency tasks: 0.0
