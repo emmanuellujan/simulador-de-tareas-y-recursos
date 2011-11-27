@@ -223,7 +223,7 @@ public class SchedulingSystem {
 	}
 
 	public void saveData(String projectName, String outputDir) {
-		String bar = this.getConfigurator().getBar();
+                String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
 		outputDir = outputDir + bar + projectName + bar;
 		this.getConfigurator().setOutputDir(outputDir);
 		this.saveData();
