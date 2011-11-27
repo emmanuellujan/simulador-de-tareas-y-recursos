@@ -113,9 +113,9 @@ public class SerialIOSystem extends IOSystem {
 			directory.mkdir(); 
 
 			FileOutputStream fs;
-			Vector<Resource> allResources = this.getSchedulingSystem()
-					.getIoSystem().getAllResourcesList();
-			// Vector<Resource> allResources = this.getAllResourcesList();
+			//Vector<Resource> allResources = this.getSchedulingSystem()
+			//		.getIoSystem().getAllResourcesList();
+			Vector<Resource> allResources = this.getSchedulingSystem().getResourcesList();
 
 			int n = allResources.size();
 			int i = 0;
@@ -152,6 +152,7 @@ public class SerialIOSystem extends IOSystem {
 		for (int i = 0; i < allResList.size(); i++) {
 			Resource resource = allResList.elementAt(i);
 			resource.getResources().clear();
+                        if(resource.getRelationsIds() != null)
 			for (int j = 0; j < resource.getRelationsIds().size(); j++) {
 				String resourceId = resource.getRelationsIds().elementAt(j);
 				boolean resourceFound = false;
