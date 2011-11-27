@@ -4490,9 +4490,9 @@
                   <numberOfTasks>3</numberOfTasks>
                   <nbrSuccessfulTasks>3</nbrSuccessfulTasks>
                   <nbrFailedTasks>0</nbrFailedTasks>
-                  <numberOfActors>3</numberOfActors>
+                  <numberOfActors>2</numberOfActors>
                   <numberOfResources>2</numberOfResources>
-                  <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
+                  <meanNbrTasksPerActor>1.5</meanNbrTasksPerActor>
                   <propFinishedTasks>1.0</propFinishedTasks>
                   <propFailedTasks>0.0</propFailedTasks>
                   <propVelocity>1.4035088</propVelocity>
@@ -4503,9 +4503,9 @@
 	Total number of executed tasks, including contingency tasks: 3
 	Number of successful tasks, including contingency tasks: 3
 	Number of failed tasks: 0
-	Number of actors: 3
+	Number of actors: 2
 	Number of other resources (artifacts): 2
-	Mean number of tasks per actor: 1.0
+	Mean number of tasks per actor: 1.5
 	Proportions: 
 		Successful tasks proportion, including contingency tasks: 1.0
 		Failed tasks proportion, including contingency tasks: 0.0
