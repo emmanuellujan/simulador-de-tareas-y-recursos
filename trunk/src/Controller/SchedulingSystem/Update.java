@@ -23,19 +23,23 @@ public class Update {
 		this.properties = properties;
 	}
 
-	public void update(Resource resource) {
-		Hashtable<String, String> properties = this.getProperties();
-		Enumeration<String> e = properties.keys();
-		String key, value;
-		while (e.hasMoreElements()) {
-			key = e.nextElement();
-			value = properties.get(key);
-			Hashtable<String, String> properties2 = resource.getProperties();
-			properties2.put(key, value);
-			resource.setProperties(properties2);
-			System.out.println("AAAAAAAAAAAAAAAA:"
-					+ resource.getProperties().get(key));
-		}
+	public boolean update(Resource resource) {
+		Hashtable<String, String> propsResource = resource.getProperties();
+		if(propsResource!=null){
+			Hashtable<String, String> properties = this.getProperties();
+			Enumeration<String> e = properties.keys();
+			String key, value;
+			
+			while (e.hasMoreElements()) {
+				key = e.nextElement();
+				value = properties.get(key);
+				propsResource.put(key, value);
+				resource.setProperties(propsResource);	
+			}
+			
+			return true;
+		}else
+			return false;
 	}
 
 }

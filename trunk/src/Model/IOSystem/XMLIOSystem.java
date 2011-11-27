@@ -14,6 +14,7 @@ import org.w3c.dom.NodeList;
 
 import Controller.FilterSystem.AndFilter;
 import Controller.FilterSystem.EqualPropertyFilter;
+import Controller.FilterSystem.TaskOwnerFilter;
 import Controller.SchedulingAlgorithmSystem.SAFactory;
 import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import Controller.SchedulingSystem.Actor;
@@ -259,17 +260,21 @@ public class XMLIOSystem extends IOSystem {
 							Integer.parseInt(sDifficult),
 							this.getSchedulingSystem(), null, null);
 
-					// BEGIN TEST3
-					if (task.getTaskId().equals("task0_")) {
+					// BEGIN TEST_CASE_3
+					if (task.getTaskId().equals("task0")) {
 
 						// Esta tarea necesita ser ejecutada siempre por un
-						// empleado
-						// Categoría A
+						// empleado Categoría A
 						String key = "Category";
 						String value = "A";
 						EqualPropertyFilter epf1 = new EqualPropertyFilter(key,
 								value);
-						task.setFilter(epf1);
+
+						TaskOwnerFilter tof = new TaskOwnerFilter(task);
+
+						AndFilter af = new AndFilter(epf1, tof);
+
+						task.setFilter(af);
 
 						// Cuando la tarea termina se busca un reporte vacío
 						key = "type";
@@ -281,7 +286,7 @@ public class XMLIOSystem extends IOSystem {
 						EqualPropertyFilter epf2 = new EqualPropertyFilter(key,
 								value);
 
-						AndFilter af = new AndFilter(epf1, epf2);
+						af = new AndFilter(epf1, epf2);
 
 						// y luego se actualización el reporte como completo
 						Update u1 = new Update();

@@ -50,7 +50,7 @@ public class Resource implements Serializable {
 		return this.properties;
 	}
 
-	public Object getProperty(String key) {
+	public String getProperty(String key) {
 		return properties.get(key);
 	}
 

@@ -503,4 +503,35 @@ public class Actor extends Resource {
 		this.setReadyList(readyList);
 	}
 
+	private boolean searchTaskInList(String taskId, Vector<Task> list){
+		int i=0;
+		int n=list.size();
+		boolean found = false; 
+		while(!found && i<n){
+			if(list.elementAt(i).getTaskId().equals(taskId))
+				found = true;
+			i++;
+		}
+		return found;
+	}
+	
+	public boolean owns(Task t) {
+		Task currTask = this.getCurrTask();
+		String taskId = t.getTaskId();
+		boolean owns = false; 
+		
+		if(currTask!=null && currTask.getTaskId().equals(taskId))
+			owns = true;
+		else if( searchTaskInList(taskId,this.getReadyList()))
+			owns = true;
+		else if( searchTaskInList(taskId,this.getSyncReadyList()))
+			owns = true;
+		else if( searchTaskInList(taskId,this.getIntList()))
+			owns = true;
+		else if( searchTaskInList(taskId,this.getSyncIntList()))
+			owns = true;
+		
+		return owns;
+	}
+
 }
