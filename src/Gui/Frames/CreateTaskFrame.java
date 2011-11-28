@@ -148,6 +148,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 	private javax.swing.JTextArea jTextArea1;
 	private javax.swing.JTextField jTextField1;
 	private javax.swing.JTextField jTextField2;
+
 	// End of variables declaration//GEN-END:variables
 	/** Creates new form CreateTaskFrame */
 	public CreateTaskFrame() {
@@ -156,21 +157,27 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		this.jTextArea1.setLineWrap(true);
 		this.jTextArea1.setWrapStyleWord(true);
 	}
+
 	public Vector<Actor> getActorsList() {
 		return this.actorsCurrentList;
 	}
+
 	public Filter getFilter() {
 		return this.mainFilter;
 	}
+
 	public Vector<Resource> getMainResourcesList() {
 		return resourcesMainList;
 	}
+
 	public Vector<Task> getNewsList() {
 		return newsList;
 	}
+
 	public Task getNewTask() {
 		return this.newTask;
 	}
+
 	public Vector<Resource> getResourcesList() {
 		return resourcesList;
 	}
@@ -182,9 +189,11 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 	public Updater getUpdater() {
 		return this.updater;
 	}
+
 	private Vector getWorkUnitList() {
 		return this.workUnitList;
 	}
+
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always
@@ -620,6 +629,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
+
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
 
 		if ((!this.jTextField1.getText().equals(""))
@@ -651,11 +661,13 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		}
 
 	}// GEN-LAST:event_jButton1ActionPerformed
+
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		this.setVisible(false);
 		SimulatorFrame.getInstance().setLocationRelativeTo(null);
 		SimulatorFrame.getInstance().setVisible(true);
 	}// GEN-LAST:event_jButton2ActionPerformed
+
 	/*
 	 * Filter creation and adding to the task
 	 */
@@ -673,6 +685,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		filterFrame.main(null);
 		filterFrame.setVisible(true);
 	}// GEN-LAST:event_jButton3ActionPerformed
+
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
 		if (this.jComboBox1.getSelectedItem() != null) {
 			this.workUnitList.add((String) this.jComboBox1.getSelectedItem());
@@ -685,6 +698,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 			NewsFrame.getInstance().setVisible(true);
 		}
 	}// GEN-LAST:event_jButton4ActionPerformed
+
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
 		this.setVisible(false);
 		UpdaterFrame currentUpdater = new UpdaterFrame();
@@ -697,9 +711,11 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		currentUpdater.setUpdater(this.getUpdater());
 		currentUpdater.main(null);
 	}// GEN-LAST:event_jButton5ActionPerformed
+
 	private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBox2ActionPerformed
 		// TODO add your handling code here:
 	}// GEN-LAST:event_jComboBox2ActionPerformed
+
 	private void setActorCombobox() {
 		this.jComboBox1.removeAllItems();
 		for (int i = 0; i < this.getActorsList().size(); i++) {
@@ -707,10 +723,12 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 					.getResId());
 		}
 	}
+
 	public void setActorsList(Vector<Actor> currentActors) {
 		this.actorsCurrentList = currentActors;
 		this.setActorCombobox();
 	}
+
 	private void setFieldsValuesEmpty() {
 		this.jTextField1.setText(null);
 		this.jTextField2.setText(null);
@@ -719,30 +737,39 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		this.setWorkUnitList(new Vector());
 		this.jTextArea1.setText("");
 	}
+
 	public void setFilter(Filter selectedFilter) {
 		this.mainFilter = selectedFilter;
 	}
+
 	public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
 		this.resourcesMainList = resourcesPrincipalList;
 	}
+
 	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
 	}
+
 	public void setNewTask(Task task) {
 		this.newTask = task;
 	}
+
 	public void setResourcesList(Vector<Resource> resourcesList) {
 		this.resourcesList = resourcesList;
 	}
+
 	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
 		this.currentSchedulingSystem = schedulingSystem;
 	}
+
 	public void setUpdater(Updater updater) {
 		this.updater = updater;
 	}
+
 	private void setWorkUnitList(Vector currentList) {
 		this.workUnitList = currentList;
 	}
+
 	private void writeTextArea() {
 		this.jTextArea1.setText(null);
 		for (int i = 0; i < this.getWorkUnitList().size(); i++) {

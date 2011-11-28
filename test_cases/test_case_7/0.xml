@@ -42,12 +42,12 @@
           <type>artifact</type>
           <properties>
             <entry>
-              <string>type</string>
-              <string>artifact</string>
-            </entry>
-            <entry>
               <string>charge</string>
               <string>700pages</string>
+            </entry>
+            <entry>
+              <string>type</string>
+              <string>artifact</string>
             </entry>
             <entry>
               <string>description</string>
@@ -92,6 +92,8 @@
                     <Controller.SchedulingSystem.Actor>
                       <resId>dealerActor</resId>
                       <type>actor</type>
+                      <properties/>
+                      <relationsIds/>
                       <resources/>
                       <resourceMaxLimit>100</resourceMaxLimit>
                       <schedulingSystem reference="../../../.."/>
@@ -253,12 +255,12 @@
                                         <type>artifact</type>
                                         <properties>
                                           <entry>
-                                            <string>type</string>
-                                            <string>artifact</string>
-                                          </entry>
-                                          <entry>
                                             <string>charge</string>
                                             <string>700pages</string>
+                                          </entry>
+                                          <entry>
+                                            <string>type</string>
+                                            <string>artifact</string>
                                           </entry>
                                           <entry>
                                             <string>description</string>
@@ -4496,20 +4498,24 @@
                   <propFinishedTasks>1.0</propFinishedTasks>
                   <propFailedTasks>0.0</propFailedTasks>
                   <propVelocity>1.4035088</propVelocity>
-                  <analysis>Results Analisys:
-	Number of errors: 0
-	Deadline (in cycles): 80
-	Number of cycles: 57
-	Total number of executed tasks, including contingency tasks: 3
-	Number of successful tasks, including contingency tasks: 3
-	Number of failed tasks: 0
-	Number of actors: 2
-	Number of other resources (artifacts): 2
-	Mean number of tasks per actor: 1.5
-	Proportions: 
-		Successful tasks proportion, including contingency tasks: 1.0
-		Failed tasks proportion, including contingency tasks: 0.0
-		Velocity proportion (deadline/nbrOfCycles): 1.4035088
+                  <analysis>= Results Analisys = 
+
+Number of errors: 0
+Deadline (in cycles): 80
+Number of cycles: 57
+Total number of executed tasks, including contingency tasks: 3
+Number of successful tasks, including contingency tasks: 3
+Number of failed tasks: 0
+Number of actors: 2
+Number of other resources (artifacts): 2
+Mean number of tasks per actor: 1.5
+
+Proportions: 
+
+Successful tasks proportion, including contingency tasks: 1.0
+Failed tasks proportion, including contingency tasks: 0.0
+Velocity proportion (deadline/nbrOfCycles): 1.4035088
+
 
 </analysis>
                 </resultsAnalyzer>

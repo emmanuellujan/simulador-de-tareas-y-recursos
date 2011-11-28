@@ -1,4 +1,3 @@
-
 /*
  * CreateFilterFrame.java
  *

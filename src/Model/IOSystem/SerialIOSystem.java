@@ -102,16 +102,16 @@ public class SerialIOSystem extends IOSystem {
 		this.updateRelations();
 
 	}
-        
-        public void removeDuplicatedResources(Vector allResources){
-            for(int i = 0; i < allResources.size() - 1; i++){
-                for(int j = i + 1; j < allResources.size(); j++){
-                    if(((Resource)allResources.elementAt(i)).getResId().equals(((Resource)allResources.elementAt(j)).getResId()))
-                        allResources.remove(j);            
-                }            
-            }        
-        }
-        
+
+	public void removeDuplicatedResources(Vector allResources) {
+		for (int i = 0; i < allResources.size() - 1; i++) {
+			for (int j = i + 1; j < allResources.size(); j++) {
+				if (((Resource) allResources.elementAt(i)).getResId().equals(
+						((Resource) allResources.elementAt(j)).getResId()))
+					allResources.remove(j);
+			}
+		}
+	}
 
 	public void saveAll() {
 
@@ -120,15 +120,17 @@ public class SerialIOSystem extends IOSystem {
 
 			String dir = this.getConfigurator().getOutputDir();
 			File directory = new File(dir);
-			directory.mkdir(); 
+			directory.mkdir();
 
 			FileOutputStream fs;
-                        Vector<Resource> allResources = new Vector<Resource>();
-                        if(this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
-                            allResources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
-                        if(this.getSchedulingSystem().getResourcesList() != null)
-                            allResources.addAll(this.getSchedulingSystem().getResourcesList());
-                        this.removeDuplicatedResources(allResources);
+			Vector<Resource> allResources = new Vector<Resource>();
+			if (this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
+				allResources = this.getSchedulingSystem().getIoSystem()
+						.getAllResourcesList();
+			if (this.getSchedulingSystem().getResourcesList() != null)
+				allResources.addAll(this.getSchedulingSystem()
+						.getResourcesList());
+			this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
 			int i = 0;
@@ -165,20 +167,20 @@ public class SerialIOSystem extends IOSystem {
 		for (int i = 0; i < allResList.size(); i++) {
 			Resource resource = allResList.elementAt(i);
 			resource.getResources().clear();
-                        if(resource.getRelationsIds() != null)
-			for (int j = 0; j < resource.getRelationsIds().size(); j++) {
-				String resourceId = resource.getRelationsIds().elementAt(j);
-				boolean resourceFound = false;
-				int k = 0;
-				while (!resourceFound) {
-					Resource resource2 = allResList.elementAt(k);
-					if (resource2.getResId().equals(resourceId)) {
-						resource.addRelation(resource2);
-						resourceFound = true;
-					} else
-						k++;
+			if (resource.getRelationsIds() != null)
+				for (int j = 0; j < resource.getRelationsIds().size(); j++) {
+					String resourceId = resource.getRelationsIds().elementAt(j);
+					boolean resourceFound = false;
+					int k = 0;
+					while (!resourceFound) {
+						Resource resource2 = allResList.elementAt(k);
+						if (resource2.getResId().equals(resourceId)) {
+							resource.addRelation(resource2);
+							resourceFound = true;
+						} else
+							k++;
+					}
 				}
-			}
 		}
 
 	}

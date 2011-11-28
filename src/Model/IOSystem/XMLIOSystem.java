@@ -261,7 +261,7 @@ public class XMLIOSystem extends IOSystem {
 							this.getSchedulingSystem(), null, null);
 
 					// BEGIN TEST_CASE_3
-					if (task.getTaskId().equals("task0_")) {
+					if (task.getTaskId().equals("task0")) {
 
 						// Esta tarea necesita ser ejecutada siempre por un
 						// empleado Categoría A

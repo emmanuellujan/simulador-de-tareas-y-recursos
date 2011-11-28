@@ -42,7 +42,7 @@
 			<capacity>10</capacity>
 			<maxTasks>10</maxTasks>
 			<schedulingAlgorithm>FCFS</schedulingAlgorithm>
-			<quantum>5</quantum>
+			<quantum>-1</quantum>
 			<properties>
 				<property>
 					<propName>ActorName</propName>

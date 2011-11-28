@@ -1,4 +1,3 @@
-
 /*
  * DeleteArtifactFrame.java
  *

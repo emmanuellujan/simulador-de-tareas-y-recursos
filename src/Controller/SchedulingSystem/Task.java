@@ -74,7 +74,7 @@ public class Task {
 		Updater updater = this.getUpdater();
 		if (updater != null) {
 			Vector<Resource> resources = this.getSchedulingSystem()
-					.getResourcesList();
+					.getIoSystem().getAllResourcesList();
 			int n = resources.size();
 			for (int i = 0; i < n; i++)
 				updater.update(resources.elementAt(i));

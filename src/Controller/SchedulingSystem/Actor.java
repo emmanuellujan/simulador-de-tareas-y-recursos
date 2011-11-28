@@ -247,7 +247,8 @@ public class Actor extends Resource {
 													// próximo dispositivo en el
 													// que se ejecutará la
 													// tarea)
-		if (workUnit.equals("fail") || !currTask.evalConditions()) {
+		if (!resId.equals("dealerActor")
+				&& (workUnit.equals("fail") || !currTask.evalConditions())) {
 			schedulingSystem.finishFailedTask(currTask);
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " fails";
@@ -358,6 +359,25 @@ public class Actor extends Resource {
 			return false;
 	}
 
+	public boolean owns(Task t) {
+		Task currTask = this.getCurrTask();
+		String taskId = t.getTaskId();
+		boolean owns = false;
+
+		if (currTask != null && currTask.getTaskId().equals(taskId))
+			owns = true;
+		else if (searchTaskInList(taskId, this.getReadyList()))
+			owns = true;
+		else if (searchTaskInList(taskId, this.getSyncReadyList()))
+			owns = true;
+		else if (searchTaskInList(taskId, this.getIntList()))
+			owns = true;
+		else if (searchTaskInList(taskId, this.getSyncIntList()))
+			owns = true;
+
+		return owns;
+	}
+
 	public void print() {
 		super.print();
 
@@ -400,6 +420,18 @@ public class Actor extends Resource {
 		int time = this.getTime();
 		time = 0;
 		this.setTime(time);
+	}
+
+	private boolean searchTaskInList(String taskId, Vector<Task> list) {
+		int i = 0;
+		int n = list.size();
+		boolean found = false;
+		while (!found && i < n) {
+			if (list.elementAt(i).getTaskId().equals(taskId))
+				found = true;
+			i++;
+		}
+		return found;
 	}
 
 	public void setCapacity(int capacity) {
@@ -501,37 +533,6 @@ public class Actor extends Resource {
 		this.setIntList(intList);
 		this.setSyncReadyList(syncReadyList);
 		this.setReadyList(readyList);
-	}
-
-	private boolean searchTaskInList(String taskId, Vector<Task> list){
-		int i=0;
-		int n=list.size();
-		boolean found = false; 
-		while(!found && i<n){
-			if(list.elementAt(i).getTaskId().equals(taskId))
-				found = true;
-			i++;
-		}
-		return found;
-	}
-	
-	public boolean owns(Task t) {
-		Task currTask = this.getCurrTask();
-		String taskId = t.getTaskId();
-		boolean owns = false; 
-		
-		if(currTask!=null && currTask.getTaskId().equals(taskId))
-			owns = true;
-		else if( searchTaskInList(taskId,this.getReadyList()))
-			owns = true;
-		else if( searchTaskInList(taskId,this.getSyncReadyList()))
-			owns = true;
-		else if( searchTaskInList(taskId,this.getIntList()))
-			owns = true;
-		else if( searchTaskInList(taskId,this.getSyncIntList()))
-			owns = true;
-		
-		return owns;
 	}
 
 }

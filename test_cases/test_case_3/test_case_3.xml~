@@ -4,7 +4,7 @@
 <!-- if quantum is not needed set it to -1 -->
 <!-- if t2 is a contingency task of t1, t1 must be declared first -->
 <inputData>
-	<description> Some actors work in some tasks </description>
+	<description> </description>
 	<deadline>80</deadline>
 	<tasks>
 		<task>

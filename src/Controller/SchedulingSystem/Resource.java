@@ -19,6 +19,11 @@ public class Resource implements Serializable {
 	public Resource(String resId, String type,
 			Hashtable<String, String> properties, int maxRelations,
 			Vector<String> relationsIds, SchedulingSystem schedulingSystem) {
+		if (properties == null)
+			properties = new Hashtable<String, String>();
+		if (relationsIds == null)
+			relationsIds = new Vector<String>();
+
 		this.setResId(resId);
 		this.setType(type);
 		this.setProperties(properties);

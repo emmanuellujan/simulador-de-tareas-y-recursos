@@ -159,7 +159,7 @@ public class SchedulingSystem {
 
 		IOSystem ioSystem = this.getIoSystem();
 		int deadline = this.getDeadline();
-		Vector<Task> newsList = new Vector<Task>(); 
+		Vector<Task> newsList = new Vector<Task>();
 		Vector<Task> tasks = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Resource> resourcesList = new Vector<Resource>();
@@ -184,14 +184,14 @@ public class SchedulingSystem {
 	}
 
 	public void loadData(String inputDir) {
-		
+
 		String bar = this.getConfigurator().getBarFromPath(inputDir);
-		this.getConfigurator().setInputDir(inputDir+bar);
-		
+		this.getConfigurator().setInputDir(inputDir + bar);
+
 		String[] s = inputDir.split(bar);
 		String projectName = s[s.length - 1];
 		this.getConfigurator().setProjectName(projectName);
-		
+
 		this.loadData();
 	}
 
@@ -209,8 +209,7 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		//SerialIOSystem serialIOSystem = new SerialIOSystem(
-		//		this.getConfigurator(), this);
+		//SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
 		//serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
@@ -223,7 +222,7 @@ public class SchedulingSystem {
 	}
 
 	public void saveData(String projectName, String outputDir) {
-                String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
+		String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
 		outputDir = outputDir + bar + projectName + bar;
 		this.getConfigurator().setOutputDir(outputDir);
 		this.saveData();
