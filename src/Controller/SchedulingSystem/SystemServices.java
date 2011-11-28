@@ -5,8 +5,6 @@ import java.util.logging.Filter;
 
 import Controller.FilterSystem.ActorRelationshipFilter;
 import Controller.FilterSystem.JobPositionFilter;
-import Controller.FilterSystem.NameFilter;
-import Controller.FilterSystem.TaskFilter;
 import Gui.Frames.NewsFrame;
 import Gui.Frames.SimulatorFrame;
 
@@ -75,36 +73,6 @@ public class SystemServices {
 		return result;
 	}
 
-	public Vector<Resource> getResourceByMaxTasksCapacity(Filter fMaxTask,
-			String name) {
-		Vector<Resource> result = new Vector<Resource>();
-		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
-				.size(); i++)
-			if (((TaskFilter) fMaxTask).eval(SimulatorFrame.getInstance()
-					.getMainResourcesList().get(i)))
-				result.add(SimulatorFrame.getInstance().getMainResourcesList()
-						.get(i));
-
-		return result;
-	}
-
-	public Vector<Resource> getResourceByName(Filter fName, String name) {
-		Vector<Resource> result = new Vector<Resource>();
-		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
-				.size(); i++)
-			if (((NameFilter) fName).eval(SimulatorFrame.getInstance()
-					.getMainResourcesList().get(i)))
-				result.add(SimulatorFrame.getInstance().getMainResourcesList()
-						.get(i));
-
-		return result;
-	}
-
-	/*
-	 * Se considerá que un Actor, con el cual tendremos una relacion. Siempre
-	 * será identificado con un nombre. De lo contrario si no fuese de esa
-	 * forma, podría identificarse con el id.
-	 */
 	public Vector<Resource> getResourceByRelationResource(
 			Filter fWorkerRelationship, String name) {
 		Vector<Resource> result = new Vector<Resource>();
