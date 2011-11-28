@@ -30,6 +30,8 @@
         <Controller.SchedulingSystem.Actor>
           <resId>dealerActor</resId>
           <type>actor</type>
+          <properties/>
+          <relationsIds/>
           <resources/>
           <resourceMaxLimit>100</resourceMaxLimit>
           <schedulingSystem reference="../../../.."/>
@@ -350,30 +352,35 @@
       <numberOfTasks>1</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>0</nbrFailedTasks>
-      <numberOfActors>2</numberOfActors>
+      <numberOfActors>1</numberOfActors>
       <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>0.5</meanNbrTasksPerActor>
+      <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
       <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
       <propVelocity>8.888889</propVelocity>
-      <analysis>Results Analisys:
-	Number of errors: 2
-	Deadline (in cycles): 80
-	Number of cycles: 9
-	Total number of executed tasks, including contingency tasks: 1
-	Number of successful tasks, including contingency tasks: 1
-	Number of failed tasks: 0
-	Number of actors: 2
-	Number of other resources (artifacts): 0
-	Mean number of tasks per actor: 0.5
-	Proportions: 
-		Successful tasks proportion, including contingency tasks: 1.0
-		Failed tasks proportion, including contingency tasks: 0.0
-		Velocity proportion (deadline/nbrOfCycles): 8.888889
+      <analysis>= Results Analisys = 
+
+Number of errors: 2
+Deadline (in cycles): 80
+Number of cycles: 9
+Total number of executed tasks, including contingency tasks: 1
+Number of successful tasks, including contingency tasks: 1
+Number of failed tasks: 0
+Number of actors: 1
+Number of other resources (artifacts): 0
+Mean number of tasks per actor: 1.0
+
+Proportions: 
+
+Successful tasks proportion, including contingency tasks: 1.0
+Failed tasks proportion, including contingency tasks: 0.0
+Velocity proportion (deadline/nbrOfCycles): 8.888889
+
 
 Errors:
-	0. List size greater than allowed. Task task1 can&apos;t be added to the ready list of actor0
-	1. List size greater than allowed. Task task2 can&apos;t be added to the ready list of actor0
+
+0. List size greater than allowed. Task task1 can&apos;t be added to the ready list of actor0
+1. List size greater than allowed. Task task2 can&apos;t be added to the ready list of actor0
 </analysis>
     </resultsAnalyzer>
     <numberOfTasks>3</numberOfTasks>

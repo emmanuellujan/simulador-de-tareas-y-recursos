@@ -30,6 +30,8 @@
         <Controller.SchedulingSystem.Actor>
           <resId>dealerActor</resId>
           <type>actor</type>
+          <properties/>
+          <relationsIds/>
           <resources/>
           <resourceMaxLimit>100</resourceMaxLimit>
           <schedulingSystem reference="../../../.."/>
@@ -770,26 +772,30 @@
       <numberOfTasks>2</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>1</nbrFailedTasks>
-      <numberOfActors>2</numberOfActors>
+      <numberOfActors>1</numberOfActors>
       <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
+      <meanNbrTasksPerActor>2.0</meanNbrTasksPerActor>
       <propFinishedTasks>0.5</propFinishedTasks>
       <propFailedTasks>0.5</propFailedTasks>
       <propVelocity>7.2727275</propVelocity>
-      <analysis>Results Analisys:
-	Number of errors: 0
-	Deadline (in cycles): 80
-	Number of cycles: 11
-	Total number of executed tasks, including contingency tasks: 2
-	Number of successful tasks, including contingency tasks: 1
-	Number of failed tasks: 1
-	Number of actors: 2
-	Number of other resources (artifacts): 0
-	Mean number of tasks per actor: 1.0
-	Proportions: 
-		Successful tasks proportion, including contingency tasks: 0.5
-		Failed tasks proportion, including contingency tasks: 0.5
-		Velocity proportion (deadline/nbrOfCycles): 7.2727275
+      <analysis>= Results Analisys = 
+
+Number of errors: 0
+Deadline (in cycles): 80
+Number of cycles: 11
+Total number of executed tasks, including contingency tasks: 2
+Number of successful tasks, including contingency tasks: 1
+Number of failed tasks: 1
+Number of actors: 1
+Number of other resources (artifacts): 0
+Mean number of tasks per actor: 2.0
+
+Proportions: 
+
+Successful tasks proportion, including contingency tasks: 0.5
+Failed tasks proportion, including contingency tasks: 0.5
+Velocity proportion (deadline/nbrOfCycles): 7.2727275
+
 
 </analysis>
     </resultsAnalyzer>

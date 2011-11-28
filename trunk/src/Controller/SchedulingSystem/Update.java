@@ -25,20 +25,20 @@ public class Update {
 
 	public boolean update(Resource resource) {
 		Hashtable<String, String> propsResource = resource.getProperties();
-		if(propsResource!=null){
+		if (propsResource != null) {
 			Hashtable<String, String> properties = this.getProperties();
 			Enumeration<String> e = properties.keys();
 			String key, value;
-			
+
 			while (e.hasMoreElements()) {
 				key = e.nextElement();
 				value = properties.get(key);
 				propsResource.put(key, value);
-				resource.setProperties(propsResource);	
+				resource.setProperties(propsResource);
 			}
-			
+
 			return true;
-		}else
+		} else
 			return false;
 	}
 

@@ -23,12 +23,21 @@ public class Configurator {
 	public Configurator() {
 		// String confFile = "conf.xml"; // Usar esta línea cuando se pretende
 		// crear el jar, sino poner el path completo
-		String confFile = "C:\\Users\\Administrador\\workspace-test\\TaskOnResourcesII\\src\\conf.xml";
+		String confFile = "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml";
 		this.setConfFile(confFile);
 		this.setConfParameters();
 	}
 
 	public String getBar() {
+		return bar;
+	}
+
+	public String getBarFromPath(String s) {
+		String bar = "";
+		if (s.contains("/"))
+			bar = "/";
+		else
+			bar = "\\\\";
 		return bar;
 	}
 
@@ -46,6 +55,15 @@ public class Configurator {
 
 	public String getProjectName() {
 		return projectName;
+	}
+
+	public String getSaveBarFromPath(String s) {
+		String bar = "";
+		if (s.contains("/"))
+			bar = "/";
+		else
+			bar = "\\";
+		return bar;
 	}
 
 	public void setBar(String bar) {
@@ -93,29 +111,11 @@ public class Configurator {
 		String bar = this.getBarFromPath(sInputDir);
 		this.setBar(bar);
 		this.setInputDir(sInputDir + bar + sProjectName + bar);
-		this.setOutputDir(sOutputDir +  bar + sProjectName + bar);
+		this.setOutputDir(sOutputDir + bar + sProjectName + bar);
 		this.setProjectName(sProjectName);
-	
+
 	}
 
-	public String getBarFromPath(String s){
-		String bar = "";
-		if (s.contains("/"))
-			bar = "/";
-		else
-			bar = "\\\\";
-		return bar;
-	}
-        
-        public String getSaveBarFromPath(String s){
-                String bar = "";
-		if (s.contains("/"))
-			bar = "/";
-		else
-			bar = "\\";
-                return bar;
-        }
-	
 	public void setInputDir(String inputDir) {
 		this.inputDir = inputDir;
 	}

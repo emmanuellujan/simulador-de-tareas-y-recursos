@@ -52,7 +52,7 @@ public class ResultsAnalyzer {
 		int numberOfTasks = nbrSuccessfulTasks + nbrFailedTasks;
 		this.setNumberOfTasks(numberOfTasks);
 
-		int numberOfActors = this.getSchedulingSystem().getActorsList().size()-1;
+		int numberOfActors = this.getSchedulingSystem().getActorsList().size() - 1;
 		this.setNumberOfActors(numberOfActors);
 
 		int numberOfResources = this.getSchedulingSystem().getResourcesList()
@@ -141,7 +141,7 @@ public class ResultsAnalyzer {
 	public void renderAnalysis() {
 		String analysis = this.getAnalysis();
 
-		analysis += "Results Analisys:\n\n";
+		analysis += "= Results Analisys = \n\n";
 
 		analysis += "Number of errors: " + this.getNumberOfErrors() + "\n";
 
