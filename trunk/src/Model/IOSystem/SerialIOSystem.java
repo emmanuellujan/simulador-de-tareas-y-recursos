@@ -102,6 +102,16 @@ public class SerialIOSystem extends IOSystem {
 		this.updateRelations();
 
 	}
+        
+        public void removeDuplicatedResources(Vector allResources){
+            for(int i = 0; i < allResources.size() - 1; i++){
+                for(int j = i + 1; j < allResources.size(); j++){
+                    if(((Resource)allResources.elementAt(i)).getResId().equals(((Resource)allResources.elementAt(j)).getResId()))
+                        allResources.remove(j);            
+                }            
+            }        
+        }
+        
 
 	public void saveAll() {
 
@@ -118,6 +128,7 @@ public class SerialIOSystem extends IOSystem {
                             allResources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
                         if(this.getSchedulingSystem().getResourcesList() != null)
                             allResources.addAll(this.getSchedulingSystem().getResourcesList());
+                        this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
 			int i = 0;
