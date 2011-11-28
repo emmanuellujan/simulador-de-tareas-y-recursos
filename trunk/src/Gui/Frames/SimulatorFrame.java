@@ -37,7 +37,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			SIMULATORFRAME_INSTANCE = new SimulatorFrame();
 		return SIMULATORFRAME_INSTANCE;
 	}
-
 	/**
 	 * @param args
 	 *            the command line arguments
@@ -129,6 +128,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -149,6 +149,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -274,6 +275,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -349,7 +352,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Verdana", 1, 11));
+        jLabel23.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel23.setText("Entrada de datos");
 
         jLabel24.setFont(new java.awt.Font("Verdana", 1, 11));
@@ -369,6 +372,16 @@ public class SimulatorFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton15.setText("Nuevo");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel15.setText("Nuevo proyecto");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -381,12 +394,14 @@ public class SimulatorFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel22)
                             .addComponent(jLabel23)
-                            .addComponent(jLabel24))
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -394,7 +409,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton15)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(jButton13))
@@ -939,7 +958,25 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-	private boolean isComboboxesValuesValid() {
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+               	this.setNewsList(new Vector<Task>());
+		this.setActorsList(new Vector<Actor>());
+		this.setResourcesList(new Vector<Resource>());
+		this.setSchedulingSystem(new SchedulingSystem());
+		this.setMainResourcesList();
+
+		this.services = new SystemServices();
+		this.jTextArea1.setLineWrap(true);
+		this.jTextArea1.setWrapStyleWord(true);
+		this.setLocationRelativeTo(null);
+		this.loadState = false;   
+                this.jTextPane1.setText(String.valueOf(this.getNewsList().size()));
+                this.jTextPane2.setText(String.valueOf(this.getActorsList().size()));
+		this.jTextPane3.setText(String.valueOf(this.getResourcesList().size()));
+    }//GEN-LAST:event_jButton15ActionPerformed
+	
+        private boolean isComboboxesValuesValid() {
 		if ((this.jComboBox3.getSelectedItem() != null)
 				&& (this.jComboBox1.getSelectedItem() != null))
 			return true;
@@ -1077,19 +1114,26 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.setVisible(false);
 	}// GEN-LAST:event_jButton3ActionPerformed
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed		
-                this.jTextArea1.removeAll();   
-		this.getSchedulingSystem().setActorsList(this.getActorsList());
-		this.getSchedulingSystem().setNewsList(this.getNewsList());
-		this.getSchedulingSystem().setResourcesList(this.getResourcesList());
-                this.getSchedulingSystem().loadData();
-		this.getSchedulingSystem().simulateAndLog();
-		this.getSchedulingSystem().getResultsAnalyzer().analyze();
-		//this.jProgressBar1.              
-                this.jTextArea1.setText(this.getSchedulingSystem().getResultsAnalyzer()
-				.getAnalysis());
-                //this.jTextArea1.
-                this.setSchedulingSystem(new SchedulingSystem());
-	}// GEN-LAST:event_jButton4ActionPerformed
+                if((this.getActorsList().size() != 0)||
+                        (this.getActorsList().size() != 0)||(this.getActorsList().size() != 0)){
+                    this.jProgressBar1.setValue(0);
+                    this.jProgressBar1.setStringPainted(true); 
+                    this.jTextArea1.removeAll();   
+                    this.getSchedulingSystem().setActorsList(this.getActorsList());
+                    this.getSchedulingSystem().setNewsList(this.getNewsList());
+                    this.getSchedulingSystem().setResourcesList(this.getResourcesList());
+                    this.jProgressBar1.setValue(30);
+                    this.getSchedulingSystem().loadData();
+                    this.jProgressBar1.setValue(50);
+                    this.getSchedulingSystem().simulateAndLog();
+                    this.jProgressBar1.setValue(75);
+                    this.getSchedulingSystem().getResultsAnalyzer().analyze();    
+                    this.jTextArea1.setText(this.getSchedulingSystem().getResultsAnalyzer()
+                                    .getAnalysis());                    
+                    this.setSchedulingSystem(new SchedulingSystem());
+                    this.jProgressBar1.setValue(100);
+                }
+	}// GEN-LAST:event_jButton4ActionPerformed        
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
 		this.taskDeletePanel.getInstance().setTaskList(this.getNewsList());
 		this.taskDeletePanel.setLocationRelativeTo(null);
