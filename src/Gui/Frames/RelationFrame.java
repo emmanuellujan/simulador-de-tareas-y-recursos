@@ -452,7 +452,7 @@ public class RelationFrame extends javax.swing.JFrame {
 				return this.getMainResourcesList().elementAt(i);
 		}
 		return null;
-	}
+	} 
 
 	public void setActorsList(Vector<Actor> actorsList) {
 		this.actorsList = actorsList;
@@ -485,7 +485,7 @@ public class RelationFrame extends javax.swing.JFrame {
 		this.setComboboxesValues();
 	}
 
-	private void writeTextArea() {
+	public void writeTextArea() {
 		this.jTextArea2.setText("");
 		for (int i = 0; i < this.getRelationsList().size(); i++) {
 			this.jTextArea2.append(this.getRelationsList().elementAt(i));

@@ -1540,6 +1540,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 				this.getResourcesList());
 		this.relationPanel.getInstance().setActorsList(this.getActorsList());
 		this.relationPanel.setLocationRelativeTo(null);
+                this.relationPanel.writeTextArea();
 		this.relationPanel.setVisible(true);
 		this.setVisible(false);
 	}// GEN-LAST:event_jButton11ActionPerformed

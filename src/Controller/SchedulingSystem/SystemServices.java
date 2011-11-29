@@ -5,7 +5,9 @@ import java.util.logging.Filter;
 
 import Controller.FilterSystem.ActorRelationshipFilter;
 import Controller.FilterSystem.JobPositionFilter;
+import Gui.Frames.ErrorFrame;
 import Gui.Frames.NewsFrame;
+import Gui.Frames.RelationFrame;
 import Gui.Frames.SimulatorFrame;
 
 /**
@@ -29,35 +31,70 @@ public class SystemServices {
 			}
 		return list;
 	}
+        
+        public Vector<String> deleteResourceId(Vector<String> list,
+			String resourceId) {
+		for (int i = 0; i < list.size(); i++)
+			if (list.elementAt(i).equals(resourceId)) {
+				list.remove(i);
+				return list;
+			}
+		return list;
+	}
+        
+        public Vector<String> deleteRelation(Vector<String> list,
+			String firstResourceId,String secondResourceId) {
+		for (int i = 0; i < list.size(); i++){
+                    if((((String)list.elementAt(i)).contains("Recurso: " + firstResourceId))&&
+                            (((String)list.elementAt(i)).contains("con recurso: " + secondResourceId))){
+                        list.removeElementAt(i);
+                    }
+                }
+
+		return list;
+	}
 
 	public void deleteResourceRelation(String firstResourceId,
 			String secondResourceId) {
 		Vector<Resource> currentList = new Vector<Resource>();
-		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
-				.size(); i++) {
-			if (SimulatorFrame.getInstance().getMainResourcesList()
-					.elementAt(i).getResId().equals(firstResourceId)) {
-				currentList = SimulatorFrame.getInstance()
-						.getMainResourcesList().elementAt(i).getResources();// Recursos
-																			// con
-																			// los
-																			// cuales
-																			// se
-																			// comunica
-																			// este
-																			// recurso
-																			// actual
-				SimulatorFrame
-						.getInstance()
-						.getMainResourcesList()
-						.elementAt(i)
-						.setResources(
-								this.deleteResource(currentList,
-										secondResourceId));
-				NewsFrame.getInstance().setLabel("Relationship deleted!");
-				NewsFrame.getInstance().setVisible(true);
-			}
-		}
+                Vector<String> currentIdsList = new Vector<String>();
+                Vector<String> relations = new Vector<String>();
+                int firtSize = 0;
+                if(firstResourceId.equals(secondResourceId)){
+                    SimulatorFrame.getInstance().setVisible(false);
+                    ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+                    ErrorFrame.getInstance().setLabel("Resources cannot be the equals");
+                    ErrorFrame.getInstance().setLocationRelativeTo(null);
+                    ErrorFrame.getInstance().setVisible(true);                 
+                }else{
+                    for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
+                                    .size(); i++) {                        
+                            if (SimulatorFrame.getInstance().getMainResourcesList()
+                                            .elementAt(i).getResId().equals(firstResourceId)) {                                
+                                Resource element = (Resource)SimulatorFrame.getInstance().getMainResourcesList().elementAt(i);    
+                                currentList = element.getResources();
+                                firtSize = ((Vector)element.getResources()).size();
+                                SimulatorFrame.getInstance().getMainResourcesList().elementAt(i).setResources(this.deleteResource(currentList,
+                                                                                    secondResourceId));
+                                currentIdsList = SimulatorFrame.getInstance().getMainResourcesList().elementAt(i).getRelationsIds();
+                                SimulatorFrame.getInstance().getMainResourcesList().elementAt(i).setRelationsIds(this.deleteResourceId(currentIdsList,
+                                                                                    secondResourceId));
+                                relations = RelationFrame.getInstance().getRelationsList();                                
+                                RelationFrame.getInstance().setRelationsList(this.deleteRelation(relations,firstResourceId,secondResourceId));
+                                
+                                
+                                SimulatorFrame.getInstance().setVisible(false);
+                                NewsFrame.getInstance().setBackFrame("SimulatorFrame");   
+                                
+                                if(firtSize>SimulatorFrame.getInstance().getMainResourcesList().elementAt(i).getResources().size())
+                                    NewsFrame.getInstance().setLabel("Relationship deleted!");
+                                else
+                                    NewsFrame.getInstance().setLabel("Relationship doesn't exist");
+                                NewsFrame.getInstance().setLocationRelativeTo(null);
+                                NewsFrame.getInstance().setVisible(true); 
+                            }
+                    }
+                }
 	}
 
 	public Vector<Resource> getResourceByJobPosition(Filter fJobPosition,
@@ -98,8 +135,11 @@ public class SystemServices {
 					.elementAt(i).getResId().equals(resourceId)) {
 				SimulatorFrame.getInstance().getMainResourcesList()
 						.elementAt(i).setProperty(property, value);
+                                SimulatorFrame.getInstance().setVisible(false);
+                                NewsFrame.getInstance().setBackFrame("SimulatorFrame");
 				NewsFrame.getInstance().setLabel("Property updated!");
-				NewsFrame.getInstance().setVisible(true);
+                                NewsFrame.getInstance().setLocationRelativeTo(null);
+				NewsFrame.getInstance().setVisible(true);                                
 			}
 	}
 
