@@ -928,10 +928,11 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 		if (this.getBackFrameId().equals("TaskFrame")) {
 			NewsFrame.getInstance().setBackFrame("CreateTaskFrame");
 		} else {
-			if (this.getBackFrameId().equals("FilterFrame")){
+			if (this.getBackFrameId().equals("FilterFrame")) {
 				NewsFrame.getInstance().setBackFrame("CreateFilterFrame");
-                                NewsFrame.getInstance().setFilterBackFrame((CreateFilterFrame)this.getBackFrame());
-                        }else {
+				NewsFrame.getInstance().setFilterBackFrame(
+						(CreateFilterFrame) this.getBackFrame());
+			} else {
 				NewsFrame.getInstance().setBackFrame("UpdaterFrame");
 				NewsFrame.getInstance().setUpdaterBackFrame(
 						(UpdaterFrame) this.getBackFrame());

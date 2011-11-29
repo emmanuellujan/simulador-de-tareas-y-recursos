@@ -6,7 +6,6 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 import Model.DataModel.Configurator.Configurator;
 import Model.IOSystem.IOSystem;
 import Model.IOSystem.SerialIOSystem;
-import Model.IOSystem.XMLIOSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
 
@@ -35,7 +34,7 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
@@ -185,10 +184,10 @@ public class SchedulingSystem {
 
 	public void loadData(String inputDir) {
 
-		if(inputDir!=null && !inputDir.equals("")){
+		if (inputDir != null && !inputDir.equals("")) {
 			String bar = this.getConfigurator().getBarFromPath(inputDir);
 			this.getConfigurator().setInputDir(inputDir + bar);
-	
+
 			String[] s = inputDir.split(bar);
 			String projectName = s[s.length - 1];
 			this.getConfigurator().setProjectName(projectName);
@@ -211,18 +210,19 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		//SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
-		//serialIOSystem.saveAll();
+		// SerialIOSystem serialIOSystem = new
+		// SerialIOSystem(this.getConfigurator(), this);
+		// serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
-	} 
+	}
 
 	public void saveData(String outputDir) {
-		if(outputDir!=null && !outputDir.equals("")){
+		if (outputDir != null && !outputDir.equals("")) {
 			String projectName = this.getConfigurator().getProjectName();
 			this.saveData(projectName, outputDir);
-		}else
+		} else
 			this.saveData();
 	}
 
@@ -315,10 +315,10 @@ public class SchedulingSystem {
 	}
 
 	public void start() {
-		start(null,null);
+		start(null, null);
 	}
-	
-	public void start(String inputDir,String outputDir) {
+
+	public void start(String inputDir, String outputDir) {
 		System.out.print("Loading data...");
 		this.loadData(inputDir);
 		System.out.println(" done.");
@@ -330,9 +330,9 @@ public class SchedulingSystem {
 		System.out.println(" done.");
 		System.out.print("Saving data...");
 		this.saveData(outputDir);
-		System.out.println(" done.");
+		System.out.println(" done.\n");
 		this.getResultsAnalyzer().print();
-		System.out.println("Done!");
+		System.out.println("Done!\n\n");
 	}
 
 }
