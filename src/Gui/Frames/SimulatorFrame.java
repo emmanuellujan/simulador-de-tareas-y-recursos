@@ -1784,12 +1784,19 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}
 
 	private void setContingencyTaskComboboxes() {
-		for (int k = 0; k < this.getNewsList().size(); k++) {
-			this.jComboBox3
-					.addItem(this.getNewsList().elementAt(k).getTaskId());
-			this.jComboBox1
-					.addItem(this.getNewsList().elementAt(k).getTaskId());
+                String element = "";
+                this.jComboBox3.removeAllItems();
+		for (int i = 0; i < this.getNewsList().size(); i++) {
+                        element = ((Task)this.getNewsList().elementAt(i)).getTaskId();
+			this.jComboBox3.addItem(element);                        
 		}
+                element = "";
+                this.jComboBox1.removeAllItems();
+                for (int t = 0; t < this.getNewsList().size(); t++) {
+                        element = ((Task)this.getNewsList().elementAt(t)).getTaskId();
+                        this.jComboBox1.addItem(element);
+                }
+
 	}
 
 	private void setLoadState() {

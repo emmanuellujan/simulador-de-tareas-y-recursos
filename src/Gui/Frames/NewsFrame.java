@@ -66,6 +66,8 @@ public class NewsFrame extends javax.swing.JFrame {
 	private String backFrame;
 
 	private UpdaterFrame updaterBackFrame;
+        
+        private CreateFilterFrame filterBackFrame;
 
 	private static NewsFrame ERROR_INSTANCE;
 
@@ -87,6 +89,10 @@ public class NewsFrame extends javax.swing.JFrame {
 		return this.updaterBackFrame;
 	}
 
+        public CreateFilterFrame getFilterBackFrame() {
+		return this.filterBackFrame;
+	}
+        
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always
@@ -168,6 +174,10 @@ public class NewsFrame extends javax.swing.JFrame {
 	public void setBackFrame(String currentBackFrame) {
 		this.backFrame = currentBackFrame;
 	}
+        
+        public void setFilterBackFrame(CreateFilterFrame currentBackFrame) {
+		this.filterBackFrame = currentBackFrame;
+	}
 
 	public void setLabel(String message) {
 		this.jLabel1.setText(message);
@@ -192,8 +202,12 @@ public class NewsFrame extends javax.swing.JFrame {
 					else {
 						if (this.backFrame.equals("UpdaterFrame"))
 							this.getUpdaterBackFrame().setVisible(true);
-						else
-							CreateTaskFrame.getInstance().setVisible(true);
+						else{
+							if (this.backFrame.equals("CreateFilterFrame"))
+								this.getFilterBackFrame().setVisible(true);
+							else
+								CreateTaskFrame.getInstance().setVisible(true);
+						}
 					}
 				}
 			}
