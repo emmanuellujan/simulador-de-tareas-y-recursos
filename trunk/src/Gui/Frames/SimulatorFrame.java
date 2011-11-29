@@ -1761,7 +1761,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton9ActionPerformed
 
 	private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBox3ActionPerformed
-		this.setContingencyTaskComboboxes();
 	}// GEN-LAST:event_jComboBox3ActionPerformed
 
 	private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField2ActionPerformed
@@ -1783,22 +1782,24 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextPane2.setText(String.valueOf(this.actorsList.size()));
 	}
 
-	private void setContingencyTaskComboboxes() {
+	private void setContingencyTaskCombobox1() {                
+                String element = "";
+                this.jComboBox1.removeAllItems();
+                for (int t = 0; t < this.getNewsList().size(); t++) {
+                        element = ((Task)this.getNewsList().elementAt(t)).getTaskId();
+                        this.jComboBox1.addItem(element);
+                }
+	}
+        
+        private void setContingencyTaskCombobox3() {
                 String element = "";
                 this.jComboBox3.removeAllItems();
 		for (int i = 0; i < this.getNewsList().size(); i++) {
                         element = ((Task)this.getNewsList().elementAt(i)).getTaskId();
 			this.jComboBox3.addItem(element);                        
 		}
-                element = "";
-                this.jComboBox1.removeAllItems();
-                for (int t = 0; t < this.getNewsList().size(); t++) {
-                        element = ((Task)this.getNewsList().elementAt(t)).getTaskId();
-                        this.jComboBox1.addItem(element);
-                }
-
-	}
-
+        }
+        
 	private void setLoadState() {
 		this.loadState = true;
 	}
@@ -1819,8 +1820,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
-		if (this.newsList != null)
-			this.setContingencyTaskComboboxes();
+		if (this.newsList != null){
+			this.setContingencyTaskCombobox1();
+                        this.setContingencyTaskCombobox3();
+                }
 		this.jTextPane1.setText(String.valueOf(this.newsList.size()));
 	}
 
