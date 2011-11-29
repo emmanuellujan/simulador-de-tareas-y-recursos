@@ -753,13 +753,13 @@
         <Model.LogginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.xml</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.xml</outputFileName>
           <fileManager/>
         </Model.LogginSystem.XMLLogginSystem>
         <Model.LogginSystem.TXTLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_2/test_case_2_log.txt</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.txt</outputFileName>
           <fileManager/>
         </Model.LogginSystem.TXTLogginSystem>
       </logginSystems>
