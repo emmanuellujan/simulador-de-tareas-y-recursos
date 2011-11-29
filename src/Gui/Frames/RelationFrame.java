@@ -452,7 +452,7 @@ public class RelationFrame extends javax.swing.JFrame {
 				return this.getMainResourcesList().elementAt(i);
 		}
 		return null;
-	} 
+	}
 
 	public void setActorsList(Vector<Actor> actorsList) {
 		this.actorsList = actorsList;

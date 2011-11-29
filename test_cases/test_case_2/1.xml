@@ -793,25 +793,23 @@
       <propFinishedTasks>0.5</propFinishedTasks>
       <propFailedTasks>0.5</propFailedTasks>
       <propVelocity>7.2727275</propVelocity>
-      <analysis>= Results Analisys = 
+      <analysis>Results Analisys 
 
-Number of errors: 0
-Deadline (in cycles): 80
-Number of cycles: 11
-Total number of executed tasks, including contingency tasks: 2
-Number of successful tasks, including contingency tasks: 1
-Number of failed tasks: 1
-Number of actors: 1
-Number of other resources (artifacts): 0
-Mean number of tasks per actor: 2.0
+  Number of errors: 0
+  Deadline (in cycles): 80
+  Number of cycles: 11
+  Total number of executed tasks *: 2
+  Number of successful tasks *: 1
+  Number of failed tasks: 1
+  Number of actors: 1
+  Number of other resources (artifacts): 0
+  Mean number of tasks per actor: 2.0
+  Proportions: 
+    Successful tasks *: 0.5
+    Failed tasks *: 0.5
+    Velocity (deadline/nbrOfCycles): 7.2727275
 
-Proportions: 
-
-Successful tasks proportion, including contingency tasks: 0.5
-Failed tasks proportion, including contingency tasks: 0.5
-Velocity proportion (deadline/nbrOfCycles): 7.2727275
-
-
+  *: with contigency tasks
 </analysis>
     </resultsAnalyzer>
     <numberOfTasks>1</numberOfTasks>

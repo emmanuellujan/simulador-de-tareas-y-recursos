@@ -1540,7 +1540,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 				this.getResourcesList());
 		this.relationPanel.getInstance().setActorsList(this.getActorsList());
 		this.relationPanel.setLocationRelativeTo(null);
-                this.relationPanel.writeTextArea();
+		this.relationPanel.writeTextArea();
 		this.relationPanel.setVisible(true);
 		this.setVisible(false);
 	}// GEN-LAST:event_jButton11ActionPerformed
@@ -1782,24 +1782,24 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextPane2.setText(String.valueOf(this.actorsList.size()));
 	}
 
-	private void setContingencyTaskCombobox1() {                
-                String element = "";
-                this.jComboBox1.removeAllItems();
-                for (int t = 0; t < this.getNewsList().size(); t++) {
-                        element = ((Task)this.getNewsList().elementAt(t)).getTaskId();
-                        this.jComboBox1.addItem(element);
-                }
-	}
-        
-        private void setContingencyTaskCombobox3() {
-                String element = "";
-                this.jComboBox3.removeAllItems();
-		for (int i = 0; i < this.getNewsList().size(); i++) {
-                        element = ((Task)this.getNewsList().elementAt(i)).getTaskId();
-			this.jComboBox3.addItem(element);                        
+	private void setContingencyTaskCombobox1() {
+		String element = "";
+		this.jComboBox1.removeAllItems();
+		for (int t = 0; t < this.getNewsList().size(); t++) {
+			element = ((Task) this.getNewsList().elementAt(t)).getTaskId();
+			this.jComboBox1.addItem(element);
 		}
-        }
-        
+	}
+
+	private void setContingencyTaskCombobox3() {
+		String element = "";
+		this.jComboBox3.removeAllItems();
+		for (int i = 0; i < this.getNewsList().size(); i++) {
+			element = ((Task) this.getNewsList().elementAt(i)).getTaskId();
+			this.jComboBox3.addItem(element);
+		}
+	}
+
 	private void setLoadState() {
 		this.loadState = true;
 	}
@@ -1820,10 +1820,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
-		if (this.newsList != null){
+		if (this.newsList != null) {
 			this.setContingencyTaskCombobox1();
-                        this.setContingencyTaskCombobox3();
-                }
+			this.setContingencyTaskCombobox3();
+		}
 		this.jTextPane1.setText(String.valueOf(this.newsList.size()));
 	}
 
