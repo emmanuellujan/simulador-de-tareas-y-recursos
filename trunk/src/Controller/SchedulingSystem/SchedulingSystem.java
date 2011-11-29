@@ -185,12 +185,14 @@ public class SchedulingSystem {
 
 	public void loadData(String inputDir) {
 
-		String bar = this.getConfigurator().getBarFromPath(inputDir);
-		this.getConfigurator().setInputDir(inputDir + bar);
-
-		String[] s = inputDir.split(bar);
-		String projectName = s[s.length - 1];
-		this.getConfigurator().setProjectName(projectName);
+		if(inputDir!=null && !inputDir.equals("")){
+			String bar = this.getConfigurator().getBarFromPath(inputDir);
+			this.getConfigurator().setInputDir(inputDir + bar);
+	
+			String[] s = inputDir.split(bar);
+			String projectName = s[s.length - 1];
+			this.getConfigurator().setProjectName(projectName);
+		}
 
 		this.loadData();
 	}
@@ -214,11 +216,14 @@ public class SchedulingSystem {
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
-	}
+	} 
 
 	public void saveData(String outputDir) {
-		String projectName = this.getConfigurator().getProjectName();
-		this.saveData(projectName, outputDir);
+		if(outputDir!=null && !outputDir.equals("")){
+			String projectName = this.getConfigurator().getProjectName();
+			this.saveData(projectName, outputDir);
+		}else
+			this.saveData();
 	}
 
 	public void saveData(String projectName, String outputDir) {
@@ -310,9 +315,12 @@ public class SchedulingSystem {
 	}
 
 	public void start() {
+		start(null,null);
+	}
+	
+	public void start(String inputDir,String outputDir) {
 		System.out.print("Loading data...");
-		// this.loadData("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/");
-		this.loadData();
+		this.loadData(inputDir);
 		System.out.println(" done.");
 		System.out.print("Simulation started...");
 		this.simulateAndLog();
@@ -321,8 +329,7 @@ public class SchedulingSystem {
 		this.getResultsAnalyzer().analyze();
 		System.out.println(" done.");
 		System.out.print("Saving data...");
-		// this.saveData("test_case_1","/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/");
-		this.saveData();
+		this.saveData(outputDir);
 		System.out.println(" done.");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!");
