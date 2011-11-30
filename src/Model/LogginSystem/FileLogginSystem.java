@@ -34,6 +34,7 @@ public abstract class FileLogginSystem extends LogginSystem {
 	}
 
 	protected void writeFile(String s) {
+		System.out.println(this.getOutputFileName());
 		this.getFileManager().writeFile(this.getOutputFileName(), s);
 	}
 

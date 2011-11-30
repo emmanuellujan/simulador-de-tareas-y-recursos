@@ -89,30 +89,6 @@
                   <schedulingSystem reference="../.."/>
                   <deadline>80</deadline>
                   <actorsList>
-                    <Controller.SchedulingSystem.Actor>
-                      <resId>dealerActor</resId>
-                      <type>actor</type>
-                      <properties/>
-                      <relationsIds/>
-                      <resources/>
-                      <resourceMaxLimit>100</resourceMaxLimit>
-                      <schedulingSystem reference="../../../.."/>
-                      <capacity>100</capacity>
-                      <currAction>None</currAction>
-                      <intList/>
-                      <syncIntList/>
-                      <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-                        <id>FCFS</id>
-                      </saIntList>
-                      <readyList/>
-                      <syncReadyList/>
-                      <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
-                        <id>FCFS</id>
-                      </saReadyList>
-                      <time>57</time>
-                      <limitTime>-1</limitTime>
-                      <maxTasksNumber>100</maxTasksNumber>
-                    </Controller.SchedulingSystem.Actor>
                     <Controller.SchedulingSystem.Actor reference="../../../../../../../../../.."/>
                     <Controller.SchedulingSystem.Actor reference="../../../.."/>
                   </actorsList>
@@ -189,30 +165,6 @@
                             <schedulingSystem reference="../.."/>
                             <deadline>80</deadline>
                             <actorsList>
-                              <Controller.SchedulingSystem.Actor>
-                                <resId>dealerActor</resId>
-                                <type>actor</type>
-                                <properties/>
-                                <relationsIds/>
-                                <resources/>
-                                <resourceMaxLimit>100</resourceMaxLimit>
-                                <schedulingSystem reference="../../../.."/>
-                                <capacity>100</capacity>
-                                <currAction>None</currAction>
-                                <intList/>
-                                <syncIntList/>
-                                <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-                                  <id>FCFS</id>
-                                </saIntList>
-                                <readyList/>
-                                <syncReadyList/>
-                                <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
-                                  <id>FCFS</id>
-                                </saReadyList>
-                                <time>57</time>
-                                <limitTime>-1</limitTime>
-                                <maxTasksNumber>100</maxTasksNumber>
-                              </Controller.SchedulingSystem.Actor>
                               <Controller.SchedulingSystem.Actor>
                                 <resId>actor0</resId>
                                 <type>actor</type>
@@ -336,17 +288,17 @@
                                 <limitTime>5</limitTime>
                                 <maxTasksNumber>10</maxTasksNumber>
                               </Controller.SchedulingSystem.Actor>
-                              <Controller.SchedulingSystem.Actor reference="../Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
+                              <Controller.SchedulingSystem.Actor reference="../Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
                             </actorsList>
                             <resourcesList>
-                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource"/>
-                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
+                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource"/>
+                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
                             </resourcesList>
                             <allResourcesList>
-                              <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[2]"/>
-                              <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
-                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource"/>
-                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor[2]/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
+                              <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
+                              <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Actor[2]"/>
+                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource"/>
+                              <Controller.SchedulingSystem.Resource reference="../../actorsList/Controller.SchedulingSystem.Actor/resources/Controller.SchedulingSystem.Resource/resources/Controller.SchedulingSystem.Resource"/>
                             </allResourcesList>
                             <tasksList>
                               <Controller.SchedulingSystem.Task reference="../../../../.."/>
@@ -2383,13 +2335,13 @@
                               <Model.LogginSystem.XMLLogginSystem>
                                 <configurator reference="../../../../configurator"/>
                                 <simulationTimes reference="../../../simulationTimes"/>
-                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/test_case_7_log.xml</outputFileName>
+                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
                                 <fileManager/>
                               </Model.LogginSystem.XMLLogginSystem>
                               <Model.LogginSystem.TXTLogginSystem>
                                 <configurator reference="../../../../configurator"/>
                                 <simulationTimes reference="../../../simulationTimes"/>
-                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/test_case_7_log.txt</outputFileName>
+                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
                                 <fileManager/>
                               </Model.LogginSystem.TXTLogginSystem>
                             </logginSystems>
@@ -2408,32 +2360,53 @@
                             <propFinishedTasks>1.0</propFinishedTasks>
                             <propFailedTasks>0.0</propFailedTasks>
                             <propVelocity>1.4035088</propVelocity>
-                            <analysis>= Results Analisys = 
+                            <analysis>Results Analisys 
 
-Number of errors: 0
-Deadline (in cycles): 80
-Number of cycles: 57
-Total number of executed tasks, including contingency tasks: 3
-Number of successful tasks, including contingency tasks: 3
-Number of failed tasks: 0
-Number of actors: 2
-Number of other resources (artifacts): 2
-Mean number of tasks per actor: 1.5
+  Number of errors: 0
+  Deadline (in cycles): 80
+  Number of cycles: 57
+  Total number of executed tasks *: 3
+  Number of successful tasks *: 3
+  Number of failed tasks: 0
+  Number of actors: 2
+  Number of other resources (artifacts): 2
+  Mean number of tasks per actor: 1.5
+  Proportions: 
+    Successful tasks *: 1.0
+    Failed tasks *: 0.0
+    Velocity (deadline/nbrOfCycles): 1.4035088
 
-Proportions: 
-
-Successful tasks proportion, including contingency tasks: 1.0
-Failed tasks proportion, including contingency tasks: 0.0
-Velocity proportion (deadline/nbrOfCycles): 1.4035088
-
-
+  *: with contigency tasks
 </analysis>
                           </resultsAnalyzer>
                           <numberOfTasks>3</numberOfTasks>
-                          <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
+                          <dealerActor>
+                            <resId>dealerActor</resId>
+                            <type>actor</type>
+                            <properties/>
+                            <relationsIds/>
+                            <resources/>
+                            <resourceMaxLimit>100</resourceMaxLimit>
+                            <schedulingSystem reference="../.."/>
+                            <capacity>100</capacity>
+                            <currAction>None</currAction>
+                            <intList/>
+                            <syncIntList/>
+                            <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                              <id>FCFS</id>
+                            </saIntList>
+                            <readyList/>
+                            <syncReadyList/>
+                            <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                              <id>FCFS</id>
+                            </saReadyList>
+                            <time>57</time>
+                            <limitTime>-1</limitTime>
+                            <maxTasksNumber>100</maxTasksNumber>
+                          </dealerActor>
                           <deadline>80</deadline>
                           <tasks reference="../ioSystem/tasksList"/>
-                          <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+                          <newsList reference="../dealerActor/readyList"/>
                           <actorsList reference="../ioSystem/actorsList"/>
                           <resourcesList reference="../ioSystem/resourcesList"/>
                           <finishedList>
@@ -2445,39 +2418,6 @@ Velocity proportion (deadline/nbrOfCycles): 1.4035088
                         </schedulingSystem>
                       </contingencyTask>
                       <schedulingSystem reference="../../../.."/>
-                      <filter class="Controller.FilterSystem.AndFilter">
-                        <filterA class="Controller.FilterSystem.EqualPropertyFilter">
-                          <key class="string">Category</key>
-                          <value class="string">A</value>
-                        </filterA>
-                        <filterB class="Controller.FilterSystem.TaskOwnerFilter">
-                          <element class="Controller.SchedulingSystem.Task" reference="../../.."/>
-                        </filterB>
-                      </filter>
-                      <updater>
-                        <updates>
-                          <entry>
-                            <Controller.FilterSystem.AndFilter>
-                              <filterA class="Controller.FilterSystem.EqualPropertyFilter">
-                                <key class="string">type</key>
-                                <value class="string">report</value>
-                              </filterA>
-                              <filterB class="Controller.FilterSystem.EqualPropertyFilter">
-                                <key class="string">state</key>
-                                <value class="string">empty</value>
-                              </filterB>
-                            </Controller.FilterSystem.AndFilter>
-                            <Controller.SchedulingSystem.Update>
-                              <properties>
-                                <entry>
-                                  <string>state</string>
-                                  <string>complete</string>
-                                </entry>
-                              </properties>
-                            </Controller.SchedulingSystem.Update>
-                          </entry>
-                        </updates>
-                      </updater>
                     </Controller.SchedulingSystem.Task>
                     <Controller.SchedulingSystem.Task>
                       <taskId>task1</taskId>
@@ -4512,13 +4452,13 @@ Velocity proportion (deadline/nbrOfCycles): 1.4035088
                     <Model.LogginSystem.XMLLogginSystem>
                       <configurator reference="../../../../configurator"/>
                       <simulationTimes reference="../../../simulationTimes"/>
-                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.xml</outputFileName>
+                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
                       <fileManager/>
                     </Model.LogginSystem.XMLLogginSystem>
                     <Model.LogginSystem.TXTLogginSystem>
                       <configurator reference="../../../../configurator"/>
                       <simulationTimes reference="../../../simulationTimes"/>
-                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.txt</outputFileName>
+                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
                       <fileManager/>
                     </Model.LogginSystem.TXTLogginSystem>
                   </logginSystems>
@@ -4557,10 +4497,33 @@ Velocity proportion (deadline/nbrOfCycles): 1.4035088
 </analysis>
                 </resultsAnalyzer>
                 <numberOfTasks>3</numberOfTasks>
-                <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
+                <dealerActor>
+                  <resId>dealerActor</resId>
+                  <type>actor</type>
+                  <properties/>
+                  <relationsIds/>
+                  <resources/>
+                  <resourceMaxLimit>100</resourceMaxLimit>
+                  <schedulingSystem reference="../.."/>
+                  <capacity>100</capacity>
+                  <currAction>None</currAction>
+                  <intList/>
+                  <syncIntList/>
+                  <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                    <id>FCFS</id>
+                  </saIntList>
+                  <readyList/>
+                  <syncReadyList/>
+                  <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+                    <id>FCFS</id>
+                  </saReadyList>
+                  <time>57</time>
+                  <limitTime>-1</limitTime>
+                  <maxTasksNumber>100</maxTasksNumber>
+                </dealerActor>
                 <deadline>80</deadline>
                 <tasks reference="../ioSystem/tasksList"/>
-                <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+                <newsList reference="../dealerActor/readyList"/>
                 <actorsList reference="../ioSystem/actorsList"/>
                 <resourcesList reference="../ioSystem/resourcesList"/>
                 <finishedList>

@@ -27,30 +27,6 @@
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
       <actorsList>
-        <Controller.SchedulingSystem.Actor>
-          <resId>dealerActor</resId>
-          <type>actor</type>
-          <properties/>
-          <relationsIds/>
-          <resources/>
-          <resourceMaxLimit>100</resourceMaxLimit>
-          <schedulingSystem reference="../../../.."/>
-          <capacity>100</capacity>
-          <currAction>None</currAction>
-          <intList/>
-          <syncIntList/>
-          <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
-            <id>FCFS</id>
-          </saIntList>
-          <readyList/>
-          <syncReadyList/>
-          <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
-            <id>FCFS</id>
-          </saReadyList>
-          <time>5</time>
-          <limitTime>-1</limitTime>
-          <maxTasksNumber>100</maxTasksNumber>
-        </Controller.SchedulingSystem.Actor>
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
         <Controller.SchedulingSystem.Actor>
           <resId>actor1</resId>
@@ -89,7 +65,7 @@
       <resourcesList/>
       <allResourcesList>
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
-        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[3]"/>
+        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[2]"/>
       </allResourcesList>
       <tasksList>
         <Controller.SchedulingSystem.Task>
@@ -284,13 +260,13 @@
         <Model.LogginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.xml</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
           <fileManager/>
         </Model.LogginSystem.XMLLogginSystem>
         <Model.LogginSystem.TXTLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
-          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_4/test_case_4_log.txt</outputFileName>
+          <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
           <fileManager/>
         </Model.LogginSystem.TXTLogginSystem>
       </logginSystems>
@@ -329,10 +305,33 @@
 </analysis>
     </resultsAnalyzer>
     <numberOfTasks>1</numberOfTasks>
-    <dealerActor reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor"/>
+    <dealerActor>
+      <resId>dealerActor</resId>
+      <type>actor</type>
+      <properties/>
+      <relationsIds/>
+      <resources/>
+      <resourceMaxLimit>100</resourceMaxLimit>
+      <schedulingSystem reference="../.."/>
+      <capacity>100</capacity>
+      <currAction>None</currAction>
+      <intList/>
+      <syncIntList/>
+      <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+        <id>FCFS</id>
+      </saIntList>
+      <readyList/>
+      <syncReadyList/>
+      <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+        <id>FCFS</id>
+      </saReadyList>
+      <time>5</time>
+      <limitTime>-1</limitTime>
+      <maxTasksNumber>100</maxTasksNumber>
+    </dealerActor>
     <deadline>80</deadline>
     <tasks reference="../ioSystem/tasksList"/>
-    <newsList reference="../ioSystem/actorsList/Controller.SchedulingSystem.Actor/readyList"/>
+    <newsList reference="../dealerActor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList/>
