@@ -23,7 +23,8 @@ public class Configurator {
 	public Configurator() {
 		// String confFile = "conf.xml"; // Usar esta línea cuando se pretende
 		// crear el jar, sino poner el path completo
-		String confFile = "C:\\Users\\Administrador\\workspace-test\\TaskOnResourcesII\\src\\conf.xml";
+		//String confFile = "C:\\Users\\Administrador\\workspace-test\\TaskOnResourcesII\\src\\conf.xml";
+		String confFile = "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml";
 		this.setConfFile(confFile);
 		this.setConfParameters();
 	}

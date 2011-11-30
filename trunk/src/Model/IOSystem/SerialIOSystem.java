@@ -103,7 +103,7 @@ public class SerialIOSystem extends IOSystem {
 
 	}
 
-	public void removeDuplicatedResources(Vector allResources) {
+	public void removeDuplicatedResources(Vector<Resource> allResources) {
 		for (int i = 0; i < allResources.size() - 1; i++) {
 			for (int j = i + 1; j < allResources.size(); j++) {
 				if (((Resource) allResources.elementAt(i)).getResId().equals(
@@ -124,16 +124,15 @@ public class SerialIOSystem extends IOSystem {
 
 			FileOutputStream fs;
 			Vector<Resource> allResources = new Vector<Resource>();
-			if (this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
+			/*if (this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
 				allResources = this.getSchedulingSystem().getIoSystem()
-						.getAllResourcesList();
+						.getAllResourcesList();*/
 			if (this.getSchedulingSystem().getResourcesList() != null)
 				allResources.addAll(this.getSchedulingSystem()
 						.getResourcesList());
-                        if (this.getSchedulingSystem().getActorsList() != null)
-				allResources.addAll(this.getSchedulingSystem()
-						.getActorsList());
-			this.removeDuplicatedResources(allResources);
+			if (this.getSchedulingSystem().getActorsList() != null)
+				allResources.addAll(this.getSchedulingSystem().getActorsList());
+			//this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
 			int i = 0;
@@ -144,9 +143,8 @@ public class SerialIOSystem extends IOSystem {
 			}
 
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-                        if (this.getSchedulingSystem().getNewsList() != null)
-				tasks.addAll(this.getSchedulingSystem()
-						.getNewsList());
+			//if (this.getSchedulingSystem().getNewsList() != null)
+			//	tasks.addAll(this.getSchedulingSystem().getNewsList());
 			n = tasks.size();
 			int j = 0;
 			for (j = 0; j < n; j++) {
@@ -157,8 +155,8 @@ public class SerialIOSystem extends IOSystem {
 
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
 			// int deadline = this.getDeadline();
-			int deadline = this.getSchedulingSystem().getIoSystem()
-					.getDeadline();
+			//int deadline = this.getSchedulingSystem().getIoSystem().getDeadline();
+			int deadline = this.getSchedulingSystem().getDeadline();
 			xs.toXML(deadline, fs);
 
 		} catch (FileNotFoundException e1) {

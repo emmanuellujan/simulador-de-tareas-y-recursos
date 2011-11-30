@@ -110,6 +110,7 @@
         <Controller.SchedulingSystem.Actor reference="../../../.."/>
         <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor[3]"/>
         <Controller.SchedulingSystem.Resource reference="../../resourcesList/Controller.SchedulingSystem.Resource"/>
+        <Controller.SchedulingSystem.Actor reference="../../actorsList/Controller.SchedulingSystem.Actor"/>
       </allResourcesList>
       <tasksList>
         <Controller.SchedulingSystem.Task>
