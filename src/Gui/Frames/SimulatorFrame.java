@@ -1707,8 +1707,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().setFailedFinishedList(failedFinishedList);
 			this.getSchedulingSystem().setFinishedList(finishedList);
 			
-			//this.jProgressBar1.setValue(30);
-			//this.getSchedulingSystem().loadData();
+			this.jProgressBar1.setValue(30);
 			this.jProgressBar1.setValue(50);
 			this.getSchedulingSystem().simulateAndLog();
 			this.jProgressBar1.setValue(75);
@@ -1717,6 +1716,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
 					.getResultsAnalyzer().getAnalysis());
 			this.setSchedulingSystem(new SchedulingSystem());
 			this.jProgressBar1.setValue(100);
+                        NewsFrame.getInstance().setLabel("Simulation completed");
+			NewsFrame.getInstance().setBackFrame("SimulatorFrame");
+			this.setVisible(false);
+			NewsFrame.getInstance().setLocationRelativeTo(null);
+			NewsFrame.getInstance().setVisible(true);
+                        this.jProgressBar1.setValue(0);
 		}
 	}// GEN-LAST:event_jButton4ActionPerformed
 

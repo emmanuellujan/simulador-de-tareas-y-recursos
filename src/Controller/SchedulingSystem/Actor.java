@@ -33,30 +33,32 @@ public class Actor extends Resource {
 			int maxRelations, Vector<String> relationsIds) {
 
 		super(resId, type, properties, maxRelations, relationsIds,
-				schedulingSystem);
+                schedulingSystem);
 
-		this.setCurrAction("Nothing");
-		this.setCurrTask(null);
+                this.setCurrAction("Nothing");
+                this.setCurrTask(null);
 
-		this.setMaxTasksNumber(maxTaskNumber);
-		this.setCapacity(capacity);
+                this.setMaxTasksNumber(maxTaskNumber);
+                this.setCapacity(capacity);
 
-		Vector<Task> syncIntList = new Vector<Task>();
-		this.setSyncIntList(syncIntList);
-		Vector<Task> intList = new Vector<Task>();
-		this.setIntList(intList);
+                Vector<Task> syncIntList = new Vector<Task>();
+                this.setSyncIntList(syncIntList);
+                Vector<Task> intList = new Vector<Task>();
+                this.setIntList(intList);
 
-		FCFS saIntList = new FCFS();
-		this.setSaIntList(saIntList);
+                FCFS saIntList = new FCFS();
+                this.setSaIntList(saIntList);
 
-		Vector<Task> syncReadyList = new Vector<Task>();
-		this.setSyncReadyList(syncReadyList);
-		Vector<Task> readylist = new Vector<Task>();
-		this.setReadyList(readylist);
-		this.setSaReadyList(saReadyList);
+                Vector<Task> syncReadyList = new Vector<Task>();
+                this.setSyncReadyList(syncReadyList);
+                Vector<Task> readylist = new Vector<Task>();
+                this.setReadyList(readylist);
+                this.setSaReadyList(saReadyList);
 
-		this.setTime(0);
-		this.setLimitTime(limitTime);
+                this.setTime(0);
+                if(limitTime<3) 
+                    limitTime=-1;
+                this.setLimitTime(limitTime);
 	}
 
 	public void addIntList(Task currTask, String workUnit) {
