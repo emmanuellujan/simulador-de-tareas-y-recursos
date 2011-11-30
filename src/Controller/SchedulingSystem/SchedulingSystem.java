@@ -6,6 +6,7 @@ import Controller.SchedulingAlgorithmSystem.FCFS;
 import Model.DataModel.Configurator.Configurator;
 import Model.IOSystem.IOSystem;
 import Model.IOSystem.SerialIOSystem;
+import Model.IOSystem.XMLIOSystem;
 import Model.LogginSystem.CompLogginSystem;
 import Model.ResultsAnalyzer.ResultsAnalyzer;
 
@@ -34,7 +35,7 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
@@ -312,6 +313,7 @@ public class SchedulingSystem {
 			logger.log(i, actorsList);
 			i++;
 		}
+		actorsList.remove(0);
 	}
 
 	public void start() {
