@@ -2,16 +2,16 @@ Results Analisys
 
   Number of errors: 0
   Deadline (in cycles): 80
-  Number of cycles: 9
+  Number of cycles: 11
   Total number of executed tasks *: 1
-  Number of successful tasks *: 0
-  Number of failed tasks: 1
+  Number of successful tasks *: 1
+  Number of failed tasks: 0
   Number of actors: 2
   Number of other resources (artifacts): 1
   Mean number of tasks per actor: 0.5
   Proportions: 
-    Successful tasks *: 0.0
-    Failed tasks *: 1.0
-    Velocity (deadline/nbrOfCycles): 8.888889
+    Successful tasks *: 1.0
+    Failed tasks *: 0.0
+    Velocity (deadline/nbrOfCycles): 7.2727275
 
   *: with contigency tasks

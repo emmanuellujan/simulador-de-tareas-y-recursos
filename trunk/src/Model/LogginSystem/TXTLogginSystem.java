@@ -74,7 +74,6 @@ public class TXTLogginSystem extends FileLogginSystem {
 			xmlLog += this.logActors(actors);
 			xmlLog += "\n";
 		}
-
 		this.writeFile(xmlLog);
 	}
 }

@@ -127,11 +127,10 @@ public class SerialIOSystem extends IOSystem {
 			/*if (this.getSchedulingSystem().getIoSystem().getAllResourcesList() != null)
 				allResources = this.getSchedulingSystem().getIoSystem()
 						.getAllResourcesList();*/
-			if (this.getSchedulingSystem().getResourcesList() != null)
-				allResources.addAll(this.getSchedulingSystem()
-						.getResourcesList());
 			if (this.getSchedulingSystem().getActorsList() != null)
 				allResources.addAll(this.getSchedulingSystem().getActorsList());
+			if (this.getSchedulingSystem().getResourcesList() != null)
+				allResources.addAll(this.getSchedulingSystem().getResourcesList());
 			//this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
@@ -141,7 +140,6 @@ public class SerialIOSystem extends IOSystem {
 				fs = new FileOutputStream(dir + i + ".xml");
 				xs.toXML(resource, fs);
 			}
-
 			
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
 			//if (this.getSchedulingSystem().getNewsList() != null)
