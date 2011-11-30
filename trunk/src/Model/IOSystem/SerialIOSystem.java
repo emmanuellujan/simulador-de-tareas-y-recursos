@@ -130,6 +130,9 @@ public class SerialIOSystem extends IOSystem {
 			if (this.getSchedulingSystem().getResourcesList() != null)
 				allResources.addAll(this.getSchedulingSystem()
 						.getResourcesList());
+                        if (this.getSchedulingSystem().getActorsList() != null)
+				allResources.addAll(this.getSchedulingSystem()
+						.getActorsList());
 			this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
@@ -141,6 +144,9 @@ public class SerialIOSystem extends IOSystem {
 			}
 
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
+                        if (this.getSchedulingSystem().getNewsList() != null)
+				tasks.addAll(this.getSchedulingSystem()
+						.getNewsList());
 			n = tasks.size();
 			int j = 0;
 			for (j = 0; j < n; j++) {
