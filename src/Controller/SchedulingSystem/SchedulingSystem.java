@@ -211,9 +211,8 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		// SerialIOSystem serialIOSystem = new
-		// SerialIOSystem(this.getConfigurator(), this);
-		// serialIOSystem.saveAll();
+		//SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
+		//serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
