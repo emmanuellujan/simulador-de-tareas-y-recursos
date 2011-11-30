@@ -1667,6 +1667,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		this.actorCreatePanel.setActorsList(this.getActorsList());
+		this.actorCreatePanel.setSchedulingSystem(this.getSchedulingSystem());
 		this.actorCreatePanel.setLocationRelativeTo(null);
 		this.actorCreatePanel.setVisible(true);
 		this.setVisible(false);
@@ -1686,12 +1687,28 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.jProgressBar1.setValue(0);
 			this.jProgressBar1.setStringPainted(true);
 			this.jTextArea1.removeAll();
-			this.getSchedulingSystem().setActorsList(this.getActorsList());
-			this.getSchedulingSystem().setNewsList(this.getNewsList());
-			this.getSchedulingSystem()
-					.setResourcesList(this.getResourcesList());
-			this.jProgressBar1.setValue(30);
-			this.getSchedulingSystem().loadData();
+				
+			int deadline = 80;
+			Vector<Task> newsList = this.getNewsList(); 
+			Vector<Task> tasks = new Vector<Task>();
+			tasks.addAll(newsList);
+			Vector<Actor> actorsList = this.getActorsList();
+			Vector<Resource> resourcesList = this.getResourcesList();
+			Vector<Task> failedFinishedList = new Vector<Task>();
+			Vector<Task> finishedList =  new Vector<Task>();
+
+			this.getSchedulingSystem().getDealerActor().setReadyList(newsList);
+			this.getSchedulingSystem().setDeadline(deadline);
+			this.getSchedulingSystem().setNewsList(newsList);
+			this.getSchedulingSystem().setTasks(tasks);
+			this.getSchedulingSystem().setActorsList(actorsList);
+			this.getSchedulingSystem().setResourcesList(resourcesList);
+			this.getSchedulingSystem().setNumberOfTasks(newsList.size());
+			this.getSchedulingSystem().setFailedFinishedList(failedFinishedList);
+			this.getSchedulingSystem().setFinishedList(finishedList);
+			
+			//this.jProgressBar1.setValue(30);
+			//this.getSchedulingSystem().loadData();
 			this.jProgressBar1.setValue(50);
 			this.getSchedulingSystem().simulateAndLog();
 			this.jProgressBar1.setValue(75);
