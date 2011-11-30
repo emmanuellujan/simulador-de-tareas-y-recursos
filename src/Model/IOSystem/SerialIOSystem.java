@@ -142,6 +142,7 @@ public class SerialIOSystem extends IOSystem {
 				xs.toXML(resource, fs);
 			}
 
+			
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
 			//if (this.getSchedulingSystem().getNewsList() != null)
 			//	tasks.addAll(this.getSchedulingSystem().getNewsList());
@@ -154,7 +155,7 @@ public class SerialIOSystem extends IOSystem {
 			}
 
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			// int deadline = this.getDeadline();
+			//int deadline = this.getDeadline();
 			//int deadline = this.getSchedulingSystem().getIoSystem().getDeadline();
 			int deadline = this.getSchedulingSystem().getDeadline();
 			xs.toXML(deadline, fs);
