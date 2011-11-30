@@ -52,7 +52,7 @@ public class ResultsAnalyzer {
 		int numberOfTasks = nbrSuccessfulTasks + nbrFailedTasks;
 		this.setNumberOfTasks(numberOfTasks);
 
-		int numberOfActors = this.getSchedulingSystem().getActorsList().size() - 1;
+		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
 		this.setNumberOfActors(numberOfActors);
 
 		int numberOfResources = this.getSchedulingSystem().getResourcesList()
