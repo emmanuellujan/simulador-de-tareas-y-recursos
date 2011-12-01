@@ -198,8 +198,8 @@ Time: 7
 		Ready List:
 
 	ResourceId: actor1
-		Current Action: The active task task0 fails
-		Active Task: None
+		Current Action: Procesing active task task0
+		Active Task: task0
 		Current Time: 7
 		Limit Time: -1
 		Interruption List: 
@@ -224,9 +224,61 @@ Time: 8
 		Ready List:
 
 	ResourceId: actor1
+		Current Action: Procesing active task task0
+		Active Task: task0
+		Current Time: 8
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 9
+	ResourceId: dealerActor
 		Current Action: None
 		Active Task: None
-		Current Time: 8
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: The active task task0 ends
+		Active Task: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+
+Time: 10
+	ResourceId: dealerActor
+		Current Action: None
+		Active Task: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor0
+		Current Action: None
+		Active Task: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
+	ResourceId: actor1
+		Current Action: None
+		Active Task: None
+		Current Time: 10
 		Limit Time: -1
 		Interruption List: 
 		Ready List:

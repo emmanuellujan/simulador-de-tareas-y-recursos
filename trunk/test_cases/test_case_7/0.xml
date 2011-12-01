@@ -42,12 +42,12 @@
           <type>artifact</type>
           <properties>
             <entry>
-              <string>type</string>
-              <string>artifact</string>
-            </entry>
-            <entry>
               <string>charge</string>
               <string>700pages</string>
+            </entry>
+            <entry>
+              <string>type</string>
+              <string>artifact</string>
             </entry>
             <entry>
               <string>description</string>
@@ -209,12 +209,12 @@
                                         <type>artifact</type>
                                         <properties>
                                           <entry>
-                                            <string>type</string>
-                                            <string>artifact</string>
-                                          </entry>
-                                          <entry>
                                             <string>charge</string>
                                             <string>700pages</string>
+                                          </entry>
+                                          <entry>
+                                            <string>type</string>
+                                            <string>artifact</string>
                                           </entry>
                                           <entry>
                                             <string>description</string>
@@ -2335,13 +2335,13 @@
                               <Model.LogginSystem.XMLLogginSystem>
                                 <configurator reference="../../../../configurator"/>
                                 <simulationTimes reference="../../../simulationTimes"/>
-                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
+                                <extension>xml</extension>
                                 <fileManager/>
                               </Model.LogginSystem.XMLLogginSystem>
                               <Model.LogginSystem.TXTLogginSystem>
                                 <configurator reference="../../../../configurator"/>
                                 <simulationTimes reference="../../../simulationTimes"/>
-                                <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
+                                <extension>txt</extension>
                                 <fileManager/>
                               </Model.LogginSystem.TXTLogginSystem>
                             </logginSystems>
@@ -4452,13 +4452,13 @@
                     <Model.LogginSystem.XMLLogginSystem>
                       <configurator reference="../../../../configurator"/>
                       <simulationTimes reference="../../../simulationTimes"/>
-                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.xml</outputFileName>
+                      <extension>xml</extension>
                       <fileManager/>
                     </Model.LogginSystem.XMLLogginSystem>
                     <Model.LogginSystem.TXTLogginSystem>
                       <configurator reference="../../../../configurator"/>
                       <simulationTimes reference="../../../simulationTimes"/>
-                      <outputFileName>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_1/test_case_1_log.txt</outputFileName>
+                      <extension>txt</extension>
                       <fileManager/>
                     </Model.LogginSystem.TXTLogginSystem>
                   </logginSystems>

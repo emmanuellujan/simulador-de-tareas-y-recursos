@@ -10,10 +10,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 
 	public XMLLogginSystem(Configurator configurator,
 			Vector<SimulationTime> simulationTimes) {
-		super(configurator, simulationTimes);
-		String outputFileName = this.getConfigurator().getOutputDir()
-				+ this.getConfigurator().getProjectName() + "_log.xml";
-		this.setOutputFileName(outputFileName);
+		super(configurator, simulationTimes,"xml");
 	}
 
 	private String logActors(Vector<SimulationResource> actors) {
