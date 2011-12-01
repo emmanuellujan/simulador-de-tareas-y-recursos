@@ -10,10 +10,7 @@ public class TXTLogginSystem extends FileLogginSystem {
 
 	public TXTLogginSystem(Configurator configurator,
 			Vector<SimulationTime> simulationTimes) {
-		super(configurator, simulationTimes);
-		String outputFileName = this.getConfigurator().getOutputDir()
-				+ this.getConfigurator().getProjectName() + "_log.txt";
-		this.setOutputFileName(outputFileName);
+		super(configurator, simulationTimes, "txt");
 	}
 
 	private String logActors(Vector<SimulationResource> actors) {

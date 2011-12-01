@@ -7,14 +7,15 @@ import Model.DataModel.SimulationTime.SimulationTime;
 import Model.IOSystem.FileManager;
 
 public abstract class FileLogginSystem extends LogginSystem {
-	protected String outputFileName;
+	protected String extension;
 	protected FileManager fileManager;
 
 	public FileLogginSystem(Configurator configurator,
-			Vector<SimulationTime> simulationTimes) {
+			Vector<SimulationTime> simulationTimes, String extension) {
 		super(configurator, simulationTimes);
 		FileManager fileManager = new FileManager();
 		this.setFileManager(fileManager);
+		this.setExtension(extension);
 	}
 
 	public FileManager getFileManager() {
@@ -22,6 +23,8 @@ public abstract class FileLogginSystem extends LogginSystem {
 	}
 
 	public String getOutputFileName() {
+		String outputFileName = this.getConfigurator().getOutputDir()
+				+ this.getConfigurator().getProjectName() + "_log."+this.getExtension();
 		return outputFileName;
 	}
 
@@ -29,12 +32,15 @@ public abstract class FileLogginSystem extends LogginSystem {
 		this.fileManager = fileManager;
 	}
 
-	public void setOutputFileName(String outputFileName) {
-		this.outputFileName = outputFileName;
+	public String getExtension() {
+		return extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
 	}
 
 	protected void writeFile(String s) {
-		System.out.println(this.getOutputFileName());
 		this.getFileManager().writeFile(this.getOutputFileName(), s);
 	}
 

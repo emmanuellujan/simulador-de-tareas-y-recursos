@@ -246,8 +246,8 @@
 			</resource>
 			<resource>
 				<resourceId>actor1</resourceId>
-				<currentAction>The active task task0 fails</currentAction>
-				<activeTask>None</activeTask>
+				<currentAction>Procesing active task task0</currentAction>
+				<activeTask>task0</activeTask>
 				<currentTime>7</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
@@ -278,9 +278,73 @@
 			</resource>
 			<resource>
 				<resourceId>actor1</resourceId>
+				<currentAction>Procesing active task task0</currentAction>
+				<activeTask>task0</activeTask>
+				<currentTime>8</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+		</actors>
+	</time>
+	<time>
+		<currentTime>9</currentTime>
+		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
 				<currentAction>None</currentAction>
 				<activeTask>None</activeTask>
-				<currentTime>8</currentTime>
+				<currentTime>9</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
+				<resourceId>actor0</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>9</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
+				<resourceId>actor1</resourceId>
+				<currentAction>The active task task0 ends</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>9</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+		</actors>
+	</time>
+	<time>
+		<currentTime>10</currentTime>
+		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>10</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
+				<resourceId>actor0</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>10</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
+				<resourceId>actor1</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>10</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
 				<readyList></readyList>
