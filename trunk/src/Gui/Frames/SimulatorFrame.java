@@ -214,7 +214,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextArea1.setLineWrap(true);
 		this.jTextArea1.setWrapStyleWord(true);
 		this.setLocationRelativeTo(null);
-		this.loadState = false;
+		this.setLoadState(false);
 	}
 
 	public void fillResourcesComboboxes() {
@@ -1591,7 +1591,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			System.out.println(fileChooser.getSelectedFile().getAbsolutePath());
 			this.getSchedulingSystem().loadData(
 					fileChooser.getSelectedFile().getAbsolutePath());
-			this.setLoadState();
+			this.setLoadState(true);
 			this.setActorsList(this.getSchedulingSystem().getActorsList());
 			this.setResourcesList(this.getSchedulingSystem().getResourcesList());
 			this.setNewsList(this.getSchedulingSystem().getNewsList());
@@ -1653,7 +1653,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextArea1.setLineWrap(true);
 		this.jTextArea1.setWrapStyleWord(true);
 		this.setLocationRelativeTo(null);
-		this.loadState = false;
+		this.setLoadState(false);
 		this.jTextPane1.setText(String.valueOf(this.getNewsList().size()));
 		this.jTextPane2.setText(String.valueOf(this.getActorsList().size()));
 		this.jTextPane3.setText(String.valueOf(this.getResourcesList().size()));
@@ -1827,8 +1827,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		}
 	}
 
-	private void setLoadState() {
-		this.loadState = true;
+	private void setLoadState(boolean state) {
+		this.loadState = state;
+                if(this.loadState)
+                    this.jTextField1.setEnabled(false);
+                else
+                    this.jTextField1.setEnabled(true);
 	}
 
 	public void setMainResourcesList() {
