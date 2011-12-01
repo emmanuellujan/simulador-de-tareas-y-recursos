@@ -142,6 +142,7 @@ public class SerialIOSystem extends IOSystem {
 			}
 			
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
+			//Vector<Task> tasks = this.getSchedulingSystem().getTasks();
 			//if (this.getSchedulingSystem().getNewsList() != null)
 			//	tasks.addAll(this.getSchedulingSystem().getNewsList());
 			n = tasks.size();

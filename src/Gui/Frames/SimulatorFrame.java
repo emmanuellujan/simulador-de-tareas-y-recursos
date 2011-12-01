@@ -1546,6 +1546,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton11ActionPerformed
 
 	private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton12ActionPerformed
+		Vector<Task> newsList = this.getNewsList(); 
+		Vector<Task> tasks = new Vector<Task>();
+		tasks.addAll(newsList);
+		this.getSchedulingSystem().setTasks(tasks);
+		
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Guardar");
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -1706,7 +1711,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().setNumberOfTasks(newsList.size());
 			this.getSchedulingSystem().setFailedFinishedList(failedFinishedList);
 			this.getSchedulingSystem().setFinishedList(finishedList);
-			
+		
 			this.jProgressBar1.setValue(30);
 			this.jProgressBar1.setValue(50);
 			this.getSchedulingSystem().simulateAndLog();
@@ -1714,7 +1719,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().getResultsAnalyzer().analyze();
 			this.jTextArea1.setText(this.getSchedulingSystem()
 					.getResultsAnalyzer().getAnalysis());
-			this.setSchedulingSystem(new SchedulingSystem());
+			//this.setSchedulingSystem(new SchedulingSystem());
 			this.jProgressBar1.setValue(100);
                         NewsFrame.getInstance().setLabel("Simulation completed");
 			NewsFrame.getInstance().setBackFrame("SimulatorFrame");
