@@ -24,6 +24,7 @@ import Controller.SchedulingSystem.SystemServices;
 import Controller.SchedulingSystem.Task;
 
 import com.birosoft.liquid.LiquidLookAndFeel;
+import java.awt.Color;
 
 /**
  * 
@@ -1546,11 +1547,11 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton11ActionPerformed
 
 	private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton12ActionPerformed
-		Vector<Task> newsList = this.getNewsList();
+		Vector<Task> newsList = this.getNewsList(); 
 		Vector<Task> tasks = new Vector<Task>();
 		tasks.addAll(newsList);
 		this.getSchedulingSystem().setTasks(tasks);
-
+		
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Guardar");
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -1692,15 +1693,15 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.jProgressBar1.setValue(0);
 			this.jProgressBar1.setStringPainted(true);
 			this.jTextArea1.removeAll();
-
+				
 			int deadline = 80;
-			Vector<Task> newsList = this.getNewsList();
+			Vector<Task> newsList = this.getNewsList(); 
 			Vector<Task> tasks = new Vector<Task>();
 			tasks.addAll(newsList);
 			Vector<Actor> actorsList = this.getActorsList();
 			Vector<Resource> resourcesList = this.getResourcesList();
 			Vector<Task> failedFinishedList = new Vector<Task>();
-			Vector<Task> finishedList = new Vector<Task>();
+			Vector<Task> finishedList =  new Vector<Task>();
 
 			this.getSchedulingSystem().getDealerActor().setReadyList(newsList);
 			this.getSchedulingSystem().setDeadline(deadline);
@@ -1709,10 +1710,9 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().setActorsList(actorsList);
 			this.getSchedulingSystem().setResourcesList(resourcesList);
 			this.getSchedulingSystem().setNumberOfTasks(newsList.size());
-			this.getSchedulingSystem()
-					.setFailedFinishedList(failedFinishedList);
+			this.getSchedulingSystem().setFailedFinishedList(failedFinishedList);
 			this.getSchedulingSystem().setFinishedList(finishedList);
-
+		
 			this.jProgressBar1.setValue(30);
 			this.jProgressBar1.setValue(50);
 			this.getSchedulingSystem().simulateAndLog();
@@ -1720,14 +1720,14 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().getResultsAnalyzer().analyze();
 			this.jTextArea1.setText(this.getSchedulingSystem()
 					.getResultsAnalyzer().getAnalysis());
-			// this.setSchedulingSystem(new SchedulingSystem());
+			//this.setSchedulingSystem(new SchedulingSystem());
 			this.jProgressBar1.setValue(100);
-			NewsFrame.getInstance().setLabel("Simulation completed");
+                        NewsFrame.getInstance().setLabel("Simulation completed");
 			NewsFrame.getInstance().setBackFrame("SimulatorFrame");
 			this.setVisible(false);
 			NewsFrame.getInstance().setLocationRelativeTo(null);
 			NewsFrame.getInstance().setVisible(true);
-			this.jProgressBar1.setValue(0);
+                        this.jProgressBar1.setValue(0);
 		}
 	}// GEN-LAST:event_jButton4ActionPerformed
 
@@ -1830,10 +1830,15 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void setLoadState(boolean state) {
 		this.loadState = state;
-		if (this.loadState)
-			this.jTextField1.setEnabled(false);
-		else
-			this.jTextField1.setEnabled(true);
+                if(this.loadState){
+                    this.jTextField1.setBackground(Color.LIGHT_GRAY);
+                    this.jTextField1.setText("");
+                    this.jTextField1.setEditable(false);                    
+                }else{
+                    this.jTextField1.setEditable(true);
+                    this.jTextField1.setText("");
+                    this.jTextField1.setBackground(Color.WHITE);
+                }
 	}
 
 	public void setMainResourcesList() {
