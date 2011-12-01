@@ -10,7 +10,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 
 	public XMLLogginSystem(Configurator configurator,
 			Vector<SimulationTime> simulationTimes) {
-		super(configurator, simulationTimes,"xml");
+		super(configurator, simulationTimes, "xml");
 	}
 
 	private String logActors(Vector<SimulationResource> actors) {

@@ -18,26 +18,27 @@ public abstract class FileLogginSystem extends LogginSystem {
 		this.setExtension(extension);
 	}
 
+	public String getExtension() {
+		return extension;
+	}
+
 	public FileManager getFileManager() {
 		return fileManager;
 	}
 
 	public String getOutputFileName() {
 		String outputFileName = this.getConfigurator().getOutputDir()
-				+ this.getConfigurator().getProjectName() + "_log."+this.getExtension();
+				+ this.getConfigurator().getProjectName() + "_log."
+				+ this.getExtension();
 		return outputFileName;
-	}
-
-	public void setFileManager(FileManager fileManager) {
-		this.fileManager = fileManager;
-	}
-
-	public String getExtension() {
-		return extension;
 	}
 
 	public void setExtension(String extension) {
 		this.extension = extension;
+	}
+
+	public void setFileManager(FileManager fileManager) {
+		this.fileManager = fileManager;
 	}
 
 	protected void writeFile(String s) {
