@@ -113,7 +113,7 @@ public class NewsFrame extends javax.swing.JFrame {
 		jLabel1.setText("News!");
 
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/Gui/Media/warning.png"))); // NOI18N
+				"/presentationLayer/media/warning.png"))); // NOI18N
 
 		jButton1.setText("Ok");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
