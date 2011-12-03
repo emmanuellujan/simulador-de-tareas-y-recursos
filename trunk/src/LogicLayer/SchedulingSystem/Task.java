@@ -1,6 +1,8 @@
 package LogicLayer.SchedulingSystem;
 
 import java.util.Vector;
+import LogicLayer.FilterSystem.Filter;
+import LogicLayer.SchedulingSystem.Resource;
 
 public class Task {
 	private String taskId;
@@ -48,8 +50,7 @@ public class Task {
 	public boolean evalConditions() {
 		Filter filter = this.getFilter();
 		if (filter != null) {
-			Vector<Resource> resources = this.getSchedulingSystem()
-					.getIoSystem().getAllResourcesList();
+			Vector<Resource> resources = this.getSchedulingSystem().getIoSystem().getAllResourcesList();
 
 			boolean r = false;
 			int n = resources.size();

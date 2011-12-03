@@ -8,6 +8,7 @@ import PersistenceLayer.DataModel.Configurator.Configurator;
 import PersistenceLayer.IOSystem.IOSystem;
 import PersistenceLayer.IOSystem.SerialIOSystem;
 import PersistenceLayer.LogginSystem.CompLogginSystem;
+import LogicLayer.SchedulingSystem.Resource;
 
 public class SchedulingSystem {
 

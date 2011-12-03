@@ -9,6 +9,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Resource;
 
 /**
  * 
@@ -356,8 +357,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
 																			 */);
 			this.getResourcesList().add(this.newResource);
 			setFieldsValuesEmpty();
-			SimulatorFrame.getInstance().setResourcesList(
-					this.getResourcesList());
+			SimulatorFrame.getInstance().setResourcesList(this.getResourcesList());
 			this.setVisible(false);
 			SimulatorFrame.getInstance().setVisible(true);
 			SimulatorFrame.getInstance().setLocationRelativeTo(null);

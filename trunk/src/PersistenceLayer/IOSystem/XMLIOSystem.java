@@ -20,6 +20,9 @@ import LogicLayer.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 import LogicLayer.SchedulingSystem.Actor;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
 import LogicLayer.SchedulingSystem.Updater;
+import LogicLayer.SchedulingSystem.Task;
+import LogicLayer.SchedulingSystem.Resource;
+import LogicLayer.SchedulingSystem.Update;
 import PersistenceLayer.DataModel.Configurator.Configurator;
 
 public class XMLIOSystem extends IOSystem {

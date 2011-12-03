@@ -9,6 +9,9 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 import LogicLayer.SchedulingSystem.Updater;
+import LogicLayer.SchedulingSystem.Update;
+import LogicLayer.SchedulingSystem.Resource;
+import LogicLayer.FilterSystem.Filter;
 
 /**
  * 

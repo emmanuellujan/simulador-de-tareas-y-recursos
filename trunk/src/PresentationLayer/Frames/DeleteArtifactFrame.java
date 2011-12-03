@@ -8,6 +8,7 @@ package PresentationLayer.Frames;
 import java.util.Vector;
 
 import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Resource;
 
 /**
  * 

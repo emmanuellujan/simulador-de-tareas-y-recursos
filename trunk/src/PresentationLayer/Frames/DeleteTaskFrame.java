@@ -7,6 +7,8 @@ package PresentationLayer.Frames;
 
 import java.util.Vector;
 
+import LogicLayer.SchedulingSystem.Task;
+
 /**
  * 
  * @author F.Rossi

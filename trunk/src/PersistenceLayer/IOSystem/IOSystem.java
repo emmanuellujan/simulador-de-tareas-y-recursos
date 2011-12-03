@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import LogicLayer.SchedulingSystem.Actor;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Resource;
+import LogicLayer.SchedulingSystem.Task;
 import PersistenceLayer.DataModel.Configurator.Configurator;
 
 public abstract class IOSystem {

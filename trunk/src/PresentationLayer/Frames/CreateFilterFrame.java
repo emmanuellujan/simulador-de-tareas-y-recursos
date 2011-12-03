@@ -11,6 +11,9 @@ import LogicLayer.FilterSystem.AndFilter;
 import LogicLayer.FilterSystem.EqualFilter;
 import LogicLayer.FilterSystem.JobPositionFilter;
 import LogicLayer.FilterSystem.PropertyListFilter;
+import LogicLayer.FilterSystem.Filter;
+import LogicLayer.SchedulingSystem.Resource;
+
 
 /**
  * 
