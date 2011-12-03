@@ -1,6 +1,6 @@
-package Controller.FilterSystem;
+package LogicLayer.FilterSystem;
+import javax.annotation.Resource;
 
-import Controller.SchedulingSystem.Resource;
 
 /**
  * 

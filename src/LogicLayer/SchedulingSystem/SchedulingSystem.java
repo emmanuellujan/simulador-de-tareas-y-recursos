@@ -1,13 +1,13 @@
-package Controller.SchedulingSystem;
+package LogicLayer.SchedulingSystem;
 
 import java.util.Vector;
 
-import Controller.SchedulingAlgorithmSystem.FCFS;
-import Model.DataModel.Configurator.Configurator;
-import Model.IOSystem.IOSystem;
-import Model.IOSystem.SerialIOSystem;
-import Model.LogginSystem.CompLogginSystem;
-import Model.ResultsAnalyzer.ResultsAnalyzer;
+import LogicLayer.ResultsAnalyzer.ResultsAnalyzer;
+import LogicLayer.SchedulingAlgorithmSystem.FCFS;
+import PersistenceLayer.DataModel.Configurator.Configurator;
+import PersistenceLayer.IOSystem.IOSystem;
+import PersistenceLayer.IOSystem.SerialIOSystem;
+import PersistenceLayer.LogginSystem.CompLogginSystem;
 
 public class SchedulingSystem {
 

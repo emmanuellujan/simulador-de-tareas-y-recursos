@@ -1,8 +1,8 @@
-package Model.LogginSystem;
+package PersistenceLayer.LogginSystem;
 
 import java.util.Vector;
 
-import Model.DataModel.Configurator.Configurator;
+import PersistenceLayer.DataModel.Configurator.Configurator;
 
 public class CompLogginSystem extends LogginSystem {
 

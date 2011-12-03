@@ -1,4 +1,4 @@
-package Controller.SchedulingSystem;
+package LogicLayer.SchedulingSystem;
 
 import java.io.Serializable;
 import java.util.Enumeration;

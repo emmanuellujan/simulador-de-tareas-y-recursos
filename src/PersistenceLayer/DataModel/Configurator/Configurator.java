@@ -1,4 +1,4 @@
-package Model.DataModel.Configurator;
+package PersistenceLayer.DataPersistenceLayer.Configurator;
 
 import java.io.File;
 

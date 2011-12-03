@@ -3,7 +3,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import Controller.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
 
 public class SchedulingSystemTest {
 

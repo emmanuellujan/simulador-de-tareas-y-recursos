@@ -1,8 +1,6 @@
-package Controller.FilterSystem;
-
+package LogicLayer.FilterSystem;
+import LogicLayer.SchedulingSystem.Resource;
 import java.util.Vector;
-
-import Controller.SchedulingSystem.Resource;
 
 /**
  * 

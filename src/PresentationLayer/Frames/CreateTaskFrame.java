@@ -8,18 +8,15 @@
  *
  * Created on 11/11/2011, 02:37:28 PM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Vector;
 
 import javax.swing.JScrollPane;
 
-import Controller.FilterSystem.Filter;
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Task;
-import Controller.SchedulingSystem.Updater;
+import LogicLayer.SchedulingSystem.Actor;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Updater;
 
 /**
  * 
@@ -269,7 +266,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 
 		jLabel6.setText("Filter type");
 
-		jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+		jComboBox2.setPersistenceLayer(new javax.swing.DefaultComboBoxPersistenceLayer(new String[] {
 				"ListPropertyFilter", "AndFilter" }));
 		jComboBox2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,4 +1,4 @@
-package Model.IOSystem;
+package PersistenceLayer.IOSystem;
 
 import java.io.File;
 import java.util.Hashtable;
@@ -12,18 +12,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import Controller.FilterSystem.AndFilter;
-import Controller.FilterSystem.EqualPropertyFilter;
-import Controller.FilterSystem.TaskOwnerFilter;
-import Controller.SchedulingAlgorithmSystem.SAFactory;
-import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Task;
-import Controller.SchedulingSystem.Update;
-import Controller.SchedulingSystem.Updater;
-import Model.DataModel.Configurator.Configurator;
+import LogicLayer.FilterSystem.AndFilter;
+import LogicLayer.FilterSystem.EqualPropertyFilter;
+import LogicLayer.FilterSystem.TaskOwnerFilter;
+import LogicLayer.SchedulingAlgorithmSystem.SAFactory;
+import LogicLayer.SchedulingAlgorithmSystem.SchedulingAlgorithm;
+import LogicLayer.SchedulingSystem.Actor;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Updater;
+import PersistenceLayer.DataModel.Configurator.Configurator;
 
 public class XMLIOSystem extends IOSystem {
 

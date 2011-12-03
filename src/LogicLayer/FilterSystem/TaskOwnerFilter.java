@@ -1,7 +1,6 @@
-package Controller.FilterSystem;
-
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Task;
+package LogicLayer.FilterSystem;
+import LogicLayer.SchedulingSystem.Task;
+import LogicLayer.SchedulingSystem.Actor;
 
 public class TaskOwnerFilter extends SimpleFilter {
 

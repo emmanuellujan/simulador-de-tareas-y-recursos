@@ -1,14 +1,14 @@
-package Controller.SchedulingSystem;
+package LogicLayer.SchedulingSystem;
 
 import java.util.Vector;
 import java.util.logging.Filter;
 
-import Controller.FilterSystem.ActorRelationshipFilter;
-import Controller.FilterSystem.JobPositionFilter;
-import Gui.Frames.ErrorFrame;
-import Gui.Frames.NewsFrame;
-import Gui.Frames.RelationFrame;
-import Gui.Frames.SimulatorFrame;
+import LogicLayer.FilterSystem.ActorRelationshipFilter;
+import LogicLayer.FilterSystem.JobPositionFilter;
+import PresentationLayer.Frames.ErrorFrame;
+import PresentationLayer.Frames.NewsFrame;
+import PresentationLayer.Frames.RelationFrame;
+import PresentationLayer.Frames.SimulatorFrame;
 
 /**
  * 

@@ -1,10 +1,10 @@
-package Model.LogginSystem;
+package PersistenceLayer.LogginSystem;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Actor;
-import Model.DataModel.Configurator.Configurator;
-import Model.DataModel.SimulationTime.SimulationTime;
+import LogicLayer.SchedulingSystem.Actor;
+import PersistenceLayer.DataModel.Configurator.Configurator;
+import PersistenceLayer.DataModel.SimulationTime.SimulationTime;
 
 public abstract class LogginSystem {
 	private Configurator configurator;

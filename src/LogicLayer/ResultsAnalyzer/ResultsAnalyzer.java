@@ -1,11 +1,8 @@
-package Model.ResultsAnalyzer;
-
 import java.util.Vector;
-
-import Controller.SchedulingSystem.SchedulingSystem;
-import Model.DataModel.SimulationTime.SimulationTime;
-import Model.IOSystem.FileManager;
-import Model.LogginSystem.CompLogginSystem;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
+import PersistenceLayer.DataModel.SimulationTime.SimulationTime;
+import PersistenceLayer.IOSystem.FileManager;
+import PersistenceLayer.LogginSystem.CompLogginSystem;
 
 public class ResultsAnalyzer {
 	private SchedulingSystem schedulingSystem;

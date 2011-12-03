@@ -3,11 +3,9 @@
  *
  * Created on 11/11/2011, 07:07:52 PM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Vector;
-
-import Controller.SchedulingSystem.Task;
 
 /**
  * 

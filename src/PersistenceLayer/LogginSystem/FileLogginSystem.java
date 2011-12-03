@@ -1,10 +1,10 @@
-package Model.LogginSystem;
+package PersistenceLayer.LogginSystem;
 
 import java.util.Vector;
 
-import Model.DataModel.Configurator.Configurator;
-import Model.DataModel.SimulationTime.SimulationTime;
-import Model.IOSystem.FileManager;
+import PersistenceLayer.DataModel.Configurator.Configurator;
+import PersistenceLayer.DataModel.SimulationTime.SimulationTime;
+import PersistenceLayer.IOSystem.FileManager;
 
 public abstract class FileLogginSystem extends LogginSystem {
 	protected String extension;

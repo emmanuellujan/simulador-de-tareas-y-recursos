@@ -1,12 +1,10 @@
-package Model.IOSystem;
+package PersistenceLayer.IOSystem;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Task;
-import Model.DataModel.Configurator.Configurator;
+import LogicLayer.SchedulingSystem.Actor;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
+import PersistenceLayer.DataModel.Configurator.Configurator;
 
 public abstract class IOSystem {
 
