@@ -197,8 +197,8 @@ public class Task {
 	}
 
 	public void setStatus(String currentStatus) {
-		if ((currentStatus != "Processing") && (currentStatus != "Finished")
-				&& (currentStatus != "New")) {
+		if ( !currentStatus.equals("Processing") && !currentStatus.equals("Finished")
+				&& !currentStatus.equals("New")) {
 			String errorMsg = "You attempted to insert a wrong task state "
 					+ currentStatus + " in the task " + this.getTaskId();
 			this.getSchedulingSystem().getCompLogginSystem()
