@@ -113,7 +113,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 		jLabel1.setText("Wrong Values!");
 
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/Gui/Media/error.png"))); // NOI18N
+				"/presentationLayer/media/error.png"))); // NOI18N
 
 		jButton1.setText("Ok");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
