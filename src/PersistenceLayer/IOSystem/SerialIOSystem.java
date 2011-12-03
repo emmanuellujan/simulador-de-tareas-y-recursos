@@ -8,6 +8,8 @@ import java.util.Vector;
 
 import LogicLayer.SchedulingSystem.Actor;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.Task;
+import LogicLayer.SchedulingSystem.Resource;
 import PersistenceLayer.DataModel.Configurator.Configurator;
 
 import com.thoughtworks.xstream.XStream;

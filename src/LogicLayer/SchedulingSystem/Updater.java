@@ -3,6 +3,8 @@ package LogicLayer.SchedulingSystem;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
+import LogicLayer.FilterSystem.Filter;
+
 public class Updater {
 	Hashtable<Filter, Update> updates;
 

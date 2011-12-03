@@ -7,6 +7,8 @@ package PresentationLayer.Frames;
 
 import java.util.Hashtable;
 
+import LogicLayer.SchedulingSystem.Update;
+
 /**
  * 
  * @author F.Rossi

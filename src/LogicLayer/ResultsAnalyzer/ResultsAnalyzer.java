@@ -1,3 +1,5 @@
+package LogicLayer.ResultsAnalyzer;
+
 import java.util.Vector;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
 import PersistenceLayer.DataModel.SimulationTime.SimulationTime;

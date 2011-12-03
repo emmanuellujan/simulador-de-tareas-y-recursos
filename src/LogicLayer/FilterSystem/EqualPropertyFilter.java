@@ -1,5 +1,6 @@
 package LogicLayer.FilterSystem;
-import javax.annotation.Resource;
+
+import LogicLayer.SchedulingSystem.Resource;
 
 
 /**

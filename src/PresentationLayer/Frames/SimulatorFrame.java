@@ -21,6 +21,8 @@ import javax.swing.JOptionPane;
 import LogicLayer.SchedulingSystem.Actor;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
 import LogicLayer.SchedulingSystem.SystemServices;
+import LogicLayer.SchedulingSystem.Resource;
+import LogicLayer.SchedulingSystem.Task;
 
 import com.birosoft.liquid.LiquidLookAndFeel;
 
@@ -1850,8 +1852,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
 		this.resourcesMainList = resourcesPrincipalList;
-		RelationFrame.getInstance()
-				.setMainResourcesList(resourcesPrincipalList);
+		RelationFrame.getInstance().setMainResourcesList(resourcesPrincipalList);
 	}
 
 	public void setNewsList(Vector<Task> newsList) {

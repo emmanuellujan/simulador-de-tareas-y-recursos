@@ -1,6 +1,7 @@
 package LogicLayer.SchedulingAlgorithmSystem;
 
 import java.util.Vector;
+import LogicLayer.SchedulingSystem.Task;
 
 public abstract class SchedulingAlgorithm {
 

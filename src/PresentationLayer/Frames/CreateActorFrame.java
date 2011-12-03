@@ -7,6 +7,8 @@ package PresentationLayer.Frames;
 
 import java.util.Hashtable;
 import java.util.Vector;
+import javax.swing.table.*;
+import javax.*;
 
 import LogicLayer.SchedulingAlgorithmSystem.FCFS;
 import LogicLayer.SchedulingAlgorithmSystem.PrioritiesSA;

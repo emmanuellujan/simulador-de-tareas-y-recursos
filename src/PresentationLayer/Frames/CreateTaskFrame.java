@@ -17,6 +17,9 @@ import javax.swing.JScrollPane;
 import LogicLayer.SchedulingSystem.Actor;
 import LogicLayer.SchedulingSystem.SchedulingSystem;
 import LogicLayer.SchedulingSystem.Updater;
+import LogicLayer.SchedulingSystem.Resource;
+import LogicLayer.SchedulingSystem.Task;
+import LogicLayer.FilterSystem.Filter;
 
 /**
  * 
