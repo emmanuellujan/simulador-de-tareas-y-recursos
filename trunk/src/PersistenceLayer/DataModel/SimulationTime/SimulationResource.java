@@ -1,9 +1,8 @@
-package Model.DataModel.SimulationTime;
+package PersistenceLayer.DataPersistenceLayer.SimulationTime;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Task;
+import LogicLayer.SchedulingSystem.Actor;
 
 public class SimulationResource {
 	private String resId;

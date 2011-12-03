@@ -1,8 +1,6 @@
-package Controller.SchedulingSystem;
+package LogicLayer.SchedulingSystem;
 
 import java.util.Vector;
-
-import Controller.FilterSystem.Filter;
 
 public class Task {
 	private String taskId;
@@ -197,7 +195,8 @@ public class Task {
 	}
 
 	public void setStatus(String currentStatus) {
-		if ( !currentStatus.equals("Processing") && !currentStatus.equals("Finished")
+		if (!currentStatus.equals("Processing")
+				&& !currentStatus.equals("Finished")
 				&& !currentStatus.equals("New")) {
 			String errorMsg = "You attempted to insert a wrong task state "
 					+ currentStatus + " in the task " + this.getTaskId();

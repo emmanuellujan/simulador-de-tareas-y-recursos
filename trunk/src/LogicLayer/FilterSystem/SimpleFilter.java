@@ -1,4 +1,4 @@
-package Controller.FilterSystem;
+package LogicLayer.FilterSystem;
 
 /**
  * 

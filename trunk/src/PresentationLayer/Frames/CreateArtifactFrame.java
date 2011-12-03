@@ -3,13 +3,12 @@
  *
  * Created on 11/11/2011, 07:19:19 PM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Hashtable;
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
 
 /**
  * 
@@ -181,7 +180,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
 		jPanel2.setBorder(javax.swing.BorderFactory
 				.createTitledBorder("Properties"));
 
-		jTable1.setModel(new javax.swing.table.DefaultTableModel(
+		jTable1.setPersistenceLayer(new javax.swing.table.DefaultTablePersistenceLayer(
 				new Object[][] { { null, null }, { null, null },
 						{ null, null }, { null, null }, { null, null },
 						{ null, null }, { null, null }, { null, null },

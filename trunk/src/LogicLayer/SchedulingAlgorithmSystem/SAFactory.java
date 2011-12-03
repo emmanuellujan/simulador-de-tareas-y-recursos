@@ -1,4 +1,4 @@
-package Controller.SchedulingAlgorithmSystem;
+package LogicLayer.SchedulingAlgorithmSystem;
 
 public class SAFactory {
 

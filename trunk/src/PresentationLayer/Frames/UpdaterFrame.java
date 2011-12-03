@@ -3,15 +3,12 @@
  *
  * Created on 16/11/2011, 04:59:14 AM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Hashtable;
 import java.util.Vector;
 
-import Controller.FilterSystem.Filter;
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.Update;
-import Controller.SchedulingSystem.Updater;
+import LogicLayer.SchedulingSystem.Updater;
 
 /**
  * 
@@ -168,7 +165,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 			}
 		});
 
-		jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+		jComboBox1.setPersistenceLayer(new javax.swing.DefaultComboBoxPersistenceLayer(new String[] {
 				"Element Equal Filter", "Job Position Filter",
 				"List Property Filter" }));
 

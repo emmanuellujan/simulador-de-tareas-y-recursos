@@ -3,16 +3,14 @@
  *
  * Created on 15/11/2011, 11:33:15 AM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Vector;
 
-import Controller.FilterSystem.AndFilter;
-import Controller.FilterSystem.EqualFilter;
-import Controller.FilterSystem.Filter;
-import Controller.FilterSystem.JobPositionFilter;
-import Controller.FilterSystem.PropertyListFilter;
-import Controller.SchedulingSystem.Resource;
+import LogicLayer.FilterSystem.AndFilter;
+import LogicLayer.FilterSystem.EqualFilter;
+import LogicLayer.FilterSystem.JobPositionFilter;
+import LogicLayer.FilterSystem.PropertyListFilter;
 
 /**
  * 
@@ -450,7 +448,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 
 		jLabel5.setText("Composition Filter type (1)");
 
-		jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+		jComboBox2.setPersistenceLayer(new javax.swing.DefaultComboBoxPersistenceLayer(new String[] {
 				"Element Equal Filter", "Job Position Filter",
 				"List Property Filter" }));
 		jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -461,7 +459,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 
 		jLabel9.setText("Composition Filter type (2)");
 
-		jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+		jComboBox4.setPersistenceLayer(new javax.swing.DefaultComboBoxPersistenceLayer(new String[] {
 				"Element Equal Filter", "Job Position Filter",
 				"List Property Filter" }));
 

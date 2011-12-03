@@ -1,8 +1,8 @@
-package Model.DataModel.SimulationTime;
+package PersistenceLayer.DataPersistenceLayer.SimulationTime;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Actor;
+import LogicLayer.SchedulingSystem.Actor;
 
 public class SimulationTime {
 	private int currentTime;

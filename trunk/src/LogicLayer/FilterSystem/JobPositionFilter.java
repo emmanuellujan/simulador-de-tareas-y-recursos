@@ -1,6 +1,5 @@
-package Controller.FilterSystem;
-
-import Controller.SchedulingSystem.Resource;
+package LogicLayer.FilterSystem;
+import LogicLayer.SchedulingSystem.Resource;
 
 /**
  * 

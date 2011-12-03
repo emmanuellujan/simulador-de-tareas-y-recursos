@@ -1,10 +1,10 @@
-package Controller.SchedulingSystem;
+package LogicLayer.SchedulingSystem;
 
 import java.util.Hashtable;
 import java.util.Vector;
 
-import Controller.SchedulingAlgorithmSystem.FCFS;
-import Controller.SchedulingAlgorithmSystem.SchedulingAlgorithm;
+import LogicLayer.SchedulingAlgorithmSystem.FCFS;
+import LogicLayer.SchedulingAlgorithmSystem.SchedulingAlgorithm;
 
 public class Actor extends Resource {
 

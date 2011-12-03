@@ -1,4 +1,4 @@
-package Model.IOSystem;
+package PersistenceLayer.IOSystem;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,11 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Actor;
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
-import Controller.SchedulingSystem.Task;
-import Model.DataModel.Configurator.Configurator;
+import LogicLayer.SchedulingSystem.Actor;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
+import PersistenceLayer.DataModel.Configurator.Configurator;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;

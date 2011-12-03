@@ -1,8 +1,7 @@
-package Controller.SchedulingAlgorithmSystem;
+package LogicLayer.SchedulingAlgorithmSystem;
 
 import java.util.Vector;
-
-import Controller.SchedulingSystem.Task;
+import LogicLayer.SchedulingSystem.Task;
 
 public class PrioritiesSA extends SchedulingAlgorithm {
 

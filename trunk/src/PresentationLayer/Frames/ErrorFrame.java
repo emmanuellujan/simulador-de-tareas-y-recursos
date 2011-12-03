@@ -3,7 +3,7 @@
  *
  * Created on 13/11/2011, 08:00:51 PM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 /**
  * 
@@ -113,7 +113,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 		jLabel1.setText("Wrong Values!");
 
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/Gui/Media/error.png"))); // NOI18N
+				"/PresentationLayer/Media/error.png"))); // NOI18N
 
 		jButton1.setText("Ok");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {

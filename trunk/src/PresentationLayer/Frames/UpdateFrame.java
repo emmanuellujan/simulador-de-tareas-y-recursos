@@ -3,11 +3,9 @@
  *
  * Created on 17/11/2011, 06:09:56 AM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Hashtable;
-
-import Controller.SchedulingSystem.Update;
 
 /**
  * 
@@ -115,7 +113,7 @@ public class UpdateFrame extends javax.swing.JFrame {
 
 		jLabel1.setText("List of properties and values to add on the task");
 
-		jTable1.setModel(new javax.swing.table.DefaultTableModel(
+		jTable1.setPersistenceLayer(new javax.swing.table.DefaultTablePersistenceLayer(
 				new Object[][] { { null, null }, { null, null },
 						{ null, null }, { null, null }, { null, null } },
 				new String[] { "Key", "Value" }));

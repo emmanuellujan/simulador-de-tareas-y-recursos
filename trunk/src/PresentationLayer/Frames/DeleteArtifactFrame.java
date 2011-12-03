@@ -3,12 +3,11 @@
  *
  * Created on 11/11/2011, 07:14:12 PM
  */
-package Gui.Frames;
+package PresentationLayer.Frames;
 
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Resource;
-import Controller.SchedulingSystem.SchedulingSystem;
+import LogicLayer.SchedulingSystem.SchedulingSystem;
 
 /**
  * 

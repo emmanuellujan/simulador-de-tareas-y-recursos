@@ -1,8 +1,7 @@
-package Controller.SchedulingAlgorithmSystem;
-
+package LogicLayer.SchedulingAlgorithmSystem;
+import LogicLayer.SchedulingSystem.Task;
 import java.util.Vector;
 
-import Controller.SchedulingSystem.Task;
 
 public class FCFS extends SchedulingAlgorithm {
 
