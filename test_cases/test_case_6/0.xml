@@ -1,4 +1,4 @@
-<Controller.SchedulingSystem.Actor>
+<logicLayer.schedulingSystem.Actor>
   <resId>actor0</resId>
   <type>actor</type>
   <properties>
@@ -22,19 +22,19 @@
       <projectName>test_case_6</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="Model.IOSystem.SerialIOSystem">
+    <ioSystem class="persistenceLayer.ioSystem.SerialIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
       <actorsList>
-        <Controller.SchedulingSystem.Actor reference="../../../.."/>
+        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
       </actorsList>
       <resourcesList/>
       <allResourcesList>
-        <Controller.SchedulingSystem.Actor reference="../../../.."/>
+        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
       </allResourcesList>
       <tasksList>
-        <Controller.SchedulingSystem.Task>
+        <logicLayer.schedulingSystem.Task>
           <taskId>task0</taskId>
           <programCounter>3</programCounter>
           <workUnits>
@@ -47,8 +47,8 @@
           <difficult>5</difficult>
           <status>New</status>
           <schedulingSystem reference="../../../.."/>
-        </Controller.SchedulingSystem.Task>
-        <Controller.SchedulingSystem.Task>
+        </logicLayer.schedulingSystem.Task>
+        <logicLayer.schedulingSystem.Task>
           <taskId>task1</taskId>
           <programCounter>-1</programCounter>
           <workUnits>
@@ -61,8 +61,8 @@
           <difficult>5</difficult>
           <status>New</status>
           <schedulingSystem reference="../../../.."/>
-        </Controller.SchedulingSystem.Task>
-        <Controller.SchedulingSystem.Task>
+        </logicLayer.schedulingSystem.Task>
+        <logicLayer.schedulingSystem.Task>
           <taskId>task2</taskId>
           <programCounter>-1</programCounter>
           <workUnits>
@@ -75,7 +75,7 @@
           <difficult>5</difficult>
           <status>New</status>
           <schedulingSystem reference="../../../.."/>
-        </Controller.SchedulingSystem.Task>
+        </logicLayer.schedulingSystem.Task>
       </tasksList>
     </ioSystem>
     <compLogginSystem>
@@ -85,10 +85,10 @@
         <string>List size greater than allowed. Task task2 can&apos;t be added to the ready list of actor0</string>
       </errorMsgs>
       <simulationTimes>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>0</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
               <taskId>task0</taskId>
@@ -99,8 +99,8 @@
                 <string>task1</string>
                 <string>task2</string>
               </readyList>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -108,13 +108,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>1</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>The task task0 pass to the ready list of the resource actor0</currentAction>
               <taskId>None</taskId>
@@ -125,8 +125,8 @@
                 <string>task1</string>
                 <string>task2</string>
               </readyList>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -136,13 +136,13 @@
               <readyList>
                 <string>task0</string>
               </readyList>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>2</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
               <taskId>task1</taskId>
@@ -152,8 +152,8 @@
               <readyList>
                 <string>task2</string>
               </readyList>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
               <taskId>task0</taskId>
@@ -161,13 +161,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>3</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>The task task1 pass to the ready list of the resource actor0</currentAction>
               <taskId>None</taskId>
@@ -177,8 +177,8 @@
               <readyList>
                 <string>task2</string>
               </readyList>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>Procesing active task task0</currentAction>
               <taskId>task0</taskId>
@@ -186,13 +186,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>4</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>Select a task from the ready list and put that task as active. The selected task is task2</currentAction>
               <taskId>task2</taskId>
@@ -200,8 +200,8 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>Procesing active task task0</currentAction>
               <taskId>task0</taskId>
@@ -209,13 +209,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>5</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>The task task2 pass to the ready list of the resource actor0</currentAction>
               <taskId>None</taskId>
@@ -223,8 +223,8 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>Procesing active task task0</currentAction>
               <taskId>task0</taskId>
@@ -232,13 +232,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>6</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -246,8 +246,8 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>Procesing active task task0</currentAction>
               <taskId>task0</taskId>
@@ -255,13 +255,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>7</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -269,8 +269,8 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>The active task task0 ends</currentAction>
               <taskId>None</taskId>
@@ -278,13 +278,13 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
-        <Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
+        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>8</currentTime>
           <actors>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>dealerActor</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -292,8 +292,8 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
-            <Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
+            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>actor0</resId>
               <currentAction>None</currentAction>
               <taskId>None</taskId>
@@ -301,23 +301,23 @@
               <limitTime>-1</limitTime>
               <interruptionList/>
               <readyList/>
-            </Model.DataModel.SimulationTime.SimulationResource>
+            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
           </actors>
-        </Model.DataModel.SimulationTime.SimulationTime>
+        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
       </simulationTimes>
       <logginSystems>
-        <Model.LogginSystem.XMLLogginSystem>
+        <persistenceLayer.logginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
           <extension>xml</extension>
           <fileManager/>
-        </Model.LogginSystem.XMLLogginSystem>
-        <Model.LogginSystem.TXTLogginSystem>
+        </persistenceLayer.logginSystem.XMLLogginSystem>
+        <persistenceLayer.logginSystem.TXTLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
           <extension>txt</extension>
           <fileManager/>
-        </Model.LogginSystem.TXTLogginSystem>
+        </persistenceLayer.logginSystem.TXTLogginSystem>
       </logginSystems>
     </compLogginSystem>
     <resultsAnalyzer>
@@ -373,12 +373,12 @@
       <currAction>None</currAction>
       <intList/>
       <syncIntList/>
-      <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+      <saIntList class="logicLayer.schedulingAlgorithmSystem.FCFS">
         <id>FCFS</id>
       </saIntList>
       <readyList/>
       <syncReadyList/>
-      <saReadyList class="Controller.SchedulingAlgorithmSystem.FCFS">
+      <saReadyList class="logicLayer.schedulingAlgorithmSystem.FCFS">
         <id>FCFS</id>
       </saReadyList>
       <time>9</time>
@@ -391,7 +391,7 @@
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
     <finishedList>
-      <Controller.SchedulingSystem.Task reference="../../ioSystem/tasksList/Controller.SchedulingSystem.Task"/>
+      <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
     </finishedList>
     <failedFinishedList/>
   </schedulingSystem>
@@ -399,15 +399,15 @@
   <currAction>None</currAction>
   <intList/>
   <syncIntList/>
-  <saIntList class="Controller.SchedulingAlgorithmSystem.FCFS">
+  <saIntList class="logicLayer.schedulingAlgorithmSystem.FCFS">
     <id>FCFS</id>
   </saIntList>
   <readyList/>
   <syncReadyList/>
-  <saReadyList class="Controller.SchedulingAlgorithmSystem.PrioritiesSA">
+  <saReadyList class="logicLayer.schedulingAlgorithmSystem.PrioritiesSA">
     <id>Priorities</id>
   </saReadyList>
   <time>9</time>
   <limitTime>-1</limitTime>
   <maxTasksNumber>1</maxTasksNumber>
-</Controller.SchedulingSystem.Actor>
+</logicLayer.schedulingSystem.Actor>
