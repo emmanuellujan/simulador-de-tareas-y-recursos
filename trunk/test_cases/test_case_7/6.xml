@@ -24,9 +24,9 @@
   <status>New</status>
   <schedulingSystem>
     <configurator>
-      <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
-      <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/</inputDir>
-      <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/</outputDir>
+      <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/conf.xml</confFile>
+      <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases/test_case_7/</inputDir>
+      <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases/test_case_7/</outputDir>
       <projectName>test_case_7</projectName>
       <bar>/</bar>
     </configurator>
@@ -79,12 +79,12 @@
                   <type>artifact</type>
                   <properties>
                     <entry>
-                      <string>charge</string>
-                      <string>700pages</string>
-                    </entry>
-                    <entry>
                       <string>type</string>
                       <string>artifact</string>
+                    </entry>
+                    <entry>
+                      <string>charge</string>
+                      <string>700pages</string>
                     </entry>
                     <entry>
                       <string>description</string>
@@ -277,12 +277,12 @@
                             <type>artifact</type>
                             <properties>
                               <entry>
-                                <string>charge</string>
-                                <string>700pages</string>
-                              </entry>
-                              <entry>
                                 <string>type</string>
                                 <string>artifact</string>
+                              </entry>
+                              <entry>
+                                <string>charge</string>
+                                <string>700pages</string>
                               </entry>
                               <entry>
                                 <string>description</string>

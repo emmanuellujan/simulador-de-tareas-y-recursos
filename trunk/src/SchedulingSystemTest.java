@@ -35,7 +35,7 @@ public class SchedulingSystemTest {
 	public void setUp() throws Exception {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
 		this.setSchedulingSystem(schedulingSystem);
-		this.setDir("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases");
+		this.setDir("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases");
 	}
 
 	public void test(String dir2, double d) {
