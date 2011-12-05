@@ -2,19 +2,14 @@ window_sizes 1280 776 410 864 638 64
 diagrams
   activitydiagram_ref 174850 // Device Algorithm Activity Diagram
     881 582 100 4 635 0
-  activitydiagram_ref 174978 // Execute active interruption or process activity diagram
-    862 577 100 4 374 0
+  active  activitydiagram_ref 174978 // Execute active interruption or process activity diagram
+    862 577 100 4 0 0
   classdiagram_ref 168322 // General Class Diagram
     689 461 100 4 0 0
-  active  classdiagram_ref 148610 // SchedulingSystem Class Diagram
+  classdiagram_ref 148610 // SchedulingSystem Class Diagram
     691 510 100 4 0 0
 end
 show_stereotypes
-selected classdiagram_ref 148610 // SchedulingSystem Class Diagram
-open
-  classview_ref 132866 // StadysticsSystem Class View
-  classview_ref 132354 // Scheduling System Class View
-  usecaseview_ref 128642 // General Use Case View
-  classview_ref 152578 // General Class View
-end
+selected 
+package_ref 129 // scheduling_simulator_bouml
 end
