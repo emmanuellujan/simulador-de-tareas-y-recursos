@@ -3,14 +3,12 @@ package logicLayer.schedulingSystem;
 import java.util.Vector;
 import java.util.logging.Filter;
 
+import logicLayer.filterSystem.ActorRelationshipFilter;
+import logicLayer.filterSystem.JobPositionFilter;
 import presentationLayer.frames.ErrorFrame;
 import presentationLayer.frames.NewsFrame;
 import presentationLayer.frames.RelationFrame;
 import presentationLayer.frames.SimulatorFrame;
-
-import logicLayer.filterSystem.ActorRelationshipFilter;
-import logicLayer.filterSystem.JobPositionFilter;
-
 
 /**
  * 

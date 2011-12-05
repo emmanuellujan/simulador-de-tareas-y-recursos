@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import logicLayer.schedulingSystem.Task;
 
-
 public abstract class SchedulingAlgorithm {
 
 	public String id;

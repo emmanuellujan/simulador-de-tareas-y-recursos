@@ -6,7 +6,6 @@ import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 import persistenceLayer.ioSystem.FileManager;
 
-
 public abstract class FileLogginSystem extends LogginSystem {
 	protected String extension;
 	protected FileManager fileManager;

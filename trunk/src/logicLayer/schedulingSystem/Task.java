@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import logicLayer.filterSystem.Filter;
 
-
 public class Task {
 	private String taskId;
 	private int programCounter;

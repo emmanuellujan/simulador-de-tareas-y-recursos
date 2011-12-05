@@ -3,10 +3,8 @@ package persistenceLayer.logginSystem;
 import java.util.Vector;
 
 import logicLayer.schedulingSystem.Actor;
-
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
-
 
 public abstract class LogginSystem {
 	private Configurator configurator;

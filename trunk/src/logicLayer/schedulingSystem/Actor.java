@@ -6,7 +6,6 @@ import java.util.Vector;
 import logicLayer.schedulingAlgorithmSystem.FCFS;
 import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
 
-
 public class Actor extends Resource {
 
 	private static final long serialVersionUID = 1L;

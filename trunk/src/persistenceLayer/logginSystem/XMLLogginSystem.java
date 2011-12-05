@@ -6,7 +6,6 @@ import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationResource;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 
-
 public class XMLLogginSystem extends FileLogginSystem {
 
 	public XMLLogginSystem(Configurator configurator,

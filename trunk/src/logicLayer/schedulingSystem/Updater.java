@@ -5,7 +5,6 @@ import java.util.Hashtable;
 
 import logicLayer.filterSystem.Filter;
 
-
 public class Updater {
 	Hashtable<Filter, Update> updates;
 

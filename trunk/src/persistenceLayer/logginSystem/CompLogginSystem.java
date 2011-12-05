@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import persistenceLayer.dataModel.Configurator.Configurator;
 
-
 public class CompLogginSystem extends LogginSystem {
 
 	private Vector<LogginSystem> logginSystems;
