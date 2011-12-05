@@ -14,7 +14,6 @@ import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.SchedulingSystem;
 
-
 /**
  * 
  * @author F.Rossi

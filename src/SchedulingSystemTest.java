@@ -4,7 +4,6 @@ import logicLayer.schedulingSystem.SchedulingSystem;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class SchedulingSystemTest {
 
 	private SchedulingSystem schedulingSystem;

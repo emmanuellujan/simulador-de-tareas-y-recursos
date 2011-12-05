@@ -3,11 +3,9 @@ package logicLayer.resultsAnalyzer;
 import java.util.Vector;
 
 import logicLayer.schedulingSystem.SchedulingSystem;
-
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 import persistenceLayer.ioSystem.FileManager;
 import persistenceLayer.logginSystem.CompLogginSystem;
-
 
 public class ResultsAnalyzer {
 	private SchedulingSystem schedulingSystem;

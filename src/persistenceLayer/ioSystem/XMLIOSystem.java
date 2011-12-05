@@ -26,7 +26,6 @@ import org.w3c.dom.NodeList;
 
 import persistenceLayer.dataModel.Configurator.Configurator;
 
-
 public class XMLIOSystem extends IOSystem {
 
 	public XMLIOSystem(Configurator configurator,

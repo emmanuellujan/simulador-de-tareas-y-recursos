@@ -21,7 +21,6 @@ import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
 import logicLayer.schedulingSystem.Updater;
 
-
 /**
  * 
  * @author F.Rossi

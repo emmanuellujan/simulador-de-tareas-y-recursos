@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import logicLayer.schedulingSystem.Actor;
 
-
 public class SimulationTime {
 	private int currentTime;
 	private Vector<SimulationResource> actors;

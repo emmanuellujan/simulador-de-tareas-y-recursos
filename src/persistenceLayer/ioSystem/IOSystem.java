@@ -6,9 +6,7 @@ import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
-
 import persistenceLayer.dataModel.Configurator.Configurator;
-
 
 public abstract class IOSystem {
 

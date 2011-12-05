@@ -15,8 +15,6 @@ import persistenceLayer.dataModel.Configurator.Configurator;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-
-
 public class SerialIOSystem extends IOSystem {
 
 	public SerialIOSystem(Configurator configurator,
@@ -126,19 +124,13 @@ public class SerialIOSystem extends IOSystem {
 
 			FileOutputStream fs;
 			Vector<Resource> allResources = new Vector<Resource>();
-			/*
-			 * if
-			 * (this.getSchedulingSystem().getIoSystem().getAllResourcesList()
-			 * != null) allResources = this.getSchedulingSystem().getIoSystem()
-			 * .getAllResourcesList();
-			 */
+			
 			if (this.getSchedulingSystem().getActorsList() != null)
 				allResources.addAll(this.getSchedulingSystem().getActorsList());
 			if (this.getSchedulingSystem().getResourcesList() != null)
 				allResources.addAll(this.getSchedulingSystem()
 						.getResourcesList());
-			// this.removeDuplicatedResources(allResources);
-
+			
 			int n = allResources.size();
 			int i = 0;
 			for (i = 0; i < n; i++) {
@@ -148,9 +140,6 @@ public class SerialIOSystem extends IOSystem {
 			}
 
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-			// Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-			// if (this.getSchedulingSystem().getNewsList() != null)
-			// tasks.addAll(this.getSchedulingSystem().getNewsList());
 			n = tasks.size();
 			int j = 0;
 			for (j = 0; j < n; j++) {
@@ -160,9 +149,6 @@ public class SerialIOSystem extends IOSystem {
 			}
 
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			// int deadline = this.getDeadline();
-			// int deadline =
-			// this.getSchedulingSystem().getIoSystem().getDeadline();
 			int deadline = this.getSchedulingSystem().getDeadline();
 			xs.toXML(deadline, fs);
 

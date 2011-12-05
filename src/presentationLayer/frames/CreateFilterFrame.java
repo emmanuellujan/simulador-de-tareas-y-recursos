@@ -14,7 +14,6 @@ import logicLayer.filterSystem.JobPositionFilter;
 import logicLayer.filterSystem.PropertyListFilter;
 import logicLayer.schedulingSystem.Resource;
 
-
 /**
  * 
  * @author F.Rossi

@@ -11,7 +11,6 @@ import java.util.Vector;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
 
-
 /**
  * 
  * @author F.Rossi

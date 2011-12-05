@@ -13,7 +13,6 @@ import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
 
-
 /**
  * 
  * @author F.Rossi

@@ -2,15 +2,12 @@ package logicLayer.schedulingSystem;
 
 import java.util.Vector;
 
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.FCFS;
-
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.ioSystem.IOSystem;
 import persistenceLayer.ioSystem.SerialIOSystem;
-import persistenceLayer.ioSystem.XMLIOSystem;
 import persistenceLayer.logginSystem.CompLogginSystem;
-import logicLayer.resultsAnalyzer.ResultsAnalyzer;
-
 
 public class SchedulingSystem {
 
@@ -37,7 +34,7 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
@@ -213,9 +210,9 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		//SerialIOSystem serialIOSystem = new
-		//SerialIOSystem(this.getConfigurator(), this);
-		//serialIOSystem.saveAll();
+		// SerialIOSystem serialIOSystem = new
+		// SerialIOSystem(this.getConfigurator(), this);
+		// serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getCompLogginSystem().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();

@@ -5,7 +5,6 @@ import java.util.Vector;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Task;
 
-
 public class SimulationResource {
 	private String resId;
 	private String currentAction;
