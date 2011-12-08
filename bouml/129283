@@ -1,0 +1,773 @@
+format 76
+"ioSystem" // src::persistenceLayer::ioSystem
+  revision 4
+  modified_by 3 "elujan"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  stereotype "segment"
+  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/persistenceLayer/ioSystem/"
+  java_package "persistenceLayer.ioSystem"
+  classview 128899 "ioSystem"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 130947 "IOSystem"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 133635 // configurator (<unidirectional association>)
+	relation 133635 --->
+	  a role_name "configurator" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 133635 // configurator (<unidirectional association>)
+	  b parent class_ref 130819 // Configurator
+      end
+
+      classrelation 133763 // schedulingSystem (<unidirectional association>)
+	relation 133763 --->
+	  a role_name "schedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 133763 // schedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      attribute 135171 "deadline"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 133891 // actorsList (<unidirectional association>)
+	relation 133891 --->
+	  stereotype "Vector"
+	  a role_name "actorsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 133891 // actorsList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 134019 // resourcesList (<unidirectional association>)
+	relation 134019 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 134019 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 134147 // allResourcesList (<unidirectional association>)
+	relation 134147 --->
+	  stereotype "Vector"
+	  a role_name "allResourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 134147 // allResourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 134275 // tasksList (<unidirectional association>)
+	relation 134275 --->
+	  stereotype "Vector"
+	  a role_name "tasksList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 134275 // tasksList (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      operation 163459 "IOSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163587 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163715 "getAllResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163843 "getConfigurator"
+	public return_type class_ref 130819 // Configurator
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163971 "getDeadline"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164099 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164227 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164355 "getTasksList"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164483 "loadAll"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164611 "saveAll"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164739 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "actors" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164867 "setAllResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "allResourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164995 "setConfigurator"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165123 "setDeadline"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "deadline" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165251 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165379 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165507 "setTasksList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "tasksList" explicit_type "Vector<Task>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165635 "updateRelations"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 158339 // <unidirectional association>
+	relation 158339 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 158339 // <unidirectional association>
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 158467 // <dependency>
+	relation 158467 -_->
+	  a default
+	    classrelation_ref 158467 // <dependency>
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 158595 // <dependency>
+	relation 158595 -_->
+	  a default
+	    classrelation_ref 158595 // <dependency>
+	  b parent class_ref 129923 // SchedulingAlgorithm
+      end
+
+      classrelation 158723 // <dependency>
+	relation 158723 -_->
+	  a default
+	    classrelation_ref 158723 // <dependency>
+	  b parent class_ref 130307 // SAFactory
+      end
+
+      classrelation 158851 // <dependency>
+	relation 158851 -_->
+	  a default
+	    classrelation_ref 158851 // <dependency>
+	  b parent class_ref 128515 // Filter
+      end
+
+      classrelation 166659 // <dependency>
+	relation 166659 -_->
+	  a default
+	    classrelation_ref 166659 // <dependency>
+	  b parent class_ref 128515 // Filter
+      end
+    end
+
+    class 131843 "FileManager"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 163075 "FileManager"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163203 "readFile"
+	public explicit_return_type "String"
+	nparams 1
+	  param in name "fileName" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163331 "writeFile"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "fileName" explicit_type "String"
+	  param in name "txt" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131971 "SerialIOSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 134403 // <generalisation>
+	relation 134403 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134403 // <generalisation>
+	  b parent class_ref 130947 // IOSystem
+      end
+
+      operation 165763 "SerialIOSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165891 "loadAll"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166019 "removeDuplicatedResources"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "allResources" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166147 "saveAll"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166275 "updateRelations"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132099 "XMLIOSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 134531 // <generalisation>
+	relation 134531 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134531 // <generalisation>
+	  b parent class_ref 130947 // IOSystem
+      end
+
+      operation 166403 "XMLIOSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166531 "getDeadline"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166659 "loadActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166787 "loadAll"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166915 "loadDeadline"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167043 "loadNewsList"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167171 "loadResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167299 "saveAll"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167427 "updateRelations"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+  end
+
+  deploymentview 128899 "ioSystem"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 131459 "FileManager"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+${definition}"
+      associated_classes
+	class_ref 131843 // FileManager
+      end
+    end
+
+    artifact 131587 "IOSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.Task;
+import persistenceLayer.dataModel.Configurator.Configurator;
+${definition}"
+      associated_classes
+	class_ref 130947 // IOSystem
+      end
+    end
+
+    artifact 131715 "SerialIOSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Vector;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.Task;
+import persistenceLayer.dataModel.Configurator.Configurator;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+${definition}"
+      associated_classes
+	class_ref 131971 // SerialIOSystem
+      end
+    end
+
+    artifact 131843 "XMLIOSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.io.File;
+import java.util.Hashtable;
+import java.util.Vector;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import logicLayer.filterSystem.AndFilter;
+import logicLayer.filterSystem.EqualPropertyFilter;
+import logicLayer.filterSystem.TaskOwnerFilter;
+import logicLayer.schedulingAlgorithmSystem.SAFactory;
+import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.Task;
+import logicLayer.schedulingSystem.Update;
+import logicLayer.schedulingSystem.Updater;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import persistenceLayer.dataModel.Configurator.Configurator;
+${definition}"
+      associated_classes
+	class_ref 132099 // XMLIOSystem
+      end
+    end
+  end
+
+  simplerelation 129155
+    -_->
+      on 
+      package_ref 129027 // dataModel
+  end
+
+  simplerelation 137347
+    -_->
+      on 
+      package_ref 128259 // schedulingSystem
+  end
+
+  simplerelation 137475
+    -_->
+      on 
+      package_ref 128643 // schedulingAlgorithmSystem
+  end
+end

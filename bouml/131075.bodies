@@ -1,0 +1,24 @@
+class CompLogginSystem
+!!!169219.java!!!	CompLogginSystem(inout configurator : Configurator)
+		super(configurator);
+
+		Vector<LogginSystem> logginSystems = new Vector<LogginSystem>();
+		this.setLogginSystems(logginSystems);
+
+		LogginSystem fileLogginSystem = new TXTLogginSystem(configurator,
+				this.getSimulationTimes());
+		LogginSystem xmlLogginSystem = new XMLLogginSystem(configurator,
+				this.getSimulationTimes());
+		this.addLogginSystem(xmlLogginSystem);
+		this.addLogginSystem(fileLogginSystem);
+!!!169347.java!!!	addLogginSystem(inout logginSystem : LogginSystem) : void
+		this.logginSystems.add(logginSystem);
+!!!169475.java!!!	getLogginSystems() : LogginSystem
+		return logginSystems;
+!!!169603.java!!!	setLogginSystems(inout logginSystems : Vector<LogginSystem>) : void
+		this.logginSystems = logginSystems;
+!!!169731.java!!!	writeLog() : void
+		Vector<LogginSystem> logginSystems = this.getLogginSystems();
+		int n = logginSystems.size();
+		for (int i = 0; i < n; i++)
+			logginSystems.get(i).writeLog();

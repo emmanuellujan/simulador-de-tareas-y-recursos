@@ -1,45 +1,44 @@
-format 75
+format 76
 
 subject 128002 "Scheduling Simulator"
-  xyzwh 67 5 2000 436 335
+  xyzwh 79.4923 1.53369 2000 455 414
+usecasecanvas 128003 usecase_ref 134531 // Save Elements
+  xyzwh 195.312 192.857 3005 64 32 label_xy 188 226
+end
 usecasecanvas 128386 usecase_ref 128130 // Instanciate Algorithm
-  xyzwh 122 166 3005 64 32 label_xy 97 198
+  xyzwh 255.345 285.949 3005 64 32 label_xy 230 316
 end
 usecasecanvas 128514 usecase_ref 128258 // Start Simulation
-  xyzwh 119 261 3005 64 32 label_xy 108 293
-end
-usecasecanvas 128642 usecase_ref 128386 // Log Results
-  xyzwh 405 261 3005 64 32 label_xy 405 293
+  xyzwh 149.728 338.438 3005 64 32 label_xy 138 370
 end
 usecasecanvas 128770 usecase_ref 128514 // Load Input Data
-  xyzwh 121 80 3010 64 32 label_xy 112 121
+  xyzwh 284.678 110.619 3010 64 32 label_xy 276 150
 end
 classcanvas 130178 class_ref 195202 // User
   class_drawing_mode default show_context_mode default show_stereotype_properties default
-  xyz 5 150 2000
+  xyz 9.1767 179.199 2000
 end
-usecasecanvas 130690 usecase_ref 135042 // Load Processes and Devices
-  xyzwh 353 50 3005 64 32 label_xy 306 82
+usecasecanvas 130690 usecase_ref 135042 // Load Elements
+  xyzwh 426.501 209.925 3005 64 32 label_xy 420 241
 end
 usecasecanvas 130818 usecase_ref 135170 // Load Configuration
-  xyzwh 354 121 3005 64 32 label_xy 334 153
+  xyzwh 426.557 51.3076 3005 64 32 label_xy 407 83
 end
-usecasecanvas 131330 usecase_ref 141698 // test
-  xyzwh 214 386 3005 64 32 label_xy 236 418
+usecasecanvas 130819 usecase_ref 135043 // Create New Project
+  xyzwh 154.348 82.7195 3016 64 32 label_xy 132 114
 end
-line 128898 --->
-  from ref 128642 z 3006 label "Do it: when a simulation cycle ends" xyz 195 248 3006 stereotype "<<extend>>" xyz 245 229 3000 to ref 128514
+line 128259 --->
+  from ref 130178 z 3006 to ref 128003
 line 130306 --->
   from ref 130178 z 3011 to ref 128770
+line 130307 --->
+  from ref 130818 z 3011 stereotype "<<extends>>" xyz 348.5 92.5 3000 to ref 128770
 line 130434 --->
   from ref 130178 z 3006 to ref 128386
 line 130562 --->
   from ref 130178 z 3006 to ref 128514
-simplerelationcanvas 130946 simplerelation_ref 162178
-  decenter_begin 592
-  from ref 130690 z 3011 to ref 128770
-end
-simplerelationcanvas 131202 simplerelation_ref 162306
-  from ref 130818 z 3011 to ref 128770
-end
+line 130563 --->
+  from ref 130690 z 3011 label "Do it: whe configuration is loaded" xyz 311 175 3000 stereotype "<<extends>>" xyz 370 196 3000 to ref 128770
+line 130947 --->
+  from ref 130178 z 3017 to ref 130819
 end

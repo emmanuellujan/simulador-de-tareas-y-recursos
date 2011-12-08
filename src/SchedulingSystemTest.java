@@ -1,8 +1,9 @@
 import junit.framework.Assert;
-import logicLayer.schedulingSystem.SchedulingSystem;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import logicLayer.schedulingSystem.SchedulingSystem;
 
 public class SchedulingSystemTest {
 
@@ -64,7 +65,7 @@ public class SchedulingSystemTest {
 
 	@Test
 	public void test4() {
-		this.test("test_case_4", 8.888889);
+		this.test("test_case_4", 7.2727275);
 	}
 
 	@Test

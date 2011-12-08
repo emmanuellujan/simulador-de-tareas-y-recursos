@@ -1,0 +1,58 @@
+format 76
+
+classcanvas 128003 class_ref 129667 // ResultsAnalyzer
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 134403 // getDeadline
+    operation_ref 134531 // getMeanNbrTasksPerActor
+    operation_ref 134659 // getNbrFailedTasks
+    operation_ref 134787 // getNbrSuccessfulTasks
+    operation_ref 134915 // getNumberOfActors
+    operation_ref 135043 // getNumberOfCycles
+    operation_ref 135171 // getNumberOfErrors
+    operation_ref 135299 // getNumberOfResources
+    operation_ref 135427 // getNumberOfTasks
+    operation_ref 135555 // getPropFailedTasks
+    operation_ref 135683 // getPropFinishedTasks
+    operation_ref 135811 // getPropVelocity
+    operation_ref 136323 // setAnalysis
+    operation_ref 136451 // setDeadline
+    operation_ref 136579 // setMeanNbrTasksPerActor
+    operation_ref 136707 // setNbrFailedTasks
+    operation_ref 136835 // setNbrSuccessfulTasks
+    operation_ref 136963 // setNumberOfActors
+    operation_ref 137091 // setNumberOfCycles
+    operation_ref 137219 // setNumberOfErrors
+    operation_ref 137347 // setNumberOfResources
+    operation_ref 137475 // setNumberOfTasks
+    operation_ref 137603 // setPropFailedTasks
+    operation_ref 137731 // setPropFinishedTasks
+    operation_ref 137859 // setPropVelocity
+    operation_ref 137987 // setSchedulingSystem
+  xyz 79 64 2000
+end
+classcanvas 128131 class_ref 128131 // SchedulingSystem
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 443 239 3005
+end
+packagecanvas 128515 
+  package_ref 128515 // resultsAnalyzer
+    xyzwh 7 7 2000 275 459
+end
+note 128643 "From
+logicLayer.schedulingSystem
+Package"
+  xyzwh 351 115 2000 193 77
+relationcanvas 128259 relation_ref 131843 // <unidirectional association>
+  from ref 128131 z 3006 to ref 128003
+  role_a_pos 231 237 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128387 relation_ref 129667 // <unidirectional association>
+  from ref 128003 z 3006 to ref 128131
+  role_a_pos 332 237 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128771 -_-_
+  from ref 128643 z 3006 to ref 128131
+end

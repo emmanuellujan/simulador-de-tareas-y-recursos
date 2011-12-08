@@ -1,0 +1,131 @@
+class Task
+!!!153475.java!!!	Task(in taskId : String, in priority : int, inout workUnits : Vector<String>, in contTaskId : String, inout contingencyTask : Task, in currentStatus : String, in difficult : int, inout schedulingSystem : SchedulingSystem, inout filter : Filter, inout updater : Updater)
+		this.setTaskId(taskId);
+		this.setProgramCounter(-1);
+		this.setWorkUnits(workUnits);
+		this.setPriority(priority);
+		this.setContTaskId(contTaskId);
+		this.setContingencyTask(contingencyTask);
+		this.setStatus(currentStatus);
+		this.setDifficult(difficult);
+		this.setSchedulingSystem(schedulingSystem);
+		this.setFilter(filter);
+		this.setUpdater(updater);
+!!!153603.java!!!	decProgramCounter() : void
+		int programCounter = this.getProgramCounter();
+		programCounter--;
+		this.setProgramCounter(programCounter);
+!!!153731.java!!!	evalConditions() : boolean
+		Filter filter = this.getFilter();
+		if (filter != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getIoSystem().getAllResourcesList();
+
+			boolean r = false;
+			int n = resources.size();
+			int i = 0;
+			while (!r && i < n) {
+				r = filter.eval(resources.elementAt(i));
+				i++;
+			}
+			return r;
+			// return filter.eval(resources);
+		} else
+			return true;
+!!!153859.java!!!	exec() : void
+		// Simulated Execution. No need for code.
+!!!153987.java!!!	execPostProcessing() : void
+		Updater updater = this.getUpdater();
+		if (updater != null) {
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getIoSystem().getAllResourcesList();
+			int n = resources.size();
+			for (int i = 0; i < n; i++)
+				updater.update(resources.elementAt(i));
+		}
+!!!154115.java!!!	getContingencyTask() : Task
+		return contingencyTask;
+!!!154243.java!!!	getContTaskId() : String
+		return this.contTaskId;
+!!!154371.java!!!	getCurrent() : String
+		Vector<String> workUnits = this.getWorkUnits();
+		int programCounter = this.getProgramCounter();
+		String current = null;
+		if (programCounter > -1)
+			current = workUnits.get(programCounter);
+		return current;
+!!!154499.java!!!	getDifficult() : int
+		return difficult;
+!!!154627.java!!!	getFilter() : Filter
+		return filter;
+!!!154755.java!!!	getNext(inout actor : Actor) : String
+		String next = null;
+		if (this.getDifficult() < actor.getCapacity()) {
+			Vector<String> workUnits = this.getWorkUnits();
+			int n = workUnits.size();
+			if (n > 0) {
+				int programCounter = this.getProgramCounter();
+				if (programCounter < n - 1) {
+					programCounter++;
+					this.setProgramCounter(programCounter);
+					next = workUnits.get(programCounter);
+				} else if (programCounter == n - 1)
+					next = "end";
+			}
+		} else {
+			next = "fail";
+			Task t = this.getContingencyTask();
+			if (t != null)
+				actor.addReadyList(t, actor.getResId());
+		}
+		return next;
+!!!154883.java!!!	getPriority() : int
+		return priority;
+!!!155011.java!!!	getProgramCounter() : int
+		return programCounter;
+!!!155139.java!!!	getSchedulingSystem() : SchedulingSystem
+		return schedulingSystem;
+!!!155267.java!!!	getStatus() : String
+		return this.status;
+!!!155395.java!!!	getTaskId() : String
+		return taskId;
+!!!155523.java!!!	getUpdater() : Updater
+		return updater;
+!!!155651.java!!!	getWorkUnits() : Vector<String>
+		return this.workUnits;
+!!!155779.java!!!	print() : void
+		System.out.println("Task Id: " + this.getTaskId());
+!!!155907.java!!!	reset() : void
+		this.setProgramCounter(-1);
+		Task t = this.getContingencyTask();
+		if (t != null)
+			t.reset();
+!!!156035.java!!!	setContingencyTask(inout contingencyTask : Task) : void
+		this.contingencyTask = contingencyTask;
+!!!156163.java!!!	setContTaskId(in contTaskId : String) : void
+		this.contTaskId = contTaskId;
+!!!156291.java!!!	setDifficult(in difficult : int) : void
+		this.difficult = difficult;
+!!!156419.java!!!	setFilter(inout filter : Filter) : void
+		this.filter = filter;
+!!!156547.java!!!	setPriority(in priority : int) : void
+		this.priority = priority;
+!!!156675.java!!!	setProgramCounter(in programCounter : int) : void
+		this.programCounter = programCounter;
+!!!156803.java!!!	setSchedulingSystem(inout schedulingSystem : SchedulingSystem) : void
+		this.schedulingSystem = schedulingSystem;
+!!!156931.java!!!	setStatus(in currentStatus : String) : void
+		if ((currentStatus != "Processing") && (currentStatus != "Finished")
+				&& (currentStatus != "New")) {
+			String errorMsg = "You attempted to insert a wrong task state "
+					+ currentStatus + " in the task " + this.getTaskId();
+			this.getSchedulingSystem().getCompLogginSystem()
+					.addErrorMsg(errorMsg);
+		} else
+			this.status = currentStatus;
+!!!157059.java!!!	setTaskId(in taskId : String) : void
+		this.taskId = taskId;
+!!!157187.java!!!	setUpdater(inout updater : Updater) : void
+		this.updater = updater;
+!!!157315.java!!!	setWorkUnits(inout workUnits : Vector<String>) : void
+		this.workUnits = workUnits;

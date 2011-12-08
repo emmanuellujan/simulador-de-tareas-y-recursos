@@ -1,0 +1,7 @@
+class SimpleFilter
+!!!129795.java!!!	SimpleFilter(inout obj : Object)
+		this.setElement(obj);
+!!!129923.java!!!	getElement() : Object
+		return element;
+!!!130051.java!!!	setElement(inout elem : Object) : void
+		this.element = elem;

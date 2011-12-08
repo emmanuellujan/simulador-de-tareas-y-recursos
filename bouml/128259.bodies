@@ -1,0 +1,11 @@
+class ActorRelationshipFilter
+!!!130179.java!!!	ActorRelationshipFilter(inout obj : Object)
+		super(obj);
+!!!130307.java!!!	eval(inout currentResource : Object) : boolean
+		Vector<Resource> relationResources = ((Resource) currentResource)
+				.getResources();
+		for (int i = 0; i < relationResources.size(); i++) {
+			if (relationResources.elementAt(i).equals(element))
+				return true;
+		}
+		return false;

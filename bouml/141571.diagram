@@ -1,0 +1,432 @@
+format 76
+
+classcanvas 128003 class_ref 128131 // SchedulingSystem
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 147587 // getActorsList
+    operation_ref 147715 // getCompLogginSystem
+    operation_ref 147843 // getConfigurator
+    operation_ref 147971 // getDeadline
+    operation_ref 148099 // getDealerActor
+    operation_ref 148227 // getFailedFinishedList
+    operation_ref 148355 // getFinishedList
+    operation_ref 148483 // getIoSystem
+    operation_ref 148611 // getNewsList
+    operation_ref 148739 // getNumberOfTasks
+    operation_ref 148867 // getResource
+    operation_ref 148995 // getResourcesList
+    operation_ref 149123 // getResultsAnalyzer
+    operation_ref 149251 // getTasks
+    operation_ref 150403 // setActorsList
+    operation_ref 150531 // setCompLogginSystem
+    operation_ref 150659 // setConfigurator
+    operation_ref 150787 // setDeadline
+    operation_ref 150915 // setDealerActor
+    operation_ref 151043 // setFailedFinishedList
+    operation_ref 151171 // setFinishedList
+    operation_ref 151299 // setIoSystem
+    operation_ref 151427 // setNewsList
+    operation_ref 151555 // setNumberOfTasks
+    operation_ref 151683 // setResourcesList
+    operation_ref 151811 // setResultsAnalyzer
+    operation_ref 151939 // setTasks
+  xyz 311.701 59.1405 2000
+end
+classcanvas 128131 class_ref 130051 // Task
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 154115 // getContingencyTask
+    operation_ref 154243 // getContTaskId
+    operation_ref 154371 // getCurrent
+    operation_ref 154499 // getDifficult
+    operation_ref 154627 // getFilter
+    operation_ref 154755 // getNext
+    operation_ref 154883 // getPriority
+    operation_ref 155011 // getProgramCounter
+    operation_ref 155139 // getSchedulingSystem
+    operation_ref 155267 // getStatus
+    operation_ref 155395 // getTaskId
+    operation_ref 155523 // getUpdater
+    operation_ref 155651 // getWorkUnits
+    operation_ref 156035 // setContingencyTask
+    operation_ref 156163 // setContTaskId
+    operation_ref 156291 // setDifficult
+    operation_ref 156419 // setFilter
+    operation_ref 156547 // setPriority
+    operation_ref 156675 // setProgramCounter
+    operation_ref 156803 // setSchedulingSystem
+    operation_ref 156931 // setStatus
+    operation_ref 157059 // setTaskId
+    operation_ref 157187 // setUpdater
+    operation_ref 157315 // setWorkUnits
+  xyz 622.657 230.049 3005
+end
+classcanvas 129283 class_ref 130435 // Actor
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 142979 // getCapacity
+    operation_ref 143107 // getCurrAction
+    operation_ref 143235 // getCurrTask
+    operation_ref 143363 // getIntList
+    operation_ref 143491 // getLimitTime
+    operation_ref 143619 // getMaxTasksNumber
+    operation_ref 143747 // getReadyList
+    operation_ref 143875 // getSaIntList
+    operation_ref 144003 // getSaReadyList
+    operation_ref 144131 // getSyncIntList
+    operation_ref 144259 // getSyncReadyList
+    operation_ref 144387 // getTime
+    operation_ref 145411 // setCapacity
+    operation_ref 145539 // setCurrAction
+    operation_ref 145667 // setCurrTask
+    operation_ref 145795 // setIntList
+    operation_ref 145923 // setLimitTime
+    operation_ref 146051 // setMaxTasksNumber
+    operation_ref 146179 // setReadyList
+    operation_ref 146307 // setSaIntList
+    operation_ref 146435 // setSaReadyList
+    operation_ref 146563 // setSyncIntList
+    operation_ref 146691 // setSyncReadyList
+    operation_ref 146819 // setTime
+  xyz 72.3805 288.844 3011
+end
+classcanvas 130307 class_ref 130563 // Resource
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 139779 // getProperties
+    operation_ref 139907 // getProperties
+    operation_ref 140035 // getProperty
+    operation_ref 140163 // getRelationsIds
+    operation_ref 140291 // getResId
+    operation_ref 140419 // getResourceMaxLimit
+    operation_ref 140547 // getResources
+    operation_ref 140675 // getSchedulingSystem
+    operation_ref 140803 // getType
+    operation_ref 141187 // setProperties
+    operation_ref 141315 // setProperty
+    operation_ref 141443 // setRelationsIds
+    operation_ref 141571 // setResId
+    operation_ref 141699 // setResource
+    operation_ref 141827 // setResourceMaxLimit
+    operation_ref 141955 // setResources
+    operation_ref 142083 // setSchedulingSystem
+    operation_ref 142211 // setType
+  xyz 74.9685 58.3454 3017
+end
+classcanvas 131203 class_ref 131331 // Updater
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 158339 // getUpdates
+    operation_ref 158467 // setUpdates
+  xyz 666.616 528.924 3011
+end
+classcanvas 131459 class_ref 131459 // Update
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 157699 // getProperties
+    operation_ref 157827 // setProperties
+  xyz 474.643 511.64 2000
+end
+classcanvas 131587 class_ref 131203 // SystemServices
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 153091 // getResourceByJobPosition
+    operation_ref 153219 // getResourceByRelationResource
+    operation_ref 153347 // setResourceProperty
+  xyz 453.164 68.278 2000
+end
+classcanvas 144387 class_ref 128515 // Filter
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 595.17 736.54 3017
+end
+classcanvas 145667 class_ref 129667 // ResultsAnalyzer
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_attributes
+    attribute_ref 128899 // numberOfErrors
+    attribute_ref 129027 // deadline
+    attribute_ref 129155 // numberOfCycles
+    attribute_ref 129283 // numberOfTasks
+    attribute_ref 129411 // nbrSuccessfulTasks
+    attribute_ref 129539 // nbrFailedTasks
+    attribute_ref 129667 // numberOfActors
+    attribute_ref 129795 // numberOfResources
+    attribute_ref 129923 // meanNbrTasksPerActor
+    attribute_ref 130051 // propFinishedTasks
+    attribute_ref 130179 // propFailedTasks
+    attribute_ref 130307 // propVelocity
+    attribute_ref 130435 // analysis
+  hidden_operations
+    operation_ref 134019 // ResultsAnalyzer
+    operation_ref 134147 // analyze
+    operation_ref 134275 // getAnalysis
+    operation_ref 134403 // getDeadline
+    operation_ref 134531 // getMeanNbrTasksPerActor
+    operation_ref 134659 // getNbrFailedTasks
+    operation_ref 134787 // getNbrSuccessfulTasks
+    operation_ref 134915 // getNumberOfActors
+    operation_ref 135043 // getNumberOfCycles
+    operation_ref 135171 // getNumberOfErrors
+    operation_ref 135299 // getNumberOfResources
+    operation_ref 135427 // getNumberOfTasks
+    operation_ref 135555 // getPropFailedTasks
+    operation_ref 135683 // getPropFinishedTasks
+    operation_ref 135811 // getPropVelocity
+    operation_ref 135939 // getSchedulingSystem
+    operation_ref 136067 // print
+    operation_ref 136195 // renderAnalysis
+    operation_ref 136323 // setAnalysis
+    operation_ref 136451 // setDeadline
+    operation_ref 136579 // setMeanNbrTasksPerActor
+    operation_ref 136707 // setNbrFailedTasks
+    operation_ref 136835 // setNbrSuccessfulTasks
+    operation_ref 136963 // setNumberOfActors
+    operation_ref 137091 // setNumberOfCycles
+    operation_ref 137219 // setNumberOfErrors
+    operation_ref 137347 // setNumberOfResources
+    operation_ref 137475 // setNumberOfTasks
+    operation_ref 137603 // setPropFailedTasks
+    operation_ref 137731 // setPropFinishedTasks
+    operation_ref 137859 // setPropVelocity
+    operation_ref 137987 // setSchedulingSystem
+    operation_ref 138115 // writeAnalysis
+  xyz 448.94 723 3005
+end
+classcanvas 146051 class_ref 129923 // SchedulingAlgorithm
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 64.24 719.03 3017
+end
+classcanvas 146563 class_ref 130819 // Configurator
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 335.2 720.48 3022
+end
+classcanvas 147075 class_ref 130947 // IOSystem
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 209.19 722.25 3028
+end
+classcanvas 149123 class_ref 131075 // CompLogginSystem
+  draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 254.66 778.84 2000
+end
+packagecanvas 150147 
+  package_ref 128259 // schedulingSystem
+    xyzwh 6.15 9.86 2000 759 650
+end
+note 150275 "From logicLayer.schedulingAlgorithmSystem
+Package"
+  xyzwh 6.24 784.84 2000 235 66
+note 150531 "From 
+logicLayer.filterSystem
+Package
+"
+  xyzwh 644.01 779.13 2000 148 65
+note 150787 "From
+logicLayer.resultsAnalyzer
+Package"
+  xyzwh 471.17 783.79 2000 164 69
+note 151043 "From
+persistenceLayer.logginSystem
+Package
+"
+  xyzwh 201.05 861.28 2000 190 67
+note 151299 "From
+persistenceLayer.ioSystem
+Package
+"
+  xyzwh 27.44 856.63 2000 168 65
+note 151555 "From
+persistenceLayer.Configurator
+Package"
+  xyzwh 404.3 861.1 2000 186 67
+relationcanvas 128259 relation_ref 132867 // <unidirectional association>
+  decenter_begin 28
+  decenter_end 97
+  from ref 128131 z 3006 to point 595.63 237.39
+  line 128387 z 3006 to point 595.63 254.82
+  line 128515 z 3006 to point 611.43 259.82
+  line 133251 z 3006 to ref 128131
+  role_a_pos 516 217 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128643 relation_ref 132995 // <unidirectional association>
+  decenter_begin 257
+  decenter_end 750
+  from ref 128131 z 3006 to ref 128003
+  role_a_pos 443 285 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128771 relation_ref 132099 // <unidirectional association>
+  decenter_begin 660
+  decenter_end 151
+  from ref 128003 z 3006 stereotype "<<Vector>>" xyz 508 255.5 3006 to ref 128131
+  role_a_pos 583 256 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128899 relation_ref 132227 // <unidirectional association>
+  decenter_begin 972
+  decenter_end 527
+  from ref 128003 z 3006 stereotype "<<Vector>>" xyz 483 361.5 3006 to ref 128131
+  role_a_pos 563 356 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129027 relation_ref 132611 // <unidirectional association>
+  decenter_begin 841
+  decenter_end 368
+  from ref 128003 z 3006 stereotype "<<Vector>>" xyz 460 314.5 3006 to ref 128131
+  role_a_pos 549 313 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129155 relation_ref 132739 // <unidirectional association>
+  decenter_begin 907
+  decenter_end 448
+  from ref 128003 z 3006 stereotype "<<Vector>>" xyz 436 337 3006 to ref 128131
+  role_a_pos 515 334 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129411 relation_ref 130563 // <unidirectional association>
+  decenter_begin 303
+  decenter_end 625
+  from ref 129283 z 3012 to ref 128131
+  role_a_pos 564 382 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129539 relation_ref 130691 // <unidirectional association>
+  decenter_begin 349
+  decenter_end 688
+  from ref 129283 z 3012 stereotype "<<Vector>>" xyz 484 401 3012 to ref 128131
+  role_a_pos 579 398 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129667 relation_ref 130819 // <unidirectional association>
+  decenter_end 819
+  from ref 129283 z 3012 to point 184.94 453.45
+  line 134275 z 3012 stereotype "<<Vector>>" xyz 459 433 3012 to ref 128131
+  role_a_pos 554 433 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129795 relation_ref 131075 // <unidirectional association>
+  decenter_end 966
+  from ref 129283 z 3012 to point 176.62 492.26
+  line 134659 z 3012 stereotype "<<Vector>>" xyz 462 475 3012 to ref 128131
+  role_a_pos 561 473 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129923 relation_ref 131203 // <unidirectional association>
+  decenter_begin 499
+  decenter_end 892
+  from ref 129283 z 3012 stereotype "<<Vector>>" xyz 458 456 3012 to ref 128131
+  role_a_pos 531 453 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130051 relation_ref 131971 // <unidirectional association>
+  decenter_begin 791
+  decenter_end 64
+  from ref 128003 z 3012 to ref 129283
+  role_a_pos 194 298 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130179 relation_ref 132355 // <unidirectional association>
+  decenter_begin 879
+  decenter_end 140
+  from ref 128003 z 3012 stereotype "<<Vector>>" xyz 247 327 3012 to ref 129283
+  role_a_pos 194 324 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130435 relation_ref 130179 // <unidirectional association>
+  decenter_begin 43
+  decenter_end 224
+  from ref 130307 z 3018 stereotype "<<Vector>>" xyz 6 65 3018 to point 37.81 64.14
+  line 130563 z 3018 to point 37.81 96.42
+  line 130691 z 3018 to ref 130307
+  role_a_pos 11 83 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130819 relation_ref 130307 // <unidirectional association>
+  decenter_end 340
+  from ref 130307 z 3018 to ref 128003
+  role_a_pos 206 154 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130947 relation_ref 130435 // <generalisation>
+  from ref 129283 z 3018 to ref 130307
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131075 relation_ref 132483 // <unidirectional association>
+  decenter_begin 61
+  decenter_end 119
+  from ref 128003 z 3018 stereotype "<<Vector>>" xyz 192 85 3018 to ref 130307
+  role_a_pos 188 63 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131331 relation_ref 133251 // <unidirectional association>
+  decenter_end 451
+  from ref 128131 z 3012 to ref 131203
+  role_a_pos 711 509 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 144515 relation_ref 133379 // <unidirectional association>
+  from ref 131203 z 3018 stereotype "<<Hashtable>>" xyz 652 676 3018 to ref 144387
+  role_a_pos 652 693 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 144643 relation_ref 133123 // <unidirectional association>
+  from ref 128131 z 3018 to ref 144387
+  role_a_pos 630 716 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 145795 relation_ref 129667 // <unidirectional association>
+  from ref 145667 z 3006 to ref 128003
+  role_a_pos 372 506 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 145923 relation_ref 131843 // <unidirectional association>
+  from ref 128003 z 3006 to ref 145667
+  role_a_pos 502 704 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 146179 relation_ref 130947 // <unidirectional association>
+  decenter_end 772
+  from ref 129283 z 3018 to ref 146051
+  role_a_pos 168 700 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 146307 relation_ref 131331 // <unidirectional association>
+  decenter_end 200
+  from ref 129283 z 3018 to ref 146051
+  role_a_pos 99 700 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 146691 relation_ref 131459 // <unidirectional association>
+  from ref 128003 z 3023 to ref 146563
+  role_a_pos 381 699 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 147331 relation_ref 133763 // <unidirectional association>
+  from ref 147075 z 3029 to ref 128003
+  role_a_pos 340 393 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 147971 relation_ref 131587 // <unidirectional association>
+  from ref 128003 z 3029 to ref 147075
+  role_a_pos 258 703 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 149507 relation_ref 151811 // <unidirectional association>
+  from ref 128003 z 2001 to ref 149123
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 150403 -_-_
+  from ref 150275 z 3018 to ref 146051
+line 150659 -_-_
+  from ref 150531 z 3018 to ref 144387
+line 150915 -_-_
+  from ref 150787 z 3006 to ref 145667
+line 151171 -_-_
+  from ref 151043 z 2001 to ref 149123
+line 151427 -_-_
+  from ref 147075 z 3029 to ref 151299
+line 151683 -_-_
+  from ref 146563 z 3023 to ref 151555
+preferred_whz 933 582 0.39
+end

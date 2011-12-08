@@ -1,0 +1,83 @@
+class Configurator
+!!!158723.java!!!	Configurator()
+		// String confFile = "conf.xml"; // Usar esta línea cuando se pretende
+		// crear el jar, sino poner el path completo
+		// String confFile =
+		// "C:\\Users\\Administrador\\workspace-test\\TaskOnResourcesII\\src\\conf.xml";
+		String confFile = "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml";
+		this.setConfFile(confFile);
+		this.setConfParameters();
+!!!158851.java!!!	getBar() : String
+		return bar;
+!!!158979.java!!!	getBarFromPath(in s : String) : String
+		String bar = "";
+		if (s.contains("/"))
+			bar = "/";
+		else
+			bar = "\\\\";
+		return bar;
+!!!159107.java!!!	getConfFile() : String
+		return confFile;
+!!!159235.java!!!	getInputDir() : String
+		return inputDir;
+!!!159363.java!!!	getOutputDir() : String
+		return outputDir;
+!!!159491.java!!!	getProjectName() : String
+		return projectName;
+!!!159619.java!!!	getSaveBarFromPath(in s : String) : String
+		String bar = "";
+		if (s.contains("/"))
+			bar = "/";
+		else
+			bar = "\\";
+		return bar;
+!!!159747.java!!!	setBar(in bar : String) : void
+		this.bar = bar;
+!!!159875.java!!!	setConfFile(in confFile : String) : void
+		this.confFile = confFile;
+!!!160003.java!!!	setConfParameters() : void
+		String fileName = this.getConfFile();
+		String sInputDir = "";
+		String sOutputDir = "";
+		String sProjectName = "";
+		try {
+			File file = new File(fileName);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(file);
+			doc.getDocumentElement().normalize();
+
+			NodeList inputDirElementList = doc.getElementsByTagName("inputDir");
+			Element inputDirElement = (Element) inputDirElementList.item(0);
+			NodeList inputDir = inputDirElement.getChildNodes();
+			sInputDir = ((Node) inputDir.item(0)).getNodeValue();
+
+			NodeList outputDirElementList = doc
+					.getElementsByTagName("outputDir");
+			Element outputDirElement = (Element) outputDirElementList.item(0);
+			NodeList outputDir = outputDirElement.getChildNodes();
+			sOutputDir = ((Node) outputDir.item(0)).getNodeValue();
+
+			NodeList projectNameElementList = doc
+					.getElementsByTagName("projectName");
+			Element projectNameElement = (Element) projectNameElementList
+					.item(0);
+			NodeList projectName = projectNameElement.getChildNodes();
+			sProjectName = ((Node) projectName.item(0)).getNodeValue();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String bar = this.getBarFromPath(sInputDir);
+		this.setBar(bar);
+		this.setInputDir(sInputDir + bar + sProjectName + bar);
+		this.setOutputDir(sOutputDir + bar + sProjectName + bar);
+		this.setProjectName(sProjectName);
+
+!!!160131.java!!!	setInputDir(in inputDir : String) : void
+		this.inputDir = inputDir;
+!!!160259.java!!!	setOutputDir(in outputDir : String) : void
+		this.outputDir = outputDir;
+!!!160387.java!!!	setProjectName(in projectName : String) : void
+		this.projectName = projectName;

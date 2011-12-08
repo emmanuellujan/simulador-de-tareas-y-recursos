@@ -1,0 +1,10 @@
+class TaskOwnerFilter
+!!!133763.java!!!	TaskOwnerFilter(inout obj : Object)
+		super(obj);
+!!!133891.java!!!	eval(inout a : Object) : boolean
+		Actor r = ((Actor) a);
+		Task t = (Task) this.getElement();
+		if (r.owns(t))
+			return true;
+		else
+			return false;

@@ -1,0 +1,59 @@
+class SimulationResource
+!!!160515.java!!!	SimulationResource(inout actor : Actor)
+		String resId = actor.getResId();
+		String currentAction = actor.getCurrAction();
+		String taskId;
+		if (actor.getCurrTask() != null)
+			taskId = actor.getCurrTask().getTaskId();
+		else
+			taskId = "None";
+		int time = actor.getTime();
+		int limitTime = actor.getLimitTime();
+
+		Vector<Task> intList = actor.getIntList();
+		int m = intList.size();
+		Vector<String> sInterruptionList = new Vector<String>();
+		for (int i = 0; i < m; i++)
+			sInterruptionList.add(intList.get(i).getTaskId());
+
+		Vector<Task> readyList = actor.getReadyList();
+		m = readyList.size();
+		Vector<String> sReadyList = new Vector<String>();
+		for (int i = 0; i < m; i++)
+			sReadyList.add(readyList.get(i).getTaskId());
+
+		this.setResId(resId);
+		this.setCurrentAction(currentAction);
+		this.setTaskId(taskId);
+		this.setTime(time);
+		this.setLimitTime(limitTime);
+		this.setInterruptionList(sInterruptionList);
+		this.setReadyList(sReadyList);
+!!!160643.java!!!	getCurrentAction() : String
+		return currentAction;
+!!!160771.java!!!	getInterruptionList() : Vector<String>
+		return interruptionList;
+!!!160899.java!!!	getLimitTime() : int
+		return limitTime;
+!!!161027.java!!!	getReadyList() : Vector<String>
+		return readyList;
+!!!161155.java!!!	getResId() : String
+		return resId;
+!!!161283.java!!!	getTaskId() : String
+		return taskId;
+!!!161411.java!!!	getTime() : int
+		return time;
+!!!161539.java!!!	setCurrentAction(in currentAction : String) : void
+		this.currentAction = currentAction;
+!!!161667.java!!!	setInterruptionList(inout interruptionList : Vector<String>) : void
+		this.interruptionList = interruptionList;
+!!!161795.java!!!	setLimitTime(in limitTime : int) : void
+		this.limitTime = limitTime;
+!!!161923.java!!!	setReadyList(inout readyList : Vector<String>) : void
+		this.readyList = readyList;
+!!!162051.java!!!	setResId(in resId : String) : void
+		this.resId = resId;
+!!!162179.java!!!	setTaskId(in taskId : String) : void
+		this.taskId = taskId;
+!!!162307.java!!!	setTime(in time : int) : void
+		this.time = time;

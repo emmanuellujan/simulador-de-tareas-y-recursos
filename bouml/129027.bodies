@@ -1,0 +1,12 @@
+class EqualPropertyFilter
+!!!132227.java!!!	EqualPropertyFilter(inout currentKey : Object, inout currentValue : Object)
+		super(currentKey, currentValue);
+!!!132355.java!!!	eval(inout a : Object) : boolean
+		Resource r = ((Resource) a);
+		String key = (String) this.getKey();
+		String value = (String) this.getValue();
+		String v2 = r.getProperty(key);
+		if (v2 != null)
+			return v2.equals(value);
+		else
+			return false;

@@ -29,7 +29,6 @@ public class SchedulingSystem {
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
 	private Vector<Task> finishedList;
-
 	private Vector<Task> failedFinishedList;
 
 	public SchedulingSystem() {
@@ -207,6 +206,22 @@ public class SchedulingSystem {
 		n = allResources.size();
 		for (int i = 0; i < n; i++)
 			allResources.elementAt(i).reset();
+		this.getDealerActor().reset();
+		
+		Vector<Task> readyList = new Vector<Task>();  
+		readyList.addAll(this.getTasks());
+		this.getDealerActor().setReadyList(readyList);
+		this.setNewsList(readyList);
+		
+		Vector<Task> finishedList = new Vector<Task>();
+		Vector<Task> failedFinishedList = new Vector<Task>();
+		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
+		CompLogginSystem compLogginSystem = new CompLogginSystem(this.configurator);
+		
+		this.setFinishedList(finishedList);
+		this.setFailedFinishedList(failedFinishedList);	 
+		this.setResultsAnalyzer(resultsAnalyzer);
+		this.setCompLogginSystem(compLogginSystem);
 	}
 
 	public void saveData() {

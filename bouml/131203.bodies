@@ -1,0 +1,121 @@
+class SystemServices
+!!!152579.java!!!	deleteRelation(inout list : Vector<String>, in firstResourceId : String, in secondResourceId : String) : Vector<String>
+		for (int i = 0; i < list.size(); i++) {
+			if ((((String) list.elementAt(i)).contains("Recurso: "
+					+ firstResourceId))
+					&& (((String) list.elementAt(i)).contains("con recurso: "
+							+ secondResourceId))) {
+				list.removeElementAt(i);
+			}
+		}
+
+		return list;
+!!!152707.java!!!	deleteResource(inout list : Vector<Resource>, in resourceId : String) : Resource
+		for (int i = 0; i < list.size(); i++)
+			if (list.elementAt(i).getResId().equals(resourceId)) {
+				list.remove(i);
+				return list;
+			}
+		return list;
+!!!152835.java!!!	deleteResourceId(inout list : Vector<String>, in resourceId : String) : Vector<String>
+		for (int i = 0; i < list.size(); i++)
+			if (list.elementAt(i).equals(resourceId)) {
+				list.remove(i);
+				return list;
+			}
+		return list;
+!!!152963.java!!!	deleteResourceRelation(in firstResourceId : String, in secondResourceId : String) : void
+		Vector<Resource> currentList = new Vector<Resource>();
+		Vector<String> currentIdsList = new Vector<String>();
+		Vector<String> relations = new Vector<String>();
+		int firtSize = 0;
+		if (firstResourceId.equals(secondResourceId)) {
+			SimulatorFrame.getInstance().setVisible(false);
+			ErrorFrame.getInstance().setBackFrame("SimulatorFrame");
+			ErrorFrame.getInstance().setLabel("Resources cannot be the equals");
+			ErrorFrame.getInstance().setLocationRelativeTo(null);
+			ErrorFrame.getInstance().setVisible(true);
+		} else {
+			for (int i = 0; i < SimulatorFrame.getInstance()
+					.getMainResourcesList().size(); i++) {
+				if (SimulatorFrame.getInstance().getMainResourcesList()
+						.elementAt(i).getResId().equals(firstResourceId)) {
+					Resource element = (Resource) SimulatorFrame.getInstance()
+							.getMainResourcesList().elementAt(i);
+					currentList = element.getResources();
+					firtSize = ((Vector) element.getResources()).size();
+					SimulatorFrame
+							.getInstance()
+							.getMainResourcesList()
+							.elementAt(i)
+							.setResources(
+									this.deleteResource(currentList,
+											secondResourceId));
+					currentIdsList = SimulatorFrame.getInstance()
+							.getMainResourcesList().elementAt(i)
+							.getRelationsIds();
+					SimulatorFrame
+							.getInstance()
+							.getMainResourcesList()
+							.elementAt(i)
+							.setRelationsIds(
+									this.deleteResourceId(currentIdsList,
+											secondResourceId));
+					relations = RelationFrame.getInstance().getRelationsList();
+					RelationFrame.getInstance().setRelationsList(
+							this.deleteRelation(relations, firstResourceId,
+									secondResourceId));
+
+					SimulatorFrame.getInstance().setVisible(false);
+					NewsFrame.getInstance().setBackFrame("SimulatorFrame");
+
+					if (firtSize > SimulatorFrame.getInstance()
+							.getMainResourcesList().elementAt(i).getResources()
+							.size())
+						NewsFrame.getInstance().setLabel(
+								"Relationship deleted!");
+					else
+						NewsFrame.getInstance().setLabel(
+								"Relationship doesn't exist");
+					NewsFrame.getInstance().setLocationRelativeTo(null);
+					NewsFrame.getInstance().setVisible(true);
+				}
+			}
+		}
+!!!153091.java!!!	getResourceByJobPosition(inout fJobPosition : Filter, in name : String) : Resource
+		Vector<Resource> result = new Vector<Resource>();
+		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
+				.size(); i++)
+			if (((JobPositionFilter) fJobPosition).eval(SimulatorFrame
+					.getInstance().getMainResourcesList().get(i)))
+				result.add(SimulatorFrame.getInstance().getMainResourcesList()
+						.get(i));
+
+		return result;
+!!!153219.java!!!	getResourceByRelationResource(inout fWorkerRelationship : Filter, in name : String) : Resource
+		Vector<Resource> result = new Vector<Resource>();
+		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
+				.size(); i++)
+			if (((ActorRelationshipFilter) fWorkerRelationship)
+					.eval(SimulatorFrame.getInstance().getMainResourcesList()
+							.get(i))) {
+				if (!result.contains(SimulatorFrame.getInstance()
+						.getMainResourcesList().get(i))) {
+					result.add(SimulatorFrame.getInstance()
+							.getMainResourcesList().get(i));
+				}
+			}
+		return result;
+!!!153347.java!!!	setResourceProperty(in resourceId : String, in property : String, in value : String) : void
+		for (int i = 0; i < SimulatorFrame.getInstance().getMainResourcesList()
+				.size(); i++)
+			if (SimulatorFrame.getInstance().getMainResourcesList()
+					.elementAt(i).getResId().equals(resourceId)) {
+				SimulatorFrame.getInstance().getMainResourcesList()
+						.elementAt(i).setProperty(property, value);
+				SimulatorFrame.getInstance().setVisible(false);
+				NewsFrame.getInstance().setBackFrame("SimulatorFrame");
+				NewsFrame.getInstance().setLabel("Property updated!");
+				NewsFrame.getInstance().setLocationRelativeTo(null);
+				NewsFrame.getInstance().setVisible(true);
+			}

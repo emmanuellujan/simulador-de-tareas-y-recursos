@@ -75,7 +75,6 @@ public class ResultsAnalyzer {
 		this.setPropVelocity(propVelocity);
 
 		this.renderAnalysis();
-
 	}
 
 	public String getAnalysis() {
@@ -139,7 +138,7 @@ public class ResultsAnalyzer {
 	}
 
 	public void renderAnalysis() {
-		String analysis = this.getAnalysis();
+		String analysis = "";
 
 		analysis += "Results Analisys \n\n";
 
@@ -252,5 +251,11 @@ public class ResultsAnalyzer {
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
 	}
+
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

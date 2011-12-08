@@ -1,0 +1,12 @@
+class ComplexFilter
+!!!130435.java!!!	ComplexFilter(inout fA : Filter, inout fB : Filter)
+		this.setFilterA(fA);
+		this.setFilterB(fB);
+!!!130563.java!!!	getFilterA() : Filter
+		return filterA;
+!!!130691.java!!!	getFilterB() : Filter
+		return filterB;
+!!!130819.java!!!	setFilterA(inout fA : Filter) : void
+		this.filterA = fA;
+!!!130947.java!!!	setFilterB(inout fB : Filter) : void
+		this.filterB = fB;
