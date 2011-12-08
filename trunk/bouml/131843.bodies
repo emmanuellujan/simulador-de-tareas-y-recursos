@@ -1,0 +1,19 @@
+class FileManager
+!!!163203.java!!!	readFile(in fileName : String) : String
+		DataInputStream f = null;
+		String txt = null;
+		try {
+			f = new DataInputStream(new FileInputStream(fileName));
+			f.read();
+		} catch (FileNotFoundException fnfe) {
+		} catch (IOException ioe) {
+		}
+		return txt;
+!!!163331.java!!!	writeFile(in fileName : String, in txt : String) : void
+		DataOutputStream f = null;
+		try {
+			f = new DataOutputStream(new FileOutputStream(fileName, false));
+			f.writeBytes(txt);
+		} catch (FileNotFoundException fnfe) {
+		} catch (IOException ioe) {
+		}

@@ -1,0 +1,9 @@
+class SAFactory
+!!!139395.java!!!	getSchedulingAlgorithm(in sSchedulingAlgorithm : String) : SchedulingAlgorithm
+		SchedulingAlgorithm schedulingAlgorithm = null;
+		if (sSchedulingAlgorithm.equals("FCFS"))
+			schedulingAlgorithm = new FCFS();
+		else if (sSchedulingAlgorithm.equals("PrioritiesSA"))
+			schedulingAlgorithm = new PrioritiesSA();
+
+		return schedulingAlgorithm;

@@ -1,0 +1,5 @@
+class EqualFilter
+!!!131331.java!!!	EqualFilter(inout obj : Object)
+		super(obj);
+!!!131459.java!!!	eval(inout r : Object) : boolean
+		return this.getElement().equals((Resource) r);

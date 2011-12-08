@@ -416,6 +416,7 @@ public class Actor extends Resource {
 
 	public void reset() {
 		this.setTime(0);
+		this.setCurrAction("Nothing");
 	}
 
 	private void resetTime() {

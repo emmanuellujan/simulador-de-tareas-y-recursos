@@ -1,0 +1,12 @@
+class PropertyFilter
+!!!131587.java!!!	PropertyFilter(inout currentKey : Object, inout currentValue : Object)
+		this.setKey(currentKey);
+		this.setValue(currentValue);
+!!!131715.java!!!	getKey() : Object
+		return key;
+!!!131843.java!!!	getValue() : Object
+		return value;
+!!!131971.java!!!	setKey(inout elem : Object) : void
+		this.key = elem;
+!!!132099.java!!!	setValue(inout elem : Object) : void
+		this.value = elem;

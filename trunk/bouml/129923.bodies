@@ -1,0 +1,7 @@
+class SchedulingAlgorithm
+!!!138243.java!!!	SchedulingAlgorithm(in id : String)
+		this.setId(id);
+!!!138371.java!!!	getId() : String
+		return id;
+!!!138627.java!!!	setId(in id : String) : void
+		this.id = id;

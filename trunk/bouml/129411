@@ -1,0 +1,712 @@
+format 76
+"logginSystem" // src::persistenceLayer::logginSystem
+  revision 2
+  modified_by 3 "elujan"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  stereotype "segment"
+  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/persistenceLayer/logginSystem/"
+  java_package "persistenceLayer.logginSystem"
+  classview 129027 "logginSystem"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 131075 "CompLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 134915 // <generalisation>
+	relation 134915 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134915 // <generalisation>
+	  b parent class_ref 132227 // LogginSystem
+      end
+
+      classrelation 135043 // logginSystems (<unidirectional association>)
+	relation 135043 --->
+	  stereotype "Vector"
+	  a role_name "logginSystems" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 135043 // logginSystems (<unidirectional association>)
+	  b parent class_ref 132227 // LogginSystem
+      end
+
+      operation 169219 "CompLogginSystem"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169347 "addLogginSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "logginSystem" type class_ref 132227 // LogginSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169475 "getLogginSystems"
+	public return_type class_ref 132227 // LogginSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169603 "setLogginSystems"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "logginSystems" explicit_type "Vector<LogginSystem>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169731 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132227 "LogginSystem"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 134659 // configurator (<unidirectional association>)
+	relation 134659 --->
+	  a role_name "configurator" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 134659 // configurator (<unidirectional association>)
+	  b parent class_ref 130819 // Configurator
+      end
+
+      attribute 135299 "errorMsgs"
+	private explicit_type "String"
+	stereotype "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 134787 // simulationTimes (<unidirectional association>)
+	relation 134787 --->
+	  stereotype "Vector"
+	  a role_name "simulationTimes" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 134787 // simulationTimes (<unidirectional association>)
+	  b parent class_ref 131715 // SimulationTime
+      end
+
+      operation 167555 "LogginSystem"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167683 "LogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167811 "addErrorMsg"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "errorMsg" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167939 "addSimulationTime"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "simulationTime" type class_ref 131715 // SimulationTime
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168067 "getConfigurator"
+	public return_type class_ref 130819 // Configurator
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168195 "getErrorMsgs"
+	public explicit_return_type "Vector<String>"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168323 "getSimulationTimes"
+	public return_type class_ref 131715 // SimulationTime
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168451 "log"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "time" explicit_type "int"
+	  param inout name "devicesList" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168579 "renderErrors"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168707 "setConfigurator"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168835 "setErrorMsgs"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "errorMsgs" explicit_type "Vector<String>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168963 "setSimulationTimes"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169091 "writeLog"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132355 "FileLogginSystem"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 135171 // <generalisation>
+	relation 135171 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 135171 // <generalisation>
+	  b parent class_ref 132227 // LogginSystem
+      end
+
+      attribute 135427 "extension"
+	protected explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 135299 // fileManager (<unidirectional association>)
+	relation 135299 --->
+	  a role_name "fileManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 135299 // fileManager (<unidirectional association>)
+	  b parent class_ref 131843 // FileManager
+      end
+
+      operation 169859 "FileLogginSystem"
+	public explicit_return_type ""
+	nparams 3
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	  param in name "extension" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169987 "getExtension"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170115 "getFileManager"
+	public return_type class_ref 131843 // FileManager
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170243 "getOutputFileName"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170371 "setExtension"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "extension" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170499 "setFileManager"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fileManager" type class_ref 131843 // FileManager
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170627 "writeFile"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "s" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132483 "TXTLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 135427 // <generalisation>
+	relation 135427 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 135427 // <generalisation>
+	  b parent class_ref 132355 // FileLogginSystem
+      end
+
+      operation 170755 "TXTLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170883 "logActors"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "actors" explicit_type "Vector<SimulationResource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171011 "logResource"
+	public explicit_return_type "String"
+	nparams 1
+	  param inout name "resource" type class_ref 131587 // SimulationResource
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171139 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132611 "XMLLogginSystem"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 135555 // <generalisation>
+	relation 135555 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 135555 // <generalisation>
+	  b parent class_ref 132355 // FileLogginSystem
+      end
+
+      operation 171267 "XMLLogginSystem"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "configurator" type class_ref 130819 // Configurator
+	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171395 "logActors"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "actors" explicit_type "Vector<SimulationResource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171523 "logResource"
+	public explicit_return_type "String"
+	nparams 1
+	  param inout name "resource" type class_ref 131587 // SimulationResource
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171651 "writeLog"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+  end
+
+  deploymentview 129027 "logginSystem"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 131971 "LogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Actor;
+import persistenceLayer.dataModel.Configurator.Configurator;
+import persistenceLayer.dataModel.SimulationTime.SimulationTime;
+${definition}"
+      associated_classes
+	class_ref 132227 // LogginSystem
+      end
+    end
+
+    artifact 132099 "CompLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import persistenceLayer.dataModel.Configurator.Configurator;
+${definition}"
+      associated_classes
+	class_ref 131075 // CompLogginSystem
+      end
+    end
+
+    artifact 132227 "FileLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import persistenceLayer.dataModel.Configurator.Configurator;
+import persistenceLayer.dataModel.SimulationTime.SimulationTime;
+import persistenceLayer.ioSystem.FileManager;
+${definition}"
+      associated_classes
+	class_ref 132355 // FileLogginSystem
+      end
+    end
+
+    artifact 132355 "TXTLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import persistenceLayer.dataModel.Configurator.Configurator;
+import persistenceLayer.dataModel.SimulationTime.SimulationResource;
+import persistenceLayer.dataModel.SimulationTime.SimulationTime;
+${definition}"
+      associated_classes
+	class_ref 132483 // TXTLogginSystem
+      end
+    end
+
+    artifact 132483 "XMLLogginSystem"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import persistenceLayer.dataModel.Configurator.Configurator;
+import persistenceLayer.dataModel.SimulationTime.SimulationResource;
+import persistenceLayer.dataModel.SimulationTime.SimulationTime;
+${definition}"
+      associated_classes
+	class_ref 132611 // XMLLogginSystem
+      end
+    end
+  end
+
+  simplerelation 129283
+    -_->
+      on 
+      package_ref 129027 // dataModel
+  end
+
+  simplerelation 137091
+    -_->
+      on 
+      package_ref 128259 // schedulingSystem
+  end
+end

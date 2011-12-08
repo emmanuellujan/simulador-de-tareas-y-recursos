@@ -1,7 +1,7 @@
 Results Analisys 
 
   Number of errors: 0
-  Deadline (in cycles): 80
+  Deadline (in cycles): 0
   Number of cycles: 10
   Total number of executed tasks *: 1
   Number of successful tasks *: 1
@@ -12,6 +12,6 @@ Results Analisys
   Proportions: 
     Successful tasks *: 1.0
     Failed tasks *: 0.0
-    Velocity (deadline/nbrOfCycles): 8.0
+    Velocity (deadline/nbrOfCycles): 0.0
 
   *: with contigency tasks

@@ -1,0 +1,21 @@
+class FileLogginSystem
+!!!169859.java!!!	FileLogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>, in extension : String)
+		super(configurator, simulationTimes);
+		FileManager fileManager = new FileManager();
+		this.setFileManager(fileManager);
+		this.setExtension(extension);
+!!!169987.java!!!	getExtension() : String
+		return extension;
+!!!170115.java!!!	getFileManager() : FileManager
+		return fileManager;
+!!!170243.java!!!	getOutputFileName() : String
+		String outputFileName = this.getConfigurator().getOutputDir()
+				+ this.getConfigurator().getProjectName() + "_log."
+				+ this.getExtension();
+		return outputFileName;
+!!!170371.java!!!	setExtension(in extension : String) : void
+		this.extension = extension;
+!!!170499.java!!!	setFileManager(inout fileManager : FileManager) : void
+		this.fileManager = fileManager;
+!!!170627.java!!!	writeFile(in s : String) : void
+		this.getFileManager().writeFile(this.getOutputFileName(), s);

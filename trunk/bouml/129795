@@ -1,0 +1,6414 @@
+format 76
+"frames" // src::presentationLayer::frames
+  revision 3
+  modified_by 3 "elujan"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  stereotype "segment"
+  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/presentationLayer/frames/"
+  java_package "presentationLayer.frames"
+  classview 129283 "frames"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 132739 "CreateActorFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi
+
+ CHECKEAR SCHEDULING SYSTEM EN ENTRADA, FUNCION EN DESARROLLO Y EN CERRAR
+ VENTANA CON CREACION
+ COMO HAGO PARA MODIFICAR SIEMPRE EL MISMO MAIN FRAME??"
+      classrelation 135683 // <generalisation>
+	relation 135683 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 135683 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 171779 "getInstance"
+	class_operation public return_type class_ref 132739 // CreateActorFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171907 "isNum"
+	class_operation public explicit_return_type "boolean"
+	nparams 1
+	  param in name "s" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172035 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 135811 // newActor (<unidirectional association>)
+	relation 135811 --->
+	  a role_name "newActor" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 135811 // newActor (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 135939 // currentSchedulingSystem (<unidirectional association>)
+	relation 135939 --->
+	  a role_name "currentSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 135939 // currentSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 136067 // actorsList (<unidirectional association>)
+	relation 136067 --->
+	  stereotype "Vector"
+	  a role_name "actorsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 136067 // actorsList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 136195 // CREATEACTORFRAME_INSTANCE (<unidirectional association>)
+	relation 136195 --->
+	  a role_name "CREATEACTORFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 136195 // CREATEACTORFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 132739 // CreateActorFrame
+      end
+
+      attribute 135555 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 135683 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 135811 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 135939 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136067 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136195 "jLabel3"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136323 "jLabel4"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136451 "jLabel5"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136579 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136707 "jPanel2"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136835 "jScrollPane1"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136963 "jTable1"
+	private explicit_type "javax.swing.JTable"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137091 "jTextField1"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137219 "jTextField2"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137347 "jTextField3"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137475 "jTextField4"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 172163 "CreateActorFrame"
+	private explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+
+Creates new form CreateActorFrame"
+      end
+
+      operation 172291 "areValidFields"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172419 "clearTable"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172547 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172675 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172803 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 172931 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents
+
+Action of 'Create' button, which creates a new Actor taking the values of
+the screen components. Updating Actors list too, and closing the current
+panel."
+      end
+
+      operation 173059 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 173187 "jTextField3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 173315 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "actorsList" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jTextField3ActionPerformed"
+      end
+
+      operation 173443 "setFieldsValuesEmpty"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 173571 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132995 "CreateArtifactFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi
+
+ CHECKEAR SCHEDULING SYSTEM EN ENTRADA, FUNCION EN DESARROLLO Y EN CERRAR
+ VENTANA CON CREACION
+ COMO HAGO PARA MODIFICAR SIEMPRE EL MISMO MAIN FRAME??"
+      classrelation 136323 // <generalisation>
+	relation 136323 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 136323 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 173699 "getInstance"
+	class_operation public return_type class_ref 132995 // CreateArtifactFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 173827 "isNum"
+	class_operation public explicit_return_type "boolean"
+	nparams 1
+	  param in name "s" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 173955 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 136451 // newResource (<unidirectional association>)
+	relation 136451 --->
+	  a role_name "newResource" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 136451 // newResource (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 136579 // resourcesList (<unidirectional association>)
+	relation 136579 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 136579 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 136707 // currentSchedulingSystem (<unidirectional association>)
+	relation 136707 --->
+	  a role_name "currentSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 136707 // currentSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 136835 // CREATEARTIFACTFRAME_INSTANCE (<unidirectional association>)
+	relation 136835 --->
+	  a role_name "CREATEARTIFACTFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 136835 // CREATEARTIFACTFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 132995 // CreateArtifactFrame
+      end
+
+      attribute 137603 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 137731 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137859 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 137987 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 138115 "jPanel2"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 138243 "jScrollPane1"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 138371 "jTable1"
+	private explicit_type "javax.swing.JTable"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 138499 "jTextField1"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 174083 "CreateArtifactFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form CreateArtifactFrame "
+      end
+
+      operation 174211 "areValidFields"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 174339 "clearTable"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 174467 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 174595 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 174723 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 174851 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents
+
+Action of 'Create' button, which creates a new Artifact taking the values
+of the screen components. Updating Resources list too, and closing the
+current panel."
+      end
+
+      operation 174979 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 175107 "setFieldsValuesEmpty"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 175235 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 175363 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 133123 "CreateFilterFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 136963 // <generalisation>
+	relation 136963 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 136963 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 175491 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      attribute 138627 "backFrameId"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 138755 "filterType"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Tipo del filtro a crear en este panel"
+      end
+
+      classrelation 137091 // taskFrame (<unidirectional association>)
+	relation 137091 --->
+	  a role_name "taskFrame" private
+	    comment " Panel de vuelta, una vez creado el"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137091 // taskFrame (<unidirectional association>)
+	  b parent class_ref 133251 // CreateTaskFrame
+      end
+
+      classrelation 137219 // filterBackFrame (<unidirectional association>)
+	relation 137219 --->
+	  a role_name "filterBackFrame" private
+	    comment " filtro
+ private CreateFilterFrame filterFrame;//Variable que representa esta
+ ventana, para que otros puedan trabajar en ella
+ Panel de vuelta, una vez creado"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137219 // filterBackFrame (<unidirectional association>)
+	  b parent class_ref 133123 // CreateFilterFrame
+      end
+
+      classrelation 137347 // updaterFrame (<unidirectional association>)
+	relation 137347 --->
+	  a role_name "updaterFrame" private
+	    comment " el filtro
+ Panel de vuelta, una vez creado el"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137347 // updaterFrame (<unidirectional association>)
+	  b parent class_ref 133379 // UpdaterFrame
+      end
+
+      attribute 138883 "resourcesMainList"
+	private explicit_type "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " filtro
+ Lista total de recursos, artefactos y"
+      end
+
+      classrelation 137475 // resourcesList (<unidirectional association>)
+	relation 137475 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    comment " actores
+ Lista de artefactos"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 137475 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 137603 // filterFrameI (<unidirectional association>)
+	relation 137603 --->
+	  a role_name "filterFrameI" private
+	    comment " Frame para crear el 1er filtro del and"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137603 // filterFrameI (<unidirectional association>)
+	  b parent class_ref 128515 // Filter
+      end
+
+      classrelation 137731 // filterFrameII (<unidirectional association>)
+	relation 137731 --->
+	  a role_name "filterFrameII" private
+	    comment " Frame para crear el 2do filtro del and"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137731 // filterFrameII (<unidirectional association>)
+	  b parent class_ref 128515 // Filter
+      end
+
+      attribute 139011 "filterFrameStateI"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139139 "filterFrameStateII"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139267 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 139395 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139523 "jButton3"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139651 "jButton4"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139779 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 139907 "jComboBox2"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140035 "jComboBox3"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140163 "jComboBox4"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140291 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140419 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140547 "jLabel3"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140675 "jLabel4"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140803 "jLabel5"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 140931 "jLabel6"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141059 "jLabel7"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141187 "jLabel8"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141315 "jLabel9"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141443 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141571 "jPanel2"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141699 "jTextField1"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141827 "jTextField2"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 141955 "jTextField3"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 175619 "CreateFilterFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form CreateFilterFrame "
+      end
+
+      operation 175747 "fillObjectCombobox"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 175875 "fillResourceCombobox"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176003 "getBackFrame"
+	public explicit_return_type "Object"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176131 "getBackFrameId"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176259 "getElement"
+	private return_type class_ref 130563 // Resource
+	nparams 1
+	  param in name "id" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176387 "getFilterFrameI"
+	public return_type class_ref 128515 // Filter
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176515 "getFilterFrameII"
+	public return_type class_ref 128515 // Filter
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176643 "getFilterFrameStateI"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176771 "getFilterFrameStateII"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176899 "getFilterType"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 177027 "getMainResourcesList"
+	public explicit_return_type "Vector"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 177155 "getResource"
+	private return_type class_ref 130563 // Resource
+	nparams 1
+	  param in name "id" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 177283 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 177411 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 177539 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 177667 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed
+
+Se chequea que filtro se está creado, para posteriormente realizar su
+creación e incorporarlo a la tarea o a su filtro compuesto."
+      end
+
+      operation 177795 "jButton3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed
+
+Se setean el frame a donde se configurara el filtro componente del filtro
+compuesto a crear(con sus listas). Con ello, tambien se seteara el tipo
+de filtro que se incluira, y tambien setear este panel como panel de
+regreso."
+      end
+
+      operation 177923 "jButton4ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton3ActionPerformed"
+      end
+
+      operation 178051 "jComboBox2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton4ActionPerformed"
+      end
+
+      operation 178179 "makeFilterGUI"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jComboBox2ActionPerformed"
+      end
+
+      operation 178307 "setAndElements"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 178435 "setBackFrame"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "frameName" explicit_type "String"
+	  param inout name "backFrame" explicit_type "Object"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "private CreateFilterFrame getFilterFrame(){ return this.filterFrame; }
+
+private void setFilterFrame(CreateFilterFrame frame){ this.filterFrame =
+frame; } /*"
+      end
+
+      operation 178563 "setBackFrameId"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "id" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 178691 "setFilterFrameI"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "frame" type class_ref 128515 // Filter
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 178819 "setFilterFrameII"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "frame" type class_ref 128515 // Filter
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 178947 "setFilterFrameStateI"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "frameState" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179075 "setFilterFrameStateII"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "frameState" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179203 "setFilterType"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "ftype" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179331 "setListPropertyElements"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179459 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesPrincipalList" explicit_type "Vector"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179587 "setObjectElements"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179715 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179843 "setValueElements"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 179971 "successExit"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 133251 "CreateTaskFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 137859 // <generalisation>
+	relation 137859 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 137859 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 180099 "getInstance"
+	class_operation public return_type class_ref 133251 // CreateTaskFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 180227 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 137987 // newTask (<unidirectional association>)
+	relation 137987 --->
+	  a role_name "newTask" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137987 // newTask (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 138115 // currentSchedulingSystem (<unidirectional association>)
+	relation 138115 --->
+	  a role_name "currentSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138115 // currentSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 138243 // newsList (<unidirectional association>)
+	relation 138243 --->
+	  stereotype "Vector"
+	  a role_name "newsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 138243 // newsList (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 138371 // actorsCurrentList (<unidirectional association>)
+	relation 138371 --->
+	  stereotype "Vector"
+	  a role_name "actorsCurrentList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 138371 // actorsCurrentList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      attribute 142083 "workUnitList"
+	private explicit_type "String"
+	stereotype "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 142211 "scrollPane"
+	private explicit_type "JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 138499 // updater (<unidirectional association>)
+	relation 138499 --->
+	  a role_name "updater" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138499 // updater (<unidirectional association>)
+	  b parent class_ref 131331 // Updater
+      end
+
+      classrelation 138627 // mainFilter (<unidirectional association>)
+	relation 138627 --->
+	  a role_name "mainFilter" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138627 // mainFilter (<unidirectional association>)
+	  b parent class_ref 128515 // Filter
+      end
+
+      classrelation 138755 // filterFrame (<unidirectional association>)
+	relation 138755 --->
+	  a role_name "filterFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138755 // filterFrame (<unidirectional association>)
+	  b parent class_ref 133123 // CreateFilterFrame
+      end
+
+      classrelation 138883 // resourcesMainList (<unidirectional association>)
+	relation 138883 --->
+	  stereotype "Vector"
+	  a role_name "resourcesMainList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 138883 // resourcesMainList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 139011 // resourcesList (<unidirectional association>)
+	relation 139011 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 139011 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 139139 // CREATETASKFRAME_INSTANCE (<unidirectional association>)
+	relation 139139 --->
+	  a role_name "CREATETASKFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 139139 // CREATETASKFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 133251 // CreateTaskFrame
+      end
+
+      attribute 142339 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 142467 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 142595 "jButton3"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 142723 "jButton4"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "private CreateFilterFrame getFilterFrame(){ return this.filterFrame; }
+
+private void setFilterFrame(CreateFilterFrame frame){ this.filterFrame =
+frame; }
+"
+      end
+
+      attribute 142851 "jButton5"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 142979 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143107 "jComboBox2"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143235 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143363 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143491 "jLabel3"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143619 "jLabel4"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143747 "jLabel5"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143875 "jLabel6"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144003 "jLabel7"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144131 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144259 "jPanel2"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144387 "jPanel3"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144515 "jScrollPane1"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144643 "jTextArea1"
+	private explicit_type "javax.swing.JTextArea"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144771 "jTextField1"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144899 "jTextField2"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 180355 "CreateTaskFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form CreateTaskFrame "
+      end
+
+      operation 180483 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 180611 "getFilter"
+	public return_type class_ref 128515 // Filter
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 180739 "getMainResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 180867 "getNewsList"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 180995 "getNewTask"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 181123 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 181251 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 181379 "getUpdater"
+	public return_type class_ref 131331 // Updater
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 181507 "getWorkUnitList"
+	private explicit_return_type "Vector"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 181635 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 181763 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 181891 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 182019 "jButton3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed
+
+Filter creation and adding to the task"
+      end
+
+      operation 182147 "jButton4ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton3ActionPerformed"
+      end
+
+      operation 182275 "jButton5ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton4ActionPerformed"
+      end
+
+      operation 182403 "jComboBox2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton5ActionPerformed"
+      end
+
+      operation 182531 "setActorCombobox"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jComboBox2ActionPerformed"
+      end
+
+      operation 182659 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentActors" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 182787 "setFieldsValuesEmpty"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 182915 "setFilter"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "selectedFilter" type class_ref 128515 // Filter
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183043 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesPrincipalList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183171 "setNewsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "newsList" explicit_type "Vector<Task>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183299 "setNewTask"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "task" type class_ref 130051 // Task
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183427 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183555 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183683 "setUpdater"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "updater" type class_ref 131331 // Updater
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183811 "setWorkUnitList"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "currentList" explicit_type "Vector"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 183939 "writeTextArea"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 133379 "UpdaterFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 144515 // <generalisation>
+	relation 144515 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 144515 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 199939 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 144643 // filterBackFrame (<unidirectional association>)
+	relation 144643 --->
+	  a role_name "filterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 144643 // filterBackFrame (<unidirectional association>)
+	  b parent class_ref 133251 // CreateTaskFrame
+      end
+
+      classrelation 144771 // updates (<unidirectional association>)
+	relation 144771 --->
+	  stereotype "Hashtable"
+	  a role_name "updates" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}, Update> ${name}${value};
+"
+	    classrelation_ref 144771 // updates (<unidirectional association>)
+	  b parent class_ref 128515 // Filter
+      end
+
+      attribute 159491 "resourcesMainList"
+	private explicit_type "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 144899 // resourcesList (<unidirectional association>)
+	relation 144899 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144899 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 145027 // filter (<unidirectional association>)
+	relation 145027 --->
+	  a role_name "filter" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 145027 // filter (<unidirectional association>)
+	  b parent class_ref 128515 // Filter
+      end
+
+      classrelation 145155 // update (<unidirectional association>)
+	relation 145155 --->
+	  a role_name "update" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 145155 // update (<unidirectional association>)
+	  b parent class_ref 131459 // Update
+      end
+
+      classrelation 145283 // updater (<unidirectional association>)
+	relation 145283 --->
+	  a role_name "updater" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 145283 // updater (<unidirectional association>)
+	  b parent class_ref 131331 // Updater
+      end
+
+      attribute 159619 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 159747 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 159875 "jButton3"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 160003 "jButton4"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 160131 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 160259 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 160387 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 160515 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 200067 "UpdaterFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form UpdaterFrame "
+      end
+
+      operation 200195 "getBackFrame"
+	public return_type class_ref 133251 // CreateTaskFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200323 "getFilter"
+	public return_type class_ref 128515 // Filter
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200451 "getMainResourcesList"
+	public explicit_return_type "Vector"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200579 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200707 "getUpdate"
+	public return_type class_ref 131459 // Update
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200835 "getUpdater"
+	public return_type class_ref 131331 // Updater
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 200963 "getUpdates"
+	public return_type class_ref 128515 // Filter
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Hashtable<${type}, Update> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 201091 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 201219 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 201347 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 201475 "jButton3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 201603 "jButton4ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton3ActionPerformed"
+      end
+
+      operation 201731 "setBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "backFrame" explicit_type "Object"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton4ActionPerformed"
+      end
+
+      operation 201859 "setFilter"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "filter" type class_ref 128515 // Filter
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 201987 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesPrincipalList" explicit_type "Vector"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 202115 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 202243 "setUpdate"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "update" type class_ref 131459 // Update
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 202371 "setUpdater"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "current" type class_ref 131331 // Updater
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 202499 "setUpdates"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "updates" explicit_type "Hashtable<Filter, Update>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 166403 // <dependency>
+	relation 166403 -_->
+	  a default
+	    classrelation_ref 166403 // <dependency>
+	  b parent class_ref 128515 // Filter
+      end
+    end
+
+    class 133507 "DeleteActorFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 139267 // <generalisation>
+	relation 139267 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 139267 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 184067 "getInstance"
+	class_operation public return_type class_ref 133507 // DeleteActorFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 184195 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 139395 // actorsCurrentList (<unidirectional association>)
+	relation 139395 --->
+	  stereotype "Vector"
+	  a role_name "actorsCurrentList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 139395 // actorsCurrentList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 139523 // currentSchedulingSystem (<unidirectional association>)
+	relation 139523 --->
+	  a role_name "currentSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 139523 // currentSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 139651 // DELETEACTORFRAME_INSTANCE (<unidirectional association>)
+	relation 139651 --->
+	  a role_name "DELETEACTORFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 139651 // DELETEACTORFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 133507 // DeleteActorFrame
+      end
+
+      attribute 145027 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 145155 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145283 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145411 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145539 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 184323 "DeleteActorFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form DeleteActorFrame "
+      end
+
+      operation 184451 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 184579 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 184707 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 184835 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 184963 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 185091 "setActorCombobox"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 185219 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentActors" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 185347 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 133635 "DeleteArtifactFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 139779 // <generalisation>
+	relation 139779 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 139779 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 185475 "getInstance"
+	class_operation public return_type class_ref 133635 // DeleteArtifactFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 185603 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 139907 // resourcesList (<unidirectional association>)
+	relation 139907 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 139907 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 140035 // currentSchedulingSystem (<unidirectional association>)
+	relation 140035 --->
+	  a role_name "currentSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140035 // currentSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 140163 // DELETEARTIFACTFRAME_INSTANCE (<unidirectional association>)
+	relation 140163 --->
+	  a role_name "DELETEARTIFACTFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140163 // DELETEARTIFACTFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 133635 // DeleteArtifactFrame
+      end
+
+      attribute 145667 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 145795 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145923 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146051 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146179 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 185731 "DeleteArtifactFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form DeleteArtifactFrame "
+      end
+
+      operation 185859 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 185987 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 186115 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 186243 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 186371 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 186499 "setArtifactCombobox"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 186627 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 186755 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 133763 "DeleteTaskFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 140291 // <generalisation>
+	relation 140291 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 140291 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 186883 "getInstance"
+	class_operation public return_type class_ref 133763 // DeleteTaskFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 187011 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 140419 // tasksCurrentList (<unidirectional association>)
+	relation 140419 --->
+	  stereotype "Vector"
+	  a role_name "tasksCurrentList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 140419 // tasksCurrentList (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 140547 // DELETETASKFRAME_INSTANCE (<unidirectional association>)
+	relation 140547 --->
+	  a role_name "DELETETASKFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140547 // DELETETASKFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 133763 // DeleteTaskFrame
+      end
+
+      attribute 146307 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 146435 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146563 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146691 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146819 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 187139 "DeleteTaskFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form DeleteTaskFrame "
+      end
+
+      operation 187267 "getTaskList"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 187395 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 187523 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 187651 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 187779 "setTaskList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentTasks" explicit_type "Vector<Task>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+    end
+
+    class 133891 "ErrorFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 140675 // <generalisation>
+	relation 140675 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 140675 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 187907 "getInstance"
+	class_operation public return_type class_ref 133891 // ErrorFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 188035 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      attribute 146947 "backFrame"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 140803 // updaterBackFrame (<unidirectional association>)
+	relation 140803 --->
+	  a role_name "updaterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140803 // updaterBackFrame (<unidirectional association>)
+	  b parent class_ref 133379 // UpdaterFrame
+      end
+
+      classrelation 140931 // filterBackFrame (<unidirectional association>)
+	relation 140931 --->
+	  a role_name "filterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140931 // filterBackFrame (<unidirectional association>)
+	  b parent class_ref 133123 // CreateFilterFrame
+      end
+
+      classrelation 141059 // ERROR_INSTANCE (<unidirectional association>)
+	relation 141059 --->
+	  a role_name "ERROR_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141059 // ERROR_INSTANCE (<unidirectional association>)
+	  b parent class_ref 133891 // ErrorFrame
+      end
+
+      attribute 147075 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 147203 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147331 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 188163 "ErrorFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form ErrorFrame "
+      end
+
+      operation 188291 "getFilterBackFrame"
+	public return_type class_ref 133123 // CreateFilterFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 188419 "getUpdaterBackFrame"
+	public return_type class_ref 133379 // UpdaterFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 188547 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 188675 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 188803 "setBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "currentBackFrame" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 188931 "setFilterBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentBackFrame" type class_ref 133123 // CreateFilterFrame
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 189059 "setLabel"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 189187 "setUpdaterBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentBackFrame" type class_ref 133379 // UpdaterFrame
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 189315 "setVisibleBackFrame"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 134019 "NewsFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 141187 // <generalisation>
+	relation 141187 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 141187 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 189443 "getInstance"
+	class_operation public return_type class_ref 134019 // NewsFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 189571 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      attribute 147459 "backFrame"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 141315 // updaterBackFrame (<unidirectional association>)
+	relation 141315 --->
+	  a role_name "updaterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141315 // updaterBackFrame (<unidirectional association>)
+	  b parent class_ref 133379 // UpdaterFrame
+      end
+
+      classrelation 141443 // filterBackFrame (<unidirectional association>)
+	relation 141443 --->
+	  a role_name "filterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141443 // filterBackFrame (<unidirectional association>)
+	  b parent class_ref 133123 // CreateFilterFrame
+      end
+
+      classrelation 141571 // ERROR_INSTANCE (<unidirectional association>)
+	relation 141571 --->
+	  a role_name "ERROR_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141571 // ERROR_INSTANCE (<unidirectional association>)
+	  b parent class_ref 134019 // NewsFrame
+      end
+
+      attribute 147587 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 147715 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147843 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 189699 "NewsFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form NewsFrame "
+      end
+
+      operation 189827 "getFilterBackFrame"
+	public return_type class_ref 133123 // CreateFilterFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 189955 "getUpdaterBackFrame"
+	public return_type class_ref 133379 // UpdaterFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 190083 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 190211 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 190339 "setBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "currentBackFrame" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 190467 "setFilterBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentBackFrame" type class_ref 133123 // CreateFilterFrame
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 190595 "setLabel"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 190723 "setUpdaterBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "currentBackFrame" type class_ref 133379 // UpdaterFrame
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 190851 "setVisibleBackFrame"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 134147 "RelationFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 141699 // <generalisation>
+	relation 141699 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 141699 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 190979 "getInstance"
+	class_operation public return_type class_ref 134147 // RelationFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 191107 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 141827 // actorsList (<unidirectional association>)
+	relation 141827 --->
+	  stereotype "Vector"
+	  a role_name "actorsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 141827 // actorsList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 141955 // resourcesList (<unidirectional association>)
+	relation 141955 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 141955 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 142083 // resourcesMainList (<unidirectional association>)
+	relation 142083 --->
+	  stereotype "Vector"
+	  a role_name "resourcesMainList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 142083 // resourcesMainList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      attribute 147971 "relations"
+	private explicit_type "String"
+	stereotype "Vector"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 142211 // RELATIONFRAME_INSTANCE (<unidirectional association>)
+	relation 142211 --->
+	  a role_name "RELATIONFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142211 // RELATIONFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 134147 // RelationFrame
+      end
+
+      attribute 148099 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 148227 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148355 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148483 "jComboBox2"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148611 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148739 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148867 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148995 "jPanel14"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149123 "jScrollPane2"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149251 "jTextArea2"
+	private explicit_type "javax.swing.JTextArea"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 191235 "RelationFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form RelationFrame "
+      end
+
+      operation 191363 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 191491 "getMainResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 191619 "getRelationsList"
+	public explicit_return_type "Vector<String>"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 191747 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 191875 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 192003 "insertUpdateResource"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "updatedResource" type class_ref 130563 // Resource
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 192131 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 192259 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 192387 "searchListResource"
+	private return_type class_ref 130563 // Resource
+	nparams 1
+	  param in name "id" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 192515 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "actorsList" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 192643 "setComboboxesValues"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 192771 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesPrincipalList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 192899 "setRelationsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "newRelations" explicit_type "Vector<String>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 193027 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 193155 "writeTextArea"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 134275 "SimulatorFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 142339 // <generalisation>
+	relation 142339 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 142339 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      attribute 149379 "serialVersionUID"
+	class_attribute const_attribute private explicit_type "long"
+	init_value " 1L"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 193283 "getInstance"
+	class_operation public return_type class_ref 134275 // SimulatorFrame
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 193411 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 142467 // taskCreatePanel (<unidirectional association>)
+	relation 142467 --->
+	  a role_name "taskCreatePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142467 // taskCreatePanel (<unidirectional association>)
+	  b parent class_ref 133251 // CreateTaskFrame
+      end
+
+      classrelation 142595 // actorCreatePanel (<unidirectional association>)
+	relation 142595 --->
+	  a role_name "actorCreatePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142595 // actorCreatePanel (<unidirectional association>)
+	  b parent class_ref 132739 // CreateActorFrame
+      end
+
+      classrelation 142723 // artifactCreatePanel (<unidirectional association>)
+	relation 142723 --->
+	  a role_name "artifactCreatePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142723 // artifactCreatePanel (<unidirectional association>)
+	  b parent class_ref 132995 // CreateArtifactFrame
+      end
+
+      classrelation 142851 // relationPanel (<unidirectional association>)
+	relation 142851 --->
+	  a role_name "relationPanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142851 // relationPanel (<unidirectional association>)
+	  b parent class_ref 134147 // RelationFrame
+      end
+
+      classrelation 142979 // taskDeletePanel (<unidirectional association>)
+	relation 142979 --->
+	  a role_name "taskDeletePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142979 // taskDeletePanel (<unidirectional association>)
+	  b parent class_ref 133763 // DeleteTaskFrame
+      end
+
+      classrelation 143107 // actorDeletePanel (<unidirectional association>)
+	relation 143107 --->
+	  a role_name "actorDeletePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 143107 // actorDeletePanel (<unidirectional association>)
+	  b parent class_ref 133507 // DeleteActorFrame
+      end
+
+      classrelation 143235 // artifactDeletePanel (<unidirectional association>)
+	relation 143235 --->
+	  a role_name "artifactDeletePanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 143235 // artifactDeletePanel (<unidirectional association>)
+	  b parent class_ref 133635 // DeleteArtifactFrame
+      end
+
+      classrelation 143363 // newsList (<unidirectional association>)
+	relation 143363 --->
+	  stereotype "Vector"
+	  a role_name "newsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 143363 // newsList (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 143491 // actorsList (<unidirectional association>)
+	relation 143491 --->
+	  stereotype "Vector"
+	  a role_name "actorsList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 143491 // actorsList (<unidirectional association>)
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 143619 // resourcesList (<unidirectional association>)
+	relation 143619 --->
+	  stereotype "Vector"
+	  a role_name "resourcesList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 143619 // resourcesList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 143747 // resourcesMainList (<unidirectional association>)
+	relation 143747 --->
+	  stereotype "Vector"
+	  a role_name "resourcesMainList" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 143747 // resourcesMainList (<unidirectional association>)
+	  b parent class_ref 130563 // Resource
+      end
+
+      classrelation 143875 // mainSchedulingSystem (<unidirectional association>)
+	relation 143875 --->
+	  a role_name "mainSchedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 143875 // mainSchedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
+      end
+
+      classrelation 144003 // services (<unidirectional association>)
+	relation 144003 --->
+	  a role_name "services" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 144003 // services (<unidirectional association>)
+	  b parent class_ref 131203 // SystemServices
+      end
+
+      attribute 149507 "loadState"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149635 "projectName"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 144131 // SIMULATORFRAME_INSTANCE (<unidirectional association>)
+	relation 144131 --->
+	  a role_name "SIMULATORFRAME_INSTANCE" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 144131 // SIMULATORFRAME_INSTANCE (<unidirectional association>)
+	  b parent class_ref 134275 // SimulatorFrame
+      end
+
+      attribute 149763 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 149891 "jButton10"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150019 "jButton11"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150147 "jButton12"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150275 "jButton13"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150403 "jButton14"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150531 "jButton15"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150659 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150787 "jButton3"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150915 "jButton4"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151043 "jButton5"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151171 "jButton6"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151299 "jButton7"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151427 "jButton8"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151555 "jButton9"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151683 "jComboBox1"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151811 "jComboBox3"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151939 "jComboBox4"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152067 "jComboBox5"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152195 "jComboBox6"
+	private explicit_type "javax.swing.JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152323 "jFileChooser1"
+	private explicit_type "javax.swing.JFileChooser"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152451 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152579 "jLabel10"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152707 "jLabel11"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152835 "jLabel12"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152963 "jLabel13"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153091 "jLabel14"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153219 "jLabel15"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153347 "jLabel16"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153475 "jLabel17"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153603 "jLabel18"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153731 "jLabel19"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153859 "jLabel2"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 153987 "jLabel20"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154115 "jLabel21"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154243 "jLabel22"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154371 "jLabel23"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154499 "jLabel24"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154627 "jLabel3"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154755 "jLabel4"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 154883 "jLabel5"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155011 "jLabel6"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155139 "jLabel7"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155267 "jLabel8"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155395 "jLabel9"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155523 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155651 "jPanel10"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155779 "jPanel11"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 155907 "jPanel12"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156035 "jPanel13"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156163 "jPanel2"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156291 "jPanel3"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156419 "jPanel4"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156547 "jPanel5"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156675 "jPanel6"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156803 "jPanel7"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 156931 "jPanel8"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157059 "jProgressBar1"
+	private explicit_type "javax.swing.JProgressBar"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157187 "jScrollPane1"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157315 "jScrollPane3"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157443 "jScrollPane4"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157571 "jScrollPane5"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157699 "jTabbedPane1"
+	private explicit_type "javax.swing.JTabbedPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157827 "jTextArea1"
+	private explicit_type "javax.swing.JTextArea"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 157955 "jTextField1"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158083 "jTextField2"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158211 "jTextField3"
+	private explicit_type "javax.swing.JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158339 "jTextPane1"
+	private explicit_type "javax.swing.JTextPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158467 "jTextPane2"
+	private explicit_type "javax.swing.JTextPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158595 "jTextPane3"
+	private explicit_type "javax.swing.JTextPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 193539 "SimulatorFrame"
+	private explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form SimulatorFrame "
+      end
+
+      operation 193667 "fillResourcesComboboxes"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 193795 "getActorsList"
+	public return_type class_ref 130435 // Actor
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 193923 "getLoadState"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194051 "getMainResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194179 "getNewsList"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194307 "getProjectName"
+	private explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194435 "getResourcesList"
+	public return_type class_ref 130563 // Resource
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194563 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194691 "getSystemServices"
+	public return_type class_ref 131203 // SystemServices
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 194819 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor.
+
+ <editor-fold defaultstate=\"collapsed\"
+ <editor-fold defaultstate=\"collapsed\"
+ desc=\"Generated Code\">//GEN-BEGIN:initComponents"
+      end
+
+      operation 194947 "isComboboxesValuesValid"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 195075 "jButton10ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 195203 "jButton11ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton10ActionPerformed"
+      end
+
+      operation 195331 "jButton12ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton11ActionPerformed"
+      end
+
+      operation 195459 "jButton13ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton12ActionPerformed"
+      end
+
+      operation 195587 "jButton14ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton13ActionPerformed"
+      end
+
+      operation 195715 "jButton15ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton14ActionPerformed"
+      end
+
+      operation 195843 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton15ActionPerformed"
+      end
+
+      operation 195971 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 196099 "jButton3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+
+      operation 196227 "jButton4ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton3ActionPerformed"
+      end
+
+      operation 196355 "jButton5ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton4ActionPerformed"
+      end
+
+      operation 196483 "jButton6ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton5ActionPerformed"
+      end
+
+      operation 196611 "jButton7ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton6ActionPerformed"
+      end
+
+      operation 196739 "jButton8ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton7ActionPerformed"
+      end
+
+      operation 196867 "jButton9ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton8ActionPerformed"
+      end
+
+      operation 196995 "jComboBox3ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton9ActionPerformed"
+      end
+
+      operation 197123 "jTextField2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jComboBox3ActionPerformed"
+      end
+
+      operation 197251 "searchTaskOnList"
+	private return_type class_ref 130051 // Task
+	nparams 1
+	  param in name "id" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jTextField2ActionPerformed"
+      end
+
+      operation 197379 "setActorsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "actorsList" explicit_type "Vector<Actor>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 197507 "setContingencyTaskCombobox1"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 197635 "setContingencyTaskCombobox3"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 197763 "setLoadState"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "state" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 197891 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198019 "setMainResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesPrincipalList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198147 "setNewsList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "newsList" explicit_type "Vector<Task>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198275 "setProjectName"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198403 "setResourcesList"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resourcesList" explicit_type "Vector<Resource>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198531 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "scheduleSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198659 "setSystemServices"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "newServices" type class_ref 131203 // SystemServices
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198787 "getjFileChooser1"
+	public explicit_return_type "javax.swing.JFileChooser"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 198915 "setjFileChooser1"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "jFileChooser1" explicit_type "javax.swing.JFileChooser"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 134403 "UpdateFrame"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      classrelation 144259 // <generalisation>
+	relation 144259 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 144259 // <generalisation>
+	  b parent class_ref 132867 // JFrame
+      end
+
+      operation 199043 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param args
+           the command line arguments"
+      end
+
+      classrelation 144387 // updaterBackFrame (<unidirectional association>)
+	relation 144387 --->
+	  a role_name "updaterBackFrame" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 144387 // updaterBackFrame (<unidirectional association>)
+	  b parent class_ref 133379 // UpdaterFrame
+      end
+
+      attribute 158723 "jButton1"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " Variables declaration - do not modify//GEN-BEGIN:variables"
+      end
+
+      attribute 158851 "jButton2"
+	private explicit_type "javax.swing.JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 158979 "jLabel1"
+	private explicit_type "javax.swing.JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 159107 "jPanel1"
+	private explicit_type "javax.swing.JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 159235 "jScrollPane1"
+	private explicit_type "javax.swing.JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 159363 "jTable1"
+	private explicit_type "javax.swing.JTable"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 199171 "UpdateFrame"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " End of variables declaration//GEN-END:variables
+ Creates new form UpdateFrame "
+      end
+
+      operation 199299 "getBackFrame"
+	public explicit_return_type "Object"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 199427 "initComponents"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+	comment "This method is called from within the constructor to initialize the form.
+WARNING: Do NOT modify this code. The content of this method is always
+regenerated by the Form Editor."
+      end
+
+      operation 199555 "jButton1ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " </editor-fold>//GEN-END:initComponents"
+      end
+
+      operation 199683 "jButton2ActionPerformed"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "evt" explicit_type "java.awt.event.ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton1ActionPerformed"
+      end
+
+      operation 199811 "setBackFrame"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "backFrame" explicit_type "Object"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " GEN-LAST:event_jButton2ActionPerformed"
+      end
+    end
+  end
+
+  deploymentview 129155 "frames"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 132611 "CreateActorFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Hashtable;
+import java.util.Vector;
+import logicLayer.schedulingAlgorithmSystem.FCFS;
+import logicLayer.schedulingAlgorithmSystem.PrioritiesSA;
+import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.SchedulingSystem;
+${definition}"
+      associated_classes
+	class_ref 132739 // CreateActorFrame
+      end
+      comment "CreateActorFrame.java
+
+Created on 11/11/2011, 07:47:23 PM"
+    end
+
+    artifact 132739 "CreateArtifactFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Hashtable;
+import java.util.Vector;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+${definition}"
+      associated_classes
+	class_ref 132995 // CreateArtifactFrame
+      end
+      comment "CreateArtifactFrame.java
+
+Created on 11/11/2011, 07:19:19 PM"
+    end
+
+    artifact 132867 "CreateFilterFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.filterSystem.AndFilter;
+import logicLayer.filterSystem.EqualFilter;
+import logicLayer.filterSystem.Filter;
+import logicLayer.filterSystem.JobPositionFilter;
+import logicLayer.filterSystem.PropertyListFilter;
+import logicLayer.schedulingSystem.Resource;
+${definition}"
+      associated_classes
+	class_ref 133123 // CreateFilterFrame
+      end
+      comment "CreateFilterFrame.java
+
+Created on 15/11/2011, 11:33:15 AM"
+    end
+
+    artifact 132995 "CreateTaskFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import javax.swing.JScrollPane;
+import logicLayer.filterSystem.Filter;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.Task;
+import logicLayer.schedulingSystem.Updater;
+${definition}"
+      associated_classes
+	class_ref 133251 // CreateTaskFrame
+      end
+      comment "To change this template, choose Tools | Templates
+and open the template in the editor.
+
+
+CreateTaskFrame.java
+
+Created on 11/11/2011, 02:37:28 PM"
+    end
+
+    artifact 133123 "DeleteActorFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.SchedulingSystem;
+${definition}"
+      associated_classes
+	class_ref 133507 // DeleteActorFrame
+      end
+      comment "DeleteActorFrame.java
+
+Created on 11/11/2011, 07:11:55 PM"
+    end
+
+    artifact 133251 "DeleteArtifactFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+${definition}"
+      associated_classes
+	class_ref 133635 // DeleteArtifactFrame
+      end
+      comment "DeleteArtifactFrame.java
+
+Created on 11/11/2011, 07:14:12 PM"
+    end
+
+    artifact 133379 "DeleteTaskFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Task;
+${definition}"
+      associated_classes
+	class_ref 133763 // DeleteTaskFrame
+      end
+      comment "DeleteTaskFrame.java
+
+Created on 11/11/2011, 07:07:52 PM"
+    end
+
+    artifact 133507 "ErrorFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 133891 // ErrorFrame
+      end
+      comment "ErrorFrame.java
+
+Created on 13/11/2011, 08:00:51 PM"
+    end
+
+    artifact 133635 "NewsFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 134019 // NewsFrame
+      end
+      comment "NewsFrame.java
+
+Created on 13/11/2011, 08:00:51 PM"
+    end
+
+    artifact 133763 "RelationFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+${definition}"
+      associated_classes
+	class_ref 134147 // RelationFrame
+      end
+      comment "RelationFrame.java
+
+Created on 13/11/2011, 09:02:06 PM"
+    end
+
+    artifact 133891 "SimulatorFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.Vector;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.SystemServices;
+import logicLayer.schedulingSystem.Task;
+import com.birosoft.liquid.LiquidLookAndFeel;
+${definition}"
+      associated_classes
+	class_ref 134275 // SimulatorFrame
+      end
+      comment "To change this template, choose Tools | Templates
+and open the template in the editor.
+
+
+SimulatorFrame.java
+
+Created on 10/11/2011, 01:49:37 PM"
+    end
+
+    artifact 134019 "UpdateFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Hashtable;
+import logicLayer.schedulingSystem.Update;
+${definition}"
+      associated_classes
+	class_ref 134403 // UpdateFrame
+      end
+      comment "UpdateFrame.java
+
+Created on 17/11/2011, 06:09:56 AM"
+    end
+
+    artifact 134147 "UpdaterFrame"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Hashtable;
+import java.util.Vector;
+import logicLayer.filterSystem.Filter;
+import logicLayer.schedulingSystem.Resource;
+import logicLayer.schedulingSystem.Update;
+import logicLayer.schedulingSystem.Updater;
+${definition}"
+      associated_classes
+	class_ref 133379 // UpdaterFrame
+      end
+      comment "UpdaterFrame.java
+
+Created on 16/11/2011, 04:59:14 AM"
+    end
+  end
+
+  simplerelation 129411
+    -_->
+      on 
+      package_ref 130179 // media
+  end
+
+  simplerelation 136579
+    -_->
+      on 
+      package_ref 128259 // schedulingSystem
+  end
+end

@@ -1,0 +1,40 @@
+class LogginSystem
+!!!167555.java!!!	LogginSystem(inout configurator : Configurator)
+		this.setConfigurator(configurator);
+		Vector<SimulationTime> simulationTimes = new Vector<SimulationTime>();
+		this.setSimulationTimes(simulationTimes);
+		Vector<String> errorMsgs = new Vector<String>();
+		this.setErrorMsgs(errorMsgs);
+!!!167683.java!!!	LogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
+		this.setConfigurator(configurator);
+		this.setSimulationTimes(simulationTimes);
+!!!167811.java!!!	addErrorMsg(in errorMsg : String) : void
+		this.errorMsgs.add(errorMsg);
+!!!167939.java!!!	addSimulationTime(inout simulationTime : SimulationTime) : void
+		this.simulationTimes.add(simulationTime);
+!!!168067.java!!!	getConfigurator() : Configurator
+		return configurator;
+!!!168195.java!!!	getErrorMsgs() : Vector<String>
+		return errorMsgs;
+!!!168323.java!!!	getSimulationTimes() : SimulationTime
+		return simulationTimes;
+!!!168451.java!!!	log(in time : int, inout devicesList : Vector<Actor>) : void
+		SimulationTime simulationTime = new SimulationTime(time, devicesList);
+		this.addSimulationTime(simulationTime);
+!!!168579.java!!!	renderErrors() : String
+		String errors = "";
+		Vector<String> errorsMsgs = this.getErrorMsgs();
+		int n = errorsMsgs.size();
+		if (n > 0) {
+			errors += "Errors:\n\n";
+			for (int i = 0; i < n; i++) {
+				errors += i + ". " + errorsMsgs.elementAt(i) + "\n";
+			}
+		}
+		return errors;
+!!!168707.java!!!	setConfigurator(inout configurator : Configurator) : void
+		this.configurator = configurator;
+!!!168835.java!!!	setErrorMsgs(inout errorMsgs : Vector<String>) : void
+		this.errorMsgs = errorMsgs;
+!!!168963.java!!!	setSimulationTimes(inout simulationTimes : Vector<SimulationTime>) : void
+		this.simulationTimes = simulationTimes;

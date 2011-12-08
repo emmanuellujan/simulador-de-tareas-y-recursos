@@ -1,0 +1,5 @@
+class AndFilter
+!!!131075.java!!!	AndFilter(inout fA : Filter, inout fB : Filter)
+		super(fA, fB);
+!!!131203.java!!!	eval(inout r : Object) : boolean
+		return filterA.eval(r) && filterB.eval(r);

@@ -1,0 +1,7 @@
+class JobPositionFilter
+!!!132483.java!!!	JobPositionFilter(inout obj : Object)
+		super(obj);
+!!!132611.java!!!	eval(inout currentResource : Object) : boolean
+		Object resourceName = ((Resource) currentResource)
+				.getProperty("Job Position");
+		return this.getElement().equals(resourceName);

@@ -1,0 +1,307 @@
+class UpdaterFrame
+!!!199939.java!!!	main(inout args : String) : void
+		/* Set the Nimbus look and feel */
+		// <editor-fold defaultstate="collapsed"
+		// desc=" Look and feel setting code (optional) ">
+		/*
+		 * If Nimbus (introduced in Java SE 6) is not available, stay with the
+		 * default look and feel. For details see
+		 * http://download.oracle.com/javase
+		 * /tutorial/uiswing/lookandfeel/plaf.html
+		 */
+		try {
+			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+					.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					javax.swing.UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (ClassNotFoundException ex) {
+			java.util.logging.Logger.getLogger(UpdaterFrame.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (InstantiationException ex) {
+			java.util.logging.Logger.getLogger(UpdaterFrame.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (IllegalAccessException ex) {
+			java.util.logging.Logger.getLogger(UpdaterFrame.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+			java.util.logging.Logger.getLogger(UpdaterFrame.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
+		}
+		// </editor-fold>
+
+		/* Create and display the form */
+		java.awt.EventQueue.invokeLater(new Runnable() {
+
+			public void run() {
+				if (this == null)
+					new UpdaterFrame();
+			}
+		});
+!!!200067.java!!!	UpdaterFrame()
+		initComponents();
+!!!200195.java!!!	getBackFrame() : CreateTaskFrame
+		return this.filterBackFrame;
+!!!200323.java!!!	getFilter() : Filter
+		return this.filter;
+!!!200451.java!!!	getMainResourcesList() : Vector
+		return this.resourcesMainList;
+!!!200579.java!!!	getResourcesList() : Resource
+		return resourcesList;
+!!!200707.java!!!	getUpdate() : Update
+		return this.update;
+!!!200835.java!!!	getUpdater() : Updater
+		return this.updater;
+!!!200963.java!!!	getUpdates() : Filter
+		return updates;
+!!!201091.java!!!	initComponents() : void
+
+		jPanel1 = new javax.swing.JPanel();
+		jLabel1 = new javax.swing.JLabel();
+		jButton3 = new javax.swing.JButton();
+		jComboBox1 = new javax.swing.JComboBox();
+		jLabel2 = new javax.swing.JLabel();
+		jButton4 = new javax.swing.JButton();
+		jButton1 = new javax.swing.JButton();
+		jButton2 = new javax.swing.JButton();
+
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+				"Updater configuration",
+				javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+				javax.swing.border.TitledBorder.DEFAULT_POSITION,
+				new java.awt.Font("Verdana", 1, 11))); // NOI18N
+
+		jLabel1.setText("Add filter");
+
+		jButton3.setText("Create");
+		jButton3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton3ActionPerformed(evt);
+			}
+		});
+
+		jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+				"Element Equal Filter", "Job Position Filter",
+				"List Property Filter" }));
+
+		jLabel2.setText("Include related update");
+
+		jButton4.setText("Create");
+		jButton4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton4ActionPerformed(evt);
+			}
+		});
+
+		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(
+				jPanel1);
+		jPanel1.setLayout(jPanel1Layout);
+		jPanel1Layout
+				.setHorizontalGroup(jPanel1Layout
+						.createParallelGroup(
+								javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(
+								jPanel1Layout
+										.createSequentialGroup()
+										.addContainerGap()
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.LEADING)
+														.addComponent(jLabel2)
+														.addGroup(
+																jPanel1Layout
+																		.createSequentialGroup()
+																		.addComponent(
+																				jLabel1)
+																		.addPreferredGap(
+																				javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																				114,
+																				Short.MAX_VALUE)
+																		.addComponent(
+																				jComboBox1,
+																				javax.swing.GroupLayout.PREFERRED_SIZE,
+																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																				javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(
+												javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.LEADING,
+																false)
+														.addComponent(
+																jButton3,
+																javax.swing.GroupLayout.Alignment.TRAILING,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																Short.MAX_VALUE)
+														.addComponent(
+																jButton4,
+																javax.swing.GroupLayout.Alignment.TRAILING,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																Short.MAX_VALUE))
+										.addContainerGap()));
+		jPanel1Layout
+				.setVerticalGroup(jPanel1Layout
+						.createParallelGroup(
+								javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(
+								jPanel1Layout
+										.createSequentialGroup()
+										.addContainerGap()
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.BASELINE)
+														.addComponent(jLabel1)
+														.addComponent(jButton3)
+														.addComponent(
+																jComboBox1,
+																javax.swing.GroupLayout.PREFERRED_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(
+												javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.BASELINE)
+														.addComponent(jLabel2)
+														.addComponent(jButton4))
+										.addContainerGap(
+												javax.swing.GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)));
+
+		jButton1.setText("Cancel");
+		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton1ActionPerformed(evt);
+			}
+		});
+
+		jButton2.setText("Create");
+		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton2ActionPerformed(evt);
+			}
+		});
+
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
+				getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addGroup(
+										layout.createParallelGroup(
+												javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(
+														jPanel1,
+														javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addGroup(
+														javax.swing.GroupLayout.Alignment.TRAILING,
+														layout.createSequentialGroup()
+																.addComponent(
+																		jButton2)
+																.addPreferredGap(
+																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																.addComponent(
+																		jButton1)))
+								.addContainerGap()));
+		layout.setVerticalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(jPanel1,
+										javax.swing.GroupLayout.PREFERRED_SIZE,
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addGroup(
+										layout.createParallelGroup(
+												javax.swing.GroupLayout.Alignment.BASELINE)
+												.addComponent(jButton1)
+												.addComponent(jButton2))
+								.addContainerGap(
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)));
+
+		pack();
+!!!201219.java!!!	jButton1ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
+// GEN-FIRST:event_jButton1ActionPerformed
+		this.setVisible(false);
+		((CreateTaskFrame) this.getBackFrame()).setLocationRelativeTo(null);
+		((CreateTaskFrame) this.getBackFrame()).setVisible(true);
+!!!201347.java!!!	jButton2ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
+// GEN-FIRST:event_jButton2ActionPerformed
+		Updater currentUpdater = this.getUpdater();
+		if ((this.getFilter() != null) && (this.getUpdate() != null)) {
+			if (currentUpdater.getUpdates() == null) {
+				Hashtable<Filter, Update> newHash = new Hashtable<Filter, Update>();
+				newHash.put(this.getFilter(), this.getUpdate());
+				currentUpdater.setUpdates(newHash);
+			} else
+				currentUpdater.getUpdates().put(this.getFilter(),
+						this.getUpdate());
+			this.setUpdater(currentUpdater);
+			((CreateTaskFrame) this.getBackFrame()).setUpdater(currentUpdater);
+			this.setVisible(false);
+			((CreateTaskFrame) this.getBackFrame()).setLocationRelativeTo(null);
+			((CreateTaskFrame) this.getBackFrame()).setVisible(true);
+		} else {
+			ErrorFrame.getInstance().setLabel(
+					"Some values are empty. Cannot create Updater.");
+			ErrorFrame.getInstance().setBackFrame("UpdaterFrame");
+			this.setVisible(false);
+			ErrorFrame.getInstance().setLocationRelativeTo(null);
+			ErrorFrame.getInstance().setVisible(true);
+		}
+
+!!!201475.java!!!	jButton3ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
+// GEN-FIRST:event_jButton3ActionPerformed
+		CreateFilterFrame filterFrame = new CreateFilterFrame();
+		filterFrame.setFilterType((String) this.jComboBox1.getSelectedItem());
+		filterFrame.setBackFrame("UpdaterFrame", this);
+		filterFrame.setResourcesList(this.getResourcesList());
+		filterFrame.setMainResourcesList(this.getMainResourcesList());
+		filterFrame.setFilterFrameStateI(false);
+		filterFrame.setFilterFrameStateII(false);
+		this.setVisible(false);
+		filterFrame.setLocationRelativeTo(null);
+		filterFrame.main(null);
+		filterFrame.setVisible(true);
+!!!201603.java!!!	jButton4ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
+// GEN-FIRST:event_jButton4ActionPerformed
+		UpdateFrame updateFrame = new UpdateFrame();
+		updateFrame.setBackFrame(this);
+		this.setVisible(false);
+		updateFrame.setLocationRelativeTo(null);
+		updateFrame.main(null);
+		updateFrame.setVisible(true);
+!!!201731.java!!!	setBackFrame(inout backFrame : Object) : void
+		this.filterBackFrame = (CreateTaskFrame) backFrame;
+!!!201859.java!!!	setFilter(inout filter : Filter) : void
+		this.filter = filter;
+!!!201987.java!!!	setMainResourcesList(inout resourcesPrincipalList : Vector) : void
+		this.resourcesMainList = resourcesPrincipalList;
+!!!202115.java!!!	setResourcesList(inout resourcesList : Vector<Resource>) : void
+		this.resourcesList = resourcesList;
+!!!202243.java!!!	setUpdate(inout update : Update) : void
+		this.update = update;
+!!!202371.java!!!	setUpdater(inout current : Updater) : void
+		this.updater = current;
+!!!202499.java!!!	setUpdates(inout updates : Hashtable<Filter, Update>) : void
+		this.updates = updates;

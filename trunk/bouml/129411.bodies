@@ -1,0 +1,33 @@
+class PropertyListFilter
+!!!132739.java!!!	PropertyListFilter(inout currentKey : Object, inout currentValue : Object, inout currentResource : Object)
+		this.setKey(currentKey);
+		this.setValue(currentValue);
+		this.setResource(currentResource);
+!!!132867.java!!!	eval(inout a : Object) : boolean
+		Resource r1 = (Resource) a;
+		Vector<Resource> elements = ((Vector<Resource>) a);
+		Resource r2 = (Resource) this.getResource();
+		String id = "";
+		String key = "";
+		String value = "";
+		int n = elements.size();
+		for (int i = 0; i < n; i++) {
+			id = elements.elementAt(i).getResId();
+			key = this.getKey().toString();
+			value = this.getValue().toString();
+			if ((r2.getResId().equals(id)) && r1.getProperty(key).equals(value))
+				return true;
+		}
+		return false;
+!!!132995.java!!!	getKey() : Object
+		return key;
+!!!133123.java!!!	getResource() : Object
+		return resource;
+!!!133251.java!!!	getValue() : Object
+		return value;
+!!!133379.java!!!	setKey(inout elem : Object) : void
+		this.key = elem;
+!!!133507.java!!!	setResource(inout elem : Object) : void
+		this.resource = elem;
+!!!133635.java!!!	setValue(inout elem : Object) : void
+		this.value = elem;

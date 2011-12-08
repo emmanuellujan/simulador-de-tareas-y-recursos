@@ -1,0 +1,21 @@
+class SimulationTime
+!!!162435.java!!!	SimulationTime(in time : int, inout actorsList : Vector<Actor>)
+		Vector<SimulationResource> actors = new Vector<SimulationResource>();
+		Actor actor;
+		SimulationResource sResource;
+		int n = actorsList.size();
+		for (int i = 0; i < n; i++) {
+			actor = actorsList.get(i);
+			sResource = new SimulationResource(actor);
+			actors.add(sResource);
+		}
+		this.setCurrentTime(time);
+		this.setActors(actors);
+!!!162563.java!!!	getActors() : SimulationResource
+		return actors;
+!!!162691.java!!!	getCurrentTime() : int
+		return currentTime;
+!!!162819.java!!!	setActors(inout actors : Vector<SimulationResource>) : void
+		this.actors = actors;
+!!!162947.java!!!	setCurrentTime(in currentTime : int) : void
+		this.currentTime = currentTime;

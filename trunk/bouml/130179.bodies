@@ -1,0 +1,16 @@
+class PrioritiesSA
+!!!139011.java!!!	PrioritiesSA()
+		super("Priorities");
+!!!139139.java!!!	schedule(inout tasks : Vector<Task>) : Task
+		Task task = null;
+		int n = tasks.size();
+		int maxPriority = -1;
+		int currPriority = -1;
+		for (int i = 0; i < n; i++) {
+			currPriority = tasks.get(i).getPriority();
+			if (maxPriority < currPriority) {
+				maxPriority = currPriority;
+				task = tasks.get(i);
+			}
+		}
+		return task;

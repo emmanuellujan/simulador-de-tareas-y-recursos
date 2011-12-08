@@ -1,0 +1,34 @@
+class SchedulingSystemTest
+!!!128003.java!!!	getDir() : String
+		return dir;
+!!!128131.java!!!	getSchedulingSystem() : SchedulingSystem
+		return schedulingSystem;
+!!!128259.java!!!	setDir(in dir : String) : void
+		this.dir = dir;
+!!!128387.java!!!	setSchedulingSystem(inout schedulingSystem : SchedulingSystem) : void
+		this.schedulingSystem = schedulingSystem;
+!!!128515.java!!!	setUp() : void
+		SchedulingSystem schedulingSystem = new SchedulingSystem();
+		this.setSchedulingSystem(schedulingSystem);
+		this.setDir("/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases");
+!!!128643.java!!!	test(in dir2 : String, in d : double) : void
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		String dir = this.getDir();
+		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
+		schedulingSystem.start(dir + bar + dir2, dir);
+		double result = schedulingSystem.getResultsAnalyzer().getPropVelocity();
+		Assert.assertEquals(d, result, 0.0001);
+!!!128771.java!!!	test1() : void
+		this.test("test_case_1", 8.0);
+!!!128899.java!!!	test2() : void
+		this.test("test_case_2", 7.2727275);
+!!!129027.java!!!	test3() : void
+		this.test("test_case_3", 8.888889);
+!!!129155.java!!!	test4() : void
+		this.test("test_case_4", 8.888889);
+!!!129283.java!!!	test5() : void
+		this.test("test_case_5", 16.0);
+!!!129411.java!!!	test6() : void
+		this.test("test_case_6", 8.888889);
+!!!129539.java!!!	test7() : void
+		this.test("test_case_7", 1.4035088);

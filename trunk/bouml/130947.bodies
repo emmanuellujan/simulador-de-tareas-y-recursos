@@ -1,0 +1,45 @@
+class IOSystem
+!!!163459.java!!!	IOSystem(inout configurator : Configurator, inout schedulingSystem : SchedulingSystem)
+
+		int deadline = 0;
+		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Resource> resourcesList = new Vector<Resource>();
+		Vector<Resource> allResourcesList = new Vector<Resource>();
+		Vector<Task> tasksList = new Vector<Task>();
+
+		this.setConfigurator(configurator);
+		this.setSchedulingSystem(schedulingSystem);
+		this.setDeadline(deadline);
+		this.setActorsList(actorsList);
+		this.setResourcesList(resourcesList);
+		this.setAllResourcesList(allResourcesList);
+		this.setTasksList(tasksList);
+
+!!!163587.java!!!	getActorsList() : Actor
+		return this.actorsList;
+!!!163715.java!!!	getAllResourcesList() : Resource
+		return this.allResourcesList;
+!!!163843.java!!!	getConfigurator() : Configurator
+		return configurator;
+!!!163971.java!!!	getDeadline() : int
+		return this.deadline;
+!!!164099.java!!!	getResourcesList() : Resource
+		return this.resourcesList;
+!!!164227.java!!!	getSchedulingSystem() : SchedulingSystem
+		return schedulingSystem;
+!!!164355.java!!!	getTasksList() : Task
+		return tasksList;
+!!!164739.java!!!	setActorsList(inout actors : Vector<Actor>) : void
+		this.actorsList = actors;
+!!!164867.java!!!	setAllResourcesList(inout allResourcesList : Vector<Resource>) : void
+		this.allResourcesList = allResourcesList;
+!!!164995.java!!!	setConfigurator(inout configurator : Configurator) : void
+		this.configurator = configurator;
+!!!165123.java!!!	setDeadline(in deadline : int) : void
+		this.deadline = deadline;
+!!!165251.java!!!	setResourcesList(inout resourcesList : Vector<Resource>) : void
+		this.resourcesList = resourcesList;
+!!!165379.java!!!	setSchedulingSystem(inout schedulingSystem : SchedulingSystem) : void
+		this.schedulingSystem = schedulingSystem;
+!!!165507.java!!!	setTasksList(inout tasksList : Vector<Task>) : void
+		this.tasksList = tasksList;

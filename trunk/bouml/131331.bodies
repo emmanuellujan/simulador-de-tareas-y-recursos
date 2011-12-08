@@ -1,0 +1,19 @@
+class Updater
+!!!158083.java!!!	Updater()
+		Hashtable<Filter, Update> updates = new Hashtable<Filter, Update>();
+		this.setUpdates(updates);
+!!!158211.java!!!	addUpdate(inout f : Filter, inout u : Update) : void
+		this.updates.put(f, u);
+!!!158339.java!!!	getUpdates() : Filter
+		return updates;
+!!!158467.java!!!	setUpdates(inout updates : Hashtable<Filter, Update>) : void
+		this.updates = updates;
+!!!158595.java!!!	update(inout resource : Resource) : void
+		Hashtable<Filter, Update> updates = this.getUpdates();
+		Enumeration<Filter> e = updates.keys();
+		Filter filter;
+		while (e.hasMoreElements()) {
+			filter = e.nextElement();
+			if (filter.eval(resource))
+				updates.get(filter).update(resource);
+		}

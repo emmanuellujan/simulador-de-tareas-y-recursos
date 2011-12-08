@@ -1,0 +1,226 @@
+class SchedulingSystem
+!!!147075.java!!!	main(inout args : String) : void
+		SchedulingSystem schedulingSystem = new SchedulingSystem();
+		schedulingSystem.start();
+!!!147203.java!!!	SchedulingSystem()
+		Configurator configurator = new Configurator();
+		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		IOSystem ioSystem = new SerialIOSystem(configurator, this);
+		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
+		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
+		int deadline = 0;
+		Vector<Task> newsList = new Vector<Task>();
+		Vector<Task> tasks = new Vector<Task>();
+		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Resource> resourcesList = new Vector<Resource>();
+		Vector<Task> finishedList = new Vector<Task>();
+		Vector<Task> failedFinishedList = new Vector<Task>();
+
+		String dealerActorId = "dealerActor";
+		FCFS saReadyList = new FCFS();
+		int limitTime = -1;
+		Actor dealerActor = new Actor(dealerActorId, "actor", saReadyList,
+				limitTime, this, 100, 100, null, 100, null);
+
+		this.setConfigurator(configurator);
+		this.setIoSystem(ioSystem);
+		this.setDealerActor(dealerActor);
+		this.setCompLogginSystem(compLogginSystem);
+		this.setResultsAnalyzer(resultsAnalyzer);
+		this.setDeadline(deadline);
+		this.setNewsList(newsList);
+		this.setTasks(tasks);
+		this.setActorsList(actorsList);
+		this.setResourcesList(resourcesList);
+		this.setNumberOfTasks(newsList.size());
+		this.setFinishedList(finishedList);
+		this.setFailedFinishedList(failedFinishedList);
+!!!147331.java!!!	finishFailedTask(inout currTask : Task) : void
+		currTask.execPostProcessing();
+		this.getFailedFinishedList().add(currTask);
+!!!147459.java!!!	finishTask(inout currTask : Task) : void
+		currTask.execPostProcessing();
+		this.getFinishedList().add(currTask);
+!!!147587.java!!!	getActorsList() : Actor
+		return actorsList;
+!!!147715.java!!!	getCompLogginSystem() : CompLogginSystem
+		return compLogginSystem;
+!!!147843.java!!!	getConfigurator() : Configurator
+		return configurator;
+!!!147971.java!!!	getDeadline() : int
+		return deadline;
+!!!148099.java!!!	getDealerActor() : Actor
+		return dealerActor;
+!!!148227.java!!!	getFailedFinishedList() : Task
+		return failedFinishedList;
+!!!148355.java!!!	getFinishedList() : Task
+		return finishedList;
+!!!148483.java!!!	getIoSystem() : IOSystem
+		return ioSystem;
+!!!148611.java!!!	getNewsList() : Task
+		return newsList;
+!!!148739.java!!!	getNumberOfTasks() : int
+		return numberOfTasks;
+!!!148867.java!!!	getResource(in name : String) : Actor
+		Vector<Actor> actorsList = this.getActorsList();
+		boolean found = false;
+		int i = 0;
+		int n = actorsList.size();
+		Actor actor = null;
+		while (i < n && !found) {
+			if (actorsList.get(i).getResId().equals(name)) {
+				found = true;
+				actor = actorsList.get(i);
+			} else
+				i++;
+		}
+		return actor;
+!!!148995.java!!!	getResourcesList() : Resource
+		return resourcesList;
+!!!149123.java!!!	getResultsAnalyzer() : ResultsAnalyzer
+		return resultsAnalyzer;
+!!!149251.java!!!	getTasks() : Task
+		return tasks;
+!!!149379.java!!!	incTime() : void
+		Vector<Actor> actorsList = this.getActorsList();
+		int n = actorsList.size();
+		for (int i = 0; i < n; i++) {
+			Actor actor = actorsList.get(i);
+			actor.incTime();
+		}
+!!!149507.java!!!	loadData() : void
+
+		IOSystem ioSystem = this.getIoSystem();
+		int deadline = this.getDeadline();
+		Vector<Task> newsList = new Vector<Task>();
+		Vector<Task> tasks = new Vector<Task>();
+		Vector<Actor> actorsList = new Vector<Actor>();
+		Vector<Resource> resourcesList = new Vector<Resource>();
+
+		ioSystem.loadAll();
+		deadline = ioSystem.getDeadline();
+		tasks = ioSystem.getTasksList();
+		newsList.addAll(tasks);
+		actorsList = ioSystem.getActorsList();
+		resourcesList = ioSystem.getResourcesList();
+
+		Actor dealerActor = this.getDealerActor();
+		dealerActor.setReadyList(newsList);
+
+		this.setDealerActor(dealerActor);
+		this.setDeadline(deadline);
+		this.setNewsList(newsList);
+		this.setTasks(tasks);
+		this.setActorsList(actorsList);
+		this.setResourcesList(resourcesList);
+		this.setNumberOfTasks(newsList.size());
+!!!149635.java!!!	loadData(in inputDir : String) : void
+
+		if (inputDir != null && !inputDir.equals("")) {
+			String bar = this.getConfigurator().getBarFromPath(inputDir);
+			this.getConfigurator().setInputDir(inputDir + bar);
+
+			String[] s = inputDir.split(bar);
+			String projectName = s[s.length - 1];
+			this.getConfigurator().setProjectName(projectName);
+		}
+
+		this.loadData();
+!!!149763.java!!!	reset() : void
+		Vector<Task> tasks = this.getTasks();
+		int n = tasks.size();
+		for (int i = 0; i < n; i++)
+			tasks.elementAt(i).reset();
+
+		Vector<Resource> allResources = this.getIoSystem()
+				.getAllResourcesList();
+		n = allResources.size();
+		for (int i = 0; i < n; i++)
+			allResources.elementAt(i).reset();
+!!!149891.java!!!	saveData() : void
+		//SerialIOSystem serialIOSystem = new
+		//SerialIOSystem(this.getConfigurator(), this);
+		//serialIOSystem.saveAll();
+		this.getIoSystem().saveAll();
+		this.getCompLogginSystem().writeLog();
+		this.getResultsAnalyzer().writeAnalysis();
+!!!150019.java!!!	saveData(in outputDir : String) : void
+		if (outputDir != null && !outputDir.equals("")) {
+			String projectName = this.getConfigurator().getProjectName();
+			this.saveData(projectName, outputDir);
+		} else
+			this.saveData();
+!!!150147.java!!!	saveData(in projectName : String, in outputDir : String) : void
+		String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
+		outputDir = outputDir + bar + projectName + bar;
+		this.getConfigurator().setOutputDir(outputDir);
+		this.saveData();
+!!!150275.java!!!	scheduleFinished() : boolean
+		Vector<Actor> actors = this.getActorsList();
+		int i = 0;
+		int n = actors.size();
+		while (i < n && actors.elementAt(i).isInactive())
+			i++;
+		if (actors.size() == i)
+			return true;
+		else
+			return false;
+!!!150403.java!!!	setActorsList(inout actorsList : Vector<Actor>) : void
+		this.actorsList = actorsList;
+!!!150531.java!!!	setCompLogginSystem(inout compLogginSystem : CompLogginSystem) : void
+		this.compLogginSystem = compLogginSystem;
+!!!150659.java!!!	setConfigurator(inout configurator : Configurator) : void
+		this.configurator = configurator;
+!!!150787.java!!!	setDeadline(in deadline : int) : void
+		this.deadline = deadline;
+!!!150915.java!!!	setDealerActor(inout dealerActor : Actor) : void
+		this.dealerActor = dealerActor;
+!!!151043.java!!!	setFailedFinishedList(inout failedFinishedList : Vector<Task>) : void
+		this.failedFinishedList = failedFinishedList;
+!!!151171.java!!!	setFinishedList(inout finishedList : Vector<Task>) : void
+		this.finishedList = finishedList;
+!!!151299.java!!!	setIoSystem(inout ioSystem : IOSystem) : void
+		this.ioSystem = ioSystem;
+!!!151427.java!!!	setNewsList(inout newsList : Vector<Task>) : void
+		this.newsList = newsList;
+!!!151555.java!!!	setNumberOfTasks(in numberOfTasks : int) : void
+		this.numberOfTasks = numberOfTasks;
+!!!151683.java!!!	setResourcesList(inout resourcesList : Vector<Resource>) : void
+		this.resourcesList = resourcesList;
+!!!151811.java!!!	setResultsAnalyzer(inout resultsAnalyzer : ResultsAnalyzer) : void
+		this.resultsAnalyzer = resultsAnalyzer;
+!!!151939.java!!!	setTasks(inout tasks : Vector<Task>) : void
+		this.tasks = tasks;
+!!!152067.java!!!	simulateAndLog() : void
+		this.reset();
+		Vector<Actor> actorsList = getActorsList();
+		CompLogginSystem logger = this.getCompLogginSystem();
+		Actor dealerActor = this.getDealerActor();
+		actorsList.add(0, dealerActor);
+		int i = 0;
+		int n = actorsList.size();
+		while (!scheduleFinished()) {
+			for (int j = 0; j < n; j++)
+				actorsList.get(j).exec();
+			this.incTime();
+			logger.log(i, actorsList);
+			i++;
+		}
+		actorsList.remove(0);
+!!!152195.java!!!	start() : void
+		start(null, null);
+!!!152323.java!!!	start(in inputDir : String, in outputDir : String) : void
+		System.out.print("Loading data...");
+		this.loadData(inputDir);
+		System.out.println(" done.");
+		System.out.print("Simulation started...");
+		this.simulateAndLog();
+		System.out.println(" done.");
+		System.out.print("Analyzing results...");
+		this.getResultsAnalyzer().analyze();
+		System.out.println(" done.");
+		System.out.print("Saving data...");
+		this.saveData(outputDir);
+		System.out.println(" done.\n");
+		this.getResultsAnalyzer().print();
+		System.out.println("Done!\n\n");

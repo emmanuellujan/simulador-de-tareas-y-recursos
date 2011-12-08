@@ -1,0 +1,27 @@
+class Update
+!!!157443.java!!!	Update()
+		Hashtable<String, String> properties = new Hashtable<String, String>();
+		this.setProperties(properties);
+!!!157571.java!!!	addProperty(in key : String, in value : String) : void
+		properties.put(key, value);
+!!!157699.java!!!	getProperties() : Hashtable<String, String>
+		return properties;
+!!!157827.java!!!	setProperties(inout properties : Hashtable<String, String>) : void
+		this.properties = properties;
+!!!157955.java!!!	update(inout resource : Resource) : boolean
+		Hashtable<String, String> propsResource = resource.getProperties();
+		if (propsResource != null) {
+			Hashtable<String, String> properties = this.getProperties();
+			Enumeration<String> e = properties.keys();
+			String key, value;
+
+			while (e.hasMoreElements()) {
+				key = e.nextElement();
+				value = properties.get(key);
+				propsResource.put(key, value);
+				resource.setProperties(propsResource);
+			}
+
+			return true;
+		} else
+			return false;

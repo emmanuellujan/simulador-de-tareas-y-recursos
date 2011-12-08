@@ -1,0 +1,8 @@
+class FCFS
+!!!138755.java!!!	FCFS()
+		super("FCFS");
+!!!138883.java!!!	schedule(inout tasks : Vector<Task>) : Task
+		if (tasks.size() > 0)
+			return tasks.get(0);
+		else
+			return null;

@@ -1,0 +1,151 @@
+class ErrorFrame
+!!!187907.java!!!	getInstance() : ErrorFrame
+		if (ERROR_INSTANCE == null)
+			ERROR_INSTANCE = new ErrorFrame();
+		return ERROR_INSTANCE;
+!!!188035.java!!!	main(inout args : String) : void
+		/* Set the Nimbus look and feel */
+		// <editor-fold defaultstate="collapsed"
+		// desc=" Look and feel setting code (optional) ">
+		/*
+		 * If Nimbus (introduced in Java SE 6) is not available, stay with the
+		 * default look and feel. For details see
+		 * http://download.oracle.com/javase
+		 * /tutorial/uiswing/lookandfeel/plaf.html
+		 */
+		try {
+			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+					.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					javax.swing.UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (ClassNotFoundException ex) {
+			java.util.logging.Logger.getLogger(ErrorFrame.class.getName()).log(
+					java.util.logging.Level.SEVERE, null, ex);
+		} catch (InstantiationException ex) {
+			java.util.logging.Logger.getLogger(ErrorFrame.class.getName()).log(
+					java.util.logging.Level.SEVERE, null, ex);
+		} catch (IllegalAccessException ex) {
+			java.util.logging.Logger.getLogger(ErrorFrame.class.getName()).log(
+					java.util.logging.Level.SEVERE, null, ex);
+		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+			java.util.logging.Logger.getLogger(ErrorFrame.class.getName()).log(
+					java.util.logging.Level.SEVERE, null, ex);
+		}
+		// </editor-fold>
+
+		/* Create and display the form */
+		java.awt.EventQueue.invokeLater(new Runnable() {
+
+			public void run() {
+				new ErrorFrame().setVisible(true);
+			}
+		});
+!!!188163.java!!!	ErrorFrame()
+		initComponents();
+!!!188291.java!!!	getFilterBackFrame() : CreateFilterFrame
+		return this.filterBackFrame;
+!!!188419.java!!!	getUpdaterBackFrame() : UpdaterFrame
+		return this.updaterBackFrame;
+!!!188547.java!!!	initComponents() : void
+
+		jLabel1 = new javax.swing.JLabel();
+		jLabel2 = new javax.swing.JLabel();
+		jButton1 = new javax.swing.JButton();
+
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
+		jLabel1.setText("Wrong Values!");
+
+		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+				"/presentationLayer/media/error.png"))); // NOI18N
+
+		jButton1.setText("Ok");
+		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton1ActionPerformed(evt);
+			}
+		});
+
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
+				getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(jLabel2)
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addComponent(jLabel1)
+								.addContainerGap(352, Short.MAX_VALUE))
+				.addGroup(
+						javax.swing.GroupLayout.Alignment.TRAILING,
+						layout.createSequentialGroup()
+								.addContainerGap(226, Short.MAX_VALUE)
+								.addComponent(jButton1).addGap(222, 222, 222)));
+		layout.setVerticalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addGroup(
+										layout.createParallelGroup(
+												javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(
+														jLabel2,
+														javax.swing.GroupLayout.Alignment.TRAILING)
+												.addGroup(
+														javax.swing.GroupLayout.Alignment.TRAILING,
+														layout.createSequentialGroup()
+																.addComponent(
+																		jLabel1)
+																.addGap(9, 9, 9)))
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE).addComponent(jButton1)
+								.addContainerGap()));
+
+		pack();
+!!!188675.java!!!	jButton1ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
+// GEN-FIRST:event_jButton1ActionPerformed
+		this.setVisible(false);
+		this.setVisibleBackFrame();
+!!!188803.java!!!	setBackFrame(in currentBackFrame : String) : void
+		this.backFrame = currentBackFrame;
+!!!188931.java!!!	setFilterBackFrame(inout currentBackFrame : CreateFilterFrame) : void
+		this.filterBackFrame = currentBackFrame;
+!!!189059.java!!!	setLabel(in message : String) : void
+		this.jLabel1.setText(message);
+!!!189187.java!!!	setUpdaterBackFrame(inout currentBackFrame : UpdaterFrame) : void
+		this.updaterBackFrame = currentBackFrame;
+!!!189315.java!!!	setVisibleBackFrame() : void
+		if (this.backFrame.equals("CreateActorFrame"))
+			CreateActorFrame.getInstance().setVisible(true);
+		else {
+			if (this.backFrame.equals("CreateArtifactFrame"))
+				CreateArtifactFrame.getInstance().setVisible(true);
+			else {
+				if (this.backFrame.equals("RelationFrame"))
+					RelationFrame.getInstance().setVisible(true);
+				else {
+					if (this.backFrame.equals("SimulatorFrame"))
+						SimulatorFrame.getInstance().setVisible(true);
+					else {
+						if (this.backFrame.equals("UpdaterFrame"))
+							this.getUpdaterBackFrame().setVisible(true);
+						else {
+							if (this.backFrame.equals("FilterFrame"))
+								this.getFilterBackFrame().setVisible(true);
+							else
+								CreateTaskFrame.getInstance().setVisible(true);
+						}
+					}
+				}
+			}
+		}

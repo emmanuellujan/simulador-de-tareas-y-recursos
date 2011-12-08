@@ -83,13 +83,15 @@ public class SerialIOSystem extends IOSystem {
 				}
 			}
 
-			if (allResources.size() > 0) {
+			/*if (allResources.size() > 0) {
 				fileName = dir + i + ".xml";
 				fis = new FileInputStream(fileName);
 				o = xs.fromXML(fis);
 				Integer deadline = (Integer) o;
 				this.setDeadline(deadline.intValue());
-			}
+			}*/
+			allResources.addAll(actors);
+			allResources.addAll(resources);
 
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
