@@ -10,17 +10,23 @@ import persistenceLayer.logginSystem.CompLogginSystem;
 public class ResultsAnalyzer {
 	private SchedulingSystem schedulingSystem;
 	private int numberOfErrors;
-	public int deadline; // desired number of cycles
-	public int numberOfCycles; // actual number of cycles
-	public int numberOfTasks;
-	public int nbrSuccessfulTasks;
-	public int nbrFailedTasks;
+	private int deadline; // desired number of cycles
+	private int numberOfCycles; // actual number of cycles
+	private int nbrExecTasks; // non cont. tasks, just tasks
+	private int nbrExecContTasks;
+	private int numberOfTasks; // number of all executed tasks
+	private int nbrSuccessfulTasks;
+	private int nbrFailedTasks;
+	private int successfulExecTasks;
+	private int successfulExecContTasks;
+	private int failedExecTasks;
+	private int failedExecContTasks;
 	private int numberOfActors;
 	private int numberOfResources;
 	private float meanNbrTasksPerActor;
-	public float propFinishedTasks;
-	public float propFailedTasks;
-	public float propVelocity;
+	private float propFinishedTasks;
+	private float propFailedTasks;
+	private float propVelocity;
 
 	private String analysis;
 
@@ -43,33 +49,12 @@ public class ResultsAnalyzer {
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 
-		// int nbrTasks = schedulingSystem.getNumberOfTasks();
-		// this.setNbrOfTasks(schedulingSystem);
+		int nbrExecTasks = schedulingSystem.getTasks().size();
+		this.setNbrExecTasks(nbrExecTasks);
 
-		// t si
-		// tc no
-		// t_e = t si
-		// tc_e si'
-		// s(t_e)
-		// s(tc_e)
-		// f(t_e)
-		// f(tc_e)
-		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
-		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
-		// sf = s + f =s(t_e + tc_e) + f(t_e + tc_e) si
-		// t_e + t_ne(=0) + tc_e + tc_ne = todas las tareas no
-
-		// s = s1 t_e + s2 tc_e
-		// f = (1-s1) t_e + (1-s2) tc_e
-
-		// s1 = (s2 tc_e - s) / t_e;
-
-		// f = (1-s1) t_e + (1-s2) tc_e
-		// f = t_e - s1 t_e + tc_e - s2 tc_es
-		// f = t_e - ((s2 tc_e - s) / t_e) t_e + tc_e - s2 tc_es
-		// f = t_e - (s2 tc_e - s) + tc_e - s2 tc_es
-		// f = t_e - s2 tc_e + s + tc_e - s2 tc_es
-		// f = 2 t_e + tc_e (-s2+s-s2)
+		int nbrExecContTasks = schedulingSystem.getLogger()
+				.getNbrExecContTasks();
+		this.setNbrExecContTasks(nbrExecContTasks);
 
 		int nbrSuccessfulTasks = schedulingSystem.getLogger()
 				.getSuccessfulFinishedTasks().size();
@@ -79,8 +64,47 @@ public class ResultsAnalyzer {
 				.getFailedFinishedTasks().size();
 		this.setNbrFailedTasks(nbrFailedTasks);
 
-		int numberOfTasks = nbrSuccessfulTasks + nbrFailedTasks;
-		this.setNumberOfTasks(numberOfTasks);
+		int totalNbrExecTasks = nbrSuccessfulTasks + nbrFailedTasks;
+		this.setNumberOfTasks(totalNbrExecTasks);
+
+		// t si
+		// tc no
+		// t_e = t si
+		// tc_e si'
+		// s(t_e) = s1 * t_e
+		// s(tc_e) = s2 * tc_e
+		// f(t_e) = (1-s1) * t_e
+		// f(tc_e) = (1-s2) * tc_e
+		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
+		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
+		// sf = s + f =s(t_e + tc_e) + f(t_e + tc_e) si
+		// t_e + t_ne(=0) + tc_e + tc_ne = todas las tareas no
+
+		// s = s1 t_e + s2 tc_e
+		// f = (1-s1) t_e + (1-s2) tc_e
+
+		// c3 = X1 c1+X2 c2,
+		// c4 = (1-X1) c1+(1-X2) c2 for X2, X1
+
+		// X1 == (-c3 + c2 X2)/(c2 - c3 - c4))
+		// X2 == c3/(c3 + c4)
+
+		// s1 == (-s + tc_e s2)/(tc_e - s - f))
+		// s2 == s/(s + f)
+
+		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
+		float s2 = (-nbrSuccessfulTasks + nbrExecContTasks * s1)
+				/ (nbrExecContTasks - nbrSuccessfulTasks - nbrFailedTasks);
+
+		int successfulExecTasks = (int) (s1 * nbrExecTasks);
+		int successfulExecContTasks = (int) (s2 * nbrExecContTasks);
+		int failedExecTasks = (int) ((1 - s1) * nbrExecTasks);
+		int failedExecContTasks = (int) ((1 - s2) * nbrExecContTasks);
+
+		this.setSuccessfulExecTasks(successfulExecTasks);
+		this.setSuccessfulExecContTasks(successfulExecContTasks);
+		this.setFailedExecTasks(failedExecTasks);
+		this.setFailedExecContTasks(failedExecContTasks);
 
 		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
 		this.setNumberOfActors(numberOfActors);
@@ -172,27 +196,46 @@ public class ResultsAnalyzer {
 
 		analysis += "Results Analisys \n\n";
 
-		analysis += "  Number of errors: " + this.getNumberOfErrors() + "\n";
+		analysis += "  E = Number of errors: " + this.getNumberOfErrors() + "\n";
 
-		analysis += "  Deadline (in cycles): " + this.getDeadline() + "\n";
+		analysis += "  D = Deadline (in cycles): " + this.getDeadline() + "\n";
 
-		analysis += "  Number of cycles: " + this.getNumberOfCycles() + "\n";
+		analysis += "  C = Number of cycles: " + this.getNumberOfCycles() + "\n";
 
-		analysis += "  Total number of executed tasks *: "
+		analysis += "  ECT = Total number of executed contingency tasks: "
+				+ this.getNbrExecContTasks() + "\n";
+
+		analysis += "  ET = Total number of executed tasks *: "
 				+ this.getNumberOfTasks() + "\n";
+		
+		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
+				+ this.getNbrExecTasks() + "\n";
 
-		analysis += "  Number of successful tasks *: "
+		analysis += "  S(ET) = Number of successful executed tasks: "
+				+ this.getSuccessfulExecTasks() + "\n";
+
+		analysis += "  S(ECT) Number of successful executed cont. tasks: "
+				+ this.getSuccessfulExecContTasks() + "\n";
+
+		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks *: "
 				+ this.getNbrSuccessfulTasks() + "\n";
+		
+		analysis += "  F(ET) Number of failed executed tasks: "
+				+ this.getFailedExecTasks() + "\n";
 
-		analysis += "  Number of failed tasks: " + this.getNbrFailedTasks()
+		analysis += "  F(ECT) Number of failed executed cont. tasks: "
+				+ this.getFailedExecContTasks() + "\n";
+		
+		analysis += "  FT = F(ET) + F(ECT) = Number of failed tasks: " + this.getNbrFailedTasks()
 				+ "\n";
 
-		analysis += "  Number of actors: " + this.getNumberOfActors() + "\n";
 
-		analysis += "  Number of other resources (artifacts): "
+		analysis += "  A = Number of actors: " + this.getNumberOfActors() + "\n";
+
+		analysis += "  R = Number of other resources (artifacts): "
 				+ this.getNumberOfResources() + "\n";
 
-		analysis += "  Mean number of tasks per actor: "
+		analysis += "  TPA = Mean number of tasks per actor: "
 				+ this.getMeanNbrTasksPerActor() + "\n";
 
 		analysis += "  Proportions: \n";
@@ -284,6 +327,54 @@ public class ResultsAnalyzer {
 				+ "_analysis.txt";
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
+	}
+
+	public int getNbrExecTasks() {
+		return nbrExecTasks;
+	}
+
+	public void setNbrExecTasks(int nbrExecTasks) {
+		this.nbrExecTasks = nbrExecTasks;
+	}
+
+	public int getNbrExecContTasks() {
+		return nbrExecContTasks;
+	}
+
+	public void setNbrExecContTasks(int nbrExecContTasks) {
+		this.nbrExecContTasks = nbrExecContTasks;
+	}
+
+	public int getSuccessfulExecTasks() {
+		return successfulExecTasks;
+	}
+
+	public void setSuccessfulExecTasks(int successfulExecTasks) {
+		this.successfulExecTasks = successfulExecTasks;
+	}
+
+	public int getSuccessfulExecContTasks() {
+		return successfulExecContTasks;
+	}
+
+	public void setSuccessfulExecContTasks(int successfulExecContTasks) {
+		this.successfulExecContTasks = successfulExecContTasks;
+	}
+
+	public int getFailedExecTasks() {
+		return failedExecTasks;
+	}
+
+	public void setFailedExecTasks(int failedExecTasks) {
+		this.failedExecTasks = failedExecTasks;
+	}
+
+	public int getFailedExecContTasks() {
+		return failedExecContTasks;
+	}
+
+	public void setFailedExecContTasks(int failedExecContTasks) {
+		this.failedExecContTasks = failedExecContTasks;
 	}
 
 }

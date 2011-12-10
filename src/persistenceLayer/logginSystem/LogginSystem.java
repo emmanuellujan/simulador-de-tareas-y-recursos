@@ -13,6 +13,7 @@ public abstract class LogginSystem {
 	private Vector<SimulationTime> simulationTimes;
 	private Vector<Task> successfulFinishedTasks;
 	private Vector<Task> failedFinishedTasks;
+	private int nbrExecContTasks;
 
 	public LogginSystem(Configurator configurator) {
 		this.setConfigurator(configurator);
@@ -24,6 +25,7 @@ public abstract class LogginSystem {
 		Vector<Task> failedFinishedTasks = new Vector<Task>();
 		this.setSuccessfulFinishedTasks(successfulFinishedTasks);
 		this.setFailedFinishedTasks(failedFinishedTasks);
+		this.setNbrExecContTasks(0);
 	}
 
 	public LogginSystem(Configurator configurator,
@@ -99,5 +101,17 @@ public abstract class LogginSystem {
 	}
 
 	public abstract void writeLog();
+	
+	public void incNbrExecContTasks() {
+		this.nbrExecContTasks++;
+	}
+
+	public int getNbrExecContTasks() {
+		return nbrExecContTasks;
+	}
+
+	public void setNbrExecContTasks(int nbrExecContTasks) {
+		this.nbrExecContTasks = nbrExecContTasks;
+	}
 
 }

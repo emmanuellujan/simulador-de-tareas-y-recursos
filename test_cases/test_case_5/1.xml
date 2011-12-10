@@ -22,7 +22,7 @@
       <projectName>test_case_5</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="persistenceLayer.ioSystem.SerialIOSystem">
+    <ioSystem class="persistenceLayer.ioSystem.XMLIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
@@ -64,8 +64,6 @@
       </actorsList>
       <resourcesList/>
       <allResourcesList>
-        <logicLayer.schedulingSystem.Actor reference="../../actorsList/logicLayer.schedulingSystem.Actor"/>
-        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
         <logicLayer.schedulingSystem.Actor reference="../../actorsList/logicLayer.schedulingSystem.Actor"/>
         <logicLayer.schedulingSystem.Actor reference="../../../.."/>
       </allResourcesList>
@@ -262,16 +260,19 @@
       <failedFinishedTasks>
         <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
       </failedFinishedTasks>
+      <nbrExecContTasks>0</nbrExecContTasks>
       <logginSystems>
         <persistenceLayer.logginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
+          <nbrExecContTasks>0</nbrExecContTasks>
           <extension>xml</extension>
           <fileManager/>
         </persistenceLayer.logginSystem.XMLLogginSystem>
         <persistenceLayer.logginSystem.TXTLogginSystem>
           <configurator reference="../../../../configurator"/>
           <simulationTimes reference="../../../simulationTimes"/>
+          <nbrExecContTasks>0</nbrExecContTasks>
           <extension>txt</extension>
           <fileManager/>
         </persistenceLayer.logginSystem.TXTLogginSystem>
@@ -282,9 +283,15 @@
       <numberOfErrors>0</numberOfErrors>
       <deadline>80</deadline>
       <numberOfCycles>5</numberOfCycles>
+      <nbrExecTasks>1</nbrExecTasks>
+      <nbrExecContTasks>0</nbrExecContTasks>
       <numberOfTasks>1</numberOfTasks>
       <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
       <nbrFailedTasks>1</nbrFailedTasks>
+      <successfulExecTasks>0</successfulExecTasks>
+      <successfulExecContTasks>0</successfulExecContTasks>
+      <failedExecTasks>1</failedExecTasks>
+      <failedExecContTasks>0</failedExecContTasks>
       <numberOfActors>2</numberOfActors>
       <numberOfResources>0</numberOfResources>
       <meanNbrTasksPerActor>0.5</meanNbrTasksPerActor>
@@ -296,9 +303,15 @@
   Number of errors: 0
   Deadline (in cycles): 80
   Number of cycles: 5
+  Total number of executed tasks: 1
+  Total number of executed contingency tasks: 0
   Total number of executed tasks *: 1
   Number of successful tasks *: 0
   Number of failed tasks: 1
+  Number of successful executed tasks: 0
+  Number of successful executed cont. tasks: 0
+  Number of failed executed tasks: 1
+  Number of failed executed cont. tasks: 0
   Number of actors: 2
   Number of other resources (artifacts): 0
   Mean number of tasks per actor: 0.5

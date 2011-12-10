@@ -7,6 +7,7 @@ import logicLayer.schedulingAlgorithmSystem.FCFS;
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.ioSystem.IOSystem;
 import persistenceLayer.ioSystem.SerialIOSystem;
+import persistenceLayer.ioSystem.XMLIOSystem;
 import persistenceLayer.logginSystem.CompLogginSystem;
 
 public class SchedulingSystem {
@@ -200,9 +201,9 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		// SerialIOSystem serialIOSystem = new
-		// SerialIOSystem(this.getConfigurator(), this);
-		// serialIOSystem.saveAll();
+		//SerialIOSystem serialIOSystem = new
+		//SerialIOSystem(this.getConfigurator(), this);
+		//serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getLogger().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
@@ -308,7 +309,7 @@ public class SchedulingSystem {
 		this.getResultsAnalyzer().analyze();
 		System.out.println(" done.");
 		System.out.print("Saving data...");
-		this.saveData(outputDir);
+		//this.saveData(outputDir);
 		System.out.println(" done.\n");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");

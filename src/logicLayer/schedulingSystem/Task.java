@@ -123,8 +123,10 @@ public class Task {
 		} else {
 			next = "fail";
 			Task t = this.getContingencyTask();
-			if (t != null)
+			if (t != null){
+				this.getSchedulingSystem().getLogger().incNbrExecContTasks();
 				actor.addReadyList(t, actor.getResId());
+			}
 		}
 		return next;
 	}
