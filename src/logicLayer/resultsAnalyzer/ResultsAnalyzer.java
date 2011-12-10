@@ -43,6 +43,36 @@ public class ResultsAnalyzer {
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 
+		//int nbrTasks = schedulingSystem.getNumberOfTasks(); 
+		//this.setNbrOfTasks(schedulingSystem);
+		
+		// t si
+		// tc no 
+		// t_e = t si
+		// tc_e si' 
+		// s(t_e)
+		// s(tc_e)
+		// f(t_e) 
+		// f(tc_e) 
+		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
+		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
+		// sf = s + f =s(t_e + tc_e) + f(t_e + tc_e) si
+		// t_e + t_ne(=0) + tc_e + tc_ne = todas las tareas no
+		
+		//s = s1 t_e  + s2 tc_e
+		//f = (1-s1) t_e  + (1-s2) tc_e
+		
+		// s1 = (s2 tc_e - s) / t_e;
+		
+		// f = (1-s1) t_e  + (1-s2) tc_e
+		// f = t_e - s1 t_e  + tc_e - s2 tc_es
+		// f = t_e - ((s2 tc_e - s) / t_e) t_e  + tc_e - s2 tc_es
+		// f = t_e - (s2 tc_e - s)  + tc_e - s2 tc_es
+		// f = t_e - s2 tc_e + s  + tc_e - s2 tc_es
+		// f = 2 t_e + tc_e (-s2+s-s2)
+		
+		
+		
 		int nbrSuccessfulTasks = schedulingSystem.getFinishedList().size();
 		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
 
