@@ -18,8 +18,6 @@ import java.util.Vector;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import persistenceLayer.ioSystem.IOSystem;
-
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
@@ -1706,17 +1704,17 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			Vector<Resource> resourcesList = this.getResourcesList();
 			Vector<Task> failedFinishedList = new Vector<Task>();
 			Vector<Task> finishedList = new Vector<Task>();
-			
+
 			this.getSchedulingSystem().getDealerActor().setReadyList(newsList);
 			this.getSchedulingSystem().setDeadline(deadline);
 			this.getSchedulingSystem().setNewsList(newsList);
 			this.getSchedulingSystem().setTasks(tasks);
 			this.getSchedulingSystem().setActorsList(actorsList);
 			this.getSchedulingSystem().setResourcesList(resourcesList);
-			this.getSchedulingSystem().setNumberOfTasks(newsList.size());
-			this.getSchedulingSystem()
-					.setFailedFinishedList(failedFinishedList);
-			this.getSchedulingSystem().setFinishedList(finishedList);
+			this.getSchedulingSystem().getLogger()
+					.setFailedFinishedTasks(failedFinishedList);
+			this.getSchedulingSystem().getLogger()
+					.setSuccessfulFinishedTasks(finishedList);
 
 			this.jProgressBar1.setValue(30);
 			this.jProgressBar1.setValue(50);

@@ -22,7 +22,7 @@
     <ioSystem class="persistenceLayer.ioSystem.SerialIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
-      <deadline>0</deadline>
+      <deadline>80</deadline>
       <actorsList>
         <logicLayer.schedulingSystem.Actor>
           <resId>actor0</resId>
@@ -67,7 +67,7 @@
         <logicLayer.schedulingSystem.Task reference="../../../.."/>
       </tasksList>
     </ioSystem>
-    <compLogginSystem>
+    <logger>
       <configurator reference="../../configurator"/>
       <errorMsgs/>
       <simulationTimes>
@@ -304,6 +304,10 @@
           </actors>
         </persistenceLayer.dataModel.SimulationTime.SimulationTime>
       </simulationTimes>
+      <successfulFinishedTasks>
+        <logicLayer.schedulingSystem.Task reference="../../../.."/>
+      </successfulFinishedTasks>
+      <failedFinishedTasks/>
       <logginSystems>
         <persistenceLayer.logginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
@@ -318,11 +322,11 @@
           <fileManager/>
         </persistenceLayer.logginSystem.TXTLogginSystem>
       </logginSystems>
-    </compLogginSystem>
+    </logger>
     <resultsAnalyzer>
       <schedulingSystem reference="../.."/>
       <numberOfErrors>0</numberOfErrors>
-      <deadline>0</deadline>
+      <deadline>80</deadline>
       <numberOfCycles>10</numberOfCycles>
       <numberOfTasks>1</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
@@ -332,11 +336,11 @@
       <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
       <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
-      <propVelocity>0.0</propVelocity>
+      <propVelocity>8.0</propVelocity>
       <analysis>Results Analisys 
 
   Number of errors: 0
-  Deadline (in cycles): 0
+  Deadline (in cycles): 80
   Number of cycles: 10
   Total number of executed tasks *: 1
   Number of successful tasks *: 1
@@ -347,12 +351,11 @@
   Proportions: 
     Successful tasks *: 1.0
     Failed tasks *: 0.0
-    Velocity (deadline/nbrOfCycles): 0.0
+    Velocity (deadline/nbrOfCycles): 8.0
 
   *: with contigency tasks
 </analysis>
     </resultsAnalyzer>
-    <numberOfTasks>1</numberOfTasks>
     <dealerActor>
       <resId>dealerActor</resId>
       <type>actor</type>
@@ -377,14 +380,10 @@
       <limitTime>-1</limitTime>
       <maxTasksNumber>100</maxTasksNumber>
     </dealerActor>
-    <deadline>0</deadline>
+    <deadline>80</deadline>
     <tasks reference="../ioSystem/tasksList"/>
     <newsList reference="../dealerActor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
-    <finishedList>
-      <logicLayer.schedulingSystem.Task reference="../../.."/>
-    </finishedList>
-    <failedFinishedList/>
   </schedulingSystem>
 </logicLayer.schedulingSystem.Task>

@@ -84,8 +84,7 @@ public class Actor extends Resource {
 					+ currTask.getTaskId()
 					+ " can't be added to the interruption list of "
 					+ actor.getResId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -112,8 +111,7 @@ public class Actor extends Resource {
 					+ currTask.getTaskId()
 					+ " can't be added to the ready list of "
 					+ actor.getResId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -466,8 +464,7 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Interruption list of "
 					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
 	}
 
@@ -496,8 +493,7 @@ public class Actor extends Resource {
 		else {
 			String errorMsg = "List size greater than allowed. Ready list of "
 					+ this.getResId() + " can't be inicialized.";
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
 	}
 

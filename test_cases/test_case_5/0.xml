@@ -66,6 +66,8 @@
       <allResourcesList>
         <logicLayer.schedulingSystem.Actor reference="../../../.."/>
         <logicLayer.schedulingSystem.Actor reference="../../actorsList/logicLayer.schedulingSystem.Actor[2]"/>
+        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
+        <logicLayer.schedulingSystem.Actor reference="../../actorsList/logicLayer.schedulingSystem.Actor[2]"/>
       </allResourcesList>
       <tasksList>
         <logicLayer.schedulingSystem.Task>
@@ -89,7 +91,7 @@
         </logicLayer.schedulingSystem.Task>
       </tasksList>
     </ioSystem>
-    <compLogginSystem>
+    <logger>
       <configurator reference="../../configurator"/>
       <errorMsgs/>
       <simulationTimes>
@@ -256,6 +258,10 @@
           </actors>
         </persistenceLayer.dataModel.SimulationTime.SimulationTime>
       </simulationTimes>
+      <successfulFinishedTasks/>
+      <failedFinishedTasks>
+        <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
+      </failedFinishedTasks>
       <logginSystems>
         <persistenceLayer.logginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
@@ -270,7 +276,7 @@
           <fileManager/>
         </persistenceLayer.logginSystem.TXTLogginSystem>
       </logginSystems>
-    </compLogginSystem>
+    </logger>
     <resultsAnalyzer>
       <schedulingSystem reference="../.."/>
       <numberOfErrors>0</numberOfErrors>
@@ -304,7 +310,6 @@
   *: with contigency tasks
 </analysis>
     </resultsAnalyzer>
-    <numberOfTasks>1</numberOfTasks>
     <dealerActor>
       <resId>dealerActor</resId>
       <type>actor</type>
@@ -334,10 +339,6 @@
     <newsList reference="../dealerActor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
-    <finishedList/>
-    <failedFinishedList>
-      <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
-    </failedFinishedList>
   </schedulingSystem>
   <capacity>10</capacity>
   <currAction>None</currAction>

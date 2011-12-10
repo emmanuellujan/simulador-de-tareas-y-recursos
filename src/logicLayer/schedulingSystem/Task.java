@@ -201,8 +201,7 @@ public class Task {
 				&& (currentStatus != "New")) {
 			String errorMsg = "You attempted to insert a wrong task state "
 					+ currentStatus + " in the task " + this.getTaskId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		} else
 			this.status = currentStatus;
 	}

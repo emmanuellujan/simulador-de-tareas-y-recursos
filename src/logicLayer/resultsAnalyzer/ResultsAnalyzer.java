@@ -31,7 +31,7 @@ public class ResultsAnalyzer {
 
 	public void analyze() {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		CompLogginSystem logger = schedulingSystem.getCompLogginSystem();
+		CompLogginSystem logger = schedulingSystem.getLogger();
 
 		int numberOfErrors = 0;
 		if (logger.getErrorMsgs() != null)
@@ -43,40 +43,40 @@ public class ResultsAnalyzer {
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 
-		//int nbrTasks = schedulingSystem.getNumberOfTasks(); 
-		//this.setNbrOfTasks(schedulingSystem);
-		
+		// int nbrTasks = schedulingSystem.getNumberOfTasks();
+		// this.setNbrOfTasks(schedulingSystem);
+
 		// t si
-		// tc no 
+		// tc no
 		// t_e = t si
-		// tc_e si' 
+		// tc_e si'
 		// s(t_e)
 		// s(tc_e)
-		// f(t_e) 
-		// f(tc_e) 
+		// f(t_e)
+		// f(tc_e)
 		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
 		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
 		// sf = s + f =s(t_e + tc_e) + f(t_e + tc_e) si
 		// t_e + t_ne(=0) + tc_e + tc_ne = todas las tareas no
-		
-		//s = s1 t_e  + s2 tc_e
-		//f = (1-s1) t_e  + (1-s2) tc_e
-		
+
+		// s = s1 t_e + s2 tc_e
+		// f = (1-s1) t_e + (1-s2) tc_e
+
 		// s1 = (s2 tc_e - s) / t_e;
-		
-		// f = (1-s1) t_e  + (1-s2) tc_e
-		// f = t_e - s1 t_e  + tc_e - s2 tc_es
-		// f = t_e - ((s2 tc_e - s) / t_e) t_e  + tc_e - s2 tc_es
-		// f = t_e - (s2 tc_e - s)  + tc_e - s2 tc_es
-		// f = t_e - s2 tc_e + s  + tc_e - s2 tc_es
+
+		// f = (1-s1) t_e + (1-s2) tc_e
+		// f = t_e - s1 t_e + tc_e - s2 tc_es
+		// f = t_e - ((s2 tc_e - s) / t_e) t_e + tc_e - s2 tc_es
+		// f = t_e - (s2 tc_e - s) + tc_e - s2 tc_es
+		// f = t_e - s2 tc_e + s + tc_e - s2 tc_es
 		// f = 2 t_e + tc_e (-s2+s-s2)
-		
-		
-		
-		int nbrSuccessfulTasks = schedulingSystem.getFinishedList().size();
+
+		int nbrSuccessfulTasks = schedulingSystem.getLogger()
+				.getSuccessfulFinishedTasks().size();
 		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
 
-		int nbrFailedTasks = schedulingSystem.getFailedFinishedList().size();
+		int nbrFailedTasks = schedulingSystem.getLogger()
+				.getFailedFinishedTasks().size();
 		this.setNbrFailedTasks(nbrFailedTasks);
 
 		int numberOfTasks = nbrSuccessfulTasks + nbrFailedTasks;
@@ -207,13 +207,17 @@ public class ResultsAnalyzer {
 
 		analysis += "\n  *: with contigency tasks\n";
 
-		String aux = this.getSchedulingSystem().getCompLogginSystem()
-				.renderErrors();
+		String aux = this.getSchedulingSystem().getLogger().renderErrors();
 
 		if (aux != "")
 			analysis += "\n\n  " + aux + "\n";
 
 		this.setAnalysis(analysis);
+	}
+
+	public void reset() {
+		// TODO Auto-generated method stub
+
 	}
 
 	public void setAnalysis(String analysis) {
@@ -281,11 +285,5 @@ public class ResultsAnalyzer {
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
 	}
-
-	public void reset() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }

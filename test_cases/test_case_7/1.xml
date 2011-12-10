@@ -129,6 +129,10 @@
         <logicLayer.schedulingSystem.Actor reference="../../../.."/>
         <logicLayer.schedulingSystem.Resource reference="../../actorsList/logicLayer.schedulingSystem.Actor/resources/logicLayer.schedulingSystem.Resource"/>
         <logicLayer.schedulingSystem.Resource reference="../../actorsList/logicLayer.schedulingSystem.Actor/resources/logicLayer.schedulingSystem.Resource/resources/logicLayer.schedulingSystem.Resource"/>
+        <logicLayer.schedulingSystem.Actor reference="../../actorsList/logicLayer.schedulingSystem.Actor"/>
+        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
+        <logicLayer.schedulingSystem.Resource reference="../../actorsList/logicLayer.schedulingSystem.Actor/resources/logicLayer.schedulingSystem.Resource"/>
+        <logicLayer.schedulingSystem.Resource reference="../../actorsList/logicLayer.schedulingSystem.Actor/resources/logicLayer.schedulingSystem.Resource/resources/logicLayer.schedulingSystem.Resource"/>
       </allResourcesList>
       <tasksList>
         <logicLayer.schedulingSystem.Task>
@@ -182,9 +186,9 @@
             <status>New</status>
             <schedulingSystem>
               <configurator>
-                <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/src/conf.xml</confFile>
-                <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/</inputDir>
-                <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/diseño/tasks-on-resources-simulator/test_cases/test_case_7/</outputDir>
+                <confFile>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/conf.xml</confFile>
+                <inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases/test_case_7/</inputDir>
+                <outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases/test_case_7/</outputDir>
                 <projectName>test_case_7</projectName>
                 <bar>/</bar>
               </configurator>
@@ -384,7 +388,7 @@
                   </logicLayer.schedulingSystem.Task>
                 </tasksList>
               </ioSystem>
-              <compLogginSystem>
+              <logger>
                 <configurator reference="../../configurator"/>
                 <errorMsgs/>
                 <simulationTimes>
@@ -2359,6 +2363,12 @@
                     </actors>
                   </persistenceLayer.dataModel.SimulationTime.SimulationTime>
                 </simulationTimes>
+                <successfulFinishedTasks>
+                  <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[3]"/>
+                  <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[2]"/>
+                  <logicLayer.schedulingSystem.Task reference="../../../../.."/>
+                </successfulFinishedTasks>
+                <failedFinishedTasks/>
                 <logginSystems>
                   <persistenceLayer.logginSystem.XMLLogginSystem>
                     <configurator reference="../../../../configurator"/>
@@ -2373,7 +2383,7 @@
                     <fileManager/>
                   </persistenceLayer.logginSystem.TXTLogginSystem>
                 </logginSystems>
-              </compLogginSystem>
+              </logger>
               <resultsAnalyzer>
                 <schedulingSystem reference="../.."/>
                 <numberOfErrors>0</numberOfErrors>
@@ -2407,7 +2417,6 @@
   *: with contigency tasks
 </analysis>
               </resultsAnalyzer>
-              <numberOfTasks>3</numberOfTasks>
               <dealerActor>
                 <resId>dealerActor</resId>
                 <type>actor</type>
@@ -2437,12 +2446,6 @@
               <newsList reference="../dealerActor/readyList"/>
               <actorsList reference="../ioSystem/actorsList"/>
               <resourcesList reference="../ioSystem/resourcesList"/>
-              <finishedList>
-                <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[3]"/>
-                <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[2]"/>
-                <logicLayer.schedulingSystem.Task reference="../../../.."/>
-              </finishedList>
-              <failedFinishedList/>
             </schedulingSystem>
           </contingencyTask>
           <schedulingSystem reference="../../../.."/>
@@ -2501,7 +2504,7 @@
         </logicLayer.schedulingSystem.Task>
       </tasksList>
     </ioSystem>
-    <compLogginSystem>
+    <logger>
       <configurator reference="../../configurator"/>
       <errorMsgs/>
       <simulationTimes>
@@ -4476,6 +4479,12 @@
           </actors>
         </persistenceLayer.dataModel.SimulationTime.SimulationTime>
       </simulationTimes>
+      <successfulFinishedTasks>
+        <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[3]"/>
+        <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[2]"/>
+        <logicLayer.schedulingSystem.Task reference="../../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
+      </successfulFinishedTasks>
+      <failedFinishedTasks/>
       <logginSystems>
         <persistenceLayer.logginSystem.XMLLogginSystem>
           <configurator reference="../../../../configurator"/>
@@ -4490,7 +4499,7 @@
           <fileManager/>
         </persistenceLayer.logginSystem.TXTLogginSystem>
       </logginSystems>
-    </compLogginSystem>
+    </logger>
     <resultsAnalyzer>
       <schedulingSystem reference="../.."/>
       <numberOfErrors>0</numberOfErrors>
@@ -4524,7 +4533,6 @@
   *: with contigency tasks
 </analysis>
     </resultsAnalyzer>
-    <numberOfTasks>3</numberOfTasks>
     <dealerActor>
       <resId>dealerActor</resId>
       <type>actor</type>
@@ -4554,12 +4562,6 @@
     <newsList reference="../dealerActor/readyList"/>
     <actorsList reference="../ioSystem/actorsList"/>
     <resourcesList reference="../ioSystem/resourcesList"/>
-    <finishedList>
-      <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[3]"/>
-      <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task[2]"/>
-      <logicLayer.schedulingSystem.Task reference="../../ioSystem/tasksList/logicLayer.schedulingSystem.Task"/>
-    </finishedList>
-    <failedFinishedList/>
   </schedulingSystem>
   <capacity>10</capacity>
   <currAction>None</currAction>

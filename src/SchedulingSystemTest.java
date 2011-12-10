@@ -1,9 +1,8 @@
 import junit.framework.Assert;
+import logicLayer.schedulingSystem.SchedulingSystem;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import logicLayer.schedulingSystem.SchedulingSystem;
 
 public class SchedulingSystemTest {
 
