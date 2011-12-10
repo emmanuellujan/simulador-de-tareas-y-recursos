@@ -41,8 +41,7 @@ public class Resource implements Serializable {
 			String errorMsg = "Limit exceeded. Can't assign the resource "
 					+ resource.getResId() + " to the resource "
 					+ this.getResId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
 	}
 

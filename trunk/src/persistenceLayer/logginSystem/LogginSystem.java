@@ -3,6 +3,7 @@ package persistenceLayer.logginSystem;
 import java.util.Vector;
 
 import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Task;
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 
@@ -10,6 +11,8 @@ public abstract class LogginSystem {
 	private Configurator configurator;
 	private Vector<String> errorMsgs;
 	private Vector<SimulationTime> simulationTimes;
+	private Vector<Task> successfulFinishedTasks;
+	private Vector<Task> failedFinishedTasks;
 
 	public LogginSystem(Configurator configurator) {
 		this.setConfigurator(configurator);
@@ -17,6 +20,10 @@ public abstract class LogginSystem {
 		this.setSimulationTimes(simulationTimes);
 		Vector<String> errorMsgs = new Vector<String>();
 		this.setErrorMsgs(errorMsgs);
+		Vector<Task> successfulFinishedTasks = new Vector<Task>();
+		Vector<Task> failedFinishedTasks = new Vector<Task>();
+		this.setSuccessfulFinishedTasks(successfulFinishedTasks);
+		this.setFailedFinishedTasks(failedFinishedTasks);
 	}
 
 	public LogginSystem(Configurator configurator,
@@ -41,8 +48,16 @@ public abstract class LogginSystem {
 		return errorMsgs;
 	}
 
+	public Vector<Task> getFailedFinishedTasks() {
+		return failedFinishedTasks;
+	}
+
 	public Vector<SimulationTime> getSimulationTimes() {
 		return simulationTimes;
+	}
+
+	public Vector<Task> getSuccessfulFinishedTasks() {
+		return successfulFinishedTasks;
 	}
 
 	public void log(int time, Vector<Actor> devicesList) {
@@ -71,8 +86,16 @@ public abstract class LogginSystem {
 		this.errorMsgs = errorMsgs;
 	}
 
+	public void setFailedFinishedTasks(Vector<Task> failedFinishedTasks) {
+		this.failedFinishedTasks = failedFinishedTasks;
+	}
+
 	public void setSimulationTimes(Vector<SimulationTime> simulationTimes) {
 		this.simulationTimes = simulationTimes;
+	}
+
+	public void setSuccessfulFinishedTasks(Vector<Task> successfulFinishedTasks) {
+		this.successfulFinishedTasks = successfulFinishedTasks;
 	}
 
 	public abstract void writeLog();

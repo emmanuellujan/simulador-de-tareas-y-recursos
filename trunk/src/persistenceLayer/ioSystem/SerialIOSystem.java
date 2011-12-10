@@ -83,13 +83,12 @@ public class SerialIOSystem extends IOSystem {
 				}
 			}
 
-			/*if (allResources.size() > 0) {
-				fileName = dir + i + ".xml";
-				fis = new FileInputStream(fileName);
-				o = xs.fromXML(fis);
-				Integer deadline = (Integer) o;
-				this.setDeadline(deadline.intValue());
-			}*/
+			fileName = dir + i + ".xml";
+			fis = new FileInputStream(fileName);
+			o = xs.fromXML(fis);
+			Integer deadline = (Integer) o;
+			this.setDeadline(deadline.intValue());
+
 			allResources.addAll(actors);
 			allResources.addAll(resources);
 
@@ -105,16 +104,6 @@ public class SerialIOSystem extends IOSystem {
 
 	}
 
-	public void removeDuplicatedResources(Vector<Resource> allResources) {
-		for (int i = 0; i < allResources.size() - 1; i++) {
-			for (int j = i + 1; j < allResources.size(); j++) {
-				if (((Resource) allResources.elementAt(i)).getResId().equals(
-						((Resource) allResources.elementAt(j)).getResId()))
-					allResources.remove(j);
-			}
-		}
-	}
-
 	public void saveAll() {
 
 		XStream xs = new XStream();
@@ -126,13 +115,13 @@ public class SerialIOSystem extends IOSystem {
 
 			FileOutputStream fs;
 			Vector<Resource> allResources = new Vector<Resource>();
-			
+
 			if (this.getSchedulingSystem().getActorsList() != null)
 				allResources.addAll(this.getSchedulingSystem().getActorsList());
 			if (this.getSchedulingSystem().getResourcesList() != null)
 				allResources.addAll(this.getSchedulingSystem()
 						.getResourcesList());
-			
+
 			int n = allResources.size();
 			int i = 0;
 			for (i = 0; i < n; i++) {

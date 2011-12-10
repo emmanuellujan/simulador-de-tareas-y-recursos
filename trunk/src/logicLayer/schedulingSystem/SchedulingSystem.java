@@ -18,32 +18,27 @@ public class SchedulingSystem {
 
 	private Configurator configurator;
 	private IOSystem ioSystem;
-	private CompLogginSystem compLogginSystem;
-
+	private CompLogginSystem logger;
 	private ResultsAnalyzer resultsAnalyzer;
-	private int numberOfTasks;
+
 	private Actor dealerActor;
 	private int deadline;
 	private Vector<Task> tasks;
 	private Vector<Task> newsList;
 	private Vector<Actor> actorsList;
 	private Vector<Resource> resourcesList;
-	private Vector<Task> finishedList;
-	private Vector<Task> failedFinishedList;
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
 		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
-		CompLogginSystem compLogginSystem = new CompLogginSystem(configurator);
+		CompLogginSystem logger = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
 		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
 		Vector<Task> tasks = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Resource> resourcesList = new Vector<Resource>();
-		Vector<Task> finishedList = new Vector<Task>();
-		Vector<Task> failedFinishedList = new Vector<Task>();
 
 		String dealerActorId = "dealerActor";
 		FCFS saReadyList = new FCFS();
@@ -54,34 +49,27 @@ public class SchedulingSystem {
 		this.setConfigurator(configurator);
 		this.setIoSystem(ioSystem);
 		this.setDealerActor(dealerActor);
-		this.setCompLogginSystem(compLogginSystem);
+		this.setCompLogginSystem(logger);
 		this.setResultsAnalyzer(resultsAnalyzer);
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setTasks(tasks);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
-		this.setNumberOfTasks(newsList.size());
-		this.setFinishedList(finishedList);
-		this.setFailedFinishedList(failedFinishedList);
 	}
 
 	public void finishFailedTask(Task currTask) {
 		currTask.execPostProcessing();
-		this.getFailedFinishedList().add(currTask);
+		this.getLogger().getFailedFinishedTasks().add(currTask);
 	}
 
 	public void finishTask(Task currTask) {
 		currTask.execPostProcessing();
-		this.getFinishedList().add(currTask);
+		this.getLogger().getSuccessfulFinishedTasks().add(currTask);
 	}
 
 	public Vector<Actor> getActorsList() {
 		return actorsList;
-	}
-
-	public CompLogginSystem getCompLogginSystem() {
-		return compLogginSystem;
 	}
 
 	public Configurator getConfigurator() {
@@ -96,24 +84,16 @@ public class SchedulingSystem {
 		return dealerActor;
 	}
 
-	public Vector<Task> getFailedFinishedList() {
-		return failedFinishedList;
-	}
-
-	public Vector<Task> getFinishedList() {
-		return finishedList;
-	}
-
 	public IOSystem getIoSystem() {
 		return ioSystem;
 	}
 
-	public Vector<Task> getNewsList() {
-		return newsList;
+	public CompLogginSystem getLogger() {
+		return logger;
 	}
 
-	public int getNumberOfTasks() {
-		return numberOfTasks;
+	public Vector<Task> getNewsList() {
+		return newsList;
 	}
 
 	public Actor getResource(String name) {
@@ -178,7 +158,6 @@ public class SchedulingSystem {
 		this.setTasks(tasks);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
-		this.setNumberOfTasks(newsList.size());
 	}
 
 	public void loadData(String inputDir) {
@@ -207,21 +186,17 @@ public class SchedulingSystem {
 		for (int i = 0; i < n; i++)
 			allResources.elementAt(i).reset();
 		this.getDealerActor().reset();
-		
-		Vector<Task> readyList = new Vector<Task>();  
+
+		Vector<Task> readyList = new Vector<Task>();
 		readyList.addAll(this.getTasks());
 		this.getDealerActor().setReadyList(readyList);
 		this.setNewsList(readyList);
-		
-		Vector<Task> finishedList = new Vector<Task>();
-		Vector<Task> failedFinishedList = new Vector<Task>();
+
 		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
-		CompLogginSystem compLogginSystem = new CompLogginSystem(this.configurator);
-		
-		this.setFinishedList(finishedList);
-		this.setFailedFinishedList(failedFinishedList);	 
+		CompLogginSystem logger = new CompLogginSystem(this.getConfigurator());
+
 		this.setResultsAnalyzer(resultsAnalyzer);
-		this.setCompLogginSystem(compLogginSystem);
+		this.setCompLogginSystem(logger);
 	}
 
 	public void saveData() {
@@ -229,7 +204,7 @@ public class SchedulingSystem {
 		// SerialIOSystem(this.getConfigurator(), this);
 		// serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
-		this.getCompLogginSystem().writeLog();
+		this.getLogger().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
 	}
 
@@ -265,7 +240,7 @@ public class SchedulingSystem {
 	}
 
 	public void setCompLogginSystem(CompLogginSystem compLogginSystem) {
-		this.compLogginSystem = compLogginSystem;
+		this.logger = compLogginSystem;
 	}
 
 	public void setConfigurator(Configurator configurator) {
@@ -280,24 +255,12 @@ public class SchedulingSystem {
 		this.dealerActor = dealerActor;
 	}
 
-	public void setFailedFinishedList(Vector<Task> failedFinishedList) {
-		this.failedFinishedList = failedFinishedList;
-	}
-
-	public void setFinishedList(Vector<Task> finishedList) {
-		this.finishedList = finishedList;
-	}
-
 	public void setIoSystem(IOSystem ioSystem) {
 		this.ioSystem = ioSystem;
 	}
 
 	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
-	}
-
-	public void setNumberOfTasks(int numberOfTasks) {
-		this.numberOfTasks = numberOfTasks;
 	}
 
 	public void setResourcesList(Vector<Resource> resourcesList) {
@@ -315,7 +278,7 @@ public class SchedulingSystem {
 	public void simulateAndLog() {
 		this.reset();
 		Vector<Actor> actorsList = getActorsList();
-		CompLogginSystem logger = this.getCompLogginSystem();
+		CompLogginSystem logger = this.getLogger();
 		Actor dealerActor = this.getDealerActor();
 		actorsList.add(0, dealerActor);
 		int i = 0;
