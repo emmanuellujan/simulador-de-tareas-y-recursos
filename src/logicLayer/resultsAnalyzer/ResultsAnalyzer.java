@@ -39,34 +39,62 @@ public class ResultsAnalyzer {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		CompLogginSystem logger = schedulingSystem.getLogger();
 
+		// E = Number of errors:
 		int numberOfErrors = 0;
 		if (logger.getErrorMsgs() != null)
 			numberOfErrors = logger.getErrorMsgs().size();
 		this.setNumberOfErrors(numberOfErrors);
 
+		// D = Deadline (in cycles)
 		this.setDeadline(schedulingSystem.getDeadline());
 
+		// C = Number of cycles:
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 
+		// ET = Total number of executed tasks (including cont. tasks)
 		int nbrExecTasks = schedulingSystem.getTasks().size();
 		this.setNbrExecTasks(nbrExecTasks);
 
+		// ECT = Total number of executed contingency tasks:
 		int nbrExecContTasks = schedulingSystem.getLogger()
 				.getNbrExecContTasks();
 		this.setNbrExecContTasks(nbrExecContTasks);
 
+		// TE = ET + ECT  = Total number of executed tasks
+		int totalNbrExecTasks = nbrExecTasks + nbrExecContTasks;
+		this.setNumberOfTasks(totalNbrExecTasks);		
+		
+		// ST = S(ET) + S(ECT) = Number of successful tasks (including cont. tasks)
 		int nbrSuccessfulTasks = schedulingSystem.getLogger()
 				.getSuccessfulFinishedTasks().size();
 		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
 
+		//  FT = F(ET) + F(ECT) = Number of failed tasks (including cont. tasks)
 		int nbrFailedTasks = schedulingSystem.getLogger()
 				.getFailedFinishedTasks().size();
 		this.setNbrFailedTasks(nbrFailedTasks);
 
-		int totalNbrExecTasks = nbrSuccessfulTasks + nbrFailedTasks;
-		this.setNumberOfTasks(totalNbrExecTasks);
+		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
+		float s2 = (-nbrSuccessfulTasks + nbrExecContTasks * s1)
+				/ (nbrExecContTasks - nbrSuccessfulTasks - nbrFailedTasks);
 
+		// S(ET) = Number of successful executed tasks
+		int successfulExecTasks = (int) (s1 * nbrExecTasks);
+		this.setSuccessfulExecTasks(successfulExecTasks);
+		
+		// S(ECT) Number of successful executed cont. tasks
+		int successfulExecContTasks = (int) (s2 * nbrExecContTasks);
+		this.setSuccessfulExecContTasks(successfulExecContTasks);
+				
+		// F(ET) Number of failed executed tasks
+		int failedExecTasks = (int) ((1 - s1) * nbrExecTasks);
+		this.setFailedExecTasks(failedExecTasks);
+		
+		// F(ECT) Number of failed executed cont. tasks
+		int failedExecContTasks = (int) ((1 - s2) * nbrExecContTasks);
+		this.setFailedExecContTasks(failedExecContTasks);
+		
 		// t si
 		// tc no
 		// t_e = t si
@@ -91,20 +119,6 @@ public class ResultsAnalyzer {
 
 		// s1 == (-s + tc_e s2)/(tc_e - s - f))
 		// s2 == s/(s + f)
-
-		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
-		float s2 = (-nbrSuccessfulTasks + nbrExecContTasks * s1)
-				/ (nbrExecContTasks - nbrSuccessfulTasks - nbrFailedTasks);
-
-		int successfulExecTasks = (int) (s1 * nbrExecTasks);
-		int successfulExecContTasks = (int) (s2 * nbrExecContTasks);
-		int failedExecTasks = (int) ((1 - s1) * nbrExecTasks);
-		int failedExecContTasks = (int) ((1 - s2) * nbrExecContTasks);
-
-		this.setSuccessfulExecTasks(successfulExecTasks);
-		this.setSuccessfulExecContTasks(successfulExecContTasks);
-		this.setFailedExecTasks(failedExecTasks);
-		this.setFailedExecContTasks(failedExecContTasks);
 
 		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
 		this.setNumberOfActors(numberOfActors);
@@ -202,11 +216,11 @@ public class ResultsAnalyzer {
 
 		analysis += "  C = Number of cycles: " + this.getNumberOfCycles() + "\n";
 
-		analysis += "  ECT = Total number of executed contingency tasks: "
-				+ this.getNbrExecContTasks() + "\n";
-
 		analysis += "  ET = Total number of executed tasks *: "
 				+ this.getNumberOfTasks() + "\n";
+		
+		analysis += "  ECT = Total number of executed contingency tasks: "
+				+ this.getNbrExecContTasks() + "\n";
 		
 		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
 				+ this.getNbrExecTasks() + "\n";
@@ -228,7 +242,6 @@ public class ResultsAnalyzer {
 		
 		analysis += "  FT = F(ET) + F(ECT) = Number of failed tasks: " + this.getNbrFailedTasks()
 				+ "\n";
-
 
 		analysis += "  A = Number of actors: " + this.getNumberOfActors() + "\n";
 
