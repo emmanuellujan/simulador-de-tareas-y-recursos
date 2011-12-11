@@ -24,6 +24,7 @@ public class Actor extends Resource {
 	private SchedulingAlgorithm saReadyList;
 
 	private int time;
+	private int busyTime;
 	private int limitTime;
 	private int maxTasksNumber;
 
@@ -55,6 +56,7 @@ public class Actor extends Resource {
 		this.setReadyList(readylist);
 		this.setSaReadyList(saReadyList);
 
+		this.setBusyTime(0);
 		this.setTime(0);
 		if (limitTime < 3)
 			limitTime = -1;
@@ -230,6 +232,8 @@ public class Actor extends Resource {
 				currTask = this.getCurrTask();
 			}
 		}
+		if(!currAction.equals("None"))
+			this.incBusyTime();
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
 		this.setIntList(intList);
@@ -297,6 +301,10 @@ public class Actor extends Resource {
 		this.setCurrTask(currTask);
 	}
 
+	public int getBusyTime() {
+		return busyTime;
+	}
+
 	public int getCapacity() {
 		return capacity;
 	}
@@ -343,6 +351,10 @@ public class Actor extends Resource {
 
 	public int getTime() {
 		return time;
+	}
+
+	public void incBusyTime() {
+		this.busyTime++;
 	}
 
 	public void incTime() {
@@ -413,6 +425,7 @@ public class Actor extends Resource {
 	}
 
 	public void reset() {
+		this.setBusyTime(0);
 		this.setTime(0);
 		this.setCurrAction("Nothing");
 	}
@@ -433,6 +446,10 @@ public class Actor extends Resource {
 			i++;
 		}
 		return found;
+	}
+
+	public void setBusyTime(int busyTime) {
+		this.busyTime = busyTime;
 	}
 
 	public void setCapacity(int capacity) {
