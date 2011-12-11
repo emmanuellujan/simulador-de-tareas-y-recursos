@@ -2,6 +2,7 @@ package logicLayer.resultsAnalyzer;
 
 import java.util.Vector;
 
+import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.SchedulingSystem;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 import persistenceLayer.ioSystem.FileManager;
@@ -75,7 +76,7 @@ public class ResultsAnalyzer {
 				.getFailedFinishedTasks().size();
 		this.setNbrFailedTasks(nbrFailedTasks);
 
-		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
+/*		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
 		float s2 = (-nbrSuccessfulTasks + nbrExecContTasks * s1)
 				/ (nbrExecContTasks - nbrSuccessfulTasks - nbrFailedTasks);
 
@@ -98,31 +99,20 @@ public class ResultsAnalyzer {
 		// t si
 		// tc no
 		// t_e = t si
-		// tc_e si'
+		// tc_e si
+		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
+		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
 		// s(t_e) = s1 * t_e
 		// s(tc_e) = s2 * tc_e
 		// f(t_e) = (1-s1) * t_e
 		// f(tc_e) = (1-s2) * tc_e
-		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
-		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
-		// sf = s + f =s(t_e + tc_e) + f(t_e + tc_e) si
-		// t_e + t_ne(=0) + tc_e + tc_ne = todas las tareas no
 
 		// s = s1 t_e + s2 tc_e
 		// f = (1-s1) t_e + (1-s2) tc_e
-
-		// c3 = X1 c1+X2 c2,
-		// c4 = (1-X1) c1+(1-X2) c2 for X2, X1
-
-		// X1 == (-c3 + c2 X2)/(c2 - c3 - c4))
-		// X2 == c3/(c3 + c4)
-
-		// s1 == (-s + tc_e s2)/(tc_e - s - f))
-		// s2 == s/(s + f)
-
+*/
 		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
 		this.setNumberOfActors(numberOfActors);
-
+		
 		int numberOfResources = this.getSchedulingSystem().getResourcesList()
 				.size();
 		this.setNumberOfResources(numberOfResources);
@@ -216,7 +206,7 @@ public class ResultsAnalyzer {
 
 		analysis += "  C = Number of cycles: " + this.getNumberOfCycles() + "\n";
 
-		analysis += "  ET = Total number of executed tasks *: "
+		analysis += "  ET = Total number of executed tasks: "
 				+ this.getNumberOfTasks() + "\n";
 		
 		analysis += "  ECT = Total number of executed contingency tasks: "
@@ -225,26 +215,36 @@ public class ResultsAnalyzer {
 		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
 				+ this.getNbrExecTasks() + "\n";
 
+		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks: "
+				+ this.getNbrSuccessfulTasks() + "\n";
+		
+		analysis += "  FT = F(ET) + F(ECT) = Number of failed tasks: " + this.getNbrFailedTasks()
+				+ "\n";
+		
+		/*
 		analysis += "  S(ET) = Number of successful executed tasks: "
 				+ this.getSuccessfulExecTasks() + "\n";
 
 		analysis += "  S(ECT) Number of successful executed cont. tasks: "
 				+ this.getSuccessfulExecContTasks() + "\n";
-
-		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks *: "
-				+ this.getNbrSuccessfulTasks() + "\n";
 		
 		analysis += "  F(ET) Number of failed executed tasks: "
 				+ this.getFailedExecTasks() + "\n";
 
 		analysis += "  F(ECT) Number of failed executed cont. tasks: "
-				+ this.getFailedExecContTasks() + "\n";
-		
-		analysis += "  FT = F(ET) + F(ECT) = Number of failed tasks: " + this.getNbrFailedTasks()
-				+ "\n";
+				+ this.getFailedExecContTasks() + "\n"; 
+		 
+		*/
 
 		analysis += "  A = Number of actors: " + this.getNumberOfActors() + "\n";
-
+		
+		Vector<Actor> actors = this.getSchedulingSystem().getActorsList();
+		int n = actors.size();
+		for(int i=0;i<n;i++){
+			analysis += "    Actor: "+actors.get(i).getResId()+", busy time: "
+					+ actors.get(i).getBusyTime() + "\n";
+		}
+		
 		analysis += "  R = Number of other resources (artifacts): "
 				+ this.getNumberOfResources() + "\n";
 
@@ -253,15 +253,13 @@ public class ResultsAnalyzer {
 
 		analysis += "  Proportions: \n";
 
-		analysis += "    Successful tasks *: " + this.getPropFinishedTasks()
+		analysis += "    Successful tasks: " + this.getPropFinishedTasks()
 				+ "\n";
 
-		analysis += "    Failed tasks *: " + this.getPropFailedTasks() + "\n";
+		analysis += "    Failed tasks: " + this.getPropFailedTasks() + "\n";
 
 		analysis += "    Velocity (deadline/nbrOfCycles): "
 				+ this.getPropVelocity() + "\n";
-
-		analysis += "\n  *: with contigency tasks\n";
 
 		String aux = this.getSchedulingSystem().getLogger().renderErrors();
 
