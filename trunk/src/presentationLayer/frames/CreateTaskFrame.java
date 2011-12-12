@@ -682,7 +682,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		filterFrame.setFilterFrameStateII(false);
 		this.setVisible(false);
 		filterFrame.setLocationRelativeTo(null);
-		filterFrame.main(null);
+		//filterFrame.main(null);
 		filterFrame.setVisible(true);
 	}// GEN-LAST:event_jButton3ActionPerformed
 
@@ -709,7 +709,8 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		currentUpdater.setVisible(true);
 		this.setUpdater(new Updater());
 		currentUpdater.setUpdater(this.getUpdater());
-		currentUpdater.main(null);
+		//currentUpdater.main(null);
+                
 	}// GEN-LAST:event_jButton5ActionPerformed
 
 	private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBox2ActionPerformed
