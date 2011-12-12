@@ -133,79 +133,69 @@ public class Actor extends Resource {
 
 		String currResId = this.getResId();
 
-		if (currTask == null) { // Si no hay una tarea activo
-			if (time == limitTime) { // Si el temporizador ha terminado:
-				this.resetTime(); // Se reinicia el temporizador.
+		/* Si no hay una tarea activo */
+		if (currTask == null) {  
+			/* Si el temporizador ha terminado: */
+			if (time == limitTime) { 
+				/* Se reinicia el temporizador. */
+				this.resetTime(); 
 				currAction = "Time is up";
-			} else if (intList.size() > 0) {// Sino, si la lista de
-											// interrupciones no está vacía:
-				auxTask = saIntList.schedule(intList); // Se ejecuta el
-														// algoritmo de
-														// planeamiento de
-														// interrupciones para
-														// elegir una tarea.
-				intList.remove(auxTask); // Se elimina dicha tarea de la lista
-											// de interrupciones.
-				currTask = auxTask; // Se ejecuta dicha tarea (pasa a estado
-									// activo).
+			/* Sino, si la lista de interrupciones no está vacía: */
+			} else if (intList.size() > 0) {	
+				/* Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea. */
+				auxTask = saIntList.schedule(intList);
+				/* Se elimina dicha tarea de la lista de interrupciones. */ 
+				intList.remove(auxTask);
+				/* La tarea pasa a estado activo. */
+				currTask = auxTask;
 				String taskId = currTask.getTaskId();
 				currAction = "Select an interruption from the interruption list and put that interruption as active. The selected interruption is "
 						+ taskId;
-			} else if (readyList.size() > 0) { // Sino, si la lista de listos no
-												// está vacía:
-				auxTask = saReadyList.schedule(readyList); // Se ejecuta el
-															// algoritmo de
-															// planeamiento para
-															// elegir una tarea
-															// de la lista de
-															// listos.
-				readyList.remove(auxTask); // Se elimina dicho tarea de la
-											// lista de listos.
-				currTask = auxTask; // Se ejecuta dich tarea (pasa a estado
-									// activo).
+			/* Sino, si la lista de listos no está vacía: */
+			} else if (readyList.size() > 0) {
+				/* Se ejecuta el algoritmo de planeamiento para elegir una tarea de la lista de listos. */
+				auxTask = saReadyList.schedule(readyList);
+				/* Se elimina dicha tarea de la lista de listos.  */
+				readyList.remove(auxTask);
+				/* La tarea pasa a estado activo. */
+				currTask = auxTask;
 				String taskId = currTask.getTaskId();
 				currAction = "Select a task from the ready list and put that task as active. The selected task is "
 						+ taskId;
+			/* Sino: */
 			} else {
-				// Sino:
-				currAction = "None"; // No hacer nada
+				/* No hacer nada */
+				currAction = "None"; 
 			}
-		} else { // Sino hay una tarea activa
-			if (time == limitTime) { // Si el temporizador ha terminado:
+		/* Sino hay una tarea activa */
+		} else {
+			/* Si el temporizador ha terminado: */
+			if (time == limitTime) { 
 				currAction = "Time is up";
-				String workUnit = currTask.getNext(this); // Se obtiene la
-															// unidad
-															// de trabajo
-															// (que informa cuál
-															// es el próximo
-															// dispositivo en el
-															// que se ejecutará
-															// la tarea)
-				if (!workUnit.contains("int")) { // Si la tarea en ejecución
-													// no es una interrupción:
-					this.addReadyList(currTask, currResId);// Se la anexa a la
-															// lista de listos
-															// (pasa a estado
-															// listo).
+				/* Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) */
+				String workUnit = currTask.getNext(this);
+				/* Si la tarea que se está realizando no es una interrupción:  */
+				if (!workUnit.contains("int")) {
+					/* Se la anexa a la lista de listos (pasa a estado listo). */
+					this.addReadyList(currTask, currResId);
+					
 					String taskId = currTask.getTaskId();
 					currAction += ", the active task " + taskId
 							+ " pass to the ready list";
 					currTask = null; // Se desaloja la tarea en ejecución.
 				}
-				this.resetTime(); // Se reinicia el temporizador.
-			} else if (intList.size() > 0) {// Sino, si la lista de
-											// interrupciones no está vacía:
-				auxTask = saIntList.schedule(intList); // Se ejecuta el
-														// algoritmo de
-														// planeamiento de
-														// interrupciones para
-														// elegir una tarea.
-				if (!currTask.getNext(this).contains("int")
-						|| auxTask.getPriority() > currTask.getPriority()) {
-					intList.remove(auxTask); // Se elimina dicha tarea de la
-												// lista de interrupciones.
-					// Se agrega la tarea actual a la lista de listos o a la
-					// lista de interrupciones dependiendo de lo que sea
+				/* Se reinicia el temporizador. */
+				this.resetTime();
+			/* Sino, si la lista de interrupciones no está vacía:  */
+			} else if (intList.size() > 0) {
+				/* Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea.  */
+				auxTask = saIntList.schedule(intList);
+				
+				/* Si la tarea no es una interrupción o bien sí lo es y además tiene mayor prioridad que la tarea actual */
+				if (!currTask.getNext(this).contains("int") || auxTask.getPriority() > currTask.getPriority()) {
+					/* Se elimina dicha tarea de la lista de interrupciones.  */
+					intList.remove(auxTask);
+					/* Se agrega la tarea actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea. */
 					if (currTask.getCurrent().contains("int")) {
 						this.addIntList(currTask, currResId);
 						currAction = "Old active task is put in the interruption list.";
@@ -213,8 +203,8 @@ public class Actor extends Resource {
 						this.addReadyList(currTask, currResId);
 						currAction = "Old active task is put in the ready list.";
 					}
-					currTask = auxTask; // Se ejecuta dicha tarea (pasa a
-										// estado activo).
+					/* La tarea pasa a estado activo. */
+					currTask = auxTask;
 					String taskId = currTask.getTaskId();
 					currAction = "Select an interruption from the interruption list and put that interruption as active."
 							+ " The selected interruption is "
@@ -245,56 +235,53 @@ public class Actor extends Resource {
 		String resId = this.getResId();
 		Task currTask = this.getCurrTask();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		String workUnit = currTask.getNext(this); // Se obtiene la unidad
-													// de trabajo (que
-													// informa cuál es el
-													// próximo dispositivo en el
-													// que se ejecutará la
-													// tarea)
+		/* Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) */
+		String workUnit = currTask.getNext(this); 
+		
+		/* Si el actor actual es el actor de reparto de tareas, o la tarea falla, o no se cumplen las condiciones de la misma: */
 		if (!resId.equals("dealerActor")
 				&& (workUnit.equals("fail") || !currTask.evalConditions())) {
+			/* Terminar tarea (pasa a estado finalizado). */
 			schedulingSystem.finishFailedTask(currTask);
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " fails";
 			currTask = null;
+		/* Sino, si la tarea en ejecución ha llegado a su fin: */
 		} else if (workUnit.equals("end")) {
-			/* Sino, si la tarea en ejecución ha llegado a su fin: */
-			// Terminar tarea (pasa a estado finalizado).
+			/* Terminar tarea (pasa a estado finalizado). */
 			schedulingSystem.finishTask(currTask);
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " ends";
 			currTask = null;
-		} else if (workUnit.contains(resId)) { // Sino, si la tarea en
-												// ejecución debe continuar
-												// ejecutándose en este
-												// dispositivo:
-			currTask.exec(); // Ejecutar tarea.
+		/* Sino, si la tarea en ejecución debe continuar siendo realizada por el actor actual: */
+		} else if (workUnit.contains(resId)) {
+			/* Ejecutar tarea. */
+			currTask.exec(); 
 			currAction = "Procesing active task " + currTask.getTaskId();
-		} else if (workUnit.contains("int")) { // Si es una interrupción:
+		/* Si es una interrupción: */
+		} else if (workUnit.contains("int")) {
+			/* Se decrementa el contador de programa */
 			currTask.decProgramCounter();
 			workUnit = workUnit.replace("int_", "");
-			this.addIntList(currTask, workUnit);// Se lo anexa a la lista de
-												// interrupciones del
-												// dispositivo indicado (la
-												// tarea pasa a ser una
-												// interrupción y pasa a estado
-												// de espera).
+			/* Se la anexa a la lista de interrupciones del actor indicado (la tarea pasa a ser una interrupción y pasa a estado de espera). */ 
+			this.addIntList(currTask, workUnit);
+			/* Se desaloja la tarea en ejecución. */
 			String taskId = currTask.getTaskId();
 			currAction = "The task " + taskId
 					+ " pass to the interruption list of the resource "
 					+ workUnit;
-			currTask = null; // Se desaloja la tarea en ejecución.
-		} else { // Sino, si la tarea en ejecución debe continuar ejecutándose
-					// en otro dispositivo:
+			currTask = null;
+		/* Sino, si la tarea en ejecución debe continuar realizándose por otro actor: */
+		} else { 
+			/* Se decrementa el  contador de programa */
 			currTask.decProgramCounter();
-			this.addReadyList(currTask, workUnit); // Se lo anexa a la lista de
-													// listos del recurso
-													// indicado (pasa a estado
-													// de espera).
+			/* Se la anexa a la lista de listos del recurso indicado (pasa a estado de espera). */
+			this.addReadyList(currTask, workUnit);
 			String taskId = currTask.getTaskId();
 			currAction = "The task " + taskId
 					+ " pass to the ready list of the resource " + workUnit;
-			currTask = null; // Se desaloja la tarea en ejecución.
+			/* Se desaloja la tarea en ejecución. */
+			currTask = null; 
 		}
 
 		this.setCurrAction(currAction);
