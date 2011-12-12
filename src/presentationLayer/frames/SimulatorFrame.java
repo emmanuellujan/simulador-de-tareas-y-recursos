@@ -1528,7 +1528,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton10ActionPerformed
 		File archivo = new File(
-				"src//presentationLayer//media//Manual de usuario - lrSimulator.pdf");
+				"media//Manual de usuario - lrSimulator.pdf");
 		if (archivo.exists()) {
 			java.awt.Desktop d = java.awt.Desktop.getDesktop();
 			try {
