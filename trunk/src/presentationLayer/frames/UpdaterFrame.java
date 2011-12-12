@@ -350,6 +350,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 		} else {
 			ErrorFrame.getInstance().setLabel(
 					"Some values are empty. Cannot create Updater.");
+                        ErrorFrame.getInstance().setUpdaterBackFrame(this);
 			ErrorFrame.getInstance().setBackFrame("UpdaterFrame");
 			this.setVisible(false);
 			ErrorFrame.getInstance().setLocationRelativeTo(null);
