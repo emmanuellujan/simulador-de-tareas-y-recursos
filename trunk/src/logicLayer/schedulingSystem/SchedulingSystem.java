@@ -230,7 +230,7 @@ public class SchedulingSystem {
 		int n = actors.size();
 		while (i < n && actors.elementAt(i).isInactive())
 			i++;
-		if (actors.size() == i)
+		if (n == i)
 			return true;
 		else
 			return false;
