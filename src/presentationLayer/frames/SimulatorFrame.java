@@ -1674,7 +1674,9 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-		this.actorCreatePanel.setActorsList(this.getActorsList());
+                this.actorCreatePanel.setMainResourcesList(this.getMainResourcesList());
+                this.actorCreatePanel.setResourcesList(this.getResourcesList());           
+                this.actorCreatePanel.setActorsList(this.getActorsList());
 		this.actorCreatePanel.setSchedulingSystem(this.getSchedulingSystem());
 		this.actorCreatePanel.setLocationRelativeTo(null);
 		this.actorCreatePanel.setVisible(true);
