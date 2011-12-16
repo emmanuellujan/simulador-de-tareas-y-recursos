@@ -139,7 +139,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "List Property Filter" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "List Property Filter", "Actor Relationship Filter" }));
 
         jLabel2.setText("Include related update");
 
