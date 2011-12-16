@@ -1,19 +1,13 @@
-window_sizes 1280 776 386 888 582 120
+window_sizes 1280 776 386 888 638 64
 diagrams
-  classdiagram_ref 154883 // results analizer
-    801 561 100 4 0 0
-  active  classdiagram_ref 161411 // loggin system
-    888 582 100 4 0 0
+  activitydiagram_ref 167939 // Actor Scheduling Algorithm
+    831 533 103 4 216 0
+  active  activitydiagram_ref 168067 // Sub algoritmo del actor
+    888 638 100 4 0 0
 end
 show_stereotypes
-selected class_ref 132611 // XMLLogginSystem
+selected activityaction_ref 135427 // activity action Obtener cuál es próximo actor
 open
-  classview_ref 128003 // src
-  
-  package_ref 128131 // logicLayer
-  
-  package_ref 129027 // dataModel
-  classview_ref 129027 // logginSystem
-  classview_ref 129539 // class view
+  activity_ref 134531 // Actor Schedling Algorithm
 end
 end

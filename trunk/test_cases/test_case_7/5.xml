@@ -127,6 +127,7 @@
                         <id>FCFS</id>
                       </saReadyList>
                       <time>57</time>
+                      <busyTime>50</busyTime>
                       <limitTime>-1</limitTime>
                       <maxTasksNumber>10</maxTasksNumber>
                     </logicLayer.schedulingSystem.Actor>
@@ -155,6 +156,7 @@
             <id>Priorities</id>
           </saReadyList>
           <time>2</time>
+          <busyTime>49</busyTime>
           <limitTime>5</limitTime>
           <maxTasksNumber>10</maxTasksNumber>
         </logicLayer.schedulingSystem.Actor>
@@ -252,6 +254,28 @@
           <schedulingSystem reference="../../../.."/>
         </logicLayer.schedulingSystem.Task>
       </tasksList>
+      <resultsAnalyzer class="logicLayer.resultsAnalyzer.BasicAnalyzer">
+        <schedulingSystem reference="../../.."/>
+        <analysis></analysis>
+        <numberOfErrors>0</numberOfErrors>
+        <deadline>0</deadline>
+        <numberOfCycles>0</numberOfCycles>
+        <nbrExecTasks>0</nbrExecTasks>
+        <nbrExecContTasks>0</nbrExecContTasks>
+        <numberOfTasks>0</numberOfTasks>
+        <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+        <nbrFailedTasks>0</nbrFailedTasks>
+        <successfulExecTasks>0</successfulExecTasks>
+        <successfulExecContTasks>0</successfulExecContTasks>
+        <failedExecTasks>0</failedExecTasks>
+        <failedExecContTasks>0</failedExecContTasks>
+        <numberOfActors>0</numberOfActors>
+        <numberOfResources>0</numberOfResources>
+        <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
+        <propFinishedTasks>0.0</propFinishedTasks>
+        <propFailedTasks>0.0</propFailedTasks>
+        <propVelocity>0.0</propVelocity>
+      </resultsAnalyzer>
     </ioSystem>
     <logger>
       <configurator reference="../../configurator"/>
@@ -2252,8 +2276,28 @@
         </persistenceLayer.logginSystem.TXTLogginSystem>
       </logginSystems>
     </logger>
-    <resultsAnalyzer>
+    <resultsAnalyzer class="logicLayer.resultsAnalyzer.BasicAnalyzer">
       <schedulingSystem reference="../.."/>
+      <analysis>Results Analisys 
+
+  E = Number of errors: 0
+  D = Deadline (in cycles): 80
+  C = Number of cycles: 57
+  ET = Total number of executed tasks: 3
+  ECT = Total number of executed contingency tasks: 0
+  TE = ET + ECT  = Total number of executed tasks: 3
+  ST = S(ET) + S(ECT) = Number of successful tasks: 3
+  FT = F(ET) + F(ECT) = Number of failed tasks: 0
+  A = Number of actors: 2
+    Actor: actor0, busy time: 49
+    Actor: actor1, busy time: 50
+  R = Number of other resources (artifacts): 2
+  TPA = Mean number of tasks per actor: 1.5
+  Proportions: 
+    Successful tasks: 1.0
+    Failed tasks: 0.0
+    Velocity (deadline/nbrOfCycles): 1.4035088
+</analysis>
       <numberOfErrors>0</numberOfErrors>
       <deadline>80</deadline>
       <numberOfCycles>57</numberOfCycles>
@@ -2262,7 +2306,7 @@
       <numberOfTasks>3</numberOfTasks>
       <nbrSuccessfulTasks>3</nbrSuccessfulTasks>
       <nbrFailedTasks>0</nbrFailedTasks>
-      <successfulExecTasks>3</successfulExecTasks>
+      <successfulExecTasks>0</successfulExecTasks>
       <successfulExecContTasks>0</successfulExecContTasks>
       <failedExecTasks>0</failedExecTasks>
       <failedExecContTasks>0</failedExecContTasks>
@@ -2272,30 +2316,6 @@
       <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
       <propVelocity>1.4035088</propVelocity>
-      <analysis>Results Analisys 
-
-  Number of errors: 0
-  Deadline (in cycles): 80
-  Number of cycles: 57
-  Total number of executed tasks: 3
-  Total number of executed contingency tasks: 0
-  Total number of executed tasks *: 3
-  Number of successful tasks *: 3
-  Number of failed tasks: 0
-  Number of successful executed tasks: 3
-  Number of successful executed cont. tasks: 0
-  Number of failed executed tasks: 0
-  Number of failed executed cont. tasks: 0
-  Number of actors: 2
-  Number of other resources (artifacts): 2
-  Mean number of tasks per actor: 1.5
-  Proportions: 
-    Successful tasks *: 1.0
-    Failed tasks *: 0.0
-    Velocity (deadline/nbrOfCycles): 1.4035088
-
-  *: with contigency tasks
-</analysis>
     </resultsAnalyzer>
     <dealerActor>
       <resId>dealerActor</resId>
@@ -2318,6 +2338,7 @@
         <id>FCFS</id>
       </saReadyList>
       <time>57</time>
+      <busyTime>6</busyTime>
       <limitTime>-1</limitTime>
       <maxTasksNumber>100</maxTasksNumber>
     </dealerActor>

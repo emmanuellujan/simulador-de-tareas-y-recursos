@@ -1,23 +1,19 @@
 Results Analisys 
 
-  Number of errors: 0
-  Deadline (in cycles): 80
-  Number of cycles: 57
-  Total number of executed tasks: 3
-  Total number of executed contingency tasks: 0
-  Total number of executed tasks *: 3
-  Number of successful tasks *: 3
-  Number of failed tasks: 0
-  Number of successful executed tasks: 3
-  Number of successful executed cont. tasks: 0
-  Number of failed executed tasks: 0
-  Number of failed executed cont. tasks: 0
-  Number of actors: 2
-  Number of other resources (artifacts): 2
-  Mean number of tasks per actor: 1.5
+  E = Number of errors: 0
+  D = Deadline (in cycles): 80
+  C = Number of cycles: 57
+  ET = Total number of executed tasks: 3
+  ECT = Total number of executed contingency tasks: 0
+  TE = ET + ECT  = Total number of executed tasks: 3
+  ST = S(ET) + S(ECT) = Number of successful tasks: 3
+  FT = F(ET) + F(ECT) = Number of failed tasks: 0
+  A = Number of actors: 2
+    Actor: actor0, busy time: 49
+    Actor: actor1, busy time: 50
+  R = Number of other resources (artifacts): 2
+  TPA = Mean number of tasks per actor: 1.5
   Proportions: 
-    Successful tasks *: 1.0
-    Failed tasks *: 0.0
+    Successful tasks: 1.0
+    Failed tasks: 0.0
     Velocity (deadline/nbrOfCycles): 1.4035088
-
-  *: with contigency tasks

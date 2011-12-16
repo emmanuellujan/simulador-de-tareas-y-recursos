@@ -1,7 +1,7 @@
 format 76
 "bouml"
-  revision 8
-  modified_by 2 "F.Rossi"
+  revision 9
+  modified_by 3 "elujan"
   java_root_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/"
 
 
@@ -123,6 +123,355 @@ format 76
     classdiagram 161411 "loggin system"
       draw_all_relations no hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
       size A4
+    end
+
+    activity 134531 "Actor Schedling Algorithm"
+      activitydiagram 167939 "Actor Scheduling Algorithm"
+	package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations no shadow default
+	show_infonote default drawing_language default show_stereotype_properties default
+	size A4
+      end
+
+      activityaction 134531 "Función de comienzo"
+	opaque_action
+	flow 134531 "[No hay una tarea activa]"
+	  on activityaction_ref 134659 // activity action 
+	end
+
+	flow 134659 "[Hay una tarea activa]"
+	  on activityaction_ref 134787 // activity action 
+	end
+
+	flow 135043 "[Sino]"
+	  on activitynode_ref 134531 // decision
+	end
+      end
+
+      activityaction 134659 ""
+	opaque_action
+	flow 134787 "[El temporizador ha terminado]"
+	  on activityaction_ref 134915 // activity action Reiniciar temporizador
+	end
+
+	flow 134915 "<flow>"
+	  on activityaction_ref 135043 // activity action Planificar tarea de la lista de interrupciones y pasarla a estado activo.
+	end
+      end
+
+      activityaction 134787 ""
+	opaque_action
+      end
+
+      activityaction 134915 "Reiniciar temporizador"
+	opaque_action
+	flow 138371 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activityaction 135043 "Planificar tarea de la lista de interrupciones y pasarla a estado activo."
+	opaque_action
+	comment "Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea. 
+Se elimina dicha tarea de la lista de interrupciones. 
+La tarea pasa a estado activo."
+	flow 137987 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activitynode 134531 decision ""
+	flow 135171 "[El temporizador ha terminado]"
+	  on activityaction_ref 134915 // activity action Reiniciar temporizador
+	end
+
+	flow 135299 "[Sino]"
+	  on activitynode_ref 134659 // decision
+	end
+      end
+
+      activitynode 134659 decision ""
+	flow 135427 "[La lista de interrupciones no está vacía]"
+	  on activityaction_ref 135043 // activity action Planificar tarea de la lista de interrupciones y pasarla a estado activo.
+	end
+
+	flow 135555 "[Sino]"
+	  on activitynode_ref 134787 // decision
+	end
+      end
+
+      activitynode 134787 decision ""
+	flow 135683 "[La lista de listos no está vacía]"
+	  on activityaction_ref 135171 // activity action Planificar tarea de lista de listos y pasarla a estado activo.
+	end
+
+	flow 136067 "[Sino]"
+	  on activityaction_ref 135299 // activity action No hacer nada en este ciclo
+	end
+      end
+
+      activityaction 135171 "Planificar tarea de lista de listos y pasarla a estado activo."
+	opaque_action
+	comment "Se ejecuta el algoritmo de planeamiento para elegir una tarea de la lista de listos. 
+Se elimina dicha tarea de la lista de listos. 
+La tarea pasa a estado activo. "
+	flow 138115 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activitynode 134915 decision ""
+	flow 135811 "[No hay tarea activa]"
+	  on activitynode_ref 134531 // decision
+	end
+
+	flow 135939 "[Sino]"
+	  on activityaction_ref 134787 // activity action 
+	end
+
+	flow 136195 "[Sino]"
+	  on activitynode_ref 135043 // decision
+	end
+      end
+
+      activityaction 135299 "No hacer nada en este ciclo"
+	opaque_action
+	flow 138243 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activitynode 135043 decision ""
+	flow 136323 "[El temporizador ha terminado]"
+	  on activityaction_ref 135427 // activity action Obtener cuál es próximo actor
+	end
+
+	flow 137347 "[La lista de interrupciones no está vacía]"
+	  on activityaction_ref 135811 // activity action Se planifica la lista de interrupciones para elegir una tarea
+	end
+
+	flow 137859 "[Sino]"
+	  on activityaction_ref 136067 // activity action Sub-algoritmo de trabajo
+	end
+
+	flow 138883 "[Sino]"
+	  on activitynode_ref 135683 // decision
+	end
+      end
+
+      activityaction 135427 "Obtener cuál es próximo actor"
+	opaque_action
+	comment "Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) "
+	flow 136579 "<flow>"
+	  on activitynode_ref 135171 // decision
+	end
+      end
+
+      activityaction 135555 "Anexar tarea a lista de listos"
+	opaque_action
+	comment "Se la anexa a la lista de listos (pasa a estado listo). "
+	flow 136707 "<flow>"
+	  on activityaction_ref 135683 // activity action 
+	end
+
+	flow 136963 "<flow>"
+	  on activityaction_ref 134915 // activity action Reiniciar temporizador
+	end
+      end
+
+      activitynode 135171 decision ""
+	flow 136451 "[La tarea que se está realizando no es una interrupción]"
+	  on activityaction_ref 135555 // activity action Anexar tarea a lista de listos
+	end
+
+	flow 136835 "[Sino]"
+	  on activityaction_ref 135683 // activity action 
+	end
+
+	flow 137091 "[Sino]"
+	  on activityaction_ref 134915 // activity action Reiniciar temporizador
+	end
+      end
+
+      activityaction 135683 ""
+	opaque_action
+      end
+
+      activitynode 135299 initial_node ""
+	flow 137219 "<flow>"
+	  on activitynode_ref 134915 // decision
+	end
+      end
+
+      activityaction 135811 "Se planifica la lista de interrupciones para elegir una tarea"
+	opaque_action
+	comment "Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea. "
+	flow 137603 "<flow>"
+	  on activitynode_ref 135427 // decision
+	end
+      end
+
+      activityaction 135939 "La tarea pasa a su lista correspodiente, y a estado activo."
+	opaque_action
+	comment "Se elimina dicha tarea de la lista de interrupciones. 
+Se agrega la tarea actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea .
+La tarea pasa a estado activo. "
+	flow 138499 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activitynode 135427 decision ""
+	flow 137475 "[La tarea no es una int., o lo es y tiene > prioridad que la tarea actual]"
+	  on activityaction_ref 135939 // activity action La tarea pasa a su lista correspodiente, y a estado activo.
+	  comment "Si la tarea no es una interrupción o bien sí lo es y además tiene mayor prioridad que la tarea actual "
+	end
+
+	flow 137731 "[Sino]"
+	  on activityaction_ref 136067 // activity action Sub-algoritmo de trabajo
+	end
+      end
+
+      activityaction 136067 "Sub-algoritmo de trabajo"
+	opaque_action
+	flow 138627 "<flow>"
+	  on activityaction_ref 136195 // activity action Incrementar ciclo
+	end
+      end
+
+      activityaction 136195 "Incrementar ciclo"
+	opaque_action
+	flow 138755 "<flow>"
+	  on activitynode_ref 135555 // activity_final
+	end
+      end
+
+      activitynode 135555 activity_final ""
+      end
+
+      activitynode 135683 decision ""
+	flow 139011 "[La lista de interrupciones no está vacía]"
+	  on activityaction_ref 135811 // activity action Se planifica la lista de interrupciones para elegir una tarea
+	end
+
+	flow 139139 "[Sino]"
+	  on activityaction_ref 136067 // activity action Sub-algoritmo de trabajo
+	end
+      end
+
+      activitydiagram 168067 "Sub algoritmo del actor"
+	package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+	show_infonote default drawing_language default show_stereotype_properties default
+	size A4
+      end
+
+      activitynode 135811 decision ""
+	flow 139267 "[El actor actual es el de reparto, o la tarea falla, o no se cumplen las condiciones]"
+	  on activityaction_ref 136323 // activity action Terminar tarea fallida
+	end
+
+	flow 139395 "[Sino]"
+	  on activitynode_ref 135939 // decision
+	end
+      end
+
+      activityaction 136323 "Terminar tarea fallida"
+	opaque_action
+	flow 140931 "<flow>"
+	  on activitynode_ref 136707 // activity_final
+	end
+      end
+
+      activityaction 136451 "Terminar tarea exitosa"
+	opaque_action
+	flow 140803 "<flow>"
+	  on activitynode_ref 136707 // activity_final
+	end
+      end
+
+      activitynode 135939 decision ""
+	flow 139523 "[La tarea activa ha llegado a su fin]"
+	  on activityaction_ref 136451 // activity action Terminar tarea exitosa
+	end
+
+	flow 139651 "[Sino]"
+	  on activitynode_ref 136067 // decision
+	end
+      end
+
+      activitynode 136067 decision ""
+	flow 139779 "[La tarea debe continuar siendo realizada por el actor actual]"
+	  on activityaction_ref 136579 // activity action Realizar tarea
+	end
+
+	flow 139907 "[Sino]"
+	  on activitynode_ref 136195 // decision
+	end
+      end
+
+      activityaction 136579 "Realizar tarea"
+	opaque_action
+	flow 140675 "<flow>"
+	  on activitynode_ref 136707 // activity_final
+	end
+      end
+
+      activityaction 136707 "Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecución."
+	opaque_action
+	comment "Se decrementa el contador de programa
+Se la anexa a la lista de interrupciones del actor indicado (la tarea pasa a ser una interrupción y pasa a estado de espera). 
+Se desaloja la tarea en ejecución. "
+	flow 140547 "<flow>"
+	  on activitynode_ref 136707 // activity_final
+	end
+      end
+
+      activitynode 136195 decision ""
+	flow 140035 "[Es una interrupción]"
+	  on activityaction_ref 136707 // activity action Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecución.
+	end
+
+	flow 140163 "[Sino, si la tarea en ejecución debe continuar realizándose por otro actor]"
+	  on activityaction_ref 136835 // activity action Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecución.
+	end
+
+	flow 140291 "<flow>"
+	  on activitynode_ref 136323 // decision
+	end
+      end
+
+      activityaction 136835 "Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecución."
+	opaque_action
+	flow 140419 "<flow>"
+	  on activitynode_ref 136707 // activity_final
+	end
+      end
+
+      activitynode 136323 decision ""
+      end
+
+      activitynode 136451 initial_node ""
+      end
+
+      activitynode 136579 initial_node ""
+      end
+
+      activitynode 136707 activity_final ""
+      end
+
+      activitynode 136835 initial_node ""
+	flow 141059 "<flow>"
+	  on activitynode_ref 135811 // decision
+	end
+      end
+    end
+
+    activity 134659 "Función de comienzo"
+    end
+
+    activity 134787 "Algoritmo de trabajo del actor"
+    end
+
+    activity 134915 "Sub algoritmo de trabajo"
     end
   end
 

@@ -66,6 +66,7 @@
               <id>Priorities</id>
             </saReadyList>
             <time>11</time>
+            <busyTime>8</busyTime>
             <limitTime>-1</limitTime>
             <maxTasksNumber>10</maxTasksNumber>
           </logicLayer.schedulingSystem.Actor>
@@ -77,6 +78,28 @@
         <tasksList>
           <logicLayer.schedulingSystem.Task reference="../../../../.."/>
         </tasksList>
+        <resultsAnalyzer class="logicLayer.resultsAnalyzer.BasicAnalyzer">
+          <schedulingSystem reference="../../.."/>
+          <analysis></analysis>
+          <numberOfErrors>0</numberOfErrors>
+          <deadline>0</deadline>
+          <numberOfCycles>0</numberOfCycles>
+          <nbrExecTasks>0</nbrExecTasks>
+          <nbrExecContTasks>0</nbrExecContTasks>
+          <numberOfTasks>0</numberOfTasks>
+          <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
+          <nbrFailedTasks>0</nbrFailedTasks>
+          <successfulExecTasks>0</successfulExecTasks>
+          <successfulExecContTasks>0</successfulExecContTasks>
+          <failedExecTasks>0</failedExecTasks>
+          <failedExecContTasks>0</failedExecContTasks>
+          <numberOfActors>0</numberOfActors>
+          <numberOfResources>0</numberOfResources>
+          <meanNbrTasksPerActor>0.0</meanNbrTasksPerActor>
+          <propFinishedTasks>0.0</propFinishedTasks>
+          <propFailedTasks>0.0</propFailedTasks>
+          <propVelocity>0.0</propVelocity>
+        </resultsAnalyzer>
       </ioSystem>
       <logger>
         <configurator reference="../../configurator"/>
@@ -364,8 +387,27 @@
           </persistenceLayer.logginSystem.TXTLogginSystem>
         </logginSystems>
       </logger>
-      <resultsAnalyzer>
+      <resultsAnalyzer class="logicLayer.resultsAnalyzer.BasicAnalyzer">
         <schedulingSystem reference="../.."/>
+        <analysis>Results Analisys 
+
+  E = Number of errors: 0
+  D = Deadline (in cycles): 80
+  C = Number of cycles: 11
+  ET = Total number of executed tasks: 2
+  ECT = Total number of executed contingency tasks: 1
+  TE = ET + ECT  = Total number of executed tasks: 1
+  ST = S(ET) + S(ECT) = Number of successful tasks: 1
+  FT = F(ET) + F(ECT) = Number of failed tasks: 1
+  A = Number of actors: 1
+    Actor: actor0, busy time: 8
+  R = Number of other resources (artifacts): 0
+  TPA = Mean number of tasks per actor: 2.0
+  Proportions: 
+    Successful tasks: 0.5
+    Failed tasks: 0.5
+    Velocity (deadline/nbrOfCycles): 7.2727275
+</analysis>
         <numberOfErrors>0</numberOfErrors>
         <deadline>80</deadline>
         <numberOfCycles>11</numberOfCycles>
@@ -375,8 +417,8 @@
         <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
         <nbrFailedTasks>1</nbrFailedTasks>
         <successfulExecTasks>0</successfulExecTasks>
-        <successfulExecContTasks>1</successfulExecContTasks>
-        <failedExecTasks>1</failedExecTasks>
+        <successfulExecContTasks>0</successfulExecContTasks>
+        <failedExecTasks>0</failedExecTasks>
         <failedExecContTasks>0</failedExecContTasks>
         <numberOfActors>1</numberOfActors>
         <numberOfResources>0</numberOfResources>
@@ -384,30 +426,6 @@
         <propFinishedTasks>0.5</propFinishedTasks>
         <propFailedTasks>0.5</propFailedTasks>
         <propVelocity>7.2727275</propVelocity>
-        <analysis>Results Analisys 
-
-  Number of errors: 0
-  Deadline (in cycles): 80
-  Number of cycles: 11
-  Total number of executed tasks: 1
-  Total number of executed contingency tasks: 1
-  Total number of executed tasks *: 2
-  Number of successful tasks *: 1
-  Number of failed tasks: 1
-  Number of successful executed tasks: 0
-  Number of successful executed cont. tasks: 1
-  Number of failed executed tasks: 1
-  Number of failed executed cont. tasks: 0
-  Number of actors: 1
-  Number of other resources (artifacts): 0
-  Mean number of tasks per actor: 2.0
-  Proportions: 
-    Successful tasks *: 0.5
-    Failed tasks *: 0.5
-    Velocity (deadline/nbrOfCycles): 7.2727275
-
-  *: with contigency tasks
-</analysis>
       </resultsAnalyzer>
       <dealerActor>
         <resId>dealerActor</resId>
@@ -430,6 +448,7 @@
           <id>FCFS</id>
         </saReadyList>
         <time>11</time>
+        <busyTime>2</busyTime>
         <limitTime>-1</limitTime>
         <maxTasksNumber>100</maxTasksNumber>
       </dealerActor>

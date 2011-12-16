@@ -1,7 +1,7 @@
-format 75
+format 76
 "SchedulingSystem" // src::Controller::SchedulingSystem
-  revision 10
-  modified_by 2 "elujan"
+  revision 11
+  modified_by 3 "elujan"
   // class settings
   //class diagram settings
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -10,7 +10,7 @@ format 75
   //sequence diagram settings
   show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
   //collaboration diagram settings
-  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
   //object diagram settings
    write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
   //component diagram settings
@@ -34,7 +34,7 @@ format 75
     //sequence diagram settings
     show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
     //collaboration diagram settings
-    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
     //class diagram settings
     draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
     //object diagram settings
@@ -51,7 +51,7 @@ format 75
       //sequence diagram settings
       show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
       //collaboration diagram settings
-      show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+      show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
       //class diagram settings
       draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
       //object diagram settings
@@ -64,27 +64,27 @@ format 75
       show_infonote default drawing_language default show_stereotype_properties default
     end
 
-    activity 128002 "Device Algorithm Activity"
+    activity 128002 "Actividad del Algoritmo del Actor"
       activitydiagram 174850 "Device Algorithm Activity Diagram"
 	package_name_in_tab yes show_context uml show_opaque_action_definition yes auto_label_position yes write_flow_label_horizontally yes draw_all_relations no shadow yes
 	show_infonote yes drawing_language uml show_stereotype_properties yes
 	size A4
       end
 
-      activityaction 128002 "Begining function"
+      activityaction 128002 "Función de comienzo"
 	opaque_action
 	flow 128130 "<flow>"
-	  on activityaction_ref 128130 // activity action Increment time
+	  on activityaction_ref 128130 // activity action Incrementar tiempo
 	end
       end
 
       activitynode 128002 initial_node ""
 	flow 128002 "<flow>"
-	  on activityaction_ref 128002 // activity action Begining function
+	  on activityaction_ref 128002 // activity action Función de comienzo
 	end
       end
 
-      activityaction 128130 "Increment time"
+      activityaction 128130 "Incrementar tiempo"
 	opaque_action
 	flow 128258 ""
 	  on activitynode_ref 128130 // decision
@@ -93,61 +93,61 @@ format 75
 
       activitynode 128130 decision "Is time out?"
 	comment "Is time out?"
-	flow 128386 "[Time's out]"
+	flow 128386 "[Se acabó el tiempo]"
 	  on activitynode_ref 128258 // decision
 	end
 
-	flow 128514 "[Time isn't out]"
-	  on activityaction_ref 128258 // activity action Wake up interruptions and processes
+	flow 128514 "[No se acabó el tiempo]"
+	  on activityaction_ref 128258 // activity action Despertar interrupciones y tareas
 	end
       end
 
       activitynode 128258 decision ""
-	flow 128642 "[There's an active interruption]"
-	  on activityaction_ref 128386 // activity action Reset timer
+	flow 128642 "[Existe una interrupción activa]"
+	  on activityaction_ref 128386 // activity action Reiniciar temporizador
 	end
 
-	flow 128770 "[There isn't an active interruption]"
+	flow 128770 "[No existen un interrupción activa]"
 	  on activitynode_ref 128386 // decision
 	end
       end
 
-      activityaction 128258 "Wake up interruptions and processes"
+      activityaction 128258 "Despertar interrupciones y tareas"
 	opaque_action
 	flow 129410 "<flow>"
 	  on activitynode_ref 128770 // decision
 	end
       end
 
-      activityaction 128386 "Reset timer"
+      activityaction 128386 "Reiniciar temporizador"
 	opaque_action
 	flow 129154 "<flow>"
 	  on activitynode_ref 128514 // activity_final
 	end
 
 	flow 132354 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
-      activityaction 128514 "Unalloc process (pass to ready list)"
+      activityaction 128514 "Pasar tarea a la lista de listos"
 	opaque_action
 	flow 129282 "<flow>"
 	  on activitynode_ref 128514 // activity_final
 	end
 
 	flow 132482 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
       activitynode 128386 decision ""
-	flow 128898 "[There isn't an active process]"
-	  on activityaction_ref 128386 // activity action Reset timer
+	flow 128898 "[No existe un proceso activo]"
+	  on activityaction_ref 128386 // activity action Reiniciar temporizador
 	end
 
-	flow 129026 "[There is an active process]"
-	  on activityaction_ref 128514 // activity action Unalloc process (pass to ready list)
+	flow 129026 "[Existe un proceso activo]"
+	  on activityaction_ref 128514 // activity action Pasar tarea a la lista de listos
 	end
       end
 
@@ -158,19 +158,19 @@ format 75
       end
 
       activitynode 128770 decision ""
-	flow 129538 "[At least one interruption waked up]"
-	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	flow 129538 "[[Existe al menos una interrupción despierta]"
+	  on activityaction_ref 128642 // activity action Seleccionar una interrupción de la lista de interrupciones
 	end
 
-	flow 129666 "[There isn't an interruption waked up]"
+	flow 129666 "[No existen una interrupción despierta]"
 	  on activitynode_ref 128898 // decision
 	end
       end
 
-      activityaction 128642 "Select interruption from interruption list"
+      activityaction 128642 "Seleccionar una interrupción de la lista de interrupciones"
 	opaque_action
 	flow 129794 "<flow>"
-	  on activityaction_ref 128770 // activity action Context switch
+	  on activityaction_ref 128770 // activity action Intercambio de tareas
 	end
       end
 
@@ -179,23 +179,23 @@ format 75
 	  on activityaction_ref 128898 // activity action Execute active interruption
 	end
 
-	flow 130178 "[There isn't an active interruption]"
+	flow 130178 "[No existe una interrupción activa]"
 	  on activitynode_ref 129026 // decision
 	end
 
-	flow 139650 "[There's an active interruption]"
-	  on activityaction_ref 135810 // activity action Execute active interruption or process
+	flow 139650 "[Existe una interrupción activa]"
+	  on activityaction_ref 135810 // activity action Ejecutar proceso o interrupción activa
 	end
       end
 
-      activityaction 128770 "Context switch"
+      activityaction 128770 "Intercambio de tareas"
 	opaque_action
 	flow 129922 "<flow>"
 	  on activitynode_ref 128514 // activity_final
 	end
 
 	flow 132610 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
@@ -210,20 +210,20 @@ format 75
 	end
 
 	flow 132994 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
       activitynode 129026 decision ""
 	flow 130434 "<flow>"
-	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	  on activityaction_ref 128642 // activity action Seleccionar una interrupción de la lista de interrupciones
 	end
 
-	flow 130562 "[Interruption list isn't empty]"
-	  on activityaction_ref 128642 // activity action Select interruption from interruption list
+	flow 130562 "[La lista de interrupciones está vacía]"
+	  on activityaction_ref 128642 // activity action Seleccionar una interrupción de la lista de interrupciones
 	end
 
-	flow 130690 "[Interruption list is empty]"
+	flow 130690 "[La lista de interrupciones está vacía]"
 	  on activitynode_ref 129282 // decision
 	end
       end
@@ -232,19 +232,19 @@ format 75
       end
 
       activitynode 129282 decision ""
-	flow 130818 "[At least one process waked up]"
-	  on activityaction_ref 129026 // activity action Select process from ready list
+	flow 130818 "[Al menos una tarea está despierta]"
+	  on activityaction_ref 129026 // activity action Seleccionar una tarea de la lista de listos
 	end
 
-	flow 130946 "[There isn't a process waked up]"
+	flow 130946 "[No hay una tarea despierta]"
 	  on activitynode_ref 129410 // decision
 	end
       end
 
-      activityaction 129026 "Select process from ready list"
+      activityaction 129026 "Seleccionar una tarea de la lista de listos"
 	opaque_action
 	flow 131074 "<flow>"
-	  on activityaction_ref 128770 // activity action Context switch
+	  on activityaction_ref 128770 // activity action Intercambio de tareas
 	end
       end
 
@@ -253,18 +253,18 @@ format 75
 	  on activityaction_ref 129154 // activity action Execute active process
 	end
 
-	flow 131330 "[There isn't an active process]"
+	flow 131330 "[No hay un proceso activo]"
 	  on activitynode_ref 129538 // decision
 	end
 
-	flow 139906 "[There is an active process]"
-	  on activityaction_ref 135938 // activity action Execute active interruption or process
+	flow 139906 "[Existe un proceso activo]"
+	  on activityaction_ref 135938 // activity action Ejecutar proceso o interrupción activa
 	end
       end
 
       activitynode 129538 decision ""
-	flow 131586 "[Ready list isn't empty]"
-	  on activityaction_ref 129026 // activity action Select process from ready list
+	flow 131586 "[La lista de listos no está vacía]"
+	  on activityaction_ref 129026 // activity action Seleccionar una tarea de la lista de listos
 	end
 
 	flow 131714 "<flow>"
@@ -279,8 +279,8 @@ format 75
 	  on activitynode_ref 128514 // activity_final
 	end
 
-	flow 132738 "[Ready list is empty]"
-	  on activityaction_ref 129282 // activity action Finishing function
+	flow 132738 "[La lista de listos está vacía]"
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
@@ -295,14 +295,14 @@ format 75
 	end
 
 	flow 132866 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
       activitynode 129666 activity_final ""
       end
 
-      activityaction 129282 "Finishing function"
+      activityaction 129282 "Función de finalización"
 	opaque_action
 	flow 133122 "<flow>"
 	  on activitynode_ref 129794 // activity_final
@@ -312,20 +312,26 @@ format 75
       activitynode 129794 activity_final ""
       end
 
-      activityaction 135810 "Execute active interruption or process"
+      activityaction 135810 "Ejecutar proceso o interrupción activa"
 	call_behavior_action
 	activity_ref 128386 // Execute active interruption or process
 	flow 139778 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
       end
 
-      activityaction 135938 "Execute active interruption or process"
+      activityaction 135938 "Ejecutar proceso o interrupción activa"
 	call_behavior_action
 	activity_ref 128386 // Execute active interruption or process
 	flow 140034 "<flow>"
-	  on activityaction_ref 129282 // activity action Finishing function
+	  on activityaction_ref 129282 // activity action Función de finalización
 	end
+      end
+
+      activitydiagram 141059 "Actor Algorthm Activity Diagram"
+	package_name_in_tab yes show_context uml show_opaque_action_definition yes auto_label_position yes write_flow_label_horizontally yes draw_all_relations no shadow yes
+	show_infonote yes drawing_language uml show_stereotype_properties yes
+	size A4
       end
     end
 
@@ -431,7 +437,7 @@ format 75
     //class diagram settings
     draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
     //collaboration diagram settings
-    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
     //object diagram settings
      write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
     //sequence diagram settings

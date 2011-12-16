@@ -1,5 +1,6 @@
 import junit.framework.Assert;
 import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.resultsAnalyzer.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,8 +42,8 @@ public class SchedulingSystemTest {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		String dir = this.getDir();
 		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
-		schedulingSystem.start(dir + bar + dir2, dir);
-		double result = schedulingSystem.getResultsAnalyzer().getPropVelocity();
+		schedulingSystem.start(dir + bar + dir2, dir); 
+		double result = ((BasicAnalyzer)schedulingSystem.getResultsAnalyzer()).getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
 	}
 

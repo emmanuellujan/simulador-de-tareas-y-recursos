@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Vector;
 
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
@@ -30,6 +32,7 @@ public class SerialIOSystem extends IOSystem {
 		Vector<Actor> actors = new Vector<Actor>();
 		Vector<Resource> resources = new Vector<Resource>();
 		Vector<Task> tasks = new Vector<Task>();
+		ResultsAnalyzer resultsAnalyzer = null;
 
 		XStream xs = new XStream(new DomDriver());
 
@@ -91,6 +94,8 @@ public class SerialIOSystem extends IOSystem {
 
 			allResources.addAll(actors);
 			allResources.addAll(resources);
+			
+			resultsAnalyzer = new BasicAnalyzer(schedulingSystem);
 
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
@@ -101,7 +106,7 @@ public class SerialIOSystem extends IOSystem {
 		this.setAllResourcesList(allResources);
 		this.setTasksList(tasks);
 		this.updateRelations();
-
+		this.setResultsAnalyzer(resultsAnalyzer);
 	}
 
 	public void saveAll() {
