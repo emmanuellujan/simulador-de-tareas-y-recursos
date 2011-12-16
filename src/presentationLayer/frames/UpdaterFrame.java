@@ -35,7 +35,11 @@ public class UpdaterFrame extends javax.swing.JFrame {
 		});
 	}
 
-	private CreateTaskFrame filterBackFrame;
+	private CreateTaskFrame filterTaskBackFrame;
+        
+        private CreateActorFrame filterActorBackFrame;
+        
+        private String backFrame;
 
 	private Hashtable<Filter, Update> updates;
 
@@ -65,8 +69,16 @@ public class UpdaterFrame extends javax.swing.JFrame {
             initComponents();
 	}
 
-	public CreateTaskFrame getBackFrame() {
-		return this.filterBackFrame;
+	public CreateTaskFrame getTaskBackFrame() {
+		return this.filterTaskBackFrame;
+	}
+        
+        public CreateActorFrame getActorBackFrame() {
+		return this.filterActorBackFrame;
+	}
+        
+        public String getBackFrameText() {
+		return this.backFrame;
 	}
 
 	public Filter getFilter() {
@@ -216,8 +228,13 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
 		this.setVisible(false);
-		((CreateTaskFrame) this.getBackFrame()).setLocationRelativeTo(null);
-		((CreateTaskFrame) this.getBackFrame()).setVisible(true);
+                if(this.getBackFrameText().equals("CreateActorFrame")){
+                    ((CreateActorFrame) this.getActorBackFrame()).setLocationRelativeTo(null);
+                    ((CreateActorFrame) this.getActorBackFrame()).setVisible(true);
+                }else{
+                    ((CreateTaskFrame) this.getTaskBackFrame()).setLocationRelativeTo(null);
+                    ((CreateTaskFrame) this.getTaskBackFrame()).setVisible(true);
+                }
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
@@ -231,10 +248,18 @@ public class UpdaterFrame extends javax.swing.JFrame {
 				currentUpdater.getUpdates().put(this.getFilter(),
 						this.getUpdate());
 			this.setUpdater(currentUpdater);
-			((CreateTaskFrame) this.getBackFrame()).setUpdater(currentUpdater);
-			this.setVisible(false);
-			((CreateTaskFrame) this.getBackFrame()).setLocationRelativeTo(null);
-			((CreateTaskFrame) this.getBackFrame()).setVisible(true);
+                        if(this.getBackFrameText().equals("CreateActorFrame")){
+                            ((CreateActorFrame) this.getActorBackFrame()).setUpdater(currentUpdater);
+                            this.setVisible(false);
+                            ((CreateActorFrame) this.getActorBackFrame()).setLocationRelativeTo(null);
+                            ((CreateActorFrame) this.getActorBackFrame()).setVisible(true);
+                        }else{
+                            ((CreateTaskFrame) this.getTaskBackFrame()).setUpdater(currentUpdater);
+                            this.setVisible(false);
+                            ((CreateTaskFrame) this.getTaskBackFrame()).setLocationRelativeTo(null);
+                            ((CreateTaskFrame) this.getTaskBackFrame()).setVisible(true);
+                        }
+			
 		} else {
 			ErrorFrame.getInstance().setLabel(
 					"Some values are empty. Cannot create Updater.");
@@ -271,7 +296,13 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton4ActionPerformed
 
 	public void setBackFrame(Object backFrame) {
-		this.filterBackFrame = (CreateTaskFrame) backFrame;
+            if(this.getBackFrameText().equals("CreateActorFrame")){
+                this.filterActorBackFrame = (CreateActorFrame) backFrame;
+                this.filterTaskBackFrame = null;
+            }else{
+		this.filterTaskBackFrame = (CreateTaskFrame) backFrame;
+                this.filterActorBackFrame = null;
+            }
 	}
 
 	public void setFilter(Filter filter) {
@@ -296,5 +327,9 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
 	public void setUpdates(Hashtable<Filter, Update> updates) {
 		this.updates = updates;
+	}
+        
+        public void setBackFrameText(String frame) {
+		this.backFrame = frame;
 	}
 }
