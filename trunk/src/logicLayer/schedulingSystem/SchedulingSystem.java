@@ -32,7 +32,6 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem logger = new CompLogginSystem(configurator);
 		ResultsAnalyzer resultsAnalyzer = null;
@@ -46,7 +45,7 @@ public class SchedulingSystem {
 		FCFS saReadyList = new FCFS();
 		int limitTime = -1;
 		Actor dealerActor = new Actor(dealerActorId, "actor", saReadyList,
-				limitTime, this, 100, 100, null, 100, null);
+				limitTime, this, 100, 100, null, 100, null, null);
 
 		this.setConfigurator(configurator);
 		this.setIoSystem(ioSystem);
@@ -205,9 +204,6 @@ public class SchedulingSystem {
 	}
 
 	public void saveData() {
-		//SerialIOSystem serialIOSystem = new
-		//SerialIOSystem(this.getConfigurator(), this);
-		//serialIOSystem.saveAll();
 		this.getIoSystem().saveAll();
 		this.getLogger().writeLog();
 		this.getResultsAnalyzer().writeAnalysis();
@@ -313,10 +309,22 @@ public class SchedulingSystem {
 		this.getResultsAnalyzer().analyze();
 		System.out.println(" done.");
 		System.out.print("Saving data...");
-		//this.saveData(outputDir);
+		this.saveData(outputDir);
 		System.out.println(" done.\n");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
 	}
+	
+	public void start2() {
+		/* When a change is made in the application
+		 * test cases likely will not work. Execute the application
+		 * with start2 instead start and likely they will work.
+		 * */
+		IOSystem ioSystem = new XMLIOSystem(this.getConfigurator(), this);
+		this.setIoSystem(ioSystem);
+		start();
+		SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
+		serialIOSystem.saveAll();
+	}	
 
 }

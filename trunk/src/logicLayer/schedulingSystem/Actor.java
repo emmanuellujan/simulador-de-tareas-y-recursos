@@ -28,10 +28,12 @@ public class Actor extends Resource {
 	private int limitTime;
 	private int maxTasksNumber;
 
+	private Updater updater;
+
 	public Actor(String resId, String type, SchedulingAlgorithm saReadyList,
 			int limitTime, SchedulingSystem schedulingSystem, int capacity,
 			int maxTaskNumber, Hashtable<String, String> properties,
-			int maxRelations, Vector<String> relationsIds) {
+			int maxRelations, Vector<String> relationsIds, Updater updater) {
 
 		super(resId, type, properties, maxRelations, relationsIds,
 				schedulingSystem);
@@ -61,6 +63,7 @@ public class Actor extends Resource {
 		if (limitTime < 3)
 			limitTime = -1;
 		this.setLimitTime(limitTime);
+		this.setUpdater(updater);
 	}
 
 	public void addIntList(Task currTask, String workUnit) {
@@ -134,51 +137,60 @@ public class Actor extends Resource {
 		String currResId = this.getResId();
 
 		/* Si no hay una tarea activo */
-		if (currTask == null) {  
+		if (currTask == null) {
 			/* Si el temporizador ha terminado: */
-			if (time == limitTime) { 
+			if (time == limitTime) {
 				/* Se reinicia el temporizador. */
-				this.resetTime(); 
+				this.resetTime();
 				currAction = "Time is up";
-			/* Sino, si la lista de interrupciones no está vacía: */
-			} else if (intList.size() > 0) {	
-				/* Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea. */
+				/* Sino, si la lista de interrupciones no está vacía: */
+			} else if (intList.size() > 0) {
+				/*
+				 * Se ejecuta el algoritmo de planeamiento de interrupciones
+				 * para elegir una tarea.
+				 */
 				auxTask = saIntList.schedule(intList);
-				/* Se elimina dicha tarea de la lista de interrupciones. */ 
+				/* Se elimina dicha tarea de la lista de interrupciones. */
 				intList.remove(auxTask);
 				/* La tarea pasa a estado activo. */
 				currTask = auxTask;
 				String taskId = currTask.getTaskId();
 				currAction = "Select an interruption from the interruption list and put that interruption as active. The selected interruption is "
 						+ taskId;
-			/* Sino, si la lista de listos no está vacía: */
+				/* Sino, si la lista de listos no está vacía: */
 			} else if (readyList.size() > 0) {
-				/* Se ejecuta el algoritmo de planeamiento para elegir una tarea de la lista de listos. */
+				/*
+				 * Se ejecuta el algoritmo de planeamiento para elegir una tarea
+				 * de la lista de listos.
+				 */
 				auxTask = saReadyList.schedule(readyList);
-				/* Se elimina dicha tarea de la lista de listos.  */
+				/* Se elimina dicha tarea de la lista de listos. */
 				readyList.remove(auxTask);
 				/* La tarea pasa a estado activo. */
 				currTask = auxTask;
 				String taskId = currTask.getTaskId();
 				currAction = "Select a task from the ready list and put that task as active. The selected task is "
 						+ taskId;
-			/* Sino: */
+				/* Sino: */
 			} else {
 				/* No hacer nada */
-				currAction = "None"; 
+				currAction = "None";
 			}
-		/* Sino hay una tarea activa */
+			/* Sino hay una tarea activa */
 		} else {
 			/* Si el temporizador ha terminado: */
-			if (time == limitTime) { 
+			if (time == limitTime) {
 				currAction = "Time is up";
-				/* Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) */
+				/*
+				 * Se obtiene la unidad de trabajo (que informa cuál es el
+				 * próximo actor que realizará la tarea)
+				 */
 				String workUnit = currTask.getNext(this);
-				/* Si la tarea que se está realizando no es una interrupción:  */
+				/* Si la tarea que se está realizando no es una interrupción: */
 				if (!workUnit.contains("int")) {
 					/* Se la anexa a la lista de listos (pasa a estado listo). */
 					this.addReadyList(currTask, currResId);
-					
+
 					String taskId = currTask.getTaskId();
 					currAction += ", the active task " + taskId
 							+ " pass to the ready list";
@@ -186,16 +198,26 @@ public class Actor extends Resource {
 				}
 				/* Se reinicia el temporizador. */
 				this.resetTime();
-			/* Sino, si la lista de interrupciones no está vacía:  */
+				/* Sino, si la lista de interrupciones no está vacía: */
 			} else if (intList.size() > 0) {
-				/* Se ejecuta el algoritmo de planeamiento de interrupciones para elegir una tarea.  */
+				/*
+				 * Se ejecuta el algoritmo de planeamiento de interrupciones
+				 * para elegir una tarea.
+				 */
 				auxTask = saIntList.schedule(intList);
-				
-				/* Si la tarea no es una interrupción o bien sí lo es y además tiene mayor prioridad que la tarea actual */
-				if (!currTask.getNext(this).contains("int") || auxTask.getPriority() > currTask.getPriority()) {
-					/* Se elimina dicha tarea de la lista de interrupciones.  */
+
+				/*
+				 * Si la tarea no es una interrupción o bien sí lo es y además
+				 * tiene mayor prioridad que la tarea actual
+				 */
+				if (!currTask.getNext(this).contains("int")
+						|| auxTask.getPriority() > currTask.getPriority()) {
+					/* Se elimina dicha tarea de la lista de interrupciones. */
 					intList.remove(auxTask);
-					/* Se agrega la tarea actual a la lista de listos o a la lista de interrupciones dependiendo de lo que sea. */
+					/*
+					 * Se agrega la tarea actual a la lista de listos o a la
+					 * lista de interrupciones dependiendo de lo que sea.
+					 */
 					if (currTask.getCurrent().contains("int")) {
 						this.addIntList(currTask, currResId);
 						currAction = "Old active task is put in the interruption list.";
@@ -222,7 +244,7 @@ public class Actor extends Resource {
 				currTask = this.getCurrTask();
 			}
 		}
-		if(!currAction.equals("None"))
+		if (!currAction.equals("None"))
 			this.incBusyTime();
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
@@ -235,10 +257,16 @@ public class Actor extends Resource {
 		String resId = this.getResId();
 		Task currTask = this.getCurrTask();
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
-		/* Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) */
-		String workUnit = currTask.getNext(this); 
-		
-		/* Si el actor actual es el actor de reparto de tareas, o la tarea falla, o no se cumplen las condiciones de la misma: */
+		/*
+		 * Se obtiene la unidad de trabajo (que informa cuál es el próximo actor
+		 * que realizará la tarea)
+		 */
+		String workUnit = currTask.getNext(this);
+
+		/*
+		 * Si el actor actual es el actor de reparto de tareas, o la tarea
+		 * falla, o no se cumplen las condiciones de la misma:
+		 */
 		if (!resId.equals("dealerActor")
 				&& (workUnit.equals("fail") || !currTask.evalConditions())) {
 			/* Terminar tarea (pasa a estado finalizado). */
@@ -246,24 +274,34 @@ public class Actor extends Resource {
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " fails";
 			currTask = null;
-		/* Sino, si la tarea en ejecución ha llegado a su fin: */
+			/* El actor actualiza el grafo si es necesario */
+			this.update();
+			/* Sino, si la tarea en ejecución ha llegado a su fin: */
 		} else if (workUnit.equals("end")) {
 			/* Terminar tarea (pasa a estado finalizado). */
 			schedulingSystem.finishTask(currTask);
 			String taskId = currTask.getTaskId();
 			currAction = "The active task " + taskId + " ends";
 			currTask = null;
-		/* Sino, si la tarea en ejecución debe continuar siendo realizada por el actor actual: */
+			/* El actor actualiza el grafo si es necesario */
+			this.update();
+			/*
+			 * Sino, si la tarea en ejecución debe continuar siendo realizada
+			 * por el actor actual:
+			 */
 		} else if (workUnit.contains(resId)) {
 			/* Ejecutar tarea. */
-			currTask.exec(); 
+			currTask.exec();
 			currAction = "Procesing active task " + currTask.getTaskId();
-		/* Si es una interrupción: */
+			/* Si es una interrupción: */
 		} else if (workUnit.contains("int")) {
 			/* Se decrementa el contador de programa */
 			currTask.decProgramCounter();
 			workUnit = workUnit.replace("int_", "");
-			/* Se la anexa a la lista de interrupciones del actor indicado (la tarea pasa a ser una interrupción y pasa a estado de espera). */ 
+			/*
+			 * Se la anexa a la lista de interrupciones del actor indicado (la
+			 * tarea pasa a ser una interrupción y pasa a estado de espera).
+			 */
 			this.addIntList(currTask, workUnit);
 			/* Se desaloja la tarea en ejecución. */
 			String taskId = currTask.getTaskId();
@@ -271,17 +309,23 @@ public class Actor extends Resource {
 					+ " pass to the interruption list of the resource "
 					+ workUnit;
 			currTask = null;
-		/* Sino, si la tarea en ejecución debe continuar realizándose por otro actor: */
-		} else { 
-			/* Se decrementa el  contador de programa */
+			/*
+			 * Sino, si la tarea en ejecución debe continuar realizándose por
+			 * otro actor:
+			 */
+		} else {
+			/* Se decrementa el contador de programa */
 			currTask.decProgramCounter();
-			/* Se la anexa a la lista de listos del recurso indicado (pasa a estado de espera). */
+			/*
+			 * Se la anexa a la lista de listos del recurso indicado (pasa a
+			 * estado de espera).
+			 */
 			this.addReadyList(currTask, workUnit);
 			String taskId = currTask.getTaskId();
 			currAction = "The task " + taskId
 					+ " pass to the ready list of the resource " + workUnit;
 			/* Se desaloja la tarea en ejecución. */
-			currTask = null; 
+			currTask = null;
 		}
 
 		this.setCurrAction(currAction);
@@ -291,7 +335,7 @@ public class Actor extends Resource {
 	public int getBusyTime() {
 		return busyTime;
 	}
-
+	
 	public int getCapacity() {
 		return capacity;
 	}
@@ -338,6 +382,10 @@ public class Actor extends Resource {
 
 	public int getTime() {
 		return time;
+	}
+
+	public Updater getUpdater() {
+		return updater;
 	}
 
 	public void incBusyTime() {
@@ -521,6 +569,10 @@ public class Actor extends Resource {
 		this.time = time;
 	}
 
+	public void setUpdater(Updater updater) {
+		this.updater = updater;
+	}
+
 	private void syncLists() {
 		Vector<Task> syncIntList = this.getSyncIntList();
 		Vector<Task> intList = this.getIntList();
@@ -536,6 +588,17 @@ public class Actor extends Resource {
 		this.setIntList(intList);
 		this.setSyncReadyList(syncReadyList);
 		this.setReadyList(readyList);
+	}
+
+	public void update(){
+		Updater updater = this.getUpdater();
+		if(updater!=null){
+			Vector<Resource> resources = this.getSchedulingSystem()
+					.getIoSystem().getAllResourcesList();
+			int n = resources.size();
+			for(int i=0;i<n;i++)
+				updater.update(resources.elementAt(i));
+		}
 	}
 
 }

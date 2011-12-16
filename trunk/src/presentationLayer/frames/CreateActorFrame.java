@@ -492,7 +492,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
 					Integer.parseInt(this.jTextField1.getText()),
 					Integer.parseInt(this.jTextField2.getText()),
 					propertiesTable, Integer.parseInt(this.jTextField4
-							.getText()), null);
+							.getText()), null, null);
 			this.getActorsList().add(this.newActor);
 			SimulatorFrame.getInstance().setActorsList(this.getActorsList());
 			this.setVisible(false);
