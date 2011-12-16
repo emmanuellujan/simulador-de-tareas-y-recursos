@@ -7,6 +7,7 @@ package presentationLayer.frames;
 
 import java.util.Vector;
 
+import logicLayer.filterSystem.ActorRelationshipFilter;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualFilter;
 import logicLayer.filterSystem.Filter;
@@ -643,7 +644,12 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 							&& (this.getFilterFrameII() != null))
 						filter = new AndFilter(this.getFilterFrameI(),
 								this.getFilterFrameII());
-				} else {
+				} 
+                                if ((this.getFilterType().equals("Actor Relationship Filter"))|| 
+                                        (this.getFilterType().equals("ActorRelationshipFilter"))){
+                                    filter = new ActorRelationshipFilter(this.getElement((String) this.jComboBox1
+										.getSelectedItem()));
+                                }else {
 					if (this.jComboBox1.getSelectedItem() != null)
 						filter = new EqualFilter(
 								this.getElement((String) this.jComboBox1
