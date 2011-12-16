@@ -2,6 +2,7 @@ package logicLayer.schedulingSystem;
 
 import java.util.Vector;
 
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
 import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.FCFS;
 import persistenceLayer.dataModel.Configurator.Configurator;
@@ -31,10 +32,10 @@ public class SchedulingSystem {
 
 	public SchedulingSystem() {
 		Configurator configurator = new Configurator();
-		// IOSystem ioSystem = new XMLIOSystem(configurator, this);
+		//IOSystem ioSystem = new XMLIOSystem(configurator, this);
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem logger = new CompLogginSystem(configurator);
-		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
+		ResultsAnalyzer resultsAnalyzer = null;
 		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
 		Vector<Task> tasks = new Vector<Task>();
@@ -142,6 +143,8 @@ public class SchedulingSystem {
 		Vector<Task> tasks = new Vector<Task>();
 		Vector<Actor> actorsList = new Vector<Actor>();
 		Vector<Resource> resourcesList = new Vector<Resource>();
+		Actor dealerActor = null;
+		ResultsAnalyzer resultsAnalyzer = null;
 
 		ioSystem.loadAll();
 		deadline = ioSystem.getDeadline();
@@ -149,16 +152,17 @@ public class SchedulingSystem {
 		newsList.addAll(tasks);
 		actorsList = ioSystem.getActorsList();
 		resourcesList = ioSystem.getResourcesList();
-
-		Actor dealerActor = this.getDealerActor();
+		dealerActor = this.getDealerActor();
 		dealerActor.setReadyList(newsList);
-
-		this.setDealerActor(dealerActor);
+		resultsAnalyzer = ioSystem.getResultsAnalyzer();
+		
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setTasks(tasks);
 		this.setActorsList(actorsList);
 		this.setResourcesList(resourcesList);
+		this.setDealerActor(dealerActor);
+		this.setResultsAnalyzer(resultsAnalyzer);
 	}
 
 	public void loadData(String inputDir) {
@@ -193,7 +197,7 @@ public class SchedulingSystem {
 		this.getDealerActor().setReadyList(readyList);
 		this.setNewsList(readyList);
 
-		ResultsAnalyzer resultsAnalyzer = new ResultsAnalyzer(this);
+		ResultsAnalyzer resultsAnalyzer = new BasicAnalyzer(this);
 		CompLogginSystem logger = new CompLogginSystem(this.getConfigurator());
 
 		this.setResultsAnalyzer(resultsAnalyzer);

@@ -10,6 +10,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualPropertyFilter;
 import logicLayer.filterSystem.TaskOwnerFilter;
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.SAFactory;
 import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
 import logicLayer.schedulingSystem.Actor;
@@ -181,6 +183,9 @@ public class XMLIOSystem extends IOSystem {
 		this.loadActorsList();
 		this.loadResourcesList();
 		this.updateRelations();
+		ResultsAnalyzer resultsAnalyzer = 
+				new BasicAnalyzer(this.getSchedulingSystem());
+		this.setResultsAnalyzer(resultsAnalyzer);
 	}
 
 	public int loadDeadline() {

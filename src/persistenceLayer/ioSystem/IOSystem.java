@@ -2,6 +2,7 @@ package persistenceLayer.ioSystem;
 
 import java.util.Vector;
 
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
@@ -18,6 +19,7 @@ public abstract class IOSystem {
 	private Vector<Resource> resourcesList;
 	private Vector<Resource> allResourcesList;
 	private Vector<Task> tasksList;
+	private ResultsAnalyzer resultsAnalyzer;
 
 	public IOSystem(Configurator configurator, SchedulingSystem schedulingSystem) {
 
@@ -98,4 +100,12 @@ public abstract class IOSystem {
 	}
 
 	public abstract void updateRelations();
+
+	public ResultsAnalyzer getResultsAnalyzer() {
+		return resultsAnalyzer;
+	}
+
+	public void setResultsAnalyzer(ResultsAnalyzer resultsAnalyzer) {
+		this.resultsAnalyzer = resultsAnalyzer;
+	}
 }
