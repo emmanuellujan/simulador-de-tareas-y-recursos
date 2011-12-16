@@ -704,6 +704,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		UpdaterFrame currentUpdater = new UpdaterFrame();
 		currentUpdater.setResourcesList(this.getResourcesList());
 		currentUpdater.setMainResourcesList(this.getMainResourcesList());
+                currentUpdater.setBackFrameText("CreateActorFrame");
 		currentUpdater.setBackFrame(this);
 		currentUpdater.setLocationRelativeTo(null);
 		currentUpdater.setVisible(true);
