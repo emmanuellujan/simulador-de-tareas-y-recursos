@@ -1,0 +1,262 @@
+format 76
+
+activityactioncanvas 128258 activityaction_ref 128002 // activity action Función de comienzo
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 435 65 2011 101 61
+end
+activitynodecanvas 128386 activitynode_ref 128002 // initial_node
+  xyz 476 29.1 2017
+end
+activityactioncanvas 128642 activityaction_ref 128130 // activity action Incrementar tiempo
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 271.2 65 2017 101 61
+end
+activitynodecanvas 128898 activitynode_ref 128130 // decision
+  xyz 311.1 162.5 2023
+end
+activitynodecanvas 129154 activitynode_ref 128258 // decision
+  xyz 173.5 211.8 2017
+end
+activityactioncanvas 129538 activityaction_ref 128258 // activity action Despertar interrupciones y tareas
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 452.8 211.4 2011 115 73
+end
+activityactioncanvas 129922 activityaction_ref 128386 // activity action Reiniciar temporizador
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 19.8 335 2011 101 61
+end
+activityactioncanvas 130050 activityaction_ref 128514 // activity action Pasar tarea a la lista de listos
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 232.1 436.2 2011 103 71
+end
+activitynodecanvas 130178 activitynode_ref 128386 // decision
+  xyz 272.8 347 2023
+end
+activitynodecanvas 131714 activitynode_ref 128770 // decision
+  xyz 497.3 326.3 2023
+end
+activityactioncanvas 131970 activityaction_ref 128642 // activity action Seleccionar una interrupción de la lista de interrupciones
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 366.5 436.9 2029 101 91
+end
+activitynodecanvas 132098 activitynode_ref 128898 // decision
+  xyz 623 428.7 2017
+end
+activityactioncanvas 133122 activityaction_ref 128770 // activity action Intercambio de tareas
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 365.5 556.7 2011 101 61
+end
+activitynodecanvas 134018 activitynode_ref 129026 // decision
+  xyz 625.4 584.9 2035
+end
+activitynodecanvas 135298 activitynode_ref 129282 // decision
+  xyz 537.3 644.9 2011
+end
+activityactioncanvas 135554 activityaction_ref 129026 // activity action Seleccionar una tarea de la lista de listos
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 363.5 745.4 2017 105 65
+end
+activitynodecanvas 135810 activitynode_ref 129410 // decision
+  xyz 649.2 704.9 2017
+end
+activitynodecanvas 136194 activitynode_ref 129538 // decision
+  xyz 519.2 828.7 2011
+end
+activityactioncanvas 139394 activityaction_ref 129282 // activity action Función de finalización
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 233.6 905 2017 101 61
+end
+activitynodecanvas 140290 activitynode_ref 129794 // activity_final
+  xyz 273.5 989.2 2011
+end
+activitycanvas 142594 activity_ref 128002 // Actividad del Algoritmo del Actor
+  show_infonote default drawing_language default show_stereotype_properties default
+  xyzwh 12.2 18 2006 799 1015
+end
+activityactioncanvas 142722 activityaction_ref 135810 // activity action Ejecutar proceso o interrupción activa
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 676.9 516.2 2011 113 71
+end
+activityactioncanvas 142850 activityaction_ref 135938 // activity action Ejecutar proceso o interrupción activa
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 640.1 823.8 2011 107 73
+end
+flowcanvas 128514 flow_ref 128002 // <flow>
+  
+  from ref 128386 z 2018 to ref 128258
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 128770 flow_ref 128130 // <flow>
+  
+  from ref 128258 z 2018 to ref 128642
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129026 flow_ref 128258 // 
+  decenter_end 360
+  
+  from ref 128642 z 2024 to ref 128898
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129282 flow_ref 128386 // [Se acabó el tiempo]
+  
+  from ref 128898 z 2024 label "[Se acabó el tiempo]" xyz 172 174 2024 to ref 129154
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129666 flow_ref 128514 // [No se acabó el tiempo]
+  decenter_begin 592
+  
+  from ref 128898 z 2024 label "[No se acabó el tiempo]" xyz 376 170 2024 to ref 129538
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130306 flow_ref 128642 // [Existe una interrupción activa]
+  
+  from ref 129154 z 2018 label "[Existe una interrupción activa]" xyz 48 280 2018 to ref 129922
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130434 flow_ref 128770 // [No existen un interrupción activa]
+  
+  from ref 129154 z 2024 label "[No existen un interrupción activa]" xyz 167.5 316 2024 to ref 130178
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130562 flow_ref 128898 // [No existe un proceso activo]
+  
+  from ref 130178 z 2024 label "[No existe un proceso activo]" xyz 121.5 370 2024 to ref 129922
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130690 flow_ref 129026 // [Existe un proceso activo]
+  
+  from ref 130178 z 2024 label "[Existe un proceso activo]" xyz 140.5 408 2024 to ref 130050
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131842 flow_ref 129410 // <flow>
+  
+  from ref 129538 z 2024 to ref 131714
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 132226 flow_ref 129538 // [[Existe al menos una interrupción despierta]
+  
+  from ref 131714 z 2030 label "[[Existe al menos una interrupción despierta]" xyz 323 400.5 2030 to ref 131970
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 132354 flow_ref 129666 // [No existen una interrupción despierta]
+  
+  from ref 131714 z 2024 label "[No existen una interrupción despierta]" xyz 524 368 2024 to ref 132098
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133250 flow_ref 129794 // <flow>
+  
+  from ref 131970 z 2030 to ref 133122
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 134274 flow_ref 130178 // [No existe una interrupción activa]
+  decenter_end 432
+  
+  from ref 132098 z 2036 label "[No existe una interrupción activa]" xyz 479 486 2036 to ref 134018
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 134914 flow_ref 130562 // [La lista de interrupciones está vacía]
+  decenter_begin 377
+  decenter_end 847
+  
+  from ref 134018 z 2036 label "[La lista de interrupciones está vacía]" xyz 445 547 2036 to ref 131970
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135426 flow_ref 130690 // [La lista de interrupciones está vacía]
+  decenter_end 243
+  
+  from ref 134018 z 2036 label "[La lista de interrupciones está vacía]" xyz 491 624 2036 to ref 135298
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135682 flow_ref 130818 // [Al menos una tarea está despierta]
+  decenter_begin 675
+  
+  from ref 135298 z 2018 label "[Al menos una tarea está despierta]" xyz 430 716 2018 to ref 135554
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135938 flow_ref 130946 // [No hay una tarea despierta]
+  decenter_begin 592
+  
+  from ref 135298 z 2018 label "[No hay una tarea despierta]" xyz 527 684 2018 to ref 135810
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136066 flow_ref 131074 // <flow>
+  
+  from ref 135554 z 2018 to ref 133122
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136578 flow_ref 131330 // [No hay un proceso activo]
+  decenter_begin 754
+  
+  from ref 135810 z 2018 label "[No hay un proceso activo]" xyz 522 776 2018 to ref 136194
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136962 flow_ref 131586 // [La lista de listos no está vacía]
+  
+  from ref 136194 z 2018 label "[La lista de listos no está vacía]" xyz 408 816.5 2018 to ref 135554
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 139522 flow_ref 132354 // <flow>
+  decenter_begin 430
+  decenter_end 513
+  
+  from ref 129922 z 2018 to point 61.6 934.7
+  line 140546 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 139650 flow_ref 132482 // <flow>
+  
+  from ref 130050 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 139778 flow_ref 132610 // <flow>
+  
+  from ref 133122 z 2018 to point 281.1 584.7
+  line 140674 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 139906 flow_ref 132738 // [La lista de listos está vacía]
+  
+  from ref 136194 z 2018 label "[La lista de listos está vacía]" xyz 454 890 2018 to point 529.2 932.3
+  line 141058 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 140418 flow_ref 133122 // <flow>
+  
+  from ref 139394 z 2018 to ref 140290
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 142978 flow_ref 139650 // [Existe una interrupción activa]
+  
+  from ref 132098 z 2018 label "[Existe una interrupción activa]" xyz 628.5 464 2018 to ref 142722
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 143106 flow_ref 139778 // <flow>
+  decenter_begin 911
+  
+  from ref 142722 z 2018 to point 775.4 932.3
+  line 143234 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 143362 flow_ref 139906 // [Existe un proceso activo]
+  
+  from ref 135810 z 2018 label "[Existe un proceso activo]" xyz 618 800 2018 to ref 142850
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 143490 flow_ref 140034 // <flow>
+  
+  from ref 142850 z 2018 to point 691.6 932.3
+  line 143618 z 2018 to ref 139394
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+end

@@ -43,3 +43,7 @@ class IOSystem
 		this.schedulingSystem = schedulingSystem;
 !!!165507.java!!!	setTasksList(inout tasksList : Vector<Task>) : void
 		this.tasksList = tasksList;
+!!!214659.java!!!	getResultsAnalyzer() : ResultsAnalyzer
+		return resultsAnalyzer;
+!!!214787.java!!!	setResultsAnalyzer(inout resultsAnalyzer : ResultsAnalyzer) : void
+		this.resultsAnalyzer = resultsAnalyzer;

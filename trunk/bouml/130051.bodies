@@ -75,8 +75,10 @@ class Task
 		} else {
 			next = "fail";
 			Task t = this.getContingencyTask();
-			if (t != null)
+			if (t != null){
+				this.getSchedulingSystem().getLogger().incNbrExecContTasks();
 				actor.addReadyList(t, actor.getResId());
+			}
 		}
 		return next;
 !!!154883.java!!!	getPriority() : int
@@ -119,8 +121,7 @@ class Task
 				&& (currentStatus != "New")) {
 			String errorMsg = "You attempted to insert a wrong task state "
 					+ currentStatus + " in the task " + this.getTaskId();
-			this.getSchedulingSystem().getCompLogginSystem()
-					.addErrorMsg(errorMsg);
+			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		} else
 			this.status = currentStatus;
 !!!157059.java!!!	setTaskId(in taskId : String) : void

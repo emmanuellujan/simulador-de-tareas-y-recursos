@@ -1,0 +1,58 @@
+format 76
+
+usecasecanvas 128003 usecase_ref 134915 // Modificate Elements
+  xyzwh 528.339 313.846 3005 64 32 label_xy 506 348
+end
+usecasecanvas 128131 usecase_ref 135171 // Log Results
+  xyzwh 322.991 483.885 3005 64 32 label_xy 324 517
+end
+usecasecanvas 128259 usecase_ref 135299 // Analize Results
+  xyzwh 365.084 377.193 3005 64 32 label_xy 356 411
+end
+usecasecanvas 128387 usecase_ref 134787 // Show results
+  xyzwh 235.872 566.55 3005 64 32 label_xy 233 600
+end
+usecasecanvas 128515 usecase_ref 135427 // Simulate
+  xyzwh 109.825 377.515 3005 64 32 label_xy 117 412
+end
+usecasecanvas 129155 usecase_ref 135555 // Manage Failed Task
+  xyzwh 416.823 12.0457 3005 64 32 label_xy 394 42
+end
+classcanvas 130051 class_ref 195202 // User
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 11.5805 233.866 3005
+end
+usecasecanvas 130435 usecase_ref 135811 // Each actor works
+  xyzwh 185.38 258.483 3005 64 32 label_xy 172 289
+end
+usecasecanvas 130947 usecase_ref 135939 // Schedule Task
+  xyzwh 186.83 82.7211 3005 64 32 label_xy 176 115
+end
+usecasecanvas 131331 usecase_ref 136067 // Check Task Conditions
+  xyzwh 402.985 130.886 3005 64 32 label_xy 374 165
+end
+usecasecanvas 131843 usecase_ref 136195 // Pass task to another actor
+  xyzwh 490.03 217.019 3005 64 32 label_xy 453 249
+end
+line 128771 --->
+  from ref 128131 z 3006 label "Do it: when a simulation cycle ends" xyz 150.5 431.5 3000 stereotype "<<extends>>" xyz 210.5 448.5 3000 to ref 128515
+line 128899 --->
+  from ref 128259 z 3006 label "Do it: when simulations is done" xyz 183.5 375 3000 stereotype "<<extends>>" xyz 232.5 394 3000 to ref 128515
+line 129027 ---> decenter_end 368
+  from ref 128387 z 3006 to point 249.078 565.298
+  line 129667 z 3006 label "Do it: when simulation ends" xyz 118.5 502 3000 stereotype "<<extends>>" xyz 157.5 519 3000 to ref 128515
+line 130179 --->
+  from ref 130051 z 3006 to ref 128515
+line 130691 --->
+  from ref 130435 z 3006 label "Do it: each cycle" xyz 133.5 317.5 3000 stereotype "<<extends>>" xyz 142.5 333.5 3000 to ref 128515
+line 130819 --->
+  from ref 128003 z 3006 label "Do it: when a task modifies an element" xyz 285.5 284 3000 stereotype "<<extends>>" xyz 351.5 300.5 3000 to ref 130435
+line 131075 --->
+  from ref 130947 z 3006 label "Do it: when he is no working in a task" xyz 116.5 171.5 3000 stereotype "<<extends>>" xyz 181.5 186.5 3000 to ref 130435
+line 131459 ---> decenter_begin 268
+  from ref 129155 z 3006 label "Do it: when a task fails" xyz 373 68 3000 stereotype "<<extends>>" xyz 399 87 3000 to ref 131331
+line 131715 --->
+  from ref 131331 z 3006 label "Do it: each cycle" xyz 276 194 3000 stereotype "<<extends>>" xyz 287 209 3000 to ref 130435
+line 131971 --->
+  from ref 131843 z 3006 label "Do it: when required" xyz 315 234.5 3000 stereotype "<<extends>>" xyz 334 249.5 3000 to ref 130435
+end

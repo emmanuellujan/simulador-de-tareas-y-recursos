@@ -1,6 +1,6 @@
 format 76
 "resultsAnalyzer" // src::logicLayer::resultsAnalyzer
-  revision 1
+  revision 2
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -46,7 +46,7 @@ format 76
     package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
     show_infonote default drawing_language default show_stereotype_properties default
     class 129667 "ResultsAnalyzer"
-      visibility public 
+      abstract visibility public 
       cpp_decl ""
       java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
 ${members}}
@@ -63,128 +63,6 @@ ${members}}
 "
 	    classrelation_ref 129667 // schedulingSystem (<unidirectional association>)
 	  b parent class_ref 128131 // SchedulingSystem
-      end
-
-      attribute 128899 "numberOfErrors"
-	private explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129027 "deadline"
-	public explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	comment " desired number of cycles"
-      end
-
-      attribute 129155 "numberOfCycles"
-	public explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	comment " actual number of cycles"
-      end
-
-      attribute 129283 "numberOfTasks"
-	public explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129411 "nbrSuccessfulTasks"
-	public explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129539 "nbrFailedTasks"
-	public explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129667 "numberOfActors"
-	private explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129795 "numberOfResources"
-	private explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 129923 "meanNbrTasksPerActor"
-	private explicit_type "float"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 130051 "propFinishedTasks"
-	public explicit_type "float"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 130179 "propFailedTasks"
-	public explicit_type "float"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-      end
-
-      attribute 130307 "propVelocity"
-	public explicit_type "float"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
       end
 
       attribute 130435 "analysis"
@@ -211,175 +89,7 @@ ${members}}
       end
 
       operation 134147 "analyze"
-	public explicit_return_type "void"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134275 "getAnalysis"
-	public explicit_return_type "String"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134403 "getDeadline"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134531 "getMeanNbrTasksPerActor"
-	public explicit_return_type "float"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134659 "getNbrFailedTasks"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134787 "getNbrSuccessfulTasks"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 134915 "getNumberOfActors"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135043 "getNumberOfCycles"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135171 "getNumberOfErrors"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135299 "getNumberOfResources"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135427 "getNumberOfTasks"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135555 "getPropFailedTasks"
-	public explicit_return_type "float"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135683 "getPropFinishedTasks"
-	public explicit_return_type "float"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135811 "getPropVelocity"
-	public explicit_return_type "float"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 135939 "getSchedulingSystem"
-	public return_type class_ref 128131 // SchedulingSystem
+	abstract public explicit_return_type "void"
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
@@ -403,7 +113,68 @@ ${members}}
       end
 
       operation 136195 "renderAnalysis"
+	abstract public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 209027 "reset"
 	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 138115 "writeAnalysis"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135939 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 137987 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134275 "getAnalysis"
+	public explicit_return_type "String"
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
@@ -427,12 +198,217 @@ ${members}}
 	
       end
 
-      operation 136451 "setDeadline"
-	public explicit_return_type "void"
+    end
+
+    class 140931 "BasicAnalyzer"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 173187 // <generalisation>
+	relation 173187 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 173187 // <generalisation>
+	  b parent class_ref 129667 // ResultsAnalyzer
+      end
+
+      attribute 167043 "numberOfErrors"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 167171 "deadline"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " desired number of cycles"
+      end
+
+      attribute 167299 "numberOfCycles"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " actual number of cycles"
+      end
+
+      attribute 167427 "nbrExecTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " non cont. tasks, just tasks"
+      end
+
+      attribute 167555 "nbrExecContTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 167683 "numberOfTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment " number of all executed tasks"
+      end
+
+      attribute 167811 "nbrSuccessfulTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 167939 "nbrFailedTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168067 "successfulExecTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168195 "successfulExecContTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168323 "failedExecTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168451 "failedExecContTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168579 "numberOfActors"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168707 "numberOfResources"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168835 "meanNbrTasksPerActor"
+	private explicit_type "float"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 168963 "propFinishedTasks"
+	private explicit_type "float"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 169091 "propFailedTasks"
+	private explicit_type "float"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 169219 "propVelocity"
+	private explicit_type "float"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 209155 "BasicAnalyzer"
+	public explicit_return_type ""
 	nparams 1
-	  param in name "deadline" explicit_type "int"
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -440,12 +416,11 @@ ${members}}
 	
       end
 
-      operation 136579 "setMeanNbrTasksPerActor"
+      operation 209283 "analyze"
 	public explicit_return_type "void"
-	nparams 1
-	  param in name "meanNbrTasksPerActor" explicit_type "float"
+	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -453,12 +428,11 @@ ${members}}
 	
       end
 
-      operation 136707 "setNbrFailedTasks"
+      operation 209411 "renderAnalysis"
 	public explicit_return_type "void"
-	nparams 1
-	  param in name "nbrFailedTasks" explicit_type "int"
+	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -466,12 +440,11 @@ ${members}}
 	
       end
 
-      operation 136835 "setNbrSuccessfulTasks"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "nbrSuccessfulTasks" explicit_type "int"
+      operation 209539 "getNumberOfErrors"
+	public explicit_return_type "int"
+	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -479,33 +452,7 @@ ${members}}
 	
       end
 
-      operation 136963 "setNumberOfActors"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "numberOfActors" explicit_type "int"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 137091 "setNumberOfCycles"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "numberOfCycles" explicit_type "int"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 137219 "setNumberOfErrors"
+      operation 209667 "setNumberOfErrors"
 	public explicit_return_type "void"
 	nparams 1
 	  param in name "numberOfErrors" explicit_type "int"
@@ -518,10 +465,22 @@ ${members}}
 	
       end
 
-      operation 137347 "setNumberOfResources"
+      operation 209795 "getDeadline"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 209923 "setDeadline"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "numberOfResources" explicit_type "int"
+	  param in name "deadline" explicit_type "int"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -531,7 +490,94 @@ ${members}}
 	
       end
 
-      operation 137475 "setNumberOfTasks"
+      operation 210051 "getNumberOfCycles"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210179 "setNumberOfCycles"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "numberOfCycles" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210307 "getNbrExecTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210435 "setNbrExecTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nbrExecTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210563 "getNbrExecContTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210691 "setNbrExecContTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nbrExecContTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210819 "getNumberOfTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 210947 "setNumberOfTasks"
 	public explicit_return_type "void"
 	nparams 1
 	  param in name "numberOfTasks" explicit_type "int"
@@ -544,10 +590,22 @@ ${members}}
 	
       end
 
-      operation 137603 "setPropFailedTasks"
+      operation 211075 "getNbrSuccessfulTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211203 "setNbrSuccessfulTasks"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "propFailedTasks" explicit_type "float"
+	  param in name "nbrSuccessfulTasks" explicit_type "int"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -557,7 +615,219 @@ ${members}}
 	
       end
 
-      operation 137731 "setPropFinishedTasks"
+      operation 211331 "getNbrFailedTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211459 "setNbrFailedTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nbrFailedTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211587 "getSuccessfulExecTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211715 "setSuccessfulExecTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "successfulExecTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211843 "getSuccessfulExecContTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 211971 "setSuccessfulExecContTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "successfulExecContTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212099 "getFailedExecTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212227 "setFailedExecTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "failedExecTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212355 "getFailedExecContTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212483 "setFailedExecContTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "failedExecContTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212611 "getNumberOfActors"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212739 "setNumberOfActors"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "numberOfActors" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212867 "getNumberOfResources"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 212995 "setNumberOfResources"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "numberOfResources" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213123 "getMeanNbrTasksPerActor"
+	public explicit_return_type "float"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213251 "setMeanNbrTasksPerActor"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "meanNbrTasksPerActor" explicit_type "float"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213379 "getPropFinishedTasks"
+	public explicit_return_type "float"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213507 "setPropFinishedTasks"
 	public explicit_return_type "void"
 	nparams 1
 	  param in name "propFinishedTasks" explicit_type "float"
@@ -570,37 +840,49 @@ ${members}}
 	
       end
 
-      operation 137859 "setPropVelocity"
+      operation 213635 "getPropFailedTasks"
+	public explicit_return_type "float"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213763 "setPropFailedTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "propFailedTasks" explicit_type "float"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 213891 "getPropVelocity"
+	public explicit_return_type "float"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 214019 "setPropVelocity"
 	public explicit_return_type "void"
 	nparams 1
 	  param in name "propVelocity" explicit_type "float"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 137987 "setSchedulingSystem"
-	public explicit_return_type "void"
-	nparams 1
-	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 138115 "writeAnalysis"
-	public explicit_return_type "void"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -619,14 +901,27 @@ ${members}}
       java_src "${comment}
 ${package}
 ${imports}
-import java.util.Vector;
 import logicLayer.schedulingSystem.SchedulingSystem;
-import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 import persistenceLayer.ioSystem.FileManager;
-import persistenceLayer.logginSystem.CompLogginSystem;
 ${definition}"
       associated_classes
 	class_ref 129667 // ResultsAnalyzer
+      end
+    end
+
+    artifact 140675 "BasicAnalyzer"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Vector;
+import persistenceLayer.dataModel.SimulationTime.SimulationTime;
+import persistenceLayer.logginSystem.CompLogginSystem;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.SchedulingSystem;
+${definition}"
+      associated_classes
+	class_ref 140931 // BasicAnalyzer
       end
     end
   end

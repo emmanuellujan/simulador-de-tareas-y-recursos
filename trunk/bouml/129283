@@ -1,6 +1,6 @@
 format 76
 "ioSystem" // src::persistenceLayer::ioSystem
-  revision 4
+  revision 5
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -122,6 +122,15 @@ ${members}}
 "
 	    classrelation_ref 134275 // tasksList (<unidirectional association>)
 	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 173443 // resultsAnalyzer (<unidirectional association>)
+	relation 173443 --->
+	  a role_name "resultsAnalyzer" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 173443 // resultsAnalyzer (<unidirectional association>)
+	  b parent class_ref 129667 // ResultsAnalyzer
       end
 
       operation 163459 "IOSystem"
@@ -349,13 +358,29 @@ ${members}}
 	
       end
 
-      classrelation 158339 // <unidirectional association>
-	relation 158339 --->
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+      operation 214659 "getResultsAnalyzer"
+	public return_type class_ref 129667 // ResultsAnalyzer
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
 "
-	    classrelation_ref 158339 // <unidirectional association>
-	  b parent class_ref 130563 // Resource
+	
+	
+	
+      end
+
+      operation 214787 "setResultsAnalyzer"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "resultsAnalyzer" type class_ref 129667 // ResultsAnalyzer
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
       end
 
       classrelation 158467 // <dependency>
@@ -490,19 +515,6 @@ ${members}}
 	
       end
 
-      operation 166019 "removeDuplicatedResources"
-	public explicit_return_type "void"
-	nparams 1
-	  param inout name "allResources" explicit_type "Vector<Resource>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
       operation 166147 "saveAll"
 	public explicit_return_type "void"
 	nparams 0
@@ -526,6 +538,7 @@ ${members}}
 	
 	
       end
+
     end
 
     class 132099 "XMLIOSystem"
@@ -686,6 +699,7 @@ ${definition}"
 ${package}
 ${imports}
 import java.util.Vector;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
@@ -707,6 +721,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Vector;
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
@@ -733,6 +749,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualPropertyFilter;
 import logicLayer.filterSystem.TaskOwnerFilter;
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.SAFactory;
 import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
 import logicLayer.schedulingSystem.Actor;
