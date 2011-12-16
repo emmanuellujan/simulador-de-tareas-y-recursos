@@ -1,6 +1,6 @@
 format 76
 "src" // src
-  revision 1
+  revision 2
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -270,6 +270,7 @@ ${package}
 ${imports}
 import junit.framework.Assert;
 import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.resultsAnalyzer.*;
 import org.junit.Before;
 import org.junit.Test;
 ${definition}"

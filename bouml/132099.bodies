@@ -145,6 +145,9 @@ class XMLIOSystem
 		this.loadActorsList();
 		this.loadResourcesList();
 		this.updateRelations();
+		ResultsAnalyzer resultsAnalyzer = 
+				new BasicAnalyzer(this.getSchedulingSystem());
+		this.setResultsAnalyzer(resultsAnalyzer);
 !!!166915.java!!!	loadDeadline() : int
 		this.setDeadline(this.getDeadline());
 		return this.getDeadline();

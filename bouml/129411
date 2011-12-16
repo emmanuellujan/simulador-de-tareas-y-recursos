@@ -1,7 +1,7 @@
 format 76
 "logginSystem" // src::persistenceLayer::logginSystem
-  revision 3
-  modified_by 2 "F.Rossi"
+  revision 4
+  modified_by 3 "elujan"
   // class settings
   //class diagram settings
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -179,6 +179,36 @@ ${members}}
 	  b parent class_ref 131715 // SimulationTime
       end
 
+      classrelation 173571 // successfulFinishedTasks (<unidirectional association>)
+	relation 173571 --->
+	  stereotype "Vector"
+	  a role_name "successfulFinishedTasks" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 173571 // successfulFinishedTasks (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      classrelation 173699 // failedFinishedTasks (<unidirectional association>)
+	relation 173699 --->
+	  stereotype "Vector"
+	  a role_name "failedFinishedTasks" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 173699 // failedFinishedTasks (<unidirectional association>)
+	  b parent class_ref 130051 // Task
+      end
+
+      attribute 169475 "nbrExecContTasks"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
       operation 167555 "LogginSystem"
 	public explicit_return_type ""
 	nparams 1
@@ -256,8 +286,32 @@ ${members}}
 	
       end
 
+      operation 214915 "getFailedFinishedTasks"
+	public return_type class_ref 130051 // Task
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
       operation 168323 "getSimulationTimes"
 	public return_type class_ref 131715 // SimulationTime
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 215043 "getSuccessfulFinishedTasks"
+	public return_type class_ref 130051 // Task
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
@@ -320,10 +374,36 @@ ${members}}
 	
       end
 
+      operation 215171 "setFailedFinishedTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "failedFinishedTasks" explicit_type "Vector<Task>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
       operation 168963 "setSimulationTimes"
 	public explicit_return_type "void"
 	nparams 1
 	  param inout name "simulationTimes" explicit_type "Vector<SimulationTime>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 215299 "setSuccessfulFinishedTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "successfulFinishedTasks" explicit_type "Vector<Task>"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -345,23 +425,43 @@ ${members}}
 	
       end
 
-      classrelation 128258 // <unidirectional association>
-	relation 128258 --->
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+      operation 215427 "incNbrExecContTasks"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
 "
-	    classrelation_ref 128258 // <unidirectional association>
-	  b parent class_ref 130051 // Task
+	
+	
+	
       end
 
-      classrelation 128386 // <unidirectional association>
-	relation 128386 --->
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+      operation 215555 "getNbrExecContTasks"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
 "
-	    classrelation_ref 128386 // <unidirectional association>
-	  b parent class_ref 130051 // Task
+	
+	
+	
       end
+
+      operation 215683 "setNbrExecContTasks"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nbrExecContTasks" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
     end
 
     class 132355 "FileLogginSystem"
@@ -649,6 +749,7 @@ ${package}
 ${imports}
 import java.util.Vector;
 import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Task;
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 ${definition}"

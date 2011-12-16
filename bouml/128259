@@ -1,7 +1,7 @@
 format 76
 "schedulingSystem" // src::logicLayer::schedulingSystem
-  revision 5
-  modified_by 2 "F.Rossi"
+  revision 6
+  modified_by 3 "elujan"
   // class settings
   //class diagram settings
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -87,12 +87,12 @@ ${members}}
 	  b parent class_ref 130947 // IOSystem
       end
 
-      classrelation 131715 // compLogginSystem (<unidirectional association>)
-	relation 131715 --->
-	  a role_name "compLogginSystem" private
+      classrelation 173315 // logger (<unidirectional association>)
+	relation 173315 --->
+	  a role_name "logger" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 131715 // compLogginSystem (<unidirectional association>)
+	    classrelation_ref 173315 // logger (<unidirectional association>)
 	  b parent class_ref 131075 // CompLogginSystem
       end
 
@@ -103,16 +103,6 @@ ${members}}
 "
 	    classrelation_ref 131843 // resultsAnalyzer (<unidirectional association>)
 	  b parent class_ref 129667 // ResultsAnalyzer
-      end
-
-      attribute 132227 "numberOfTasks"
-	private explicit_type "int"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
       end
 
       classrelation 131971 // dealerActor (<unidirectional association>)
@@ -174,26 +164,6 @@ ${members}}
 	  b parent class_ref 130563 // Resource
       end
 
-      classrelation 132611 // finishedList (<unidirectional association>)
-	relation 132611 --->
-	  stereotype "Vector"
-	  a role_name "finishedList" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 132611 // finishedList (<unidirectional association>)
-	  b parent class_ref 130051 // Task
-      end
-
-      classrelation 132739 // failedFinishedList (<unidirectional association>)
-	relation 132739 --->
-	  stereotype "Vector"
-	  a role_name "failedFinishedList" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 132739 // failedFinishedList (<unidirectional association>)
-	  b parent class_ref 130051 // Task
-      end
-
       operation 147203 "SchedulingSystem"
 	public explicit_return_type ""
 	nparams 0
@@ -244,18 +214,6 @@ ${members}}
 	
       end
 
-      operation 147715 "getCompLogginSystem"
-	public return_type class_ref 131075 // CompLogginSystem
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
       operation 147843 "getConfigurator"
 	public return_type class_ref 130819 // Configurator
 	nparams 0
@@ -292,32 +250,20 @@ ${members}}
 	
       end
 
-      operation 148227 "getFailedFinishedList"
-	public return_type class_ref 130051 // Task
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 148355 "getFinishedList"
-	public return_type class_ref 130051 // Task
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
       operation 148483 "getIoSystem"
 	public return_type class_ref 130947 // IOSystem
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 214531 "getLogger"
+	public return_type class_ref 131075 // CompLogginSystem
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
@@ -333,18 +279,6 @@ ${members}}
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Vector<${type}> ${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 148739 "getNumberOfTasks"
-	public explicit_return_type "int"
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -566,32 +500,6 @@ ${members}}
 	
       end
 
-      operation 151043 "setFailedFinishedList"
-	public explicit_return_type "void"
-	nparams 1
-	  param inout name "failedFinishedList" explicit_type "Vector<Task>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 151171 "setFinishedList"
-	public explicit_return_type "void"
-	nparams 1
-	  param inout name "finishedList" explicit_type "Vector<Task>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
       operation 151299 "setIoSystem"
 	public explicit_return_type "void"
 	nparams 1
@@ -609,19 +517,6 @@ ${members}}
 	public explicit_return_type "void"
 	nparams 1
 	  param inout name "newsList" explicit_type "Vector<Task>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 151555 "setNumberOfTasks"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "numberOfTasks" explicit_type "int"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -708,14 +603,6 @@ ${members}}
 	
       end
 
-      classrelation 151811 // <unidirectional association>
-	relation 151811 --->
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	    classrelation_ref 151811 // <unidirectional association>
-	  b parent class_ref 131075 // CompLogginSystem
-      end
     end
 
     class 130051 "Task"
@@ -1369,6 +1256,16 @@ ${members}}
 	idl_decl ""
       end
 
+      attribute 169347 "busyTime"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
       attribute 131971 "limitTime"
 	private explicit_type "int"
 	cpp_decl ""
@@ -1453,6 +1350,18 @@ ${members}}
 
       operation 142851 "exec2"
 	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 214147 "getBusyTime"
+	public explicit_return_type "int"
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
@@ -1607,6 +1516,18 @@ ${members}}
 	
       end
 
+      operation 214275 "incBusyTime"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
       operation 144515 "incTime"
 	public explicit_return_type "void"
 	nparams 0
@@ -1687,6 +1608,19 @@ ${members}}
 	  param inout name "list" explicit_type "Vector<Task>"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 214403 "setBusyTime"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "busyTime" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -2612,13 +2546,14 @@ ${definition}"
 ${package}
 ${imports}
 import java.util.Vector;
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
+import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.FCFS;
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.ioSystem.IOSystem;
 import persistenceLayer.ioSystem.SerialIOSystem;
 import persistenceLayer.ioSystem.XMLIOSystem;
 import persistenceLayer.logginSystem.CompLogginSystem;
-import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 ${definition}"
       associated_classes
 	class_ref 128131 // SchedulingSystem
@@ -2632,12 +2567,12 @@ ${package}
 ${imports}
 import java.util.Vector;
 import java.util.logging.Filter;
+import logicLayer.filterSystem.ActorRelationshipFilter;
+import logicLayer.filterSystem.JobPositionFilter;
 import presentationLayer.frames.ErrorFrame;
 import presentationLayer.frames.NewsFrame;
 import presentationLayer.frames.RelationFrame;
 import presentationLayer.frames.SimulatorFrame;
-import logicLayer.filterSystem.ActorRelationshipFilter;
-import logicLayer.filterSystem.JobPositionFilter;
 ${definition}"
       associated_classes
 	class_ref 131203 // SystemServices

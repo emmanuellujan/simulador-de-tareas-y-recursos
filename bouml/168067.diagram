@@ -1,0 +1,130 @@
+format 76
+
+activitynodecanvas 128003 activitynode_ref 135811 // decision
+  xyz 191 52 2000
+end
+activityactioncanvas 128131 activityaction_ref 136323 // activity action Terminar tarea fallida
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 42 146 2000 98 68
+end
+activityactioncanvas 128387 activityaction_ref 136451 // activity action Terminar tarea exitosa
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 98 288 2000 100 60
+end
+activitynodecanvas 128515 activitynode_ref 135939 // decision
+  xyz 307 157 2000
+end
+activitynodecanvas 128899 activitynode_ref 136067 // decision
+  xyz 425 269 2000
+end
+activityactioncanvas 129283 activityaction_ref 136579 // activity action Realizar tarea
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 212 402 2000 100 60
+end
+activityactioncanvas 129539 activityaction_ref 136707 // activity action Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecución.
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 266 483 2000 148 160
+end
+activitynodecanvas 129667 activitynode_ref 136195 // decision
+  xyz 495 341 2000
+end
+activityactioncanvas 130051 activityaction_ref 136835 // activity action Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecución.
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 533 504 2000 150 135
+end
+activitynodecanvas 131331 activitynode_ref 136707 // activity_final
+  xyz 263 714 2000
+end
+activitynodecanvas 132995 activitynode_ref 136835 // initial_node
+  xyz 262 62 2000
+end
+activitycanvas 133251 activity_ref 134915 // Sub algoritmo de trabajo
+  show_infonote default drawing_language default show_stereotype_properties default
+  xyzwh 13 21 3005 809 733
+end
+flowcanvas 128259 flow_ref 139267 // [El actor actual es el de reparto, o la tarea falla, o no se cumplen las condiciones]
+  
+  from ref 128003 z 2001 label "[El actor actual es el de reparto, o la tarea falla, o no se cumplen las condiciones]" xyz 44.5 90.5 3000 to ref 128131
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 128643 flow_ref 139395 // [Sino]
+  
+  from ref 128003 z 2001 label "[Sino]" xyz 294 132.5 3000 to ref 128515
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 128771 flow_ref 139523 // [La tarea activa ha llegado a su fin]
+  
+  from ref 128515 z 2001 label "[La tarea activa ha llegado a su fin]" xyz 146 227 3000 to ref 128387
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129027 flow_ref 139651 // [Sino]
+  
+  from ref 128515 z 2001 label "[Sino]" xyz 360.5 222.5 3000 to ref 128899
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129411 flow_ref 139779 // [La tarea debe continuar siendo realizada por el actor actual]
+  decenter_end 910
+  
+  from ref 128899 z 2001 label "[La tarea debe continuar siendo realizada por el actor actual]" xyz 107 374.5 3000 to ref 129283
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129795 flow_ref 139907 // [Sino]
+  
+  from ref 128899 z 2001 label "[Sino]" xyz 454 315 3000 to ref 129667
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 129923 flow_ref 140035 // [Es una interrupción]
+  decenter_begin 755
+  
+  from ref 129667 z 2001 label "[Es una interrupción]" xyz 390.5 417 3000 to ref 129539
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130179 flow_ref 140163 // [Sino, si la tarea en ejecución debe continuar realizándose por otro actor]
+  decenter_end 860
+  
+  from ref 129667 z 2001 label "[Sino, si la tarea en ejecución debe continuar realizándose por otro actor]" xyz 420.5 476 3000 to ref 130051
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131459 flow_ref 140419 // <flow>
+  
+  from ref 130051 z 2001 to point 605 724
+  line 132483 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131587 flow_ref 140547 // <flow>
+  
+  from ref 129539 z 2001 to point 336 724
+  line 132739 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131715 flow_ref 140675 // <flow>
+  decenter_begin 209
+  
+  from ref 129283 z 2001 to point 230 723
+  line 132355 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131843 flow_ref 140803 // <flow>
+  
+  from ref 128387 z 2001 to point 144 723
+  line 132227 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131971 flow_ref 140931 // <flow>
+  decenter_begin 264
+  
+  from ref 128131 z 2001 to point 65 723
+  line 132099 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133123 flow_ref 141059 // <flow>
+  
+  from ref 132995 z 2001 to ref 128003
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+end

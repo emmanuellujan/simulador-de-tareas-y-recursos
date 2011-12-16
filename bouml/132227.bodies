@@ -5,6 +5,11 @@ class LogginSystem
 		this.setSimulationTimes(simulationTimes);
 		Vector<String> errorMsgs = new Vector<String>();
 		this.setErrorMsgs(errorMsgs);
+		Vector<Task> successfulFinishedTasks = new Vector<Task>();
+		Vector<Task> failedFinishedTasks = new Vector<Task>();
+		this.setSuccessfulFinishedTasks(successfulFinishedTasks);
+		this.setFailedFinishedTasks(failedFinishedTasks);
+		this.setNbrExecContTasks(0);
 !!!167683.java!!!	LogginSystem(inout configurator : Configurator, inout simulationTimes : Vector<SimulationTime>)
 		this.setConfigurator(configurator);
 		this.setSimulationTimes(simulationTimes);
@@ -16,8 +21,12 @@ class LogginSystem
 		return configurator;
 !!!168195.java!!!	getErrorMsgs() : Vector<String>
 		return errorMsgs;
+!!!214915.java!!!	getFailedFinishedTasks() : Task
+		return failedFinishedTasks;
 !!!168323.java!!!	getSimulationTimes() : SimulationTime
 		return simulationTimes;
+!!!215043.java!!!	getSuccessfulFinishedTasks() : Task
+		return successfulFinishedTasks;
 !!!168451.java!!!	log(in time : int, inout devicesList : Vector<Actor>) : void
 		SimulationTime simulationTime = new SimulationTime(time, devicesList);
 		this.addSimulationTime(simulationTime);
@@ -36,5 +45,15 @@ class LogginSystem
 		this.configurator = configurator;
 !!!168835.java!!!	setErrorMsgs(inout errorMsgs : Vector<String>) : void
 		this.errorMsgs = errorMsgs;
+!!!215171.java!!!	setFailedFinishedTasks(inout failedFinishedTasks : Vector<Task>) : void
+		this.failedFinishedTasks = failedFinishedTasks;
 !!!168963.java!!!	setSimulationTimes(inout simulationTimes : Vector<SimulationTime>) : void
 		this.simulationTimes = simulationTimes;
+!!!215299.java!!!	setSuccessfulFinishedTasks(inout successfulFinishedTasks : Vector<Task>) : void
+		this.successfulFinishedTasks = successfulFinishedTasks;
+!!!215427.java!!!	incNbrExecContTasks() : void
+		this.nbrExecContTasks++;
+!!!215555.java!!!	getNbrExecContTasks() : int
+		return nbrExecContTasks;
+!!!215683.java!!!	setNbrExecContTasks(in nbrExecContTasks : int) : void
+		this.nbrExecContTasks = nbrExecContTasks;

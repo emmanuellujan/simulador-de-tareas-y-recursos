@@ -1,0 +1,234 @@
+format 76
+
+activityactioncanvas 128899 activityaction_ref 134915 // activity action Reiniciar temporizador
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 374.828 564.245 2000 101 61
+end
+activityactioncanvas 129283 activityaction_ref 135043 // activity action Planificar tarea de la lista de interrupciones y pasarla a estado activo.
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 9.38978 351.891 2000 123 109
+end
+activitynodecanvas 129539 activitynode_ref 134531 // decision
+  xyz 206.518 128.948 2006
+end
+activitynodecanvas 130307 activitynode_ref 134659 // decision
+  xyz 152.922 217.685 2005
+end
+activitynodecanvas 130691 activitynode_ref 134787 // decision
+  xyz 223.201 404.587 2000
+end
+activityactioncanvas 130947 activityaction_ref 135171 // activity action Planificar tarea de lista de listos y pasarla a estado activo.
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 82.7355 543.134 2000 125 109
+end
+activitynodecanvas 131331 activitynode_ref 134915 // decision
+  xyz 351.164 27.637 2000
+end
+activityactioncanvas 131715 activityaction_ref 135299 // activity action No hacer nada en este ciclo
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 232.933 546.128 2000 121 75
+end
+activitynodecanvas 131971 activitynode_ref 135043 // decision
+  xyz 513.491 134.668 2000
+end
+activityactioncanvas 132355 activityaction_ref 135427 // activity action Obtener cuál es próximo actor
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 375.343 208.556 2000 101 61
+end
+activityactioncanvas 132867 activityaction_ref 135555 // activity action Anexar tarea a lista de listos
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 457.823 386.587 2000 103 73
+end
+activitynodecanvas 132995 activitynode_ref 135171 // decision
+  xyz 413.494 300.259 2000
+end
+activitynodecanvas 134019 activitynode_ref 135299 // initial_node
+  xyz 226.837 35.9704 2000
+end
+activityactioncanvas 134275 activityaction_ref 135811 // activity action Se planifica la lista de interrupciones para elegir una tarea
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 595.861 252.471 2000 137 89
+end
+activityactioncanvas 134531 activityaction_ref 135939 // activity action La tarea pasa a su lista correspodiente, y a estado activo.
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 550.635 568.927 2000 121 85
+end
+activitynodecanvas 134659 activitynode_ref 135427 // decision
+  xyz 654.01 384.317 2000
+end
+activityactioncanvas 135299 activityaction_ref 136067 // activity action Sub-algoritmo de trabajo
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 727.506 584.941 2000 101 61
+end
+activityactioncanvas 135811 activityaction_ref 136195 // activity action Incrementar ciclo
+  show_infonote default drawing_language default show_stereotype_properties default
+  show_opaque_action_definition default
+  xyzwh 372.534 671.583 2000 101 61
+end
+activitynodecanvas 137731 activitynode_ref 135555 // activity_final
+  xyz 411.181 762.183 2000
+end
+activitynodecanvas 137987 activitynode_ref 135683 // decision
+  xyz 648.6 179.99 2000
+end
+activitycanvas 140035 activity_ref 134787 // Algoritmo de trabajo del actor
+  show_infonote default drawing_language default show_stereotype_properties default
+  xyzwh 4.51 9.12 1995 827 792
+end
+flowcanvas 130179 flow_ref 135171 // [El temporizador ha terminado]
+  
+  from ref 129539 z 2007 label "[El temporizador ha terminado]" xyz 238.5 376 3000 to ref 128899
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130435 flow_ref 135299 // [Sino]
+  
+  from ref 129539 z 2007 label "[Sino]" xyz 171 182.5 3000 to ref 130307
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130563 flow_ref 135427 // [La lista de interrupciones no está vacía]
+  
+  from ref 130307 z 2006 label "[La lista de interrupciones no está vacía]" xyz 12.5 293.5 3000 to ref 129283
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 130819 flow_ref 135555 // [Sino]
+  decenter_begin 566
+  
+  from ref 130307 z 2006 label "[Sino]" xyz 178 319 3000 to ref 130691
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131075 flow_ref 135683 // [La lista de listos no está vacía]
+  
+  from ref 130691 z 2001 label "[La lista de listos no está vacía]" xyz 112.5 483.5 3000 to ref 130947
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131459 flow_ref 135811 // [No hay tarea activa]
+  
+  from ref 131331 z 2007 label "[No hay tarea activa]" xyz 232.5 84 3000 to ref 129539
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 131843 flow_ref 136067 // [Sino]
+  
+  from ref 130691 z 2001 label "[Sino]" xyz 270.5 486.5 3000 to ref 131715
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 132099 flow_ref 136195 // [Sino]
+  decenter_begin 702
+  
+  from ref 131331 z 2001 label "[Sino]" xyz 410 104.5 3000 to ref 131971
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 132483 flow_ref 136323 // [El temporizador ha terminado]
+  
+  from ref 131971 z 2001 label "[El temporizador ha terminado]" xyz 295.5 169 3000 to ref 132355
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133123 flow_ref 136451 // [La tarea que se está realizando no es una interrupción]
+  
+  from ref 132995 z 2001 label "[La tarea que se está realizando no es una interrupción]" xyz 304.5 351.5 3000 to ref 132867
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133251 flow_ref 136579 // <flow>
+  
+  from ref 132355 z 2001 to ref 132995
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133763 flow_ref 136963 // <flow>
+  
+  from ref 132867 z 2001 to ref 128899
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 133891 flow_ref 137091 // [Sino]
+  
+  from ref 132995 z 2001 label "[Sino]" xyz 383.5 439 3000 to ref 128899
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 134147 flow_ref 137219 // <flow>
+  
+  from ref 134019 z 2001 to ref 131331
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 134787 flow_ref 137475 // [La tarea no es una int., o lo es y tiene > prioridad que la tarea actual]
+  
+  from ref 134659 z 2001 label "[La tarea no es una int., o lo es y tiene > prioridad que la tarea actual]" xyz 406 528.5 3000 to ref 134531
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135171 flow_ref 137603 // <flow>
+  
+  from ref 134275 z 2001 to ref 134659
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135427 flow_ref 137731 // [Sino]
+  
+  from ref 134659 z 2001 label "[Sino]" xyz 698.5 492.5 3000 to ref 135299
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 135939 flow_ref 137987 // <flow>
+  
+  from ref 129283 z 2001 to point 67.1443 698.671
+  line 136067 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136195 flow_ref 138115 // <flow>
+  
+  from ref 130947 z 2001 to point 139.965 698.488
+  line 137475 z 2001 to point 288.58 698.75
+  line 139779 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136323 flow_ref 138243 // <flow>
+  
+  from ref 131715 z 2001 to point 290.093 699.578
+  line 137603 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136451 flow_ref 138371 // <flow>
+  
+  from ref 128899 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136579 flow_ref 138499 // <flow>
+  
+  from ref 134531 z 2001 to point 607.885 698.543
+  line 137347 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 136707 flow_ref 138627 // <flow>
+  
+  from ref 135299 z 2001 to point 777.685 699.633
+  line 136835 z 2001 to point 609.33 698
+  line 139907 z 2001 to ref 135811
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 137859 flow_ref 138755 // <flow>
+  
+  from ref 135811 z 2001 to ref 137731
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 138115 flow_ref 138883 // [Sino]
+  
+  from ref 131971 z 2001 label "[Sino]" xyz 585 150.5 3000 to ref 137987
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 138243 flow_ref 139011 // [La lista de interrupciones no está vacía]
+  decenter_begin 560
+  
+  from ref 137987 z 2001 label "[La lista de interrupciones no está vacía]" xyz 510.5 223.5 3000 to ref 134275
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+flowcanvas 139011 flow_ref 139139 // [Sino]
+  
+  from ref 137987 z 2001 label "[Sino]" xyz 705 171.5 3000 to point 774 194.84
+  line 139139 z 2001 to ref 135299
+  show_infonote default drawing_language default show_stereotype_properties default write_horizontally default
+end
+preferred_whz 888 638 0.684286
+end

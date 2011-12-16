@@ -1,0 +1,18 @@
+window_sizes 1280 776 398 876 582 120
+diagrams
+  activitydiagram_ref 174850 // Device Algorithm Activity Diagram
+    700 465 100 4 0 0
+  active  activitydiagram_ref 141059 // Actor Algorthm Activity Diagram
+    876 582 80 4 264 0
+end
+show_stereotypes
+selected activity_ref 128002 // Actividad del Algoritmo del Actor
+open
+  usecaseview_ref 128258 // SchedulingSystem Use Case View
+  classview_ref 132354 // Scheduling System Class View
+  deploymentview_ref 132482 // Scheduling System Deployment View
+  classview_ref 132610 // LogginSystem Class View
+  
+  package_ref 134146 // DataModel
+end
+end

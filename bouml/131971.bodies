@@ -9,6 +9,7 @@ class SerialIOSystem
 		Vector<Actor> actors = new Vector<Actor>();
 		Vector<Resource> resources = new Vector<Resource>();
 		Vector<Task> tasks = new Vector<Task>();
+		ResultsAnalyzer resultsAnalyzer = null;
 
 		XStream xs = new XStream(new DomDriver());
 
@@ -62,13 +63,16 @@ class SerialIOSystem
 				}
 			}
 
-			if (allResources.size() > 0) {
-				fileName = dir + i + ".xml";
-				fis = new FileInputStream(fileName);
-				o = xs.fromXML(fis);
-				Integer deadline = (Integer) o;
-				this.setDeadline(deadline.intValue());
-			}
+			fileName = dir + i + ".xml";
+			fis = new FileInputStream(fileName);
+			o = xs.fromXML(fis);
+			Integer deadline = (Integer) o;
+			this.setDeadline(deadline.intValue());
+
+			allResources.addAll(actors);
+			allResources.addAll(resources);
+			
+			resultsAnalyzer = new BasicAnalyzer(schedulingSystem);
 
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
@@ -79,15 +83,7 @@ class SerialIOSystem
 		this.setAllResourcesList(allResources);
 		this.setTasksList(tasks);
 		this.updateRelations();
-
-!!!166019.java!!!	removeDuplicatedResources(inout allResources : Vector<Resource>) : void
-		for (int i = 0; i < allResources.size() - 1; i++) {
-			for (int j = i + 1; j < allResources.size(); j++) {
-				if (((Resource) allResources.elementAt(i)).getResId().equals(
-						((Resource) allResources.elementAt(j)).getResId()))
-					allResources.remove(j);
-			}
-		}
+		this.setResultsAnalyzer(resultsAnalyzer);
 !!!166147.java!!!	saveAll() : void
 
 		XStream xs = new XStream();
@@ -99,18 +95,12 @@ class SerialIOSystem
 
 			FileOutputStream fs;
 			Vector<Resource> allResources = new Vector<Resource>();
-			/*
-			 * if
-			 * (this.getSchedulingSystem().getIoSystem().getAllResourcesList()
-			 * != null) allResources = this.getSchedulingSystem().getIoSystem()
-			 * .getAllResourcesList();
-			 */
+
 			if (this.getSchedulingSystem().getActorsList() != null)
 				allResources.addAll(this.getSchedulingSystem().getActorsList());
 			if (this.getSchedulingSystem().getResourcesList() != null)
 				allResources.addAll(this.getSchedulingSystem()
 						.getResourcesList());
-			// this.removeDuplicatedResources(allResources);
 
 			int n = allResources.size();
 			int i = 0;
@@ -121,9 +111,6 @@ class SerialIOSystem
 			}
 
 			Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-			// Vector<Task> tasks = this.getSchedulingSystem().getTasks();
-			// if (this.getSchedulingSystem().getNewsList() != null)
-			// tasks.addAll(this.getSchedulingSystem().getNewsList());
 			n = tasks.size();
 			int j = 0;
 			for (j = 0; j < n; j++) {
@@ -133,9 +120,6 @@ class SerialIOSystem
 			}
 
 			fs = new FileOutputStream(dir + (i + j) + ".xml");
-			// int deadline = this.getDeadline();
-			// int deadline =
-			// this.getSchedulingSystem().getIoSystem().getDeadline();
 			int deadline = this.getSchedulingSystem().getDeadline();
 			xs.toXML(deadline, fs);
 

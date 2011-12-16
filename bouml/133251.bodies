@@ -539,7 +539,7 @@ class CreateTaskFrame
 		filterFrame.setFilterFrameStateII(false);
 		this.setVisible(false);
 		filterFrame.setLocationRelativeTo(null);
-		filterFrame.main(null);
+		//filterFrame.main(null);
 		filterFrame.setVisible(true);
 !!!182147.java!!!	jButton4ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
 // GEN-FIRST:event_jButton4ActionPerformed
@@ -564,7 +564,8 @@ class CreateTaskFrame
 		currentUpdater.setVisible(true);
 		this.setUpdater(new Updater());
 		currentUpdater.setUpdater(this.getUpdater());
-		currentUpdater.main(null);
+		//currentUpdater.main(null);
+                
 !!!182403.java!!!	jComboBox2ActionPerformed(inout evt : java.awt.event.ActionEvent) : void
 // GEN-FIRST:event_jComboBox2ActionPerformed
 		// TODO add your handling code here:
