@@ -164,7 +164,7 @@ public class XMLIOSystem extends IOSystem {
 							iQuantum, schedulingSystem,
 							Integer.parseInt(sActorCapacity),
 							Integer.parseInt(sMaxTasks), properties,
-							Integer.parseInt(smaxRelations), relationsIds);
+							Integer.parseInt(smaxRelations), relationsIds,null);
 
 					actors.add(actor);
 
