@@ -1,6 +1,6 @@
 format 76
 "schedulingSystem" // src::logicLayer::schedulingSystem
-  revision 6
+  revision 7
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -602,7 +602,6 @@ ${members}}
 	
 	
       end
-
     end
 
     class 130051 "Task"

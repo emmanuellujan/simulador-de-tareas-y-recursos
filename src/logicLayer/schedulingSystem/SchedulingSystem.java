@@ -15,7 +15,7 @@ public class SchedulingSystem {
 
 	public static void main(String[] args) {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
-		schedulingSystem.start();
+		schedulingSystem.start2();
 	}
 
 	private Configurator configurator;
@@ -278,6 +278,7 @@ public class SchedulingSystem {
 
 	public void simulateAndLog() {
 		this.reset();
+		Vector<Resource> allResourcesList = this.getAllResourcesList();
 		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logger = this.getLogger();
 		Actor dealerActor = this.getDealerActor();
@@ -288,10 +289,17 @@ public class SchedulingSystem {
 			for (int j = 0; j < n; j++)
 				actorsList.get(j).exec();
 			this.incTime();
-			logger.log(i, actorsList);
+			logger.log(i, allResourcesList);
 			i++;
 		}
 		actorsList.remove(0);
+	}
+
+	private Vector<Resource> getAllResourcesList() {
+		Vector<Resource>  allResources = new Vector<Resource>();
+		allResources.addAll(this.getResourcesList());
+		allResources.addAll(this.getActorsList());
+		return allResources;
 	}
 
 	public void start() {

@@ -1,13 +1,10 @@
 Time: 0
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 0
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task1, task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 0
@@ -16,6 +13,11 @@ Time: 0
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 0
@@ -23,17 +25,30 @@ Time: 0
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 1
-	ResourceId: dealerActor
-		Current Action: The task task0 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 1
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task1, task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 1
@@ -42,6 +57,11 @@ Time: 1
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 1
@@ -49,17 +69,30 @@ Time: 1
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 2
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
-		Current Time: 2
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 2
@@ -68,6 +101,11 @@ Time: 2
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 2
@@ -75,17 +113,30 @@ Time: 2
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 3
-	ResourceId: dealerActor
-		Current Action: The task task1 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 3
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 3
@@ -94,6 +145,11 @@ Time: 3
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 3
@@ -101,17 +157,30 @@ Time: 3
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 4
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
-		Current Time: 4
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task0 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 4
@@ -120,6 +189,11 @@ Time: 4
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 4
@@ -127,17 +201,30 @@ Time: 4
 		Interruption List: 
 		Ready List:task0
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 5
-	ResourceId: dealerActor
-		Current Action: The task task2 pass to the interruption list of the resource actor0
-		Active Task: None
-		Current Time: 5
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up
 		Active Task: None
 		Current Time: 0
@@ -146,6 +233,11 @@ Time: 5
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 5
@@ -153,17 +245,30 @@ Time: 5
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 6
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 6
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
 		Active Task: task2
 		Current Time: 1
@@ -172,6 +277,11 @@ Time: 6
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 6
@@ -179,17 +289,30 @@ Time: 6
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 7
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 7
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 2
@@ -198,6 +321,11 @@ Time: 7
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 7
@@ -205,17 +333,30 @@ Time: 7
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 8
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 8
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -224,6 +365,11 @@ Time: 8
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 8
@@ -231,17 +377,30 @@ Time: 8
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 9
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 9
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 4
@@ -250,6 +409,11 @@ Time: 9
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task0 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 9
@@ -257,17 +421,30 @@ Time: 9
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 10
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 10
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task1 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -276,6 +453,11 @@ Time: 10
 		Ready List:task0, task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
 		Active Task: task2
 		Current Time: 10
@@ -283,17 +465,30 @@ Time: 10
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 11
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 11
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 1
@@ -302,6 +497,11 @@ Time: 11
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 11
@@ -309,17 +509,30 @@ Time: 11
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 12
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 12
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 2
@@ -328,6 +541,11 @@ Time: 12
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 12
@@ -335,17 +553,30 @@ Time: 12
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 13
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 13
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 3
@@ -354,6 +585,11 @@ Time: 13
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 13
@@ -361,17 +597,30 @@ Time: 13
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 14
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 14
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 4
@@ -380,6 +629,11 @@ Time: 14
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task2 pass to the interruption list of the resource actor0
 		Active Task: None
 		Current Time: 14
@@ -387,17 +641,30 @@ Time: 14
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 15
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 15
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -406,24 +673,42 @@ Time: 15
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 15
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 16
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 16
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
 		Active Task: task2
 		Current Time: 1
@@ -432,24 +717,42 @@ Time: 16
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 16
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 17
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 17
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 2
@@ -458,24 +761,42 @@ Time: 17
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 17
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 18
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 18
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -484,24 +805,42 @@ Time: 18
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 18
 		Limit Time: -1
 		Interruption List: 
 		Ready List:task2
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 19
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 19
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -510,24 +849,42 @@ Time: 19
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task1 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 19
 		Limit Time: -1
 		Interruption List: 
 		Ready List:task2
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 20
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 20
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -536,24 +893,42 @@ Time: 20
 		Ready List:task1, task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
 		Active Task: task2
 		Current Time: 20
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 21
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 21
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 1
@@ -562,24 +937,42 @@ Time: 21
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 21
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 22
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 22
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 2
@@ -588,24 +981,42 @@ Time: 22
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 22
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 23
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 23
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -614,24 +1025,42 @@ Time: 23
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 23
 		Limit Time: -1
 		Interruption List: 
 		Ready List:task1
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 24
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 24
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -640,24 +1069,42 @@ Time: 24
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task2 pass to the interruption list of the resource actor0
 		Active Task: None
 		Current Time: 24
 		Limit Time: -1
 		Interruption List: 
 		Ready List:task1
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
 Time: 25
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 25
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -666,6 +1113,11 @@ Time: 25
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 25
@@ -673,17 +1125,30 @@ Time: 25
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 26
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 26
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
 		Active Task: task2
 		Current Time: 1
@@ -692,6 +1157,11 @@ Time: 26
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 26
@@ -699,17 +1169,30 @@ Time: 26
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 27
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 27
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 2
@@ -718,6 +1201,11 @@ Time: 27
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 27
@@ -725,17 +1213,30 @@ Time: 27
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 28
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 28
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -744,6 +1245,11 @@ Time: 28
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 28
@@ -751,17 +1257,30 @@ Time: 28
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 29
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 29
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -770,6 +1289,11 @@ Time: 29
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task1 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 29
@@ -777,17 +1301,30 @@ Time: 29
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 30
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 30
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -796,6 +1333,11 @@ Time: 30
 		Ready List:task1, task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
 		Active Task: task2
 		Current Time: 30
@@ -803,17 +1345,30 @@ Time: 30
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 31
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 31
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 1
@@ -822,6 +1377,11 @@ Time: 31
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 31
@@ -829,17 +1389,30 @@ Time: 31
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 32
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 32
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 2
@@ -848,6 +1421,11 @@ Time: 32
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 32
@@ -855,17 +1433,30 @@ Time: 32
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 33
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 33
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -874,6 +1465,11 @@ Time: 33
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 33
@@ -881,17 +1477,30 @@ Time: 33
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 34
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 34
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -900,6 +1509,11 @@ Time: 34
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task2 pass to the interruption list of the resource actor0
 		Active Task: None
 		Current Time: 34
@@ -907,17 +1521,30 @@ Time: 34
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 35
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 35
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -926,6 +1553,11 @@ Time: 35
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 35
@@ -933,17 +1565,30 @@ Time: 35
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 36
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 36
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2
 		Active Task: task2
 		Current Time: 1
@@ -952,6 +1597,11 @@ Time: 36
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 36
@@ -959,17 +1609,30 @@ Time: 36
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 37
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 37
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 2
@@ -978,6 +1641,11 @@ Time: 37
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 37
@@ -985,17 +1653,30 @@ Time: 37
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 38
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 38
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task2 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -1004,6 +1685,11 @@ Time: 38
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 38
@@ -1011,17 +1697,30 @@ Time: 38
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 39
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 39
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -1030,6 +1729,11 @@ Time: 39
 		Ready List:task1
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The task task1 pass to the ready list of the resource actor0
 		Active Task: None
 		Current Time: 39
@@ -1037,17 +1741,30 @@ Time: 39
 		Interruption List: 
 		Ready List:task2
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 40
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 40
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -1056,6 +1773,11 @@ Time: 40
 		Ready List:task1, task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
 		Active Task: task2
 		Current Time: 40
@@ -1063,17 +1785,30 @@ Time: 40
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 41
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 41
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 1
@@ -1082,6 +1817,11 @@ Time: 41
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 41
@@ -1089,17 +1829,30 @@ Time: 41
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 42
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 42
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 2
@@ -1108,6 +1861,11 @@ Time: 42
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 42
@@ -1115,17 +1873,30 @@ Time: 42
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 43
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 43
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task1 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -1134,6 +1905,11 @@ Time: 43
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task2
 		Active Task: task2
 		Current Time: 43
@@ -1141,17 +1917,30 @@ Time: 43
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 44
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 44
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 4
@@ -1160,6 +1949,11 @@ Time: 44
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The active task task2 ends
 		Active Task: None
 		Current Time: 44
@@ -1167,17 +1961,30 @@ Time: 44
 		Interruption List: 
 		Ready List:task1
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 45
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 45
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up, the active task task0 pass to the ready list
 		Active Task: None
 		Current Time: 0
@@ -1186,6 +1993,11 @@ Time: 45
 		Ready List:task0
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
 		Active Task: task1
 		Current Time: 45
@@ -1193,17 +2005,30 @@ Time: 45
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 46
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 46
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 1
@@ -1212,6 +2037,11 @@ Time: 46
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 46
@@ -1219,17 +2049,30 @@ Time: 46
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 47
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 47
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 2
@@ -1238,6 +2081,11 @@ Time: 47
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 47
@@ -1245,17 +2093,30 @@ Time: 47
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 48
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 48
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The task task0 pass to the ready list of the resource actor1
 		Active Task: None
 		Current Time: 3
@@ -1264,6 +2125,11 @@ Time: 48
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task1
 		Active Task: task1
 		Current Time: 48
@@ -1271,17 +2137,30 @@ Time: 48
 		Interruption List: 
 		Ready List:task0
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 49
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 49
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 4
@@ -1290,6 +2169,11 @@ Time: 49
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The active task task1 ends
 		Active Task: None
 		Current Time: 49
@@ -1297,17 +2181,30 @@ Time: 49
 		Interruption List: 
 		Ready List:task0
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 50
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 50
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up
 		Active Task: None
 		Current Time: 0
@@ -1316,6 +2213,11 @@ Time: 50
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 50
@@ -1323,17 +2225,30 @@ Time: 50
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 51
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 51
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 1
@@ -1342,6 +2257,11 @@ Time: 51
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 51
@@ -1349,17 +2269,30 @@ Time: 51
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 52
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 52
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 2
@@ -1368,6 +2301,11 @@ Time: 52
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 52
@@ -1375,17 +2313,30 @@ Time: 52
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 53
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 53
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 3
@@ -1394,6 +2345,11 @@ Time: 53
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 53
@@ -1401,17 +2357,30 @@ Time: 53
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 54
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 54
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 4
@@ -1420,6 +2389,11 @@ Time: 54
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: The active task task0 ends
 		Active Task: None
 		Current Time: 54
@@ -1427,17 +2401,30 @@ Time: 54
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 55
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 55
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Time is up
 		Active Task: None
 		Current Time: 0
@@ -1446,6 +2433,11 @@ Time: 55
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 55
@@ -1453,17 +2445,30 @@ Time: 55
 		Interruption List: 
 		Ready List:
 
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
+
 
 Time: 56
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 56
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: artifact0, actor1
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 1
@@ -1472,11 +2477,32 @@ Time: 56
 		Ready List:
 
 	ResourceId: actor1
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: Mary
 		Current Action: None
 		Active Task: None
 		Current Time: 56
 		Limit Time: -1
 		Interruption List: 
 		Ready List:
+
+	ResourceId: artifact0
+		Relationships Limit: 10
+		Relationships: artifact1
+		Properties:
+			size: 150pages
+			type: artifact
+			description: finalreport
+
+	ResourceId: artifact1
+		Relationships Limit: 10
+		Relationships: actor0, actor1
+		Properties:
+			type: artifact
+			charge: 700pages
+			description: printer
 
 
