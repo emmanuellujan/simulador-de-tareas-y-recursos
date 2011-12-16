@@ -1,28 +1,38 @@
 package persistenceLayer.dataModel.SimulationTime;
 
-import java.util.Vector;
 
+import java.util.Vector;
+import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.Actor;
+
 
 public class SimulationTime {
 	private int currentTime;
-	private Vector<SimulationResource> actors;
+	private Vector<SimulationActor> actors;
+	private Vector<SimulationResource> resources;
 
-	public SimulationTime(int time, Vector<Actor> actorsList) {
-		Vector<SimulationResource> actors = new Vector<SimulationResource>();
-		Actor actor;
-		SimulationResource sResource;
-		int n = actorsList.size();
+	public SimulationTime(int time, Vector<Resource> allResourcesList) {
+		Vector<SimulationActor> actors = new Vector<SimulationActor>();
+		Vector<SimulationResource> resources = new Vector<SimulationResource>();
+		Resource resource = null;
+		SimulationResource sSimResource;
+		int n = allResourcesList.size();
 		for (int i = 0; i < n; i++) {
-			actor = actorsList.get(i);
-			sResource = new SimulationResource(actor);
-			actors.add(sResource);
+			resource = (Resource) allResourcesList.get(i);
+			if(resource.getClass().getName().contains("Actor")){
+				sSimResource = new SimulationActor((Actor) resource);
+				actors.add((SimulationActor) sSimResource);
+			}else{
+				sSimResource = new SimulationResource(resource);
+				resources.add(sSimResource);
+			}
 		}
 		this.setCurrentTime(time);
 		this.setActors(actors);
+		this.setResources(resources);
 	}
 
-	public Vector<SimulationResource> getActors() {
+	public Vector<SimulationActor> getActors() {
 		return actors;
 	}
 
@@ -30,11 +40,27 @@ public class SimulationTime {
 		return currentTime;
 	}
 
-	public void setActors(Vector<SimulationResource> actors) {
+	public void setActors(Vector<SimulationActor> actors) {
 		this.actors = actors;
 	}
 
 	public void setCurrentTime(int currentTime) {
 		this.currentTime = currentTime;
 	}
+
+	public Vector<SimulationResource> getResources() {
+		return resources;
+	}
+
+	public void setResources(Vector<SimulationResource> resources) {
+		this.resources = resources;
+	}
+	
+	public Vector<SimulationResource> getAllResources(){
+		Vector<SimulationResource>  allResources = new Vector<SimulationResource>();
+		allResources.addAll(this.getActors());
+		allResources.addAll(this.getResources());
+		return allResources;
+	}
+
 }

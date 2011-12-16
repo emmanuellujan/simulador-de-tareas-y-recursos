@@ -2,7 +2,7 @@
 <configuration>
 	<inputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases</inputDir> <!-- with the bar -->
 	<outputDir>/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/test_cases</outputDir> <!-- with the bar -->
-	<projectName>test_case_1</projectName> <!-- without extension -->
+	<projectName>test_case_7</projectName> <!-- without extension -->
 </configuration>
 
 

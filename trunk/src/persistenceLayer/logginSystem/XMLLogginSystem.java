@@ -3,7 +3,7 @@ package persistenceLayer.logginSystem;
 import java.util.Vector;
 
 import persistenceLayer.dataModel.Configurator.Configurator;
-import persistenceLayer.dataModel.SimulationTime.SimulationResource;
+import persistenceLayer.dataModel.SimulationTime.SimulationActor;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 
 public class XMLLogginSystem extends FileLogginSystem {
@@ -13,7 +13,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 		super(configurator, simulationTimes, "xml");
 	}
 
-	private String logActors(Vector<SimulationResource> actors) {
+	private String logActors(Vector<SimulationActor> actors) {
 		String xmlLog = "\t\t<actors>\n";
 		int n = actors.size();
 		for (int i = 0; i < n; i++)
@@ -23,7 +23,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 		return xmlLog;
 	}
 
-	public String logResource(SimulationResource resource) {
+	public String logResource(SimulationActor resource) {
 		String resId = resource.getResId();
 		String taskId = resource.getTaskId();
 		String currentAction = resource.getCurrentAction();
@@ -70,7 +70,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 		int n = simulationTimes.size();
 		for (int i = 0; i < n; i++) {
 			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationResource> actors = simulationTimes.get(i)
+			Vector<SimulationActor> actors = simulationTimes.get(i)
 					.getActors();
 			xmlLog += "\t<time>\n";
 			xmlLog += "\t\t<currentTime>" + currTime + "</currentTime>\n";

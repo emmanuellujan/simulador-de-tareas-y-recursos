@@ -3,6 +3,7 @@ package persistenceLayer.logginSystem;
 import java.util.Vector;
 
 import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.Task;
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
@@ -62,8 +63,8 @@ public abstract class LogginSystem {
 		return successfulFinishedTasks;
 	}
 
-	public void log(int time, Vector<Actor> devicesList) {
-		SimulationTime simulationTime = new SimulationTime(time, devicesList);
+	public void log(int time, Vector<Resource> resourcesList) {
+		SimulationTime simulationTime = new SimulationTime(time, resourcesList);
 		this.addSimulationTime(simulationTime);
 	}
 

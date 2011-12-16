@@ -1,19 +1,14 @@
 window_sizes 1280 776 386 888 638 64
 diagrams
-  activitydiagram_ref 167939 // Actor Scheduling Algorithm
-    831 533 103 4 216 0
-  activitydiagram_ref 168067 // Sub algoritmo del actor
+  active  sequencediagram_ref 174595 // simulation
     888 638 100 4 0 0
-  classdiagram_ref 154883 // results analizer
-    710 510 100 4 0 0
-  active  classdiagram_ref 154627 // data model
-    888 638 110 4 0 0
 end
 show_stereotypes
-selected classdiagram_ref 154627 // data model
+selected 
+package_ref 136707 // src
 open
   
-  package_ref 128003 // src
+package_ref 136707 // src
   classview_ref 129539 // class view
 end
 end

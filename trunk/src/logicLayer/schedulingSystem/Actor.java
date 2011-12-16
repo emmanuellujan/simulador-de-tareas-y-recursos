@@ -10,22 +10,26 @@ public class Actor extends Resource {
 
 	private static final long serialVersionUID = 1L;
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	private int capacity; // Capacity or efficiency
-
 	private String currAction;
-	private Task currTask;
 
+	private Task currTask;
 	private Vector<Task> intList;
 	private Vector<Task> syncIntList;
-	private SchedulingAlgorithm saIntList;
 
+	private SchedulingAlgorithm saIntList;
 	private Vector<Task> readyList;
 	private Vector<Task> syncReadyList;
-	private SchedulingAlgorithm saReadyList;
 
-	private int time;
+	private SchedulingAlgorithm saReadyList;
 	private int busyTime;
+	private int time;
 	private int limitTime;
+
 	private int maxTasksNumber;
 
 	private Updater updater;
@@ -331,11 +335,11 @@ public class Actor extends Resource {
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
 	}
-
+	
 	public int getBusyTime() {
 		return busyTime;
 	}
-	
+
 	public int getCapacity() {
 		return capacity;
 	}

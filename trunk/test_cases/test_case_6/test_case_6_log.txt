@@ -1,13 +1,10 @@
 Time: 0
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
-		Active Task: task0
-		Current Time: 0
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task1, task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 0
@@ -17,15 +14,12 @@ Time: 0
 
 
 Time: 1
-	ResourceId: dealerActor
-		Current Action: The task task0 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 1
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task1, task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 1
@@ -35,15 +29,12 @@ Time: 1
 
 
 Time: 2
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
-		Active Task: task1
-		Current Time: 2
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
 		Current Time: 2
@@ -53,15 +44,12 @@ Time: 2
 
 
 Time: 3
-	ResourceId: dealerActor
-		Current Action: The task task1 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 3
-		Limit Time: -1
-		Interruption List: 
-		Ready List:task2
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 3
@@ -71,15 +59,12 @@ Time: 3
 
 
 Time: 4
-	ResourceId: dealerActor
-		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
-		Active Task: task2
-		Current Time: 4
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 4
@@ -89,15 +74,12 @@ Time: 4
 
 
 Time: 5
-	ResourceId: dealerActor
-		Current Action: The task task2 pass to the ready list of the resource actor0
-		Active Task: None
-		Current Time: 5
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 5
@@ -107,15 +89,12 @@ Time: 5
 
 
 Time: 6
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 6
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: Procesing active task task0
 		Active Task: task0
 		Current Time: 6
@@ -125,15 +104,12 @@ Time: 6
 
 
 Time: 7
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 7
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: The active task task0 ends
 		Active Task: None
 		Current Time: 7
@@ -143,15 +119,12 @@ Time: 7
 
 
 Time: 8
-	ResourceId: dealerActor
-		Current Action: None
-		Active Task: None
-		Current Time: 8
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
 	ResourceId: actor0
+		Relationships Limit: 10
+		Relationships: 
+		Properties:
+			Category: A
+			ActorName: John
 		Current Action: None
 		Active Task: None
 		Current Time: 8
