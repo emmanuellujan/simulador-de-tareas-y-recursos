@@ -1,14 +1,13 @@
 window_sizes 1280 776 386 888 638 64
 diagrams
   active  sequencediagram_ref 174595 // simulation
-    888 638 100 4 0 0
+    888 638 200 4 0 0
 end
 show_stereotypes
-selected 
-package_ref 136707 // src
+selected operation_ref 149251 // getTasks
 open
-  
-package_ref 136707 // src
+  classview_ref 128003 // src
+  class_ref 128131 // SchedulingSystem
   classview_ref 129539 // class view
 end
 end

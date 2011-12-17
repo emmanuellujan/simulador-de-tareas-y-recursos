@@ -13,6 +13,8 @@ public class EqualFilter extends SimpleFilter {
 	}
 
 	public boolean eval(Object r) {
-		return this.getElement().equals((Resource) r);
+		String id1 = ((Resource) this.getElement()).getResId();
+		String id2 = ((Resource)r).getResId();
+		return id1.equals(id2);
 	}
 }

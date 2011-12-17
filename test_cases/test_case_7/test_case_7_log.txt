@@ -1,4 +1,15 @@
 Time: 0
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task1, task2
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -37,12 +48,23 @@ Time: 0
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 1
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: The task task0 pass to the ready list of the resource actor0
+		Active Task: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task1, task2
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -81,12 +103,23 @@ Time: 1
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 2
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task1
+		Active Task: task1
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task2
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -125,12 +158,23 @@ Time: 2
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 3
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: The task task1 pass to the ready list of the resource actor0
+		Active Task: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:task2
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -169,12 +213,23 @@ Time: 3
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 4
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task2
+		Active Task: task2
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -213,12 +268,23 @@ Time: 4
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 5
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: The task task2 pass to the interruption list of the resource actor0
+		Active Task: None
+		Current Time: 5
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -257,12 +323,23 @@ Time: 5
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 6
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 6
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -301,12 +378,23 @@ Time: 6
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 7
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 7
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -345,12 +433,23 @@ Time: 7
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 8
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 8
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -389,12 +488,23 @@ Time: 8
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 9
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 9
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -433,12 +543,23 @@ Time: 9
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 10
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 10
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -477,12 +598,23 @@ Time: 10
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 11
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 11
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -521,12 +653,23 @@ Time: 11
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 12
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 12
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -565,12 +708,23 @@ Time: 12
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 13
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 13
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -609,12 +763,23 @@ Time: 13
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 14
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 14
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -653,12 +818,23 @@ Time: 14
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 15
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 15
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -697,12 +873,23 @@ Time: 15
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 16
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 16
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -741,12 +928,23 @@ Time: 16
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 17
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 17
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -785,12 +983,23 @@ Time: 17
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 18
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 18
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -829,12 +1038,23 @@ Time: 18
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 19
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 19
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -873,12 +1093,23 @@ Time: 19
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 20
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 20
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -917,12 +1148,23 @@ Time: 20
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 21
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 21
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -961,12 +1203,23 @@ Time: 21
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 22
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 22
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1005,12 +1258,23 @@ Time: 22
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 23
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 23
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1049,12 +1313,23 @@ Time: 23
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 24
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 24
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1093,12 +1368,23 @@ Time: 24
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 25
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 25
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1137,12 +1423,23 @@ Time: 25
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 26
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 26
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1181,12 +1478,23 @@ Time: 26
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 27
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 27
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1225,12 +1533,23 @@ Time: 27
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 28
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 28
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1269,12 +1588,23 @@ Time: 28
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 29
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 29
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1313,12 +1643,23 @@ Time: 29
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 30
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 30
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1357,12 +1698,23 @@ Time: 30
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 31
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 31
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1401,12 +1753,23 @@ Time: 31
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 32
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 32
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1445,12 +1808,23 @@ Time: 32
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 33
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 33
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1489,12 +1863,23 @@ Time: 33
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 34
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 34
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1533,12 +1918,23 @@ Time: 34
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 35
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 35
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1577,12 +1973,23 @@ Time: 35
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 36
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 36
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1621,12 +2028,23 @@ Time: 36
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 37
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 37
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1665,12 +2083,23 @@ Time: 37
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 38
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 38
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1709,12 +2138,23 @@ Time: 38
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 39
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 39
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1753,12 +2193,23 @@ Time: 39
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 40
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 40
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1797,12 +2248,23 @@ Time: 40
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 41
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 41
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1841,12 +2303,23 @@ Time: 41
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 42
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 42
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1885,12 +2358,23 @@ Time: 42
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 43
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 43
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1929,12 +2413,23 @@ Time: 43
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 44
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 44
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -1973,12 +2468,23 @@ Time: 44
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 45
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 45
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2017,12 +2523,23 @@ Time: 45
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 46
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 46
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2061,12 +2578,23 @@ Time: 46
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 47
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 47
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2105,12 +2633,23 @@ Time: 47
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 48
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 48
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2149,12 +2688,23 @@ Time: 48
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 49
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 49
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2193,12 +2743,23 @@ Time: 49
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 50
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 50
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2237,12 +2798,23 @@ Time: 50
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 51
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 51
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2281,12 +2853,23 @@ Time: 51
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 52
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 52
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2325,12 +2908,23 @@ Time: 52
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 53
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 53
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2369,12 +2963,23 @@ Time: 53
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 54
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 54
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2413,12 +3018,23 @@ Time: 54
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 55
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 55
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2457,12 +3073,23 @@ Time: 55
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
 Time: 56
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 56
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: artifact0, actor1
@@ -2501,8 +3128,8 @@ Time: 56
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 

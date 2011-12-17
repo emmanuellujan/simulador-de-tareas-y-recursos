@@ -366,7 +366,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(357, 427));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentationLayer/Media/logoII.png"))); // NOI18N
+        //jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentationLayer/Media/logoII.png"))); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel22.setText("Notaciones de ayuda");
