@@ -1006,7 +1006,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-            String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();
+            String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();	
             path = path.replace("xml", "txt");
             path = path.replace("src\\", "");
             path = path.replace("\\\\", "\\");

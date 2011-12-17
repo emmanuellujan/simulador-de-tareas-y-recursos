@@ -48,8 +48,8 @@ Time: 0
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -103,8 +103,8 @@ Time: 1
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -158,8 +158,8 @@ Time: 2
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -213,8 +213,8 @@ Time: 3
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -268,8 +268,8 @@ Time: 4
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -323,8 +323,8 @@ Time: 5
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -378,8 +378,8 @@ Time: 6
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -433,8 +433,8 @@ Time: 7
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -488,8 +488,8 @@ Time: 8
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -543,8 +543,8 @@ Time: 9
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -598,8 +598,8 @@ Time: 10
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -653,8 +653,8 @@ Time: 11
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -708,8 +708,8 @@ Time: 12
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -763,8 +763,8 @@ Time: 13
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -818,8 +818,8 @@ Time: 14
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -873,8 +873,8 @@ Time: 15
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -928,8 +928,8 @@ Time: 16
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -983,8 +983,8 @@ Time: 17
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1038,8 +1038,8 @@ Time: 18
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1093,8 +1093,8 @@ Time: 19
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1148,8 +1148,8 @@ Time: 20
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1203,8 +1203,8 @@ Time: 21
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1258,8 +1258,8 @@ Time: 22
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1313,8 +1313,8 @@ Time: 23
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1368,8 +1368,8 @@ Time: 24
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1423,8 +1423,8 @@ Time: 25
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1478,8 +1478,8 @@ Time: 26
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1533,8 +1533,8 @@ Time: 27
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1588,8 +1588,8 @@ Time: 28
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1643,8 +1643,8 @@ Time: 29
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1698,8 +1698,8 @@ Time: 30
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1753,8 +1753,8 @@ Time: 31
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1808,8 +1808,8 @@ Time: 32
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1863,8 +1863,8 @@ Time: 33
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1918,8 +1918,8 @@ Time: 34
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1973,8 +1973,8 @@ Time: 35
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2028,8 +2028,8 @@ Time: 36
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2083,8 +2083,8 @@ Time: 37
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2138,8 +2138,8 @@ Time: 38
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2193,8 +2193,8 @@ Time: 39
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2248,8 +2248,8 @@ Time: 40
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2303,8 +2303,8 @@ Time: 41
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2358,8 +2358,8 @@ Time: 42
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2413,8 +2413,8 @@ Time: 43
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2468,8 +2468,8 @@ Time: 44
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2523,8 +2523,8 @@ Time: 45
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2578,8 +2578,8 @@ Time: 46
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2633,8 +2633,8 @@ Time: 47
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2688,8 +2688,8 @@ Time: 48
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2743,8 +2743,8 @@ Time: 49
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2798,8 +2798,8 @@ Time: 50
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2853,8 +2853,8 @@ Time: 51
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2908,8 +2908,8 @@ Time: 52
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2963,8 +2963,8 @@ Time: 53
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3018,8 +3018,8 @@ Time: 54
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3073,8 +3073,8 @@ Time: 55
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3128,8 +3128,8 @@ Time: 56
 		Relationships Limit: 10
 		Relationships: actor0, actor1
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
