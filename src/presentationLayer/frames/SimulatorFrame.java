@@ -1006,11 +1006,38 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-           String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();
+            String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();
             path = path.replace("xml", "txt");
             path = path.replace("src\\", "");
             path = path.replace("\\\\", "\\");
-            File archivo = new File(path);             
+            File archivo = new File(path); 
+            StringBuffer contents = new StringBuffer();
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(archivo));
+                String text = null;
+                // repeat until all lines is read
+                while ((text = reader.readLine()) != null) {
+                    contents.append(text).append(System.getProperty("line.separator"));
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (reader != null) {
+                        reader.close();
+                    }
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }            
+            this.setVisible(false);
+            LogFrame currentLog = new LogFrame(contents.toString()); 
+            currentLog.setLocationRelativeTo(null);
+            currentLog.setVisible(true);  
+            currentLog.setBackFrame(this);
     }//GEN-LAST:event_jButton16ActionPerformed
 
 	private boolean isComboboxesValuesValid() {
