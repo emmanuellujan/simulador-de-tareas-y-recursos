@@ -170,8 +170,8 @@ public class SchedulingSystem {
 		if (inputDir != null && !inputDir.equals("")) {
 			String bar = this.getConfigurator().getBarFromPath(inputDir);
 			this.getConfigurator().setInputDir(inputDir + bar);
-                        this.getConfigurator().setOutputDir(inputDir + bar);
-                        
+			this.getConfigurator().setOutputDir(inputDir + bar);
+
 			String[] s = inputDir.split(bar);
 			String projectName = s[s.length - 1];
 			this.getConfigurator().setProjectName(projectName);
@@ -222,7 +222,7 @@ public class SchedulingSystem {
 	public void saveData(String projectName, String outputDir) {
 		String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
 		outputDir = outputDir + bar + projectName + bar;
-                this.getConfigurator().setProjectName(projectName);
+		this.getConfigurator().setProjectName(projectName);
 		this.getConfigurator().setOutputDir(outputDir);
 		this.saveData();
 	}

@@ -2,7 +2,6 @@ package persistenceLayer.logginSystem;
 
 import java.util.Vector;
 
-import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.Task;
 import persistenceLayer.dataModel.Configurator.Configurator;

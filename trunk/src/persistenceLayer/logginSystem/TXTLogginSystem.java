@@ -4,10 +4,6 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
-import logicLayer.filterSystem.Filter;
-import logicLayer.schedulingSystem.Resource;
-import logicLayer.schedulingSystem.Update;
-
 import persistenceLayer.dataModel.Configurator.Configurator;
 import persistenceLayer.dataModel.SimulationTime.SimulationActor;
 import persistenceLayer.dataModel.SimulationTime.SimulationResource;

@@ -31,7 +31,6 @@ public class BasicAnalyzer extends ResultsAnalyzer{
 
 	public BasicAnalyzer(SchedulingSystem schedulingSystem) {
 		super(schedulingSystem);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void analyze() {

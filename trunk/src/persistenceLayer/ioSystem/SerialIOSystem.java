@@ -95,6 +95,7 @@ public class SerialIOSystem extends IOSystem {
 			allResources.addAll(actors);
 			allResources.addAll(resources);
 			
+			// Hardcaded
 			resultsAnalyzer = new BasicAnalyzer(schedulingSystem);
 
 		} catch (FileNotFoundException ex) {
