@@ -5,6 +5,7 @@
  */
 package presentationLayer.frames;
 
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
@@ -62,11 +63,14 @@ public class UpdaterFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
 	/** Creates new form UpdaterFrame */
 	public UpdaterFrame() {            
-            initComponents();
+            initComponents();            
             this.setResizable(false);
 	}
 
@@ -124,6 +128,9 @@ public class UpdaterFrame extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
@@ -166,7 +173,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -189,32 +196,62 @@ public class UpdaterFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Cancel");
+        jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Create");
+        jButton2.setText("Add");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Updates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Filter", "Update"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -223,9 +260,11 @@ public class UpdaterFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -247,6 +286,19 @@ public class UpdaterFrame extends javax.swing.JFrame {
                 }
 	}// GEN-LAST:event_jButton1ActionPerformed
 
+        public void fillTable(){
+            if(this.getUpdater() != null){
+                Hashtable currentUpdates = this.getUpdater().getUpdates();
+                Enumeration filtros = currentUpdates.keys();
+                Enumeration valores = currentUpdates.elements();
+
+                for(int i = 0; i < currentUpdates.size(); i++){
+                    this.jTable1.setValueAt("Filter" + i, i, 0);
+                    this.jTable1.setValueAt("Update" + i, i, 1);
+                }
+            }
+        }
+        
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		Updater currentUpdater = this.getUpdater();
 		if ((this.getFilter() != null) && (this.getUpdate() != null)) {
@@ -254,20 +306,18 @@ public class UpdaterFrame extends javax.swing.JFrame {
 				Hashtable<Filter, Update> newHash = new Hashtable<Filter, Update>();
 				newHash.put(this.getFilter(), this.getUpdate());
 				currentUpdater.setUpdates(newHash);
-			} else
-				currentUpdater.getUpdates().put(this.getFilter(),
+			} else{
+				Hashtable<Filter, Update> currentHash = currentUpdater.getUpdates();
+                                currentHash.put(this.getFilter(),
 						this.getUpdate());
+                                currentUpdater.setUpdates(currentHash);
+                        }
 			this.setUpdater(currentUpdater);
+                        this.fillTable();
                         if(this.getBackFrameText().equals("CreateActorFrame")){
                             ((CreateActorFrame) this.getActorBackFrame()).setUpdater(currentUpdater);
-                            this.setVisible(false);
-                            ((CreateActorFrame) this.getActorBackFrame()).setLocationRelativeTo(null);
-                            ((CreateActorFrame) this.getActorBackFrame()).setVisible(true);
                         }else{
                             ((CreateTaskFrame) this.getTaskBackFrame()).setUpdater(currentUpdater);
-                            this.setVisible(false);
-                            ((CreateTaskFrame) this.getTaskBackFrame()).setLocationRelativeTo(null);
-                            ((CreateTaskFrame) this.getTaskBackFrame()).setVisible(true);
                         }
 			
 		} else {
@@ -292,7 +342,6 @@ public class UpdaterFrame extends javax.swing.JFrame {
 		filterFrame.setFilterFrameStateII(false);
 		this.setVisible(false);
 		filterFrame.setLocationRelativeTo(null);
-		//filterFrame.main(null);
 		filterFrame.setVisible(true);
 	}// GEN-LAST:event_jButton3ActionPerformed
 
