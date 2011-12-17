@@ -183,6 +183,7 @@ public class XMLIOSystem extends IOSystem {
 		this.loadActorsList();
 		this.loadResourcesList();
 		this.updateRelations();
+                //Hardcoded
 		ResultsAnalyzer resultsAnalyzer = 
 				new BasicAnalyzer(this.getSchedulingSystem());
 		this.setResultsAnalyzer(resultsAnalyzer);
