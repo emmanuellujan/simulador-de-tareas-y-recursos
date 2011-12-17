@@ -34,7 +34,8 @@ public class SchedulingSystem {
 		Configurator configurator = new Configurator();
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem logger = new CompLogginSystem(configurator);
-		ResultsAnalyzer resultsAnalyzer = null;
+                //Hardcoded
+		ResultsAnalyzer resultsAnalyzer = new BasicAnalyzer(this);
 		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
 		Vector<Task> tasks = new Vector<Task>();
@@ -169,7 +170,8 @@ public class SchedulingSystem {
 		if (inputDir != null && !inputDir.equals("")) {
 			String bar = this.getConfigurator().getBarFromPath(inputDir);
 			this.getConfigurator().setInputDir(inputDir + bar);
-
+                        this.getConfigurator().setOutputDir(inputDir + bar);
+                        
 			String[] s = inputDir.split(bar);
 			String projectName = s[s.length - 1];
 			this.getConfigurator().setProjectName(projectName);
@@ -220,6 +222,7 @@ public class SchedulingSystem {
 	public void saveData(String projectName, String outputDir) {
 		String bar = this.getConfigurator().getSaveBarFromPath(outputDir);
 		outputDir = outputDir + bar + projectName + bar;
+                this.getConfigurator().setProjectName(projectName);
 		this.getConfigurator().setOutputDir(outputDir);
 		this.saveData();
 	}
