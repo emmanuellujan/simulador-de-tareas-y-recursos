@@ -15,7 +15,7 @@ public class SchedulingSystem {
 
 	public static void main(String[] args) {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
-		schedulingSystem.start2();
+		schedulingSystem.start();
 	}
 
 	private Configurator configurator;
