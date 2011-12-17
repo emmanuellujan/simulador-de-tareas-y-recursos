@@ -1,6 +1,7 @@
 <logicLayer.schedulingSystem.Actor>
   <resId>actor0</resId>
   <type>actor</type>
+  <nbrOfPropChanges>0</nbrOfPropChanges>
   <properties>
     <entry>
       <string>Category</string>
@@ -83,6 +84,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -95,6 +97,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -122,6 +125,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -134,6 +138,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -163,6 +168,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -175,6 +181,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -202,6 +209,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -214,6 +222,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -241,6 +250,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -253,6 +263,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -280,6 +291,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -292,6 +304,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -319,6 +332,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -331,6 +345,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -358,6 +373,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -370,6 +386,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -397,6 +414,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -409,6 +427,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -436,6 +455,7 @@
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>dealerActor</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties/>
               <relationsIds/>
               <resourceMaxLimit>100</resourceMaxLimit>
@@ -448,6 +468,7 @@
             </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
+              <nbrOfPropChanges>0</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>Category</string>
@@ -506,7 +527,7 @@
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 1
-    Actor: actor0, busy time: 7
+    Actor: actor0, busy time: 7, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 0
   TPA = Mean number of tasks per actor: 1.0
   Proportions: 
@@ -536,6 +557,7 @@
     <dealerActor>
       <resId>dealerActor</resId>
       <type>actor</type>
+      <nbrOfPropChanges>0</nbrOfPropChanges>
       <properties/>
       <relationsIds/>
       <resources/>

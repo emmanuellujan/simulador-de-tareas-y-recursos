@@ -2,6 +2,7 @@ Time: 0
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
 		Active Task: task0
@@ -13,6 +14,7 @@ Time: 0
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -26,6 +28,7 @@ Time: 0
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -35,6 +38,7 @@ Time: 1
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: The task task0 pass to the ready list of the resource actor0
 		Active Task: None
@@ -46,6 +50,7 @@ Time: 1
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -59,6 +64,7 @@ Time: 1
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -68,6 +74,7 @@ Time: 2
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -79,6 +86,7 @@ Time: 2
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -92,6 +100,7 @@ Time: 2
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -101,6 +110,7 @@ Time: 3
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -112,6 +122,7 @@ Time: 3
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -125,6 +136,7 @@ Time: 3
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -134,6 +146,7 @@ Time: 4
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -145,6 +158,7 @@ Time: 4
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -158,6 +172,7 @@ Time: 4
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -167,6 +182,7 @@ Time: 5
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -178,6 +194,7 @@ Time: 5
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -191,6 +208,7 @@ Time: 5
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -200,6 +218,7 @@ Time: 6
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -211,6 +230,7 @@ Time: 6
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -224,6 +244,7 @@ Time: 6
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -233,6 +254,7 @@ Time: 7
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -244,6 +266,7 @@ Time: 7
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -257,6 +280,7 @@ Time: 7
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty
@@ -266,6 +290,7 @@ Time: 8
 	ResourceId: dealerActor
 		Relationships Limit: 100
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 		Current Action: None
 		Active Task: None
@@ -277,6 +302,7 @@ Time: 8
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			Category: A
 			ActorName: John
@@ -290,6 +316,7 @@ Time: 8
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
+		Nbr. of properties changes: 0
 		Properties:
 			type: report
 			state: empty

@@ -35,6 +35,7 @@ public class Update {
 				value = properties.get(key);
 				propsResource.put(key, value);
 				resource.setProperties(propsResource);
+				resource.incNbrOfPropChanges();
 			}
 
 			return true;

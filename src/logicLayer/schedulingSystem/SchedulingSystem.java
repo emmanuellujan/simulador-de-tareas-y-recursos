@@ -15,7 +15,7 @@ public class SchedulingSystem {
 
 	public static void main(String[] args) {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
-		schedulingSystem.start();
+		schedulingSystem.start2();
 	}
 
 	private Configurator configurator;
@@ -34,7 +34,7 @@ public class SchedulingSystem {
 		Configurator configurator = new Configurator();
 		IOSystem ioSystem = new SerialIOSystem(configurator, this);
 		CompLogginSystem logger = new CompLogginSystem(configurator);
-                //Hardcoded
+		// Hardcoded
 		ResultsAnalyzer resultsAnalyzer = new BasicAnalyzer(this);
 		int deadline = 0;
 		Vector<Task> newsList = new Vector<Task>();
