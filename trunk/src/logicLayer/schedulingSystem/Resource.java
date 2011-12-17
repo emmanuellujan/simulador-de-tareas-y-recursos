@@ -8,17 +8,23 @@ import java.util.Vector;
 public class Resource implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	private String resId;
 	private String type;
+	private int nbrOfPropChanges;
 	private Hashtable<String, String> properties;
 	private Vector<String> relationsIds;
 	private Vector<Resource> resources;
 	private int resourceMaxLimit;
+
 	private SchedulingSystem schedulingSystem;
 
 	public Resource(String resId, String type,
 			Hashtable<String, String> properties, int maxRelations,
 			Vector<String> relationsIds, SchedulingSystem schedulingSystem) {
+		int nbrOfPropChanges=0;
 		if (properties == null)
 			properties = new Hashtable<String, String>();
 		if (relationsIds == null)
@@ -26,6 +32,7 @@ public class Resource implements Serializable {
 
 		this.setResId(resId);
 		this.setType(type);
+		this.setNbrOfPropChanges(nbrOfPropChanges);
 		this.setProperties(properties);
 		this.setResourceMaxLimit(maxRelations);
 		this.setRelationsIds(relationsIds);
@@ -43,6 +50,10 @@ public class Resource implements Serializable {
 					+ this.getResId();
 			this.getSchedulingSystem().getLogger().addErrorMsg(errorMsg);
 		}
+	}
+
+	public int getNbrOfPropChanges() {
+		return nbrOfPropChanges;
 	}
 
 	public Hashtable<String, String> getProperties() {
@@ -82,6 +93,10 @@ public class Resource implements Serializable {
 		return type;
 	}
 
+	public void incNbrOfPropChanges() {
+		this.nbrOfPropChanges++;
+	}
+
 	public void print() {
 		System.out.println("ResourceId:" + this.getResId());
 
@@ -108,7 +123,11 @@ public class Resource implements Serializable {
 	}
 
 	public void reset() {
+		this.setNbrOfPropChanges(0);
+	}
 
+	public void setNbrOfPropChanges(int nbrOfPropChanges) {
+		this.nbrOfPropChanges = nbrOfPropChanges;
 	}
 
 	public void setProperties(Hashtable<String, String> properties) {

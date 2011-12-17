@@ -8,6 +8,7 @@ import logicLayer.schedulingSystem.Resource;
 public class SimulationResource {
 	private String resId;
 	
+	private int nbrOfPropChanges;
 	private Hashtable<String, String> properties;
 	private Vector<String> relationsIds;
 	private int resourceMaxLimit;
@@ -15,12 +16,13 @@ public class SimulationResource {
 	
 	SimulationResource(Resource resource){
 		String resId = resource.getResId();
-		
+		int nbrOfPropChanges = resource.getNbrOfPropChanges();
 		Hashtable<String, String> properties = (Hashtable<String, String>) resource.getProperties().clone(); 
 		Vector<String> relationsIds = (Vector<String>) resource.getRelationsIds().clone(); 
 		int resourceMaxLimit = resource.getResourceMaxLimit();
 				
 		this.setResId(resId);
+		this.setNbrOfPropChanges(nbrOfPropChanges);
 		this.setProperties(properties);
 		this.setRelationsIds(relationsIds);
 		this.setResourceMaxLimit(resourceMaxLimit);
@@ -57,4 +59,13 @@ public class SimulationResource {
 		this.resourceMaxLimit = resourceMaxLimit;
 	}
 
+	public int getNbrOfPropChanges() {
+		return nbrOfPropChanges;
+	}
+
+	public void setNbrOfPropChanges(int nbrOfPropChanges) {
+		this.nbrOfPropChanges = nbrOfPropChanges;
+	}
+
+	
 }

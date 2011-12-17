@@ -47,6 +47,8 @@ public class TXTLogginSystem extends FileLogginSystem {
 			txtLog += relationsIds.get(n - 1);
 		txtLog += "\n";
 		
+		txtLog += "\t\tNbr. of properties changes: " + resource.getNbrOfPropChanges() + "\n";
+		
 		txtLog += "\t\tProperties:\n";
 		Hashtable<String, String> properties = resource.getProperties();
 		Enumeration<String> e = properties.keys();

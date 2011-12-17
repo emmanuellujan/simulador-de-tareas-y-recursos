@@ -9,9 +9,10 @@ Results Analisys
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 2
-    Actor: actor0, busy time: 4
-    Actor: actor1, busy time: 4
+    Actor: actor0, busy time: 4, nbr. of properties changes: 0
+    Actor: actor1, busy time: 4, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 1
+    Artifact: artifact0, nbr. of properties changes: 0
   TPA = Mean number of tasks per actor: 0.5
   Proportions: 
     Successful tasks: 1.0

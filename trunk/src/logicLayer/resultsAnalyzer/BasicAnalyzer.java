@@ -5,6 +5,7 @@ import java.util.Vector;
 import persistenceLayer.dataModel.SimulationTime.SimulationTime;
 import persistenceLayer.logginSystem.CompLogginSystem;
 import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
 
 public class BasicAnalyzer extends ResultsAnalyzer{
@@ -179,12 +180,20 @@ public class BasicAnalyzer extends ResultsAnalyzer{
 		Vector<Actor> actors = this.getSchedulingSystem().getActorsList();
 		int n = actors.size();
 		for(int i=0;i<n;i++){
-			analysis += "    Actor: "+actors.get(i).getResId()+", busy time: "
-					+ actors.get(i).getBusyTime() + "\n";
+			analysis += "    Actor: "+actors.get(i).getResId()
+					+", busy time: " + actors.get(i).getBusyTime() 
+					+ ", nbr. of properties changes: " + actors.get(i).getNbrOfPropChanges() + "\n";
 		}
 		
 		analysis += "  R = Number of other resources (artifacts): "
 				+ this.getNumberOfResources() + "\n";
+		
+		Vector<Resource> resources = this.getSchedulingSystem().getResourcesList();
+		n = resources.size();
+		for(int i=0;i<n;i++){
+			analysis += "    Artifact: "+ resources.get(i).getResId()
+					+ ", nbr. of properties changes: " + resources.get(i).getNbrOfPropChanges() + "\n";
+		}
 
 		analysis += "  TPA = Mean number of tasks per actor: "
 				+ this.getMeanNbrTasksPerActor() + "\n";
