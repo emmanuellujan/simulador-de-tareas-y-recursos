@@ -278,11 +278,11 @@ public class SchedulingSystem {
 
 	public void simulateAndLog() {
 		this.reset();
-		Vector<Resource> allResourcesList = this.getAllResourcesList();
 		Vector<Actor> actorsList = getActorsList();
 		CompLogginSystem logger = this.getLogger();
 		Actor dealerActor = this.getDealerActor();
 		actorsList.add(0, dealerActor);
+		Vector<Resource> allResourcesList = this.getAllResourcesList();
 		int i = 0;
 		int n = actorsList.size();
 		while (!scheduleFinished()) {

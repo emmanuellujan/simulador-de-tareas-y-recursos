@@ -3,6 +3,15 @@
 		<currentTime>0</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+				<activeTask>task0</activeTask>
+				<currentTime>0</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList>task1, task2</readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
 				<activeTask>None</activeTask>
@@ -25,6 +34,15 @@
 	<time>
 		<currentTime>1</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>The task task0 pass to the ready list of the resource actor0</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>1</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList>task1, task2</readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
@@ -49,6 +67,15 @@
 		<currentTime>2</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
+				<activeTask>task1</activeTask>
+				<currentTime>2</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList>task2</readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -71,6 +98,15 @@
 	<time>
 		<currentTime>3</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>The task task1 pass to the ready list of the resource actor0</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>3</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList>task2</readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task0</currentAction>
@@ -95,6 +131,15 @@
 		<currentTime>4</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>Select a task from the ready list and put that task as active. The selected task is task2</currentAction>
+				<activeTask>task2</activeTask>
+				<currentTime>4</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task0 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -117,6 +162,15 @@
 	<time>
 		<currentTime>5</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>The task task2 pass to the interruption list of the resource actor0</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>5</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up</currentAction>
@@ -141,6 +195,15 @@
 		<currentTime>6</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>6</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2</currentAction>
 				<activeTask>task2</activeTask>
@@ -163,6 +226,15 @@
 	<time>
 		<currentTime>7</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>7</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task2</currentAction>
@@ -187,6 +259,15 @@
 		<currentTime>8</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>8</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task2 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -209,6 +290,15 @@
 	<time>
 		<currentTime>9</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>9</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
@@ -233,6 +323,15 @@
 		<currentTime>10</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>10</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task1 pass to the ready list</currentAction>
 				<activeTask>None</activeTask>
@@ -255,6 +354,15 @@
 	<time>
 		<currentTime>11</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>11</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
@@ -279,6 +387,15 @@
 		<currentTime>12</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>12</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task1 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -301,6 +418,15 @@
 	<time>
 		<currentTime>13</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>13</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
@@ -325,6 +451,15 @@
 		<currentTime>14</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>14</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -347,6 +482,15 @@
 	<time>
 		<currentTime>15</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>15</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
@@ -371,6 +515,15 @@
 		<currentTime>16</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>16</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2</currentAction>
 				<activeTask>task2</activeTask>
@@ -393,6 +546,15 @@
 	<time>
 		<currentTime>17</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>17</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task2</currentAction>
@@ -417,6 +579,15 @@
 		<currentTime>18</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>18</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task2 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -439,6 +610,15 @@
 	<time>
 		<currentTime>19</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>19</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
@@ -463,6 +643,15 @@
 		<currentTime>20</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>20</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
 				<activeTask>None</activeTask>
@@ -485,6 +674,15 @@
 	<time>
 		<currentTime>21</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>21</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
@@ -509,6 +707,15 @@
 		<currentTime>22</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>22</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task1</currentAction>
 				<activeTask>task1</activeTask>
@@ -531,6 +738,15 @@
 	<time>
 		<currentTime>23</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>23</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task1 pass to the ready list of the resource actor1</currentAction>
@@ -555,6 +771,15 @@
 		<currentTime>24</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>24</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -577,6 +802,15 @@
 	<time>
 		<currentTime>25</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>25</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
@@ -601,6 +835,15 @@
 		<currentTime>26</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>26</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2</currentAction>
 				<activeTask>task2</activeTask>
@@ -623,6 +866,15 @@
 	<time>
 		<currentTime>27</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>27</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task2</currentAction>
@@ -647,6 +899,15 @@
 		<currentTime>28</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>28</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task2 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -669,6 +930,15 @@
 	<time>
 		<currentTime>29</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>29</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
@@ -693,6 +963,15 @@
 		<currentTime>30</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>30</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
 				<activeTask>None</activeTask>
@@ -715,6 +994,15 @@
 	<time>
 		<currentTime>31</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>31</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
@@ -739,6 +1027,15 @@
 		<currentTime>32</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>32</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task1</currentAction>
 				<activeTask>task1</activeTask>
@@ -761,6 +1058,15 @@
 	<time>
 		<currentTime>33</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>33</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task1 pass to the ready list of the resource actor1</currentAction>
@@ -785,6 +1091,15 @@
 		<currentTime>34</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>34</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -807,6 +1122,15 @@
 	<time>
 		<currentTime>35</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>35</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
@@ -831,6 +1155,15 @@
 		<currentTime>36</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>36</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select an interruption from the interruption list and put that interruption as active. The selected interruption is task2</currentAction>
 				<activeTask>task2</activeTask>
@@ -853,6 +1186,15 @@
 	<time>
 		<currentTime>37</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>37</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task2</currentAction>
@@ -877,6 +1219,15 @@
 		<currentTime>38</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>38</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task2 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -899,6 +1250,15 @@
 	<time>
 		<currentTime>39</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>39</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
@@ -923,6 +1283,15 @@
 		<currentTime>40</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>40</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
 				<activeTask>None</activeTask>
@@ -945,6 +1314,15 @@
 	<time>
 		<currentTime>41</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>41</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task1</currentAction>
@@ -969,6 +1347,15 @@
 		<currentTime>42</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>42</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task1</currentAction>
 				<activeTask>task1</activeTask>
@@ -991,6 +1378,15 @@
 	<time>
 		<currentTime>43</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>43</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task1 pass to the ready list of the resource actor1</currentAction>
@@ -1015,6 +1411,15 @@
 		<currentTime>44</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>44</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -1037,6 +1442,15 @@
 	<time>
 		<currentTime>45</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>45</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up, the active task task0 pass to the ready list</currentAction>
@@ -1061,6 +1475,15 @@
 		<currentTime>46</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>46</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
 				<activeTask>task0</activeTask>
@@ -1083,6 +1506,15 @@
 	<time>
 		<currentTime>47</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>47</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Procesing active task task0</currentAction>
@@ -1107,6 +1539,15 @@
 		<currentTime>48</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>48</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>The task task0 pass to the ready list of the resource actor1</currentAction>
 				<activeTask>None</activeTask>
@@ -1129,6 +1570,15 @@
 	<time>
 		<currentTime>49</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>49</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
@@ -1153,6 +1603,15 @@
 		<currentTime>50</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>50</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up</currentAction>
 				<activeTask>None</activeTask>
@@ -1175,6 +1634,15 @@
 	<time>
 		<currentTime>51</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>51</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
@@ -1199,6 +1667,15 @@
 		<currentTime>52</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>52</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
 				<activeTask>None</activeTask>
@@ -1221,6 +1698,15 @@
 	<time>
 		<currentTime>53</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>53</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
@@ -1245,6 +1731,15 @@
 		<currentTime>54</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>54</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>
 				<activeTask>None</activeTask>
@@ -1268,6 +1763,15 @@
 		<currentTime>55</currentTime>
 		<actors>
 			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>55</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
+			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>Time is up</currentAction>
 				<activeTask>None</activeTask>
@@ -1290,6 +1794,15 @@
 	<time>
 		<currentTime>56</currentTime>
 		<actors>
+			<resource>
+				<resourceId>dealerActor</resourceId>
+				<currentAction>None</currentAction>
+				<activeTask>None</activeTask>
+				<currentTime>56</currentTime>
+				<limitTime>-1</limitTime>
+				<interruptionList></interruptionList>
+				<readyList></readyList>
+			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
 				<currentAction>None</currentAction>

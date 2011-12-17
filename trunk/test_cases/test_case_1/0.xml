@@ -82,6 +82,18 @@
           <currentTime>0</currentTime>
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>Select a task from the ready list and put that task as active. The selected task is task0</currentAction>
+              <taskId>task0</taskId>
+              <time>1</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
                 <entry>
@@ -108,6 +120,18 @@
         <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>1</currentTime>
           <actors>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>The task task0 pass to the ready list of the resource actor0</currentAction>
+              <taskId>None</taskId>
+              <time>2</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
@@ -138,6 +162,18 @@
           <currentTime>2</currentTime>
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>3</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
                 <entry>
@@ -164,6 +200,18 @@
         <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>3</currentTime>
           <actors>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>4</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
@@ -192,6 +240,18 @@
           <currentTime>4</currentTime>
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>5</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
                 <entry>
@@ -218,6 +278,18 @@
         <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>5</currentTime>
           <actors>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>6</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
@@ -246,6 +318,18 @@
           <currentTime>6</currentTime>
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>7</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
                 <entry>
@@ -272,6 +356,18 @@
         <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>7</currentTime>
           <actors>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>8</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
@@ -300,6 +396,18 @@
           <currentTime>8</currentTime>
           <actors>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>9</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>
                 <entry>
@@ -326,6 +434,18 @@
         <persistenceLayer.dataModel.SimulationTime.SimulationTime>
           <currentTime>9</currentTime>
           <actors>
+            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
+              <resId>dealerActor</resId>
+              <properties/>
+              <relationsIds/>
+              <resourceMaxLimit>100</resourceMaxLimit>
+              <currentAction>None</currentAction>
+              <taskId>None</taskId>
+              <time>10</time>
+              <limitTime>-1</limitTime>
+              <interruptionList/>
+              <readyList/>
+            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
             <persistenceLayer.dataModel.SimulationTime.SimulationActor>
               <resId>actor0</resId>
               <properties>

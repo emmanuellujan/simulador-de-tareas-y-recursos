@@ -1,4 +1,15 @@
 Time: 0
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: Select a task from the ready list and put that task as active. The selected task is task0
+		Active Task: task0
+		Current Time: 0
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
@@ -27,6 +38,17 @@ Time: 0
 
 
 Time: 1
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: The task task0 pass to the ready list of the resource actor0
+		Active Task: None
+		Current Time: 1
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
@@ -55,6 +77,17 @@ Time: 1
 
 
 Time: 2
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 2
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
@@ -83,6 +116,17 @@ Time: 2
 
 
 Time: 3
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 3
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
@@ -111,6 +155,17 @@ Time: 3
 
 
 Time: 4
+	ResourceId: dealerActor
+		Relationships Limit: 100
+		Relationships: 
+		Properties:
+		Current Action: None
+		Active Task: None
+		Current Time: 4
+		Limit Time: -1
+		Interruption List: 
+		Ready List:
+
 	ResourceId: actor0
 		Relationships Limit: 10
 		Relationships: 
