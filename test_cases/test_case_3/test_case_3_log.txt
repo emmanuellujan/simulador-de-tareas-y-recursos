@@ -234,8 +234,8 @@ Time: 6
 		Properties:
 			Category: A
 			ActorName: John
-		Current Action: Procesing active task task0
-		Active Task: task0
+		Current Action: The active task task0 ends
+		Active Task: None
 		Current Time: 6
 		Limit Time: -1
 		Interruption List: 
@@ -244,10 +244,10 @@ Time: 6
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
-		Nbr. of properties changes: 0
+		Nbr. of properties changes: 1
 		Properties:
 			type: report
-			state: empty
+			state: complete
 
 
 Time: 7
@@ -270,7 +270,7 @@ Time: 7
 		Properties:
 			Category: A
 			ActorName: John
-		Current Action: The active task task0 ends
+		Current Action: None
 		Active Task: None
 		Current Time: 7
 		Limit Time: -1
@@ -280,45 +280,9 @@ Time: 7
 	ResourceId: artifact0
 		Relationships Limit: 10
 		Relationships: 
-		Nbr. of properties changes: 0
+		Nbr. of properties changes: 1
 		Properties:
 			type: report
-			state: empty
-
-
-Time: 8
-	ResourceId: dealerActor
-		Relationships Limit: 100
-		Relationships: 
-		Nbr. of properties changes: 0
-		Properties:
-		Current Action: None
-		Active Task: None
-		Current Time: 8
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: actor0
-		Relationships Limit: 10
-		Relationships: 
-		Nbr. of properties changes: 0
-		Properties:
-			Category: A
-			ActorName: John
-		Current Action: None
-		Active Task: None
-		Current Time: 8
-		Limit Time: -1
-		Interruption List: 
-		Ready List:
-
-	ResourceId: artifact0
-		Relationships Limit: 10
-		Relationships: 
-		Nbr. of properties changes: 0
-		Properties:
-			type: report
-			state: empty
+			state: complete
 
 

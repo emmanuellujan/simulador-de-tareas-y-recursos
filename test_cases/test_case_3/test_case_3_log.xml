@@ -151,8 +151,8 @@
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
-				<currentAction>Procesing active task task0</currentAction>
-				<activeTask>task0</activeTask>
+				<currentAction>The active task task0 ends</currentAction>
+				<activeTask>None</activeTask>
 				<currentTime>6</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
@@ -174,32 +174,9 @@
 			</resource>
 			<resource>
 				<resourceId>actor0</resourceId>
-				<currentAction>The active task task0 ends</currentAction>
+				<currentAction>None</currentAction>
 				<activeTask>None</activeTask>
 				<currentTime>7</currentTime>
-				<limitTime>-1</limitTime>
-				<interruptionList></interruptionList>
-				<readyList></readyList>
-			</resource>
-		</actors>
-	</time>
-	<time>
-		<currentTime>8</currentTime>
-		<actors>
-			<resource>
-				<resourceId>dealerActor</resourceId>
-				<currentAction>None</currentAction>
-				<activeTask>None</activeTask>
-				<currentTime>8</currentTime>
-				<limitTime>-1</limitTime>
-				<interruptionList></interruptionList>
-				<readyList></readyList>
-			</resource>
-			<resource>
-				<resourceId>actor0</resourceId>
-				<currentAction>None</currentAction>
-				<activeTask>None</activeTask>
-				<currentTime>8</currentTime>
 				<limitTime>-1</limitTime>
 				<interruptionList></interruptionList>
 				<readyList></readyList>

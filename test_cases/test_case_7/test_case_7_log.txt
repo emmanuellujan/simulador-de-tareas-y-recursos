@@ -53,8 +53,8 @@ Time: 0
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -113,8 +113,8 @@ Time: 1
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -173,8 +173,8 @@ Time: 2
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -233,8 +233,8 @@ Time: 3
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -293,8 +293,8 @@ Time: 4
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -353,8 +353,8 @@ Time: 5
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -413,8 +413,8 @@ Time: 6
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -473,8 +473,8 @@ Time: 7
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -533,8 +533,8 @@ Time: 8
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -593,8 +593,8 @@ Time: 9
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -653,8 +653,8 @@ Time: 10
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -713,8 +713,8 @@ Time: 11
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -773,8 +773,8 @@ Time: 12
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -833,8 +833,8 @@ Time: 13
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -893,8 +893,8 @@ Time: 14
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -953,8 +953,8 @@ Time: 15
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1013,8 +1013,8 @@ Time: 16
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1073,8 +1073,8 @@ Time: 17
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1133,8 +1133,8 @@ Time: 18
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1193,8 +1193,8 @@ Time: 19
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1253,8 +1253,8 @@ Time: 20
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1313,8 +1313,8 @@ Time: 21
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1373,8 +1373,8 @@ Time: 22
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1433,8 +1433,8 @@ Time: 23
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1493,8 +1493,8 @@ Time: 24
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1553,8 +1553,8 @@ Time: 25
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1613,8 +1613,8 @@ Time: 26
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1673,8 +1673,8 @@ Time: 27
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1733,8 +1733,8 @@ Time: 28
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1793,8 +1793,8 @@ Time: 29
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1853,8 +1853,8 @@ Time: 30
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1913,8 +1913,8 @@ Time: 31
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -1973,8 +1973,8 @@ Time: 32
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2033,8 +2033,8 @@ Time: 33
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2093,8 +2093,8 @@ Time: 34
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2153,8 +2153,8 @@ Time: 35
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2213,8 +2213,8 @@ Time: 36
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2273,8 +2273,8 @@ Time: 37
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2333,8 +2333,8 @@ Time: 38
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2393,8 +2393,8 @@ Time: 39
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2453,8 +2453,8 @@ Time: 40
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2513,8 +2513,8 @@ Time: 41
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2573,8 +2573,8 @@ Time: 42
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2633,8 +2633,8 @@ Time: 43
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2693,8 +2693,8 @@ Time: 44
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2753,8 +2753,8 @@ Time: 45
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2813,8 +2813,8 @@ Time: 46
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2873,8 +2873,8 @@ Time: 47
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2933,8 +2933,8 @@ Time: 48
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -2993,8 +2993,8 @@ Time: 49
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3053,8 +3053,8 @@ Time: 50
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3113,8 +3113,8 @@ Time: 51
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3173,8 +3173,8 @@ Time: 52
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3233,8 +3233,8 @@ Time: 53
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3293,8 +3293,8 @@ Time: 54
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3353,8 +3353,8 @@ Time: 55
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 
@@ -3413,8 +3413,8 @@ Time: 56
 		Relationships: actor0, actor1
 		Nbr. of properties changes: 0
 		Properties:
-			type: artifact
 			charge: 700pages
+			type: artifact
 			description: printer
 
 

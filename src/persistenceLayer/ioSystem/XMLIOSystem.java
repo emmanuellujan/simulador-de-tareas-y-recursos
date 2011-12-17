@@ -268,45 +268,6 @@ public class XMLIOSystem extends IOSystem {
 							Integer.parseInt(sDifficult),
 							this.getSchedulingSystem(), null, null);
 
-					// BEGIN TEST_CASE_3
-					if (task.getTaskId().equals("task0_")) {
-
-						// Esta tarea necesita ser ejecutada siempre por un
-						// empleado Categoría A
-						String key = "Category";
-						String value = "A";
-						EqualPropertyFilter epf1 = new EqualPropertyFilter(key,
-								value);
-
-						TaskOwnerFilter tof = new TaskOwnerFilter(task);
-
-						AndFilter af = new AndFilter(epf1, tof);
-
-						task.setFilter(af);
-
-						// Cuando la tarea termina se busca un reporte vacío
-						key = "type";
-						value = "report";
-						epf1 = new EqualPropertyFilter(key, value);
-
-						key = "state";
-						value = "empty";
-						EqualPropertyFilter epf2 = new EqualPropertyFilter(key,
-								value);
-
-						af = new AndFilter(epf1, epf2);
-
-						// y luego se actualización el reporte como completo
-						Update u1 = new Update();
-						key = "state";
-						value = "complete";
-						u1.addProperty(key, value);
-						Updater u = new Updater();
-						u.addUpdate(af, u1);
-						task.setUpdater(u);
-					}
-					// END TEST
-
 					tasks.add(task);
 				}
 			}
