@@ -19,8 +19,7 @@ public class LogFrame extends javax.swing.JFrame {
     /** Creates new form LogFrame */
     public LogFrame(String text) {
         initComponents();
-        this.jTextArea1.setText(text);
-        this.setResizable(false);
+        this.jTextArea1.setText(text);        
     }
 
     /** This method is called from within the constructor to
@@ -66,8 +65,8 @@ public class LogFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addGap(9, 9, 9)
                 .addComponent(jButton1))
         );
 
