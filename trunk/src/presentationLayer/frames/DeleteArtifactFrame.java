@@ -93,6 +93,7 @@ public class DeleteArtifactFrame extends javax.swing.JFrame {
 	/** Creates new form DeleteArtifactFrame */
 	public DeleteArtifactFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public Vector<Resource> getResourcesList() {

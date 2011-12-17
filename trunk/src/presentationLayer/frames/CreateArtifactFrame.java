@@ -113,6 +113,7 @@ public class CreateArtifactFrame extends javax.swing.JFrame {
 	/** Creates new form CreateArtifactFrame */
 	public CreateArtifactFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	private boolean areValidFields() {

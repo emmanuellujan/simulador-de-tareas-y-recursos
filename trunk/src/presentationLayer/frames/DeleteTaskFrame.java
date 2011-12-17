@@ -86,6 +86,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
 	/** Creates new form DeleteTaskFrame */
 	public DeleteTaskFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public Vector<Task> getTaskList() {

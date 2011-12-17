@@ -93,6 +93,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 	/** Creates new form CreateFilterFrame */
 	public CreateFilterFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public void fillObjectCombobox() {
