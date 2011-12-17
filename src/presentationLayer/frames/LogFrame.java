@@ -20,6 +20,7 @@ public class LogFrame extends javax.swing.JFrame {
     public LogFrame(String text) {
         initComponents();
         this.jTextArea1.setText(text);
+        this.setResizable(false);
     }
 
     /** This method is called from within the constructor to

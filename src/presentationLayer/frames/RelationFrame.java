@@ -107,6 +107,7 @@ public class RelationFrame extends javax.swing.JFrame {
 		this.relations = new Vector<String>();
 		this.jTextArea2.setLineWrap(true);
 		this.jTextArea2.setWrapStyleWord(true);
+                this.setResizable(false);
 	}
 
 	public Vector<Actor> getActorsList() {

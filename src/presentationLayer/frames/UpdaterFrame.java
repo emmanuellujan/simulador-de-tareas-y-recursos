@@ -67,6 +67,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	/** Creates new form UpdaterFrame */
 	public UpdaterFrame() {            
             initComponents();
+            this.setResizable(false);
 	}
 
 	public CreateTaskFrame getTaskBackFrame() {
