@@ -131,6 +131,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
 	private CreateActorFrame() {
 		initComponents();
                 this.jButton3.setEnabled(false);
+                this.setResizable(false);
 	}
 
 	private boolean areValidFields() {

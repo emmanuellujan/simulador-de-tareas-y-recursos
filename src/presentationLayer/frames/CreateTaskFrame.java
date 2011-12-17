@@ -156,6 +156,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		this.setWorkUnitList(new Vector());
 		this.jTextArea1.setLineWrap(true);
 		this.jTextArea1.setWrapStyleWord(true);
+                this.setResizable(false);
 	}
 
 	public Vector<Actor> getActorsList() {

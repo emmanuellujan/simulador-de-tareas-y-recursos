@@ -93,6 +93,7 @@ public class DeleteActorFrame extends javax.swing.JFrame {
 	/** Creates new form DeleteActorFrame */
 	public DeleteActorFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public Vector<Actor> getActorsList() {

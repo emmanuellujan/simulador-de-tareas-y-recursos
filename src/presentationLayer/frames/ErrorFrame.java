@@ -83,6 +83,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 	/** Creates new form ErrorFrame */
 	public ErrorFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public CreateFilterFrame getFilterBackFrame() {
