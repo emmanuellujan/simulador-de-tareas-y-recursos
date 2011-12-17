@@ -223,6 +223,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextArea1.setWrapStyleWord(true);
 		this.setLocationRelativeTo(null);
 		this.setLoadState(false);
+                
 	}
 
 	public void fillResourcesComboboxes() {
@@ -366,7 +367,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(357, 427));
 
-        //jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentationLayer/Media/logoII.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentationLayer/Media/logoII.png"))); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Verdana", 1, 11));
         jLabel22.setText("Notaciones de ayuda");
@@ -1006,10 +1007,9 @@ public class SimulatorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-            String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();	
-            path = path.replace("xml", "txt");
-            path = path.replace("src\\", "");
-            path = path.replace("\\\\", "\\");
+            String path = ((FileLogginSystem)this.getSchedulingSystem().getLogger().getLogginSystems().elementAt(0)).getOutputFileName();
+            path = path.replace("xml", "txt");              
+            path = path.replace("\\\\", "\\");            
             File archivo = new File(path); 
             StringBuffer contents = new StringBuffer();
             BufferedReader reader = null;
@@ -1020,7 +1020,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
                 while ((text = reader.readLine()) != null) {
                     contents.append(text).append(System.getProperty("line.separator"));
                 }
-            } catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {                
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -1111,8 +1111,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		fileChooser.setDialogTitle("Cargar");
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		int seleccion = fileChooser.showOpenDialog(null);
-		if (seleccion == JFileChooser.APPROVE_OPTION) {
-			System.out.println(fileChooser.getSelectedFile().getAbsolutePath());
+		if (seleccion == JFileChooser.APPROVE_OPTION) {			
 			this.getSchedulingSystem().loadData(
 					fileChooser.getSelectedFile().getAbsolutePath());
 			this.setLoadState(true);
@@ -1364,10 +1363,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.jTextField1.setBackground(Color.LIGHT_GRAY);
 			this.jTextField1.setText("");
 			this.jTextField1.setEditable(false);
+                        this.jButton16.setEnabled(true);
 		} else {
 			this.jTextField1.setEditable(true);
 			this.jTextField1.setText("");
 			this.jTextField1.setBackground(Color.WHITE);
+                        this.jButton16.setEnabled(false);
 		}
 	}
 
