@@ -51,6 +51,7 @@ public class UpdateFrame extends javax.swing.JFrame {
 	/** Creates new form UpdateFrame */
 	public UpdateFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public Object getBackFrame() {

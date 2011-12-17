@@ -83,6 +83,7 @@ public class NewsFrame extends javax.swing.JFrame {
 	/** Creates new form NewsFrame */
 	public NewsFrame() {
 		initComponents();
+                this.setResizable(false);
 	}
 
 	public CreateFilterFrame getFilterBackFrame() {
