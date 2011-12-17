@@ -1,9 +1,22 @@
+import java.util.Vector;
+
 import junit.framework.Assert;
 import logicLayer.schedulingSystem.SchedulingSystem;
+import logicLayer.schedulingSystem.Task;
+import logicLayer.schedulingSystem.Update;
+import logicLayer.schedulingSystem.Updater;
+import logicLayer.filterSystem.AndFilter;
+import logicLayer.filterSystem.EqualPropertyFilter;
+import logicLayer.filterSystem.Filter;
+import logicLayer.filterSystem.TaskOwnerFilter;
 import logicLayer.resultsAnalyzer.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import persistenceLayer.ioSystem.IOSystem;
+import persistenceLayer.ioSystem.SerialIOSystem;
+import persistenceLayer.ioSystem.XMLIOSystem;
 
 public class SchedulingSystemTest {
 
@@ -42,8 +55,9 @@ public class SchedulingSystemTest {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		String dir = this.getDir();
 		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
-		schedulingSystem.start(dir + bar + dir2, dir); 
-		double result = ((BasicAnalyzer)schedulingSystem.getResultsAnalyzer()).getPropVelocity();
+		schedulingSystem.start2(dir + bar + dir2, dir);
+		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
+				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
 	}
 
@@ -60,7 +74,77 @@ public class SchedulingSystemTest {
 
 	@Test
 	public void test3() {
-		this.test("test_case_3", 8.888889);
+
+		String dir2 = "test_case_3";
+		double d = 10.0;
+
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		String dir = this.getDir();
+		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
+
+		Vector<String> workUnits = new Vector<String>();
+		workUnits.add("actor0");
+		workUnits.add("actor0");
+		workUnits.add("actor0");
+		Task task = new Task("task0", 1, workUnits, null, null, "New", 1,
+				schedulingSystem, null, null);
+
+		// Esta tarea necesita ser ejecutada siempre por un
+		// empleado Categoría A
+		String key = "Category";
+		String value = "A";
+		EqualPropertyFilter epf1 = new EqualPropertyFilter(key, value);
+
+		TaskOwnerFilter tof = new TaskOwnerFilter(task);
+
+		AndFilter af = new AndFilter(epf1, tof);
+		task.setFilter(af);
+
+		// Cuando la tarea termina se busca un reporte vacío
+		key = "type";
+		value = "report";
+		epf1 = new EqualPropertyFilter(key, value);
+
+		key = "state";
+		value = "empty";
+		EqualPropertyFilter epf2 = new EqualPropertyFilter(key, value);
+
+		af = new AndFilter(epf1, epf2);
+
+		// y luego se actualización el reporte como completo
+		Update u1 = new Update();
+		key = "state";
+		value = "complete";
+		u1.addProperty(key, value);
+		Updater u = new Updater();
+		u.addUpdate(af, u1);
+		task.setUpdater(u);
+
+		String inputDir=dir + bar + dir2;
+		String outputDir=dir;
+		IOSystem ioSystem = new XMLIOSystem(schedulingSystem.getConfigurator(), schedulingSystem);
+		schedulingSystem.setIoSystem(ioSystem);
+		System.out.print("Loading data...");
+		schedulingSystem.loadData(inputDir);
+		schedulingSystem.getTasks().add(task);
+		System.out.println(" done.");
+		System.out.print("Simulation started...");
+		schedulingSystem.simulateAndLog();
+		System.out.println(" done.");
+		System.out.print("Analyzing results...");
+		schedulingSystem.getResultsAnalyzer().analyze();
+		System.out.println(" done.");
+		System.out.print("Saving data...");
+		schedulingSystem.saveData(outputDir);
+		System.out.println(" done.\n");
+		schedulingSystem.getResultsAnalyzer().print();
+		System.out.println("Done!\n\n");
+		SerialIOSystem serialIOSystem = new SerialIOSystem(schedulingSystem.getConfigurator(), schedulingSystem);
+		serialIOSystem.saveAll();
+		
+		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
+				.getPropVelocity();
+		Assert.assertEquals(d, result, 0.0001);
 	}
 
 	@Test

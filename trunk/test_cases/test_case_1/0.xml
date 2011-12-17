@@ -23,7 +23,7 @@
       <projectName>test_case_1</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="persistenceLayer.ioSystem.SerialIOSystem">
+    <ioSystem class="persistenceLayer.ioSystem.XMLIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
@@ -32,7 +32,6 @@
       </actorsList>
       <resourcesList/>
       <allResourcesList>
-        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
         <logicLayer.schedulingSystem.Actor reference="../../../.."/>
       </allResourcesList>
       <tasksList>

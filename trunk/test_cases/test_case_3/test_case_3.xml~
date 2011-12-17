@@ -8,7 +8,7 @@
 	<deadline>80</deadline>
 	<tasks>
 		<task>
-			<taskId>task0</taskId>
+			<taskId>task1</taskId>
 			<priority>0</priority>
 			<difficult>5</difficult>
 			<contingencyTask></contingencyTask>
@@ -42,7 +42,7 @@
 			<capacity>10</capacity>
 			<maxTasks>10</maxTasks>
 			<schedulingAlgorithm>FCFS</schedulingAlgorithm>
-			<quantum>5</quantum>
+			<quantum>-1</quantum>
 			<properties>
 				<property>
 					<propName>ActorName</propName>

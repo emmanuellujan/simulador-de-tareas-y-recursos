@@ -23,7 +23,7 @@
       <projectName>test_case_3</projectName>
       <bar>/</bar>
     </configurator>
-    <ioSystem class="persistenceLayer.ioSystem.SerialIOSystem">
+    <ioSystem class="persistenceLayer.ioSystem.XMLIOSystem">
       <configurator reference="../../configurator"/>
       <schedulingSystem reference="../.."/>
       <deadline>80</deadline>
@@ -34,7 +34,7 @@
         <logicLayer.schedulingSystem.Resource>
           <resId>artifact0</resId>
           <type>artifact</type>
-          <nbrOfPropChanges>0</nbrOfPropChanges>
+          <nbrOfPropChanges>1</nbrOfPropChanges>
           <properties>
             <entry>
               <string>type</string>
@@ -42,7 +42,7 @@
             </entry>
             <entry>
               <string>state</string>
-              <string>empty</string>
+              <string>complete</string>
             </entry>
           </properties>
           <relationsIds/>
@@ -54,23 +54,53 @@
       <allResourcesList>
         <logicLayer.schedulingSystem.Actor reference="../../../.."/>
         <logicLayer.schedulingSystem.Resource reference="../../resourcesList/logicLayer.schedulingSystem.Resource"/>
-        <logicLayer.schedulingSystem.Actor reference="../../../.."/>
-        <logicLayer.schedulingSystem.Resource reference="../../resourcesList/logicLayer.schedulingSystem.Resource"/>
       </allResourcesList>
       <tasksList>
         <logicLayer.schedulingSystem.Task>
           <taskId>task0</taskId>
-          <programCounter>3</programCounter>
+          <programCounter>2</programCounter>
           <workUnits>
             <string>actor0</string>
             <string>actor0</string>
             <string>actor0</string>
-            <string>actor0</string>
           </workUnits>
-          <priority>0</priority>
-          <difficult>5</difficult>
+          <priority>1</priority>
+          <difficult>1</difficult>
           <status>New</status>
           <schedulingSystem reference="../../../.."/>
+          <filter class="logicLayer.filterSystem.AndFilter">
+            <filterA class="logicLayer.filterSystem.EqualPropertyFilter">
+              <key class="string">Category</key>
+              <value class="string">A</value>
+            </filterA>
+            <filterB class="logicLayer.filterSystem.TaskOwnerFilter">
+              <element class="logicLayer.schedulingSystem.Task" reference="../../.."/>
+            </filterB>
+          </filter>
+          <updater>
+            <updates>
+              <entry>
+                <logicLayer.filterSystem.AndFilter>
+                  <filterA class="logicLayer.filterSystem.EqualPropertyFilter">
+                    <key class="string">type</key>
+                    <value class="string">report</value>
+                  </filterA>
+                  <filterB class="logicLayer.filterSystem.EqualPropertyFilter">
+                    <key class="string">state</key>
+                    <value class="string">empty</value>
+                  </filterB>
+                </logicLayer.filterSystem.AndFilter>
+                <logicLayer.schedulingSystem.Update>
+                  <properties>
+                    <entry>
+                      <string>state</string>
+                      <string>complete</string>
+                    </entry>
+                  </properties>
+                </logicLayer.schedulingSystem.Update>
+              </entry>
+            </updates>
+          </updater>
         </logicLayer.schedulingSystem.Task>
       </tasksList>
       <resultsAnalyzer class="logicLayer.resultsAnalyzer.BasicAnalyzer">
@@ -481,8 +511,8 @@
               </properties>
               <relationsIds/>
               <resourceMaxLimit>10</resourceMaxLimit>
-              <currentAction>Procesing active task task0</currentAction>
-              <taskId>task0</taskId>
+              <currentAction>The active task task0 ends</currentAction>
+              <taskId>None</taskId>
               <time>7</time>
               <limitTime>-1</limitTime>
               <interruptionList/>
@@ -492,7 +522,7 @@
           <resources>
             <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>artifact0</resId>
-              <nbrOfPropChanges>0</nbrOfPropChanges>
+              <nbrOfPropChanges>1</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>type</string>
@@ -500,7 +530,7 @@
                 </entry>
                 <entry>
                   <string>state</string>
-                  <string>empty</string>
+                  <string>complete</string>
                 </entry>
               </properties>
               <relationsIds/>
@@ -539,7 +569,7 @@
               </properties>
               <relationsIds/>
               <resourceMaxLimit>10</resourceMaxLimit>
-              <currentAction>The active task task0 ends</currentAction>
+              <currentAction>None</currentAction>
               <taskId>None</taskId>
               <time>8</time>
               <limitTime>-1</limitTime>
@@ -550,7 +580,7 @@
           <resources>
             <persistenceLayer.dataModel.SimulationTime.SimulationResource>
               <resId>artifact0</resId>
-              <nbrOfPropChanges>0</nbrOfPropChanges>
+              <nbrOfPropChanges>1</nbrOfPropChanges>
               <properties>
                 <entry>
                   <string>type</string>
@@ -558,65 +588,7 @@
                 </entry>
                 <entry>
                   <string>state</string>
-                  <string>empty</string>
-                </entry>
-              </properties>
-              <relationsIds/>
-              <resourceMaxLimit>10</resourceMaxLimit>
-            </persistenceLayer.dataModel.SimulationTime.SimulationResource>
-          </resources>
-        </persistenceLayer.dataModel.SimulationTime.SimulationTime>
-        <persistenceLayer.dataModel.SimulationTime.SimulationTime>
-          <currentTime>8</currentTime>
-          <actors>
-            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
-              <resId>dealerActor</resId>
-              <nbrOfPropChanges>0</nbrOfPropChanges>
-              <properties/>
-              <relationsIds/>
-              <resourceMaxLimit>100</resourceMaxLimit>
-              <currentAction>None</currentAction>
-              <taskId>None</taskId>
-              <time>9</time>
-              <limitTime>-1</limitTime>
-              <interruptionList/>
-              <readyList/>
-            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
-            <persistenceLayer.dataModel.SimulationTime.SimulationActor>
-              <resId>actor0</resId>
-              <nbrOfPropChanges>0</nbrOfPropChanges>
-              <properties>
-                <entry>
-                  <string>Category</string>
-                  <string>A</string>
-                </entry>
-                <entry>
-                  <string>ActorName</string>
-                  <string>John</string>
-                </entry>
-              </properties>
-              <relationsIds/>
-              <resourceMaxLimit>10</resourceMaxLimit>
-              <currentAction>None</currentAction>
-              <taskId>None</taskId>
-              <time>9</time>
-              <limitTime>-1</limitTime>
-              <interruptionList/>
-              <readyList/>
-            </persistenceLayer.dataModel.SimulationTime.SimulationActor>
-          </actors>
-          <resources>
-            <persistenceLayer.dataModel.SimulationTime.SimulationResource>
-              <resId>artifact0</resId>
-              <nbrOfPropChanges>0</nbrOfPropChanges>
-              <properties>
-                <entry>
-                  <string>type</string>
-                  <string>report</string>
-                </entry>
-                <entry>
-                  <string>state</string>
-                  <string>empty</string>
+                  <string>complete</string>
                 </entry>
               </properties>
               <relationsIds/>
@@ -653,25 +625,25 @@
 
   E = Number of errors: 0
   D = Deadline (in cycles): 80
-  C = Number of cycles: 9
+  C = Number of cycles: 8
   ET = Total number of executed tasks: 1
   ECT = Total number of executed contingency tasks: 0
   TE = ET + ECT  = Total number of executed tasks: 1
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 1
-    Actor: actor0, busy time: 6, nbr. of properties changes: 0
+    Actor: actor0, busy time: 5, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 1
-    Artifact: artifact0, nbr. of properties changes: 0
+    Artifact: artifact0, nbr. of properties changes: 1
   TPA = Mean number of tasks per actor: 1.0
   Proportions: 
     Successful tasks: 1.0
     Failed tasks: 0.0
-    Velocity (deadline/nbrOfCycles): 8.888889
+    Velocity (deadline/nbrOfCycles): 10.0
 </analysis>
       <numberOfErrors>0</numberOfErrors>
       <deadline>80</deadline>
-      <numberOfCycles>9</numberOfCycles>
+      <numberOfCycles>8</numberOfCycles>
       <nbrExecTasks>1</nbrExecTasks>
       <nbrExecContTasks>0</nbrExecContTasks>
       <numberOfTasks>1</numberOfTasks>
@@ -686,7 +658,7 @@
       <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
       <propFinishedTasks>1.0</propFinishedTasks>
       <propFailedTasks>0.0</propFailedTasks>
-      <propVelocity>8.888889</propVelocity>
+      <propVelocity>10.0</propVelocity>
     </resultsAnalyzer>
     <dealerActor>
       <resId>dealerActor</resId>
@@ -710,7 +682,7 @@
         <id>FCFS</id>
       </saReadyList>
       <busyTime>2</busyTime>
-      <time>9</time>
+      <time>8</time>
       <limitTime>-1</limitTime>
       <maxTasksNumber>100</maxTasksNumber>
     </dealerActor>
@@ -732,8 +704,8 @@
   <saReadyList class="logicLayer.schedulingAlgorithmSystem.FCFS">
     <id>FCFS</id>
   </saReadyList>
-  <busyTime>6</busyTime>
-  <time>9</time>
+  <busyTime>5</busyTime>
+  <time>8</time>
   <limitTime>-1</limitTime>
   <maxTasksNumber>10</maxTasksNumber>
 </logicLayer.schedulingSystem.Actor>

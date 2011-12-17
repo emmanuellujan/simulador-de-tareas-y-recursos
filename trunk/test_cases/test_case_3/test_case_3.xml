@@ -7,18 +7,6 @@
 	<description> </description>
 	<deadline>80</deadline>
 	<tasks>
-		<task>
-			<taskId>task0</taskId>
-			<priority>0</priority>
-			<difficult>5</difficult>
-			<contingencyTask></contingencyTask>
-			<workUnits>
-				<workUnit>actor0</workUnit>
-				<workUnit>actor0</workUnit>
-				<workUnit>actor0</workUnit>
-				<workUnit>actor0</workUnit>
-			</workUnits>
-		</task>
 	</tasks>
 	<resources>
 		<resource>

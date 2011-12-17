@@ -61,7 +61,6 @@ public class Task {
 				i++;
 			}
 			return r;
-			// return filter.eval(resources);
 		} else
 			return true;
 	}

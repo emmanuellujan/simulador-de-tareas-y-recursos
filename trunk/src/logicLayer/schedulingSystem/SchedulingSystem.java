@@ -15,7 +15,7 @@ public class SchedulingSystem {
 
 	public static void main(String[] args) {
 		SchedulingSystem schedulingSystem = new SchedulingSystem();
-		schedulingSystem.start2();
+		schedulingSystem.start();
 	}
 
 	private Configurator configurator;
@@ -324,6 +324,18 @@ public class SchedulingSystem {
 		System.out.println(" done.\n");
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
+	}
+	
+	public void start2(String inputDir, String outputDir) {
+		/* When a change is made in the application
+		 * test cases likely will not work. Execute the application
+		 * with start2 instead start and likely they will work.
+		 * */
+		IOSystem ioSystem = new XMLIOSystem(this.getConfigurator(), this);
+		this.setIoSystem(ioSystem);
+		start(inputDir,outputDir);
+		SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
+		serialIOSystem.saveAll();
 	}
 	
 	public void start2() {
