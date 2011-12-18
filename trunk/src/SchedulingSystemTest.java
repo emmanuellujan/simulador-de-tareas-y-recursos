@@ -66,7 +66,7 @@ public class SchedulingSystemTest {
 				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
 	}
-
+/*
 	// Code that tests one thing
 	@Test
 	public void test1() {
@@ -174,7 +174,7 @@ public class SchedulingSystemTest {
 	public void test7() {
 		this.test("test_case_7", 1.4035088);
 	}
-
+*/
 	@Test
 	public void test8() {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
@@ -187,7 +187,8 @@ public class SchedulingSystemTest {
 		Hashtable<String, String> properties = new Hashtable<String, String>();
 		properties.put("completo", "cero");
 		int maxRelations=10;
-		Vector<String> relationsIds = null;
+		Vector<String> relationsIds = new Vector<String>();
+		relationsIds.add("actor0");
 		Resource document = new Resource(resId, type, properties, maxRelations, relationsIds, schedulingSystem);
 		
 		// Create Actor
@@ -206,16 +207,20 @@ public class SchedulingSystemTest {
 		Actor actor = new Actor(resId, type, saReadyList, limitTime,
 				schedulingSystem, capacity, maxTaskNumber, properties,
 				maxRelations, relationsIds, updater);
+		
+		// Update Relations between Actor and Task
+		actor.getResources().add(document);
+		document.getResources().add(actor);
 
 		// Updater of the Actor
 		// Filter
 		String key = "completo";
 		String value = "cero";
 		EqualPropertyFilter f1 = new EqualPropertyFilter(key, value);
-		ActorRelationshipFilter f2 = new ActorRelationshipFilter(document);
+		ActorRelationshipFilter f2 = new ActorRelationshipFilter(actor);
 		AndFilter f3 = new AndFilter(f1, f2);
 		// Update of the Updater
-		Update u1 = new Update();
+		Update u1 = new Update(actor);
 		key = "felicidad";
 		value = "poca";
 		u1.addProperty(key, value);
@@ -254,6 +259,7 @@ public class SchedulingSystemTest {
 		schedulingSystem.getResourcesList().add(document);
 		schedulingSystem.getTasks().add(task);
 		schedulingSystem.getActorsList().add(actor);
+		
 		System.out.println(" done.");
 		System.out.print("Simulation started...");
 		schedulingSystem.simulateAndLog();
@@ -267,8 +273,6 @@ public class SchedulingSystemTest {
 		System.out.println(" done.\n");
 		schedulingSystem.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
-		String log = schedulingSystem.getLogger().getLogginSystems().elementAt(1).getLog();
-		//System.out.println(log);
 		
 		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
 				.getPropVelocity();
