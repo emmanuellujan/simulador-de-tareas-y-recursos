@@ -295,7 +295,7 @@
               <StringArray count="5">
                 <StringItem index="0" value="Element Equal Filter"/>
                 <StringItem index="1" value="Job Position Filter"/>
-                <StringItem index="2" value="List Property Filter"/>
+                <StringItem index="2" value="Equal Property Filter"/>
                 <StringItem index="3" value="Actor Relationship Filter"/>
                 <StringItem index="4" value="And Filter"/>
               </StringArray>
@@ -316,7 +316,7 @@
               <StringArray count="5">
                 <StringItem index="0" value="Element Equal Filter"/>
                 <StringItem index="1" value="Job Position Filter"/>
-                <StringItem index="2" value="List Property Filter"/>
+                <StringItem index="2" value="Equal Property Filter"/>
                 <StringItem index="3" value="Actor Relationship Filter"/>
                 <StringItem index="4" value="And Filter"/>
               </StringArray>
