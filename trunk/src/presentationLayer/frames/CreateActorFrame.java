@@ -132,7 +132,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
 		initComponents();
                 this.jButton3.setEnabled(false);
                 this.setResizable(false);
-	}
+        }
 
 	private boolean areValidFields() {
 		if (!isNum(this.jTextField1.getText()))// Capacity
@@ -383,9 +383,14 @@ public class CreateActorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        this.setVisible(false);        
+        this.setVisible(false);     
+        if(this.newActor == null)
+            this.newActor = new Actor("actor"
+					+ String.valueOf(this.getActorsList().size()), "actor", null, 80,null, 0,0,null,0,null, null);	
 	UpdaterFrame currentUpdater = new UpdaterFrame();
+        this.getResourcesList().add(newActor);
 	currentUpdater.setResourcesList(this.getResourcesList());
+        this.getMainResourcesList().add(newActor);
 	currentUpdater.setMainResourcesList(this.getMainResourcesList());
         if(this.getUpdater() != null)
             currentUpdater.setUpdater(this.getUpdater());
@@ -433,15 +438,17 @@ public class CreateActorFrame extends javax.swing.JFrame {
 					i = this.jTable1.getRowCount();
 				}
 			}
-
-			this.newActor = new Actor("actor"
-					+ String.valueOf(this.getActorsList().size()), "actor",
-					saReadyList, Integer.parseInt(this.jTextField3.getText()),
-					this.getSchedulingSystem(),
-					Integer.parseInt(this.jTextField1.getText()),
-					Integer.parseInt(this.jTextField2.getText()),
-					propertiesTable, Integer.parseInt(this.jTextField4
-							.getText()), null, this.getUpdater());
+                        
+			
+                        this.newActor.setSaReadyList(saReadyList);
+                        this.newActor.setLimitTime(Integer.parseInt(this.jTextField3.getText()));
+                        this.newActor.setSchedulingSystem(this.getSchedulingSystem());
+                        this.newActor.setCapacity(Integer.parseInt(this.jTextField1.getText()));
+                        this.newActor.setMaxTasksNumber(Integer.parseInt(this.jTextField2.getText()));
+                        this.newActor.setProperties(propertiesTable);
+                        this.newActor.setResourceMaxLimit(Integer.parseInt(this.jTextField4
+							.getText()));
+                        this.newActor.setUpdater(this.getUpdater());
 			this.getActorsList().add(this.newActor);
 			SimulatorFrame.getInstance().setActorsList(this.getActorsList());
 			this.setVisible(false);
