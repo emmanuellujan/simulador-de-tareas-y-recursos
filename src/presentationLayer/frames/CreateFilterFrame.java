@@ -423,8 +423,8 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 	 */
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		Filter filter = null;
-		if ((this.getFilterType().equals("EqualPropertyFilter"))
-				|| (this.getFilterType().equals("Equal Property Filter"))) {
+		if (((this.getFilterType().equals("EqualPropertyFilter"))
+				|| (this.getFilterType().equals("Equal Property Filter")))&&(filter == null)) {
 			if ((!this.jTextField2.getText().equals(""))
 					&& (!this.jTextField3.getText().equals(""))
 					&& (this.jComboBox3.getSelectedItem() != null)) {
@@ -432,24 +432,24 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 						this.jTextField3.getText());
 			}
 		} else {
-			if ((this.getFilterType().equals("ValueFilter"))
-					|| (this.getFilterType().equals("Job Position Filter"))) {
+			if (((this.getFilterType().equals("ValueFilter"))
+					|| (this.getFilterType().equals("Job Position Filter")))&& (filter == null)) {
 				if (!this.jTextField1.getText().equals("")) {
 					filter = new JobPositionFilter(this.jTextField1.getText());
 				}
 			} else {
-				if ((this.getFilterType().equals("AndFilter"))||(this.getFilterType().equals("And Filter"))) {
+				if (((this.getFilterType().equals("AndFilter"))||(this.getFilterType().equals("And Filter")))&&(filter == null)) {
 					if ((this.getFilterFrameI() != null)
 							&& (this.getFilterFrameII() != null))
 						filter = new AndFilter(this.getFilterFrameI(),
 								this.getFilterFrameII());
 				} 
-                                if ((this.getFilterType().equals("Actor Relationship Filter"))|| 
-                                        (this.getFilterType().equals("ActorRelationshipFilter"))){
+                                if (((this.getFilterType().equals("Actor Relationship Filter"))|| 
+                                        (this.getFilterType().equals("ActorRelationshipFilter")))&&(filter == null)){
                                     filter = new ActorRelationshipFilter(this.getElement((String) this.jComboBox1
 										.getSelectedItem()));
                                 }else {
-					if (this.jComboBox1.getSelectedItem() != null)
+					if ((this.jComboBox1.getSelectedItem() != null)&&(filter == null))
 						filter = new EqualFilter(
 								this.getElement((String) this.jComboBox1
 										.getSelectedItem()));

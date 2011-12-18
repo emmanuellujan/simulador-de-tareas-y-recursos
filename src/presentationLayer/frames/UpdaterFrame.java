@@ -348,6 +348,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
 		UpdateFrame updateFrame = new UpdateFrame();
 		updateFrame.setBackFrame(this);
+                updateFrame.setResources(this.getMainResourcesList());
 		this.setVisible(false);
 		updateFrame.setLocationRelativeTo(null);
 		updateFrame.main(null);
