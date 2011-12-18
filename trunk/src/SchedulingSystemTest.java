@@ -10,6 +10,7 @@ import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
 import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
+import logicLayer.filterSystem.ActorRelationshipFilter;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualPropertyFilter;
 import logicLayer.filterSystem.Filter;
@@ -176,9 +177,6 @@ public class SchedulingSystemTest {
 
 	@Test
 	public void test8() {
-	/*	String dir2 = "test_case_8";
-		double d = 10.0;
-
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
 		String dir = this.getDir();
 		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
@@ -189,8 +187,8 @@ public class SchedulingSystemTest {
 		Hashtable<String, String> properties = new Hashtable<String, String>();
 		properties.put("completo", "cero");
 		int maxRelations=10;
-		Vector<String> relationsIds;
-		Resource document = new Resource(resId, type, properties, maxRelations, null, schedulingSystem);
+		Vector<String> relationsIds = null;
+		Resource document = new Resource(resId, type, properties, maxRelations, relationsIds, schedulingSystem);
 		
 		// Create Actor
 		resId = "actor0";
@@ -202,45 +200,31 @@ public class SchedulingSystemTest {
 		properties = new Hashtable<String, String>();
 		properties.put("felicidad", "normal");
 		maxRelations = 10;
-		Vector<String> relationsIds = null;
+		relationsIds = new Vector<String>();
+		relationsIds.add("document0");
 		Updater updater = null;
-
-		//Updater of the Actor
-		String key = "completo";
-		String value = "cero";
-		EqualPropertyFilter epf1 = new EqualPropertyFilter(key, value);
-
-		
-
-		AndFilter af = new AndFilter(epf1, tof);
-		
-
-		// Cuando la tarea termina se busca un reporte vacío
-		key = "type";
-		value = "report";
-		epf1 = new EqualPropertyFilter(key, value);
-
-		key = "state";
-		value = "empty";
-		EqualPropertyFilter epf2 = new EqualPropertyFilter(key, value);
-
-		af = new AndFilter(epf1, epf2);
-
-		// y luego se actualización el reporte como completo
-		Update u1 = new Update();
-		key = "state";
-		value = "complete";
-		u1.addProperty(key, value);
-		Updater u = new Updater();
-		u.addUpdate(af, u1);
-		task.setUpdater(u);
-
 		Actor actor = new Actor(resId, type, saReadyList, limitTime,
 				schedulingSystem, capacity, maxTaskNumber, properties,
 				maxRelations, relationsIds, updater);
 
-		// Create Task
+		// Updater of the Actor
+		// Filter
+		String key = "completo";
+		String value = "cero";
+		EqualPropertyFilter f1 = new EqualPropertyFilter(key, value);
+		ActorRelationshipFilter f2 = new ActorRelationshipFilter(document);
+		AndFilter f3 = new AndFilter(f1, f2);
+		// Update of the Updater
+		Update u1 = new Update();
+		key = "felicidad";
+		value = "poca";
+		u1.addProperty(key, value);
+		Updater u = new Updater();
+		u.addUpdate(f3, u1);
+		
+		actor.setUpdater(u);
 
+		// Create Task
 		String taskId = "task0";
 		int priority = 1;
 		Vector<String> workUnits = new Vector<String>();
@@ -258,14 +242,18 @@ public class SchedulingSystemTest {
 				filter, updater1);
 
 		// Exec simulator
+		String dir2 = "test_case_8";
+		double d = 10.0;
 		String inputDir = dir + bar + dir2;
 		String outputDir = dir;
-		IOSystem ioSystem = new XMLIOSystem(schedulingSystem.getConfigurator(),
-				schedulingSystem);
-		schedulingSystem.setIoSystem(ioSystem);
+	
 		System.out.print("Loading data...");
-		schedulingSystem.loadData(inputDir);
+		schedulingSystem.getConfigurator().setInputDir(inputDir);
+		schedulingSystem.getConfigurator().setOutputDir(outputDir);
+		schedulingSystem.getConfigurator().setProjectName(dir2);
+		schedulingSystem.getResourcesList().add(document);
 		schedulingSystem.getTasks().add(task);
+		schedulingSystem.getActorsList().add(actor);
 		System.out.println(" done.");
 		System.out.print("Simulation started...");
 		schedulingSystem.simulateAndLog();
@@ -275,17 +263,17 @@ public class SchedulingSystemTest {
 		System.out.println(" done.");
 		System.out.print("Saving data...");
 		schedulingSystem.saveData(outputDir);
+		System.out.println(outputDir);
 		System.out.println(" done.\n");
 		schedulingSystem.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
-		SerialIOSystem serialIOSystem = new SerialIOSystem(
-				schedulingSystem.getConfigurator(), schedulingSystem);
-		serialIOSystem.saveAll();
-
+		String log = schedulingSystem.getLogger().getLogginSystems().elementAt(1).getLog();
+		//System.out.println(log);
+		
 		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
 				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
-		*/
+		
 	}
 
 }
