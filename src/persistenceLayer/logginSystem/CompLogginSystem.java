@@ -41,4 +41,8 @@ public class CompLogginSystem extends LogginSystem {
 			logginSystems.get(i).writeLog();
 	}
 
+	public String getLog() {
+		return null;
+	}
+
 }

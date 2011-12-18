@@ -1,12 +1,18 @@
+import java.util.Hashtable;
 import java.util.Vector;
 
 import junit.framework.Assert;
+import logicLayer.schedulingAlgorithmSystem.FCFS;
+import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
 import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualPropertyFilter;
+import logicLayer.filterSystem.Filter;
 import logicLayer.filterSystem.TaskOwnerFilter;
 import logicLayer.resultsAnalyzer.*;
 
@@ -119,9 +125,10 @@ public class SchedulingSystemTest {
 		u.addUpdate(af, u1);
 		task.setUpdater(u);
 
-		String inputDir=dir + bar + dir2;
-		String outputDir=dir;
-		IOSystem ioSystem = new XMLIOSystem(schedulingSystem.getConfigurator(), schedulingSystem);
+		String inputDir = dir + bar + dir2;
+		String outputDir = dir;
+		IOSystem ioSystem = new XMLIOSystem(schedulingSystem.getConfigurator(),
+				schedulingSystem);
 		schedulingSystem.setIoSystem(ioSystem);
 		System.out.print("Loading data...");
 		schedulingSystem.loadData(inputDir);
@@ -138,9 +145,10 @@ public class SchedulingSystemTest {
 		System.out.println(" done.\n");
 		schedulingSystem.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
-		SerialIOSystem serialIOSystem = new SerialIOSystem(schedulingSystem.getConfigurator(), schedulingSystem);
+		SerialIOSystem serialIOSystem = new SerialIOSystem(
+				schedulingSystem.getConfigurator(), schedulingSystem);
 		serialIOSystem.saveAll();
-		
+
 		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
 				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
@@ -164,6 +172,120 @@ public class SchedulingSystemTest {
 	@Test
 	public void test7() {
 		this.test("test_case_7", 1.4035088);
+	}
+
+	@Test
+	public void test8() {
+	/*	String dir2 = "test_case_8";
+		double d = 10.0;
+
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		String dir = this.getDir();
+		String bar = schedulingSystem.getConfigurator().getBarFromPath(dir);
+
+		// Create Document
+		String resId = "document0";
+		String type = "Artifact";
+		Hashtable<String, String> properties = new Hashtable<String, String>();
+		properties.put("completo", "cero");
+		int maxRelations=10;
+		Vector<String> relationsIds;
+		Resource document = new Resource(resId, type, properties, maxRelations, null, schedulingSystem);
+		
+		// Create Actor
+		resId = "actor0";
+		type = "Actor";
+		SchedulingAlgorithm saReadyList = new FCFS();
+		int limitTime = -1;
+		int capacity = 10;
+		int maxTaskNumber = 10;
+		properties = new Hashtable<String, String>();
+		properties.put("felicidad", "normal");
+		maxRelations = 10;
+		Vector<String> relationsIds = null;
+		Updater updater = null;
+
+		//Updater of the Actor
+		String key = "completo";
+		String value = "cero";
+		EqualPropertyFilter epf1 = new EqualPropertyFilter(key, value);
+
+		
+
+		AndFilter af = new AndFilter(epf1, tof);
+		
+
+		// Cuando la tarea termina se busca un reporte vacío
+		key = "type";
+		value = "report";
+		epf1 = new EqualPropertyFilter(key, value);
+
+		key = "state";
+		value = "empty";
+		EqualPropertyFilter epf2 = new EqualPropertyFilter(key, value);
+
+		af = new AndFilter(epf1, epf2);
+
+		// y luego se actualización el reporte como completo
+		Update u1 = new Update();
+		key = "state";
+		value = "complete";
+		u1.addProperty(key, value);
+		Updater u = new Updater();
+		u.addUpdate(af, u1);
+		task.setUpdater(u);
+
+		Actor actor = new Actor(resId, type, saReadyList, limitTime,
+				schedulingSystem, capacity, maxTaskNumber, properties,
+				maxRelations, relationsIds, updater);
+
+		// Create Task
+
+		String taskId = "task0";
+		int priority = 1;
+		Vector<String> workUnits = new Vector<String>();
+		workUnits.add("actor0");
+		workUnits.add("actor0");
+		workUnits.add("actor0");
+		String contTaskId = "";
+		Task contingencyTask = null;
+		String currentStatus = "New";
+		int difficult = 1;
+		Filter filter = null;
+		Updater updater1 = null;
+		Task task = new Task(taskId, priority, workUnits, contTaskId,
+				contingencyTask, currentStatus, difficult, schedulingSystem,
+				filter, updater1);
+
+		// Exec simulator
+		String inputDir = dir + bar + dir2;
+		String outputDir = dir;
+		IOSystem ioSystem = new XMLIOSystem(schedulingSystem.getConfigurator(),
+				schedulingSystem);
+		schedulingSystem.setIoSystem(ioSystem);
+		System.out.print("Loading data...");
+		schedulingSystem.loadData(inputDir);
+		schedulingSystem.getTasks().add(task);
+		System.out.println(" done.");
+		System.out.print("Simulation started...");
+		schedulingSystem.simulateAndLog();
+		System.out.println(" done.");
+		System.out.print("Analyzing results...");
+		schedulingSystem.getResultsAnalyzer().analyze();
+		System.out.println(" done.");
+		System.out.print("Saving data...");
+		schedulingSystem.saveData(outputDir);
+		System.out.println(" done.\n");
+		schedulingSystem.getResultsAnalyzer().print();
+		System.out.println("Done!\n\n");
+		SerialIOSystem serialIOSystem = new SerialIOSystem(
+				schedulingSystem.getConfigurator(), schedulingSystem);
+		serialIOSystem.saveAll();
+
+		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
+				.getPropVelocity();
+		Assert.assertEquals(d, result, 0.0001);
+		*/
 	}
 
 }

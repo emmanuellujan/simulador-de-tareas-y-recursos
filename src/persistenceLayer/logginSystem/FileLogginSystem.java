@@ -44,5 +44,10 @@ public abstract class FileLogginSystem extends LogginSystem {
 	protected void writeFile(String s) {
 		this.getFileManager().writeFile(this.getOutputFileName(), s);
 	}
+	
+	public void writeLog() {
+		String log = this.getLog();
+		this.writeFile(log);
+	}
 
 }
