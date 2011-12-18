@@ -433,6 +433,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 			SimulatorFrame.getInstance().setNewsList(currentTaskList);
 			this.setFieldsValuesEmpty();
 			this.setVisible(false);
+                        this.setUpdater(null);
 			SimulatorFrame.getInstance().setLocationRelativeTo(null);
 			SimulatorFrame.getInstance().setVisible(true);
 		} else {
