@@ -24,6 +24,7 @@ public class SerialIOSystem extends IOSystem {
 		super(configurator, schedulingSystem);
 	}
 
+	@Override
 	public void loadAll() {
 
 		String dir = this.getConfigurator().getInputDir();
@@ -49,7 +50,7 @@ public class SerialIOSystem extends IOSystem {
 				Actor actor = (Actor) o;
 				actor.setSchedulingSystem(schedulingSystem);
 				allResources.add(actor);
-				actors.add((Actor) actor);
+				actors.add(actor);
 				i++;
 				fileName = dir + i + ".xml";
 				o = null;
@@ -63,7 +64,7 @@ public class SerialIOSystem extends IOSystem {
 				Resource resource = (Resource) o;
 				resource.setSchedulingSystem(schedulingSystem);
 				allResources.add(resource);
-				resources.add((Resource) resource);
+				resources.add(resource);
 				i++;
 				fileName = dir + i + ".xml";
 				o = null;
@@ -94,7 +95,7 @@ public class SerialIOSystem extends IOSystem {
 
 			allResources.addAll(actors);
 			allResources.addAll(resources);
-			
+
 			// Hardcaded
 			resultsAnalyzer = new BasicAnalyzer(schedulingSystem);
 
@@ -110,6 +111,7 @@ public class SerialIOSystem extends IOSystem {
 		this.setResultsAnalyzer(resultsAnalyzer);
 	}
 
+	@Override
 	public void saveAll() {
 
 		XStream xs = new XStream();
@@ -155,6 +157,7 @@ public class SerialIOSystem extends IOSystem {
 
 	}
 
+	@Override
 	public void updateRelations() {
 
 		Vector<Resource> allResList = this.getAllResourcesList();

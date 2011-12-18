@@ -74,6 +74,13 @@ public class SchedulingSystem {
 		return actorsList;
 	}
 
+	public Vector<Resource> getAllResourcesList() {
+		Vector<Resource> allResources = new Vector<Resource>();
+		allResources.addAll(this.getResourcesList());
+		allResources.addAll(this.getActorsList());
+		return allResources;
+	}
+
 	public Configurator getConfigurator() {
 		return configurator;
 	}
@@ -155,7 +162,7 @@ public class SchedulingSystem {
 		dealerActor = this.getDealerActor();
 		dealerActor.setReadyList(newsList);
 		resultsAnalyzer = ioSystem.getResultsAnalyzer();
-		
+
 		this.setDeadline(deadline);
 		this.setNewsList(newsList);
 		this.setTasks(tasks);
@@ -298,13 +305,6 @@ public class SchedulingSystem {
 		actorsList.remove(0);
 	}
 
- public Vector<Resource> getAllResourcesList() {
-		Vector<Resource>  allResources = new Vector<Resource>();
-		allResources.addAll(this.getResourcesList());
-		allResources.addAll(this.getActorsList());
-		return allResources;
-	}
-
 	public void start() {
 		start(null, null);
 	}
@@ -325,29 +325,33 @@ public class SchedulingSystem {
 		this.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
 	}
-	
-	public void start2(String inputDir, String outputDir) {
-		/* When a change is made in the application
-		 * test cases likely will not work. Execute the application
-		 * with start2 instead start and likely they will work.
-		 * */
-		IOSystem ioSystem = new XMLIOSystem(this.getConfigurator(), this);
-		this.setIoSystem(ioSystem);
-		start(inputDir,outputDir);
-		SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
-		serialIOSystem.saveAll();
-	}
-	
+
 	public void start2() {
-		/* When a change is made in the application
-		 * test cases likely will not work. Execute the application
-		 * with start2 instead start and likely they will work.
-		 * */
+		/*
+		 * When a change is made in the application test cases likely will not
+		 * work. Execute the application with start2 instead start and likely
+		 * they will work.
+		 */
 		IOSystem ioSystem = new XMLIOSystem(this.getConfigurator(), this);
 		this.setIoSystem(ioSystem);
 		start();
-		SerialIOSystem serialIOSystem = new SerialIOSystem(this.getConfigurator(), this);
+		SerialIOSystem serialIOSystem = new SerialIOSystem(
+				this.getConfigurator(), this);
 		serialIOSystem.saveAll();
-	}	
+	}
+
+	public void start2(String inputDir, String outputDir) {
+		/*
+		 * When a change is made in the application test cases likely will not
+		 * work. Execute the application with start2 instead start and likely
+		 * they will work.
+		 */
+		IOSystem ioSystem = new XMLIOSystem(this.getConfigurator(), this);
+		this.setIoSystem(ioSystem);
+		start(inputDir, outputDir);
+		SerialIOSystem serialIOSystem = new SerialIOSystem(
+				this.getConfigurator(), this);
+		serialIOSystem.saveAll();
+	}
 
 }

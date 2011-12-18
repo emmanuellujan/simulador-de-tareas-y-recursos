@@ -5,8 +5,8 @@ import java.util.Vector;
 import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Task;
 
-public class SimulationActor extends SimulationResource{
-	
+public class SimulationActor extends SimulationResource {
+
 	private String currentAction;
 	private String taskId;
 	private int time;
@@ -16,7 +16,7 @@ public class SimulationActor extends SimulationResource{
 
 	public SimulationActor(Actor actor) {
 		super(actor);
-		
+
 		String currentAction = actor.getCurrAction();
 		String taskId;
 		if (actor.getCurrTask() != null)
@@ -38,7 +38,6 @@ public class SimulationActor extends SimulationResource{
 		for (int i = 0; i < m; i++)
 			sReadyList.add(readyList.get(i).getTaskId());
 
-		
 		this.setCurrentAction(currentAction);
 		this.setTaskId(taskId);
 		this.setTime(time);
@@ -66,6 +65,7 @@ public class SimulationActor extends SimulationResource{
 	public String getTaskId() {
 		return taskId;
 	}
+
 	public int getTime() {
 		return time;
 	}

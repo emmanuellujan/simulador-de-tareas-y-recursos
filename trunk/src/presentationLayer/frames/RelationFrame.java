@@ -62,6 +62,7 @@ public class RelationFrame extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
+			@Override
 			public void run() {
 				new RelationFrame().setVisible(true);
 			}
@@ -107,7 +108,7 @@ public class RelationFrame extends javax.swing.JFrame {
 		this.relations = new Vector<String>();
 		this.jTextArea2.setLineWrap(true);
 		this.jTextArea2.setWrapStyleWord(true);
-                this.setResizable(false);
+		this.setResizable(false);
 	}
 
 	public Vector<Actor> getActorsList() {
@@ -161,6 +162,7 @@ public class RelationFrame extends javax.swing.JFrame {
 
 		jButton1.setText("Create Relation");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}
@@ -265,6 +267,7 @@ public class RelationFrame extends javax.swing.JFrame {
 
 		jButton2.setText("Back");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 			}

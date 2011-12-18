@@ -8,9 +8,11 @@ import java.util.Vector;
 public class Resource implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	private String resId;
 	private String type;
 	private int nbrOfPropChanges;
@@ -24,7 +26,7 @@ public class Resource implements Serializable {
 	public Resource(String resId, String type,
 			Hashtable<String, String> properties, int maxRelations,
 			Vector<String> relationsIds, SchedulingSystem schedulingSystem) {
-		int nbrOfPropChanges=0;
+		int nbrOfPropChanges = 0;
 		if (properties == null)
 			properties = new Hashtable<String, String>();
 		if (relationsIds == null)

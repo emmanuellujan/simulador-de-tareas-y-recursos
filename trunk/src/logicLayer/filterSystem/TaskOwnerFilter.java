@@ -9,6 +9,7 @@ public class TaskOwnerFilter extends SimpleFilter {
 		super(obj);
 	}
 
+	@Override
 	public boolean eval(Object a) {
 		Actor r = ((Actor) a);
 		Task t = (Task) this.getElement();

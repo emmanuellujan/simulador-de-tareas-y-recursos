@@ -57,6 +57,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
+			@Override
 			public void run() {
 				new ErrorFrame().setVisible(true);
 			}
@@ -83,7 +84,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 	/** Creates new form ErrorFrame */
 	public ErrorFrame() {
 		initComponents();
-                this.setResizable(false);
+		this.setResizable(false);
 	}
 
 	public CreateFilterFrame getFilterBackFrame() {
@@ -118,6 +119,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 
 		jButton1.setText("Ok");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}

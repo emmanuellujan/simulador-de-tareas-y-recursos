@@ -15,7 +15,7 @@ import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
 
 /**
- * @serial 
+ * @serial
  * @author F.Rossi
  */
 public class UpdaterFrame extends javax.swing.JFrame {
@@ -29,6 +29,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
+			@Override
 			public void run() {
 				if (this == null)
 					new UpdaterFrame();
@@ -37,10 +38,10 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	}
 
 	private CreateTaskFrame filterTaskBackFrame;
-        
-        private CreateActorFrame filterActorBackFrame;
-        
-        private String backFrame;
+
+	private CreateActorFrame filterActorBackFrame;
+
+	private String backFrame;
 
 	private Hashtable<Filter, Update> updates;
 
@@ -54,35 +55,45 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
 	private Updater updater;
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    // End of variables declaration//GEN-END:variables
+	// Variables declaration - do not modify//GEN-BEGIN:variables
+	private javax.swing.JButton jButton1;
+	private javax.swing.JButton jButton2;
+	private javax.swing.JButton jButton3;
+	private javax.swing.JButton jButton4;
+	private javax.swing.JComboBox jComboBox1;
+	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel jLabel2;
+	private javax.swing.JPanel jPanel1;
+	private javax.swing.JPanel jPanel2;
+	private javax.swing.JScrollPane jScrollPane1;
+	private javax.swing.JTable jTable1;
+
+	// End of variables declaration//GEN-END:variables
 
 	/** Creates new form UpdaterFrame */
-	public UpdaterFrame() {            
-            initComponents();            
-            this.setResizable(false);
+	public UpdaterFrame() {
+		initComponents();
+		this.setResizable(false);
 	}
 
-	public CreateTaskFrame getTaskBackFrame() {
-		return this.filterTaskBackFrame;
+	public void fillTable() {
+		if (this.getUpdater() != null) {
+			Hashtable currentUpdates = this.getUpdater().getUpdates();
+			Enumeration filtros = currentUpdates.keys();
+			Enumeration valores = currentUpdates.elements();
+
+			for (int i = 0; i < currentUpdates.size(); i++) {
+				this.jTable1.setValueAt("Filter" + i, i, 0);
+				this.jTable1.setValueAt("Update" + i, i, 1);
+			}
+		}
 	}
-        
-        public CreateActorFrame getActorBackFrame() {
+
+	public CreateActorFrame getActorBackFrame() {
 		return this.filterActorBackFrame;
 	}
-        
-        public String getBackFrameText() {
+
+	public String getBackFrameText() {
 		return this.backFrame;
 	}
 
@@ -96,6 +107,10 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
 	public Vector<Resource> getResourcesList() {
 		return resourcesList;
+	}
+
+	public CreateTaskFrame getTaskBackFrame() {
+		return this.filterTaskBackFrame;
 	}
 
 	public Update getUpdate() {
@@ -117,188 +132,259 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	 */
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed"
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+	// <editor-fold defaultstate="collapsed"
+	// desc="Generated Code">//GEN-BEGIN:initComponents
+	private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+		jPanel1 = new javax.swing.JPanel();
+		jLabel1 = new javax.swing.JLabel();
+		jButton3 = new javax.swing.JButton();
+		jComboBox1 = new javax.swing.JComboBox();
+		jLabel2 = new javax.swing.JLabel();
+		jButton4 = new javax.swing.JButton();
+		jButton1 = new javax.swing.JButton();
+		jButton2 = new javax.swing.JButton();
+		jPanel2 = new javax.swing.JPanel();
+		jScrollPane1 = new javax.swing.JScrollPane();
+		jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setIconImages(null);
-        setResizable(false);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setIconImages(null);
+		setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Updater configuration", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
+		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+				"Updater configuration",
+				javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+				javax.swing.border.TitledBorder.DEFAULT_POSITION,
+				new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
-        jLabel1.setText("Add filter");
+		jLabel1.setText("Add filter");
 
-        jButton3.setText("Create");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+		jButton3.setText("Create");
+		jButton3.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton3ActionPerformed(evt);
+			}
+		});
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "Equal Property Filter", "Actor Relationship Filter", "And Filter" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
+		jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
+				"Element Equal Filter", "Job Position Filter",
+				"Equal Property Filter", "Actor Relationship Filter",
+				"And Filter" }));
+		jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jComboBox1ActionPerformed(evt);
+			}
+		});
 
-        jLabel2.setText("Include related update");
+		jLabel2.setText("Include related update");
 
-        jButton4.setText("Create");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+		jButton4.setText("Create");
+		jButton4.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton4ActionPerformed(evt);
+			}
+		});
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(
+				jPanel1);
+		jPanel1.setLayout(jPanel1Layout);
+		jPanel1Layout
+				.setHorizontalGroup(jPanel1Layout
+						.createParallelGroup(
+								javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(
+								jPanel1Layout
+										.createSequentialGroup()
+										.addContainerGap()
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.LEADING)
+														.addComponent(jLabel2)
+														.addGroup(
+																jPanel1Layout
+																		.createSequentialGroup()
+																		.addComponent(
+																				jLabel1)
+																		.addPreferredGap(
+																				javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																				143,
+																				Short.MAX_VALUE)
+																		.addComponent(
+																				jComboBox1,
+																				javax.swing.GroupLayout.PREFERRED_SIZE,
+																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																				javax.swing.GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(
+												javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.LEADING,
+																false)
+														.addComponent(
+																jButton3,
+																javax.swing.GroupLayout.Alignment.TRAILING,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																Short.MAX_VALUE)
+														.addComponent(
+																jButton4,
+																javax.swing.GroupLayout.Alignment.TRAILING,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																Short.MAX_VALUE))
+										.addContainerGap()));
+		jPanel1Layout
+				.setVerticalGroup(jPanel1Layout
+						.createParallelGroup(
+								javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(
+								jPanel1Layout
+										.createSequentialGroup()
+										.addContainerGap()
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.BASELINE)
+														.addComponent(jLabel1)
+														.addComponent(jButton3)
+														.addComponent(
+																jComboBox1,
+																javax.swing.GroupLayout.PREFERRED_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(
+												javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addGroup(
+												jPanel1Layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.BASELINE)
+														.addComponent(jLabel2)
+														.addComponent(jButton4))
+										.addContainerGap(
+												javax.swing.GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)));
 
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+		jButton1.setText("Back");
+		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton1ActionPerformed(evt);
+			}
+		});
 
-        jButton2.setText("Add");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+		jButton2.setText("Add");
+		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton2ActionPerformed(evt);
+			}
+		});
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Updates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 11))); // NOI18N
+		jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+				"Updates",
+				javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+				javax.swing.border.TitledBorder.DEFAULT_POSITION,
+				new java.awt.Font("Verdana", 1, 11))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Filter", "Update"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+		jTable1.setModel(new javax.swing.table.DefaultTableModel(
+				new Object[][] { { null, null }, { null, null }, { null, null } },
+				new String[] { "Filter", "Update" }));
+		jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(
+				jPanel2);
+		jPanel2.setLayout(jPanel2Layout);
+		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(
+				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+				jPanel2Layout
+						.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(jScrollPane1,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 397,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)));
+		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(
+				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+				jPanel2Layout
+						.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(jScrollPane1,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 75,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(14, Short.MAX_VALUE)));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
+				getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						javax.swing.GroupLayout.Alignment.TRAILING,
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addGroup(
+										layout.createParallelGroup(
+												javax.swing.GroupLayout.Alignment.TRAILING)
+												.addComponent(
+														jPanel2,
+														javax.swing.GroupLayout.Alignment.LEADING,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addComponent(
+														jPanel1,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE,
+														Short.MAX_VALUE)
+												.addComponent(jButton1)
+												.addComponent(jButton2))
+								.addContainerGap()));
+		layout.setVerticalGroup(layout
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(
+						layout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(jPanel1,
+										javax.swing.GroupLayout.PREFERRED_SIZE,
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addComponent(jButton2)
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addComponent(jPanel2,
+										javax.swing.GroupLayout.PREFERRED_SIZE,
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(
+										javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+								.addComponent(jButton1)
+								.addContainerGap(
+										javax.swing.GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+		pack();
+	}// </editor-fold>//GEN-END:initComponents
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
 		this.setVisible(false);
-                if(this.getBackFrameText().equals("CreateActorFrame")){
-                    ((CreateActorFrame) this.getActorBackFrame()).setLocationRelativeTo(null);
-                    ((CreateActorFrame) this.getActorBackFrame()).setVisible(true);
-                }else{
-                    ((CreateTaskFrame) this.getTaskBackFrame()).setLocationRelativeTo(null);
-                    ((CreateTaskFrame) this.getTaskBackFrame()).setVisible(true);
-                }
+		if (this.getBackFrameText().equals("CreateActorFrame")) {
+			this.getActorBackFrame().setLocationRelativeTo(null);
+			this.getActorBackFrame().setVisible(true);
+		} else {
+			this.getTaskBackFrame().setLocationRelativeTo(null);
+			this.getTaskBackFrame().setVisible(true);
+		}
 	}// GEN-LAST:event_jButton1ActionPerformed
 
-        public void fillTable(){
-            if(this.getUpdater() != null){
-                Hashtable currentUpdates = this.getUpdater().getUpdates();
-                Enumeration filtros = currentUpdates.keys();
-                Enumeration valores = currentUpdates.elements();
-
-                for(int i = 0; i < currentUpdates.size(); i++){
-                    this.jTable1.setValueAt("Filter" + i, i, 0);
-                    this.jTable1.setValueAt("Update" + i, i, 1);
-                }
-            }
-        }
-        
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		Updater currentUpdater = this.getUpdater();
 		if ((this.getFilter() != null) && (this.getUpdate() != null)) {
@@ -306,24 +392,24 @@ public class UpdaterFrame extends javax.swing.JFrame {
 				Hashtable<Filter, Update> newHash = new Hashtable<Filter, Update>();
 				newHash.put(this.getFilter(), this.getUpdate());
 				currentUpdater.setUpdates(newHash);
-			} else{
-				Hashtable<Filter, Update> currentHash = currentUpdater.getUpdates();
-                                currentHash.put(this.getFilter(),
-						this.getUpdate());
-                                currentUpdater.setUpdates(currentHash);
-                        }
+			} else {
+				Hashtable<Filter, Update> currentHash = currentUpdater
+						.getUpdates();
+				currentHash.put(this.getFilter(), this.getUpdate());
+				currentUpdater.setUpdates(currentHash);
+			}
 			this.setUpdater(currentUpdater);
-                        this.fillTable();
-                        if(this.getBackFrameText().equals("CreateActorFrame")){
-                            ((CreateActorFrame) this.getActorBackFrame()).setUpdater(currentUpdater);
-                        }else{
-                            ((CreateTaskFrame) this.getTaskBackFrame()).setUpdater(currentUpdater);
-                        }
-			
+			this.fillTable();
+			if (this.getBackFrameText().equals("CreateActorFrame")) {
+				this.getActorBackFrame().setUpdater(currentUpdater);
+			} else {
+				this.getTaskBackFrame().setUpdater(currentUpdater);
+			}
+
 		} else {
 			ErrorFrame.getInstance().setLabel(
 					"Some values are empty. Cannot create Updater.");
-                        ErrorFrame.getInstance().setUpdaterBackFrame(this);
+			ErrorFrame.getInstance().setUpdaterBackFrame(this);
 			ErrorFrame.getInstance().setBackFrame("UpdaterFrame");
 			this.setVisible(false);
 			ErrorFrame.getInstance().setLocationRelativeTo(null);
@@ -348,21 +434,29 @@ public class UpdaterFrame extends javax.swing.JFrame {
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
 		UpdateFrame updateFrame = new UpdateFrame();
 		updateFrame.setBackFrame(this);
-                updateFrame.setResources(this.getMainResourcesList());
+		updateFrame.setResources(this.getMainResourcesList());
 		this.setVisible(false);
 		updateFrame.setLocationRelativeTo(null);
-		updateFrame.main(null);
+		UpdateFrame.main(null);
 		updateFrame.setVisible(true);
 	}// GEN-LAST:event_jButton4ActionPerformed
 
+	private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jComboBox1ActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_jComboBox1ActionPerformed
+
 	public void setBackFrame(Object backFrame) {
-            if(this.getBackFrameText().equals("CreateActorFrame")){
-                this.filterActorBackFrame = (CreateActorFrame) backFrame;
-                this.filterTaskBackFrame = null;
-            }else{
-		this.filterTaskBackFrame = (CreateTaskFrame) backFrame;
-                this.filterActorBackFrame = null;
-            }
+		if (this.getBackFrameText().equals("CreateActorFrame")) {
+			this.filterActorBackFrame = (CreateActorFrame) backFrame;
+			this.filterTaskBackFrame = null;
+		} else {
+			this.filterTaskBackFrame = (CreateTaskFrame) backFrame;
+			this.filterActorBackFrame = null;
+		}
+	}
+
+	public void setBackFrameText(String frame) {
+		this.backFrame = frame;
 	}
 
 	public void setFilter(Filter filter) {
@@ -387,9 +481,5 @@ public class UpdaterFrame extends javax.swing.JFrame {
 
 	public void setUpdates(Hashtable<Filter, Update> updates) {
 		this.updates = updates;
-	}
-        
-        public void setBackFrameText(String frame) {
-		this.backFrame = frame;
 	}
 }

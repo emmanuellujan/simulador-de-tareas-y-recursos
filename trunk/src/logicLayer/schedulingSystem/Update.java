@@ -7,14 +7,14 @@ public class Update {
 	private Resource resource;
 	private Hashtable<String, String> properties;
 
-	public Update(Resource resource) {
-		this.setResource(resource);
+	public Update() {
+		this.setResource(null);
 		Hashtable<String, String> properties = new Hashtable<String, String>();
 		this.setProperties(properties);
 	}
-	
-	public Update() {
-		this.setResource(null);
+
+	public Update(Resource resource) {
+		this.setResource(resource);
 		Hashtable<String, String> properties = new Hashtable<String, String>();
 		this.setProperties(properties);
 	}
@@ -42,11 +42,11 @@ public class Update {
 	public boolean update() {
 		return this.update(null);
 	}
-	
+
 	public boolean update(Resource resource) {
-		if(this.getResource()!=null)
+		if (this.getResource() != null)
 			resource = this.getResource();
-		
+
 		Hashtable<String, String> propsResource = resource.getProperties();
 		if (propsResource != null) {
 			Hashtable<String, String> properties = this.getProperties();
@@ -65,5 +65,5 @@ public class Update {
 		} else
 			return false;
 	}
-	
+
 }

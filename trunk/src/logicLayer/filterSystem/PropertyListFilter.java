@@ -21,7 +21,8 @@ public class PropertyListFilter extends Filter {
 		this.setResource(currentResource);
 	}
 
-	public boolean eval(Object a) {		
+	@Override
+	public boolean eval(Object a) {
 		Vector<Resource> elements = ((Vector<Resource>) a);
 		Resource r1 = (Resource) this.getResource();
 		Resource r2 = null;

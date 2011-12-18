@@ -12,9 +12,10 @@ public class EqualFilter extends SimpleFilter {
 		super(obj);
 	}
 
+	@Override
 	public boolean eval(Object r) {
 		String id1 = ((Resource) this.getElement()).getResId();
-		String id2 = ((Resource)r).getResId();
+		String id2 = ((Resource) r).getResId();
 		return id1.equals(id2);
 	}
 }

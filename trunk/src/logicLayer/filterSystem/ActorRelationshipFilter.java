@@ -10,8 +10,9 @@ public class ActorRelationshipFilter extends SimpleFilter {
 		super(obj);
 	}
 
+	@Override
 	public boolean eval(Object currentResource) {
-		Vector<Resource> relationResources =((Resource)  this.getElement())
+		Vector<Resource> relationResources = ((Resource) this.getElement())
 				.getResources();
 		for (int i = 0; i < relationResources.size(); i++) {
 			if (relationResources.elementAt(i).equals(currentResource))

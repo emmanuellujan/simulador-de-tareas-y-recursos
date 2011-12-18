@@ -1,10 +1,9 @@
 package persistenceLayer.dataModel.SimulationTime;
 
-
 import java.util.Vector;
-import logicLayer.schedulingSystem.Resource;
-import logicLayer.schedulingSystem.Actor;
 
+import logicLayer.schedulingSystem.Actor;
+import logicLayer.schedulingSystem.Resource;
 
 public class SimulationTime {
 	private int currentTime;
@@ -18,11 +17,11 @@ public class SimulationTime {
 		SimulationResource sSimResource;
 		int n = allResourcesList.size();
 		for (int i = 0; i < n; i++) {
-			resource = (Resource) allResourcesList.get(i);
-			if(resource.getClass().getName().contains("Actor")){
+			resource = allResourcesList.get(i);
+			if (resource.getClass().getName().contains("Actor")) {
 				sSimResource = new SimulationActor((Actor) resource);
 				actors.add((SimulationActor) sSimResource);
-			}else{
+			} else {
 				sSimResource = new SimulationResource(resource);
 				resources.add(sSimResource);
 			}
@@ -36,8 +35,19 @@ public class SimulationTime {
 		return actors;
 	}
 
+	public Vector<SimulationResource> getAllResources() {
+		Vector<SimulationResource> allResources = new Vector<SimulationResource>();
+		allResources.addAll(this.getActors());
+		allResources.addAll(this.getResources());
+		return allResources;
+	}
+
 	public int getCurrentTime() {
 		return currentTime;
+	}
+
+	public Vector<SimulationResource> getResources() {
+		return resources;
 	}
 
 	public void setActors(Vector<SimulationActor> actors) {
@@ -48,19 +58,8 @@ public class SimulationTime {
 		this.currentTime = currentTime;
 	}
 
-	public Vector<SimulationResource> getResources() {
-		return resources;
-	}
-
 	public void setResources(Vector<SimulationResource> resources) {
 		this.resources = resources;
-	}
-	
-	public Vector<SimulationResource> getAllResources(){
-		Vector<SimulationResource>  allResources = new Vector<SimulationResource>();
-		allResources.addAll(this.getActors());
-		allResources.addAll(this.getResources());
-		return allResources;
 	}
 
 }

@@ -7,9 +7,6 @@ import java.util.Vector;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import logicLayer.filterSystem.AndFilter;
-import logicLayer.filterSystem.EqualPropertyFilter;
-import logicLayer.filterSystem.TaskOwnerFilter;
 import logicLayer.resultsAnalyzer.BasicAnalyzer;
 import logicLayer.resultsAnalyzer.ResultsAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.SAFactory;
@@ -18,8 +15,6 @@ import logicLayer.schedulingSystem.Actor;
 import logicLayer.schedulingSystem.Resource;
 import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
-import logicLayer.schedulingSystem.Update;
-import logicLayer.schedulingSystem.Updater;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -35,6 +30,7 @@ public class XMLIOSystem extends IOSystem {
 		super(configurator, schedulingSystem);
 	}
 
+	@Override
 	public int getDeadline() {
 		String fileName = this.getConfigurator().getInputDir()
 				+ this.getConfigurator().getProjectName() + ".xml";
@@ -49,7 +45,7 @@ public class XMLIOSystem extends IOSystem {
 			NodeList deadlineElementList = doc.getElementsByTagName("deadline");
 			Element deadlineElement = (Element) deadlineElementList.item(0);
 			NodeList deadline = deadlineElement.getChildNodes();
-			String sDeadline = ((Node) deadline.item(0)).getNodeValue();
+			String sDeadline = deadline.item(0).getNodeValue();
 			nDeadline = Integer.parseInt(sDeadline);
 
 		} catch (Exception e) {
@@ -86,7 +82,7 @@ public class XMLIOSystem extends IOSystem {
 					Element actorIdElement = (Element) actorIdElementList
 							.item(0);
 					NodeList actorId = actorIdElement.getChildNodes();
-					String sActorId = ((Node) actorId.item(0)).getNodeValue();
+					String sActorId = actorId.item(0).getNodeValue();
 
 					// maxRelations
 					NodeList maxRelationsElementList = element
@@ -94,8 +90,7 @@ public class XMLIOSystem extends IOSystem {
 					Element maxRelationsElement = (Element) maxRelationsElementList
 							.item(0);
 					NodeList maxRelations = maxRelationsElement.getChildNodes();
-					String smaxRelations = ((Node) maxRelations.item(0))
-							.getNodeValue();
+					String smaxRelations = maxRelations.item(0).getNodeValue();
 
 					// actorCapacity
 					NodeList actorCapacityElementList = element
@@ -104,7 +99,7 @@ public class XMLIOSystem extends IOSystem {
 							.item(0);
 					NodeList actorCapacity = actorCapacityElement
 							.getChildNodes();
-					String sActorCapacity = ((Node) actorCapacity.item(0))
+					String sActorCapacity = actorCapacity.item(0)
 							.getNodeValue();
 
 					// maxTasks
@@ -113,15 +108,15 @@ public class XMLIOSystem extends IOSystem {
 					Element maxTasksElement = (Element) maxTasksElementList
 							.item(0);
 					NodeList maxTasks = maxTasksElement.getChildNodes();
-					String sMaxTasks = ((Node) maxTasks.item(0)).getNodeValue();
+					String sMaxTasks = maxTasks.item(0).getNodeValue();
 
 					// schedulingAlgorithm
 					NodeList saElementList = element
 							.getElementsByTagName("schedulingAlgorithm");
 					Element saElement = (Element) saElementList.item(0);
 					NodeList schedulingAlgorithm = saElement.getChildNodes();
-					String sSchedulingAlgorithm = ((Node) schedulingAlgorithm
-							.item(0)).getNodeValue();
+					String sSchedulingAlgorithm = schedulingAlgorithm.item(0)
+							.getNodeValue();
 					SchedulingAlgorithm sAlgorithm = saFactory
 							.getSchedulingAlgorithm(sSchedulingAlgorithm);
 
@@ -131,7 +126,7 @@ public class XMLIOSystem extends IOSystem {
 					Element quantumElement = (Element) quantumElementList
 							.item(0);
 					NodeList quantum = quantumElement.getChildNodes();
-					int iQuantum = Integer.valueOf(((Node) quantum.item(0))
+					int iQuantum = Integer.valueOf(quantum.item(0)
 							.getNodeValue());
 
 					// Properties
@@ -164,7 +159,7 @@ public class XMLIOSystem extends IOSystem {
 							iQuantum, schedulingSystem,
 							Integer.parseInt(sActorCapacity),
 							Integer.parseInt(sMaxTasks), properties,
-							Integer.parseInt(smaxRelations), relationsIds,null);
+							Integer.parseInt(smaxRelations), relationsIds, null);
 
 					actors.add(actor);
 
@@ -177,6 +172,7 @@ public class XMLIOSystem extends IOSystem {
 		return actors;
 	}
 
+	@Override
 	public void loadAll() {
 		this.loadDeadline();
 		this.loadNewsList();
@@ -185,8 +181,8 @@ public class XMLIOSystem extends IOSystem {
 		this.updateRelations();
 
 		// Hardcaded
-		ResultsAnalyzer resultsAnalyzer = 
-				new BasicAnalyzer(this.getSchedulingSystem());
+		ResultsAnalyzer resultsAnalyzer = new BasicAnalyzer(
+				this.getSchedulingSystem());
 		this.setResultsAnalyzer(resultsAnalyzer);
 	}
 
@@ -218,7 +214,7 @@ public class XMLIOSystem extends IOSystem {
 							.getElementsByTagName("taskId");
 					Element taskIdElement = (Element) taskIdElementList.item(0);
 					NodeList taskId = taskIdElement.getChildNodes();
-					String sTaskId = ((Node) taskId.item(0)).getNodeValue();
+					String sTaskId = taskId.item(0).getNodeValue();
 
 					// difficult
 					NodeList difficultElementList = element
@@ -226,8 +222,7 @@ public class XMLIOSystem extends IOSystem {
 					Element difficultElement = (Element) difficultElementList
 							.item(0);
 					NodeList difficult = difficultElement.getChildNodes();
-					String sDifficult = ((Node) difficult.item(0))
-							.getNodeValue();
+					String sDifficult = difficult.item(0).getNodeValue();
 
 					// priority
 					NodeList priorityElementList = element
@@ -235,7 +230,7 @@ public class XMLIOSystem extends IOSystem {
 					Element priorityElement = (Element) priorityElementList
 							.item(0);
 					NodeList priority = priorityElement.getChildNodes();
-					int iPriority = Integer.valueOf(((Node) priority.item(0))
+					int iPriority = Integer.valueOf(priority.item(0)
 							.getNodeValue());
 
 					// Contingency Task
@@ -248,7 +243,7 @@ public class XMLIOSystem extends IOSystem {
 					String sContingencyTask = null;
 					Node n1 = contingencyTask.item(0);
 					if (n1 != null)
-						sContingencyTask = ((Node) contingencyTask.item(0))
+						sContingencyTask = contingencyTask.item(0)
 								.getNodeValue();
 
 					// workUnits
@@ -326,8 +321,7 @@ public class XMLIOSystem extends IOSystem {
 					Element resourceIdElement = (Element) resourceIdElementList
 							.item(0);
 					NodeList resourceId = resourceIdElement.getChildNodes();
-					String sResourceId = ((Node) resourceId.item(0))
-							.getNodeValue();
+					String sResourceId = resourceId.item(0).getNodeValue();
 
 					// maxRelations
 					NodeList maxRelationsElementList = element
@@ -335,8 +329,7 @@ public class XMLIOSystem extends IOSystem {
 					Element maxRelationsElement = (Element) maxRelationsElementList
 							.item(0);
 					NodeList maxRelations = maxRelationsElement.getChildNodes();
-					String smaxRelations = ((Node) maxRelations.item(0))
-							.getNodeValue();
+					String smaxRelations = maxRelations.item(0).getNodeValue();
 
 					// Properties
 					Hashtable<String, String> properties = new Hashtable<String, String>();
@@ -379,10 +372,12 @@ public class XMLIOSystem extends IOSystem {
 		return resources;
 	}
 
+	@Override
 	public void saveAll() {
 		// TODO Auto-generated method stub
 	}
 
+	@Override
 	public void updateRelations() {
 
 		Vector<Resource> allResList = new Vector<Resource>();

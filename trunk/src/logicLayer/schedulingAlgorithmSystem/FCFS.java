@@ -10,6 +10,7 @@ public class FCFS extends SchedulingAlgorithm {
 		super("FCFS");
 	}
 
+	@Override
 	public Task schedule(Vector<Task> tasks) {
 		if (tasks.size() > 0)
 			return tasks.get(0);
