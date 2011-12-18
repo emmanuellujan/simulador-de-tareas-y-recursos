@@ -100,6 +100,8 @@ public abstract class LogginSystem {
 		this.successfulFinishedTasks = successfulFinishedTasks;
 	}
 
+	public abstract String getLog();
+	
 	public abstract void writeLog();
 	
 	public void incNbrExecContTasks() {

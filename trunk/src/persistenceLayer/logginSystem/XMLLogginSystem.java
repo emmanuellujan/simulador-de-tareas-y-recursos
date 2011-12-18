@@ -61,7 +61,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 		return xmlLog;
 	}
 
-	public void writeLog() {
+	public String getLog(){
 		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
 		String xmlLog = "";
 		xmlLog = "<simulation>\n";
@@ -79,7 +79,7 @@ public class XMLLogginSystem extends FileLogginSystem {
 		}
 		xmlLog += "";
 		xmlLog += "</simulation>\n";
-
-		this.writeFile(xmlLog);
+		return xmlLog;
 	}
+	
 }

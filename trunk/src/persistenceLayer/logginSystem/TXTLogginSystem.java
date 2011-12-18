@@ -97,7 +97,8 @@ public class TXTLogginSystem extends FileLogginSystem {
 		return txtLog;
 	}
 
-	public void writeLog() {
+	
+	public String getLog(){
 		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
 		String txtLog = "";
 
@@ -111,6 +112,7 @@ public class TXTLogginSystem extends FileLogginSystem {
 			txtLog += this.logResources(resources);
 			txtLog += "\n";
 		}
-		this.writeFile(txtLog);
+		return txtLog;
 	}
+
 }
