@@ -612,8 +612,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 		this.makeFilterGUI();
 	}
 
-	private void setListPropertyElements() {
-		this.jComboBox3.setEnabled(true);
+	private void setListPropertyElements() {		
 		this.jTextField3.setEnabled(true);
 		this.jTextField2.setEnabled(true);
 		this.jButton3.setEnabled(false);
@@ -622,6 +621,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 		this.jTextField1.setEnabled(false);
 		this.jComboBox1.setEnabled(false);
 		this.jComboBox2.setEnabled(false);
+                this.jComboBox3.setEnabled(false);
 		this.jComboBox4.setEnabled(false);
 
 		this.jLabel4.setEnabled(false);
