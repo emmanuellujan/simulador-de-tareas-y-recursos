@@ -10,6 +10,7 @@ import java.util.Vector;
 import logicLayer.filterSystem.ActorRelationshipFilter;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualFilter;
+import logicLayer.filterSystem.EqualPropertyFilter;
 import logicLayer.filterSystem.Filter;
 import logicLayer.filterSystem.JobPositionFilter;
 import logicLayer.filterSystem.PropertyListFilter;
@@ -307,7 +308,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Composition Filter type (1)");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "List Property Filter", "Actor Relationship Filter", "And Filter" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "Equal Property Filter", "Actor Relationship Filter", "And Filter" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -316,7 +317,7 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 
         jLabel9.setText("Composition Filter type (2)");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "List Property Filter", "Actor Relationship Filter", "And Filter" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "Equal Property Filter", "Actor Relationship Filter", "And Filter" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
@@ -422,15 +423,13 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 	 */
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		Filter filter = null;
-		if ((this.getFilterType().equals("ListPropertyFilter"))
-				|| (this.getFilterType().equals("List Property Filter"))) {
+		if ((this.getFilterType().equals("EqualPropertyFilter"))
+				|| (this.getFilterType().equals("Equal Property Filter"))) {
 			if ((!this.jTextField2.getText().equals(""))
 					&& (!this.jTextField3.getText().equals(""))
 					&& (this.jComboBox3.getSelectedItem() != null)) {
-				filter = new PropertyListFilter(this.jTextField2.getText(),
-						this.jTextField3.getText(),
-						this.getResource((String) this.jComboBox3
-								.getSelectedItem()));
+				filter = new EqualPropertyFilter(this.jTextField2.getText(),
+						this.jTextField3.getText());
 			}
 		} else {
 			if ((this.getFilterType().equals("ValueFilter"))
@@ -527,8 +526,8 @@ public class CreateFilterFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jComboBox2ActionPerformed
 
 	private void makeFilterGUI() {
-		if ((this.getFilterType().equals("ListPropertyFilter"))
-				|| (this.getFilterType().equals("List Property Filter")))
+		if ((this.getFilterType().equals("EqualPropertyFilter"))
+				|| (this.getFilterType().equals("Equal Property Filter")))
 			this.setListPropertyElements();
 		else {
 			if ((this.getFilterType().equals("AndFilter"))||(this.getFilterType().equals("And Filter")))

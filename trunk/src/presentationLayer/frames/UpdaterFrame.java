@@ -147,7 +147,7 @@ public class UpdaterFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "List Property Filter", "Actor Relationship Filter", "And Filter" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Element Equal Filter", "Job Position Filter", "Equal Property Filter", "Actor Relationship Filter", "And Filter" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
