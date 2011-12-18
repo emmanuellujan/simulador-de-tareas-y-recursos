@@ -597,8 +597,9 @@ public class Actor extends Resource {
 	public void update(){
 		Updater updater = this.getUpdater();
 		if(updater!=null){
-			Vector<Resource> resources = this.getSchedulingSystem()
-					.getIoSystem().getAllResourcesList();
+			//Vector<Resource> resources = this.getSchedulingSystem()
+			//		.getIoSystem().getAllResourcesList();
+                        Vector<Resource> resources = this.getSchedulingSystem().getAllResourcesList();
 			int n = resources.size();
 			for(int i=0;i<n;i++)
 				updater.update(resources.elementAt(i));
