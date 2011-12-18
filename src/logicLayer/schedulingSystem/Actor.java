@@ -64,8 +64,6 @@ public class Actor extends Resource {
 
 		this.setBusyTime(0);
 		this.setTime(0);
-		if (limitTime < 3)
-			limitTime = -1;
 		this.setLimitTime(limitTime);
 		this.setUpdater(updater);
 	}
@@ -527,6 +525,8 @@ public class Actor extends Resource {
 	}
 
 	public void setLimitTime(int limitTime) {
+		if (limitTime < 3)
+			limitTime = -1;
 		this.limitTime = limitTime;
 	}
 
