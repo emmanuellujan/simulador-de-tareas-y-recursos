@@ -2,19 +2,19 @@ format 76
 
 packagecanvas 128131 
   package_ref 129027 // dataModel
-    xyzwh 182.502 68.7977 2000 83 81
+    xyzwh 182 68 2000 85 81
 end
 packagecanvas 128259 
   package_ref 129283 // ioSystem
-    xyzwh 28.5206 68.6759 2005 83 81
+    xyzwh 28 68 2005 85 81
 end
 packagecanvas 128387 
   package_ref 129411 // logginSystem
-    xyzwh 336.484 69.2821 2000 83 81
+    xyzwh 336 69 2000 85 81
 end
 packagecanvas 128643 
   package_ref 128899 // persistenceLayer
-    xyzwh 6.04535 12.0227 2000 441 154
+    xyzwh 6 12 2000 441 154
 end
 simplerelationcanvas 128771 simplerelation_ref 129155
   from ref 128259 z 2006 to ref 128131

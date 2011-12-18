@@ -67,29 +67,13 @@ end
 relationcanvas 128387 relation_ref 135043 // <unidirectional association>
   geometry HVr
   decenter_end 745
-  from ref 128003 z 3006 to point 404 197
-  line 129539 z 3006 stereotype "<<Vector>>" xyz 334 213.5 3006 to ref 128131
-  role_a_pos 345 179 3000 no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 128642 relation_ref 128258 // <unidirectional association>
-  decenter_begin 538
-  from ref 128131 z 3024 to point 329 162
-  line 129282 z 3024 to point 574 163
-  line 128770 z 3024 to ref 128002
-  no_role_a no_role_b
+  from ref 128003 z 3006 to point 338 372
+  line 129539 z 3006 stereotype "<<Vector>>" xyz 278 338.5 3006 to ref 128131
+  role_a_pos 348 356 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128643 relation_ref 135171 // <generalisation>
   from ref 128515 z 3012 to ref 128131
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 128898 relation_ref 128386 // <unidirectional association>
-  decenter_begin 582
-  decenter_end 200
-  from ref 128131 z 3032 to point 549 170
-  line 129026 z 3032 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -106,13 +90,13 @@ end
 relationcanvas 129795 relation_ref 134787 // <unidirectional association>
   decenter_begin 398
   from ref 128131 z 3018 stereotype "<<Vector>>" xyz 402 145 3018 to ref 129667
-  role_a_pos 430 123 3000 no_role_b
+  role_a_pos 430 135 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130051 relation_ref 134659 // <unidirectional association>
   decenter_begin 143
   from ref 128131 z 3012 to ref 129923
-  role_a_pos 459 81 3000 no_role_b
+  role_a_pos 459 83 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 line 129794 -_-_

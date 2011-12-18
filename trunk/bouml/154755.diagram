@@ -121,7 +121,7 @@ relationcanvas 129155 relation_ref 128643 // <unidirectional association>
   decenter_end 263
   from ref 128771 z 2019 to point 785 57
   line 131331 z 2019 to ref 128387
-  role_a_pos 593 39 3000 no_role_b
+  role_a_pos 596 39 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129283 relation_ref 128771 // <generalisation>
@@ -186,7 +186,7 @@ line 128514 -_-_
   line 128642 z 2001 to ref 128002
 line 135939 -_-_ decenter_begin 405
   from ref 135811 z 2025 to ref 134019
-line 136067 -_-_ decenter_begin 211 decenter_end 93
+line 136067 -_-_ decenter_begin 210 decenter_end 93
   from ref 135811 z 3006 to ref 134403
 line 136195 -_-_ decenter_begin 266 decenter_end 112
   from ref 134659 z 2024 to ref 135811

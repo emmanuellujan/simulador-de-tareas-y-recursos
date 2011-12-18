@@ -70,17 +70,17 @@ Package"
   xyzwh 482.5 332.5 2000 193 77
 relationcanvas 128259 relation_ref 131843 // <unidirectional association>
   from ref 128131 z 3006 to ref 128003
-  role_a_pos 377 163 3000 no_role_b
+  role_a_pos 379 159 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128387 relation_ref 129667 // <unidirectional association>
   from ref 128003 z 3006 to ref 128131
-  role_a_pos 470 163 3000 no_role_b
+  role_a_pos 468 162 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129155 relation_ref 173443 // <unidirectional association>
   from ref 128899 z 3012 to ref 128003
-  role_a_pos 377 202 3000 no_role_b
+  role_a_pos 379 200 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129539 relation_ref 173187 // <generalisation>
