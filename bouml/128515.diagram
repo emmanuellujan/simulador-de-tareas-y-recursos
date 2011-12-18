@@ -2,51 +2,51 @@ format 76
 
 packagecanvas 128003 
   package_ref 129795 // frames
-    xyzwh 211.572 70.0789 2000 83 81
+    xyzwh 211 70 2000 85 81
 end
 packagecanvas 128131 
   package_ref 130179 // media
-    xyzwh 349.842 74.6193 2000 83 81
+    xyzwh 349 74 2000 85 81
 end
 packagecanvas 128259 
   package_ref 129667 // presentationLayer
-    xyzwh 170.892 14.8285 2000 294 164
+    xyzwh 170 14 2000 294 164
 end
 packagecanvas 128643 
   package_ref 128643 // schedulingAlgorithmSystem
-    xyzwh 40.5394 388.823 2005 161 83
+    xyzwh 40 388 2005 163 83
 end
 packagecanvas 128771 
   package_ref 128131 // logicLayer
-    xyzwh 22.3528 209.823 2000 578 297
+    xyzwh 22 209 2000 578 297
 end
 packagecanvas 128899 
   package_ref 128515 // resultsAnalyzer
-    xyzwh 406.273 253.996 2000 93 83
+    xyzwh 406 253 2000 93 83
 end
 packagecanvas 129027 
   package_ref 128259 // schedulingSystem
-    xyzwh 235.24 257.829 2000 117 86
+    xyzwh 235 257 2000 117 86
 end
 packagecanvas 129155 
   package_ref 128387 // filterSystem
-    xyzwh 59.8698 262.132 2000 84 83
+    xyzwh 59 262 2000 85 83
 end
 packagecanvas 130307 
   package_ref 128899 // persistenceLayer
-    xyzwh 65.8821 539.906 2000 494 172
+    xyzwh 65 539 2000 494 172
 end
 packagecanvas 130435 
   package_ref 129283 // ioSystem
-    xyzwh 111.935 609.767 2005 83 81
+    xyzwh 111 609 2005 85 81
 end
 packagecanvas 130563 
   package_ref 129411 // logginSystem
-    xyzwh 418.739 612.87 2000 83 81
+    xyzwh 418 612 2000 85 81
 end
 packagecanvas 130691 
   package_ref 129027 // dataModel
-    xyzwh 265.09 609.767 2000 83 81
+    xyzwh 265 609 2000 85 81
 end
 simplerelationcanvas 128387 simplerelation_ref 129411
   from ref 128003 z 2001 to ref 128131

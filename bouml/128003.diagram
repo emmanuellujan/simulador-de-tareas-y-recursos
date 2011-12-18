@@ -2,21 +2,26 @@ format 76
 
 packagecanvas 128003 
   package_ref 128131 // logicLayer
-    xyzwh 17.3889 133.43 2000 109 81
+    xyzwh 17 133 2000 109 81
 end
 packagecanvas 128131 
   package_ref 129667 // presentationLayer
-    xyzwh 18.0408 14.4855 2000 107 81
+    xyzwh 18 14 2000 107 81
 end
 packagecanvas 128259 
   package_ref 128899 // persistenceLayer
-    xyzwh 20.5844 259.489 2005 103 81
+    xyzwh 20 259 2005 103 81
+end
+simplerelationcanvas 128002 simplerelation_ref 136195
+  from ref 128131 z 2001 to point -12 14
+  line 128130 z 2001 to point -12 44
+  line 128258 z 2001 to ref 128131
 end
 simplerelationcanvas 128387 simplerelation_ref 128003
   from ref 128131 z 2001 stereotype "<<allowed to use>>" xyz 77 105 3000 to ref 128003
 end
 simplerelationcanvas 128515 simplerelation_ref 128131
   decenter_begin 476
-  from ref 128003 z 2006 stereotype "<<allowed to use>>" xyz 76.5 230 3000 to ref 128259
+  from ref 128003 z 2006 stereotype "<<allowed to use>>" xyz 76 230 3000 to ref 128259
 end
 end

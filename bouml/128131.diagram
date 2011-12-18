@@ -2,23 +2,26 @@ format 76
 
 packagecanvas 128003 
   package_ref 128387 // filterSystem
-    xyzwh 20.7306 36.3419 2000 84 83
+    xyzwh 20 36 2000 85 83
 end
 packagecanvas 128387 
   package_ref 128515 // resultsAnalyzer
-    xyzwh 386.253 35.8398 2000 93 83
+    xyzwh 386 35 2000 93 83
 end
 packagecanvas 128515 
   package_ref 128643 // schedulingAlgorithmSystem
-    xyzwh 168.357 198.287 2005 161 83
+    xyzwh 168 198 2005 163 83
 end
 packagecanvas 128643 
   package_ref 128259 // schedulingSystem
-    xyzwh 191.481 79.1385 2000 109 83
+    xyzwh 191 79 2000 111 83
 end
 packagecanvas 130307 
   package_ref 128131 // logicLayer
-    xyzwh 5.95828 5.06893 2000 493 294
+    xyzwh 5 5 2000 493 294
+end
+simplerelationcanvas 128002 simplerelation_ref 136323
+  from ref 128643 z 2001 to ref 130307
 end
 simplerelationcanvas 128771 simplerelation_ref 128259
   from ref 128643 z 2006 to ref 128515
