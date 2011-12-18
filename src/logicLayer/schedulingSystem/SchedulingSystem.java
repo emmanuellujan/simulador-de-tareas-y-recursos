@@ -298,7 +298,7 @@ public class SchedulingSystem {
 		actorsList.remove(0);
 	}
 
-	private Vector<Resource> getAllResourcesList() {
+        public Vector<Resource> getAllResourcesList() {
 		Vector<Resource>  allResources = new Vector<Resource>();
 		allResources.addAll(this.getResourcesList());
 		allResources.addAll(this.getActorsList());
