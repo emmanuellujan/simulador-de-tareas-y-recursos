@@ -7,7 +7,6 @@ import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
 import logicLayer.filterSystem.AndFilter;
 import logicLayer.filterSystem.EqualPropertyFilter;
-import logicLayer.filterSystem.Filter;
 import logicLayer.filterSystem.TaskOwnerFilter;
 import logicLayer.resultsAnalyzer.*;
 

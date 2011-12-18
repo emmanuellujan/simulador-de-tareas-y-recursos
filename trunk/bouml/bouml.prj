@@ -1,7 +1,7 @@
 format 76
 "bouml"
-  revision 12
-  modified_by 2 "F.Rossi"
+  revision 13
+  modified_by 3 "elujan"
   java_root_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/"
 
 
@@ -132,7 +132,7 @@ format 76
 	size A4
       end
 
-      activityaction 134531 "Función de comienzo"
+      activityaction 134531 "FunciF3n de comienzo"
 	opaque_action
 	flow 134531 "[No hay una tarea activa]"
 	  on activityaction_ref 134659 // activity action 
@@ -190,7 +190,7 @@ La tarea pasa a estado activo."
       end
 
       activitynode 134659 decision ""
-	flow 135427 "[La lista de interrupciones no está vacía]"
+	flow 135427 "[La lista de interrupciones no estE1 vacEDa]"
 	  on activityaction_ref 135043 // activity action Planificar tarea de la lista de interrupciones y pasarla a estado activo.
 	end
 
@@ -200,7 +200,7 @@ La tarea pasa a estado activo."
       end
 
       activitynode 134787 decision ""
-	flow 135683 "[La lista de listos no está vacía]"
+	flow 135683 "[La lista de listos no estE1 vacEDa]"
 	  on activityaction_ref 135171 // activity action Planificar tarea de lista de listos y pasarla a estado activo.
 	end
 
@@ -242,10 +242,10 @@ La tarea pasa a estado activo. "
 
       activitynode 135043 decision ""
 	flow 136323 "[El temporizador ha terminado]"
-	  on activityaction_ref 135427 // activity action Obtener cuál es próximo actor
+	  on activityaction_ref 135427 // activity action Obtener cuE1l es prF3ximo actor
 	end
 
-	flow 137347 "[La lista de interrupciones no está vacía]"
+	flow 137347 "[La lista de interrupciones no estE1 vacEDa]"
 	  on activityaction_ref 135811 // activity action Se planifica la lista de interrupciones para elegir una tarea
 	end
 
@@ -258,9 +258,9 @@ La tarea pasa a estado activo. "
 	end
       end
 
-      activityaction 135427 "Obtener cuál es próximo actor"
+      activityaction 135427 "Obtener cuE1l es prF3ximo actor"
 	opaque_action
-	comment "Se obtiene la unidad de trabajo (que informa cuál es el próximo actor que realizará la tarea) "
+	comment "Se obtiene la unidad de trabajo (que informa cuE1l es el prF3ximo actor que realizarE1 la tarea) "
 	flow 136579 "<flow>"
 	  on activitynode_ref 135171 // decision
 	end
@@ -279,7 +279,7 @@ La tarea pasa a estado activo. "
       end
 
       activitynode 135171 decision ""
-	flow 136451 "[La tarea que se está realizando no es una interrupción]"
+	flow 136451 "[La tarea que se estE1 realizando no es una interrupciF3n]"
 	  on activityaction_ref 135555 // activity action Anexar tarea a lista de listos
 	end
 
@@ -323,7 +323,7 @@ La tarea pasa a estado activo. "
       activitynode 135427 decision ""
 	flow 137475 "[La tarea no es una int., o lo es y tiene > prioridad que la tarea actual]"
 	  on activityaction_ref 135939 // activity action La tarea pasa a su lista correspodiente, y a estado activo.
-	  comment "Si la tarea no es una interrupción o bien sí lo es y además tiene mayor prioridad que la tarea actual "
+	  comment "Si la tarea no es una interrupciF3n o bien sED lo es y ademE1s tiene mayor prioridad que la tarea actual "
 	end
 
 	flow 137731 "[Sino]"
@@ -349,7 +349,7 @@ La tarea pasa a estado activo. "
       end
 
       activitynode 135683 decision ""
-	flow 139011 "[La lista de interrupciones no está vacía]"
+	flow 139011 "[La lista de interrupciones no estE1 vacEDa]"
 	  on activityaction_ref 135811 // activity action Se planifica la lista de interrupciones para elegir una tarea
 	end
 
@@ -415,23 +415,23 @@ La tarea pasa a estado activo. "
 	end
       end
 
-      activityaction 136707 "Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecución."
+      activityaction 136707 "Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecuciF3n."
 	opaque_action
 	comment "Se decrementa el contador de programa
-Se la anexa a la lista de interrupciones del actor indicado (la tarea pasa a ser una interrupción y pasa a estado de espera). 
-Se desaloja la tarea en ejecución. "
+Se la anexa a la lista de interrupciones del actor indicado (la tarea pasa a ser una interrupciF3n y pasa a estado de espera). 
+Se desaloja la tarea en ejecuciF3n. "
 	flow 140547 "<flow>"
 	  on activitynode_ref 136707 // activity_final
 	end
       end
 
       activitynode 136195 decision ""
-	flow 140035 "[Es una interrupción]"
-	  on activityaction_ref 136707 // activity action Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecución.
+	flow 140035 "[Es una interrupciF3n]"
+	  on activityaction_ref 136707 // activity action Se decrementa el contador de program. Se la anexa a la lista de interrupciones del actor indicado. Se desaloja la tarea en ejecuciF3n.
 	end
 
-	flow 140163 "[Sino, si la tarea en ejecución debe continuar realizándose por otro actor]"
-	  on activityaction_ref 136835 // activity action Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecución.
+	flow 140163 "[Sino, si la tarea en ejecuciF3n debe continuar realizE1ndose por otro actor]"
+	  on activityaction_ref 136835 // activity action Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecuciF3n.
 	end
 
 	flow 140291 "<flow>"
@@ -439,7 +439,7 @@ Se desaloja la tarea en ejecución. "
 	end
       end
 
-      activityaction 136835 "Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecución."
+      activityaction 136835 "Se decrementa el contador de programa. Se la anexa a la lista de listos del recurso indicado. Se desaloja la tarea en ejecuciF3n."
 	opaque_action
 	flow 140419 "<flow>"
 	  on activitynode_ref 136707 // activity_final
@@ -465,7 +465,7 @@ Se desaloja la tarea en ejecución. "
       end
     end
 
-    activity 134659 "Función de comienzo"
+    activity 134659 "FunciF3n de comienzo"
     end
 
     activity 134787 "Algoritmo de trabajo del actor"
@@ -673,4 +673,6 @@ ${members}}
     package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
     draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
   end
+
+  package_ref 136707 // elujan
 end
