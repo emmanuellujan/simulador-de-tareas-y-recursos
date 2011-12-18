@@ -414,6 +414,10 @@ public class CreateActorFrame extends javax.swing.JFrame {
 	 */
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
 		if (this.areValidFields()) {
+                        if(this.newActor == null)
+                            this.newActor = new Actor("actor"
+					+ String.valueOf(this.getActorsList().size()), "actor", null, 80,null, 0,0,null,0,null, null);
+                    
 			// Get selected algorithm
 			SchedulingAlgorithm saReadyList;
 			if (this.jComboBox1.getSelectedItem().equals("Prioridades")) {
@@ -449,8 +453,10 @@ public class CreateActorFrame extends javax.swing.JFrame {
                         this.newActor.setResourceMaxLimit(Integer.parseInt(this.jTextField4
 							.getText()));
                         this.newActor.setUpdater(this.getUpdater());
-			this.getActorsList().add(this.newActor);
+			this.getActorsList().add(this.newActor);                          
 			SimulatorFrame.getInstance().setActorsList(this.getActorsList());
+                        this.newActor = null;
+                        this.setUpdater(null);
 			this.setVisible(false);
 			SimulatorFrame.getInstance().setLocationRelativeTo(null);
 			SimulatorFrame.getInstance().setVisible(true);

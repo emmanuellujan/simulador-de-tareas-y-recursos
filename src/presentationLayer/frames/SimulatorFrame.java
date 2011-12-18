@@ -1349,9 +1349,12 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	public void setMainResourcesList() {
 		Vector<Resource> resourcesCurrentList = (Vector<Resource>) this.actorsList
 				.clone();
-		if (this.resourcesList != null)
-			resourcesCurrentList.addAll((Vector<Resource>) this.resourcesList
-					.clone());
+		if (this.resourcesList != null){
+                    for(int i = 0;i < this.resourcesList.size();i++){
+                        if(!resourcesCurrentList.contains(this.resourcesList.elementAt(i)))
+                            resourcesCurrentList.add(this.resourcesList.elementAt(i));
+                    }			
+                }
 		this.setMainResourcesList(resourcesCurrentList);
 		this.fillResourcesComboboxes();
 	}
