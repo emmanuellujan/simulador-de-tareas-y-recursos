@@ -66,6 +66,7 @@ public class DeleteArtifactFrame extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
+			@Override
 			public void run() {
 			}
 		});
@@ -93,7 +94,7 @@ public class DeleteArtifactFrame extends javax.swing.JFrame {
 	/** Creates new form DeleteArtifactFrame */
 	public DeleteArtifactFrame() {
 		initComponents();
-                this.setResizable(false);
+		this.setResizable(false);
 	}
 
 	public Vector<Resource> getResourcesList() {
@@ -132,6 +133,7 @@ public class DeleteArtifactFrame extends javax.swing.JFrame {
 
 		jButton1.setText("Cancel");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}
@@ -139,6 +141,7 @@ public class DeleteArtifactFrame extends javax.swing.JFrame {
 
 		jButton2.setText("Delete");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 			}

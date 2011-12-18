@@ -13,6 +13,27 @@ public class XMLLogginSystem extends FileLogginSystem {
 		super(configurator, simulationTimes, "xml");
 	}
 
+	@Override
+	public String getLog() {
+		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
+		String xmlLog = "";
+		xmlLog = "<simulation>\n";
+
+		int currTime;
+		int n = simulationTimes.size();
+		for (int i = 0; i < n; i++) {
+			currTime = simulationTimes.get(i).getCurrentTime();
+			Vector<SimulationActor> actors = simulationTimes.get(i).getActors();
+			xmlLog += "\t<time>\n";
+			xmlLog += "\t\t<currentTime>" + currTime + "</currentTime>\n";
+			xmlLog += this.logActors(actors);
+			xmlLog += "\t</time>\n";
+		}
+		xmlLog += "";
+		xmlLog += "</simulation>\n";
+		return xmlLog;
+	}
+
 	private String logActors(Vector<SimulationActor> actors) {
 		String xmlLog = "\t\t<actors>\n";
 		int n = actors.size();
@@ -61,25 +82,4 @@ public class XMLLogginSystem extends FileLogginSystem {
 		return xmlLog;
 	}
 
-	public String getLog(){
-		Vector<SimulationTime> simulationTimes = this.getSimulationTimes();
-		String xmlLog = "";
-		xmlLog = "<simulation>\n";
-
-		int currTime;
-		int n = simulationTimes.size();
-		for (int i = 0; i < n; i++) {
-			currTime = simulationTimes.get(i).getCurrentTime();
-			Vector<SimulationActor> actors = simulationTimes.get(i)
-					.getActors();
-			xmlLog += "\t<time>\n";
-			xmlLog += "\t\t<currentTime>" + currTime + "</currentTime>\n";
-			xmlLog += this.logActors(actors);
-			xmlLog += "\t</time>\n";
-		}
-		xmlLog += "";
-		xmlLog += "</simulation>\n";
-		return xmlLog;
-	}
-	
 }

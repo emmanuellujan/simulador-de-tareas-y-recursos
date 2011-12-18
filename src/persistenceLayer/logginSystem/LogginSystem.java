@@ -54,12 +54,22 @@ public abstract class LogginSystem {
 		return failedFinishedTasks;
 	}
 
+	public abstract String getLog();
+
+	public int getNbrExecContTasks() {
+		return nbrExecContTasks;
+	}
+
 	public Vector<SimulationTime> getSimulationTimes() {
 		return simulationTimes;
 	}
 
 	public Vector<Task> getSuccessfulFinishedTasks() {
 		return successfulFinishedTasks;
+	}
+
+	public void incNbrExecContTasks() {
+		this.nbrExecContTasks++;
 	}
 
 	public void log(int time, Vector<Resource> resourcesList) {
@@ -92,6 +102,10 @@ public abstract class LogginSystem {
 		this.failedFinishedTasks = failedFinishedTasks;
 	}
 
+	public void setNbrExecContTasks(int nbrExecContTasks) {
+		this.nbrExecContTasks = nbrExecContTasks;
+	}
+
 	public void setSimulationTimes(Vector<SimulationTime> simulationTimes) {
 		this.simulationTimes = simulationTimes;
 	}
@@ -100,20 +114,6 @@ public abstract class LogginSystem {
 		this.successfulFinishedTasks = successfulFinishedTasks;
 	}
 
-	public abstract String getLog();
-	
 	public abstract void writeLog();
-	
-	public void incNbrExecContTasks() {
-		this.nbrExecContTasks++;
-	}
-
-	public int getNbrExecContTasks() {
-		return nbrExecContTasks;
-	}
-
-	public void setNbrExecContTasks(int nbrExecContTasks) {
-		this.nbrExecContTasks = nbrExecContTasks;
-	}
 
 }

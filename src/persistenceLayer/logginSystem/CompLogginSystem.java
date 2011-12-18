@@ -26,6 +26,11 @@ public class CompLogginSystem extends LogginSystem {
 		this.logginSystems.add(logginSystem);
 	}
 
+	@Override
+	public String getLog() {
+		return null;
+	}
+
 	public Vector<LogginSystem> getLogginSystems() {
 		return logginSystems;
 	}
@@ -34,15 +39,12 @@ public class CompLogginSystem extends LogginSystem {
 		this.logginSystems = logginSystems;
 	}
 
+	@Override
 	public void writeLog() {
 		Vector<LogginSystem> logginSystems = this.getLogginSystems();
 		int n = logginSystems.size();
 		for (int i = 0; i < n; i++)
 			logginSystems.get(i).writeLog();
-	}
-
-	public String getLog() {
-		return null;
 	}
 
 }

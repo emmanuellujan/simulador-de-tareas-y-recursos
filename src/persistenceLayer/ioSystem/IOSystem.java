@@ -59,6 +59,10 @@ public abstract class IOSystem {
 		return this.resourcesList;
 	}
 
+	public ResultsAnalyzer getResultsAnalyzer() {
+		return resultsAnalyzer;
+	}
+
 	public SchedulingSystem getSchedulingSystem() {
 		return schedulingSystem;
 	}
@@ -91,6 +95,10 @@ public abstract class IOSystem {
 		this.resourcesList = resourcesList;
 	}
 
+	public void setResultsAnalyzer(ResultsAnalyzer resultsAnalyzer) {
+		this.resultsAnalyzer = resultsAnalyzer;
+	}
+
 	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
 		this.schedulingSystem = schedulingSystem;
 	}
@@ -100,12 +108,4 @@ public abstract class IOSystem {
 	}
 
 	public abstract void updateRelations();
-
-	public ResultsAnalyzer getResultsAnalyzer() {
-		return resultsAnalyzer;
-	}
-
-	public void setResultsAnalyzer(ResultsAnalyzer resultsAnalyzer) {
-		this.resultsAnalyzer = resultsAnalyzer;
-	}
 }

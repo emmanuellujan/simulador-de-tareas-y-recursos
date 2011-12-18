@@ -61,6 +61,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 
+			@Override
 			public void run() {
 			}
 		});
@@ -86,7 +87,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
 	/** Creates new form DeleteTaskFrame */
 	public DeleteTaskFrame() {
 		initComponents();
-                this.setResizable(false);
+		this.setResizable(false);
 	}
 
 	public Vector<Task> getTaskList() {
@@ -121,6 +122,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
 
 		jButton1.setText("Delete");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}
@@ -128,6 +130,7 @@ public class DeleteTaskFrame extends javax.swing.JFrame {
 
 		jButton2.setText("Cancel");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			@Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 			}

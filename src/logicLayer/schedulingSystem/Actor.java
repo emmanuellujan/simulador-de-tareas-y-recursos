@@ -335,7 +335,7 @@ public class Actor extends Resource {
 		this.setCurrAction(currAction);
 		this.setCurrTask(currTask);
 	}
-	
+
 	public int getBusyTime() {
 		return busyTime;
 	}
@@ -429,6 +429,7 @@ public class Actor extends Resource {
 		return owns;
 	}
 
+	@Override
 	public void print() {
 		super.print();
 
@@ -463,6 +464,7 @@ public class Actor extends Resource {
 
 	}
 
+	@Override
 	public void reset() {
 		this.setBusyTime(0);
 		this.setTime(0);
@@ -594,12 +596,13 @@ public class Actor extends Resource {
 		this.setReadyList(readyList);
 	}
 
-	public void update(){
+	public void update() {
 		Updater updater = this.getUpdater();
-		if(updater!=null){
-			Vector<Resource> allResources = this.getSchedulingSystem().getAllResourcesList();
+		if (updater != null) {
+			Vector<Resource> allResources = this.getSchedulingSystem()
+					.getAllResourcesList();
 			int n = allResources.size();
-			for(int i=0;i<n;i++)
+			for (int i = 0; i < n; i++)
 				updater.update(allResources.elementAt(i));
 		}
 	}

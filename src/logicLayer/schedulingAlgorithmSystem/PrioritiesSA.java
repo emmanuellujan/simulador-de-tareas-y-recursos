@@ -10,6 +10,7 @@ public class PrioritiesSA extends SchedulingAlgorithm {
 		super("Priorities");
 	}
 
+	@Override
 	public Task schedule(Vector<Task> tasks) {
 		Task task = null;
 		int n = tasks.size();

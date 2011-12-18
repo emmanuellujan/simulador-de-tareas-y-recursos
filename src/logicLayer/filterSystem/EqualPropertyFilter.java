@@ -12,6 +12,7 @@ public class EqualPropertyFilter extends PropertyFilter {
 		super(currentKey, currentValue);
 	}
 
+	@Override
 	public boolean eval(Object a) {
 		Resource r = ((Resource) a);
 		String key = (String) this.getKey();

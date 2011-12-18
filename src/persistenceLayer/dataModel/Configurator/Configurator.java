@@ -7,7 +7,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Configurator {
@@ -91,20 +90,20 @@ public class Configurator {
 			NodeList inputDirElementList = doc.getElementsByTagName("inputDir");
 			Element inputDirElement = (Element) inputDirElementList.item(0);
 			NodeList inputDir = inputDirElement.getChildNodes();
-			sInputDir = ((Node) inputDir.item(0)).getNodeValue();
+			sInputDir = inputDir.item(0).getNodeValue();
 
 			NodeList outputDirElementList = doc
 					.getElementsByTagName("outputDir");
 			Element outputDirElement = (Element) outputDirElementList.item(0);
 			NodeList outputDir = outputDirElement.getChildNodes();
-			sOutputDir = ((Node) outputDir.item(0)).getNodeValue();
+			sOutputDir = outputDir.item(0).getNodeValue();
 
 			NodeList projectNameElementList = doc
 					.getElementsByTagName("projectName");
 			Element projectNameElement = (Element) projectNameElementList
 					.item(0);
 			NodeList projectName = projectNameElement.getChildNodes();
-			sProjectName = ((Node) projectName.item(0)).getNodeValue();
+			sProjectName = projectName.item(0).getNodeValue();
 
 		} catch (Exception e) {
 			e.printStackTrace();

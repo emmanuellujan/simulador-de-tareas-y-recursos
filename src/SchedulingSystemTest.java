@@ -2,6 +2,12 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 import junit.framework.Assert;
+import logicLayer.filterSystem.ActorRelationshipFilter;
+import logicLayer.filterSystem.AndFilter;
+import logicLayer.filterSystem.EqualPropertyFilter;
+import logicLayer.filterSystem.Filter;
+import logicLayer.filterSystem.TaskOwnerFilter;
+import logicLayer.resultsAnalyzer.BasicAnalyzer;
 import logicLayer.schedulingAlgorithmSystem.FCFS;
 import logicLayer.schedulingAlgorithmSystem.SchedulingAlgorithm;
 import logicLayer.schedulingSystem.Actor;
@@ -10,12 +16,6 @@ import logicLayer.schedulingSystem.SchedulingSystem;
 import logicLayer.schedulingSystem.Task;
 import logicLayer.schedulingSystem.Update;
 import logicLayer.schedulingSystem.Updater;
-import logicLayer.filterSystem.ActorRelationshipFilter;
-import logicLayer.filterSystem.AndFilter;
-import logicLayer.filterSystem.EqualPropertyFilter;
-import logicLayer.filterSystem.Filter;
-import logicLayer.filterSystem.TaskOwnerFilter;
-import logicLayer.resultsAnalyzer.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -66,7 +66,7 @@ public class SchedulingSystemTest {
 				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
 	}
-/*
+
 	// Code that tests one thing
 	@Test
 	public void test1() {
@@ -174,7 +174,7 @@ public class SchedulingSystemTest {
 	public void test7() {
 		this.test("test_case_7", 1.4035088);
 	}
-*/
+
 	@Test
 	public void test8() {
 		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
@@ -186,11 +186,12 @@ public class SchedulingSystemTest {
 		String type = "Artifact";
 		Hashtable<String, String> properties = new Hashtable<String, String>();
 		properties.put("completo", "cero");
-		int maxRelations=10;
+		int maxRelations = 10;
 		Vector<String> relationsIds = new Vector<String>();
 		relationsIds.add("actor0");
-		Resource document = new Resource(resId, type, properties, maxRelations, relationsIds, schedulingSystem);
-		
+		Resource document = new Resource(resId, type, properties, maxRelations,
+				relationsIds, schedulingSystem);
+
 		// Create Actor
 		resId = "actor0";
 		type = "Actor";
@@ -207,10 +208,6 @@ public class SchedulingSystemTest {
 		Actor actor = new Actor(resId, type, saReadyList, limitTime,
 				schedulingSystem, capacity, maxTaskNumber, properties,
 				maxRelations, relationsIds, updater);
-		
-		// Update Relations between Actor and Task
-		actor.getResources().add(document);
-		document.getResources().add(actor);
 
 		// Updater of the Actor
 		// Filter
@@ -226,8 +223,11 @@ public class SchedulingSystemTest {
 		u1.addProperty(key, value);
 		Updater u = new Updater();
 		u.addUpdate(f3, u1);
-		
+
 		actor.setUpdater(u);
+
+		// Update Relations between Actor and Task
+		actor.getResources().add(document);
 
 		// Create Task
 		String taskId = "task0";
@@ -251,15 +251,16 @@ public class SchedulingSystemTest {
 		double d = 10.0;
 		String inputDir = dir + bar + dir2;
 		String outputDir = dir;
-	
+
 		System.out.print("Loading data...");
 		schedulingSystem.getConfigurator().setInputDir(inputDir);
 		schedulingSystem.getConfigurator().setOutputDir(outputDir);
 		schedulingSystem.getConfigurator().setProjectName(dir2);
+		schedulingSystem.setDeadline(80);
 		schedulingSystem.getResourcesList().add(document);
 		schedulingSystem.getTasks().add(task);
 		schedulingSystem.getActorsList().add(actor);
-		
+
 		System.out.println(" done.");
 		System.out.print("Simulation started...");
 		schedulingSystem.simulateAndLog();
@@ -273,11 +274,11 @@ public class SchedulingSystemTest {
 		System.out.println(" done.\n");
 		schedulingSystem.getResultsAnalyzer().print();
 		System.out.println("Done!\n\n");
-		
+
 		double result = ((BasicAnalyzer) schedulingSystem.getResultsAnalyzer())
 				.getPropVelocity();
 		Assert.assertEquals(d, result, 0.0001);
-		
+
 	}
 
 }

@@ -3,7 +3,6 @@ package logicLayer.resultsAnalyzer;
 import logicLayer.schedulingSystem.SchedulingSystem;
 import persistenceLayer.ioSystem.FileManager;
 
-
 public abstract class ResultsAnalyzer {
 	private SchedulingSystem schedulingSystem;
 	private String analysis;
@@ -15,14 +14,30 @@ public abstract class ResultsAnalyzer {
 
 	public abstract void analyze();
 
+	public String getAnalysis() {
+		return analysis;
+	}
+
+	public SchedulingSystem getSchedulingSystem() {
+		return schedulingSystem;
+	}
+
 	public void print() {
 		System.out.println(this.getAnalysis());
 	}
 
 	public abstract void renderAnalysis();
-	
+
 	public void reset() {
 		// TODO Auto-generated method stub
+	}
+
+	public void setAnalysis(String analysis) {
+		this.analysis = analysis;
+	}
+
+	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
+		this.schedulingSystem = schedulingSystem;
 	}
 
 	public void writeAnalysis() {
@@ -33,22 +48,6 @@ public abstract class ResultsAnalyzer {
 				+ "_analysis.txt";
 		FileManager fileManager = new FileManager();
 		fileManager.writeFile(fileName, analysis);
-	}
-
-	public SchedulingSystem getSchedulingSystem() {
-		return schedulingSystem;
-	}
-
-	public void setSchedulingSystem(SchedulingSystem schedulingSystem) {
-		this.schedulingSystem = schedulingSystem;
-	}
-
-	public String getAnalysis() {
-		return analysis;
-	}
-
-	public void setAnalysis(String analysis) {
-		this.analysis = analysis;
 	}
 
 }

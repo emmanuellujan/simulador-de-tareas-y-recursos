@@ -25,9 +25,8 @@ public class SystemServices {
 	public Vector<String> deleteRelation(Vector<String> list,
 			String firstResourceId, String secondResourceId) {
 		for (int i = 0; i < list.size(); i++) {
-			if ((((String) list.elementAt(i)).contains("Recurso: "
-					+ firstResourceId))
-					&& (((String) list.elementAt(i)).contains("con recurso: "
+			if ((list.elementAt(i).contains("Recurso: " + firstResourceId))
+					&& (list.elementAt(i).contains("con recurso: "
 							+ secondResourceId))) {
 				list.removeElementAt(i);
 			}
@@ -73,7 +72,7 @@ public class SystemServices {
 					.getMainResourcesList().size(); i++) {
 				if (SimulatorFrame.getInstance().getMainResourcesList()
 						.elementAt(i).getResId().equals(firstResourceId)) {
-					Resource element = (Resource) SimulatorFrame.getInstance()
+					Resource element = SimulatorFrame.getInstance()
 							.getMainResourcesList().elementAt(i);
 					currentList = element.getResources();
 					firtSize = ((Vector) element.getResources()).size();
