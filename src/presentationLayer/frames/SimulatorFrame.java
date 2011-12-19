@@ -1640,9 +1640,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		fileChooser.setApproveButtonText("Guardar");
 		int seleccion = fileChooser.showOpenDialog(null);
 		if (seleccion == JFileChooser.APPROVE_OPTION) {
-			if (this.jTextField1.getText().equals("")
-					&& (this.getSchedulingSystem().getIoSystem()
-							.getConfigurator().getProjectName().equals(""))) {
+			if ((this.jTextField1.getText().equals(""))&&(!this.getLoadState())){                         					
 				NewsFrame.getInstance().setLabel(
 						"Project title is empty, please complete it.");
 				NewsFrame.getInstance().setBackFrame("SimulatorFrame");
