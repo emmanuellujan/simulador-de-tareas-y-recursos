@@ -1,6 +1,6 @@
 format 76
 "bouml"
-  revision 16
+  revision 18
   modified_by 3 "elujan"
   java_root_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/"
 
@@ -704,6 +704,16 @@ ${members}}
     classdiagram 194563 "presentación"
       draw_all_relations no hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab no class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers no show_relation_visibility no show_infonote default shadow default show_stereotype_properties default
       size A4
+    end
+
+    sequencediagram 201091 "dataModel"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
+
+    sequencediagram 201219 "logginSystem"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
     end
   end
 

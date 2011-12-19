@@ -1,11 +1,17 @@
 window_sizes 1280 776 300 974 573 129
 diagrams
-  active  classdiagram_ref 154627 // data model
-    974 573 108 4 0 0
+  active  sequencediagram_ref 201219 // logginSystem
+    974 573 104 4 23 0
 end
 show_stereotypes
-selected classdiagram_ref 154627 // data model
+selected 
+  package_ref 143747 // src
 open
+  classview_ref 128131 // schedulingSystem
+  classview_ref 129155 // SimulationTime
+  class_ref 132483 // TXTLogginSystem
+  
+  package_ref 143747 // src
   classview_ref 129539 // class view
   
   package_ref 136835 // Dropbox
