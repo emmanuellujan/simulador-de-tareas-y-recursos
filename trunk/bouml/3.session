@@ -1,17 +1,11 @@
-window_sizes 1280 776 300 974 632 70
+window_sizes 1280 776 300 974 573 129
 diagrams
-  sequencediagram_ref 181379 // updater
-    974 632 141 4 0 35
-  active  classdiagram_ref 194563 // presentación
-    974 632 100 4 0 0
+  active  classdiagram_ref 154627 // data model
+    974 573 108 4 0 0
 end
 show_stereotypes
-selected class_ref 132739 // CreateActorFrame
+selected classdiagram_ref 154627 // data model
 open
-  classview_ref 128003 // src
-  
-  package_ref 128131 // logicLayer
-  class_ref 132995 // CreateArtifactFrame
   classview_ref 129539 // class view
   
   package_ref 136835 // Dropbox
