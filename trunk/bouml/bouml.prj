@@ -1,6 +1,6 @@
 format 76
 "bouml"
-  revision 15
+  revision 16
   modified_by 3 "elujan"
   java_root_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/"
 
@@ -566,6 +566,13 @@ ${members}}
 	    classrelation_ref 135042 // <dependency>
 	  b parent class_ref 130563 // Resource
       end
+
+      classrelation 193795 // <dependency>
+	relation 193795 -_->
+	  a default
+	    classrelation_ref 193795 // <dependency>
+	  b parent class_ref 130051 // Task
+      end
     end
 
     class 128130 "SimulationActor"
@@ -663,6 +670,13 @@ ${members}}
 	relation 135298 -_->
 	  a default
 	    classrelation_ref 135298 // <dependency>
+	  b parent class_ref 130435 // Actor
+      end
+
+      classrelation 193667 // <dependency>
+	relation 193667 -_->
+	  a default
+	    classrelation_ref 193667 // <dependency>
 	  b parent class_ref 130435 // Actor
       end
     end

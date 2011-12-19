@@ -2,7 +2,7 @@ format 76
 
 classcanvas 128002 class_ref 128002 // SimulationResource
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
-  xyz 227 128 2005
+  xyz 227.077 128.695 2005
 end
 classcanvas 128003 class_ref 130819 // Configurator
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -20,15 +20,15 @@ classcanvas 128003 class_ref 130819 // Configurator
     operation_ref 160131 // setInputDir
     operation_ref 160259 // setOutputDir
     operation_ref 160387 // setProjectName
-  xyzwh 54.9464 122.464 2000 89 149
+  xyzwh 54.7036 122.978 2000 89 149
 end
 classcanvas 128130 class_ref 128130 // SimulationActor
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
-  xyz 239 310 2005
+  xyz 239.97 310.776 2005
 end
 classcanvas 128258 class_ref 130435 // Actor
   draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
-  xyz 656 239 2000
+  xyz 656.324 379.195 2000
 end
 classcanvas 128259 class_ref 131715 // SimulationTime
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -37,32 +37,32 @@ classcanvas 128259 class_ref 131715 // SimulationTime
     operation_ref 162691 // getCurrentTime
     operation_ref 162819 // setActors
     operation_ref 162947 // setCurrentTime
-  xyz 435.03 254.778 3005
+  xyz 385.335 215.183 3005
 end
 packagecanvas 128515 
   package_ref 129539 // SimulationTime
-    xyzwh 204 67 2000 341 405
+    xyzwh 204.318 67.007 2000 341 405
 end
 packagecanvas 128643 
   package_ref 129155 // Configurator
-    xyzwh 20 71 2005 157 215
+    xyzwh 20.7572 71.8039 2005 157 215
 end
 packagecanvas 128771 
   package_ref 129027 // dataModel
-    xyzwh 6 6 1995 559 487
+    xyzwh 6.41632 6.99531 1995 559 487
 end
 classcanvas 129027 class_ref 130051 // Task
   draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
-  xyz 598.479 141.629 3005
+  xyz 580.13 136.12 3005
 end
 classcanvas 130179 class_ref 130563 // Resource
   draw_all_relations default hide_attributes yes hide_operations yes hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
-  xyz 599.895 189.527 3011
+  xyz 595.46 175.596 3011
 end
 note 132099 "From
 logicLayer.schedulingSystem
 Package"
-  xyzwh 588.984 32.7923 2000 185 68
+  xyzwh 588.381 32.7308 2000 185 68
 relationcanvas 131202 relation_ref 134914 // <dependency>
   from ref 128259 z 3006 to ref 128258
   no_role_a no_role_b
@@ -78,14 +78,19 @@ relationcanvas 131458 relation_ref 135170 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131586 relation_ref 135298 // <dependency>
-  from ref 128130 z 2006 to point 599 346
-  line 131714 z 2006 to ref 128258
+relationcanvas 131587 relation_ref 165891 // <dependency>
+  from ref 128259 z 3012 to ref 130179
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131587 relation_ref 165891 // <dependency>
-  from ref 128259 z 3012 to ref 130179
+relationcanvas 132611 relation_ref 193667 // <dependency>
+  from ref 128130 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132739 relation_ref 193795 // <dependency>
+  decenter_begin 187
+  from ref 128002 z 3006 to ref 129027
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
