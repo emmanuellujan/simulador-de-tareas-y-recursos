@@ -1,0 +1,55 @@
+class SimulationActor
+!!!231683.java!!!	SimulationActor(inout actor : Actor)
+		super(actor);
+
+		String currentAction = actor.getCurrAction();
+		String taskId;
+		if (actor.getCurrTask() != null)
+			taskId = actor.getCurrTask().getTaskId();
+		else
+			taskId = "None";
+		int time = actor.getTime();
+		int limitTime = actor.getLimitTime();
+
+		Vector<Task> intList = actor.getIntList();
+		int m = intList.size();
+		Vector<String> sInterruptionList = new Vector<String>();
+		for (int i = 0; i < m; i++)
+			sInterruptionList.add(intList.get(i).getTaskId());
+
+		Vector<Task> readyList = actor.getReadyList();
+		m = readyList.size();
+		Vector<String> sReadyList = new Vector<String>();
+		for (int i = 0; i < m; i++)
+			sReadyList.add(readyList.get(i).getTaskId());
+
+		this.setCurrentAction(currentAction);
+		this.setTaskId(taskId);
+		this.setTime(time);
+		this.setLimitTime(limitTime);
+		this.setInterruptionList(sInterruptionList);
+		this.setReadyList(sReadyList);
+!!!231811.java!!!	getCurrentAction() : String
+		return currentAction;
+!!!231939.java!!!	getInterruptionList() : Vector<String>
+		return interruptionList;
+!!!232067.java!!!	getLimitTime() : int
+		return limitTime;
+!!!232195.java!!!	getReadyList() : Vector<String>
+		return readyList;
+!!!232323.java!!!	getTaskId() : String
+		return taskId;
+!!!232451.java!!!	getTime() : int
+		return time;
+!!!232579.java!!!	setCurrentAction(in currentAction : String) : void
+		this.currentAction = currentAction;
+!!!232707.java!!!	setInterruptionList(inout interruptionList : Vector<String>) : void
+		this.interruptionList = interruptionList;
+!!!232835.java!!!	setLimitTime(in limitTime : int) : void
+		this.limitTime = limitTime;
+!!!232963.java!!!	setReadyList(inout readyList : Vector<String>) : void
+		this.readyList = readyList;
+!!!233091.java!!!	setTaskId(in taskId : String) : void
+		this.taskId = taskId;
+!!!233219.java!!!	setTime(in time : int) : void
+		this.time = time;

@@ -1,0 +1,73 @@
+format 76
+
+classinstancecanvas 128003 classinstance_ref 128003 // 
+  xyz 68.2371 28.3891 2005 life_line_z 1995
+end
+classinstance 129795 class_ref 130435 // Actor
+  name ""   xyz 372.431 26.5991 2000 life_line_z 1995
+classinstance 131971 class_ref 131075 // CompLogginSystem
+  name ""   xyz 493.827 25.7091 2000 life_line_z 1995
+fragment 134659 "loop"
+  xyzwh 68.5945 160.876 3005 344 65
+end
+fragment 134787 "loop"
+  xyzwh 25.553 124.734 3010 558 292
+end
+durationcanvas 129027 classinstance_ref 128003 // :SchedulingSystem
+  xyzwh 121 87.504 2010 11 344
+  overlappingdurationcanvas 132995
+    xyzwh 127 311.353 2020 11 27
+  end
+  overlappingdurationcanvas 134147
+    xyzwh 127 141.076 2020 11 63
+  end
+end
+durationcanvas 132739 classinstance_ref 129795 // :Actor
+  xyzwh 391 249.074 2010 11 47
+end
+durationcanvas 133507 classinstance_ref 131971 // :CompLogginSystem
+  xyzwh 550 365.081 2010 11 34
+end
+durationcanvas 134403 classinstance_ref 129795 // :Actor
+  xyzwh 391 173.316 2010 11 31
+end
+reflexivemsg 129155 asynchronous
+  to durationcanvas_ref 129027
+  yz 99 2015 msg operation_ref 152067 // "simulateAndLog() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 156 96
+msg 132867 synchronous
+  from durationcanvas_ref 129027
+  to durationcanvas_ref 132739
+  yz 252 2015 msg operation_ref 142723 // "exec() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 243 236
+reflexivemsg 133123 synchronous
+  to durationcanvas_ref 132995
+  yz 311 2025 msg operation_ref 149379 // "incTime() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 163 309
+msg 133635 synchronous
+  from durationcanvas_ref 129027
+  to durationcanvas_ref 133507
+  yz 367 2015 msg operation_ref 168451 // "log(in time : int, inout devicesList : Vector<Actor>) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 327 351
+reflexivemsg 134275 synchronous
+  to durationcanvas_ref 134147
+  yz 141 2025 explicitmsg "not scheduleFinished() : boolean"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 166 136
+msg 134531 synchronous
+  from durationcanvas_ref 134147
+  to durationcanvas_ref 134403
+  yz 180 2025 msg operation_ref 144643 // "isInactive() : boolean"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 233 164
+msg 134915 return
+  from durationcanvas_ref 134403
+  to durationcanvas_ref 134147
+  yz 193 2030 explicitmsg "true"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 252 198
+end

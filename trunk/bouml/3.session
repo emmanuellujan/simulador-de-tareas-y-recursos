@@ -1,19 +1,19 @@
-window_sizes 1280 776 300 974 582 120
+window_sizes 1280 776 300 974 632 70
 diagrams
-  active  sequencediagram_ref 181379 // updater
-    779 465 100 4 0 0
+  sequencediagram_ref 181379 // updater
+    974 632 141 4 0 35
+  active  classdiagram_ref 194563 // presentación
+    974 632 100 4 0 0
 end
 show_stereotypes
-selected class_ref 128515 // Filter
+selected class_ref 132739 // CreateActorFrame
 open
+  classview_ref 128003 // src
   
-package_ref 128259 // schedulingSystem
-  classview_ref 128259 // filterSystem
-  classview_ref 128387 // resultsAnalyzer
-  classview_ref 129027 // logginSystem
-  deploymentview_ref 129027 // logginSystem
+  package_ref 128131 // logicLayer
+  class_ref 132995 // CreateArtifactFrame
   classview_ref 129539 // class view
   
-package_ref 136707 // elujan
+  package_ref 136835 // Dropbox
 end
 end

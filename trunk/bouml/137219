@@ -1,6 +1,6 @@
 format 76
-"schedulingAlgorithmSystem" // src::logicLayer::schedulingAlgorithmSystem
-  revision 6
+"src" // elujan::Dropbox::Trabajo Final Diseño de Software::Codigo Fuente::src
+  revision 1
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -26,10 +26,8 @@ format 76
   package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
   show_infonote default drawing_language default show_stereotype_properties default
   
-  stereotype "segment"
-  java_dir "/media/7a9cedf1-b094-440e-b619-c03d0ebfa4e2/projects/prj/unicen/disenio/tasks-on-resources-simulator/src/logicLayer/schedulingAlgorithmSystem/"
-  java_package "logicLayer.schedulingAlgorithmSystem"
-  classview 128515 "schedulingAlgorithmSystem"
+  java_dir "/home/elujan/Dropbox/Trabajo Final Diseño de Software/Codigo Fuente/src/"
+  classview 136067 "src"
     //class diagram settings
     draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
     //collaboration diagram settings
@@ -45,7 +43,7 @@ format 76
     //activity diagram settings
     package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
     show_infonote default drawing_language default show_stereotype_properties default
-    class 129795 "FCFS"
+    class 147459 "SchedulingSystemTest"
       visibility public 
       cpp_decl ""
       java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
@@ -56,53 +54,17 @@ ${members}}
       idl_decl ""
       explicit_switch_type ""
       
-      classrelation 129795 // <generalisation>
-	relation 129795 ---|>
-	  a public
-	    java "${type}"
-	    classrelation_ref 129795 // <generalisation>
-	  b parent class_ref 129923 // SchedulingAlgorithm
+      classrelation 180227 // schedulingSystem (<unidirectional association>)
+	relation 180227 --->
+	  a role_name "schedulingSystem" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 180227 // schedulingSystem (<unidirectional association>)
+	  b parent class_ref 128131 // SchedulingSystem
       end
 
-      operation 138755 "FCFS"
-	public explicit_return_type ""
-	nparams 0
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 138883 "schedule"
-	public return_type class_ref 130051 // Task
-	nparams 1
-	  param inout name "tasks" explicit_type "Vector<Task>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-    end
-
-    class 129923 "SchedulingAlgorithm"
-      abstract visibility public 
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-      attribute 130563 "id"
-	public explicit_type "String"
+      attribute 176003 "dir"
+	private explicit_type "String"
 	cpp_decl ""
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
@@ -111,20 +73,7 @@ ${members}}
 	idl_decl ""
       end
 
-      operation 138243 "SchedulingAlgorithm"
-	public explicit_return_type ""
-	nparams 1
-	  param in name "id" explicit_type "String"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      operation 138371 "getId"
+      operation 222211 "getDir"
 	public explicit_return_type "String"
 	nparams 0
 	
@@ -136,12 +85,11 @@ ${members}}
 	
       end
 
-      operation 138499 "schedule"
-	abstract public return_type class_ref 130051 // Task
-	nparams 1
-	  param inout name "tasks" explicit_type "Vector<Task>"
+      operation 222339 "getSchedulingSystem"
+	public return_type class_ref 128131 // SchedulingSystem
+	nparams 0
 	
-	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	
@@ -149,10 +97,10 @@ ${members}}
 	
       end
 
-      operation 138627 "setId"
+      operation 222467 "setDir"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "id" explicit_type "String"
+	  param in name "dir" explicit_type "String"
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -161,83 +109,146 @@ ${members}}
 	
 	
       end
-    end
 
-    class 130179 "PrioritiesSA"
-      visibility public 
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
+      operation 222595 "setSchedulingSystem"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "schedulingSystem" type class_ref 128131 // SchedulingSystem
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
 "
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-      classrelation 129923 // <generalisation>
-	relation 129923 ---|>
-	  a public
-	    java "${type}"
-	    classrelation_ref 129923 // <generalisation>
-	  b parent class_ref 129923 // SchedulingAlgorithm
+	
+	
+	
       end
 
-      operation 139011 "PrioritiesSA"
-	public explicit_return_type ""
+      operation 222723 "setUp"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "Exception"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Before
+"
+	
+	
+	
+	comment "@throws java.lang.Exception
+
+ Code executed before each test"
+      end
+
+      operation 222851 "test"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "dir2" explicit_type "String"
+	  param in name "d" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 222979 "test1"
+	public explicit_return_type "void"
 	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
-	
-	
-	
-      end
-
-      operation 139139 "schedule"
-	public return_type class_ref 130051 // Task
-	nparams 1
-	  param inout name "tasks" explicit_type "Vector<Task>"
-	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
+	java_annotation "@Test
 "
 	
 	
 	
+	comment " Code that tests one thing"
       end
-    end
 
-    class 130307 "SAFactory"
-      visibility public 
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-      operation 139267 "SAFactory"
-	public explicit_return_type ""
+      operation 223107 "test2"
+	public explicit_return_type "void"
 	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
+"
+	java_annotation "@Test
 "
 	
 	
 	
       end
 
-      operation 139395 "getSchedulingAlgorithm"
-	public return_type class_ref 129923 // SchedulingAlgorithm
-	nparams 1
-	  param in name "sSchedulingAlgorithm" explicit_type "String"
+      operation 223235 "test3"
+	public explicit_return_type "void"
+	nparams 0
 	
-	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
+"
+	java_annotation "@Test
+"
+	
+	
+	
+      end
+
+      operation 223363 "test4"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Test
+"
+	
+	
+	
+      end
+
+      operation 223491 "test5"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Test
+"
+	
+	
+	
+      end
+
+      operation 223619 "test6"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Test
+"
+	
+	
+	
+      end
+
+      operation 223747 "test7"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Test
 "
 	
 	
@@ -246,64 +257,23 @@ ${members}}
     end
   end
 
-  deploymentview 128387 "schedulingAlgorithmSystem"
+  deploymentview 135811 "src"
     //deployment diagram settings
     package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
     draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
-    artifact 129667 "SchedulingAlgorithm"
+    artifact 147203 "SchedulingSystemTest"
       stereotype "source"
       java_src "${comment}
 ${package}
 ${imports}
-import java.util.Vector;
-import logicLayer.schedulingSystem.Task;
+import junit.framework.Assert;
+import logicLayer.schedulingSystem.SchedulingSystem;
+import org.junit.Before;
+import org.junit.Test;
 ${definition}"
       associated_classes
-	class_ref 129923 // SchedulingAlgorithm
+	class_ref 147459 // SchedulingSystemTest
       end
     end
-
-    artifact 129795 "FCFS"
-      stereotype "source"
-      java_src "${comment}
-${package}
-${imports}
-import java.util.Vector;
-import logicLayer.schedulingSystem.Task;
-${definition}"
-      associated_classes
-	class_ref 129795 // FCFS
-      end
-    end
-
-    artifact 129923 "PrioritiesSA"
-      stereotype "source"
-      java_src "${comment}
-${package}
-${imports}
-import java.util.Vector;
-import logicLayer.schedulingSystem.Task;
-${definition}"
-      associated_classes
-	class_ref 130179 // PrioritiesSA
-      end
-    end
-
-    artifact 130051 "SAFactory"
-      stereotype "source"
-      java_src "${comment}
-${package}
-${imports}
-${definition}"
-      associated_classes
-	class_ref 130307 // SAFactory
-      end
-    end
-  end
-
-  simplerelation 128899
-    -_->
-      on 
-      package_ref 128259 // schedulingSystem
   end
 end

@@ -1,0 +1,245 @@
+class BasicAnalyzer
+!!!209155.java!!!	BasicAnalyzer(inout schedulingSystem : SchedulingSystem)
+		super(schedulingSystem);
+		// TODO Auto-generated constructor stub
+!!!209283.java!!!	analyze() : void
+		SchedulingSystem schedulingSystem = this.getSchedulingSystem();
+		CompLogginSystem logger = schedulingSystem.getLogger();
+
+		// E = Number of errors:
+		int numberOfErrors = 0;
+		if (logger.getErrorMsgs() != null)
+			numberOfErrors = logger.getErrorMsgs().size();
+		this.setNumberOfErrors(numberOfErrors);
+
+		// D = Deadline (in cycles)
+		this.setDeadline(schedulingSystem.getDeadline());
+
+		// C = Number of cycles:
+		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
+		this.setNumberOfCycles(simulationTimes.size());
+
+		// ET = Total number of executed tasks (including cont. tasks)
+		int nbrExecTasks = schedulingSystem.getTasks().size();
+		this.setNbrExecTasks(nbrExecTasks);
+
+		// ECT = Total number of executed contingency tasks:
+		int nbrExecContTasks = schedulingSystem.getLogger()
+				.getNbrExecContTasks();
+		this.setNbrExecContTasks(nbrExecContTasks);
+
+		// TE = ET + ECT  = Total number of executed tasks
+		int totalNbrExecTasks = nbrExecTasks + nbrExecContTasks;
+		this.setNumberOfTasks(totalNbrExecTasks);		
+		
+		// ST = S(ET) + S(ECT) = Number of successful tasks (including cont. tasks)
+		int nbrSuccessfulTasks = schedulingSystem.getLogger()
+				.getSuccessfulFinishedTasks().size();
+		this.setNbrSuccessfulTasks(nbrSuccessfulTasks);
+
+		//  FT = F(ET) + F(ECT) = Number of failed tasks (including cont. tasks)
+		int nbrFailedTasks = schedulingSystem.getLogger()
+				.getFailedFinishedTasks().size();
+		this.setNbrFailedTasks(nbrFailedTasks);
+
+/*		float s1 = nbrSuccessfulTasks / (nbrSuccessfulTasks + nbrFailedTasks);
+		float s2 = (-nbrSuccessfulTasks + nbrExecContTasks * s1)
+				/ (nbrExecContTasks - nbrSuccessfulTasks - nbrFailedTasks);
+
+		// S(ET) = Number of successful executed tasks
+		int successfulExecTasks = (int) (s1 * nbrExecTasks);
+		this.setSuccessfulExecTasks(successfulExecTasks);
+		
+		// S(ECT) Number of successful executed cont. tasks
+		int successfulExecContTasks = (int) (s2 * nbrExecContTasks);
+		this.setSuccessfulExecContTasks(successfulExecContTasks);
+				
+		// F(ET) Number of failed executed tasks
+		int failedExecTasks = (int) ((1 - s1) * nbrExecTasks);
+		this.setFailedExecTasks(failedExecTasks);
+		
+		// F(ECT) Number of failed executed cont. tasks
+		int failedExecContTasks = (int) ((1 - s2) * nbrExecContTasks);
+		this.setFailedExecContTasks(failedExecContTasks);
+		
+		// t si
+		// tc no
+		// t_e = t si
+		// tc_e si
+		// s = s(t_e + tc_e) = s(t_e) + s(tc_e) si
+		// f = f(t_e + tc_e) = f(t_e) + f(tc_e) si
+		// s(t_e) = s1 * t_e
+		// s(tc_e) = s2 * tc_e
+		// f(t_e) = (1-s1) * t_e
+		// f(tc_e) = (1-s2) * tc_e
+
+		// s = s1 t_e + s2 tc_e
+		// f = (1-s1) t_e + (1-s2) tc_e
+*/
+		int numberOfActors = this.getSchedulingSystem().getActorsList().size();
+		this.setNumberOfActors(numberOfActors);
+		
+		int numberOfResources = this.getSchedulingSystem().getResourcesList()
+				.size();
+		this.setNumberOfResources(numberOfResources);
+
+		float meanNbrTasksPerActor = (float) numberOfTasks
+				/ (float) numberOfActors;
+		this.setMeanNbrTasksPerActor(meanNbrTasksPerActor);
+
+		float propFinishedTasks = (float) nbrSuccessfulTasks
+				/ (float) numberOfTasks;
+		this.setPropFinishedTasks(propFinishedTasks);
+
+		float propFailedTasks = (float) nbrFailedTasks / (float) numberOfTasks;
+		this.setPropFailedTasks(propFailedTasks);
+
+		float propVelocity = (float) this.getDeadline()
+				/ (float) this.getNumberOfCycles();
+		this.setPropVelocity(propVelocity);
+
+		this.renderAnalysis();
+!!!209411.java!!!	renderAnalysis() : void
+		String analysis = "";
+
+		analysis += "Results Analisys \n\n";
+
+		analysis += "  E = Number of errors: " + this.getNumberOfErrors() + "\n";
+
+		analysis += "  D = Deadline (in cycles): " + this.getDeadline() + "\n";
+
+		analysis += "  C = Number of cycles: " + this.getNumberOfCycles() + "\n";
+
+		analysis += "  ET = Total number of executed tasks: "
+				+ this.getNumberOfTasks() + "\n";
+		
+		analysis += "  ECT = Total number of executed contingency tasks: "
+				+ this.getNbrExecContTasks() + "\n";
+		
+		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
+				+ this.getNbrExecTasks() + "\n";
+
+		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks: "
+				+ this.getNbrSuccessfulTasks() + "\n";
+		
+		analysis += "  FT = F(ET) + F(ECT) = Number of failed tasks: " + this.getNbrFailedTasks()
+				+ "\n";
+		
+		/*
+		analysis += "  S(ET) = Number of successful executed tasks: "
+				+ this.getSuccessfulExecTasks() + "\n";
+
+		analysis += "  S(ECT) Number of successful executed cont. tasks: "
+				+ this.getSuccessfulExecContTasks() + "\n";
+		
+		analysis += "  F(ET) Number of failed executed tasks: "
+				+ this.getFailedExecTasks() + "\n";
+
+		analysis += "  F(ECT) Number of failed executed cont. tasks: "
+				+ this.getFailedExecContTasks() + "\n"; 
+		 
+		*/
+
+		analysis += "  A = Number of actors: " + this.getNumberOfActors() + "\n";
+		
+		Vector<Actor> actors = this.getSchedulingSystem().getActorsList();
+		int n = actors.size();
+		for(int i=0;i<n;i++){
+			analysis += "    Actor: "+actors.get(i).getResId()+", busy time: "
+					+ actors.get(i).getBusyTime() + "\n";
+		}
+		
+		analysis += "  R = Number of other resources (artifacts): "
+				+ this.getNumberOfResources() + "\n";
+
+		analysis += "  TPA = Mean number of tasks per actor: "
+				+ this.getMeanNbrTasksPerActor() + "\n";
+
+		analysis += "  Proportions: \n";
+
+		analysis += "    Successful tasks: " + this.getPropFinishedTasks()
+				+ "\n";
+
+		analysis += "    Failed tasks: " + this.getPropFailedTasks() + "\n";
+
+		analysis += "    Velocity (deadline/nbrOfCycles): "
+				+ this.getPropVelocity() + "\n";
+
+		String aux = this.getSchedulingSystem().getLogger().renderErrors();
+
+		if (aux != "")
+			analysis += "\n\n  " + aux + "\n";
+
+		this.setAnalysis(analysis);
+!!!209539.java!!!	getNumberOfErrors() : int
+		return numberOfErrors;
+!!!209667.java!!!	setNumberOfErrors(in numberOfErrors : int) : void
+		this.numberOfErrors = numberOfErrors;
+!!!209795.java!!!	getDeadline() : int
+		return deadline;
+!!!209923.java!!!	setDeadline(in deadline : int) : void
+		this.deadline = deadline;
+!!!210051.java!!!	getNumberOfCycles() : int
+		return numberOfCycles;
+!!!210179.java!!!	setNumberOfCycles(in numberOfCycles : int) : void
+		this.numberOfCycles = numberOfCycles;
+!!!210307.java!!!	getNbrExecTasks() : int
+		return nbrExecTasks;
+!!!210435.java!!!	setNbrExecTasks(in nbrExecTasks : int) : void
+		this.nbrExecTasks = nbrExecTasks;
+!!!210563.java!!!	getNbrExecContTasks() : int
+		return nbrExecContTasks;
+!!!210691.java!!!	setNbrExecContTasks(in nbrExecContTasks : int) : void
+		this.nbrExecContTasks = nbrExecContTasks;
+!!!210819.java!!!	getNumberOfTasks() : int
+		return numberOfTasks;
+!!!210947.java!!!	setNumberOfTasks(in numberOfTasks : int) : void
+		this.numberOfTasks = numberOfTasks;
+!!!211075.java!!!	getNbrSuccessfulTasks() : int
+		return nbrSuccessfulTasks;
+!!!211203.java!!!	setNbrSuccessfulTasks(in nbrSuccessfulTasks : int) : void
+		this.nbrSuccessfulTasks = nbrSuccessfulTasks;
+!!!211331.java!!!	getNbrFailedTasks() : int
+		return nbrFailedTasks;
+!!!211459.java!!!	setNbrFailedTasks(in nbrFailedTasks : int) : void
+		this.nbrFailedTasks = nbrFailedTasks;
+!!!211587.java!!!	getSuccessfulExecTasks() : int
+		return successfulExecTasks;
+!!!211715.java!!!	setSuccessfulExecTasks(in successfulExecTasks : int) : void
+		this.successfulExecTasks = successfulExecTasks;
+!!!211843.java!!!	getSuccessfulExecContTasks() : int
+		return successfulExecContTasks;
+!!!211971.java!!!	setSuccessfulExecContTasks(in successfulExecContTasks : int) : void
+		this.successfulExecContTasks = successfulExecContTasks;
+!!!212099.java!!!	getFailedExecTasks() : int
+		return failedExecTasks;
+!!!212227.java!!!	setFailedExecTasks(in failedExecTasks : int) : void
+		this.failedExecTasks = failedExecTasks;
+!!!212355.java!!!	getFailedExecContTasks() : int
+		return failedExecContTasks;
+!!!212483.java!!!	setFailedExecContTasks(in failedExecContTasks : int) : void
+		this.failedExecContTasks = failedExecContTasks;
+!!!212611.java!!!	getNumberOfActors() : int
+		return numberOfActors;
+!!!212739.java!!!	setNumberOfActors(in numberOfActors : int) : void
+		this.numberOfActors = numberOfActors;
+!!!212867.java!!!	getNumberOfResources() : int
+		return numberOfResources;
+!!!212995.java!!!	setNumberOfResources(in numberOfResources : int) : void
+		this.numberOfResources = numberOfResources;
+!!!213123.java!!!	getMeanNbrTasksPerActor() : float
+		return meanNbrTasksPerActor;
+!!!213251.java!!!	setMeanNbrTasksPerActor(in meanNbrTasksPerActor : float) : void
+		this.meanNbrTasksPerActor = meanNbrTasksPerActor;
+!!!213379.java!!!	getPropFinishedTasks() : float
+		return propFinishedTasks;
+!!!213507.java!!!	setPropFinishedTasks(in propFinishedTasks : float) : void
+		this.propFinishedTasks = propFinishedTasks;
+!!!213635.java!!!	getPropFailedTasks() : float
+		return propFailedTasks;
+!!!213763.java!!!	setPropFailedTasks(in propFailedTasks : float) : void
+		this.propFailedTasks = propFailedTasks;
+!!!213891.java!!!	getPropVelocity() : float
+		return propVelocity;
+!!!214019.java!!!	setPropVelocity(in propVelocity : float) : void
+		this.propVelocity = propVelocity;

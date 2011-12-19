@@ -1,0 +1,76 @@
+format 76
+
+classinstance 128003 class_ref 131331 // Updater
+  name ""   xyz 92.619 22.5556 2000 life_line_z 2000
+classinstance 128131 class_ref 131459 // Update
+  name ""   xyz 374.133 22.4857 2000 life_line_z 1995
+classinstance 128515 class_ref 128515 // Filter
+  name ""   xyz 260.165 22.5556 2000 life_line_z 2000
+classinstance 129283 class_ref 130563 // Resource
+  name ""   xyz 567.699 24.346 2000 life_line_z 1995
+fragment 130179 "loop"
+  xyzwh 339.873 224.444 2010 243 113
+end
+fragment 131075 "loop"
+  xyzwh 61.96 109.54 3005 554 256
+end
+durationcanvas 128259 classinstance_ref 128003 // :Updater
+  xyzwh 114 80.66 2010 11 323
+end
+durationcanvas 128643 classinstance_ref 128515 // :Filter
+  xyzwh 279 145.88 2010 11 35
+end
+durationcanvas 129027 classinstance_ref 128131 // :Update
+  xyzwh 394 204.28 2000 11 150
+end
+durationcanvas 129411 classinstance_ref 129283 // :Resource
+  xyzwh 594 244.94 2000 11 50
+end
+durationcanvas 129923 classinstance_ref 129283 // :Resource
+  xyzwh 594 305.42 2000 11 26
+end
+reflexivemsg 128387 synchronous
+  to durationcanvas_ref 128259
+  yz 80 2015 msg operation_ref 158595 // "update(inout resource : Resource) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "resource"
+  label_xy 115 67
+msg 128771 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 128643
+  yz 148 2015 msg operation_ref 129667 // "eval(inout a : Object) : boolean"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "resource"
+  label_xy 164 132
+msg 128899 return
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128259
+  yz 170 2020 explicitmsg "true"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 190 156
+msg 129155 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 129027
+  yz 213 2015 msg operation_ref 157955 // "update(inout resource : Resource) : boolean"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "resource"
+  label_xy 157 197
+msg 129539 synchronous
+  from durationcanvas_ref 129027
+  to durationcanvas_ref 129411
+  yz 253 2015 msg operation_ref 141187 // "setProperties(inout properties : Hashtable<String, String>) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "resource"
+  label_xy 421 237
+msg 130051 synchronous
+  from durationcanvas_ref 129027
+  to durationcanvas_ref 129923
+  yz 305 2015 explicitmsg "incNbrOfPropChanges()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 410 289
+msg 130691 return
+  from durationcanvas_ref 129027
+  to durationcanvas_ref 128259
+  yz 343 2015 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+end
