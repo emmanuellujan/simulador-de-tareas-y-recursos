@@ -1,0 +1,140 @@
+format 76
+
+classinstance 137475 class_ref 129667 // ResultsAnalyzer
+  name ""   xyz 255.5 23 2000 life_line_z 2000
+classinstance 137603 class_ref 131075 // CompLogginSystem
+  name ""   xyz 515.5 23 2000 life_line_z 2000
+classinstance 137731 class_ref 130947 // IOSystem
+  name ""   xyz 420.5 24 2000 life_line_z 2000
+classinstance 137859 class_ref 128131 // SchedulingSystem
+  name ""   xyz 64.5 23 2000 life_line_z 2000
+durationcanvas 137987 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 281 2010 11 66
+end
+durationcanvas 138115 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 517 2010 11 25
+end
+durationcanvas 138243 classinstance_ref 137859 // :SchedulingSystem
+  xyzwh 117 367 2010 11 50
+end
+durationcanvas 138371 classinstance_ref 137859 // :SchedulingSystem
+  xyzwh 117 502 2010 11 105
+end
+durationcanvas 138499 classinstance_ref 137475 // :ResultsAnalyzer
+  xyzwh 301 429 2010 11 36
+end
+durationcanvas 138627 classinstance_ref 137859 // :SchedulingSystem
+  xyzwh 117 122 2010 11 273
+end
+durationcanvas 138755 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 204 2010 11 77
+end
+durationcanvas 138883 classinstance_ref 137859 // :SchedulingSystem
+  xyzwh 117 629 2010 11 40
+end
+durationcanvas 139011 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 167 2010 11 44
+end
+durationcanvas 139139 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 201 2010 11 56
+end
+durationcanvas 139267 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 296 2010 11 25
+end
+durationcanvas 139395 classinstance_ref 137475 // :ResultsAnalyzer
+  xyzwh 301 634 2010 11 44
+end
+durationcanvas 139523 classinstance_ref 137859 // :SchedulingSystem
+  xyzwh 117 429 2010 11 45
+end
+durationcanvas 139651 classinstance_ref 137475 // :ResultsAnalyzer
+  xyzwh 301 586 2010 11 25
+end
+durationcanvas 139779 classinstance_ref 137731 // :IOSystem
+  xyzwh 448 124 2010 11 25
+end
+durationcanvas 139907 classinstance_ref 137603 // :CompLogginSystem
+  xyzwh 572 555 2010 11 25
+end
+msg 140035 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 137987
+  yz 336 2015 msg operation_ref 214659 // "getResultsAnalyzer() : ResultsAnalyzer"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 247.5 354
+reflexivemsg 140163 synchronous
+  to durationcanvas_ref 138243
+  yz 367 2015 msg operation_ref 152067 // "simulateAndLog() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 102.5 351
+msg 140291 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 139139
+  yz 246 2015 msg operation_ref 164355 // "getTasksList() : Task"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 264.5 197
+msg 140419 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 139267
+  yz 297 2015 msg operation_ref 164099 // "getResourcesList() : Resource"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 192.5 250
+msg 140547 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 139011
+  yz 199 2015 msg operation_ref 163971 // "getDeadline() : int"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 264.5 125
+msg 140675 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 138755
+  yz 270 2015 msg operation_ref 163587 // "getActorsList() : Actor"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 256.5 219
+reflexivemsg 140803 synchronous
+  to durationcanvas_ref 138627
+  yz 122 2015 msg operation_ref 149507 // "loadData() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 161.5 109
+msg 140931 synchronous
+  from durationcanvas_ref 138883
+  to durationcanvas_ref 139395
+  yz 639 2015 msg operation_ref 136067 // "print() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 213.5 623
+reflexivemsg 141059 synchronous
+  to durationcanvas_ref 138371
+  yz 502 2015 msg operation_ref 149891 // "saveData() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 123.5 486
+msg 141187 synchronous
+  from durationcanvas_ref 138371
+  to durationcanvas_ref 139651
+  yz 586 2015 msg operation_ref 138115 // "writeAnalysis() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 183.5 570
+msg 141315 synchronous
+  from durationcanvas_ref 138371
+  to durationcanvas_ref 138115
+  yz 522 2020 msg operation_ref 164611 // "saveAll() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 276.5 506
+msg 141443 synchronous
+  from durationcanvas_ref 138627
+  to durationcanvas_ref 139779
+  yz 138 2015 msg operation_ref 164483 // "loadAll() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 264.5 101
+msg 141571 synchronous
+  from durationcanvas_ref 138371
+  to durationcanvas_ref 139907
+  yz 558 2015 msg operation_ref 169731 // "writeLog() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 333.5 542
+msg 141699 synchronous
+  from durationcanvas_ref 139523
+  to durationcanvas_ref 138499
+  yz 429 2015 msg operation_ref 134147 // "analyze() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 200.5 413
+end

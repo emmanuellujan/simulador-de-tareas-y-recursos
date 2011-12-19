@@ -1,6 +1,6 @@
 format 76
 "filterSystem" // src::logicLayer::filterSystem
-  revision 5
+  revision 7
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -116,6 +116,40 @@ ${members}}
 	  b parent class_ref 128515 // Filter
       end
 
+      class 128515 "Filter"
+	abstract visibility protected 
+	cpp_decl ""
+	java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	
+	comment "
+@author F.Rossi"
+	operation 129667 "eval"
+	  abstract public explicit_return_type "boolean"
+	  nparams 1
+	    param inout name "a" explicit_type "Object"
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	classrelation 166147 // <dependency>
+	  relation 166147 -_->
+	    a default
+	      classrelation_ref 166147 // <dependency>
+	    b parent class_ref 130051 // Task
+	end
+      end
+
       attribute 128131 "element"
 	protected explicit_type "Object"
 	cpp_decl ""
@@ -162,40 +196,6 @@ ${members}}
 	
 	
 	
-      end
-    end
-
-    class 128515 "Filter"
-      abstract visibility public 
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-      comment "
-@author F.Rossi"
-      operation 129667 "eval"
-	abstract public explicit_return_type "boolean"
-	nparams 1
-	  param inout name "a" explicit_type "Object"
-	
-	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-      end
-
-      classrelation 166147 // <dependency>
-	relation 166147 -_->
-	  a default
-	    classrelation_ref 166147 // <dependency>
-	  b parent class_ref 130051 // Task
       end
     end
 
@@ -805,6 +805,33 @@ ${members}}
 	
       end
     end
+
+    class 160771 "Filter"
+      abstract visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+@author F.Rossi"
+      operation 240515 "eval"
+	abstract public explicit_return_type "boolean"
+	nparams 1
+	  param inout name "a" explicit_type "Object"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
   end
 
   deploymentview 128131 "filterSystem"
@@ -818,7 +845,6 @@ ${package}
 ${imports}
 ${definition}"
       associated_classes
-	class_ref 128515 // Filter
       end
     end
 

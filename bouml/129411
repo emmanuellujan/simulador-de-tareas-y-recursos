@@ -1,6 +1,6 @@
 format 76
 "logginSystem" // src::persistenceLayer::logginSystem
-  revision 6
+  revision 8
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -641,7 +641,7 @@ ${members}}
       operation 171011 "logResource"
 	public explicit_return_type "String"
 	nparams 1
-	  param inout name "resource" type class_ref 131587 // SimulationResource
+	  param inout name "resource" explicit_type ""
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
@@ -713,7 +713,7 @@ ${members}}
       operation 171523 "logResource"
 	public explicit_return_type "String"
 	nparams 1
-	  param inout name "resource" type class_ref 131587 // SimulationResource
+	  param inout name "resource" explicit_type ""
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
   ${body}}
