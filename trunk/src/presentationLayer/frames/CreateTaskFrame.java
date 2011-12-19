@@ -649,7 +649,8 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-		this.setVisible(false);
+                this.setFieldsValuesEmpty();
+                this.setVisible(false);
 		SimulatorFrame.getInstance().setLocationRelativeTo(null);
 		SimulatorFrame.getInstance().setVisible(true);
 	}// GEN-LAST:event_jButton2ActionPerformed
@@ -722,7 +723,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 		this.jTextField1.setText(null);
 		this.jTextField2.setText(null);
 		this.setFilter(null);
-		this.setUpdater(null);
+		this.setUpdater(new Updater());
 		this.setWorkUnitList(new Vector());
 		this.jTextArea1.setText("");
 	}
