@@ -666,6 +666,16 @@ ${members}}
 	  b parent class_ref 130435 // Actor
       end
     end
+
+    sequencediagram 181123 "main execution"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
+
+    sequencediagram 181379 "updater"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
   end
 
   deploymentview 129283 "deployment view"
