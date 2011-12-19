@@ -584,7 +584,8 @@ public class CreateActorFrame extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton1ActionPerformed
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-		SimulatorFrame.getInstance().setActorsList(this.getActorsList());
+		this.setFieldsValuesEmpty();
+                SimulatorFrame.getInstance().setActorsList(this.getActorsList());
 		this.setVisible(false);
 		SimulatorFrame.getInstance().setLocationRelativeTo(null);
 		SimulatorFrame.getInstance().setVisible(true);
@@ -630,6 +631,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
 		this.jTextField3.setText(null);
 		this.jTextField4.setText(null);
 		this.clearTable();
+                this.setUpdater(new Updater());
 	}
 
 	public void setMainResourcesList(Vector<Resource> resourcesPrincipalList) {
