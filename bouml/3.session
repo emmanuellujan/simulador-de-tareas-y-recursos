@@ -1,5 +1,19 @@
 window_sizes 1280 776 300 974 582 120
+diagrams
+  active  sequencediagram_ref 181379 // updater
+    779 465 100 4 0 0
+end
 show_stereotypes
-selected 
-package_ref 129 // bouml
+selected class_ref 128515 // Filter
+open
+  
+package_ref 128259 // schedulingSystem
+  classview_ref 128259 // filterSystem
+  classview_ref 128387 // resultsAnalyzer
+  classview_ref 129027 // logginSystem
+  deploymentview_ref 129027 // logginSystem
+  classview_ref 129539 // class view
+  
+package_ref 136707 // elujan
+end
 end
