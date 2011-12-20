@@ -601,10 +601,10 @@
   A = Number of actors: 1
     Actor: actor0, busy time: 8, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 0
-  TPA = Mean number of tasks per actor: 1.0
+  TPA = Mean number of tasks per actor: 2.0
   Proportions: 
-    Successful tasks: 1.0
-    Failed tasks: 1.0
+    Successful tasks: 0.5
+    Failed tasks: 0.5
     Velocity (deadline/nbrOfCycles): 7.2727275
 </analysis>
         <numberOfErrors>0</numberOfErrors>
@@ -621,9 +621,9 @@
         <failedExecContTasks>0</failedExecContTasks>
         <numberOfActors>1</numberOfActors>
         <numberOfResources>0</numberOfResources>
-        <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
-        <propFinishedTasks>1.0</propFinishedTasks>
-        <propFailedTasks>1.0</propFailedTasks>
+        <meanNbrTasksPerActor>2.0</meanNbrTasksPerActor>
+        <propFinishedTasks>0.5</propFinishedTasks>
+        <propFailedTasks>0.5</propFailedTasks>
         <propVelocity>7.2727275</propVelocity>
       </resultsAnalyzer>
       <dealerActor>

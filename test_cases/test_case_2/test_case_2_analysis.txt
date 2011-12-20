@@ -11,8 +11,8 @@ Results Analisys
   A = Number of actors: 1
     Actor: actor0, busy time: 8, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 0
-  TPA = Mean number of tasks per actor: 1.0
+  TPA = Mean number of tasks per actor: 2.0
   Proportions: 
-    Successful tasks: 1.0
-    Failed tasks: 1.0
+    Successful tasks: 0.5
+    Failed tasks: 0.5
     Velocity (deadline/nbrOfCycles): 7.2727275
