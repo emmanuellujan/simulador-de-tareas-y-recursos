@@ -13,9 +13,8 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 	private int numberOfErrors;
 	private int deadline; // desired number of cycles
 	private int numberOfCycles; // actual number of cycles
-	private int nbrExecTasks; // non cont. tasks, just tasks
+	private int nbrExecTasks;
 	private int nbrExecContTasks;
-	private int numberOfTasks; // number of all executed tasks
 	private int nbrSuccessfulTasks;
 	private int nbrFailedTasks;
 	private int successfulExecTasks;
@@ -59,10 +58,6 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 		int nbrExecContTasks = schedulingSystem.getLogger()
 				.getNbrExecContTasks();
 		this.setNbrExecContTasks(nbrExecContTasks);
-
-		// TE = ET + ECT = Total number of executed tasks
-		int totalNbrExecTasks = nbrExecTasks + nbrExecContTasks;
-		this.setNumberOfTasks(totalNbrExecTasks);
 
 		// ST = S(ET) + S(ECT) = Number of successful tasks (including cont.
 		// tasks)
@@ -109,15 +104,15 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 				.size();
 		this.setNumberOfResources(numberOfResources);
 
-		float meanNbrTasksPerActor = (float) numberOfTasks
+		float meanNbrTasksPerActor = (float) nbrExecTasks
 				/ (float) numberOfActors;
 		this.setMeanNbrTasksPerActor(meanNbrTasksPerActor);
 
 		float propFinishedTasks = (float) nbrSuccessfulTasks
-				/ (float) numberOfTasks;
+				/ (float) nbrExecTasks;
 		this.setPropFinishedTasks(propFinishedTasks);
 
-		float propFailedTasks = (float) nbrFailedTasks / (float) numberOfTasks;
+		float propFailedTasks = (float) nbrFailedTasks / (float) nbrExecTasks;
 		this.setPropFailedTasks(propFailedTasks);
 
 		float propVelocity = (float) this.getDeadline()
@@ -175,10 +170,6 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 		return numberOfResources;
 	}
 
-	public int getNumberOfTasks() {
-		return numberOfTasks;
-	}
-
 	public float getPropFailedTasks() {
 		return propFailedTasks;
 	}
@@ -218,9 +209,6 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 
 		analysis += "  ECT = Total number of executed contingency tasks: "
 				+ this.getNbrExecContTasks() + "\n";
-
-		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
-				+ this.getNumberOfTasks() + "\n";
 
 		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks: "
 				+ this.getNbrSuccessfulTasks() + "\n";
@@ -333,10 +321,6 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 
 	public void setNumberOfResources(int numberOfResources) {
 		this.numberOfResources = numberOfResources;
-	}
-
-	public void setNumberOfTasks(int numberOfTasks) {
-		this.numberOfTasks = numberOfTasks;
 	}
 
 	public void setPropFailedTasks(float propFailedTasks) {
