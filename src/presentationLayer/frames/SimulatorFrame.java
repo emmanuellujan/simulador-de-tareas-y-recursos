@@ -366,7 +366,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		jTabbedPane1.setPreferredSize(new java.awt.Dimension(357, 427));
 
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/presentationLayer/Media/logoII.png"))); 
+				"/presentationLayer/media/logoII.png"))); 
 
 		jLabel22.setFont(new java.awt.Font("Verdana", 1, 11));
 		jLabel22.setText("Notaciones de ayuda");
@@ -1609,6 +1609,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton10ActionPerformed
 		File archivo = new File("media\\Manual de usuario - lrSimulator.pdf");
+		//File archivo = new File("/presentationLayer/media/Manual de usuario - lrSimulator.pdf");
 		if (archivo.exists()) {
 			java.awt.Desktop d = java.awt.Desktop.getDesktop();
 			try {

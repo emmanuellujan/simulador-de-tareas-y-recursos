@@ -1,6 +1,6 @@
 format 76
 "logginSystem" // src::persistenceLayer::logginSystem
-  revision 9
+  revision 10
   modified_by 3 "elujan"
   // class settings
   //class diagram settings
@@ -656,6 +656,18 @@ ${members}}
 	nparams 0
 	
 	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 255363 "logResources"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	

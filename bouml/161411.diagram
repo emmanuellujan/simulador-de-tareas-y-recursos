@@ -59,7 +59,7 @@ persistenceLayer.dataModel
   xyzwh 641.619 219.288 2000 183 69
 packagecanvas 130691 
   package_ref 129411 // logginSystem
-    xyzwh 5.53195 6.44729 1995 482 622
+    xyzwh 5 7 1995 487 645
 end
 relationcanvas 128259 relation_ref 134915 // <generalisation>
   from ref 128003 z 3006 to ref 128131
@@ -69,9 +69,9 @@ end
 relationcanvas 128387 relation_ref 135043 // <unidirectional association>
   geometry HVr
   decenter_end 745
-  from ref 128003 z 3006 to point 292 222
-  line 129539 z 3006 stereotype "<<Vector>>" xyz 256.5 187 3006 to ref 128131
-  role_a_pos 263 201 3000 no_role_b
+  from ref 128003 z 3006 to point 302 222
+  line 129539 z 3006 stereotype "<<Vector>>" xyz 261 187 3006 to ref 128131
+  role_a_pos 258 203 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128643 relation_ref 135171 // <generalisation>
@@ -91,7 +91,7 @@ relationcanvas 129155 relation_ref 135555 // <generalisation>
 end
 relationcanvas 129795 relation_ref 134787 // <unidirectional association>
   decenter_begin 469
-  from ref 128131 z 3018 stereotype "<<Vector>>" xyz 402.5 145.5 3018 to ref 129667
+  from ref 128131 z 3018 stereotype "<<Vector>>" xyz 402 145 3018 to ref 129667
   role_a_pos 487 147 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -102,12 +102,12 @@ relationcanvas 130051 relation_ref 134659 // <unidirectional association>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131075 relation_ref 173571 // <unidirectional association>
-  from ref 128131 z 3024 stereotype "<<Vector>>" xyz 376.5 202 3000 to ref 128002
+  from ref 128131 z 3024 stereotype "<<Vector>>" xyz 376 202 3000 to ref 128002
   role_a_pos 442 206 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131203 relation_ref 173699 // <unidirectional association>
-  from ref 128131 z 3024 stereotype "<<Vector>>" xyz 380.5 225 3000 to ref 128002
+  from ref 128131 z 3024 stereotype "<<Vector>>" xyz 380 225 3000 to ref 128002
   role_a_pos 468 223 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end

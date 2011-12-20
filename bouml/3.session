@@ -1,14 +1,12 @@
 window_sizes 1280 776 300 974 573 129
 diagrams
-  active  sequencediagram_ref 201219 // logginSystem
-    974 573 104 4 23 0
+  active  classdiagram_ref 161411 // loggin system
+    779 458 100 4 120 0
 end
 show_stereotypes
-selected 
-  package_ref 143747 // src
 open
   classview_ref 128131 // schedulingSystem
-  classview_ref 129155 // SimulationTime
+  class_ref 131715 // SimulationTime
   class_ref 132483 // TXTLogginSystem
   
   package_ref 143747 // src
