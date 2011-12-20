@@ -1,0 +1,78 @@
+format 76
+
+classinstance 128003 class_ref 131075 // CompLogginSystem
+  name ""   xyz 182.027 16.1652 2000 life_line_z 2000
+classinstance 128387 class_ref 128131 // SchedulingSystem
+  name ""   xyz 28.5036 15.5708 2000 life_line_z 2000
+classinstance 129155 class_ref 154115 // SimulationResource
+  name ""   xyz 601.827 17.8584 2000 life_line_z 2000
+classinstance 129795 class_ref 131715 // SimulationTime
+ show_context_mode no  name ""   xyz 425.024 18.6053 2000 life_line_z 2000
+fragment 130691 "loop"
+  xyzwh 422.92 124.91 3005 271 56
+end
+durationcanvas 128515 classinstance_ref 128387 // :SchedulingSystem
+  xyzwh 81 74 2010 11 265
+end
+durationcanvas 128643 classinstance_ref 128003 // :CompLogginSystem
+  xyzwh 239 74 2010 11 235
+  overlappingdurationcanvas 131587
+    xyzwh 245 249 2020 11 32
+  end
+end
+durationcanvas 129923 classinstance_ref 129795 // :SimulationTime
+  xyzwh 469 105 2010 11 129
+  overlappingdurationcanvas 130819
+    xyzwh 475 186 2020 11 25
+  end
+end
+durationcanvas 130179 classinstance_ref 129155 // :SimulationResource
+  xyzwh 658 138 2010 11 39
+end
+msg 128771 synchronous
+  from durationcanvas_ref 128515
+  to durationcanvas_ref 128643
+  yz 74 2015 msg operation_ref 168451 // "log(in time : int, inout devicesList : Vector<Actor>) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "cycle, allResources"
+  label_xy 100 59
+msg 130051 synchronous
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 129923
+  yz 105 2015 msg operation_ref 162435 // "SimulationTime(in time : int, inout actorsList : Vector<Actor>)"
+  stereotype "<<create>>" xyz 264 112 3000
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "cycle, allResources"
+  label_xy 263 90
+msg 130307 synchronous
+  from durationcanvas_ref 129923
+  to durationcanvas_ref 130179
+  yz 137 2015 msg operation_ref 230275 // "SimulationResource(inout resource : Resource)"
+  stereotype "<<create>>" xyz 532 143 3000
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "resource"
+  label_xy 481 124
+reflexivemsg 130947 synchronous
+  to durationcanvas_ref 130819
+  yz 186 2025 msg operation_ref 162947 // "setCurrentTime(in currentTime : int) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "cycle"
+  label_xy 506 184
+msg 131075 return
+  from durationcanvas_ref 129923
+  to durationcanvas_ref 128643
+  yz 222 2025 explicitmsg "simTime"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 335 207
+msg 131459 return
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128515
+  yz 289 2030 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+reflexivemsg 131715 synchronous
+  to durationcanvas_ref 131587
+  yz 249 2025 msg operation_ref 167939 // "addSimulationTime(inout simulationTime : SimulationTime) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "simTime"
+  label_xy 277 252
+end
