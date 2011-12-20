@@ -7,7 +7,7 @@ class TXTLogginSystem
 		for (int i = 0; i < n; i++)
 			xmlLog += this.logResource(actors.get(i)) + "\n";
 		return xmlLog;
-!!!171011.java!!!	logResource(inout resource : SimulationResource) : String
+!!!171011.java!!!	logResource(inout resource : ) : String
 		String resId = resource.getResId();
 		String taskId = resource.getTaskId();
 		String currentAction = resource.getCurrentAction();
