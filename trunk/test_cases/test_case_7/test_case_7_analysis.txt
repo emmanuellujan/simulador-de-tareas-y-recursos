@@ -5,7 +5,6 @@ Results Analisys
   C = Number of cycles: 57
   ET = Total number of executed tasks: 3
   ECT = Total number of executed contingency tasks: 0
-  TE = ET + ECT  = Total number of executed tasks: 3
   ST = S(ET) + S(ECT) = Number of successful tasks: 3
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 2
