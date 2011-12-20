@@ -540,7 +540,6 @@ public class CreateActorFrame extends javax.swing.JFrame {
 			Hashtable propertiesTable = new Hashtable();
 
 			for (int i = 0; i < this.jTable1.getRowCount(); i++) {
-				Object pepe = this.jTable1.getValueAt(i, 0);
 				if ((this.jTable1.getValueAt(i, 0) != null)
 						&& (this.jTable1.getValueAt(i, 1) != null)
 						&& (!this.jTable1.getValueAt(i, 0).equals(""))
@@ -598,7 +597,7 @@ public class CreateActorFrame extends javax.swing.JFrame {
 					+ String.valueOf(this.getActorsList().size()), "actor",
 					null, 80, null, 0, 0, null, 0, null, null);
 		UpdaterFrame currentUpdater = new UpdaterFrame();
-		this.getResourcesList().add(newActor);
+		this.getResourcesList();
 		currentUpdater.setResourcesList(this.getResourcesList());
 		this.getMainResourcesList().add(newActor);
 		currentUpdater.setMainResourcesList(this.getMainResourcesList());
