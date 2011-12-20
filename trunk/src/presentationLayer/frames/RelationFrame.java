@@ -488,6 +488,10 @@ public class RelationFrame extends javax.swing.JFrame {
 		this.resourcesList = resourcesList;
 		this.setComboboxesValues();
 	}
+        
+        public void clearTextArea() {
+		this.jTextArea2.setText("");	
+	}
 
 	public void writeTextArea() {
 		this.jTextArea2.setText("");
