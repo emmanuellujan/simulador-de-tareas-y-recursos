@@ -109,15 +109,15 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 				.size();
 		this.setNumberOfResources(numberOfResources);
 
-		float meanNbrTasksPerActor = (float) nbrExecTasks
+		float meanNbrTasksPerActor = (float) totalNbrExecTasks
 				/ (float) numberOfActors;
 		this.setMeanNbrTasksPerActor(meanNbrTasksPerActor);
 
 		float propFinishedTasks = (float) nbrSuccessfulTasks
-				/ (float) nbrExecTasks;
+				/ (float) totalNbrExecTasks;
 		this.setPropFinishedTasks(propFinishedTasks);
 
-		float propFailedTasks = (float) nbrFailedTasks / (float) nbrExecTasks;
+		float propFailedTasks = (float) nbrFailedTasks / (float) totalNbrExecTasks;
 		this.setPropFailedTasks(propFailedTasks);
 
 		float propVelocity = (float) this.getDeadline()
