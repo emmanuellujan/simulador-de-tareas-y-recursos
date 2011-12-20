@@ -464,6 +464,7 @@ public class Actor extends Resource {
 
 	@Override
 	public void reset() {
+		super.reset();
 		this.setBusyTime(0);
 		this.setTime(0);
 		this.setCurrAction("Nothing");

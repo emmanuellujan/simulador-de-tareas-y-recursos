@@ -214,13 +214,13 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 				+ "\n";
 
 		analysis += "  ET = Total number of executed tasks: "
-				+ this.getNumberOfTasks() + "\n";
+				+  this.getNbrExecTasks() + "\n";
 
 		analysis += "  ECT = Total number of executed contingency tasks: "
 				+ this.getNbrExecContTasks() + "\n";
 
 		analysis += "  TE = ET + ECT  = Total number of executed tasks: "
-				+ this.getNbrExecTasks() + "\n";
+				+ this.getNumberOfTasks() + "\n";
 
 		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks: "
 				+ this.getNbrSuccessfulTasks() + "\n";
