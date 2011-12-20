@@ -15,6 +15,7 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 	private int numberOfCycles; // actual number of cycles
 	private int nbrExecTasks;
 	private int nbrExecContTasks;
+	private int totalNbrExecTasks;
 	private int nbrSuccessfulTasks;
 	private int nbrFailedTasks;
 	private int successfulExecTasks;
@@ -50,7 +51,7 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 		Vector<SimulationTime> simulationTimes = logger.getSimulationTimes();
 		this.setNumberOfCycles(simulationTimes.size());
 
-		// ET = Total number of executed tasks (including cont. tasks)
+		// ET = Total number of executed tasks (without cont. tasks)
 		int nbrExecTasks = schedulingSystem.getTasks().size();
 		this.setNbrExecTasks(nbrExecTasks);
 
@@ -58,6 +59,10 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 		int nbrExecContTasks = schedulingSystem.getLogger()
 				.getNbrExecContTasks();
 		this.setNbrExecContTasks(nbrExecContTasks);
+	
+		// TE = Total number of executed tasks = ET + ECT
+		int totalNbrExecTasks = nbrExecTasks + nbrExecContTasks;
+		this.setTotalNbrExecTasks(totalNbrExecTasks);
 
 		// ST = S(ET) + S(ECT) = Number of successful tasks (including cont.
 		// tasks)
@@ -209,6 +214,9 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 
 		analysis += "  ECT = Total number of executed contingency tasks: "
 				+ this.getNbrExecContTasks() + "\n";
+		
+		analysis += "  TE = Total number of executed tasks = ET + ECT "
+				+ this.getTotalNbrExecTasks() + "\n";
 
 		analysis += "  ST = S(ET) + S(ECT) = Number of successful tasks: "
 				+ this.getNbrSuccessfulTasks() + "\n";
@@ -342,5 +350,14 @@ public class BasicAnalyzer extends ResultsAnalyzer {
 	public void setSuccessfulExecTasks(int successfulExecTasks) {
 		this.successfulExecTasks = successfulExecTasks;
 	}
+
+	public int getTotalNbrExecTasks() {
+		return totalNbrExecTasks;
+	}
+
+	public void setTotalNbrExecTasks(int totalNbrExecTasks) {
+		this.totalNbrExecTasks = totalNbrExecTasks;
+	}
+
 
 }

@@ -1,0 +1,104 @@
+format 76
+
+classinstance 128003 class_ref 131075 // CompLogginSystem
+  name ""   xyz 147.605 38.7499 2000 life_line_z 2000
+classinstance 128131 class_ref 132483 // TXTLogginSystem
+  name ""   xyz 318.58 45.87 2000 life_line_z 2000
+classinstance 128387 class_ref 128131 // SchedulingSystem
+  name ""   xyz 4.77867 34.2354 2000 life_line_z 2000
+classinstance 131459 class_ref 131715 // SimulationTime
+  name ""   xyz 575.705 41.8021 2000 life_line_z 2000
+fragment 131971 "loop"
+  xyzwh 308.93 223.8 2025 355 115
+end
+durationcanvas 128515 classinstance_ref 128387 // :SchedulingSystem
+  xyzwh 57 101.293 2010 11 356
+end
+durationcanvas 128643 classinstance_ref 128003 // :CompLogginSystem
+  xyzwh 204 109.183 2010 11 331
+end
+durationcanvas 128899 classinstance_ref 128131 // :TXTLogginSystem
+  xyzwh 370 129.083 2010 11 299
+  overlappingdurationcanvas 130051
+    xyzwh 376 151.153 2020 11 208
+    overlappingdurationcanvas 130435
+      xyzwh 382 182.158 2030 11 28
+    end
+    overlappingdurationcanvas 130691
+      xyzwh 382 284.601 2030 11 30
+    end
+  end
+  overlappingdurationcanvas 132099
+    xyzwh 376 390 2020 11 25
+  end
+end
+durationcanvas 131587 classinstance_ref 131459 // :SimulationTime
+  xyzwh 619 249.065 2010 11 26
+end
+msg 128771 synchronous
+  from durationcanvas_ref 128515
+  to durationcanvas_ref 128643
+  yz 110 2015 msg operation_ref 169731 // "writeLog() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 107 92
+msg 129027 synchronous
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128899
+  yz 131 2015 msg operation_ref 171139 // "writeLog() : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 263 114
+reflexivemsg 130179 asynchronous
+  to durationcanvas_ref 130051
+  yz 202 2025 explicitmsg "getLog()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 409 150
+selfreflexivemsg 130307
+  to durationcanvas_ref 130051
+  yz 351 2025 explicitmsg "log"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 410 353
+reflexivemsg 130563 synchronous
+  to durationcanvas_ref 130435
+  yz 182 2035 msg operation_ref 168323 // "getSimulationTimes() : SimulationTime"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 423 177
+reflexivemsg 130819 asynchronous
+  to durationcanvas_ref 130691
+  yz 373 2035 explicitmsg "logResources()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "allResources"
+  label_xy 413 282
+selfreflexivemsg 130947
+  to durationcanvas_ref 130435
+  yz 202 2035 explicitmsg "simTimes"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 417 203
+msg 131715 synchronous
+  from durationcanvas_ref 130051
+  to durationcanvas_ref 131587
+  yz 249 2025 explicitmsg "getAllResources()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 470 233
+msg 131843 return
+  from durationcanvas_ref 131587
+  to durationcanvas_ref 130051
+  yz 264 2025 explicitmsg "allResources"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 479 256
+reflexivemsg 132227 synchronous
+  to durationcanvas_ref 132099
+  yz 390 2025 msg operation_ref 170627 // "writeFile(in s : String) : void"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "log"
+  label_xy 405 385
+msg 132355 return
+  from durationcanvas_ref 128899
+  to durationcanvas_ref 128643
+  yz 419 2025 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+msg 132483 return
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128515
+  yz 431 2015 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+end
