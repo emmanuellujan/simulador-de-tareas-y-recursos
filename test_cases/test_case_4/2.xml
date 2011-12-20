@@ -146,7 +146,6 @@
         <numberOfCycles>0</numberOfCycles>
         <nbrExecTasks>0</nbrExecTasks>
         <nbrExecContTasks>0</nbrExecContTasks>
-        <numberOfTasks>0</numberOfTasks>
         <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
         <nbrFailedTasks>0</nbrFailedTasks>
         <successfulExecTasks>0</successfulExecTasks>
@@ -1081,7 +1080,6 @@
   C = Number of cycles: 11
   ET = Total number of executed tasks: 1
   ECT = Total number of executed contingency tasks: 0
-  TE = ET + ECT  = Total number of executed tasks: 1
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 2
@@ -1100,7 +1098,6 @@
       <numberOfCycles>11</numberOfCycles>
       <nbrExecTasks>1</nbrExecTasks>
       <nbrExecContTasks>0</nbrExecContTasks>
-      <numberOfTasks>1</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>0</nbrFailedTasks>
       <successfulExecTasks>0</successfulExecTasks>

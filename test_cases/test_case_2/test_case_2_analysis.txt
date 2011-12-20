@@ -5,14 +5,13 @@ Results Analisys
   C = Number of cycles: 11
   ET = Total number of executed tasks: 1
   ECT = Total number of executed contingency tasks: 1
-  TE = ET + ECT  = Total number of executed tasks: 2
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 1
   A = Number of actors: 1
     Actor: actor0, busy time: 8, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 0
-  TPA = Mean number of tasks per actor: 2.0
+  TPA = Mean number of tasks per actor: 1.0
   Proportions: 
-    Successful tasks: 0.5
-    Failed tasks: 0.5
+    Successful tasks: 1.0
+    Failed tasks: 1.0
     Velocity (deadline/nbrOfCycles): 7.2727275

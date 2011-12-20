@@ -73,7 +73,6 @@
         <numberOfCycles>0</numberOfCycles>
         <nbrExecTasks>0</nbrExecTasks>
         <nbrExecContTasks>0</nbrExecContTasks>
-        <numberOfTasks>0</numberOfTasks>
         <nbrSuccessfulTasks>0</nbrSuccessfulTasks>
         <nbrFailedTasks>0</nbrFailedTasks>
         <successfulExecTasks>0</successfulExecTasks>
@@ -581,16 +580,15 @@
   C = Number of cycles: 11
   ET = Total number of executed tasks: 1
   ECT = Total number of executed contingency tasks: 1
-  TE = ET + ECT  = Total number of executed tasks: 2
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 1
   A = Number of actors: 1
     Actor: actor0, busy time: 8, nbr. of properties changes: 0
   R = Number of other resources (artifacts): 0
-  TPA = Mean number of tasks per actor: 2.0
+  TPA = Mean number of tasks per actor: 1.0
   Proportions: 
-    Successful tasks: 0.5
-    Failed tasks: 0.5
+    Successful tasks: 1.0
+    Failed tasks: 1.0
     Velocity (deadline/nbrOfCycles): 7.2727275
 </analysis>
       <numberOfErrors>0</numberOfErrors>
@@ -598,7 +596,6 @@
       <numberOfCycles>11</numberOfCycles>
       <nbrExecTasks>1</nbrExecTasks>
       <nbrExecContTasks>1</nbrExecContTasks>
-      <numberOfTasks>2</numberOfTasks>
       <nbrSuccessfulTasks>1</nbrSuccessfulTasks>
       <nbrFailedTasks>1</nbrFailedTasks>
       <successfulExecTasks>0</successfulExecTasks>
@@ -607,9 +604,9 @@
       <failedExecContTasks>0</failedExecContTasks>
       <numberOfActors>1</numberOfActors>
       <numberOfResources>0</numberOfResources>
-      <meanNbrTasksPerActor>2.0</meanNbrTasksPerActor>
-      <propFinishedTasks>0.5</propFinishedTasks>
-      <propFailedTasks>0.5</propFailedTasks>
+      <meanNbrTasksPerActor>1.0</meanNbrTasksPerActor>
+      <propFinishedTasks>1.0</propFinishedTasks>
+      <propFailedTasks>1.0</propFailedTasks>
       <propVelocity>7.2727275</propVelocity>
     </resultsAnalyzer>
     <dealerActor>
