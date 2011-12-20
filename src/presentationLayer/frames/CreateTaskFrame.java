@@ -84,6 +84,8 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 	private SchedulingSystem currentSchedulingSystem;
 
 	private Vector<Task> newsList;
+        
+        private Vector<Task> tasksList;
 
 	private Vector<Actor> actorsCurrentList;
 
@@ -149,6 +151,10 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 
 	public Vector<Task> getNewsList() {
 		return newsList;
+	}
+        
+        public Vector<Task> getTasksList() {
+		return tasksList;
 	}
 
 	public Task getNewTask() {
@@ -432,6 +438,7 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 			Vector<Task> currentTaskList = SimulatorFrame.getInstance()
 					.getNewsList();
 			currentTaskList.add(this.getNewTask());
+                        SimulatorFrame.getInstance().setTasksList(currentTaskList);
 			SimulatorFrame.getInstance().setNewsList(currentTaskList);
 			this.setFieldsValuesEmpty();
 			this.setVisible(false);
@@ -538,6 +545,10 @@ public class CreateTaskFrame extends javax.swing.JFrame {
 
 	public void setNewsList(Vector<Task> newsList) {
 		this.newsList = newsList;
+	}
+        
+        public void setTasksList(Vector<Task> tasksList) {
+		this.tasksList = tasksList;
 	}
 
 	public void setNewTask(Task task) {
