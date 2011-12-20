@@ -103,6 +103,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	private DeleteActorFrame actorDeletePanel;
 
 	private DeleteArtifactFrame artifactDeletePanel;
+        
+        private Vector<Task> tasks;
 
 	private Vector<Task> newsList;
 
@@ -214,6 +216,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.setResourcesList(new Vector<Resource>());
 		this.setSchedulingSystem(new SchedulingSystem());
 		this.setMainResourcesList();
+                this.setTasksList(new Vector<Task>());
 
 		this.services = new SystemServices();
 		this.jTextArea1.setLineWrap(true);
@@ -240,6 +243,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	public Vector<Actor> getActorsList() {
 		return actorsList;
 	}
+        
+        public Vector<Task> getTasksList(){
+            return this.tasks;
+        }
 
 	public javax.swing.JFileChooser getjFileChooser1() {
 		return jFileChooser1;
@@ -366,7 +373,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		jTabbedPane1.setPreferredSize(new java.awt.Dimension(357, 427));
 
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/presentationLayer/media/logoII.png"))); 
+				"/presentationLayer/Media/logoII.png"))); 
 
 		jLabel22.setFont(new java.awt.Font("Verdana", 1, 11));
 		jLabel22.setText("Notaciones de ayuda");
@@ -1609,7 +1616,6 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton10ActionPerformed
 		File archivo = new File("media\\Manual de usuario - lrSimulator.pdf");
-		//File archivo = new File("/presentationLayer/media/Manual de usuario - lrSimulator.pdf");
 		if (archivo.exists()) {
 			java.awt.Desktop d = java.awt.Desktop.getDesktop();
 			try {
@@ -1651,6 +1657,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			} else {
 				this.getSchedulingSystem().setActorsList(this.getActorsList());
 				this.getSchedulingSystem().setNewsList(this.getNewsList());
+                                this.getSchedulingSystem().setTasks(this.getTasksList());
 				this.getSchedulingSystem().setResourcesList(
 						this.getResourcesList());
 				this.setProjectName(this.jTextField1.getText());
@@ -1676,6 +1683,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.setActorsList(this.getSchedulingSystem().getActorsList());
 			this.setResourcesList(this.getSchedulingSystem().getResourcesList());
 			this.setNewsList(this.getSchedulingSystem().getNewsList());
+                        this.setTasksList(this.getSchedulingSystem().getTasks());
 			this.jTextPane1.setText(String.valueOf(this.getNewsList().size()));
 			this.jTextPane2
 					.setText(String.valueOf(this.getActorsList().size()));
@@ -1705,6 +1713,9 @@ public class SimulatorFrame extends javax.swing.JFrame {
 								.setContingencyTask(contingencyTask);
 						this.getNewsList().elementAt(r)
 								.setContTaskId(contingencyTask.getTaskId());
+                                                this.removeNewsListContingencyTasks(contingencyTask);
+                                                        
+                                                        
 						NewsFrame.getInstance().setLabel(
 								"Contingency task successfully added");
 						NewsFrame.getInstance().setBackFrame("SimulatorFrame");
@@ -1725,6 +1736,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 	private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton15ActionPerformed
 		this.setNewsList(new Vector<Task>());
+                this.setTasksList(new Vector<Task>());
 		this.setActorsList(new Vector<Actor>());
 		this.setResourcesList(new Vector<Resource>());
 		this.setSchedulingSystem(new SchedulingSystem());
@@ -1735,7 +1747,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.jTextArea1.setWrapStyleWord(true);
 		this.setLocationRelativeTo(null);
 		this.setLoadState(false);
-		this.jTextPane1.setText(String.valueOf(this.getNewsList().size()));
+                this.relationPanel.clearTextArea();
+		this.jTextPane1.setText(String.valueOf(this.getTasksList().size()));
 		this.jTextPane2.setText(String.valueOf(this.getActorsList().size()));
 		this.jTextPane3.setText(String.valueOf(this.getResourcesList().size()));
 	}// GEN-LAST:event_jButton15ActionPerformed
@@ -1755,7 +1768,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		this.taskCreatePanel.setResourcesList(this.getResourcesList());
 		this.taskCreatePanel.setMainResourcesList(this.getMainResourcesList());
 		this.taskCreatePanel.setSchedulingSystem(this.getSchedulingSystem());
-		this.taskCreatePanel.setNewsList(newsList);
+		this.taskCreatePanel.setNewsList(this.getNewsList());
+                this.taskCreatePanel.setTasksList(this.getTasksList());
 		this.taskCreatePanel.setLocationRelativeTo(null);
 		this.taskCreatePanel.setVisible(true);
 		this.setVisible(false);
@@ -1788,8 +1802,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 
 			int deadline = 80;
 			Vector<Task> newsList = this.getNewsList();
-			Vector<Task> tasks = new Vector<Task>();
-			tasks.addAll(newsList);
+                        Vector<Task> tasksList = this.getTasksList();
 			Vector<Actor> actorsList = this.getActorsList();
 			Vector<Resource> resourcesList = this.getResourcesList();
 			Vector<Task> failedFinishedList = new Vector<Task>();
@@ -1798,7 +1811,7 @@ public class SimulatorFrame extends javax.swing.JFrame {
 			this.getSchedulingSystem().getDealerActor().setReadyList(newsList);
 			this.getSchedulingSystem().setDeadline(deadline);
 			this.getSchedulingSystem().setNewsList(newsList);
-			this.getSchedulingSystem().setTasks(tasks);
+			this.getSchedulingSystem().setTasks(tasksList);
 			this.getSchedulingSystem().setActorsList(actorsList);
 			this.getSchedulingSystem().setResourcesList(resourcesList);
 			this.getSchedulingSystem().getLogger()
@@ -1889,6 +1902,10 @@ public class SimulatorFrame extends javax.swing.JFrame {
 		// TODO add your handling code here:
 	}// GEN-LAST:event_jTextField2ActionPerformed
 
+        private void removeNewsListContingencyTasks(Task cTask){
+            this.getNewsList().remove(cTask);            
+        }
+        
 	private Task searchTaskOnList(String id) {
 		for (int r = 0; r < this.getNewsList().size(); r++) {
 			if (this.getNewsList().elementAt(r).getTaskId().equals(id)) {
@@ -1907,8 +1924,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	private void setContingencyTaskCombobox1() {
 		String element = "";
 		this.jComboBox1.removeAllItems();
-		for (int t = 0; t < this.getNewsList().size(); t++) {
-			element = this.getNewsList().elementAt(t).getTaskId();
+		for (int t = 0; t < this.getTasksList().size(); t++) {
+			element = this.getTasksList().elementAt(t).getTaskId();
 			this.jComboBox1.addItem(element);
 		}
 	}
@@ -1916,8 +1933,8 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	private void setContingencyTaskCombobox3() {
 		String element = "";
 		this.jComboBox3.removeAllItems();
-		for (int i = 0; i < this.getNewsList().size(); i++) {
-			element = this.getNewsList().elementAt(i).getTaskId();
+		for (int i = 0; i < this.getTasksList().size(); i++) {
+			element = this.getTasksList().elementAt(i).getTaskId();
 			this.jComboBox3.addItem(element);
 		}
 	}
@@ -1960,13 +1977,18 @@ public class SimulatorFrame extends javax.swing.JFrame {
 	}
 
 	public void setNewsList(Vector<Task> newsList) {
-		this.newsList = newsList;
-		if (this.newsList != null) {
+		this.newsList = newsList;		               
+		this.jTextPane1.setText(String.valueOf(this.newsList.size()));
+	}      
+        
+        
+        public void setTasksList(Vector<Task> currentTasks){
+                this.tasks = currentTasks;
+                if (this.tasks != null) {
 			this.setContingencyTaskCombobox1();
 			this.setContingencyTaskCombobox3();
-		}
-		this.jTextPane1.setText(String.valueOf(this.newsList.size()));
-	}
+		} 
+        }
 
 	private void setProjectName(String name) {
 		this.projectName = name;
