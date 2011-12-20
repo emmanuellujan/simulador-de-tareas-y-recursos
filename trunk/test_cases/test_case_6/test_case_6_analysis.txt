@@ -3,9 +3,9 @@ Results Analisys
   E = Number of errors: 2
   D = Deadline (in cycles): 80
   C = Number of cycles: 9
-  ET = Total number of executed tasks: 3
+  ET = Total number of executed conventional tasks: 3
   ECT = Total number of executed contingency tasks: 0
-  TE = Total number of executed tasks = ET + ECT 3
+  TE = ET + ECT = Total number of executed tasks: 3
   ST = S(ET) + S(ECT) = Number of successful tasks: 1
   FT = F(ET) + F(ECT) = Number of failed tasks: 0
   A = Number of actors: 1
